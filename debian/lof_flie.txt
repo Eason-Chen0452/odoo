@@ -1,0 +1,1 @@
+logfile = D:/odoo-10.0/log/odoo_logfile
