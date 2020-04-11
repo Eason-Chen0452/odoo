@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+       -<template id="report_xxx_document">
+       -    <t t-call="report.external_layout">
+       -        <div class="page">
+       -            <div class="oe_structure"/>
+       -            <div class="row">
+       -                <div class="col-xs-6">
+       -                    <span t-field="doc.name"/>
+       -                </div>
+       -            </div>
+       -        </div>
+       -    </t>
+       -</template>
+       -->
+
+
+    <!--
+       -<template id="xxx_xxx">
+       -    <t t-call="report.html_container">
+       -        <t t-foreach="docs" t-as="doc">
+       -            <t t-call="module.report_xxx_document"/>
+       -        </t>
+       -    </t>
+       -</template>
+       -->
+</odoo>

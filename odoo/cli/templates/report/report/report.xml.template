@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--
+           -<report 
+           -    id="report_xxx"
+           -    string="Report Name"
+           -    model="xxx" 
+           -    report_type="qweb-html"
+           -    file="module.xxx_xxx" 
+           -    name="module.xxx_xxx" 
+           -/>
+           -->
+        <!--
+           -<record id="report_xxx" model="ir.actions.report.xml">
+           -    <field name="print_report_name">(object.state == 'draft' and 'Draft'+'-'+(object.name) or 'Done'+'-'+(object.name))</field>
+           -</record>
+           -->
+    </data>
+</odoo>

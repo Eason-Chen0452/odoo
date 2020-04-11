@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+
+from odoo import tools
+from odoo import api, fields, models
+
+
+# class xxxReport(models.Model):
+#     _name = "xxx.report"
+#     _description = "xxx Statistics"
+#     _auto = False
+#     _rec_name = 'date'
+#     _order = 'date desc'
+# 
+#     name = fields.Char('Order Reference', readonly=True)
+#     date = fields.Datetime('Date Order', readonly=True)
+# 
+#     @api.model_cr
+#     def init(self):
+#         # self._table = sale_report
+#         tools.drop_view_if_exists(self.env.cr, self._table)
+#         self.env.cr.execute("""CREATE or REPLACE VIEW %s as (
+#             %s
+#             FROM ( %s )
+#             %s
+#             )""" % (self._table, self._select(), self._from(), self._group_by()))
+
+# class xxx(models.AbstractModel):
+#     _name = 'report.module.xxx_xxx'
+# 
+#     @api.multi
+#     def render_html(self, docids, data=None):
+#         docs = self.env['models'].browse(docids)
+#         docargs = {
+#             'doc_ids': docs.ids,
+#             'doc_model': 'doc_models',
+#             'docs': docs,
+#             'proforma': True
+#         }
+#         return self.env['report'].render('xxx.xxx_xxx', docargs)
