@@ -1,0 +1,94 @@
+<odoo>
+  <data>
+    <!-- Sequences for sale.order -->
+    <!--<record id="bom_product_id" model="ir.sequence">-->
+            <!--<field name="name">Bom Product Id</field>-->
+            <!--<field name="code">cpo_offer_base.base</field>-->
+            <!--<field name="prefix">CPO</field>-->
+            <!--<field name="padding">5</field>-->
+    <!--</record>-->
+  
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="cpo_offer_bom_line_tree">
+      <field name="name">cpo_offer_bom_line list</field>
+      <field name="model">cpo_offer_bom.bom_line</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom" decoration-danger="check_state=='flase0'" decoration-primary="check_state=='lack'">
+          <field name="cpo_item" readonly="1"/>
+          <field name="cpo_p_n" readonly="1"/>
+          <!--<field name="cpo_type"/>-->
+          <!--<field name="cpo_title"/>-->
+          <!--<field name="cpo_detail"/>-->
+          <!--<field name="cpo_reference"/>-->
+          <!--<field name="cpo_vendor"/>-->
+          <field name="cpo_vendor_p_n" readonly="1"/>
+          <field name="cpo_description"/>
+          <field name="cpo_mfr" readonly="1"/>
+          <field name="cpo_mfr_p_n" readonly="1"/>
+          <field name="cpo_replace_p_n" readonly="1"/>
+          <field name="cpo_package" readonly="1"/>
+          <field name="cpo_remark" readonly="1"/>
+          <field name="bom_supply" readonly="0"/>
+          <field name="check_state" invisible="1" />
+          <field name="state" invisible="1"/>
+          <field name="price" readonly="0"/>
+          <field name="cpo_qty" readonly="1" invisible="0"/>
+          <field name="require_qty" readonly="1"/>
+          <field name="total" readonly="1" />
+          <button string="Check" type="object" name="workflow_check_bom" attrs="{'invisible':[('state', 'not in', ('draft', 'check'))]}"/>
+        </tree>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="cpo_offer_bom_line_form">
+      <field name="name">cpo_offer_bom_line form</field>
+      <field name="model">cpo_offer_bom.bom_line</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="4">
+            <group colspan="2" col="2">
+              <field name="cpo_item" readonly="1" />
+              <field name="cpo_qty" readonly="1" />
+                <field name="bom_supply" readonly="0" />
+            </group>
+            <group colspan="2" col="2">
+              <field name="cpo_p_n" readonly="1" />
+              <field name="cpo_vendor_p_n" readonly="1" />
+            </group>
+            <!--<group colspan="2" col="2">-->
+              <!--<field name="cpo_detail"/>-->
+              <!--<field name="cpo_title"/>-->
+            <!--</group>-->
+            <!--<group colspan="2" col="2">-->
+              <!--<field name="cpo_vendor"/>-->
+              <!--<field name="cpo_reference"/> -->
+            <!--</group>-->
+            <!--<group colspan="2" col="2">-->
+              <!--<field name="cpo_type"/>-->
+              <!--<field name="cpo_vendor_desc"/>-->
+            <!--</group>-->
+            <group colspan="2" col="2">
+              <field name="cpo_mfr" readonly="1" />
+              <field name="cpo_mfr_p_n" readonly="1" />
+              <field name="cpo_replace_p_n" readonly="1"/>
+              <field name="cpo_package" readonly="1" />
+              <field name="cpo_remark" readonly="1"/>
+            </group>
+            <!--<group colspan="2" col="2">-->
+              <!--<button>search</button>-->
+            <!--</group>-->
+          </group>
+        </form>
+      </field>
+    </record>
+  
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="cpo_offer_bom_line_action_window">
+      <field name="name">cpo_offer_bom_line window</field>
+      <field name="res_model">cpo_offer_bom.bom_line</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+              
+  </data>
+</odoo>

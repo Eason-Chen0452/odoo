@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--赠送物料明细-->
+        <record model="ir.ui.view" id="gift_line_tree">
+            <field name="name">Material Gift Detail Tree</field>
+            <field name="model">material.gift.line</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="gift_id"/>
+                    <field name="name"/>
+                    <field name="center_id"/>
+                    <field name="gift_cycle"/>
+                    <field name="use_cycle"/>
+                </tree>
+            </field>
+        </record>
+        <!--赠送物料的动作-->
+        <record model="ir.actions.act_window" id="act_gift_line">
+            <field name="name">Material Gift Detail</field>
+            <field name="res_model">material.gift.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <record model="ir.ui.view" id="inherit_center_form">
+            <field name="name">Customer Personal Center</field>
+            <field name="model">personal.center</field>
+            <field name="inherit_id" ref="personal_center.personal_center_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/div[1]/button[5]" position="before">
+                    <button class="oe_stat_button" type="object" name="get_material_views" context="{'value': 'gift'}" icon="fa-credit-card-alt">
+                        <field string="Gift Material" name="gift_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

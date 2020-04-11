@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <!--工作流-->
+        <record id="workflow_activity_plan" model="workflow">
+            <field name="name">Activity Plan Application</field>
+            <field name="osv">preferential.cpo_time_and_money</field>
+            <field name="on_create">True</field>
+        </record>
+        <!--草稿-->
+        <record id="activity_draft" model="workflow.activity">
+            <field name="name">draft</field>
+            <field name="wkf_id" ref="workflow_activity_plan"/>
+            <!--<field name="kind">dummy</field>-->
+            <field name="split_mode">OR</field>
+            <field name="flow_start">True</field>
+        </record>
+        <!--生效未开始-->
+        <record id="activity_force" model="workflow.activity">
+            <field name="name">force_no_started</field>
+            <field name="wkf_id" ref="workflow_activity_plan"/>
+            <field name="kind">function</field>
+            <field name="action">button_activity_takes_effect()</field>
+        </record>
+        <!--重置-->
+        <record id="activity_reset" model="workflow.activity">
+            <field name="name">draft</field>
+            <field name="wkf_id" ref="workflow_activity_plan"/>
+            <field name="kind">function</field>
+            <field name="action">button_activity_reset()</field>
+        </record>
+        <!--生效且开始-->
+        <record id="activity_begins" model="workflow.activity">
+            <field name="name">started_and_started</field>
+            <field name="wkf_id" ref="workflow_activity_plan"/>
+            <field name="kind">function</field>
+            <field name="action">button_activity_begins()</field>
+        </record>
+        <!--强制取消-->
+        <record id="activity_cancel" model="workflow.activity">
+            <field name="name">cancel</field>
+            <field name="wkf_id" ref="workflow_activity_plan"/>
+            <field name="kind">function</field>
+            <field name="action">button_forced_cancellation()</field>
+            <field name="flow_stop">True</field>
+        </record>
+
+        <!--工作流流转-->
+        <!-- 草稿 - 已生效 -->
+        <record id="transition_draft2force" model="workflow.transition">
+            <field name="act_from" ref="activity_draft"/>
+            <field name="act_to" ref="activity_force"/>
+            <field name="signal">button_force</field>
+        </record>
+        <!-- 已生效 - 重置 -->
+        <record id="transition_force2reset" model="workflow.transition">
+            <field name="act_from" ref="activity_force"/>
+            <field name="act_to" ref="activity_reset"/>
+            <field name="signal">button_reset</field>
+        </record>
+        <!-- 重置 - 草稿 -->
+        <record id="transition_reset2force" model="workflow.transition">
+            <field name="act_from" ref="activity_reset"/>
+            <field name="act_to" ref="activity_force"/>
+            <field name="signal">button_force</field>
+        </record>
+        <!-- 已生效 - 强制取消 -->
+        <record id="transition_force2cancel" model="workflow.transition">
+            <field name="act_from" ref="activity_force"/>
+            <field name="act_to" ref="activity_cancel"/>
+            <field name="signal">button_cancel</field>
+        </record>
+        <!-- 已生效 - 已开始 -->
+        <record id="transition_force2begins" model="workflow.transition">
+            <field name="act_from" ref="activity_force"/>
+            <field name="act_to" ref="activity_begins"/>
+            <field name="signal">button_begins</field>
+        </record>
+        <!-- 已开始 - 强制取消-->
+        <record id="transition_begins2cancel" model="workflow.transition">
+            <field name="act_from" ref="activity_begins"/>
+            <field name="act_to" ref="activity_cancel"/>
+            <field name="signal">button_cancel</field>
+        </record>
+    </data>
+</odoo>

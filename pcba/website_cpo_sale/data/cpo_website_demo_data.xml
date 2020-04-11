@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="cpo_website_demo_index" model="cpo.website.demo">
+            <field name='name'>Index</field>
+            <field name='class_code'>.cpo_website_demo_index</field>
+            <field name='body_html'>
+                <![CDATA[
+                    <h5 style="font-weight: bold;line-height: 1.1;text-align: center">
+                        <font style="font-size: 18px;">Welcome to ChinaPCBONE online store!</font>
+                    </h5>
+                    <h5 style="text-align: left; line-height: 1.1;text-indent:2em;">
+                        <span style="font-size: 13px; font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit;">
+                        ChinaPCBOne</span><span style="font-weight: normal;">&nbsp;is a electronic manufacturer in Shenzhen ,China .
+                        It was established in 2008, we offered One Stop Service for PCB layout, PCB process, components purchase and
+                        assembly service.&nbsp;</span><br>&nbsp; &nbsp; Tell me what you want to do?&nbsp;
+                    </h5>
+                    <h5 style="text-align: left; line-height: 1.1;">
+                        <img src="/web/image/3614" class="pull-left" style="width: 100%;">
+                        <br>
+                    </h5>
+                    <h5 style="text-align: left; line-height: 1.1;">
+                        <p style="text-indent:2em;">① Navigation Bar</p>
+                        <p style="text-indent:2em;">② Click to go to PCB quote</p>
+                        <p style="text-indent:2em;">③ Click to go to PCBA quote</p>
+                        <p style="text-indent:2em;">④ Search component</p>
+                        <p style="text-indent:2em;">⑤ Contact customer service staff</p>
+                    </h5>
+                ]]>
+            </field>
+        </record>
+        <record id="cpo_website_demo_pcb" model="cpo.website.demo">
+            <field name='name'>PCB</field>
+            <field name='class_code'>.cpo_website_demo_pcb</field>
+            <field name='body_html'>
+                <![CDATA[
+                    <h3 style="text-align: center; "><font style="font-size: 18px;">PCB online quotation !</font></h3>
+                    <p style="text-indent:2em;font-weight:600;">
+                        <font style="font-size: 14px;"><b>Add PCB order</b></font>
+                    </p>
+                    <p>
+                        <img src="/web/image/3615" class="pull-left" style="width: 100%;">
+                    </p>
+                    <h5 style="text-align: left; line-height: 1.1;">
+                        <p style="text-indent: 2em;font-weight:600;">
+                            <font style="font-size: 14px;">① Enter the data like PCB order</font>
+                        </p>
+                        <p style="text-indent: 2em;font-weight:600;">
+                            <font style="font-size: 14px;">② Click ”Special requirement” to check more special technology about PCB</font>
+                        </p>
+                        <p style="text-indent: 2em;font-weight:600;">
+                            <font style="font-size: 14px;">③ Click”＞“ to get the quotation </font>
+                        </p>
+                        <p style="text-indent: 2em;font-weight:600;">
+                            <font style="font-size: 14px;">④ Confirm the enter data</font>
+                        </p>
+                        <p style="text-indent: 2em;font-weight:600;">
+                            <font style="font-size: 14px;">⑤ Click “Next step”</font>
+                        </p>
+                    </h5>
+                    <h5 style="text-align: left; line-height: 1.1;">
+                        <p style="text-indent: 2em;font-weight:600;">
+                            <font style="font-size: 14px;">Confirm the data, create order.</font></b>
+                        </p>
+                    </h5>
+                    <p>
+                        <img src="/web/image/3616" class="pull-left" style="width: 100%;" data-original-title="" title=""><br>
+                    </p>
+                    <h5 style="text-align: left; line-height: 1.1;">
+                        <p style="text-indent: 2em;font-weight:600;">
+                            <font style="font-size: 14px;">① Confirm the data</font>
+                        </p>
+                        <p style="text-indent: 2em;font-weight:600;">
+                            <font style="font-size: 14px;">② Click ”specification confirmation” means all data are correct.</font>
+                        </p>
+                        <p style="text-indent: 2em;font-weight:600;">
+                            <font style="font-size: 14px;">③ If need any quick turn service, Click “Expedited”&nbsp;</font>
+                        </p>
+                        <p style="text-indent: 2em;font-weight:600;">
+                            <font style="font-size: 14px;">④ Create order</font>
+                        </p>
+                    </h5>
+                ]]>
+            </field>
+        </record>
+        <record id="cpo_website_demo_pcba" model="cpo.website.demo">
+            <field name='name'>PCBA</field>
+            <field name='class_code'>.cpo_website_demo_pcba</field>
+            <field name='body_html'>
+                <![CDATA[
+                    <h3 style="text-align: center; ">
+                        <font style="font-size: 18px;">PCBA online quotation !</font>
+                    </h3>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">PCBA Quotation</font>
+                    </p>
+                    <p>
+                        <img src="/web/image/3617" class="pull-left" style="width: 100%;">
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">① Enter the relevant data, remake：please choose supply method for "Components supply &amp; PCB manufacturing"（above data is as reference）</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">② Click "＞" to get the quotation&nbsp;</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">③ Confirm the enter data</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">④ Click "Next step"</font>
+                    </p>
+                    <p style="text-indent: 2em;">
+                        <b style="font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit;">
+                        <font style="font-size: 14px;">Confirm the data, create order.</font>
+                        </b>
+                    </p>
+                    <p>
+                        <img src="/web/image/3618" class="pull-left" style="width: 100%;">
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <!--[if !supportLists]-->
+                        <font style="font-size: 14px;">① Confirm the data again</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <!--[if !supportLists]-->
+                        <font style="font-size: 14px;">② Click "specification confirmation" means all data are correct.</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <!--[if !supportLists]-->
+                        <font style="font-size: 14px;">③ Create order</font>
+                    </p>
+                ]]>
+            </field>
+        </record>
+        <record id="cpo_website_demo_cart" model="cpo.website.demo">
+            <field name='name'>Cart</field>
+            <field name='class_code'>.cpo_website_demo_cart</field>
+            <field name='body_html'>
+                <![CDATA[
+                    <h2 style="text-align: center; ">
+                        <font style="font-size: 18px;">Shopping Cart</font>
+                    </h2>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">Upload files</font>
+                    </p>
+                    <p>
+                        <img src="/web/image/3619" class="pull-left" style="width: 100%;" data-original-title="" title="">
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <!--[if !supportLists]-->
+                        <font style="font-size: 14px;">① Click and upload related files（PCBA: BOM file, SMT file, Gerber file, PCB：Gerber file）</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">② If PCB is supplied by "ChinaPCBone" for PCBA order, need Click "Add PCB Order"</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">
+                            Pay attention to upload the BOM list
+                        </font>
+                    </p>
+                    <p>
+                        <img src="/web/image/3620" class="pull-left" style="width: 100%;">
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <!--[if !supportLists]-->
+                        <font style="font-size: 14px;">① Please check and find the relationship of the BOM list(it can be quoted faster）</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <!--[if !supportLists]-->
+                        <font style="font-size: 14px;">② If any parts are customer supplied, Click "Customer-supplied"</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <!--[if !supportLists]-->
+                        <font style="font-size: 14px;">③ After confirm all, Click "Confirm"</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">④ If upload files are not correct, you can click "Back"</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">Choose the order ,Submit</font>
+                    </p>
+                    <p>
+                        <img src="/web/image/3621" class="pull-left" style="width: 100%;" data-original-title="" title="">
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">① Click to choose the order</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <!--[if !supportLists]-->
+                        ② Click "Process Checkout" to submit the order
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">Register an account</font>
+                    </p>
+                    <p>
+                        <img src="/web/image/3622" class="pull-left" style="width: 100%;" data-original-title="" title=""><br>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">In order to ensure the accuracy of the order ,please enter the correct mailbox</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">Fill in the shipping address</font>
+                    </p>
+                    <p>
+                        <img src="/web/image/3623" class="pull-left" style="width: 100%;"><br>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">Please make sure above data is correct</font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">Choose the address</font>
+                    </p>
+                    <p>
+                        <img src="/web/image/3624" class="pull-left" style="width: 100%;">
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">Click "Confirm" to submit </font>
+                    </p>
+                    <p style="text-indent: 2em;font-weight:600;">
+                        <font style="font-size: 14px;">View order status</font>
+                    </p>
+                    <p>
+                        <img src="/web/image/3625" class="pull-left" style="width: 100%;">
+                        <b style="font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit;">
+                        <font style="font-size: 14px;"><br></font>
+                        </b>
+                    </p>
+                    <p style="text-align: center;font-weight:600;">
+                        Current order is pending approval ,it will be sent to your mailbox after getting the approval
+                        from the customer services.<br>
+                    </p>
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

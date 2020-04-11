@@ -1,0 +1,188 @@
+<odoo>
+    <data>
+        <!-- Registration and Sign in -->
+        <record id="cpo_help_default" model="cpo_help.help">
+            <field name='name'>Registration and Sign in</field>
+            <field name='type'>default</field>
+            <field name='state'>release</field>
+            <field name='content'>
+                <![CDATA[
+                    <h2 class="h-title">Registration and Sign in</h2>
+                    <ul class="h-ul">
+                        <li>
+                            <p>
+                                <b class="mr5">(1)</b>
+                                Click Sign in (as shown below), or visit <a href="/web/login">Sign in</a>
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/login-1.jpg"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(2)</b>
+                                If you have an account, please fill in the account password, and then log in (click the login button), as shown below:
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/login-2.jpg"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(3)</b>
+                                If you do not have an account, please click Register or visit <a href="/web/signup">Signup</a>, as shown below:
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/login-3.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(4)</b>
+                                Please fill in the following information (as shown below), please ensure the authenticity of the mailbox,
+                                so that we can send verification information to your mailbox! After filling in, click the login button!
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/login-4.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(5)</b>
+                                We will send a verification message to your email, the email link is valid within 1 hour,
+                                you can click the button to send the verification information again!
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/login-5.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(6)</b>
+                                If you have left the prompt page and the email is activated for more than an hour,
+                                please go to the login page (<a href="/web/login">Sign in</a>) ,
+                                Click (<a href="/web/email_prompt">Activated mailbox</a>) to send the activation email again!
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/login-6.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(7)</b>
+                                Please open your email (you will receive a verification email from our website), open the email,
+                                click the activation button, you can jump to the login page, enter your password when registering,
+                                and you can complete the login!
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/login-7.png"/>
+                        </li>
+                    </ul>
+                    <h4 class="h-thank">Thank you very much for reading this guide! I wish you a happy life!</h4>
+                ]]>
+            </field>
+        </record>
+        <!-- My account information -->
+        <record id="cpo_help_account" model="cpo_help.help">
+            <field name='name'>My account information</field>
+            <field name='type'>account</field>
+            <field name='state'>release</field>
+            <field name='content'>
+                <![CDATA[
+                    <h2 class="h-title">My account information</h2>
+                    <ul class="h-ul">
+                        <li>
+                            <p>
+                                <b class="mr5">(1)</b>
+                                Click on your username and select "My account"
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/account-1.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(2)</b>
+                                Here are all your account information, order information, etc.
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/account-2.png"/>
+                        </li>
+                    </ul>
+                    <h4 class="h-thank">Thank you very much for reading this guide! I wish you a happy life!</h4>
+                ]]>
+            </field>
+        </record>
+        <!-- Placing Orders -->
+        <record id="cpo_help_order" model="cpo_help.help">
+            <field name='name'>Placing Orders</field>
+            <field name='type'>order</field>
+            <field name='state'>release</field>
+            <field name='content'>
+                <![CDATA[
+                    <h2 class="h-title">Placing Orders</h2>
+                    <ul class="h-ul">
+                        <li>
+                            <p>
+                                <b class="mr5">(1)</b>
+                                Choose the type of order you want! E.g. PCB
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/order-1.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(2)</b>
+                                Choose the type of PCB you want, such as 2-20 layers
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/order-2.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(3)</b>
+                                Fill in the order data on the left, then click the "Calculation" button on the right!
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/order-3.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(4)</b>
+                                Then the system will give a quote, if you think the quote is reasonable, you can click "Next step"
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/order-4.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(5)</b>
+                                Then you need to confirm the data (step 1), then check the confirmation information (step 2),
+                                and then click the "Create Order" button (step 3)
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/order-5.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(6)</b>
+                                If you have a PO No., click the "Add" button to add your PO No. (step 1); if you have not uploaded the file,
+                                please upload the file first (step 2)
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/order-6.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(7)</b>
+                                Select the order you want to submit and click "Process Checkout"
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/order-7.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(8)</b>
+                                Fill in your shipping address, please be sure to fill in the correct address information!
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/order-8.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(9)</b>
+                                Select the courier method and click "Confirm"
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/order-9.png"/>
+                        </li>
+                        <li>
+                            <p>
+                                <b class="mr5">(10)</b>
+                                Then your order will enter the review status. We will send an email to inform you of the successful review,
+                                and send a message notification on the client! Please pay attention to your email!
+                            </p>
+                            <img class="img" src="/cpo_help/static/src/images/help/order-10.png"/>
+                        </li>
+                    </ul>
+                    <h4 class="h-thank">Thank you very much for reading this guide! I wish you a happy life!</h4>
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

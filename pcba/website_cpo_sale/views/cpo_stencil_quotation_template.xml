@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- 添加子页 -->
+        <template id="cpo_stencil_frontend" inherit_id="website.assets_frontend" name="Stencil">
+            <xpath expr="." position="inside">
+                <!--<link rel="stylesheet" href="/web_test/static/src/css/cpo_base.css" />-->
+                <!--<link rel="stylesheet" href="/web_test/static/src/css/cpo_index.css" />-->
+                <!--<link rel="stylesheet" href="/web_test/static/src/css/cpo_student.css" />-->
+                <!--<link rel="stylesheet" href="/web_test/static/src/css/swiper.min.css" />-->
+            </xpath>
+            <xpath expr="//script[last()]" position="after">
+            </xpath>
+        </template>
+
+        <template id="stencil_quotaion" name="Stencil Quotation">
+            <t t-call="website.layout">
+                <t t-set="additional_title">Stencil Quotation</t>
+                <!-- 向导模板 -->
+                <t t-call="website_cpo_sale.cpo_xiangdao_temp"/>
+                <div class="container">
+                    <t t-call="website_cpo_sale.stencil_quotation_online"/>
+                </div>
+            </t>
+        </template>
+
+        <template id="stencil_quotation_online">
+            <div class="container">
+                <div class="row row-m-0">
+                    <table class="table table-bordered">
+                        <caption id="tab_title">Online offer <span>(According to your requirements ， fill in the relevant data as below ， match the relevant price.)</span></caption>
+                    </table>
+                </div>
+                <div class="row cpo_content_row">
+                    <div class="col-md-8 cpo_col_pcba_md8">
+                        <div id="cpo_stencil_online_content">
+                            <t t-call="website_cpo_sale.cpo_source_template"/>
+                            <t t-call="website_cpo_sale.cpo_stencil_quotation_form"/>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="cpo_calcula_title">
+                            <t t-call="website_cpo_sale.cpo_stencil_calculation_results"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!--报价-->
+        <template id="cpo_stencil_quotation_form">
+            <form class="form-horizontal" role="form" method="POST" action="/" enctype="multipart/form-data"
+                  id="submit_stencil_quotation">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <!--数量 Size-->
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="cpo-box">
+                            <div class="cpo-box-title">Stencil Quantity</div>
+                            <div class="cpo-box-content">
+                                <t t-if="pcb_quantity">
+                                    <input type="text" class="cpo-box-input" name="cpo_stencil_quantity" t-att-value="pcb_quantity" placeholder="Quantity"/>
+                                </t>
+                                <t t-else="">
+                                    <input type="text" class="cpo-box-input" name="cpo_stencil_quantity" placeholder="Quantity"/>
+                                </t>
+                                    <span class="cpo-box-unit"> PCS </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="cpo-box">
+                            <div class="cpo-box-title">Size (mm)</div>
+                            <div class="cpo-box-content">
+                                <t t-if="cpo_stencil_size">
+                                    <t t-call="website_cpo_sale.stencil_area_size_template"/>
+                                </t>
+                                <t t-else="">
+                                    <select class="cpo-box-select cpo_stencil_size" id="stencil_frame">
+                                        <option value="370*470mm">370×470mm (Valid area  190×290mm)</option>
+                                        <option value="420*520mm">420×520mm (Valid area  240×340mm)</option>
+                                        <option value="450*550mm">450×550mm (Valid area  270×370mm)</option>
+                                        <option value="580*580mm">580×580mm (Valid area  380×380mm)</option>
+                                        <option value="550*650mm">550×650mm (Valid area  350×450mm)</option>
+                                        <option value="736*736mm">736×736mm (Valid area  500×500mm)</option>
+                                    </select>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--厚度-->
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="cpo-box">
+                            <div class="cpo-box-title">Thickness</div>
+                            <div class="cpo-box-content">
+                                <t t-if="stencil_thickness">
+                                    <t t-call="website_cpo_sale.stencil_thickness_template"/>
+                                </t>
+                                <t t-else="">
+                                    <select class="cpo-box-select cpo_stencil_thickness">
+                                        <option value="0.08">0.08 MM</option>
+                                        <option value="0.10">0.10 MM</option>
+                                        <option value="0.12">0.12 MM</option>
+                                        <option value="0.15">0.15 MM</option>
+                                    </select>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="cpo-box">
+                            <div class="cpo-box-title">Special request</div>
+                            <div class="cpo-box-content">
+                                <textarea class="stencil_special_re" rows="2" cols="70%" placeholder="Please enter other special requirement"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </template>
+
+            <!-- 右边布局 -->
+        <template id="cpo_stencil_calculation_results">
+            <div class="stencil_calculation_results">
+                <div class="cpo_smt_assembly_cost">
+                    <button class="btn btn-primary cpo_calculation"><i class="fa fa-calculator fa-lg"></i>Calculation</button>
+                </div>
+                <p class="cpo_price_reminder">Click the button to quote !</p>
+                <div class="calculation_content">
+                    <div class="cpo_country">
+                        <div class="pull-left cpo_country_list">
+                            <!--动态获取后台国家数据-->
+                            <select class="country_select">
+                                <option value="loading">Loading data, please wait</option>
+                            </select>
+                        </div>
+                        <div class="pull-left cpo_order_express_message">
+                            <select>
+                                <option value="dhl">DHL</option>
+                                <option value="ups">UPS</option>
+                                <option value="fedex">FedEx</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cpo_cost_fee stencil_content_cost cpo-none">
+                        <form class="form-horizontal"
+                               t-attf-action="/shop/product/#{ slug(product_id) }"
+                               method="post"
+                               role="form"
+                               id="cpo_stencil_shop_product">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                             <div class="cpo_assembly_cost">
+                                <span class="cpo_cost_span">Delivery period</span>
+                                <span class="cpo_cost_fee">
+                                    <!--<i>$</i>-->
+                                    <input type="text" class="cpo_delivery" name="cpo_delivery" value="0.00"  readonly="readonly"/>
+                                </span>
+                            </div>
+                             <div class="cpo_assembly_cost">
+                                <span class="cpo_cost_span">Freigth cost</span>
+                                <span class="cpo_cost_fee">
+                                    <i>$</i>
+                                    <input type="text" class="stencil_freigth" name="stencil_freigth" value="0.00"  readonly="readonly"/>
+                                </span>
+                            </div>
+                            <div class="cpo_assembly_cost">
+                                <span class="cpo_cost_span">Stencil cost</span>
+                                <span class="cpo_cost_fee">
+                                    <i>$</i>
+                                    <input type="text" class="stencil_cost" name="stencil_cost" value="0.00"  readonly="readonly"/>
+                                </span>
+                            </div>
+                            <div class="cpo_assembly_cost">
+                                <span class="cpo_cost_span">Total</span>
+                                <span class="cpo_cost_fee">
+                                    <i>$</i>
+                                    <input type="text" class="total_cost" name="total_cost" value="0.00"  readonly="readonly"/>
+                                </span>
+                            </div>
+                            <div class="cpo_step_next">
+                                <button class="btn btn-primary" id="step_next">Next step</button>
+                            </div>
+                            <div id="cpo_stencil_other">
+                                <input type="hidden" class="cpo_country" name="cpo_country" value=""  readonly="readonly"/>
+                                <input type="hidden" class="cpo_express" name="cpo_express" value=""  readonly="readonly"/>
+                                <input type="hidden" class="stencil_special" name="stencil_special" value=""  readonly="readonly"/>
+                            </div>
+                            <div id="cpo_stencil_result">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="order_page_ad">
+                    <div class="page-close-btn"><i class="fa fa-times-circle fa-2x"></i></div>
+                    <a class="order-page-content">
+
+                    </a>
+                </div>
+            </div>
+        </template>
+
+        <!-- 带参数进入钢网报价 Version-0.3  -->
+        <template id="stencil_area_size_template">
+            <select class="cpo-box-select cpo_stencil_size" id="stencil_frame">
+                <!--<t t-debug="website_cpo_sale"/>-->
+                <t t-if="cpo_stencil_size == '370*470mm'">
+                    <option value="370*470mm" t-att="['selected', 'selected']">370×470mm (Valid area  190×290mm)</option>
+                    <option value="420*520mm">420×520mm (Valid area  240×340mm)</option>
+                    <option value="450*550mm">450×550mm (Valid area  270×370mm)</option>
+                    <option value="580*580mm">580×580mm (Valid area  380×380mm)</option>
+                    <option value="550*650mm">550×650mm (Valid area  350×450mm)</option>
+                    <option value="736*736mm">736×736mm (Valid area  500×500mm)</option>
+                </t>
+                <t t-elif="cpo_stencil_size == '420*520mm'">
+                    <option value="370*470mm">370×470mm (Valid area  190×290mm)</option>
+                    <option value="420*520mm" t-att="['selected', 'selected']">420×520mm (Valid area  240×340mm)</option>
+                    <option value="450*550mm">450×550mm (Valid area  270×370mm)</option>
+                    <option value="580*580mm">580×580mm (Valid area  380×380mm)</option>
+                    <option value="550*650mm">550×650mm (Valid area  350×450mm)</option>
+                    <option value="736*736mm">736×736mm (Valid area  500×500mm)</option>
+                </t>
+                <t t-elif="cpo_stencil_size == '450*550mm'">
+                    <option value="370*470mm">370×470mm (Valid area  190×290mm)</option>
+                    <option value="420*520mm">420×520mm (Valid area  240×340mm)</option>
+                    <option value="450*550mm" t-att="['selected', 'selected']">450×550mm (Valid area  270×370mm)</option>
+                    <option value="580*580mm">580×580mm (Valid area  380×380mm)</option>
+                    <option value="550*650mm">550×650mm (Valid area  350×450mm)</option>
+                    <option value="736*736mm">736×736mm (Valid area  500×500mm)</option>
+                </t>
+                <t t-elif="cpo_stencil_size == '580*580mm'">
+                    <option value="370*470mm">370×470mm (Valid area  190×290mm)</option>
+                    <option value="420*520mm">420×520mm (Valid area  240×340mm)</option>
+                    <option value="450*550mm">450×550mm (Valid area  270×370mm)</option>
+                    <option value="580*580mm" t-att="['selected', 'selected']">580×580mm (Valid area  380×380mm)</option>
+                    <option value="550*650mm">550×650mm (Valid area  350×450mm)</option>
+                    <option value="736*736mm">736×736mm (Valid area  500×500mm)</option>
+                </t>
+                <t t-elif="cpo_stencil_size == '550*650mm'">
+                    <option value="370*470mm">370×470mm (Valid area  190×290mm)</option>
+                    <option value="420*520mm">420×520mm (Valid area  240×340mm)</option>
+                    <option value="450*550mm">450×550mm (Valid area  270×370mm)</option>
+                    <option value="580*580mm">580×580mm (Valid area  380×380mm)</option>
+                    <option value="550*650mm" t-att="['selected', 'selected']">550×650mm (Valid area  350×450mm)</option>
+                    <option value="736*736mm">736×736mm (Valid area  500×500mm)</option>
+                </t>
+                <t t-elif="cpo_stencil_size == '736*736mm'">
+                    <option value="370*470mm">370×470mm (Valid area  190×290mm)</option>
+                    <option value="420*520mm">420×520mm (Valid area  240×340mm)</option>
+                    <option value="450*550mm">450×550mm (Valid area  270×370mm)</option>
+                    <option value="580*580mm">580×580mm (Valid area  380×380mm)</option>
+                    <option value="550*650mm">550×650mm (Valid area  350×450mm)</option>
+                    <option value="736*736mm" t-att="['selected', 'selected']">736×736mm (Valid area  500×500mm)</option>
+                </t>
+            </select>
+        </template>
+
+        <template id="stencil_thickness_template">
+            <select class="cpo-box-select cpo_stencil_thickness">
+                <t t-if="stencil_thickness == '0.08'">
+                    <option value="0.08" t-att="['selected', 'selected']">0.08 MM</option>
+                    <option value="0.10">0.10 MM</option>
+                    <option value="0.12">0.12 MM</option>
+                    <option value="0.15">0.15 MM</option>
+                </t>
+                <t t-elif="stencil_thickness == '0.10'">
+                    <option value="0.08">0.08 MM</option>
+                    <option value="0.10" t-att="['selected', 'selected']">0.10 MM</option>
+                    <option value="0.12">0.12 MM</option>
+                    <option value="0.15">0.15 MM</option>
+                </t>
+                <t t-elif="stencil_thickness == '0.12'">
+                    <option value="0.08">0.08 MM</option>
+                    <option value="0.10">0.10 MM</option>
+                    <option value="0.12" t-att="['selected', 'selected']">0.12 MM</option>
+                    <option value="0.15">0.15 MM</option>
+                </t>
+                <t t-elif="stencil_thickness == '0.15'">
+                    <option value="0.08">0.08 MM</option>
+                    <option value="0.10">0.10 MM</option>
+                    <option value="0.12">0.12 MM</option>
+                    <option value="0.15" t-att="['selected', 'selected']">0.15 MM</option>
+                </t>
+            </select>
+        </template>
+
+        <template>
+               <!--<div class="form-group">-->
+                    <!--<div class="cpo_input_group clearfix">-->
+                        <!--<label class="pull-left control-label">Stencil Quantity</label>-->
+                        <!--<div class="pull-left cpo_input_quantity">-->
+                            <!--<input type="text" name="cpo_stencil_quantity" class="form-control pull-left" t-att-value="pcb_quantity"-->
+                                    <!--placeholder="Quantity" maxlength="2" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>-->
+                            <!--<span class="pull-left">PCS</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--类型-->
+                <div class="form-group">
+                    <div class="cpo_input_group clearfix">
+                        <label class="pull-left control-label">Size (mm)</label>
+                        <div class="pull-left cpo_stencil">
+                            <t t-if="cpo_stencil_size">
+                                <!--<t t-call="website_cpo_sale.stencil_area_size_template"/>-->
+                            </t>
+                            <t t-else="">
+                                <select class="form-control cpo_stencil_size" id="stencil_frame">
+                                    <option value="370*470mm">370×470mm (Valid area  190×290mm)</option>
+                                    <option value="420*520mm">420×520mm (Valid area  240×340mm)</option>
+                                    <option value="450*550mm">450×550mm (Valid area  270×370mm)</option>
+                                    <option value="580*580mm">580×580mm (Valid area  380×380mm)</option>
+                                    <option value="550*650mm">550×650mm (Valid area  350×450mm)</option>
+                                    <option value="736*736mm">736×736mm (Valid area  500×500mm)</option>
+                                </select>
+                            </t>
+                                <!--<option value="400×600mm">400×600mm (Valid area  220×400mm)</option>-->
+                                <!--<option value="400×800mm">400×800mm (Valid area  220×600mm)</option>-->
+                                <!--<option value="400×1000mm">400×1000mm (Valid area  220×760mm)</option>-->
+                                <!--<option value="500×800mm">500×800mm (Valid area  320×600mm)</option>-->
+                                <!--<option value="400×1200mm">400×1200mm (Valid area  220×1000mm)</option>-->
+                                <!--<option value="400×1400mm">400×1400mm (Valid area  220×1200mm)</option>-->
+                                <!--<option value="500×1200mm">500×1200mm (Valid area  320×1000mm)</option>-->
+                                <!--<option value="500×1400mm">500×1400mm (Valid area  320×1200mm)</option>-->
+                                <!--<option value="190×290mm">190×290mm (Valid area  190×290mm)</option>-->
+                                <!--<option value="550×550mm">550×550mm (Valid area  550×550mm)</option>-->
+                            <!--<select class="form-control cpo_stencil_size cpo-none" id="stencil_no_frame">-->
+                                <!--<option value="190×290mm">Valid area  190×290mm</option>-->
+                                <!--<option value="550×550mm">Valid area  550×550mm</option>-->
+                            <!--</select>-->
+                        </div>
+                    </div>
+                </div>
+                <!--边-->
+                <!--<div class="form-group">-->
+                    <!--<div class="cpo_input_needpcb_group clearfix" id="stencil_with_frame" style="margin-bottom: 5px;">-->
+                        <!--<label class="pull-left control-label">Stencil with frame</label>-->
+                        <!--<div class="pull-left cpo_input_material cpo_stencil_side">-->
+                            <!--<a class="cpo_input_active"><span>Top</span></a>-->
+                            <!--<a><span>Bottom</span></a>-->
+                            <!--<a><span>Top+Bottom(On Single Stencil)</span></a>-->
+                            <!--<a><span>Top &amp; Bottom(On Separate Stencil)</span></a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cpo_input_needpcb_group clearfix" id="stencil_without_frame">-->
+                        <!--<label class="pull-left control-label">Stencil without frame</label>-->
+                        <!--<div class="pull-left cpo_input_material cpo_stencil_side">-->
+                            <!--<a class=""><span>Top</span></a>-->
+                            <!--<a><span>Bottom</span></a>-->
+                            <!--<a><span>Top+Bottom(On Single Stencil)</span></a>-->
+                            <!--<a><span>Top &amp; Bottom(On Separate Stencil)</span></a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--钢网厚度-->
+                <div class="form-group">
+                    <div class="cpo_input_group clearfix">
+                        <label class="pull-left control-label">Thickness</label>
+                        <div class="pull-left cpo_stencil">
+                            <t t-if="stencil_thickness">
+                                <t t-call="website_cpo_sale.stencil_thickness_template"/>
+                            </t>
+                            <t t-else="">
+                                <select class="form-control cpo_stencil_thickness">
+                                    <option value="0.08">0.08 MM</option>
+                                    <option value="0.10">0.10 MM</option>
+                                    <option value="0.12">0.12 MM</option>
+                                    <option value="0.15">0.15 MM</option>
+                                </select>
+                            </t>
+                            <!--<select class="form-control cpo_stencil_thickness">-->
+                                <!--<option value="0.08">0.08 MM</option>-->
+                                <!--<option value="0.10">0.10 MM</option>-->
+                                <!--<option value="0.12">0.12 MM</option>-->
+                                <!--<option value="0.15">0.15 MM</option>-->
+                                <!--&lt;!&ndash;<option value="0.20">0.20 MM</option>&ndash;&gt;-->
+                            <!--</select>-->
+                        </div>
+                    </div>
+                </div>
+                <!--基准点-->
+                <!--<div class="form-group">-->
+                    <!--<div class="cpo_input_needpcb_group clearfix">-->
+                        <!--<label class="pull-left control-label">Existing fiducials</label>-->
+                        <!--<div class="pull-left cpo_input_material cpo_stencil_existing">-->
+                            <!--<a class="cpo_input_active"><span>No</span></a>-->
+                            <!--<a><span>Half lasered</span></a>-->
+                            <!--<a><span>Lasered through</span></a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--电解-->
+                <!--<div class="form-group">-->
+                    <!--<div class="cpo_input_needpcb_group clearfix">-->
+                        <!--<label class="pull-left control-label">Electropolishing</label>-->
+                        <!--<div class="pull-left cpo_input_material cpo_stencil_Electropo">-->
+                            <!--<a class="cpo_input_active"><span>No</span></a>-->
+                            <!--<a><span>Yes</span></a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--备注-->
+                <!--<div class="form-group">-->
+                    <!--<div class="cpo_input_needpcb_group clearfix">-->
+                        <!--<label class="pull-left control-label">Special request</label>-->
+                        <!--<div class="pull-left cpo_input_material cpo_stencil_special">-->
+                            <!--<textarea class="stencil_special_re" rows="2" cols="70%" placeholder="Please enter other special requirement"></textarea>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+        </template>
+
+    </data>
+</odoo>

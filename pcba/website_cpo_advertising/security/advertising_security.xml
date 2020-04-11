@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <!--BOM管理员-->
+        <record id="cpo_website_advertising" model="res.groups">
+            <field name="name">CPO advertising admin</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+        <record id="cpo_website_advertising_view" model="res.groups">
+            <field name="name">CPO ad notice view</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+    </data>
+</odoo>

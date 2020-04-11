@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo >
+    <data>
+
+        <menuitem id="base.menu_sale_config_sales" name="Sales"
+            parent="cpo_it_pcb.cpo_it_pcb_root_menu" sequence="0"/>
+        <menuitem id="menu_pcb_quotation_pricelist_main" name="Price Lists"
+            parent="cpo_it_pcb.cpo_it_pcb_root_menu" sequence="70"/>
+
+        <record id="pcb_tooling_pricelist_tree_view" model="ir.ui.view">
+            <field name="name">pcb.tooling.pricelist.tree</field>
+            <field name="model">pcb.tooling.pricelist</field>
+            <field name="arch" type="xml">
+                <tree string="PCB Tooling Price List" editable="bottom">
+                    <field name="min_test_points"/>
+                    <field name="max_test_points"/>
+                    <field name="price_type"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pcb_tooling_pricelist_action" model="ir.actions.act_window">
+            <field name="name">PCB Tooling Price List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pcb.tooling.pricelist</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a PCB Tooling Price List.
+              </p>
+            </field>
+        </record>
+
+
+        <menuitem
+            action="pcb_tooling_pricelist_action" id="menu_pcb_tooling_pricelist_action"
+            parent="menu_pcb_quotation_pricelist_main" sequence="2"/>
+
+
+        <record id="pcb_etest_pricelist_tree_view" model="ir.ui.view">
+            <field name="name">pcb.etest.pricelist.tree</field>
+            <field name="model">pcb.etest.pricelist</field>
+            <field name="arch" type="xml">
+                <tree string="PCB ETest Price List" editable="bottom">
+                    <field name="min_test_points"/>
+                    <field name="max_test_points"/>
+                    <field name="price_type"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+         <record id="pcb_etest_pricelist_action" model="ir.actions.act_window">
+            <field name="name">PCB ETest Price List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pcb.etest.pricelist</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a PCB ETest Price List.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            action="pcb_etest_pricelist_action" id="menu_pcb_etest_pricelist_action"
+            parent="menu_pcb_quotation_pricelist_main" sequence="3"/>
+
+        <record id="pcb_film_pricelist_tree_view" model="ir.ui.view">
+            <field name="name">pcb.film.pricelist.tree</field>
+            <field name="model">pcb.film.pricelist</field>
+            <field name="arch" type="xml">
+                <tree string="PCB Film Price List" editable="bottom">
+                    <field name="min_size"/>
+                    <field name="max_size"/>
+                    <field name="film_fee_type"/>
+                    <field name="film_fee"/>
+                </tree>
+            </field>
+        </record>
+
+         <record id="pcb_film_pricelist_action" model="ir.actions.act_window">
+            <field name="name">PCB Film Price List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pcb.film.pricelist</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a PCB Film Price List.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            action="pcb_film_pricelist_action" id="menu_pcb_film_pricelist_action"
+            parent="menu_pcb_quotation_pricelist_main" sequence="4"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,142 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_cpo_seo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 02:12+0000\n"
+"PO-Revision-Date: 2019-06-28 02:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_cpo_seo
+#: selection:cpo_set_website_seo,cpo_page_name:0
+msgid "Account Page"
+msgstr "Account Page"
+
+#. module: website_cpo_seo
+#: selection:cpo_set_website_seo,cpo_page_name:0
+msgid "Cart Page"
+msgstr "Cart Page"
+
+#. module: website_cpo_seo
+#: selection:cpo_set_website_seo,cpo_page_name:0
+msgid "Contactus Page"
+msgstr "Contactus Page"
+
+#. module: website_cpo_seo
+#: model:ir.model.fields,field_description:website_cpo_seo.field_cpo_set_website_seo_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: website_cpo_seo
+#: model:ir.model.fields,field_description:website_cpo_seo.field_cpo_set_website_seo_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: website_cpo_seo
+#: model:ir.model.fields,field_description:website_cpo_seo.field_cpo_set_website_seo_cpo_date
+msgid "Date"
+msgstr "日期"
+
+#. module: website_cpo_seo
+#: model:ir.model.fields,field_description:website_cpo_seo.field_cpo_set_website_seo_cpo_description
+msgid "Description"
+msgstr "描述"
+
+#. module: website_cpo_seo
+#: model:ir.model.fields,field_description:website_cpo_seo.field_cpo_set_website_seo_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: website_cpo_seo
+#: model:ir.model.fields,field_description:website_cpo_seo.field_cpo_set_website_seo_id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_cpo_seo
+#: selection:cpo_set_website_seo,cpo_page_name:0
+msgid "Index Page"
+msgstr "Index Page"
+
+#. module: website_cpo_seo
+#: model:ir.model.fields,field_description:website_cpo_seo.field_cpo_set_website_seo_cpo_keyworks
+msgid "Key Works"
+msgstr "关键词"
+
+#. module: website_cpo_seo
+#: model:ir.model.fields,field_description:website_cpo_seo.field_cpo_set_website_seo___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: website_cpo_seo
+#: model:ir.model.fields,field_description:website_cpo_seo.field_cpo_set_website_seo_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: website_cpo_seo
+#: model:ir.model.fields,field_description:website_cpo_seo.field_cpo_set_website_seo_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: website_cpo_seo
+#: selection:cpo_set_website_seo,cpo_page_name:0
+msgid "PCB Page"
+msgstr "PCB Page"
+
+#. module: website_cpo_seo
+#: selection:cpo_set_website_seo,cpo_page_name:0
+msgid "PCBA Page"
+msgstr "PCBA Page"
+
+#. module: website_cpo_seo
+#: model:ir.model.fields,field_description:website_cpo_seo.field_cpo_set_website_seo_cpo_title
+msgid "Page Title"
+msgstr "页面标题"
+
+#. module: website_cpo_seo
+#: model:ir.ui.menu,name:website_cpo_seo.cpo_set_website_seo_menu
+msgid "SEO Menu"
+msgstr "SEO 菜单"
+
+#. module: website_cpo_seo
+#: model:res.groups,name:website_cpo_seo.cpo_seo_operation_authority
+msgid "SEO Operation authority"
+msgstr "SEO Operation authority"
+
+#. module: website_cpo_seo
+#: model:ir.actions.act_window,name:website_cpo_seo.cpo_set_website_seo_actions
+msgid "Set Website Seo Actions"
+msgstr "Set Website Seo Actions"
+
+#. module: website_cpo_seo
+#: model:ir.ui.menu,name:website_cpo_seo.cpo_setting_seo_data_menu
+msgid "Setting Data"
+msgstr "SEO 设置"
+
+#. module: website_cpo_seo
+#: model:ir.ui.menu,name:website_cpo_seo.cpo_setting_website_seo_menu
+msgid "Setting SEO Menu"
+msgstr "设置记录"
+
+#. module: website_cpo_seo
+#: selection:cpo_set_website_seo,cpo_page_name:0
+msgid "Stencil Page"
+msgstr "Stencil Page"
+
+#. module: website_cpo_seo
+#: model:ir.model.fields,field_description:website_cpo_seo.field_cpo_set_website_seo_cpo_page_name
+msgid "URL Name"
+msgstr "URL Name"
+
+#. module: website_cpo_seo
+#: model:ir.model,name:website_cpo_seo.model_cpo_set_website_seo
+msgid "cpo_set_website_seo"
+msgstr "cpo_set_website_seo"
+

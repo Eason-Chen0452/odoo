@@ -1,0 +1,583 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* order_scatter_process10
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-03 03:29+0000\n"
+"PO-Revision-Date: 2020-01-03 03:29+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "1 X"
+msgstr "1 X"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_order_form_view
+msgid "<span attrs=\"{'invisible': [('synced_str', '!=', False)]}\">\n"
+"                            Sync information will be updated later\n"
+"                        </span>"
+msgstr "<span attrs=\"{'invisible': [('synced_str', '!=', False)]}\">\n"
+"                            同步信息将稍后更新\n"
+"                        </span>"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_ipc_id
+msgid "Acceptance Criteria"
+msgstr "验收标准"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_seller_code
+msgid "Board Factory Seller Code"
+msgstr "板厂001销售编号"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_cnc
+msgid "CNC"
+msgstr "CNC"
+
+#. module: order_scatter_process10
+#: selection:orders.synced.process,state:0
+msgid "Checked"
+msgstr "已检查"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_spell
+msgid "Combine Number"
+msgstr "免费拼版数量"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_order_date
+msgid "Confirmation Date"
+msgstr "确认日期"
+
+#. module: order_scatter_process10
+#: code:addons/order_scatter_process10/models/receive_send_process.py:57
+#, python-format
+msgid "Connection Test Succeeded! Everything seems properly set up!"
+msgstr "连接测试成功! 一切似乎都已正确设置!"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_base_id
+msgid "Copper Base Type"
+msgstr "板材"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Copper Thickness"
+msgstr "铜孔"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Core And PP Number"
+msgstr "芯板和PP数量"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_core
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Core Number"
+msgstr "芯板张数"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_core_thick
+msgid "Core Thick"
+msgstr "芯板厚度"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_order_create_time
+msgid "Create Time"
+msgstr "创建时间"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_make_flow_create_uid
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_create_uid
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_make_flow_create_date
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_create_date
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server_send_db
+msgid "Database"
+msgstr "数据库名"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,help:order_scatter_process10.field_orders_synced_process_order_create_time
+msgid "Date on which sales order is created."
+msgstr "销售订单创建日期"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,help:order_scatter_process10.field_orders_synced_process_order_date
+msgid "Date on which the sales order is confirmed."
+msgstr "确认销售订单的日期"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_manner_uos
+msgid "Delivery UOS"
+msgstr "交货单位"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_make_flow_display_name
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_display_name
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_test_point
+msgid "ETest Points"
+msgstr "测试点"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_file_id
+msgid "File"
+msgstr "文件"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_fly_probe
+msgid "Fly Probe"
+msgstr "飞针"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Gold Finger Length And Width"
+msgstr "金手指长宽"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_gold_height
+msgid "Gold Height"
+msgstr "金手指长度"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_gold_root
+msgid "Gold Root"
+msgstr "金手指根数"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_gold_size
+msgid "Gold Size"
+msgstr "沉金面积"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_gold_thick
+msgid "Gold Thick / μ\""
+msgstr "金手指厚度 / μ\""
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Gold Thick Nickel Thickness And Coated Area"
+msgstr "金厚镍厚和涂覆面积"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_gold_width
+msgid "Gold Width"
+msgstr "金手指宽度"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server_send_host
+msgid "HOST"
+msgstr "目标地址"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_hole_copper
+msgid "Hole Copper"
+msgstr "孔铜"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_make_flow_id
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_id
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server_id
+msgid "ID"
+msgstr "ID"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Important Information"
+msgstr "重要信息"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_inner
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Inner Copper"
+msgstr "内铜"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Item"
+msgstr "款"
+
+#. module: order_scatter_process10
+#: selection:orders.synced.process,state:0
+msgid "Just Create"
+msgstr "刚创建"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server_name
+msgid "Key Value"
+msgstr "键值"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_make_flow___last_update
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process___last_update
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_make_flow_write_uid
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_write_uid
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_make_flow_write_date
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_write_date
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_layer_id
+msgid "Layer Number"
+msgstr "层数"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_cpo_width
+msgid "Length/mm"
+msgstr "长/mm"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_hole_space
+msgid "Line To Hole Distance"
+msgstr "内层孔到线"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server_send_login
+msgid "Login Account"
+msgstr "登入账号"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_make_flow_flow_time
+msgid "Make Time"
+msgstr "状态时间"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_min_hole
+msgid "Min Hole"
+msgstr "最小孔"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_min_space
+msgid "Min Line Space"
+msgstr "最小线距"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_min_width
+msgid "Min Line Width"
+msgstr "最小线宽"
+
+#. module: order_scatter_process10
+#: code:addons/order_scatter_process10/models/orders_synced_process.py:18
+#, python-format
+msgid "Multiple servers detected, system cannot identify which server to sync"
+msgstr "检测到多个服务器，系统无法识别要同步的服务器"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_make_flow_name
+msgid "Name"
+msgstr "名称"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_nickel_thick
+msgid "Nickel Thick"
+msgstr "镍厚"
+
+#. module: order_scatter_process10
+#: code:addons/order_scatter_process10/models/orders_synced_process.py:26
+#, python-format
+msgid "No sales customer code in board factory is \"%s\""
+msgstr "板厂中没有销售客户代码 \"%s\""
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_order_state
+msgid "Order Status"
+msgstr "订单状态"
+
+#. module: order_scatter_process10
+#: model:ir.actions.act_window,name:order_scatter_process10.synced_actions
+#: model:ir.model,name:order_scatter_process10.model_orders_synced_process
+#: model:ir.ui.menu,name:order_scatter_process10.menu_order_synced
+msgid "Orders Synced Process"
+msgstr "订单同步处理"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_outer
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Outer Copper"
+msgstr "外铜"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "PCB Process Parameter Information"
+msgstr "PCB参数信息"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_quote_line_id
+msgid "PCB Quotation Line"
+msgstr "产品编号明细"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_thick
+msgid "PCB Thickness"
+msgstr "PCB厚度"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "PCS"
+msgstr "PCS"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_pcs_number
+msgid "PCS Number"
+msgstr "PCS数量"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_pcs_per_set
+msgid "PCS Number Per Set"
+msgstr "交货方式"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "PCS Per Set"
+msgstr "交货方式"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server_send_port
+msgid "PORT"
+msgstr "目标端口号"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_pp
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "PP Number"
+msgstr "PP张数"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_send_process_server_send_pwd
+msgid "Password"
+msgstr "密码"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_product_state
+msgid "Product State"
+msgstr "产品状态"
+
+#. module: order_scatter_process10
+#: model:ir.model,name:order_scatter_process10.model_make_flow
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_make_ids
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Production Process Information"
+msgstr "产品状态信息"
+
+#. module: order_scatter_process10
+#: selection:orders.synced.process,state:0
+msgid "Production Status"
+msgstr "产品状态"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_uom_qty
+msgid "Quantity"
+msgstr "数量"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_remark
+msgid "Remark"
+msgstr "备注"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_rogers_number
+msgid "Rogers Number"
+msgstr "Rogers张数"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "SET"
+msgstr "SET"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_make_flow_synced_id
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_order_id
+msgid "Sale Order"
+msgstr "销售订单"
+
+#. module: order_scatter_process10
+#: model:ir.model,name:order_scatter_process10.model_sale_order
+msgid "Sales Order"
+msgstr "销售订单"
+
+#. module: order_scatter_process10
+#: model:ir.actions.act_window,name:order_scatter_process10.send_actions
+#: model:ir.actions.server,name:order_scatter_process10.ir_cron_send_action_ir_actions_server
+#: model:ir.cron,cron_name:order_scatter_process10.ir_cron_send_action
+#: model:ir.cron,name:order_scatter_process10.ir_cron_send_action
+#: model:ir.model,name:order_scatter_process10.model_send_process_server
+#: model:ir.ui.menu,name:order_scatter_process10.send_list_1
+msgid "Send Process Server"
+msgstr "发送处理服务器"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Sheet Number"
+msgstr "张数"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_text_id
+msgid "Silkscreen Color"
+msgstr "文字颜色"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_sink_gold
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Sink Gold Thick"
+msgstr "沉金金厚"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Size/MM"
+msgstr "尺寸/MM"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_mask_id
+msgid "Solder Mask Color"
+msgstr "阻焊颜色"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_material_ids
+msgid "Special Material"
+msgstr "特殊材料"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_process_ids
+msgid "Special Processes"
+msgstr "特殊工艺"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_state
+msgid "Status"
+msgstr "状态"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_surface_id
+msgid "Surface Process"
+msgstr "表面工艺"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_name
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Sync Number"
+msgstr "同步编号"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_sale_order_synced_bool
+#: model:ir.model.fields,field_description:order_scatter_process10.field_sale_order_synced_str
+msgid "Synced"
+msgstr "同步"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_order_form_view
+msgid "Synced Order"
+msgstr "同步订单"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.send_form
+msgid "Test Connection"
+msgstr "测试连接"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_test_stand
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Test Stand"
+msgstr "测试架"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_stand_source
+msgid "Test Stand Source"
+msgstr "测试架来源"
+
+#. module: order_scatter_process10
+#: code:addons/order_scatter_process10/models/orders_synced_process.py:31
+#: code:addons/order_scatter_process10/models/receive_send_process.py:62
+#, python-format
+msgid "Test connection error, please determine whether the target host server is running normally; or the port number and target address are correct. The error is as follows: \n"
+"%s"
+msgstr "测试连接错误,请确定目标主机服务器是否正常运行;或端口号和目标地址正确.错误如下: \n"
+"%s"
+
+#. module: order_scatter_process10
+#: code:addons/order_scatter_process10/models/orders_synced_process.py:33
+#: code:addons/order_scatter_process10/models/receive_send_process.py:64
+#, python-format
+msgid "The communication connection is successful, but the other party may not have the required module installed. The error is as follows: \n"
+"%s"
+msgstr "通信连接成功,但是对方可能未安装所需的模块.错误如下:\n"
+"%s"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "Thickness And Number"
+msgstr "Rogers芯板厚度和数量"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_total_hole
+msgid "Total Holes"
+msgstr "总孔数"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "U''\n"
+"                                Coated Area"
+msgstr "U''\n"
+"                                涂覆面积"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "U''\n"
+"                                Nickel Thick"
+msgstr "U''\n"
+"                                镍厚"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_via_id
+msgid "Via"
+msgstr "过孔"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_volume_type
+msgid "Volume Type"
+msgstr "批量类型"
+
+#. module: order_scatter_process10
+#: model:ir.model.fields,field_description:order_scatter_process10.field_orders_synced_process_cpo_length
+msgid "Width/mm"
+msgstr "宽/mm"
+
+#. module: order_scatter_process10
+#: model:ir.ui.view,arch_db:order_scatter_process10.synced_form
+msgid "mil"
+msgstr "mil"
+

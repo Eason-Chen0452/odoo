@@ -1,0 +1,1342 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* cpo_preferential
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-16 08:12+0000\n"
+"PO-Revision-Date: 2019-08-16 08:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_customer_contact_models.py:213
+#: code:addons/cpo_preferential/models/preferential_customer_contact_models.py:215
+#, python-format
+msgid " Discount or discount amount "
+msgstr " 折扣或优惠金额 "
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_customer_contact_models.py:213
+#, python-format
+msgid " Full(excluding shipping) "
+msgstr " 满(不包邮) "
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_acceptance_criteria_ids
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_acceptance_criteria_ids
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Acceptance criteria"
+msgstr "验收标准"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Activation start"
+msgstr "活动开始"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_active
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_active
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_active
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_active
+msgid "Active"
+msgstr "有效"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Active time"
+msgstr "活动有效时间"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_tree
+#: model:ir.ui.view,arch_db:cpo_preferential.views_check_amount_tree
+#: model:ir.ui.view,arch_db:cpo_preferential.views_check_date_tree
+msgid "Activity"
+msgstr "活动"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_tree
+msgid "Activity Plan"
+msgstr "活动计划"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_creation_time
+msgid "Activity creation time"
+msgstr "活动创建时间"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_tree
+msgid "Activity display page"
+msgstr "活动显示网页"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Activity expired"
+msgstr "重置"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_search_views
+msgid "Activity number"
+msgstr "活动编号"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Activity over"
+msgstr "活动结束"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_search_views
+msgid "Activity prioritization"
+msgstr "活动优先顺序"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Activity strategy"
+msgstr "活动策略"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_name
+msgid "Activity tag"
+msgstr "活动标签"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Activity takes effect"
+msgstr "活动生效"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_name_title
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Activity theme"
+msgstr "活动主题"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Activity time"
+msgstr "活动时间"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_actual_amount
+msgid "Actual amount"
+msgstr "实际金额"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_all_bool
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_all_bool
+msgid "All Product Use"
+msgstr "所有产品可使用"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_cpo_all_bool
+msgid "All analysis"
+msgstr "所有数据"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_all_offer_bool
+msgid "All participation offer"
+msgstr "均参与优惠"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:381
+#, python-format
+msgid "Allow only deletion of activity status for draft status"
+msgstr "只允许删除草稿状态的活动计划."
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_allow_sharing_bool
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_allow_sharing_bool
+msgid "Allow sharing"
+msgstr "允许分享"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Amount information"
+msgstr "金额信息"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Amount,\n"
+"                                                    Discount or discount amount"
+msgstr "金额,\n"
+"                                                    折扣或折扣金额"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Amount,\n"
+"                                Discount or discount amount"
+msgstr "金额,\n"
+"                                折扣或折扣金额"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_base_type_ids
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_base_type_ids
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Base type"
+msgstr "基材类型"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_package_bool
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_package_bool
+msgid "Can Be Used For Package Price"
+msgstr "可使用于打包价"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_card_bool
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_card_bool
+#: model:ir.model.fields,field_description:cpo_preferential.field_sale_order_cpo_card_bool
+msgid "Card"
+msgstr "有门槛"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_end
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_end
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_start
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_period
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_start
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_form
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_line_form
+msgid "Cash Coupon Time Period"
+msgstr "现金券有效时间段"
+
+#. module: cpo_preferential
+#: model:ir.actions.act_window,name:cpo_preferential.cash_coupons_line_window
+#: model:ir.actions.act_window,name:cpo_preferential.cash_coupons_window
+#: model:ir.model,name:cpo_preferential.model_cash_coupons
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_cash_id
+#: model:ir.ui.menu,name:cpo_preferential.cash_menu_1
+#: model:ir.ui.menu,name:cpo_preferential.cash_menu_1_list
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_form
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_tree
+msgid "Cash Coupons"
+msgstr "现金券"
+
+#. module: cpo_preferential
+#: model:ir.model,name:cpo_preferential.model_cash_coupons_line
+#: model:ir.ui.menu,name:cpo_preferential.cash_menu_2_list
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_line_form
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_line_tree
+msgid "Cash Coupons Detail"
+msgstr "现金券明细"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_name
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_form
+msgid "Cash Voucher Name"
+msgstr "现金券名称"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_check_time_bool
+msgid "Check time"
+msgstr "检查时间"
+
+#. module: cpo_preferential
+#: model:ir.actions.act_window,help:cpo_preferential.preferential_activity_plan_window
+msgid "Click on the \"Create\" button on the left to create a special offer plan."
+msgstr "点击左侧 \"创建\" 按钮，可进行创建优惠活动计划."
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_partner_id
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_partner_id
+msgid "Client"
+msgstr "客户"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_color
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_color
+msgid "Color Index"
+msgstr "颜色索引"
+
+#. module: cpo_preferential
+#: model:ir.actions.act_window,name:cpo_preferential.coupon_kanban_window
+msgid "Coupon"
+msgstr "优惠券"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_cpo_coupon_bool
+msgid "Coupon analysis"
+msgstr "优惠券数据"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Coupon basic information"
+msgstr "优惠券基本信息"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_coupon_bool
+msgid "Coupon coupon"
+msgstr "是否领取优惠券"
+
+#. module: cpo_preferential
+#: model:ir.actions.act_window,name:cpo_preferential.coupon_details_window_view
+#: model:ir.ui.menu,name:cpo_preferential.coupon_details_menu_1
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Coupon details"
+msgstr "优惠券明细"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Coupon is open to the public"
+msgstr "优惠券向公众开放"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:463
+#, python-format
+msgid "Coupon physical code and allowed to share; two can be selected, you can also choose!\n"
+"Allow sharing: \n"
+"Allow old customers to share coupons with new customers who are not using our website!\n"
+"Please also remember to fill in the limited hours of sharing.\n"
+"PS:Time-limited days: \n"
+"refers to the moment when the old customer clicks to share the coupon.\n"
+"If you receive it within the number of days you specify, it will be considered successful; \n"
+"if the time limit is exceeded, \n"
+"the new customer will not be able to get the coupon shared by the old customer, \n"
+"but the coupon of the old customer is not invalid!"
+msgstr "优惠券物理码和允许分享；两个可以都不选，也可以都选!\n"
+"允许分享: \n"
+"允许老客户将优惠券分享给没有使用我们网站的新客户!\n"
+"同时请记得填写分享的限时天数.\n"
+"PS:限时天数: \n"
+"是指老客户点击分享优惠券的那一时刻开始算.\n"
+"在你指定的天数内领取才算分享成功; \n"
+"如果过了限定时间, \n"
+"则新客户无法获得老客户分享的优惠券, \n"
+"但是该老客户的优惠券没有作废!"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:480
+#, python-format
+msgid "Coupon physical code and allowed to share; two can be selected, you can also choose!\n"
+"Coupon physics code: \n"
+"The coupon will be generated in paper or other form for distribution;\n"
+"new and old customers can use"
+msgstr "优惠券物理码和允许分享；两个可以都不选，也可以都选!\n"
+"优惠券物理码: \n"
+"将优惠券生成纸质或者别的形式，进行发放;\n"
+"新老客户均可以使用"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_physical_code_bool
+msgid "Coupon physics code"
+msgstr "优惠券物理码"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Coupon settings"
+msgstr "优惠券设置"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Coupon situation"
+msgstr "优惠券情况"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_coupon_time
+msgid "Coupon time"
+msgstr "领取优惠券时间"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_transfer_bool
+msgid "Coupon transferred"
+msgstr "优惠券转让"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_kanban_views
+msgid "Coupon usage:"
+msgstr "优惠券使用量:"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_coupon_volume
+msgid "Coupon volume"
+msgstr "优惠券量"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_state
+msgid "Cpo State"
+msgstr "标识"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_create_uid
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_create_uid
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_create_uid
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_create_uid
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_create_date
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_create_date
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_create_date
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_create_date
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Customers and orders"
+msgstr "客户及订单"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_kanban_views
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_kanban_views
+msgid "Data analysis"
+msgstr "数据分析"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_data_analysis_graph_view
+msgid "Data analysis chart"
+msgstr "数据分析图"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_sale_order_customer_id
+msgid "Detail"
+msgstr "明细"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_kanban_views
+#: model:ir.ui.view,arch_db:cpo_preferential.time_kanban_views
+msgid "Detail details"
+msgstr "明细详情"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Details of the event"
+msgstr "活动详情"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_sale_order_cpo_coupon_text
+msgid "Discount Information"
+msgstr "优惠信息"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Discount information"
+msgstr "优惠信息"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Discount or discount amount"
+msgstr "折扣或优惠金额"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_discount_type
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_discount_type
+#: model:ir.model.fields,field_description:cpo_preferential.field_sale_order_cpo_discount_type
+msgid "Discount type"
+msgstr "优惠类型"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_discounted_price
+msgid "Discounted price"
+msgstr "优惠金额"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_display_name
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_display_name
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_display_name
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_display_name
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: cpo_preferential
+#: selection:cash.coupons,state:0
+#: selection:preferential.cpo_time_and_money,state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_cpo_draft_bool
+msgid "Draft status"
+msgstr "草稿状态的"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_public_coupon_bool
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_public_coupon_bool
+msgid "Due to distribution to other websites"
+msgstr "此类型优惠券用于发放到其他网站"
+
+#. module: cpo_preferential
+#: selection:cash.coupons,state:0
+#: selection:preferential.cpo_time_and_money,state:0
+msgid "Effective and started"
+msgstr "已生效且已开始"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_cpo_started_bool
+msgid "Effective and started status"
+msgstr "已生效且已开始状态的"
+
+#. module: cpo_preferential
+#: selection:cash.coupons,state:0
+#: selection:preferential.cpo_time_and_money,state:0
+msgid "Effective yet started"
+msgstr "已生效未开始"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_cpo_force_bool
+msgid "Effective yet started status"
+msgstr "已生效未开始状态的"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_end_time
+msgid "End Time"
+msgstr "活动结束时间"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_con_end_time
+msgid "End time"
+msgstr "结束日期"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Event name"
+msgstr "活动名称"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_tree
+msgid "Event withdrawal page"
+msgstr "活动撤回网页"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_customer_contact_models.py:218
+#, python-format
+msgid "First discount "
+msgstr "首单折扣 "
+
+#. module: cpo_preferential
+#: selection:cash.coupons,state:0
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: selection:preferential.cpo_time_and_money,state:0
+msgid "Forced cancellation"
+msgstr "强制取消"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,help:cpo_preferential.field_preferential_cpo_customer_contact_cpo_card_bool
+#: model:ir.model.fields,help:cpo_preferential.field_preferential_cpo_time_and_money_cpo_card_bool
+#: model:ir.model.fields,help:cpo_preferential.field_sale_order_cpo_card_bool
+msgid "Free shipping, Card product discounts"
+msgstr "不含运费, 有门槛产品折扣"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,help:cpo_preferential.field_preferential_cpo_customer_contact_cpo_no_card_bool
+#: model:ir.model.fields,help:cpo_preferential.field_preferential_cpo_time_and_money_cpo_no_card_bool
+#: model:ir.model.fields,help:cpo_preferential.field_sale_order_cpo_no_card_bool
+msgid "Free shipping, No card product discounts"
+msgstr "不含运费, 无门槛产品折扣"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_full
+msgid "Full"
+msgstr "满"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_card_term
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_card_term
+#: model:ir.model.fields,field_description:cpo_preferential.field_sale_order_cpo_card_term
+msgid "Full amount"
+msgstr "满金额"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_amount_bool
+msgid "Full reduction offer"
+msgstr "优惠券"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Full(excluding shipping)"
+msgstr "满(不含运费)"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_search_views
+msgid "Group By"
+msgstr "分组"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_id
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_id
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_id
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_id
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_id
+msgid "ID"
+msgstr "ID"
+
+#. module: cpo_preferential
+#: model:ir.actions.act_window,help:cpo_preferential.coupon_kanban_window
+msgid "If you have not created a coupon, you can create it by clicking on the “Promotion Plan” on the left side!"
+msgstr "未创建优惠券，可点击左侧方 “优惠活动计划” 进行创建!"
+
+#. module: cpo_preferential
+#: model:ir.actions.act_window,help:cpo_preferential.time_kanban_window
+msgid "If you have not created a time period offer, you can create it by clicking on the \"Promotion Plan\" on the left side!"
+msgstr "未创建时间段优惠，可点击左侧方 \"优惠活动计划\" 进行创建!"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:186
+#, python-format
+msgid "Incorrect 'Card money'"
+msgstr "不正确 '有门槛优惠折扣或金额'"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:178
+#, python-format
+msgid "Incorrect 'Card term'"
+msgstr "不正确 '有门槛条件金额'"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:194
+#, python-format
+msgid "Incorrect 'Discount type'"
+msgstr "不正确 '优惠类型'"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:170
+#, python-format
+msgid "Incorrect 'No card money'"
+msgstr "不正确 '无门槛优惠折扣或金额'"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:162
+#, python-format
+msgid "Incorrect 'Number of coupons'"
+msgstr "不正确 '优惠券数量'"
+
+#. module: cpo_preferential
+#: selection:preferential.cpo_time_and_money,cpo_state:0
+msgid "Invalid"
+msgstr "已失效"
+
+#. module: cpo_preferential
+#: selection:cash.coupons,state:0
+#: selection:preferential.cpo_time_and_money,state:0
+msgid "Invalid and over"
+msgstr "已失效且已结束"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_cpo_over_bool
+msgid "Invalid and over status"
+msgstr "已失效且已结束状态的"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_invalid_bool
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_invalid_over_bool
+msgid "Invalid over"
+msgstr "优惠活动结束"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_physical_code_bool
+msgid "Is it physical code?"
+msgstr "是物理券?"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_form
+msgid "Issuance Quantity And Amount"
+msgstr "发放数量和金额"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_issue_amount
+msgid "Issue Amount"
+msgstr "发放金额"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_issue_amount
+msgid "Issue Cash Coupon Amount"
+msgstr "发放现金券金额"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons___last_update
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line___last_update
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact___last_update
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money___last_update
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_write_uid
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_write_uid
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_write_uid
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_write_uid
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_write_date
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_write_date
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_write_date
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_write_date
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_layer_number_ids
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_layer_number_ids
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Layer number"
+msgstr "层数"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_card_money
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_no_card_money
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_card_money
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_no_card_money
+#: model:ir.model.fields,field_description:cpo_preferential.field_sale_order_cpo_card_money
+#: model:ir.model.fields,field_description:cpo_preferential.field_sale_order_cpo_no_card_money
+msgid "Less/Discount"
+msgstr "折扣/金额优惠"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_limit_days
+msgid "Limited time days"
+msgstr "限时天数"
+
+#. module: cpo_preferential
+#: model:ir.ui.menu,name:cpo_preferential.mass_customer_offer_settings_menu_1
+msgid "Mass customer offer settings"
+msgstr "大众客户优惠设置"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_material_brand_ids
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_material_brand_ids
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Material brand"
+msgstr "材料品牌"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/wizard/wizard_data_analysis.py:77
+#, python-format
+msgid "Multi-element data analysis graph"
+msgstr "多元素数据分析图"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_transfer_partner_id
+msgid "New customer"
+msgstr "新客户"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_no_card_bool
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_no_card_bool
+#: model:ir.model.fields,field_description:cpo_preferential.field_sale_order_cpo_no_card_bool
+msgid "No card"
+msgstr "无门槛"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_no_shared_bool
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_no_shared_bool
+msgid "Not Shared coupon"
+msgstr "互斥优惠"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_number
+msgid "Number"
+msgstr "编号"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_issue_number
+msgid "Number Of Cash Coupons Issued"
+msgstr "发放现金券数量"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_voucher_number
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Number of coupons"
+msgstr "优惠券数量"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_numeric
+msgid "Numeric"
+msgstr "编号"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_time_money_id
+msgid "Offer label"
+msgstr "优惠标签"
+
+#. module: cpo_preferential
+#: model:ir.ui.menu,name:cpo_preferential.offer_settings_menu_root
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Offer settings"
+msgstr "优惠设置"
+
+#. module: cpo_preferential
+#: model:ir.model,name:cpo_preferential.model_preferential_cpo_customer_contact
+msgid "Offer to contact customers"
+msgstr "优惠与客户"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Once canceled, the current offer is completely void, please consider clearly"
+msgstr "一旦取消，当前该优惠活动全部作废，请考虑清楚"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.time_kanban_views
+msgid "Order volume:"
+msgstr "订单交易量:"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_original_amount
+msgid "Original amount"
+msgstr "原金额"
+
+#. module: cpo_preferential
+#: selection:cash.coupons,product_type:0
+msgid "PCB"
+msgstr "PCB"
+
+#. module: cpo_preferential
+#: selection:cash.coupons,product_type:0
+msgid "PCBA"
+msgstr "PCBA"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_voucher_id
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Participate in coupon customers"
+msgstr "参与优惠券客户"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Participating products"
+msgstr "参与的产品"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_offer_bool
+msgid "Participation offer"
+msgstr "所选参与优惠"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_time_id
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Participation time customers"
+msgstr "参与时间优惠客户"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_physical_code
+msgid "Physical code"
+msgstr "物理码"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:256
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:289
+#, python-format
+msgid "Please check \"No threshold discount or discount amount\""
+msgstr "请检查 \"无门槛的折扣或优惠金额\""
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:253
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:286
+#, python-format
+msgid "Please check \"There is a threshold condition amount; discount or discount amount after full reduction\""
+msgstr "请检查 \"有门槛条件金额；满减后的折扣或优惠金额\""
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Please confirm whether to force the end or early termination of the offer"
+msgstr "请确认是否强制结束或提前结束该优惠活动"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:236
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:276
+#, python-format
+msgid "Please select the offer \"there is no threshold type\""
+msgstr "请选择优惠 \"有无门槛类型\""
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/wizard/wizard_data_analysis.py:86
+#, python-format
+msgid "Please select those offer data to analyze"
+msgstr "请选择要分析的优惠数据"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/cash_coupons.py:61
+#, python-format
+msgid "Please set \"Issuance Quantity And Amount\""
+msgstr "请设置 \"发放现金券数量和金额\""
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:250
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:283
+#, python-format
+msgid "Please set \"Number of Coupons\""
+msgstr "请正确设置 \"优惠券数量\""
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:234
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:280
+#, python-format
+msgid "Please set \"Promotional Participation Settings\""
+msgstr "请设置 \"优惠活动参与设置\""
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:232
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:278
+#, python-format
+msgid "Please set \"Share with other offers\""
+msgstr "请设置 \"是否与其他优惠共享\""
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/cash_coupons.py:63
+#, python-format
+msgid "Please set \"Usage Rules\""
+msgstr "请设置 \"使用规则\""
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:298
+#, python-format
+msgid "Please set \"time period offer or full reduction offer\"!"
+msgstr "请设置 \"时间段优惠或满减优惠活动\"!"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:187
+#, python-format
+msgid "Please set the discount or discount amount after the full reduction."
+msgstr "请正确设置满减后的折扣或优惠金额."
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:171
+#, python-format
+msgid "Please set the discount or discount amount without threshold."
+msgstr "请设置没有门槛的折扣或折扣金额."
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:195
+#, python-format
+msgid "Please set the offer type correctly."
+msgstr "请正确设置优惠类型."
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:179
+#, python-format
+msgid "Please set the threshold correctly."
+msgstr "请正确设置有门槛条件金额."
+
+#. module: cpo_preferential
+#: model:ir.actions.act_window,name:cpo_preferential.preferential_activity_window
+#: model:ir.ui.menu,name:cpo_preferential.activity_menu_1
+msgid "Preferential Activity"
+msgstr "优惠活动"
+
+#. module: cpo_preferential
+#: model:ir.actions.act_window,name:cpo_preferential.preferential_activity_plan_window
+#: model:ir.ui.menu,name:cpo_preferential.time_amount_menu_1
+msgid "Preferential Activity Plan"
+msgstr "优惠活动计划"
+
+#. module: cpo_preferential
+#: model:res.groups,name:cpo_preferential.group_preferential_users
+msgid "Preferential Users"
+msgstr "优惠活动用户(只读)"
+
+#. module: cpo_preferential
+#: model:ir.model,name:cpo_preferential.model_preferential_data_analysis
+msgid "Preferential data analysis"
+msgstr "优惠数据分析"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_display
+msgid "Priority display in web pages"
+msgstr "优先显示网页中"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_product_type
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_product_type
+msgid "Product Type"
+msgstr "产品类型"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Product activity settings"
+msgstr "产品活动设置"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Promotion participation setting"
+msgstr "优惠活动参与设置"
+
+#. module: cpo_preferential
+#: model:ir.ui.menu,name:cpo_preferential.public_offer_details_menu_1
+msgid "Public offer details"
+msgstr "大众优惠明细"
+
+#. module: cpo_preferential
+#: model:ir.model,name:cpo_preferential.model_preferential_cpo_time_and_money
+msgid "Public offers, time and amount"
+msgstr "优惠设置，时间&金额"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_remarks
+msgid "Remarks"
+msgstr "客户留言"
+
+#. module: cpo_preferential
+#: model:ir.model,name:cpo_preferential.model_sale_order
+msgid "Sales Order"
+msgstr "销售订单"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_sale_id
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_sale_order_id
+msgid "Sales order"
+msgstr "销售订单"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_cpo_end
+msgid "Search end time"
+msgstr "搜索结束时间"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_search_views
+msgid "Search for offers"
+msgstr "搜索优惠"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_cpo_start
+msgid "Search start time"
+msgstr "搜索开始时间"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_time_money_id
+msgid "Selected offers"
+msgstr "精选优惠"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_sequence
+msgid "Sequence"
+msgstr "序号"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_shared_bool
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_shared_bool
+msgid "Shared coupon"
+msgstr "同享优惠"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_silkscreen_color_ids
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_silkscreen_color_ids
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Silkscreen color"
+msgstr "阻焊颜色"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:452
+#, python-format
+msgid "Single element data analysis chart"
+msgstr "单元素数据分析图"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_special_material_ids
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_special_material_ids
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Special material"
+msgstr "特殊材料"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_special_process_ids
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_special_process_ids
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Special process"
+msgstr "特殊工艺"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_designation_bool
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_designation_bool
+msgid "Specified Product Use"
+msgstr "指定产品使用"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_con_start_time
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_start_time
+msgid "Starting time"
+msgstr "活动开始时间"
+
+#. module: cpo_preferential
+#: selection:cash.coupons,product_type:0
+msgid "Stencil"
+msgstr "钢网"
+
+#. module: cpo_preferential
+#: model:res.groups,name:cpo_preferential.group_preferential_administrator
+msgid "Super administratort"
+msgstr "优惠超级管理员"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_surface_process_ids
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_surface_process_ids
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Surface process"
+msgstr "表面工艺"
+
+#. module: cpo_preferential
+#: model:ir.actions.act_window,help:cpo_preferential.preferential_activity_window
+msgid "The 'Promotion Plan' has not been created yet, you can click on the left side offer plan to create"
+msgstr "尚未创建'优惠活动计划'，可点击左侧方优惠活动计划进行创建."
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:221
+#, python-format
+msgid "The coupons you set will coincide with the time of other coupons. For details, please click the button on the side."
+msgstr "你所设置的优惠券与其他优惠券时间重合，详情请稍后点击优惠券边上的按钮."
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:163
+#, python-format
+msgid "The number of coupons is at least one"
+msgstr "优惠券数量至少是一张"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:212
+#, python-format
+msgid "The time period discount you set coincides with other times. For details, please click the button on the side."
+msgstr "你所设置的时间段优惠与其他时间重合，详情请稍后点击时间段优惠边上按钮."
+
+#. module: cpo_preferential
+#: model:ir.actions.act_window,help:cpo_preferential.time_details_window_view
+msgid "There is no order volume transaction for this time period offer!"
+msgstr "此期间优惠没有订单量交易!"
+
+#. module: cpo_preferential
+#: model:ir.actions.act_window,name:cpo_preferential.time_kanban_window
+msgid "Time"
+msgstr "时间段"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_data_analysis_cpo_time_bool
+msgid "Time analysis"
+msgstr "时间段数据"
+
+#. module: cpo_preferential
+#: model:ir.actions.act_window,name:cpo_preferential.time_details_window_view
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Time details"
+msgstr "时间段明细"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:404
+#, python-format
+msgid "Time of all coupons"
+msgstr "所有优惠券的时间"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:390
+#, python-format
+msgid "Time of all time periods"
+msgstr "所有时间段优惠的时间"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_date_bool
+msgid "Time offer"
+msgstr "时间段优惠"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Time period basic information"
+msgstr "时间段基本信息"
+
+#. module: cpo_preferential
+#: model:ir.ui.menu,name:cpo_preferential.time_details_menu_1
+msgid "Time period discount details"
+msgstr "时间段优惠明细"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Time period discount or amount reduction"
+msgstr "请选择时间段优惠或满减优惠活动"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_public_bool
+msgid "Tourist Status"
+msgstr "游客身份？"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_public_time
+msgid "Tourist Time"
+msgstr "以游客身份领券时间"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_public_code
+msgid "Tourist identification code"
+msgstr "游客识别码"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_cpo_trading_volume
+msgid "Trading volume"
+msgstr "交易量"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+msgid "Transfer tracking"
+msgstr "转让追踪"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_transfer_end_time
+msgid "Transferred end time"
+msgstr "转让结束时间"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_transfer_start_time
+msgid "Transferred start time"
+msgstr "转让开始时间"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_form
+#: model:ir.ui.view,arch_db:cpo_preferential.cash_coupons_line_form
+msgid "Usage Rules"
+msgstr "使用规则"
+
+#. module: cpo_preferential
+#: selection:preferential.cpo_time_and_money,cpo_state:0
+msgid "Using"
+msgstr "使用中"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_via_process_ids
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_via_process_ids
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Via process"
+msgstr "过孔工艺"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_volume_level_ids
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_volume_level_ids
+#: model:ir.ui.view,arch_db:cpo_preferential.coupon_details_view_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_form
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+#: model:ir.ui.view,arch_db:cpo_preferential.time_details_view_form
+msgid "Volume level"
+msgstr "产品面积"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_voucher_bool
+msgid "Voucher"
+msgstr "优惠券"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:211
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:220
+#, python-format
+msgid "Warm Prompt"
+msgstr "温馨提示！！"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "What do you need to tell everyone?"
+msgstr "有什么需要告诉大家的?"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_receive_bool
+msgid "Whether To Receive Cash Coupons"
+msgstr "是否领取现金券"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_line_use_bool
+msgid "Whether To Use Cash Coupons"
+msgstr "是否使用现金券"
+
+#. module: cpo_preferential
+#: model:ir.ui.view,arch_db:cpo_preferential.preferential_activity_plan_form
+msgid "Whether to share offers"
+msgstr "是否与其他优惠共享"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_customer_contact_cpo_use_bool
+msgid "Whether to use coupons"
+msgstr "是否使用优惠券"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:259
+#: code:addons/cpo_preferential/models/preferential_time_and_money_models.py:292
+#, python-format
+msgid "You have chosen to allow sharing, please also fill in the number of days in the box, if you don't understand the question mark on the side you can click"
+msgstr "你选择了允许分享，也请填写边上框框的限时天数，如果不明白可点击边上的问号"
+
+#. module: cpo_preferential
+#: selection:preferential.cpo_time_and_money,cpo_state:0
+msgid "has not started"
+msgstr "未开始"
+
+#. module: cpo_preferential
+#: code:addons/cpo_preferential/models/preferential_customer_contact_models.py:211
+#: selection:preferential.cpo_time_and_money,cpo_discount_type:0
+#, python-format
+msgid "money"
+msgstr "金额"
+
+#. module: cpo_preferential
+#: model:ir.model.fields,field_description:cpo_preferential.field_cash_coupons_state
+#: model:ir.model.fields,field_description:cpo_preferential.field_preferential_cpo_time_and_money_state
+msgid "status"
+msgstr "状态"
+

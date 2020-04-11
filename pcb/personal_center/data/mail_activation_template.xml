@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mail_activation_template1" model="mail.template">
+            <field name="name">Customer Registration: Email Activation Template</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="email_from"><![CDATA["${object.company_id.name|safe}" <${(object.company_id.email or user.email)|safe}>]]></field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="subject">China PCB One Account Activation</field>
+            <field name="body_html">
+                <![CDATA[
+            % set signup_url = object.get_signup_url()
+            <div style="padding:0px;width:600px;margin:auto;background: #62bce4 repeat top /100%;color:#777777">
+                <table cellspacing="0" cellpadding="0" style="width:600px;border-collapse:collapse;background:inherit;color:inherit">
+                    <tbody>
+                        <tr><td valign="center" width="200" style="padding:10px 10px 10px 5px;font-size: 12px">
+                            <img src="/logo.png" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${user.company_id.name}">
+                        </td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <div style="padding:5px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#040202">
+                    <p style="font-size:15px;">Almost done, ${object.name}!,</p>
+                    <p style="font-size:15px;">To complete you iCloudFactory sign up, we just need to verify your email address: ${object.email}</p>
+                    <div style="text-align: center; margin-top: 16px;">
+                        <center>
+                            <a href="${signup_url}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#875A7B; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #62bce4; border: 1px solid #03A9F4; border-radius:3px">Activate the account</a>
+                        </center>
+                    </div>
+                    <p style="font-size:12px;"><b> Once verified, you can start using all of iCloudFactory's features to Calculate the price of PCB, PCBA and stencil online, place an order online, and check the status of your order online.</b></p>
+                    <h4>Button not working? Paste the following link into your browser: <a>${signup_url}</a></h4>
+                    <h4>You’re receiving this email because you recently created a new iCloudFactory account or added a new email address. If this wasn't you, please ignore this email.</h4>
+                </div>
+            </div>
+            <div style="padding:0px;width:600px;height:60px; margin:auto; margin-top: 10px; background: #62bce4 repeat top /100%;color:#FFFFFF">
+                <p><center style="font-size:25px;">${user.company_id.name | safe}</center></p>
+            </div>
+                ]]>
+            </field>
+            <field name="user_signature" eval="False"/>
+        </record>
+    </data>
+</odoo>

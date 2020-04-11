@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="crm_msa.sales_promotion_mail_template" model="mail.template">
+            <field name="name">Sales Promotion Mail Template</field>
+            <field name="model_id" ref="crm_msa.model_mass_sales_mail"/>
+            <field name="email_from"><![CDATA["${object.write_uid.company_id.name|safe}" <${(object.write_uid.company_id.email)|safe}>]]></field>
+            <!--<field name="email_from">eason.chen@chinapcbone.com.cn</field>-->
+            <field name="subject">${object.name|safe}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                ${object.get_redirect_url(object.mail_content)|safe}
+            </field>
+        </record>
+
+        <!--定时 发送邮件-->
+        <record id="SendMarketingEmailCron" model="ir.cron" forcecreate="True">
+            <field name="name">Send Marketing Email</field>
+            <field name="model">mass_sales.mail</field>
+            <field name="doall">False</field>
+            <field name="active">False</field>
+            <field name="interval_number">8</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_mass_sales_mail"/>
+            <field name="state">code</field>
+            <field name="code">model.MassSalesSendEmail()</field>
+            <field name="priority">0</field>
+            <field name="website_published">False</field>
+        </record>
+
+        <!--定时 处理客户邮件转态-->
+        <record id="CustomerEmailStateCron" model="ir.cron" forcecreate="True">
+            <field name="name">Customer Email State</field>
+            <field name="model">mass_sales.mail</field>
+            <field name="doall">False</field>
+            <field name="active">False</field>
+            <field name="interval_number">15</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_mass_sales_mail"/>
+            <field name="state">code</field>
+            <field name="code">model.CustomerEmailState()</field>
+            <field name="priority">0</field>
+            <field name="website_published">False</field>
+        </record>
+
+        <!--定时 处理退回邮件-->
+        <record id="return_processing" model="ir.cron" forcecreate="True">
+            <field name="name">Email Return Process</field>
+            <field name="model">mail.return_processing</field>
+            <field name="doall">False</field>
+            <field name="active">False</field>
+            <field name="interval_number">20</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_mail_return_processing"/>
+            <field name="state">code</field>
+            <field name="code">model.ProcessReturnEmail()</field>
+            <field name="priority">0</field>
+            <field name="website_published">False</field>
+        </record>
+
+        <!--定时删除 处理退回邮件-->
+        <record id="DeleteProcessedEmailCron" model="ir.cron" forcecreate="True">
+            <field name="name">Delete Processed Email</field>
+            <field name="model">mail.return_processing</field>
+            <field name="doall">False</field>
+            <field name="active">False</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_mail_return_processing"/>
+            <field name="state">code</field>
+            <field name="code">model.DeleteProcessedEmail()</field>
+            <field name="priority">0</field>
+            <field name="website_published">False</field>
+        </record>
+
+        <!--定时删除 mail.message中的邮件-->
+        <record id="DeleteMailMessageCron" model="ir.cron" forcecreate="True">
+            <field name="name">Delete Mail Message</field>
+            <field name="model">mail.return_processing</field>
+            <field name="doall">False</field>
+            <field name="active">False</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_mail_return_processing"/>
+            <field name="state">code</field>
+            <field name="code">model.DeleteMailMessage()</field>
+            <field name="priority">0</field>
+            <field name="website_published">False</field>
+        </record>
+
+    </data>
+</odoo>

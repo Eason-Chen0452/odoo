@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<document filename="ChinaPCBOne Quotation EN.pdf">
+  <template pageSize="(827.0,1169.0)" title="KaoQing Report" author="Charles Chen" allowSplitting="20">
+    <pageTemplate id="first"><frame id="first" x1="1.0" y1="1.0" width="827.0" height="1169.0"/></pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Table0"><blockAlignment value="LEFT"/><blockValign value="TOP"/>
+
+    </blockTableStyle>
+    
+    <blockTableStyle id="Standard_Outline"><blockAlignment value="LEFT"/><blockValign value="TOP"/></blockTableStyle>
+    <blockTableStyle id="Table1"><blockAlignment value="LEFT"/><blockValign value="TOP"/>
+   <!-- <lineStyle kind="LINEBELOW" colorName="red" start="0,0" stop="0,0" thickness="1"/>-->
+    <lineStyle kind="LINEAFTER" colorName="black" start="0,0" stop="1,2" thickness="1"/>
+    <lineStyle kind="LINEBEFORE" colorName="black" start="0,0" stop="1,2" thickness="1"/>
+    <lineStyle kind="LINEABOVE" colorName="black" start="0,0" stop="1,0" thickness="1"/>
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table2"><blockAlignment value="LEFT"/><blockValign value="TOP"/>
+      <lineStyle kind="GRID" colorName="black" thickness="1" start="0,0" stop="1,2" />
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table3"><blockAlignment value="LEFT"/><blockValign value="TOP"/>
+      <lineStyle kind="GRID" colorName="black" thickness="1" start="0,0" stop="8,8" />
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table4"><blockAlignment value="LEFT"/><blockValign value="TOP"/>
+      <lineStyle kind="GRID" colorName="black" thickness="1" start="0,0" stop="8,7" />
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table5"><blockAlignment value="LEFT"/><blockValign value="TOP"/>
+      <!--<lineStyle kind="GRID" colorName="green" thickness="1" start="0,0" stop="1,3" />-->
+      <lineStyle kind="LINEAFTER" colorName="black" start="0,0" stop="1,2" thickness="1"/>
+    <lineStyle kind="LINEBEFORE" colorName="black" start="0,0" stop="1,2" thickness="1"/>
+    <!--<lineStyle kind="LINEABOVE" colorName="yellow" start="0,0" stop="1,0" thickness="1"/>-->
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table6"><blockAlignment value="CENTER"/><blockValign value="TOP"/>
+      <lineStyle kind="GRID" colorName="black" thickness="1" start="0,0" stop="0,0" />
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table7"><blockAlignment value="CENTER"/><blockValign value="TOP"/>
+      <lineStyle kind="LINEAFTER" colorName="black" start="1,0" stop="1,2" thickness="1"/>
+      <lineStyle kind="LINEBEFORE" colorName="black" start="0,0" stop="0,2" thickness="1"/>
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table8"><blockAlignment value="CENTER"/><blockValign value="TOP"/>
+      <lineStyle kind="LINEAFTER" colorName="black" start="0,0" stop="0,5" thickness="1"/>
+      <lineStyle kind="LINEBEFORE" colorName="black" start="0,0" stop="0,5" thickness="1"/>
+    </blockTableStyle>
+    
+    <blockTableStyle id="Table9"><blockAlignment value="CENTER"/><blockValign value="TOP"/>
+      <lineStyle kind="LINEAFTER" colorName="black" start="3,0" stop="3,5" thickness="1"/>
+      <lineStyle kind="LINEBEFORE" colorName="black" start="0,0" stop="0,5" thickness="1"/>
+      <lineStyle kind="LINEBELOW" colorName="black" start="0,-1" stop="3,-1" thickness="1"/>
+    </blockTableStyle>
+
+    <blockTableStyle id="Table10"><blockAlignment value="CENTER"/><blockValign value="TOP"/>
+    </blockTableStyle>    
+    
+    <initialize><paraStyle name="all" alignment="justify"/></initialize>
+    <paraStyle name="Standard" fontSize="13.0" leading="15" alignment="LEFT" spaceBefore="1.0" spaceAfter="1.0"/>
+    <paraStyle name="Heading" fontSize="15.0" leading="15" alignment="CENTER" spaceBefore="10.0" spaceAfter="6.0"/>
+    <paraStyle name="Text body" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="List" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Caption" fontSize="12.0" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="Index" />
+    <paraStyle name="P2" fontSize="15.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Table Contents" />
+    <paraStyle name="terp_header_Centre" fontSize="13.0" leading="15" alignment="CENTER" spaceBefore="1.0" spaceAfter="12.0"/>
+    <paraStyle name="terp_header_Centre1" fontSize="22.0" leading="15" alignment="CENTER" spaceBefore="1.0" spaceAfter="12.0"/>
+    <paraStyle name="terp_header_Centre2" fontSize="13.0" leading="15" alignment="LEFT" spaceBefore="1.0" spaceAfter="12.0"/>
+    <paraStyle name="terp_header_Centre3" fontSize="9.0" leading="15" alignment="CENTER" spaceBefore="1.0" spaceAfter="12.0"/>
+    <paraStyle name="terp_header" fontSize="25.0" leading="1" alignment="RIGHT" spaceBefore="1.0" spaceAfter="1.0"/>
+    <images/>
+  </stylesheet>
+  <story>
+  <pto>
+    <para style="terp_header_Centre">[[repeatIn(objects,'o')]]</para>
+    <para style="terp_header_Centre">[[ setLang(o.partner_id.lang) ]]</para>
+    <blockTable colWidths="280.0,300.0,220.0" style="Table0" rowHeights="35.0"><tr>
+     <td><image x="1" y="1" height="50.0" width="150" >[[ company.logo or removeParentNode('image') ]]</image></td><td><para style="terp_header">[[ company.rml_header1 ]]</para></td><td></td></tr>
+     </blockTable>
+    
+<section>
+<section>
+      <para style="terp_header_Centre">[[repeatIn(get_quotation_report(objects,o.id), 'k')]]</para>
+    </section>
+    <blockTable colWidths="200.0,300.0,300.0" style="Table0" rowHeights="35.0">
+    <tr><td><para></para></td> <td><para style="terp_header_Centre1">PCB QUOTATION</para></td> <td><para></para></td></tr>
+    </blockTable>
+    <blockTable colWidths="400.0,400.0" style="Table1" rowHeights="25">
+      <tr>
+        <td><para style="Standard">Custome:  [[ (o.partner_id and o.partner_id.name or o.lead_id and o.lead_id.partner_name or '' )]]</para></td>
+        <td><para style="Standard">From:  [[ o.user_id.name ]]</para></td>
+      </tr>
+      <tr>
+        <td><para style="Standard">    ATT:[[(o.name==k['quotation_name']) and k['lxr'] or '']]  </para></td>
+       
+        <!--repeatIn(filter( lambda l: l.product_id.type=='service' ,o.invoice_line), 'line')-->
+        
+        <td><para style="Standard"> Tel:   [[(o.name==k['quotation_name']) and k['em_phone'] or '']]</para>   </td>
+      </tr>
+      <tr>
+        <td><para style="Standard">Country: [[ o.partner_id and (o.partner_id.street and (o.partner_id.street2 and (o.partner_id.street+o.partner_id.street2) or o.partner_id.street) or (o.partner_id.street2 and o.partner_id.street2 or '')) or (o.lead_id and (o.lead_id.street and (o.lead_id.street2 and o.lead_id.street+o.lead_id.street2 or o.lead_id.street) or (o.lead_id.street2 and o.lead_id.street2 or '')) or '')]]</para></td>
+        <td><para style="Standard">Date: [[ o.date_order]]</para></td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="800.0" style="Table2" rowHeights="25">
+      <tr><td><para style="terp_header_Centre3"> Specifications</para></td></tr>
+    </blockTable>
+    <section>
+     <para style="terp_header_Centre">[[repeatIn(o.quotation_line,'line')]]</para>
+    </section>
+  <!--  <blockTable colWidths="300.0,500.0" style="Table3" rowHeights="25">
+      <tr><td><para>File Name:</para></td><td><para style="terp_header_Centre2">[[ line.customer_file_name ]]</para></td></tr>
+      <tr><td><para>    Layer:</para></td><td><para> [[line.layer_number.layer_number]] </para></td></tr>
+      <tr><td><para>Material thickness:</para></td><td><para> [[line.base_type.name]] / [[line.thickness]] </para></td></tr>
+      <tr><td><para>Inner Copper Thickness:</para></td><td><para> [[line.inner_copper ]] </para></td></tr>
+      <tr><td><para>Outer Copper Thickness:</para></td><td><para> [[line.outer_copper ]] </para></td></tr>
+      <tr><td><para>solder mask:</para></td><td><para> [[line.silkscreen_color.name ]] </para></td></tr>
+      <tr><td><para>silkscreen:</para></td><td><para> [[line.text_color.name ]] </para></td></tr>
+      <tr><td><para>Panel size(cm):</para></td><td><para> [[line.length ]] * [[line.width]] </para></td></tr>
+      <tr><td><para>Finishing:</para></td><td><para> [[line.surface.name ]] </para></td></tr>
+    </blockTable>-->
+    <blockTable colWidths="100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0" style="Table3" rowHeights="25">
+      <tr>
+        <td><para>File Name:</para></td>
+        <td><para>    Layer:</para></td>
+        <td><para>Material thickness:</para></td>
+        <td><para>Copper Thickness:</para></td>
+        <td><para>solder mask:</para></td>
+        <td><para>silkscreen:</para></td>
+        <td><para>Panel size(cm):</para></td>
+        <td><para>Finishing:</para></td>
+      </tr>
+      <tr>
+        <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.customer_file_name]] </para></td>
+        <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.layer_number.layer_number]] </para></td>
+        <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.base_type.name]] / [[line.thickness]] </para></td>
+        <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.inner_copper ]] </para></td>
+        <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.silkscreen_color.name ]] </para></td>
+        <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.text_color.name ]] </para></td>
+        <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.length ]] * [[line.width]] </para></td>
+        <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.surface.name ]] </para></td>
+      </tr>
+      <tr><td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td></tr>
+      <tr><td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td></tr>
+    </blockTable>
+    
+    <blockTable colWidths="100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0" style="Table10" rowHeights="25">
+      <tr><td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td></tr>
+      <tr><td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td></tr>
+    </blockTable>    
+    
+
+    <blockTable colWidths="50.0,80.0,70.0,100.0,100.0,100.0,100.0,100.0,100.0" style="Table4" rowHeights="25">
+      <tr><td><para>File</para></td>  <td><para>Quantity(pcs)</para></td>  <td><para>Unit Price</para></td>  <td><para>Egnine Fee</para></td>  <td><para>Test Fee</para></td>  <td><para>Process Fee</para></td>  <td><para>Film Fee</para></td>  <td><para>Total Amount</para></td>  <td><para>Lead Time(day)</para></td></tr>
+      <tr><td><para>[[repeatIn(o.quotation_line,'line')]][[line.customer_file_name]]</para></td>  <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.product_uom_qty]]</para></td>  <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.price_unit]]</para></td>  <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.engine_fee+line.set_engine_fee]]</para></td>  <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.test_fee+line.set_test_fee]]</para></td>  <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.process_fee+line.set_process_fee]]</para></td>  <td><para>[[repeatIn(o.quotation_line,'line')]] [[line.film_fee+line.set_film_fee]]</para></td>  <td><para>[[repeatIn(o.quotation_line,'line')]][[line.subtotal]]</para></td>  <td><para>[[repeatIn(o.quotation_line,'line')]][[line.delivery_hour]]</para></td></tr>
+      <!--<tr><td><para></para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td></tr>
+      <tr><td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td></tr>
+      <tr><td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td></tr>
+      <tr><td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td></tr>
+      <tr><td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td></tr>
+      <tr><td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td>  <td><para> </para></td></tr>-->
+    </blockTable>
+    <section>
+         <para style="terp_header_Centre">[[repeatIn(o.quotation_line,'line')]]</para>
+    </section>
+    <blockTable colWidths="300.0,500.0" style="Table5" rowHeights="25">
+      <tr><td><para>ADDitional Comments:</para></td><td><para>[[line.request]]</para></td></tr>
+      <tr></tr>
+      <tr></tr>
+    </blockTable>
+    <blockTable colWidths="800.0" style="Table6" rowHeights="25">
+      <tr><td><para style="terp_header_Centre">Setup and E-test tooling cost is one time charge.</para></td></tr>
+    </blockTable>
+    <blockTable colWidths="150.0,650.0" style="Table7" rowHeights="25">
+      <tr><td><para>Trading Terms:</para></td><td><para>[[o.note]]</para></td></tr>
+      <tr><td><para>Quality Standard:</para></td><td><para>IPC Class II</para></td></tr>
+      <tr><td><para>Payment Terms:</para></td><td><para>NET30days</para></td></tr>
+    </blockTable>
+    
+
+    <blockTable colWidths="800.0" style="Table8" rowHeights="25">
+      <tr></tr>
+      <tr><td><para>Terms and Condition:</para></td></tr>
+      <tr><td><para>1.Quotationis valid for 14 days on any gold surfce finishing and 21 days on other finishings.
+ 2.if no repeat quotation within 12 months,the related Etest fixture will be scrapped without further notice.</para></td></tr>
+      <tr></tr>
+
+    </blockTable>
+    <blockTable colWidths="150.0,200.0,150.0,300.0" style="Table9" rowHeights="25">
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+      <tr><td><para>Signature:[[ o.user_id.name ]]</para></td> <td><para></para></td> <td><para>CUSTOMER:</para></td> <td><para></para></td></tr>
+      <tr><td><para>Date:[[ formatLang(o.date_order,date = True) ]]</para></td> <td><para></para></td> <td><para>Date:</para></td> <td><para></para></td></tr>
+      <tr></tr>
+    </blockTable>
+    
+</section>
+  </pto>
+  </story>
+</document>

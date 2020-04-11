@@ -1,0 +1,102 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_cpo_sale_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-11 03:07+0000\n"
+"PO-Revision-Date: 2018-09-11 03:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.sale_report_invoice_doc_inhert
+msgid "<span><strong>Bill To:</strong></span>"
+msgstr "<span><strong>Bill To:</strong></span>"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "Assembly"
+msgstr "组装"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "Jig"
+msgstr "夹具"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "Lead Time(days)"
+msgstr "交货时间"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "Material"
+msgstr "物料"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "OFF"
+msgstr "OFF"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "PCB"
+msgstr "PCB"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "PCB Cost:"
+msgstr "PCB Cost:"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "PCB Spec:"
+msgstr "PCB Spec:"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "Payment term: Online payment, T/T in advance"
+msgstr "支付方式:在线支付，电汇预付"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.sale_report_invoice_doc_inhert
+msgid "Phone:"
+msgstr "电话:"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "Quality Standard: IPC Class II"
+msgstr "Quality Standard: IPC Class II"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "Service"
+msgstr "服务"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "Shipping"
+msgstr "送货"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "Special"
+msgstr "Special"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "Stencil"
+msgstr "钢网"
+
+#. module: website_cpo_sale_report
+#: model:ir.ui.view,arch_db:website_cpo_sale_report.cpo_inherit_sale_report
+msgid "Trading Terms: Door to Door"
+msgstr "Trading Terms: Door to Door"
+

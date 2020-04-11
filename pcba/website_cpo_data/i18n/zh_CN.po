@@ -1,0 +1,122 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_cpo_data
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-28 11:44+0000\n"
+"PO-Revision-Date: 2019-10-28 11:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_thickne
+msgid "Board thickness"
+msgstr "板厚"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_cpo_country
+msgid "Country"
+msgstr "国家"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_cpo_time
+msgid "Create Time"
+msgstr "创建时间"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_lenght
+msgid "Length"
+msgstr "长度"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_order_type
+msgid "Order Type"
+msgstr "报价类型"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_count_pcb
+msgid "PCB Count"
+msgstr "PCB次数"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_count_pcba
+msgid "PCBA Count"
+msgstr "PCBA次数"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_user_name
+msgid "Panter Name"
+msgstr "关联用户"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_quantity
+msgid "Quantity"
+msgstr "数量"
+
+#. module: website_cpo_data
+#: model:ir.ui.menu,name:website_cpo_data.cpo_record_data_menu_list
+msgid "Quotation record statistics"
+msgstr "报价记录统计"
+
+#. module: website_cpo_data
+#: model:ir.actions.act_window,name:website_cpo_data.cpo_record_data_action
+msgid "Record data window"
+msgstr "记录数据"
+
+#. module: website_cpo_data
+#: model:ir.ui.menu,name:website_cpo_data.cpo_record_data_menu_one
+msgid "Statistical analysis of data"
+msgstr "数据统计分析"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_count_num
+msgid "Total count"
+msgstr "总数"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_user_ip
+msgid "User IP"
+msgstr "用户IP地址"
+
+#. module: website_cpo_data
+#: model:ir.ui.view,arch_db:website_cpo_data.cpo_record_data_form
+msgid "User Record"
+msgstr "用户记录"
+
+#. module: website_cpo_data
+#: model:ir.ui.view,arch_db:website_cpo_data.cpo_record_data_list
+msgid "View all"
+msgstr "查看所有"
+
+#. module: website_cpo_data
+#: model:ir.model.fields,field_description:website_cpo_data.field_website_cpo_data_record_data_width
+msgid "Width"
+msgstr "宽度"
+
+#. module: website_cpo_data
+#: model:ir.model,name:website_cpo_data.model_website_cpo_data_record_data
+msgid "website_cpo_data.record_data"
+msgstr "记录数据"
+

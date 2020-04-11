@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--表面处理-->
+        <record id="surface_treatment_001" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_001</field>
+        </record>
+        <record id="surface_treatment_002" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_002</field>
+        </record>
+        <record id="surface_treatment_003" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_003</field>
+        </record>
+        <record id="surface_treatment_004" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_004</field>
+        </record>
+        <record id="surface_treatment_005" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_005</field>
+        </record>
+        <record id="surface_treatment_006" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_006</field>
+        </record>
+        <record id="surface_treatment_007" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_007</field>
+        </record>
+        <record id="surface_treatment_008" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_008</field>
+        </record>
+        <record id="surface_treatment_009" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_009</field>
+        </record>
+        <record id="surface_treatment_010" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_010</field>
+        </record>
+        <record id="surface_treatment_011" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_011</field>
+        </record>
+        <record id="surface_treatment_012" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_012</field>
+        </record>
+        <record id="surface_treatment_013" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_013</field>
+        </record>
+        <record id="surface_treatment_014" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_014</field>
+        </record>
+        <record id="surface_treatment_015" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_015</field>
+        </record>
+        <record id="surface_treatment_016" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_016</field>
+        </record>
+        <record id="surface_treatment_017" model="cpo_click_select_category">
+            <field name="cpo_category_type">Surface Treatment</field>
+            <field name="name">surface_treatment_017</field>
+        </record>
+
+
+        <record id="surface_treatment_001_001" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Lead Free HASL</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_001')"/>
+        </record>
+        <record id="surface_treatment_002_002" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Immersion gold</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_002')"/>
+        </record>
+        <record id="surface_treatment_003_003" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Immersion Tin</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_003')"/>
+        </record>
+        <record id="surface_treatment_004_004" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Immersion Silver</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_004')"/>
+        </record>
+        <record id="surface_treatment_005_005" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Nickel palladium gold</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_005')"/>
+        </record>
+        <record id="surface_treatment_006_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Lead Free HASL</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_006')"/>
+        </record>
+        <record id="surface_treatment_006_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Gold finger</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_006')"/>
+        </record>
+        <record id="surface_treatment_007_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Immersion gold</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_007')"/>
+        </record>
+        <record id="surface_treatment_007_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Gold finger</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_007')"/>
+        </record>
+        <record id="surface_treatment_008_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Immersion Tin</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_008')"/>
+        </record>
+        <record id="surface_treatment_008_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Gold finger</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_008')"/>
+        </record>
+        <record id="surface_treatment_009_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Immersion Silver</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_009')"/>
+        </record>
+        <record id="surface_treatment_009_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Gold finger</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_009')"/>
+        </record>
+        <record id="surface_treatment_0010_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Nickel palladium gold</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_010')"/>
+        </record>
+        <record id="surface_treatment_0010_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Gold finger</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_010')"/>
+        </record>
+        <record id="surface_treatment_0011_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Immersion gold</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_011')"/>
+        </record>
+        <record id="surface_treatment_0011_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">OSP</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_011')"/>
+        </record>
+        <record id="surface_treatment_0012_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Immersion gold</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_012')"/>
+        </record>
+        <record id="surface_treatment_0012_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Complete gold plating</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_012')"/>
+        </record>
+        <record id="surface_treatment_0013_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Immersion gold</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_013')"/>
+        </record>
+        <record id="surface_treatment_0013_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Gold plating</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_013')"/>
+        </record>
+        <record id="surface_treatment_0014_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">OSP</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_014')"/>
+        </record>
+        <record id="surface_treatment_0014_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Gold finger</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_014')"/>
+        </record>
+        <record id="surface_treatment_0015_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Gold finger</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_015')"/>
+        </record>
+        <record id="surface_treatment_0015_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Complete gold plating</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_015')"/>
+        </record>
+        <record id="surface_treatment_0016_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Gold finger</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_016')"/>
+        </record>
+        <record id="surface_treatment_0016_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Surface Treatment</field>
+            <field name="name">Gold plating</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('surface_treatment_016')"/>
+        </record>
+        <!--表面处理结束-->
+
+        <!--Solder Mask Color B-->
+                <!--大类-->
+        <record id="solder_mask_color_001" model="cpo_click_select_category">
+            <field name="cpo_category_type">Solder Mask Color</field>
+            <field name="name">solder_mask_color_001</field>
+        </record>
+        <record id="solder_mask_color_002" model="cpo_click_select_category">
+            <field name="cpo_category_type">Solder Mask Color</field>
+            <field name="name">solder_mask_color_002</field>
+        </record>
+        <record id="solder_mask_color_003" model="cpo_click_select_category">
+            <field name="cpo_category_type">Solder Mask Color</field>
+            <field name="name">solder_mask_color_003</field>
+        </record>
+        <record id="solder_mask_color_004" model="cpo_click_select_category">
+            <field name="cpo_category_type">Solder Mask Color</field>
+            <field name="name">solder_mask_color_004</field>
+        </record>
+        <record id="solder_mask_color_005" model="cpo_click_select_category">
+            <field name="cpo_category_type">Solder Mask Color</field>
+            <field name="name">solder_mask_color_005</field>
+        </record>
+        <record id="solder_mask_color_006" model="cpo_click_select_category">
+            <field name="cpo_category_type">Solder Mask Color</field>
+            <field name="name">solder_mask_color_006</field>
+        </record>
+        <record id="solder_mask_color_007" model="cpo_click_select_category">
+            <field name="cpo_category_type">Solder Mask Color</field>
+            <field name="name">solder_mask_color_007</field>
+        </record>
+        <record id="solder_mask_color_008" model="cpo_click_select_category">
+            <field name="cpo_category_type">Solder Mask Color</field>
+            <field name="name">solder_mask_color_008</field>
+        </record>
+        <record id="solder_mask_color_009" model="cpo_click_select_category">
+            <field name="cpo_category_type">Solder Mask Color</field>
+            <field name="name">solder_mask_color_009</field>
+        </record>
+        <record id="solder_mask_color_010" model="cpo_click_select_category">
+            <field name="cpo_category_type">Solder Mask Color</field>
+            <field name="name">solder_mask_color_010</field>
+        </record>
+        <record id="solder_mask_color_011" model="cpo_click_select_category">
+            <field name="cpo_category_type">Solder Mask Color</field>
+            <field name="name">solder_mask_color_011</field>
+        </record>
+        <record id="solder_mask_color_012" model="cpo_click_select_category">
+            <field name="cpo_category_type">Solder Mask Color</field>
+            <field name="name">solder_mask_color_012</field>
+        </record>
+                <!--小类-->
+        <record id="solder_mask_color_001_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Solder Mask Color</field>
+            <field name="name">Green</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('solder_mask_color_001')"/>
+        </record>
+        <record id="solder_mask_color_002_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Solder Mask Color</field>
+            <field name="name">	Yellow</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('solder_mask_color_002')"/>
+        </record>
+        <record id="solder_mask_color_003_03" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Solder Mask Color</field>
+            <field name="name">Red</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('solder_mask_color_003')"/>
+        </record>
+        <record id="solder_mask_color_004_04" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Solder Mask Color</field>
+            <field name="name">Blue</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('solder_mask_color_004')"/>
+        </record>
+        <record id="solder_mask_color_005_05" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Solder Mask Color</field>
+            <field name="name">White</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('solder_mask_color_005')"/>
+        </record>
+        <record id="solder_mask_color_006_06" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Solder Mask Color</field>
+            <field name="name">Black</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('solder_mask_color_006')"/>
+        </record>
+        <record id="solder_mask_color_007_07" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Solder Mask Color</field>
+            <field name="name">Purple</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('solder_mask_color_007')"/>
+        </record>
+        <record id="solder_mask_color_008_08" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Solder Mask Color</field>
+            <field name="name">Matte Blue</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('solder_mask_color_008')"/>
+        </record>
+        <record id="solder_mask_color_009_09" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Solder Mask Color</field>
+            <field name="name">Matte green</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('solder_mask_color_009')"/>
+        </record>
+        <record id="solder_mask_color_010_10" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Solder Mask Color</field>
+            <field name="name">Matte black</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('solder_mask_color_010')"/>
+        </record>
+        <record id="solder_mask_color_011_11" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Solder Mask Color</field>
+            <field name="name">Transparent</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('solder_mask_color_011')"/>
+        </record>
+        <record id="solder_mask_color_012_12" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Solder Mask Color</field>
+            <field name="name">No</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('solder_mask_color_012')"/>
+        </record>
+        <!--Solder Mask Color E-->
+
+        <!--Existing fiducials B-->
+                <!--大类-->
+        <record id="existing_fiducials_001" model="cpo_click_select_category">
+            <field name="cpo_category_type">Existing fiducials</field>
+            <field name="name">existing_fiducials_001</field>
+        </record>
+        <record id="existing_fiducials_002" model="cpo_click_select_category">
+            <field name="cpo_category_type">Existing fiducials</field>
+            <field name="name">existing_fiducials_002</field>
+        </record>
+        <record id="existing_fiducials_003" model="cpo_click_select_category">
+            <field name="cpo_category_type">Existing fiducials</field>
+            <field name="name">existing_fiducials_003</field>
+        </record>
+
+                <!--小类-->
+        <record id="existing_fiducials_001_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Existing fiducials</field>
+            <field name="name">No</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('existing_fiducials_001')"/>
+        </record>
+        <record id="existing_fiducials_002_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Existing fiducials</field>
+            <field name="name">Half lasered</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('existing_fiducials_002')"/>
+        </record>
+        <record id="existing_fiducials_003_03" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Existing fiducials</field>
+            <field name="name">Lasered through</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('existing_fiducials_003')"/>
+        </record>
+        <!-- Existing fiducials E -->
+        <!--Existing fiducials B-->
+                <!--大类-->
+        <record id="stencil_side_001" model="cpo_click_select_category">
+            <field name="cpo_category_type">Stencil Side</field>
+            <field name="name">stencil_side_001</field>
+        </record>
+        <record id="stencil_side_002" model="cpo_click_select_category">
+            <field name="cpo_category_type">Stencil Side</field>
+            <field name="name">stencil_side_002</field>
+        </record>
+        <record id="stencil_side_003" model="cpo_click_select_category">
+            <field name="cpo_category_type">Stencil Side</field>
+            <field name="name">stencil_side_003</field>
+        </record>
+        <record id="stencil_side_004" model="cpo_click_select_category">
+            <field name="cpo_category_type">Stencil Side</field>
+            <field name="name">stencil_side_004</field>
+        </record>
+
+                <!--小类-->
+        <record id="stencil_side_001_01" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Stencil Side</field>
+            <field name="name">Top</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('stencil_side_001')"/>
+        </record>
+        <record id="stencil_side_002_02" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Stencil Side</field>
+            <field name="name">Bottom</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('stencil_side_002')"/>
+        </record>
+        <record id="stencil_side_003_03" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Stencil Side</field>
+            <field name="name">Top+Bottom(On Single Stencil)</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('stencil_side_003')"/>
+        </record>
+        <record id="stencil_side_004_04" model="cpo_click_select_detailed">
+            <field name="cpo_detailed_type">Stencil Side</field>
+            <field name="name">Top &amp; Bottom(On Separate Stencil)</field>
+            <field name="res_model">cpo_click_select_category</field>
+            <field name="cpo_detailed_rel" eval="ref('stencil_side_004')"/>
+        </record>
+        <!--<record id="stencil_side_005_05" model="cpo_click_select_detailed">-->
+            <!--<field name="cpo_detailed_type">Stencil Side</field>-->
+            <!--<field name="name">Bottom</field>-->
+            <!--<field name="res_model">cpo_click_select_category</field>-->
+            <!--<field name="cpo_detailed_rel" eval="ref('stencil_side_004')"/>-->
+        <!--</record>-->
+        <!-- Existing fiducials E -->
+    </data>
+</odoo>

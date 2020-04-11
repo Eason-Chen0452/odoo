@@ -1,0 +1,1201 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sales_agent
+#   * website_cpo_sale
+#   * sales_team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-30 03:48+0000\n"
+"PO-Revision-Date: 2019-09-30 03:48+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_cpo_sale
+#: model:ir.ui.menu,name:website_cpo_sale.sale_order_express_waybill
+msgid "Express order information"
+msgstr "PCBA客供物料快递信息"
+
+#. module: sales_team
+#: model:crm.team,name:sales_team.team_sales_department
+msgid "Sales"
+msgstr "销售订单情况"
+
+#. module: sales_team
+#: model:crm.team,name:sales_team.salesteam_website_sales
+msgid "Website"
+msgstr "网站试价记录"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_sale_order_count
+msgid "# of Sales Order"
+msgstr "# 销售订单"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_kanban_dashboard
+msgid "<span>New</span>"
+msgstr "<span>新</span>"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_kanban_dashboard
+msgid "<span>Reporting</span>"
+msgstr "<span>报告</span>"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_kanban_dashboard
+msgid "<span>View</span>"
+msgstr "<span>视图</span>"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_property_account_payable_id
+msgid "Account Payable"
+msgstr "应付账款"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_property_account_receivable_id
+msgid "Account Receivable"
+msgstr "应收账款"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_message_needaction
+msgid "Action Needed"
+msgstr "需要行动"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_active
+msgid "Active"
+msgstr "有效"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_activity_ids
+msgid "Activities"
+msgstr "活动"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_kanban_dashboard
+msgid "Add to My Favorites"
+msgstr "加入我的收藏"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_type
+msgid "Address Type"
+msgstr "地址类型"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_country_ids
+msgid "Agent Manageable Country"
+msgstr "国外销售代理管理的国家"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_client_ids
+msgid "Agent Manageable Customer"
+msgstr "国外销售代理管理的客户"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_alias_id
+msgid "Alias"
+msgstr "别名"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_alias_contact
+msgid "Alias Contact Security"
+msgstr "别名联系人安全"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.crm_team_sales_agent_search
+msgid "Archived"
+msgstr "已归档"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_bank_account_count
+msgid "Bank"
+msgstr "银行"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_bank_ids
+msgid "Banks"
+msgstr "银行"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_barcode
+msgid "Barcode"
+msgstr "条码"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_message_bounce
+msgid "Bounce"
+msgstr "退回"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_channel_ids
+msgid "Channels"
+msgstr "频道"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "若客户性质属公司客户请打勾，个人客户请勿勾选。"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_customer
+msgid "Check this box if this contact is a customer."
+msgstr "如果该联系人是客户就选择这个框"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_supplier
+msgid "Check this box if this contact is a vendor. If it's not checked, purchase people will not see it when encoding a purchase order."
+msgstr "此联系人为供应商时请勾选此复选框。否则，采购人员在采购订单时将无法选取此联系人。"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_employee
+msgid "Check this box if this contact is an Employee."
+msgstr "勾选此项 如果 这个 联系人 是 一个 员工."
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_city
+msgid "City"
+msgstr "城市"
+
+#. module: sales_agent
+#: model:ir.actions.act_window,help:sales_agent.crm_team_sales_agent
+msgid "Click here to define a new sales channel."
+msgstr "单击此处以定义新的销售渠道."
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_kanban_dashboard
+msgid "Click to add/remove from favorite"
+msgstr "点击从收藏夹添加/删除"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_color
+msgid "Color Index"
+msgstr "颜色索引"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_commercial_partner_id
+msgid "Commercial Entity"
+msgstr "商业实体"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_company_ids
+msgid "Companies"
+msgstr "公司"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_ref_company_ids
+msgid "Companies that refers to partner"
+msgstr "公司是指业务伙伴"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_company_id
+msgid "Company"
+msgstr "公司"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_company_name
+msgid "Company Name"
+msgstr "公司名称"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_commercial_company_name
+msgid "Company Name Entity"
+msgstr "公司名称实体"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_company_type
+msgid "Company Type"
+msgstr "公司类别"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_contact_address
+msgid "Complete Address"
+msgstr "完整地址"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_crm_team_count_complex_1
+#: model:ir.model.fields,field_description:sales_agent.field_crm_team_count_complex_2
+#: model:ir.model.fields,field_description:sales_agent.field_crm_team_count_complex_3
+#: model:ir.model.fields,field_description:sales_agent.field_crm_team_count_complex_4
+#: model:ir.model.fields,field_description:sales_agent.field_crm_team_count_complex_5
+msgid "Complex Count"
+msgstr "综合统计"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_child_ids
+msgid "Contacts"
+msgstr "联系人"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_contract_ids
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_contracts_count
+msgid "Contracts"
+msgstr "合约"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_payment_token_count
+msgid "Count Payment Token"
+msgstr "付款令牌计数"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_message_bounce
+msgid "Counter of the number of bounced emails for this contact"
+msgstr "此联系人退回邮件数量计数器"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_commercial_partner_country_id
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_country_id
+msgid "Country"
+msgstr "国家"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_credit_limit
+msgid "Credit Limit"
+msgstr "信用额度"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_currency_id
+msgid "Currency"
+msgstr "币种"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_property_stock_customer
+msgid "Customer Location"
+msgstr "客户位置"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_property_payment_term_id
+msgid "Customer Payment Terms"
+msgstr "客户付款条款"
+
+#. module: sales_agent
+#: model:ir.actions.act_window,name:sales_agent.crm_team_sales_agent
+msgid "Dashboard"
+msgstr "仪表板"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_date
+msgid "Date"
+msgstr "日期"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "发布到记录上的最后消息的日期"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_trust
+msgid "Degree of trust you have in this debtor"
+msgstr "对此债务人的信任度"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_partner_share
+msgid "Either customer (no user), either shared user. Indicated the current partner is a customer without access or with a limited access created for sharing data."
+msgstr "客户(无用户)，共享用户。 指示当前合作伙伴是无法访问的客户，或者为共享数据创建的有限访问权限."
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_email
+msgid "Email"
+msgstr "Email"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_alias_id
+msgid "Email address internally associated with this user. Incoming emails will appear in the user's notifications."
+msgstr "关联这个用户的电子邮件地址，收到的电子邮件被显示在用户的通知中。"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_employee
+msgid "Employee"
+msgstr "员工"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_password_crypt
+msgid "Encrypted Password"
+msgstr "加密密码"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_share
+msgid "External user with limited access, created only for the purpose of sharing data."
+msgstr "创建你只用来共享数据的有限访问外部用户。"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_fax
+msgid "Fax"
+msgstr "传真"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_property_account_position_id
+msgid "Fiscal Position"
+msgstr "财政状况"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_message_follower_ids
+msgid "Followers"
+msgstr "关注者"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "关注者(渠道)"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "关注者(业务伙伴)"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr "Format email address \"Name <email@domain>\""
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_email_formatted
+msgid "Formatted Email"
+msgstr "格式化的邮件"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.crm_team_sales_agent_search
+msgid "Group By..."
+msgstr "分组..."
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_groups_id
+msgid "Groups"
+msgstr "群组"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_has_unreconciled_entries
+msgid "Has Unreconciled Entries"
+msgstr "有未经协调的参赛作品"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_kanban_dashboard
+msgid "Historical website trial price data"
+msgstr "历史网站试价数据"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_action_id
+msgid "Home Action"
+msgstr "主页动作"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_id
+msgid "ID"
+msgstr "ID"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_im_status
+msgid "IM Status"
+msgstr "IM的状态"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_message_unread
+msgid "If checked new messages require your attention."
+msgstr "查看是否有需要留意的新信息。"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "如果勾选此项，有新消息会提醒你"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_opt_out
+msgid "If opt-out is checked, this contact has refused to receive emails for mass mailing and marketing campaign. Filter 'Available for Mass Mailing' allows users to filter the partners when performing mass mailing."
+msgstr "如果选中”退出“，这个联系人拒绝接收群发邮件和市场营销的电子邮件。筛选‘可用于群发邮件'允许用户筛选出允许群发邮件的业务伙伴。"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_team_id
+msgid "If set, this sales channel will be used for sales and assignations related to this partner"
+msgstr "如果设置，此销售渠道将用于与此合作伙伴相关的销售和分配。"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_action_id
+msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
+msgstr "如果指定的话，这个动作将在该用户账号登录后与标准的菜单一起执行。就是说登录第一画面将看到指定的菜单页面，懂吗"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_lang
+msgid "If the selected language is loaded in the system, all documents related to this contact will be printed in this language. If not, it will be English."
+msgstr "如果所选语言被载入系统，所有相关文档将以此语言显示。否则，以英语显示。"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_image
+msgid "Image"
+msgstr "图像"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_ref
+msgid "Internal Reference"
+msgstr "内部参考"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_invoice_warn
+msgid "Invoice"
+msgstr "发票"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_invoice_ids
+msgid "Invoices"
+msgstr "发票"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_message_is_follower
+msgid "Is Follower"
+msgstr "是关注者"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_is_company
+msgid "Is a Company"
+msgstr "是公司"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_customer
+msgid "Is a Customer"
+msgstr "是客户"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_supplier
+msgid "Is a Vendor"
+msgstr "是供应商"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_function
+msgid "Job Position"
+msgstr "工作岗位"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_journal_item_count
+msgid "Journal Items"
+msgstr "日记账项目"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_password
+msgid "Keep empty if you don't want the user to be able to connect on the system."
+msgstr "如果您不希望用户能够在系统上连接，请保持为空。"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_lang
+msgid "Language"
+msgstr "语言"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_message_last_post
+msgid "Last Message Date"
+msgstr "最后消息日期"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_last_website_so_id
+msgid "Last Online Sales Order"
+msgstr "上次在线销售订单"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_last_time_entries_checked
+msgid "Last time the invoices & payments matching was performed for this partner. It is set either if there's not at least an unreconciled debit and an unreconciled credit or if you click the \"Done\" button."
+msgstr "上次这个业务伙伴的发票和付款是匹配的。设置为调节的借方或者未调节的贷方或者你点击\"完成\"按钮"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_last_time_entries_checked
+msgid "Latest Invoices & Payments Matching Date"
+msgstr "最近的发票和付款匹配时间"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_login_date
+msgid "Latest connection"
+msgstr "最后连接"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_login
+msgid "Login"
+msgstr "登录"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_form
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_tree
+msgid "Login Account"
+msgstr "登入账号"
+
+#. module: sales_agent
+#: model:res.groups,name:sales_agent.sales_agent_manager
+msgid "Management Agent Privilege Administrator"
+msgstr "国外销售代理管理员"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_image_medium
+msgid "Medium-sized image"
+msgstr "中等尺寸图像"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_image_medium
+msgid "Medium-sized image of this contact. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
+msgstr "该联系人的中等尺寸照片，它自动缩放为128x128px，保存纵横比。表单视图和一些看板视图使用这个字段"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_invoice_warn_msg
+msgid "Message for Invoice"
+msgstr "发票消息"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_sale_warn_msg
+msgid "Message for Sales Order"
+msgstr "销售订单消息"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_picking_warn_msg
+msgid "Message for Stock Picking"
+msgstr "库存分拣单消息"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_message_ids
+msgid "Messages"
+msgstr "信息"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_mobile
+msgid "Mobile"
+msgstr "手机"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.crm_team_sales_agent_search
+msgid "My Favorites"
+msgstr "我的最爱"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_name
+msgid "Name"
+msgstr "名称"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "下一活动截止日期"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_activity_summary
+msgid "Next Activity Summary"
+msgstr "下一个活动摘要"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_activity_type_id
+msgid "Next Activity Type"
+msgstr "下一活动类型"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_comment
+msgid "Notes"
+msgstr "备注"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_notification_type
+msgid "Notification Management"
+msgstr "通知管理"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_message_needaction_counter
+msgid "Number of Actions"
+msgstr "行动数量"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_companies_count
+msgid "Number of Companies"
+msgstr "公司数量"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "需要行动消息的数量"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_message_unread_counter
+msgid "Number of unread messages"
+msgstr "未读消息的数量"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_opt_out
+msgid "Opt-Out"
+msgstr "退出"
+
+#. module: sales_agent
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:38
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:66
+#, python-format
+msgid "Order Completed"
+msgstr "订单完成"
+
+#. module: sales_agent
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:36
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:60
+#, python-format
+msgid "Order Inquiry (Do Not Have To Deal With)"
+msgstr "订单询价(不必处理)"
+
+#. module: sales_agent
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:37
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:63
+#, python-format
+msgid "Order Waiting Processing"
+msgstr "订单等待处理"
+
+#. module: sales_agent
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:49
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:105
+#, python-format
+msgid "PCB & PCBA Historical Trial Price"
+msgstr "PCB&PCBA 历史试价"
+
+#. module: sales_agent
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:46
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:93
+#, python-format
+msgid "PCB & PCBA ToDay Trial Price"
+msgstr "PCB&PCBA 今日试价"
+
+#. module: sales_agent
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:47
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:97
+#, python-format
+msgid "PCB Historical Trial Price"
+msgstr "PCB 历史试价"
+
+#. module: sales_agent
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:39
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:69
+#, python-format
+msgid "PCB Order"
+msgstr "PCB 订单"
+
+#. module: sales_agent
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:44
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:85
+#, python-format
+msgid "PCB ToDay Trial Price"
+msgstr "PCB 今日试价"
+
+#. module: sales_agent
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:48
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:101
+#, python-format
+msgid "PCBA Historical Trial Price"
+msgstr "PCBA 历史试价"
+
+#. module: sales_agent
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:40
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:72
+#, python-format
+msgid "PCBA Order"
+msgstr "PCBA 订单"
+
+#. module: sales_agent
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:45
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:89
+#, python-format
+msgid "PCBA ToDay Trial Price"
+msgstr "PCBA 今日试价"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_parent_name
+msgid "Parent name"
+msgstr "上级名称"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_partner_id
+msgid "Partner-related data of the user"
+msgstr "用户的业务伙伴相关数据。"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_password
+msgid "Password"
+msgstr "密码"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_debit_limit
+msgid "Payable Limit"
+msgstr "应付限额"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_payment_token_ids
+msgid "Payment Tokens"
+msgstr "付款令牌"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_phone
+msgid "Phone"
+msgstr "电话"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_notification_type
+msgid "Policy on how to handle Chatter notifications:\n"
+"- Emails: notifications are sent to your email\n"
+"- Odoo: notifications appear in your Odoo Inbox"
+msgstr "Policy on how to handle Chatter notifications:\n"
+"- Emails: notifications are sent to your email\n"
+"- Odoo: notifications appear in your Odoo Inbox"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_alias_contact
+msgid "Policy to post a message on the document using the mailgateway.\n"
+"- everyone: everyone can post\n"
+"- partners: only authenticated partners\n"
+"- followers: only followers of the related document or members of following channels\n"
+""
+msgstr "策略是通过邮件网关在文档上提交一个消息\n"
+"- everyone: 任何人都可以提交\n"
+"- partners: 只有认证过的合作伙伴\n"
+"- followers: 只有相关文件或下列频道成员的跟随者\n"
+""
+
+#. module: sales_agent
+#: model:ir.actions.act_window,name:sales_agent.sales_agent_window
+#: model:ir.model,name:sales_agent.model_sales_agent
+#: model:ir.ui.menu,name:sales_agent.sales_agent_menu_1
+msgid "Regional Sales Agent"
+msgstr "区域销售代理"
+
+#. module: sales_agent
+#: model:ir.ui.menu,name:sales_agent.sales_agent_menu_root
+msgid "Regional Sales Agent Management"
+msgstr "区域销售代理管理"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_parent_id
+msgid "Related Company"
+msgstr "关联公司"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_partner_id
+msgid "Related Partner"
+msgstr "相关的业务伙伴"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_kanban_dashboard
+msgid "Remove from My Favorites"
+msgstr "从我的收藏中删除"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_activity_user_id
+msgid "Responsible"
+msgstr "负责人"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_property_product_pricelist
+msgid "Sale Pricelist"
+msgstr "销售价格表"
+
+#. module: sales_agent
+#: model:ir.model,name:sales_agent.model_crm_team
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_sale_team_id
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_team_id
+msgid "Sales Channel"
+msgstr "Sales Channel"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_sale_team_id
+msgid "Sales Channel the user is member of. Used to compute the members of a sales channel through the inverse one2many"
+msgstr "用户所属的销售渠道。 用于通过反向one2many计算销售渠道的成员"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_sale_order_ids
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_sale_warn
+msgid "Sales Order"
+msgstr "销售订单"
+
+#. module: sales_agent
+#: model:res.groups,comment:sales_agent.group_sales_agent
+msgid "Sales agents can view their own data."
+msgstr "销售代理可以查看自己的数据。"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.crm_team_sales_agent_search
+msgid "Salesteams Search"
+msgstr "销售团队查询"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_industry_id
+msgid "Sector of Activity"
+msgstr "活动部门"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_invoice_warn
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_picking_warn
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_sale_warn
+msgid "Selecting the \"Warning\" option will notify user with the message, Selecting \"Blocking Message\" will throw an exception with the message and block the flow. The Message has to be written in the next field."
+msgstr "选择此“警告“选项，将通知用户此消息。r\n"
+"选择“受阻消息“选项，将在流程受阻时将抛出一个消息。r\n"
+"消息写入下一个字段。"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_self
+msgid "Self"
+msgstr "Self"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_new_password
+msgid "Set Password"
+msgstr "设置密码"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_kanban_dashboard
+msgid "Settings"
+msgstr "设置"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_partner_share
+msgid "Share Partner"
+msgstr "分享合作伙伴"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_share
+msgid "Share User"
+msgstr "共享用户"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_signature
+msgid "Signature"
+msgstr "签名"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_signup_expiration
+msgid "Signup Expiration"
+msgstr "注册到期"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_signup_token
+msgid "Signup Token"
+msgstr "注册令牌 Token"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_signup_type
+msgid "Signup Token Type"
+msgstr "注册令牌(Token)类型"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_signup_valid
+msgid "Signup Token is Valid"
+msgstr "注册令牌(Token)是有效的"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_signup_url
+msgid "Signup URL"
+msgstr "注册网址"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_image_small
+msgid "Small-sized image"
+msgstr "小尺寸图像"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_image_small
+msgid "Small-sized image of this contact. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr "联系人小尺寸图像。自动缩放为64x64px ，保留纵横比。此字段用于任何需要小图像的场合"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_new_password
+msgid "Specify a value only when creating a user or if you're changing the user's password, otherwise leave empty. After a change of password, the user has to login again."
+msgstr "仅在新建用户或修改该用户的密码时输入此字段值，否则留空。修改密码后，用户必须重新登录。"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_activity_state
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_state_id
+msgid "State"
+msgstr "省/ 州"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_state
+msgid "Status"
+msgstr "状态"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+
+#. module: sales_agent
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:41
+#: code:addons/sales_agent/models/sale_dashboard_crm_team.py:75
+#, python-format
+msgid "Stencil Order"
+msgstr "钢网订单"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_picking_warn
+msgid "Stock Picking"
+msgstr "仓库分拣"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_street
+msgid "Street"
+msgstr "街道"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_street2
+msgid "Street2"
+msgstr "街道 2"
+
+#. module: sales_agent
+#: model:res.groups,name:sales_agent.group_super_administrator
+msgid "Super Administrator"
+msgstr "超级管理员"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_supplier_description
+msgid "Supplier Description"
+msgstr "供应商描述"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_vat
+msgid "TIN"
+msgstr "税务登记证号码"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_category_id
+msgid "Tags"
+msgstr "标签"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_vat
+msgid "Tax Identification Number. Fill it if the company is subjected to taxes. Used by the some of the legal statements."
+msgstr "税务识别号码。 如果公司需要纳税，请填写。 由一些法律声明使用。"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.crm_team_sales_agent_search
+msgid "Team Leader"
+msgstr "团队领导"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_company_id
+msgid "The company this user is currently working for."
+msgstr "该用户当前工作的公司"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_property_account_position_id
+msgid "The fiscal position will determine taxes and accounts used for the partner."
+msgstr "财政状况将确定用于业务伙伴的税金和科目。"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_has_unreconciled_entries
+msgid "The partner has at least one unreconciled debit and credit since last time the invoices & payments matching was performed."
+msgstr "自动上次这个业务伙伴的发票和付款完全一致。这个业务伙伴至少有一个未调节的借方和贷方"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_tz
+msgid "The partner's timezone, used to output proper date and time values inside printed reports. It is important to set a value for this field. You should use the same timezone that is otherwise used to pick and render date and time values: your computer's timezone."
+msgstr "业务伙伴的时区，用来在打印的报表上面输出适当的日期和事件。设置这个字段非常重要. 选择和使用日期和时间 你将用和你电脑相同的时区。"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_property_account_payable_id
+msgid "This account will be used instead of the default one as the payable account for the current partner"
+msgstr "这个科目被用来代替当前业务伙伴的默认的应付科目"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_property_account_receivable_id
+msgid "This account will be used instead of the default one as the receivable account for the current partner"
+msgstr "这个科目被用来替代当前业务伙伴的默认的应收科目"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "该字段保存的图像用作联系人的头像，限制为1024x1024px"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_property_supplier_payment_term_id
+msgid "This payment term will be used instead of the default one for purchase orders and vendor bills"
+msgstr "该付款条款江北用来代替采购订单或者供应商账单中默认的付款条款"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_property_payment_term_id
+msgid "This payment term will be used instead of the default one for sales orders and customer invoices"
+msgstr "此付款期限将用于代替销售订单和客户发票的默认付款期限"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_property_product_pricelist
+msgid "This pricelist will be used, instead of the default one, for sales to the current partner"
+msgstr "这价格表将会被使用,取代默认值,用之出售给当前伙伴."
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_property_stock_customer
+msgid "This stock location will be used, instead of the default one, as the destination location for goods you send to this partner"
+msgstr "这位置替代默认值作为您送货到业务伙伴的目标位置."
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_property_stock_supplier
+msgid "This stock location will be used, instead of the default one, as the source location for goods you receive from the current partner"
+msgstr "默认作为您接收当前业务伙伴产品的源位置"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_tz
+msgid "Timezone"
+msgstr "时区"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_tz_offset
+msgid "Timezone offset"
+msgstr "时区偏移"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_title
+msgid "Title"
+msgstr "称谓"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_kanban_dashboard
+msgid "Today's website trial price data"
+msgstr "今日网站试价数据"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_total_invoiced
+msgid "Total Invoiced"
+msgstr "已开票总计"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_debit
+msgid "Total Payable"
+msgstr "应付总计"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_credit
+msgid "Total Receivable"
+msgstr "应收总计"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_credit
+msgid "Total amount this customer owes you."
+msgstr "这个客户欠款的总数量"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_debit
+msgid "Total amount you have to pay to this vendor."
+msgstr "你需要付给这个供应商的总数量"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_message_unread
+msgid "Unread Messages"
+msgstr "未读消息"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "未读消息计数器"
+
+#. module: sales_agent
+#: model:ir.actions.act_window,help:sales_agent.crm_team_sales_agent
+msgid "Use sales channels to organize your sales departments.\n"
+"                    Each channel will work with a separate pipeline."
+msgstr "Use sales channels to organize your sales departments.\n"
+"                    Each channel will work with a separate pipeline."
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_login
+msgid "Used to log into the system"
+msgstr "用户登录入系统"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_type
+msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+msgstr "用于通过销售与采购单据上下文来自动选择正确的地址。"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_user_id
+msgid "User"
+msgstr "用户"
+
+#. module: sales_agent
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_form
+#: model:ir.ui.view,arch_db:sales_agent.sales_agent_tree
+msgid "User Name"
+msgstr "代理名称"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_log_ids
+msgid "User log entries"
+msgstr "用户登录记录"
+
+#. module: sales_agent
+#: model:res.groups,name:sales_agent.group_sales_agent
+msgid "User: Sale Agent Own Documents Only - Read Only"
+msgstr "用户：销售代理仅自己的文档 - 只读"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_user_ids
+msgid "Users"
+msgstr "用户"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_currency_id
+msgid "Utility field to express amount currency"
+msgstr "表示货币数量的工具字段"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_property_stock_supplier
+msgid "Vendor Location"
+msgstr "供应商位置"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_property_supplier_payment_term_id
+msgid "Vendor Payment Terms"
+msgstr "供应商付款条款"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_website
+msgid "Website"
+msgstr "网站"
+
+#. module: sales_agent
+#: model:ir.model.fields,help:sales_agent.field_sales_agent_website
+msgid "Website of Partner or Company"
+msgstr "业务伙伴或公司的网站"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_whether_discount
+msgid "Whether Discount"
+msgstr "是否折扣"
+
+#. module: sales_agent
+#: model:ir.model.fields,field_description:sales_agent.field_sales_agent_zip
+msgid "Zip"
+msgstr "邮政编码"
+
+#. module: sales_agent
+#: model:res.groups,comment:sales_agent.group_super_administrator
+msgid "the user will have an access to the sales configuration as well as statistic reports."
+msgstr "用户将有权限访问销售配置及统计报表。"
+

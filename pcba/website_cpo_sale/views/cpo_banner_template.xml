@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- 放假通知 -->
+        <template id="index_notification" name="Notifications" inherit_id="website.layout">
+            <xpath expr="//div[@id='wrapwrap']" position="before">
+                <div class="cpo-notification"></div>
+            </xpath>
+        </template>
+
+        <template id="website_banner">
+            <!--banner 4c3c5f2530589aa7aa6252f053667ddbf20a1a12-->
+            <div class="slider-area height-82vh">
+                <div class="col-md-12 index-quotation-from">
+                    <div class="container_quotation">
+                        <div class="col-md-6 pl-0 h0"></div>
+                        <div class="col-md-6 pr-0 h0 cpo_index_quo_con">
+                            <div class="slider-content cpo-slider-content">
+                                <div class="slider-content-wrap slider-animated-1 cpo-box-sd-5 index-quote-box">
+                                    <div class="cpo-quo-tt">
+                                        <div class="quo-tt-ls quo-tt-active" style="background: rgb(74, 147, 253);">
+                                            <h4>PCB</h4>
+                                        </div>
+                                        <div class="quo-tt-ls">
+                                            <h4>PCBA</h4>
+                                        </div>
+                                        <div class="quo-tt-ls">
+                                            <h4>Stencil</h4>
+                                        </div>
+                                    </div>
+                                    <ul class="cpo-banner-ul">
+                                        <li class="cpo-banner-li cpo-block">
+                                            <div class="cpo_order_content">
+                                                <form role="form" method="POST" action="/pcb?type=standard"
+                                                      id="cpo_pcb_action">
+                                                    <input type="hidden" name="csrf_token"
+                                                           t-att-value="request.csrf_token()"/>
+                                                    <h2 class="mb-4 mt-0 text-center"></h2>
+                                                    <div class="form-group clearfix">
+                                                        <input type="text"
+                                                               class="form-control reverse cpo-home-input cpo-w88"
+                                                               placeholder="Quantity" name="pcb_quantity"/>
+                                                        <span class="cpo_quo_unit">pcs</span>
+                                                    </div>
+                                                    <div class="form-group clearfix">
+                                                        <input type="text"
+                                                               class="form-control reverse cpo-home-input cpo_board"
+                                                               placeholder="Height" name="pcb_length"/>
+                                                        <span class="cpo_quo_unit">×</span>
+                                                        <input type="text"
+                                                               class="form-control reverse cpo-home-input cpo_board"
+                                                               placeholder="Width" name="pcb_width"/>
+                                                        <span class="cpo_quo_unit">㎜</span>
+                                                    </div>
+                                                    <div class="form-group clearfix">
+                                                        <select class="form-control reverse cpo-home-input cpo-w88">
+                                                            <option value="2">2 Layer</option>
+                                                            <option value="4">4 Layer</option>
+                                                            <option value="6">6 Layer</option>
+                                                            <option value="8">8 Layer</option>
+                                                            <option value="10">10 Layer</option>
+                                                            <option value="12">12 Layer</option>
+                                                            <option value="14">14 Layer</option>
+                                                            <option value="16">16 Layer</option>
+                                                            <option value="18">18 Layer</option>
+                                                            <option value="20">20 Layer</option>
+                                                        </select>
+                                                        <input type="hidden"
+                                                               class="form-control reverse cpo-home-input cpo-w88"
+                                                               value="2" name="pcb_layers" id="pcb_layers"/>
+                                                    </div>
+                                                    <div class="form-group clearfix">
+                                                        <input type="text"
+                                                               class="form-control reverse cpo-home-input cpo-w88"
+                                                               placeholder="Thickness" name="pcb_thickness" value="1.6"/>
+                                                        <span class="cpo_height-50 cpo_quo_unit">㎜</span>
+                                                    </div>
+                                                    <div class="form-group clearfix">
+                                                        <input type="submit" class="btn btn-primary cpo-submit"
+                                                               value="Quotation Now"/>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </li>
+                                        <li class="cpo-banner-li cpo-none">
+                                            <div class="cpo_order_content">
+                                                <form action="/pcba" id="create_pcba_order" method="POST">
+                                                    <input type="hidden" name="csrf_token"
+                                                           t-att-value="request.csrf_token()"/>
+                                                    <h2 class="mb-4 mt-0 text-center"></h2>
+                                                    <div class="form-group clearfix">
+                                                        <input type="text"
+                                                               class="form-control reverse cpo-home-input cpo-w88"
+                                                               name="pcba_quantity" placeholder="Quantity"/>
+                                                        <span class="cpo_quo_unit">pcs</span>
+                                                    </div>
+                                                    <div class="form-group clearfix">
+                                                        <input type="text"
+                                                               class="form-control reverse cpo-home-input cpo_board"
+                                                               name="pcb_length" placeholder="Height"/>
+                                                        <span class="cpo_quo_unit">×</span>
+                                                        <input type="text"
+                                                               class="form-control reverse cpo-home-input cpo_board"
+                                                               name="pcb_width" placeholder="Width"/>
+                                                        <span class="cpo_quo_unit">㎜</span>
+                                                    </div>
+                                                    <div class="form-group clearfix">
+                                                        <input type="text"
+                                                               class="form-control reverse cpo-home-input cpo-w88"
+                                                               name="pcba_dip" placeholder="DIP through hole quantity"/>
+                                                        <!--<span class="cpo_quo_unit">L</span>-->
+                                                    </div>
+                                                    <div class="form-group clearfix">
+                                                        <input type="text"
+                                                               class="form-control reverse cpo-home-input cpo-w88"
+                                                               name="pcba_smt"
+                                                               placeholder="SMT parts quantity"/>
+                                                        <!--<span class="cpo_height-50 cpo_quo_unit">㎜</span>-->
+                                                    </div>
+                                                    <div class="form-group clearfix">
+                                                        <input type="submit" class="btn btn-primary cpo-submit"
+                                                               value="Quotation Now"/>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </li>
+                                        <li class="cpo-banner-li cpo-none">
+                                            <div class="cpo_order_content">
+                                                <form role="form" method="POST" action="/stencil" id="cpo_stencil_action">
+                                                    <input type="hidden" name="csrf_token"
+                                                           t-att-value="request.csrf_token()"/>
+                                                    <h2 class="mb-4 mt-0 text-center"></h2>
+                                                    <div class="form-group clearfix">
+                                                        <input type="text"
+                                                               class="form-control reverse cpo-home-input cpo-w88"
+                                                               name="pcb_quantity" placeholder="Quantity"/>
+                                                        <span class="cpo_quo_unit">pcs</span>
+                                                    </div>
+                                                    <div class="form-group clearfix">
+                                                        <select class="form-control reverse cpo-home-input cpo-w88"
+                                                                id="stencil_frame">
+                                                            <option value="370*470mm">370×470mm (Valid area 190×290mm)
+                                                            </option>
+                                                            <option value="420*520mm">420×520mm (Valid area 240×340mm)
+                                                            </option>
+                                                            <option value="450*550mm">450×550mm (Valid area 270×370mm)
+                                                            </option>
+                                                            <option value="580*580mm">580×580mm (Valid area 380×380mm)
+                                                            </option>
+                                                            <option value="550*650mm">550×650mm (Valid area 350×450mm)
+                                                            </option>
+                                                            <option value="736*736mm">736×736mm (Valid area 500×500mm)
+                                                            </option>
+                                                        </select>
+                                                        <input type="hidden"
+                                                               class="form-control reverse cpo-home-input cpo-w88"
+                                                               name="cpo_stencil_size" value="370*470mm"
+                                                               id="cpo_stencil_size"/>
+                                                    </div>
+                                                    <div class="form-group clearfix">
+                                                        <select class="form-control reverse cpo-home-input cpo-w88">
+                                                            <option value="0.08">0.08 MM</option>
+                                                            <option value="0.10">0.10 MM</option>
+                                                            <option value="0.12">0.12 MM</option>
+                                                            <option value="0.15">0.15 MM</option>
+                                                        </select>
+                                                        <input type="hidden"
+                                                               class="form-control reverse cpo-home-input cpo-w88"
+                                                               name="stencil_thickness" value="0.08"
+                                                               id="cpo_stencil_thickness"/>
+                                                    </div>
+                                                    <div class="form-group cpo-mb64"></div>
+                                                    <div class="form-group clearfix">
+                                                        <input type="submit" class="btn btn-primary cpo-submit"
+                                                               value="Quotation Now"/>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-active owl-dot-style owl-carousel">
+                    <div class="single-slider bg-img height-82vh d-flex align-items-center justify-content-center cpo-slider-area-slider1">
+                        <div class="container p-0 cpo-slider-c-p">
+                            <div class="col-md-6 pl-0">
+                                <div class="slider-content">
+                                    <div class="banner-left">
+                                        <div class="ad-process">
+                                            <div class="ad-left">
+                                                <img class="ad-img" scr="/website_cpo_sale/static/src/images/banner/banner-paypal.png"/>
+                                                <div class="ad-content">
+                                                    <h1>Stop overpaying</h1>
+                                                    <div class="ad-money">
+                                                        <span class="m-title">for</span>
+                                                        <span class="m-digis">Multi-layers !</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ad-right">
+                                                <!--<h4>Order SMT + Components, Get PCB Free</h4>-->
+                                                <p>More than 50 countries' customer use ChinaPCBOne Quick Response &amp; Professional Services</p>
+                                            </div>
+                                        </div>
+                                        <div class="ad-coupon">
+                                            <a class="cp-box" href="/pcb?type=standard">
+                                                <div class="cp-top">
+                                                    <!--<span class="cp-td">$</span>-->
+                                                    <span class="cp-tm">50% OFF</span>
+                                                </div>
+                                                <img src="/website_cpo_sale/static/src/images/banner/cp-box-1.png"/>
+                                                <p class="cp-tt">
+                                                    Standard Offer:max 100mm*100mm, FR-4, 1.6MM (Finished Thickness), 1oz (Finished Cu Thickness), LF-HASL surface finishing,Green Solder mask and white silkscreen.
+                                                </p>
+                                            </a>
+                                            <!--<a class="cp-box" href="/pcba">-->
+                                                <!--<div class="cp-top">-->
+                                                    <!--<span class="cp-td">$</span>-->
+                                                    <!--<span class="cp-tm">250.0+</span>-->
+                                                <!--</div>-->
+                                                <!--<img src="/website_cpo_sale/static/src/images/banner/cp-box-2.png"/>-->
+                                                <!--<p class="cp-tt">-->
+                                                    <!--Order SMT Components<br/>-->
+                                                    <!--Get PCB Free-->
+                                                <!--</p>-->
+                                            <!--</a>-->
+                                        </div>
+                                    </div>
+                                    <!--<div class="slider-content-wrap slider-animated-1 cpo_index_title">-->
+                                        <!--<h1 class="cpo-banner-disc">One Stop-shop service for PCB &amp; PCBA</h1>-->
+                                        <!--<h4>Low Volume High Mix Quick Turn</h4>-->
+                                    <!--</div>-->
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-0">
+                                <div class="slider-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 合作伙伴 -->
+            <!--<div class="row about-logo">-->
+                <!--<div class="container">-->
+                    <!--<div class="col-md-3">-->
+                        <!--<h5 class="about-logo-bt">Our Customers</h5>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-9">-->
+                        <!--<div class="cpo-flex-box">-->
+                            <!--<div class="cpo-flex-item">-->
+                                <!--<img class="img"-->
+                                     <!--src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="-->
+                                     <!--data-original="/website_cpo_sale/static/src/images/layerimg/intel-logo.png"/>-->
+                            <!--</div>-->
+                            <!--<div class="cpo-flex-item">-->
+                                <!--<img class="img"-->
+                                     <!--src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="-->
+                                     <!--data-original="/website_cpo_sale/static/src/images/layerimg/ge-logo.png"/>-->
+                            <!--</div>-->
+                            <!--<div class="cpo-flex-item">-->
+                                <!--<img class="img"-->
+                                     <!--src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="-->
+                                     <!--data-original="/website_cpo_sale/static/src/images/layerimg/emerson-logo.png"/>-->
+                            <!--</div>-->
+                            <!--<div class="cpo-flex-item">-->
+                                <!--<img class="img"-->
+                                     <!--src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="-->
+                                     <!--data-original="/website_cpo_sale/static/src/images/layerimg/hans-laser-logo.png"/>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!-- 物料和现金券 -->
+            <div class="row cpo-material-dt">
+                <div class="cpo-material-box">
+                    <div class="container cpo-material-centent">
+                        <div class="col-md-7 hidden-xs cpo-mt-100">
+                            <div class="mat-content text-center">
+                                <div class="hot-sale-list">
+                                    <div class="set-space-between hot-sale-list-header">
+                                        <span class="sale-item">User name</span>
+                                        <span class="sale-item">Product</span>
+                                        <span class="sale-item">Qty</span>
+                                        <span class="sale-item">Amount</span>
+                                    </div>
+                                    <div class="hot-sale-container">
+                                        <ul class="sale-list"></ul>
+                                    </div>
+                                </div>
+                                <script src="/website_cpo_sale/static/src/js/plugins/slide-form.js"></script>
+                                <!--<div class="mat-time">-->
+                                    <!--<span class="pull-right cpo-mat-discr">The coupon information will be updated every time. <i class="fa fa-hand-o-right"></i></span>-->
+                                    <!--<a class="btn btn-primary" href="/coupon">Get more</a>-->
+                                <!--</div>-->
+                                <!--<div class="mat-data-show">-->
+                                    <!--<div id="material-scroll">-->
+                                        <!--<ul class="cpo_show_material_data">-->
+                                            <!--<li>-->
+                                                <!--<span>CDV16FF101JO3F1</span>-->
+                                                <!--<span>CAP MICA 100PF 5% 1KV RADIAL</span>-->
+                                                <!--<span>Cornell Dubilier Electronics (CDE)</span>-->
+                                            <!--</li>-->
+                                        <!--</ul>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                        <div class="col-md-5 cpo-mt-100">
+                            <div class="cpo-index-coupon" id="index-coupon">
+                                <div class="mat-time">
+                                    <span class="pull-right cpo-mat-discr">The coupon information will be updated every time. <i class="fa fa-hand-o-right"></i></span>
+                                    <a class="btn btn-primary" href="/coupon">Get more</a>
+                                </div>
+                                <!--<div class="cpo-coupon-box">-->
+                                    <!--<div class="cpo-coupon-content clearfix">-->
+                                        <!--<div class="cpo-coupon-line">-->
+                                            <!--<div class="coupon-money">-->
+                                                <!--<span class="fa fa-dollar cpo-coupon-currency"></span>-->
+                                                <!--<span class="cpo-coupon-money">100</span>-->
+                                            <!--</div>-->
+                                            <!--<div class="coupon-date">-->
+                                                <!--<span class="coupon-start-date">2019-08-10</span>-->
+                                                <!--<i>~</i>-->
+                                                <!--<span class="coupon-end-date">2019-08-11</span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="cpo-coupon-btn"></div>-->
+                                        <!--<div class="cpo-coupon-receive cpo-none"></div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="cpo-coupon-box">-->
+                                    <!--<div class="cpo-coupon-content clearfix">-->
+                                        <!--<div class="cpo-coupon-line">-->
+                                            <!--<div class="coupon-money">-->
+                                                <!--<span class="cpo-coupon-money">10</span>-->
+                                                <!--<span class="cpo-coupon-currency">%</span>-->
+                                            <!--</div>-->
+                                            <!--<div class="coupon-date">-->
+                                                <!--<span class="coupon-start-date">2019-08-10</span>-->
+                                                <!--<i>~</i>-->
+                                                <!--<span class="coupon-end-date">2019-08-11</span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="cpo-coupon-btn"></div>-->
+                                        <!--<div class="cpo-coupon-receive cpo-none"></div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--特殊工艺-->
+            <div class="cpo-apfc-area ptb-100">
+                <div class="container pb-10">
+                    <div class="section-title text-center mb-50">
+                        <h1>Advertage Products from  Chinapcbone</h1>
+                    </div>
+                    <div class="cpo-process">
+                        <div class="col-md-3">
+                            <div class="single-process cpo-box-sd-5 mb-30">
+                                <div class="process-img">
+                                    <a><img alt="" class="img" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                            data-original="/website_cpo_sale/static/src/images/tools_img/process-standard.png"/></a>
+                                </div>
+                                <!--高多层-->
+                                <div class="processpost-desc">
+                                    <h1>
+                                        Multilayer PCB
+                                    </h1>
+                                    <p>
+                                        Not only double side PCBs,we provide  up to 32layers PCBs.Special process like Heavy copper up to 20 OZ is possible.
+                                    </p>
+                                    <a class="readmore" href="/pcb?type=standard" title="High Frequency PCBs.">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="single-process cpo-box-sd-5 mb-30">
+                                <div class="process-img">
+                                    <a><img alt="" class="img" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                            data-original="/website_cpo_sale/static/src/images/tools_img/process-multilayer.png"/></a>
+                                </div>
+                                <!--常规-->
+                                <div class="processpost-desc">
+                                    <h1>
+                                        High Frequency PCBs
+                                    </h1>
+                                    <p>
+                                        Not only standard FR4,we provide boards with high frequency materials,like PTFE,Taconic,Rogers,copper base,etc.
+                                    </p>
+                                    <a class="readmore" href="/pcb?type=standard" title="MULTI-LAYER PCB">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="single-process cpo-box-sd-5 mb-30">
+                                <div class="process-img">
+                                    <a><img alt="" class="img" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                            data-original="/website_cpo_sale/static/src/images/tools_img/process-rigid-flex.png"/></a>
+                                </div>
+                                <!--软硬结合-->
+                                <div class="processpost-desc">
+                                    <h1>
+                                        Rigid-Flex PCB.
+                                    </h1>
+                                    <p>
+                                        We provide up to 20layers Rigid+8layers Flex PCBs,line width/spacing can be 3/3mil.
+                                    </p>
+                                    <a class="readmore" href="/pcb?type=rigid-flex" title="Rigid Flex PCB">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="single-process cpo-box-sd-5 mb-30">
+                                <div class="process-img">
+                                    <a><img alt="" class="img" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                            data-original="/website_cpo_sale/static/src/images/tools_img/process-high-density.png"/></a>
+                                </div>
+                                <!--HDI-->
+                                <div class="processpost-desc">
+                                    <h1>
+                                        HDI PCBs.
+                                    </h1>
+                                    <p>
+                                        Not only mechanical drilling boards,we use Laser drilling for HDI boards,like 0.075mm and 0.1mm drilling size.
+                                    </p>
+                                    <a class="readmore" href="/pcb?type=hdi" title="HIGH DENSITY PCB">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--打包价-->
+            <div class="popular-package gray-bg pt-60 pb-60">
+                <div class="container">
+                    <div class="section-title text-center mb-20">
+                        <h2>Our Customers</h2>
+                    </div>
+                    <div class="package-package clearfix">
+                        <div class="partner-logo">
+                            <img class="img"
+                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                 data-original="/website_cpo_sale/static/src/images/layerimg/intel-logo.png"/>
+                            <img class="img"
+                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                 data-original="/website_cpo_sale/static/src/images/partner/logo-latest.svg"/>
+                            <img class="img"
+                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                 data-original="/website_cpo_sale/static/src/images/layerimg/emerson-logo.png"/>
+                            <img class="img"
+                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                 data-original="/website_cpo_sale/static/src/images/layerimg/hans-laser-logo.png"/>
+                        </div>
+                    <!--</div>-->
+                        <!--<div class="package-item">-->
+                            <!--<div class="pack-price-box cpo-box-sd-5 pt-10">-->
+                                <!--<div class="package-content text-center">-->
+                                    <!--&lt;!&ndash;<p> 2 Layers </p>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<p>Area ≤ 0.2 m²</p>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<p> FR4 1.6mm 1OZ Green SM White SS LF-HASL </p>&ndash;&gt;-->
+                                    <!--<span>Stay tuned!</span><br/>-->
+                                    <!--<span>ONE STOP-SHOP SERVICE FOR PCB &amp; PCBA !</span>-->
+                                <!--</div>-->
+                                <!--<div class="pack-btn-con">-->
+                                    <!--<a class="btn btn-primary" href="/pcb" >Quotation Now</a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="package-item">-->
+                            <!--<div class="pack-price-box cpo-box-sd-5 pt-10">-->
+                                <!--<img alt="" class="img img-responsive" src="/website_cpo_sale/static/src/images/layerimg/4-6-layers-b.png"/>-->
+                                <!--<div class="package-content text-center">-->
+                                    <!--<p> 4 Layers </p>-->
+                                    <!--&lt;!&ndash;<p>Size ≤ 50×50mm</p>&ndash;&gt;-->
+                                    <!--<p>Area ≤ 0.2 m²</p>-->
+                                    <!--<p> FR4 1.6mm 1OZ Green SM White SS LF-HASL </p>-->
+                                    <!--<span>$50.00+</span>-->
+                                <!--</div>-->
+                                <!--<div class="pack-btn-con">-->
+                                    <!--<a class="btn btn-primary" title="4 &amp; 6 Layers">Quotation Now</a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="package-item">-->
+                            <!--<div class="pack-price-box cpo-box-sd-5 pt-10">-->
+                                <!--<img alt="" class="img img-responsive" src="/website_cpo_sale/static/src/images/layerimg/2-layers.png"/>-->
+                                <!--<div class="package-content text-center">-->
+                                    <!--<p> 6 Layers </p>-->
+                                    <!--&lt;!&ndash;<p>Size ≤ 50×50mm</p>&ndash;&gt;-->
+                                    <!--<p>Area ≤ 0.2 m²</p>-->
+                                    <!--<p> FR4 1.6mm 1OZ Green SM White SS LF-HASL </p>-->
+                                    <!--<span>$50.00+</span>-->
+                                <!--</div>-->
+                                <!--<div class="pack-btn-con">-->
+                                    <!--<a class="btn btn-primary" title="8 Layers">Quotation Now</a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="package-item">-->
+                            <!--<div class="pack-price-box cpo-box-sd-5 pt-10">-->
+                                <!--<img alt="" class="img img-responsive" src="/website_cpo_sale/static/src/images/layerimg/2-layers.png"/>-->
+                                <!--<div class="package-content text-center">-->
+                                    <!--<p> 8 Layers </p>-->
+                                    <!--&lt;!&ndash;<p>Size ≤ 50×50mm</p>&ndash;&gt;-->
+                                    <!--<p>Area ≤ 0.2 m²</p>-->
+                                    <!--<p> FR4 1.6mm 1OZ Green SM White SS LF-HASL </p>-->
+                                    <!--<span>$150.00+</span>-->
+                                <!--</div>-->
+                                <!--<div class="pack-btn-con">-->
+                                    <!--<a class="btn btn-primary" title="SMT Assembly">Quotation Now</a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+            <!--video-->
+            <div class="gallery-area pt-100 pb-70">
+                <div class="container">
+                    <!--<div class="section-title text-center mb-50">-->
+                        <!--<h2>Video</h2>-->
+                        <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>-->
+                    <!--</div>-->
+                    <div class="tab-content jump">
+                        <div id="tab1" class="tab-pane active">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="single-menu-product mb-30">
+                                        <div class="section-title text-center cpo-video-title mb-10">
+                                            <h2>Chinapcbone Representation</h2>
+                                        </div>
+                                        <div class="cop-video-img cpo-video-company">
+                                            <div class="play-sec">
+                                                <a data-target="#movie_company" data-toggle="modal" id="movie_company_btn">
+                                                   <img class="img" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                                        data-original="/website_cpo_sale/static/src/images/tools_img/play-button.png" alt="Play" />
+                                                   <div class="rays"></div>
+                                                    <div class="clear"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="single-menu-product mb-30">
+                                        <div class="section-title text-center cpo-video-title mb-10">
+                                            <h2>How to order from the on-line shop?</h2>
+                                        </div>
+                                        <div class="cop-video-img cpo-video-process">
+                                            <div class="play-sec">
+                                                <a id="movie_process_btn" data-toggle="modal" data-target="#movie_process">
+                                                   <img class="img" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                                        data-original="/website_cpo_sale/static/src/images/tools_img/play-button.png" alt="Play" />
+                                                   <div class="rays"></div>
+                                                    <div class="clear"></div>
+                                                </a>
+                                            </div>
+                                            <!--<img src="/website_cpo_sale/static/src/images/video/index_video.png" alt=""/>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <t t-call="website_cpo_sale.cpo_video_modal"/>
+            <!--产品-->
+            <div class="testimonial-area ptb-100 gray-bg">
+                <div class="container">
+                    <div class="section-title text-center mb-50">
+                        <h2>Product Introduction</h2>
+                        <p> ChinaPCBOne was founded in 2008, we are dedicated to offering one-stop(turn-key) PCB service solutions for prototype as well as small-volume to mid-volume production runs. We have two branch factories which provide PCB design, PCB manufacturing, PCB assembly and other services. </p>
+                    </div>
+                    <div class="cpo-product-box">
+                        <div class="cpo-product-big-ul">
+                            <ul class="cpo-product-lb">
+                                <li class="cpo-product-item slideInRight cpo-block">
+                                    <div class="cpo-pd-item cpo-product-img">
+                                        <img class="img img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                             data-original="/website_cpo_sale/static/src/images/process/product-001.png"/>
+                                    </div>
+                                    <div class="cpo-pd-item cpo-product-desc-one">
+                                        <h3>PCB Manufacturing Services</h3>
+                                        <span>
+                                            PCB fabrication service for High Density PCB, Rigid-Flex PCB, High Multilayer PCB, HDI PCB, Impedance Control PCB, Hard Gold Plating PCB, Rogers PCB, Aluminum PCB.
+                                        </span>
+                                    </div>
+                                    <!--<div class="cpo-pd-item cpo-product-desc-two"></div>-->
+                                </li>
+                                <li class="cpo-product-item slideInRight">
+                                    <div class="cpo-pd-item cpo-product-img">
+                                        <img class="img img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                             data-original="/website_cpo_sale/static/src/images/process/product-002.png"/>
+                                    </div>
+                                    <div class="cpo-pd-item cpo-product-desc-one">
+                                        <h3>Turnkey PCBA Assembly Services</h3>
+                                        <span>
+                                            Over 10years about product's assembly and we are professionals to handle the industrial production and measurement devices. 0201 chip components and 0.2mm pitch BGA,Quality Assurance by AOI and X-Ray inspection.
+                                        </span>
+                                    </div>
+                                    <!--<div class="cpo-pd-item cpo-product-desc-two"></div>-->
+                                </li>
+                                <li class="cpo-product-item slideInRight">
+                                    <div class="cpo-pd-item cpo-product-img">
+                                        <img class="img img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                             data-original="/website_cpo_sale/static/src/images/process/product-003.png"/>
+                                    </div>
+                                    <div class="cpo-pd-item cpo-product-desc-one">
+                                        <h3>Purchase Electronic Components</h3>
+                                        <span>
+                                            Strong components supply-chain supported by two overseas purchasing office in Hong Kong, USA. component procurement according to your requirements.
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="cpo-product-item">
+                                    <div class="cpo-pd-item cpo-product-img">
+                                        <img class="img img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                             data-original="/website_cpo_sale/static/src/images/process/product-004.png"/>
+                                    </div>
+                                    <div class="cpo-pd-item cpo-product-desc-one">
+                                        <h3>Value-Added Service - PCB Design</h3>
+                                        <span>
+                                            Depending on what input you provide, we offer PCB Design from recovering schematics and layout if you have a prototype, to place &amp; route if you have schematics, to creating schematics and layout if you have an idea. The output of this service are: Gerber, NC Drill, and BoM.
+                                        </span>
+                                    </div>
+                                    <!--<div class="cpo-pd-item cpo-product-desc-two"></div>-->
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cpo-product-an">
+                            <ul>
+                                <li class="pd-an-active">
+                                    <span class="cpo-select-up"></span>
+                                    PCB
+                                </li>
+                                <li>PCBA</li>
+                                <li>Purchase Electronic Components</li>
+                                <li>PCB Design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="container">-->
+                    <!--<div class="section-title text-center mb-50">-->
+                        <!--<h2>Product Introduction</h2>-->
+                        <!--<p> ChinaPCBOne was founded in 2008, we are dedicated to offering one-stop(turn-key) PCB service solutions for prototype as well as small-volume to mid-volume production runs. We have two branch factories which provide PCB design, PCB manufacturing, PCB assembly and other services. </p>-->
+                    <!--</div>-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-md-12" id="product_content">-->
+                            <!--<div class="testimonial-image-slider text-center">-->
+                                <!--<div class="single-testi-text">-->
+                                    <!--<p>-->
+                                        <!--Board thickness:1.6±0.16mm-->
+                                        <!--Min trace width/spacing：0.1mm/0.1mm-->
+                                        <!--Min spacing for PTH to trace of inner-->
+                                        <!--Finishing: LF-HASL-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="single-testi-text">-->
+                                    <!--<p>-->
+                                        <!--Min trace width/spacing：0.11mm/0.15mm-->
+                                        <!--Min spacing for PTH to trace of inner-->
+                                        <!--layer：0.2mm-->
+                                        <!--Aspect ratio：6:1-->
+                                        <!--Finishing: ENIG-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="single-testi-text">-->
+                                    <!--<p>-->
+                                        <!--Board thickness:2.0±0.2mm-->
+                                        <!--Min trace width/spacing：0.1mm/0.1mm-->
+                                        <!--Min spacing for PTH to trace of inner layer：0.18mm-->
+                                        <!--Aspect ratio：10:1-->
+                                        <!--Finishing: ENIG-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="single-testi-text">-->
+                                    <!--<p>-->
+                                        <!--Board thickness:1.5±0.15mm-->
+                                        <!--Min trace width/spacing：0.127mm/0.1mm-->
+                                        <!--Min spacing for PTH to trace of inner layer：0.18mm-->
+                                        <!--Aspect ratio：5.6:1-->
+                                        <!--Finishing:  ENIG-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="testimonial-text-slider text-center">-->
+                                <!--<div class="single-testi-img">-->
+                                    <!--<img class="img img-responsive" src="/website_cpo_sale/static/src/images/process/cpo-process-12.png"-->
+                                         <!--alt="12-Layers PCB" title="12-Layers PCB" />-->
+                                    <!--<h1>12-Layers PCB</h1>-->
+                                <!--</div>-->
+                                <!--<div class="single-testi-img">-->
+                                    <!--<img class="img img-responsive" src="/website_cpo_sale/static/src/images/process/cpo-process-16.png"-->
+                                         <!--alt="16-Layers PCB" title="16-Layers PCB" />-->
+                                    <!--<h1>16-Layers PCB</h1>-->
+                                <!--</div>-->
+                                <!--<div class="single-testi-img">-->
+                                    <!--<img class="img img-responsive" src="/website_cpo_sale/static/src/images/process/cpo-process-10.png"-->
+                                         <!--alt="16-Layers PCB" title="16-Layers PCB"/>-->
+                                    <!--<h1>10-Layers PCB</h1>-->
+                                <!--</div>-->
+                                <!--<div class="single-testi-img">-->
+                                    <!--<img class="img img-responsive" src="/website_cpo_sale/static/src/images/process/cpo-process-10fr4.png"-->
+                                         <!--alt="testi 1" />-->
+                                    <!--<h1>10L FR4 TG170</h1>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+            <!--icon logo-->
+            <!--<t t-call="website_cpo_sale.process_icon_logo"/>-->
+            <!--<t t-call="website_cpo_sale.website_allnews"/>-->
+        </template>
+
+        <template id="cpo_video_modal">
+            <!-- 公司介绍视频 -->
+            <div class="modal about-modal fade" id="movie_company" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-close"></i></span></button>
+                            <h4 class="modal-title">Chinapcbone Representation</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="agileits-w3layouts-info">
+                                <iframe id="movie_company_video" name="movie_company_video" src="" width="835" height="498" style="border:none;overflow:hidden" scrolling="no"
+                                    allow="accelerometer;autoplay;encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowTransparency="true"
+                                            allowFullScreen="true"></iframe>
+                                <!--<img class="img img-responsive" src="/website_cpo_sale/static/src/images/video/index_video.jpg" alt="" />-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 流程介绍视频 -->
+            <div class="modal about-modal fade" id="movie_process" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-close"></i></span></button>
+                            <h4 class="modal-title">Constructions For Our Online Shop</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="agileits-w3layouts-info">
+                                <iframe id="movie_process_video" name="movie_process_video" src="" width="835" height="498" style="border:none;overflow:hidden" scrolling="no"
+                                    allow="accelerometer;autoplay;encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowTransparency="true"
+                                            allowFullScreen="true"></iframe>
+                                <!--<img class="img img-responsive" src="/website_cpo_sale/static/src/images/video/index_video.png" alt="" />-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="process_icon_logo">
+            <div class="brand-logo-area ptb-100">
+                <div class="container">
+                    <div class="brand-logo-active owl-carousel">
+                        <div class="single-brand-logo">
+                            <img alt="" class="img img-responsive" src="/website_cpo_sale/static/src/images/iso9001s-logo.png"/>
+                        </div>
+                        <div class="single-brand-logo">
+                            <img alt="" class="img img-responsive" src="/website_cpo_sale/static/src/images/TS16949s-logo.png"/>
+                        </div>
+                        <div class="single-brand-logo">
+                            <img alt="" class="img img-responsive" src="/website_cpo_sale/static/src/images/culus-logo.png"/>
+                        </div>
+                        <div class="single-brand-logo">
+                            <img alt="" class="img img-responsive" src="/website_cpo_sale/static/src/images/ipc.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="cpo_swiper_conteainer_plugin">
+            <div class="swiper-container" id="swiper-box">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide cpo_banner_01">
+                        <div class="container container100">
+                            <div class="col-md-6 cpo_banner_md6"></div>
+                            <div class="col-md-6">
+                                <div class="description-content swiper_slide_one">
+                                    <!--<a class="btn primary-btn ">View more</a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide cpo_banner_02">
+                        <div class="container container100">
+                            <div class="col-md-6 cpo_banner_md6"></div>
+                            <div class="col-md-6">
+                                <div class="description-content swiper_slide_two" >
+                                    <!--<h3>Standard FR-4 ?</h3>-->
+                                    <!--<h2>We have also High Frequency Laminate !!!</h2>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide cpo_banner_03">
+                        <div class="container container100">
+                            <div class="col-md-6 cpo_banner_md6"></div>
+                            <div class="col-md-6">
+                                <div class="description-content swiper_slide_three">
+                                    <!--<h3>Looking for 2layers ?</h3>-->
+                                    <!--<h2>We can produce up to 30layers !!!</h2>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide cpo_banner_04">
+                        <div class="container container100">
+                            <div class="col-md-6 cpo_banner_md6"></div>
+                            <div class="col-md-6">
+                                <div class="description-content swiper_slide_four">
+                                    <!--<h3>Standard mechanical holes ?</h3>-->
+                                    <!--<h2>We provide LASER drilling for HDI !!!</h2>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </template>
+
+        <!-- Process -->
+        <template id="website_process">
+            <div class="container">
+                <div class="step_process">
+                    <ul>
+                        <li class="online_quote">
+                            <div class="online_prompt">
+                                <span class="process_photo"></span>
+                                <span class="process_decoration"></span>
+                            </div>
+                            <p>Online Quote</p>
+                        </li>
+                        <li class="add_to_cart">
+                            <div class="online_prompt">
+                                <span class="process_decoration"></span>
+                                <span class="process_photo"></span>
+                                <span class="process_decoration"></span>
+                            </div>
+                            <p class="text-center">Upload File</p>
+                        </li>
+                        <li class="review_order">
+                            <div class="online_prompt">
+                                <span class="process_decoration"></span>
+                                <span class="process_photo"></span>
+                                <span class="process_decoration"></span>
+                            </div>
+                            <p class="text-center">Order Review</p>
+                        </li>
+                        <li class="billing_shipping">
+                            <div class="online_prompt">
+                                <span class="process_decoration"></span>
+                                <span class="process_photo"></span>
+                                <span class="process_decoration"></span>
+                            </div>
+                            <p class="text-center">Payment</p>
+                        </li>
+                        <li class="wait_confirm">
+                            <div class="online_prompt">
+                                <span class="process_decoration"></span>
+                                <span class="process_photo"></span>
+                                <span class="process_decoration"></span>
+                            </div>
+                            <p class="text-center">Fabrication</p>
+                        </li>
+                        <li class="delivery">
+                            <div class="online_prompt">
+                                <span class="process_decoration"></span>
+                                <span class="process_photo"></span>
+                                <span class="process_decoration"></span>
+                            </div>
+                            <p class="text-center">Delivery</p>
+                        </li>
+                        <li class="confirmation">
+                            <div class="online_prompt">
+                                <span class="process_decoration"></span>
+                                <span class="process_photo"></span>
+                            </div>
+                            <p class="text-center">Confirm Received</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </template>
+
+        <template id="cpo_coupon_template">
+            <div class="row coupon-row">
+                <div class="col-md-7 cpo-7">
+                    <div class="cpo-md-7">
+                        <!--需要弹窗播放可用模态框解决-->
+                        <div class="cpo_video_bg">
+                            <div class="video_load" id="cpo_company_present">
+                                <span id="click_video_btn" class="load_bf"></span>
+                            </div>
+                            <!--<video id="my-video" class="video-js vjs-big-play-centered cpo_my_video" controls="controls" preload="auto" width="652" height="366"-->
+                                            <!--poster="/website_cpo_sale/static/src/images/video/index_video.jpg" data-setup="{}">-->
+                            <!--</video>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 cpo-5">
+                    <div class="cpo-md-5 clearfix">
+                        <div class="cpo_introduction">
+                            <h3 class="cpo_intro_h3">Chinapcbone—PCB&amp;PCBA Your Class A Choice ! Your Reliable Supplier! </h3>
+                            <ul class="cpo_intro_li">
+                                <li><i>Quick turn !</i></li>
+                                <li><i>Low Volume !</i></li>
+                                <li><i>3000+ customers from all over the world !</i></li>
+                            </ul>
+                            <h4 class="cpo_intro_h4"><a href="/pcb" class="btn btn-primary">Click me ></a></h4>
+                        </div>
+                        <!--<div class="cpo-left">-->
+                            <!--<p class="cpo-coupon-message">-->
+                                <!--Lots of offers, surprises constantly-->
+                            <!--</p>-->
+                            <!--<a class="btn btn-primary" href="/coupon">GO !</a>-->
+                        <!--</div>-->
+                        <!--<div class="cpo-right">-->
+                            <!--<div class="cpo-no-coupon">-->
+                                <!--<p class="no-coupon">No coupons can be collected, you can:</p>-->
+                                <!--<a href="/pcb" class="btn btn-primary">PCB order</a>-->
+                                <!--<a href="/pcba" class="btn btn-primary">PCBA order</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- News -->
+        <template id="website_allnews">
+            <!-- 加载广告 -->
+            <div id="cpo_advertising_con"></div>
+            <div class="col-md-6 cpo_md6_over">
+                <div class="news_left">
+                    <h3 class="news_title">News</h3>
+                    <p class="news_discription">Latest news</p>
+                </div>
+                <div class="news_right">
+                    <!--<t t-call="website_cpo_advertising.cpo_new_list_link"/>-->
+                    <!--<ul>-->
+                        <!--<li>-->
+                            <!--<a><span>2019-01-05</span>How to Read &amp; Understand a Circuit Diagram</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a><span>2019-01-04</span>Suitable Temperature Curve of Lead-free Solder</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a><span>2019-01-04</span>Suitable Temperature Curve of Lead-free Solder</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a><span>2019-01-04</span>Suitable Temperature Curve of Lead-free Solder</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a><span>2019-01-04</span>Suitable Temperature Curve of Lead-free Solder</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="cpo_about_us">
+                    <h3>
+                        <b class="o_default_snippet_text">One-Stop for PCB &amp; PCBA</b>
+                    </h3>
+                    <p>
+                        ChinaPCBOne is a electronic manufacturer in Shenzhen ,China .It was established in 2008,
+                        we offer One Stop Shop Service for <b class="o_default_snippet_text">PCB</b> layout, <b class="o_default_snippet_text">PCB</b> process,
+                        components purchase and assembly service.
+                    </p>
+                    <a class="cpo_aboutus_more" href="https://www.chinapcbone.com/" target="_blank">More...</a>
+                </div>
+            </div>
+        </template>
+
+
+        <template>
+            <div class="row cpo-row">
+                <div class="col-xs-12 col-md-6" id="cpo_quotations_list">
+                    <!-- Swiper -->
+                    <!--[if IE]> <h1>Please download the latest version of the browser to view!</h1> <![endif]-->
+                    <div class="">
+                        <div class="col-xs-12 col-md-6 col-md-offset-4" id="cpo_col_md_padding">
+                            <div class="quote_ulBox">
+                                <ul class="cpo_selete_quote clearfix">
+                                    <li class="cpo_li_title_active cpo-border-top-left">PCB</li>
+                                    <li>PCBA</li>
+                                    <li class="cpo-border-top-right">Stencil</li>
+                                    <!-- <li class="cpo-border-top-right">Electronic material</li> -->
+                                </ul>
+                            </div>
+                            <div class="cpo_selete_content">
+                                <ul class="col-md-12 cpo_selete_quote_cont clearfix">
+                                    <li class="cpo_li_active">
+                                        <div class="cpo-banner-line">
+                                            <p class="pcb_header"></p>
+                                            <!--<p class="pcb_header">PCB online quotation</p>-->
+                                            <div class="pcb_instant_quote">
+                                                <form class="form-horizontal" role="form" method="POST" action="/pcb" id="cpo_pcb_action">
+                                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                                    <div class="pcb_line">
+                                                        <div class="pcb_pub_style pcb_quantity">
+                                                            <label>Quantity</label>
+                                                            <input type="text" name="pcb_quantity" placeholder="Quantity"
+                                                                onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                                            <input type="text" name="pcba_unit" class="pcba_unit" value="PCS" readonly="readonly"/>
+                                                            <!--<select>-->
+                                                                <!--<option>PCS</option>-->
+                                                                <!--<option>Set</option>-->
+                                                            <!--</select>-->
+                                                        </div>
+                                                        <div class="pcb_pub_style pcb_dimensions">
+                                                            <label>PCB/PCB panel size</label>
+                                                            <input type="text" name="pcb_length" placeholder="Length"
+                                                                onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                                            <div class="cpo_operation">X</div>
+                                                            <input type="text" name="pcb_width" placeholder="Width"
+                                                                onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                                            <div class="cpo_operation">mm</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pcb_line">
+                                                        <div class="pcb_pub_style pcb_layers">
+                                                            <label>PCB Layers</label>
+                                                            <input type="text" name="pcb_layers" placeholder="PCB Layers"
+                                                                onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                                        </div>
+                                                        <div class="pcb_pub_style pcb_thickness">
+                                                            <label>Thickness</label>
+                                                            <input type="text" name="pcb_thickness" placeholder="PCB Thickness"
+                                                                onkeyup="value=value.match(/\d+\.?\d{0,2}/,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pcb_line">
+                                                        <div class="pcb_pub_btn pcb_now_quote">
+                                                            <a class="btn btn-primary"><i class="fa fa-calculator"></i>Quote Now</a>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cpo-banner-line">
+                                            <p class="pcb_header"></p>
+                                            <!--<p class="pcb_header">PCBA online quotation</p>-->
+                                            <div class="pcb_instant_quote">
+                                                <form action="/pcba" class="cpo_sale_create_pcba_order" id="create_pcba_order" method="POST">
+                                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                                    <div class="pcb_line">
+                                                        <div class="pcb_pub_style pcba_quantity">
+                                                            <label class="pcba_label">Quantity</label>
+                                                            <input type="text" name="pcba_quantity" class="pcba_quantity" placeholder="Quantity"
+                                                                onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                                            <input type="text" name="pcba_unit" class="pcba_unit" value="PCS" readonly="readonly"/>
+                                                        </div>
+                                                        <div class="pcb_pub_style pcba_dimensions">
+                                                            <label class="pcba_label">Dimensions</label>
+                                                            <input type="text" name="pcb_length" placeholder="Length"
+                                                                onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                                            <div class="cpo_operation">X</div>
+                                                            <input type="text" name="pcb_width" placeholder="Width"
+                                                                onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                                            <div class="cpo_operation">mm</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pcb_line">
+                                                        <div class="pcb_pub_style pcba_dip">
+                                                            <label>Through hole quantity</label>
+                                                            <input type="text" name="pcba_dip" placeholder="Quantity"
+                                                                onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                                        </div>
+                                                        <div class="pcb_pub_style pcba_smt">
+                                                            <label>SMT quantity</label>
+                                                            <input type="text" name="pcba_smt" placeholder="Quantity"
+                                                                onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pcb_line">
+                                                        <div class="pcb_pub_btn pcba_now_quote">
+                                                            <a class="btn btn-primary"><i class="fa fa-calculator"></i>Quote Now</a>
+                                                            <!--<input type="submit" />-->
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="cpo-banner-line">
+                                            <p class="pcb_header"></p>
+                                            <!--<p class="pcb_header">Stencil online quotation</p>-->
+                                            <div class="pcb_instant_quote">
+                                                <form class="form-horizontal" role="form" method="POST" action="/stencil" id="cpo_stencil_action">
+                                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                                    <div class="pcb_line">
+                                                        <div class="stencil_pub_style pcb_quantity clearfix">
+                                                            <label>Stencil Quantity</label>
+                                                            <input type="text" name="pcb_quantity" class="form-control stencil_thickness" placeholder="Quantity"
+                                                                onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                                            <span>PCS</span>
+                                                        </div>
+                                                        <div class="stencil_pub_style pcb_thickness clearfix">
+                                                            <label>Thickness</label>
+                                                            <select class="form-control stencil_thickness index_stencil_thickness">
+                                                                <option value="0.08">0.08 MM</option>
+                                                                <option value="0.10">0.10 MM</option>
+                                                                <option value="0.12">0.12 MM</option>
+                                                                <option value="0.15">0.15 MM</option>
+                                                            </select>
+                                                            <input type="hidden" name="stencil_thickness" value="0.08"/>
+                                                        </div>
+                                                        <div class="stencil_pub_style clearfix">
+                                                            <label>Size (mm)</label>
+                                                            <select class="form-control cpo_stencil_size index_stencil_size">
+                                                                <option value="370*470mm">370×470mm (Valid area  190×290mm)</option>
+                                                                <option value="420*520mm">420×520mm (Valid area  240×340mm)</option>
+                                                                <option value="450*550mm">450×550mm (Valid area  270×370mm)</option>
+                                                                <option value="580*580mm">580×580mm (Valid area  380×380mm)</option>
+                                                                <option value="550*650mm">550×650mm (Valid area  350×450mm)</option>
+                                                                <option value="736*736mm">736×736mm (Valid area  500×500mm)</option>
+                                                            </select>
+                                                            <input type="hidden" name="cpo_stencil_size" value="370*470mm"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pcb_line">
+                                                        <div class="pcb_pub_btn stencil_now_quote">
+                                                            <a class="btn btn-primary"><i class="fa fa-calculator"></i>Quote Now</a>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- <li> -->
+                                        <!-- <div class="cpo-banner-line"> -->
+                                            <!--<p class="pcb_header">Electronic Parts</p>-->
+                                            <!-- <p class="pcb_header"></p>
+                                            <div class="pcb_line">
+                                                <form class="form-horizontal" role="form" method="POST" action="/electron/electronic/category/" id="cpo_bom_action">
+                                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                                    <div class="cpo_electronic_parts">
+                                                        <input type="text" name="electronic_search" placeholder="Please enter the manufacturer number"
+                                                               class="electronic_search"/>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="pcb_line">
+                                                <div class="pcb_pub_btn bom_now_quote">
+                                                    <a class="btn btn-primary"><i class="fa fa-calculator"></i>Find it now</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                </div>
+                <!-- Swiper -->
+                <!--<t t-call="website_cpo_sale.cpo_swiper_conteainer_plugin"/>-->
+            </div>
+        </template>
+    </data>
+</odoo>

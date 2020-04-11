@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cpo_advertising_tree">
+            <field name="name">Advertising Tree</field>
+            <field name="model">cpo_advertising</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ad_title"/>
+                    <field name="ad_content"/>
+                    <field name="ad_start_time"/>
+                    <field name="ad_end_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_advertising_form">
+            <field name="name">Advertising Form</field>
+            <field name="model">cpo_advertising</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group colspan="4">
+                            <group colspan="2" col="2">
+                                <field name="ad_title"/>
+                            </group>
+                            <group colspan="2" col="2">
+                                <field name="ad_photo" widget="image" class="oe_avatar oe_left"/>
+                            </group>
+                             <group col="2">
+                                <field name="ad_start_time"/>
+                            </group>
+                            <group col="2">
+                                <field name="ad_end_time"/>
+                            </group>
+                            <group col="2">
+                                <field name="ad_link"/>
+                            </group>
+                            <group colspan="4">
+                                <field name="ad_content"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_advertising_action_window">
+            <field name="name">Advertising Action</field>
+            <field name="res_model">cpo_advertising</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- actions -->
+        <menuitem name="Advertising" id="cpo_advertising_menu" parent="website_cpo_index.cpo_web_root_menu"
+                        sequence="55" groups="cpo_website_advertising"/>
+
+        <menuitem name="Index advertising" id="index_advertising_menu" parent="cpo_advertising_menu"
+              action="cpo_advertising_action_window"/>
+    </data>
+</odoo>

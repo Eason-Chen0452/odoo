@@ -1,0 +1,86 @@
+<odoo>
+    <data>
+        <!-- 问客侧边菜单 -->
+        <template id="cpo_add_ask_message" name="Add Ask Message" inherit_id="website_cpo_sale.cpo_sidebar_navidation_menus">
+		    <xpath expr='//ul[@class="list-unstyled"]/li[4]' position="after">
+                <li t-att-class="'active' if link_active == 'eq_active' else ''">
+					<a href="/my/engineering-question">
+						<i class="fa fa-question-circle-o"></i>
+						Engineering Question<small>( <t t-esc="public_qty.get('ask_qty') if public_qty.get('ask_qty') else 0"/> )</small>
+					</a>
+				</li>
+            </xpath>
+        </template>
+        <!-- 问客状态菜单（横向） -->
+        <template id="cpo_add_ask_message_status" name="Add Ask Message Status" inherit_id="website_cpo_sale.cpo_all_order_status_return">
+		    <!--<xpath expr='//div[@class="item-flex"]//div[contains(@class, "item")]' position="after">-->
+		    <xpath expr='//div[@id="sale_manufac"]' position="after">
+                <div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'engineering-question' else 'item d-flex align-items-center'">
+                    <a class="item-a" href="/my/engineering-question">
+                        <input type="hidden" name="state" value="engineering-question"/>
+                        <div class="ni-details">
+                            <div class="number">
+                                <strong>
+                                    <t t-esc="state_qty.get('ask_qty') if state_qty.get('ask_qty') else 0"/>
+                                </strong>
+                            </div>
+                            <div class="icon bg-violet">
+                                <i class="fa fa-commenting" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <span>Engineering Question</span>
+                        </div>
+                    </a>
+                </div>
+            </xpath>
+        </template>
+        <!-- 问客状态菜单（横向 /my/home） -->
+        <template id="cpo_add_ask_message_status_home" name="Add Ask Message Status" inherit_id="website_cpo_sale.account_page_content">
+		    <xpath expr='//div[@id="sale_manufac"]' position="after">
+                <div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'engineering-question' else 'item d-flex align-items-center'">
+                    <a class="item-a" href="/my/engineering-question">
+                        <input type="hidden" name="state" value="engineering-question"/>
+                        <div class="ni-details">
+                            <div class="number">
+                                <strong>
+                                    <t t-esc="state_qty.get('ask_qty') if state_qty.get('ask_qty') else 0"/>
+                                </strong>
+                            </div>
+                            <div class="icon bg-violet">
+                                <i class="fa fa-commenting" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <span>Engineering Question</span>
+                        </div>
+                    </a>
+                </div>
+            </xpath>
+        </template>
+        <!-- 问客状态菜单（横向） -->
+        <template id="cpo_add_ask_message_status" name="Add Ask Message Status" inherit_id="website_cpo_sale.cpo_all_order_status_return">
+		    <!--<xpath expr='//div[@class="item-flex"]//div[contains(@class, "item")]' position="after">-->
+		    <xpath expr='//div[@id="sale_manufac"]' position="after">
+                <div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'engineering-question' else 'item d-flex align-items-center'">
+                    <a class="item-a" href="/my/engineering-question">
+                        <input type="hidden" name="state" value="engineering-question"/>
+                        <div class="ni-details">
+                            <div class="number">
+                                <strong>
+                                    <t t-esc="state_qty.get('ask_qty') if state_qty.get('ask_qty') else 0"/>
+                                </strong>
+                            </div>
+                            <div class="icon bg-violet">
+                                <i class="fa fa-commenting" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <span>Engineering Question</span>
+                        </div>
+                    </a>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

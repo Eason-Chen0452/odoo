@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cpo_website_demo_tree">
+            <field name="name">CPO WebSite Demo Tree</field>
+            <field name="model">cpo.website.demo</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="class_code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_website_demo_form">
+            <field name="name">CPO Website Demo Form</field>
+            <field name="model">cpo.website.demo</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="class_code"/>
+                            <field name="body_html" widget="html" options="{'style-inline': true}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_website_demo_action_window">
+            <field name="name">CPO Website Demo Action</field>
+            <field name="res_model">cpo.website.demo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="cpo_website_demo_tree" />
+        </record>
+
+            <!-- actions -->
+        <menuitem name="WebSite Demo" id="cpo_website_demo_menu" parent="sales_team.menu_sales"
+              action="cpo_website_demo_action_window" sequence="57" groups="website_cpo_sale.cpo_website_demo_admin"/>
+    </data>
+</odoo>

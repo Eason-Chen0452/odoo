@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- 网站来源对象 Tree -->
+        <record model="ir.ui.view" id="cpo_partner_source_tree">
+            <field name="name">Partner Source Tree</field>
+            <field name="model">website_cpo_index.cpo_partner_source</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cpo_name"/>
+                    <field name="name"/>
+                    <field name="cpo_time"/>
+                    <field name="user_number"/>
+                    <button class="btn btn-primary" name="cpo_search_users_btn" type="object" string="View user"></button>
+                </tree>
+            </field>
+        </record>
+
+        <!-- 网站来源记录 Tree -->
+        <record model="ir.ui.view" id="cpo_website_source_tree">
+            <field name="name">Website Source Tree</field>
+            <field name="model">website_cpo_index.cpo_website_source</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="user_name"/>
+                    <field name="customer_related"/>
+                    <field name="cpo_source"/>
+                    <field name="access_path"/>
+                    <field name="cpo_ip"/>
+                    <field name="cpo_city"/>
+                    <field name="cpo_country"/>
+                    <field name="session_id"/>
+                    <field name="cpo_time"/>
+                    <field name="deal_with"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- 网站来源详细记录 Tree -->
+        <record model="ir.ui.view" id="all_website_source_tree">
+            <field name="name">Website Source Tree</field>
+            <field name="model">website_cpo_index.all_partner_source</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!--<field name="site_name"/>-->
+                    <field name="cpo_name"/>
+                    <field name="session_id"/>
+                    <field name="cpo_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- 网站来源对象 Form -->
+        <record model="ir.ui.view" id="cpo_partner_source_form">
+            <field name="name">Partner Source Form</field>
+            <field name="model">website_cpo_index.cpo_partner_source</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="cpo_search_users_btn" icon="fa-user-circle">
+                            <field string="Users" name="user_number" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <group col="4">
+                        <group colspan="2">
+                            <field name="cpo_name" />
+                        </group>
+                        <group colspan="2">
+                            <field name="name" />
+                        </group>
+                        <group colspan="2">
+                            <field name="cpo_time" />
+                        </group>
+                        <group colspan="4">
+                            <field name="partner_ids"  widget="many2many_tags" options="{'color_field': 'color'}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Source all">
+                            <field name="source_id" />
+                        </page>
+                        <!--<page string="Internal keyword">-->
+                            <!--<field name="internal_keyword"/>-->
+                        <!--</page>-->
+                        <!--<page string="External keyword">-->
+                            <!--<field name="external_keyword"/>-->
+                        <!--</page>-->
+                        <!--<page string="Exception keyword">-->
+                            <!--<field name="exception_keyword"/>-->
+                        <!--</page>-->
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <!-- 网站来源记录 Form -->
+        <record model="ir.ui.view" id="cpo_website_source_form">
+            <field name="name">Website Source Form</field>
+            <field name="model">website_cpo_index.cpo_website_source</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="user_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="user_id" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_ip" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_city" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_country" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_time" />
+                            </group>
+                            <group colspan="4">
+                                <field name="customer_related" />
+                            </group>
+                            <group colspan="4">
+                                <field name="cpo_source" />
+                            </group>
+                            <group colspan="4">
+                                <field name="access_path" />
+                            </group>
+                            <group colspan="4">
+                                <field name="session_id" />
+                            </group>
+                            <group colspan="4">
+                                <field name="deal_with" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- 每个网址相同，参数不同的的网址 Form -->
+        <record model="ir.ui.view" id="cpo_source_all_form">
+            <field name="name">Source all Form</field>
+            <field name="model">website_cpo_index.all_partner_source</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="site_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="session_id" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_time" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--客户个人中心-->
+        <record id="cpo_personal_center_form_inhert" model="ir.ui.view">
+            <field name="name">Personal Center</field>
+            <field name="model">personal.center</field>
+            <field name="inherit_id" ref="personal_center.personal_center_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lang']" position="after">
+                    <field name="website_source" />
+                </xpath>
+            </field>
+        </record>
+
+        <!--网站来源 搜索视图-->
+        <record id="cpo_partner_source_search" model="ir.ui.view">
+            <field name="name">Partner Source Search</field>
+            <field name="model">website_cpo_index.cpo_partner_source</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <group expand='0' string='Filters'>
+                        <!--datetime.datetime.strptime(datetime.datetime.now().strftime('%Y-%m-%d 00:00:00'), '%Y-%m-%d %H:%M:%S')-datetime.timedelta(hours=8)-->
+                        <!--(datetime.datetime.fromtimestamp(time.mktime(time.strptime(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), '%Y-%m-%d %H:%M:%S')))-datetime.timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S')-->
+                        <filter string="To day" name="today"  domain="[('create_date','&gt;=', datetime.datetime(datetime.datetime.now().year, datetime.datetime.now().month, datetime.datetime.now().day-1, 16, 0, 0).strftime('%Y-%m-%d %H:%M:%S')),('create_date', '&lt;', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>
+                        <filter string="This week" name="this_week"  domain="[('create_date','&gt;', (context_today() - datetime.timedelta(days=7) - datetime.timedelta(hours=8)).strftime('%Y-%m-%d 00:00:00'))]"/>
+                        <filter string="Current month" name="current_month" domain="[('create_date','&gt;=', time.strftime('%Y-%m-01 00:00:00')),('create_date','&lt;',  (context_today() + relativedelta(months=1)).strftime('%Y-%m-01 00:00:00'))]"/>
+                        <filter string="Current year" name="current_year"  domain="[('create_date','&lt;=', time.strftime('%Y-12-31 23:59:59')),('create_date','&gt;=', time.strftime('%Y-01-01 00:00:00'))]"/>
+                    </group>
+                    <group string="Group By">
+                        <filter name="group_by_cpo_name" string="Site Name" context="{'group_by': 'cpo_name'}"/>
+                        <filter name="group_by_cpo_time" string="Monthly visit source" context="{'group_by': 'cpo_time'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <!-- 搜索视图-->
+        <record id="cpo_website_source_search" model="ir.ui.view">
+            <field name="name">Website Source Search</field>
+            <field name="model">website_cpo_index.cpo_website_source</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <group expand='0' string='Filters'>
+                        <filter string="To day" name="today"  domain="[('create_date','&gt;=', datetime.datetime(datetime.datetime.now().year, datetime.datetime.now().month, datetime.datetime.now().day-1, 16, 0, 0).strftime('%Y-%m-%d %H:%M:%S')),('create_date', '&lt;', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>
+                        <filter string="This week" name="this_week"  domain="[('create_date','&gt;', (context_today() - datetime.timedelta(days=7) - datetime.timedelta(hours=8)).strftime('%Y-%m-%d 00:00:00'))]"/>
+                        <filter string="Current month" name="current_month" domain="[('create_date','&gt;=', time.strftime('%Y-%m-01 00:00:00')),('create_date','&lt;',  (context_today() + relativedelta(months=1)).strftime('%Y-%m-01 00:00:00'))]"/>
+                        <filter string="Current year" name="current_year"  domain="[('create_date','&lt;=', time.strftime('%Y-12-31 23:59:59')),('create_date','&gt;=', time.strftime('%Y-01-01 00:00:00'))]"/>
+                    </group>
+                    <group string="Group By">
+                        <filter name="group_by_cpo_source" string="Website Source" context="{'group_by': 'cpo_source'}" />
+                        <filter name="group_by_cpo_ip" string="User IP" context="{'group_by': 'cpo_ip'}"/>
+                        <filter name="group_by_cpo_country" string="Country" context="{'group_by': 'cpo_country'}"/>
+                        <filter name="group_by_cpo_city" string="City" context="{'group_by': 'cpo_city'}"/>
+                        <filter name="group_by_cpo_time" string="Create Time" context="{'group_by': 'cpo_time'}"/>
+                        <filter name="group_by_user_name" string="User Name" context="{'group_by': 'user_name'}"/>
+                        <filter name="group_by_access_path" string="Access Path" context="{'group_by': 'access_path'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <!--继承客户中心添加记录数-->
+        <record id="personal_center_form_inhert" model="ir.ui.view">
+            <field name="name">Quotation Record</field>
+            <field name="model">personal.center</field>
+            <field name="inherit_id" ref="personal_center.personal_center_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='get_correspond_views']" position="after">
+                    <button class="oe_stat_button" type="object" name="get_quotation_record" icon="fa-reorder">
+                        <field string="Quotation Number" name="quote_record" widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" type="object" name="get_source_record" icon="fa-list">
+                        <field string="Visits" name="source_number" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+        <!--	chart（图表）Begin	-->
+        <record id="cpo_website_source_graph" model="ir.ui.view">
+            <field name="name">Website Source Graph</field>
+            <field name="model">website_cpo_index.cpo_website_source</field>
+            <field name="arch" type="xml">
+                <graph string="PCB" >
+                     <field name="user_name" />
+                     <field name="customer_related" />
+                </graph>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="cpo_website_source_calendar">
+            <field name="name">Website Source Calendar</field>
+            <field name="model">website_cpo_index.cpo_website_source</field>
+            <field name="arch" type="xml">
+                <calendar string="Ideas" date_start="cpo_time" >
+                    <field name="user_name" />
+                    <field name="cpo_country" />
+                </calendar>
+            </field>
+        </record>
+		<!--	chart（图表）End	-->
+
+        <record model="ir.actions.act_window" id="cpo_website_source_actions">
+            <field name="name">Website Source Actions</field>
+            <field name="res_model">website_cpo_index.cpo_website_source</field>
+            <field name="view_mode">tree,form,graph,calendar</field>
+            <field name="context">{'search_default_current':1, 'search_default_group_by_user_name': 1, 'search_default_today': 1}</field>
+        </record>
+        <record model="ir.actions.act_window" id="cpo_partner_source_actions">
+            <field name="name">Partner Source Actions</field>
+            <field name="res_model">website_cpo_index.cpo_partner_source</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_current':1}</field>
+        </record>
+
+
+        <!-- 网站来源记录 -->
+        <menuitem name="Website Source Record" id="cpo_website_source_menu" parent="website_cpo_index.cpo_quotation_top_all_menu"
+                action="cpo_website_source_actions"/>
+        <menuitem name="Promotion channels" id="cpo_partner_source_menu" parent="website_cpo_index.cpo_quotation_top_all_menu"
+                action="cpo_partner_source_actions"/>
+
+
+		<!-- 客户个人中心（依赖模块personal_center） Tree -->
+        <record model="ir.ui.view" id="cpo_personal_center_tree_inherit">
+            <field name="name">Personal Center List</field>
+            <field name="model">personal.center</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="country"/>
+                    <field name="website_source"/>
+                </tree>
+            </field>
+        </record>
+    <!-- 分##################################################割####################################################线 -->
+        <!--客户来源中的网站标签-->
+        <!--website tag tree-->
+        <record model="ir.ui.view" id="cpo_website_tag_list">
+            <field name="name">Website tag list</field>
+            <field name="model">website_cpo_index.website_tag</field>
+            <field name="arch" type="xml">
+                <tree>
+                  <field name="name"/>
+                  <field name="site_address"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="cpo_website_tag_form">
+             <field name="name">Website tag form</field>
+             <field name="model">website_cpo_index.website_tag</field>
+             <field name="arch" type="xml">
+                  <form >
+                      <sheet>
+                          <group col="4">
+                              <group colspan="2">
+                                  <field name="name"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="site_address"/>
+                              </group>
+                          </group>
+                      </sheet>
+                  </form>
+             </field>
+        </record>
+
+        <!-- 设置action打开视图-->
+        <record model="ir.actions.act_window" id="cpo_website_tag_action">
+            <field name="name">Website tag action</field>
+            <field name="res_model">website_cpo_index.website_tag</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--设置菜单-->
+        <!--<menuitem name="Data" id="web_test_selected" parent="web_test_menu_root"/>-->
+        <menuitem name="Promotion website tag" id="website_tag_menu_list" parent="website_cpo_index.cpo_quotation_top_all_menu"
+              action="cpo_website_tag_action"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <template id="sales_agent_template" inherit_id="web.assets_backend" name="SalesAgent">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css" href="/sales_agent/static/src/less/inherit_kanban_view.less"/>
+            </xpath>
+
+        </template>
+    </data>
+</odoo>

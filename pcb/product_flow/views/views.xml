@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inherit_sale_order_flow" model="ir.ui.view">
+            <field name="name">Sale Order Product Flow</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='pricelist_id']" position="after">
+                    <field name="check_quotation_line" invisible="1"/>
+                    <label for="pcb_flow" attrs="{'invisible': ['|',('check_quotation_line', '=', False),('state', 'in', ('wait_confirm', 'sent', 'sale', 'wait_payment'))]}"/>
+                    <div attrs="{'invisible': ['|',('check_quotation_line', '=', False),('state', 'in', ('wait_confirm', 'sent', 'sale', 'wait_payment'))]}">
+                        <field name="pcb_flow" force_save="1" class="oe_inline"/>
+                        <button name="EmailReminderProgress" type="object" class="oe_inline oe_highlight" style="margin-left:10px; margin-top:0px;" string="Notify Product Progress" context="{'product': 'PCB'}"/>
+                    </div>
+                    <label for="pcba_flow" attrs="{'invisible': ['|',('product_type', '!=', 'PCBA'),('state', 'in', ('wait_confirm', 'sent', 'sale', 'wait_payment'))]}"/>
+                    <div attrs="{'invisible': ['|',('product_type', '!=', 'PCBA'),('state', 'in', ('wait_confirm', 'sent', 'sale', 'wait_payment'))]}">
+                        <field name="pcba_flow" force_save="1" class="oe_inline"/>
+                        <button name="EmailReminderProgress" type="object" class="oe_inline oe_highlight" style="margin-left:10px; margin-top:0px;" string="Notify Product Progress" context="{'product': 'PCBA'}"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

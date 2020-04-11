@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+
+access_mass_sales_mail_salesman,mass.sales.mail.salesman,model_mass_sales_mail,sales_team.group_sale_salesman,1,1,1,0
+access_mass_sales_mail_line_salesman,mass.sales.mail.line.salesman,model_mass_sales_mail_line,sales_team.group_sale_salesman,1,0,0,0
+access_custom_message_text_salesman,custom.message.text.salesman,model_custom_message_text,sales_team.group_sale_salesman,1,0,0,0
+access_mail_click_link_salesman,mail.click.link.salesman,model_mail_click_link,sales_team.group_sale_salesman,1,0,0,0
+
+access_mass_sales_mail_manager,mass.sales.mail.manager,model_mass_sales_mail,sales_team.group_sale_manager,1,1,1,1
+access_mass_sales_mail_line_manager,mass.sales.mail.line.manager,model_mass_sales_mail_line,sales_team.group_sale_manager,1,1,1,1
+access_custom_message_text_manager,custom.message.text.manager,model_custom_message_text,sales_team.group_sale_manager,1,1,1,1
+access_mail_click_link_manager,mail.click.link.manager,model_mail_click_link,sales_team.group_sale_salesman,1,1,1,1
+
+access_mail_return_processing_base,mail.return.processing.base,model_mail_return_processing,base.group_no_one,1,1,1,1

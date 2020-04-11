@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="electron_public_list">
+             <field name="name">Semi Conductor List</field>
+             <field name="model">electron.semi_conductor</field>
+             <field name="arch" type="xml">
+                 <tree>
+                    <field name="applications"/>
+                    <field name="IC_type"/>
+                    <field name="supplier_enca"/>
+                    <field name="ddr_sdram"/>
+                    <field name="memory_format"/>
+                    <field name="technology"/>
+                    <field name="memory_capacity"/>
+                    <field name="clock_rate"/>
+                    <field name="write_cycle"/>
+                    <field name="access_time"/>
+                    <field name="memory_interface"/>
+                 </tree>
+             </field>
+        </record>
+        
+        
+    </data>
+</odoo>

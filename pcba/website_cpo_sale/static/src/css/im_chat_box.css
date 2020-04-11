@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+@keyframes cpo_breathe {
+    from { opacity: 1.0; }
+    50% { opacity: 0.3; }
+    to { opacity: 1.0; }
+}
+
+@-webkit-keyframes cpo_breathe {
+    from { opacity: 1.0; }
+    50% { opacity: 0.3; }
+    to { opacity: 1.0; }
+}
+.o_livechat_button{
+    /*animation:cpo_breathe 3000ms infinite;*/
+    /*-webkit-animation:cpo_breathe 3000ms infinite;*/
+    bottom: 37%!important;
+    right: 0!important;
+    padding: 0!important;
+    border: none!important;
+    white-space: normal!important;
+    min-width: 55px!important;
+    background-color: rgba(60, 60, 60, 0)!important;
+}
+#cpo_shrink_magnify{
+    width: 30px;
+    height: 26px;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    padding: 0;
+    z-index: 999;
+}
+
+.cpo_im_box_p{
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    margin-top: -27px;
+    margin-left: 12px;
+}
+.cpo_im_box_p p{
+    margin-bottom: 0;
+    display: inline-block;
+}
+.cpo_conversation_icon{
+    max-width: 55px;
+    display: inline-block;
+    -moz-transform:scaleX(-1);
+    -webkit-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+    animation:cpo_breathe 2000ms infinite;
+    -webkit-animation:cpo_breathe 2000ms infinite;
+}
+.cpo_conversation_content h2.conversation_title{
+    /*text-align: center;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.cpo_conversation_content{
+    display: inline-block;
+    padding-right: 30px;
+}
+
+.cpo_im_box_ico{
+    font-size:30px;
+}
+#cpo_customer_service{
+    position: absolute;
+    right: 0;
+    bottom: 28px;
+    z-index: -99;
+}

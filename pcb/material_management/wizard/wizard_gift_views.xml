@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wizard_gift_tree" model="ir.ui.view">
+            <field name="name">Material Gift Tree</field>
+            <field name="model">wizard.material.gift</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="material_ids" widget="many2many_tags"/>
+                    <field name="all_show_bool"/>
+                    <field name="assign_show_bool"/>
+                    <field name="gift_cycle" force_save="1"/>
+                    <field name="use_cycle" force_save="1"/>
+                    <field name="send"/>
+                    <field name="number"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="wizard_gift_form" model="ir.ui.view">
+            <field name="name">Material Gift Form</field>
+            <field name="model">wizard.material.gift</field>
+            <field name="arch" type="xml">
+                <form string="Material Gift">
+                    <header>
+                        <button name="action_all_create" string="Unified Creation" type="object" class="oe_highlight"/>
+                        <button name="action_check" string="Check Views" type="object" attrs="{'invisible':[('gift_create_bool', '=', False)]}"/>
+                        <button name="action_effective" string="Unified Effective" type="object" attrs="{'invisible':[('gift_create_bool', '=', False)]}"/>
+                    </header>
+                    <sheet>
+                        <field name="gift_create_bool" invisible="1"/>
+                        <group string="Material Name">
+                            <field name="material_ids" widget="many2many_tags" nolabel="1"/>
+                        </group>
+                        <group colspan="4" col="4" string="Material Gift Setting">
+                            <field name="all_show_bool"/>
+                            <field name="assign_show_bool"/>
+                            <field name="send"/>
+                            <field name="number"/>
+                        </group>
+                        <group col="4" colspan="4" string="Material Gift Time Period">
+                            <label for="gift_start" string="Start Time"/>
+                            <div>
+                                <field name="gift_start"/>
+                            </div>
+                            <label for="gift_end" string="End Time"/>
+                            <div>
+                                <field name="gift_end"/>
+                            </div>
+                            <field name="gift_cycle" invisible="1" force_save="1"/>
+                        </group>
+                        <group col="4" colspan="4" string="Material Use Time Period">
+                            <label for="use_start" string="Start Time"/>
+                            <div>
+                                <field name="use_start"/>
+                            </div>
+                            <label for="use_end" string="End Time"/>
+                            <div>
+                                <field name="use_end"/>
+                            </div>
+                            <field name="use_cycle" invisible="1" force_save="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="wizard_gift_window" model="ir.actions.act_window">
+            <field name="name">Unity Operation Can Give Gifts</field>
+            <field name="res_model">wizard.material.gift</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                   Multiple gift materials can be set at the same time...
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Unity Operation Can Give Gifts" id="wizard_1_list" parent="material_menu_2" action="wizard_gift_window"/>
+
+    </data>
+</odoo>

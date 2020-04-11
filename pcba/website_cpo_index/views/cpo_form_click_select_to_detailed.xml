@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- 创建tree视图 -->
+        <record model="ir.ui.view" id="cpo_click_select_detailed_list">
+            <field name="name">Select Detailed List</field>
+            <field name="model">cpo_click_select_detailed</field>
+            <field name="arch" type="xml">
+                <tree>
+                  <field name="cpo_detailed_type"/>
+                  <field name="name"/>
+                  <field name="cpo_detailed_rel"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- 创建form视图 -->
+        <record model="ir.ui.view" id="cpo_click_select_detailed_form">
+             <field name="name">Select Detailed Form</field>
+             <field name="model">cpo_click_select_detailed</field>
+             <field name="arch" type="xml">
+                  <form >
+                      <sheet>
+                          <group col="4">
+                              <group colspan="2">
+                                  <field name="cpo_detailed_type"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="name"/>
+                              </group>
+                              <group colspan="4">
+                                  <field name="cpo_detailed_rel"/>
+                              </group>
+                          </group>
+                      </sheet>
+                  </form>
+             </field>
+        </record>
+
+
+        <!--搜索视图-->
+        <record id="cpo_click_select_detailed_search" model="ir.ui.view">
+            <field name="name">Click Select Detailed Search</field>
+            <field name="model">cpo_click_select_detailed</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="cpo_detailed_type"/>
+                    <field name="name"/>
+                    <field name="cpo_detailed_rel"/>
+                    <group string="Group By">
+                        <filter name="group_by_cpo_detailed_type" string="Detailed Type" context="{'group_by': 'cpo_detailed_type'}"/>
+                        <!--<filter name="group_by_manufacturer_id" string="制造商编号" context="{'group_by': 'manufacturer_id'}"/>-->
+                        <!--<filter name="group_by_confirm_time" string="确认时间" context="{'group_by': 'confirm_time'}"/>-->
+                    </group>
+                </search>
+              </field>
+        </record>
+
+        <!-- 设置action打开视图-->
+        <record model="ir.actions.act_window" id="cpo_click_select_detailed_action">
+            <field name="name">Select Detailed Action</field>
+            <field name="res_model">cpo_click_select_detailed</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_current':1, 'search_default_group_by_cpo_detailed_type': 1}</field>
+        </record>
+
+        <!--设置菜单-->
+        <menuitem name="Select Detailed Date" id="cpo_click_select_detailed_menu_list" parent="website_cpo_index.cpo_click_select_category_menu"
+              action="cpo_click_select_detailed_action"/>
+
+    </data>
+</odoo>

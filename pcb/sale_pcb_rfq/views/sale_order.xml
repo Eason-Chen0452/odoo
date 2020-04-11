@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--销售视图进行重新处理-->
+        <record id="cpo_sale_order_form_inhert" model="ir.ui.view">
+            <field name="name">cpo_sale_order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <!--覆盖原始的state-->
+                <xpath expr="//form/header/field[@name='state']" position="replace">
+                    <field name="state" widget="statusbar" statusbar_visible="wait_confirm,sent,sale,wait_payment,wait_make,manufacturing,wait_delivery,wait_receipt,complete"/>
+                    <field name="calculate_bool" invisible="1"/>
+                </xpath>
+                <!--增加快递单号 cpo_courier_bool 来确定是否到付 而 cpo_lock_bool用来触发销售人员可修改的情况-->
+                <xpath expr="//field[@name='shipping_fee']" position="replace">
+                    <field name="cpo_courier_bool" invisible="1"/>
+                    <div attrs="{'invisible': [('cpo_courier_bool', '=', False)]}">
+                        Customer payment -
+                        Tracking Number:
+                        <field name="cpo_courier_number" class="oe_inline" attrs="{'readonly':[('state', 'in', ('wait_receipt', 'complete'))]}"/> -
+                        <field name="cpo_courier" class="oe_inline" attrs="{'readonly':[('state', 'in', ('wait_receipt', 'complete'))]}"/> -
+                        <field name="client_account" class="oe_inline"/>
+                    </div>
+                    <div attrs="{'invisible': [('cpo_courier_bool', '=', True)]}">
+                        <field name="shipping_fee" class="oe_inline" attrs="{'readonly':[('state', 'not in', ('draft', 'wait_confirm', 'sent'))]}" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        Tracking Number:
+                        <field name="cpo_courier_number" class="oe_inline" attrs="{'readonly':[('state', 'in', ('wait_receipt', 'complete'))]}"/> -
+                        <field name="cpo_courier" class="oe_inline" attrs="{'readonly':[('state', 'in', ('wait_receipt', 'complete'))]}"/>
+                    </div>
+                    <field name="cpo_lock_bool" invisible="1"/>
+                    <field name="proof_bool" force_save="1" invisible="1"/>
+                    <field name="product_type" force_save="1" invisible="1"/>
+                    <field name="stencil_bool" invisible="1"/>
+                    <field name="quotation_bool" invisible="1"/>
+                    <field name="modify_bool" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='pricelist_id']" position="after">
+                    <field name="package_bool" force_save="1" attrs="{'invisible': [('package_bool', '=', False)]}"/>
+                    <field name="order_markup_bool" force_save="1" attrs="{'invisible': [('order_markup_bool', '=', False)]}"/>
+                    <field name="product_name" force_save="1"/>
+                </xpath>
+                <!--PCB栏和钢网栏-->
+                <xpath expr="/form/sheet/notebook/page[1]" position="after">
+                    <page string="Stencil Line" attrs="{'invisible': [('stencil_bool', '=', False)]}">
+                        <field name="stencil_line" mode="tree, form" attrs="{'readonly':[('state', '!=', 'draft'),('cpo_lock_bool', '=', False)]}">
+                            <tree string="Stencil Line">
+                                <field name="sale_order_id" invisible="1"/>
+                                <field name="steel_mesh_size_id"/>
+                                <field name="steel_mesh_thickness_id"/>
+                                <field name="cpo_stencil_qty"/>
+                                <field name="cpo_stencil_delivery"/>
+                                <field name="cpo_stencil_subtotal"/>
+                            </tree>
+                            <form string="Stencil">
+                                <sheet>
+                                    <group string="Steel mesh size and thickness" style="margin-top:-10px;" colspan="4" col="4">
+                                        <field name="steel_mesh_size_id"/>
+                                        <field name="steel_mesh_thickness_id"/>
+                                    </group>
+                                    <group string="Quantity, delivery, subtotal" style="margin-top:-10px;" colspan="4" col="4">
+                                        <field name="cpo_stencil_qty"/>
+                                        <field name="cpo_stencil_delivery"/>
+                                        <field name="cpo_stencil_weight"/>
+                                        <field name="cpo_stencil_subtotal" readonly="1"/>
+                                    </group>
+                                    <field name="cpo_stencil_text"/>
+                                </sheet>
+                            </form>
+                        </field>
+                    </page>
+                    <page string="PCB Line" attrs="{'invisible': [('quotation_bool', '=', False)]}">
+                        <field name="quotation_line" attrs="{'readonly':[('state', '!=', 'draft'),('cpo_lock_bool', '=', False)]}" mode="tree">
+                            <tree string="PCB Line">
+                                <field name="sequence" widget="handle"/>
+                                <field name="state" invisible="1"/>
+                                <field name="customer_file_name" string="File Name"/>
+                                <field name="product_uom_qty"/>
+                                <field name="product_uom" groups="product.group_uom" options='{"no_open": True}' invisible="1"/>
+                                <field name="product_uos_qty" groups="product.group_uos" invisible="1"/>
+                                <field name="product_uos" string="UoS" groups="product.group_uos" invisible="1"/>
+                                <field name="layer_number" context="{'show_number':1}" options='{"always_reload": True}'/>
+                                <field name="base_type"/>
+                                <field name="total_size"/>
+                                <field name="price_unit"/>
+                                <field name="discount" groups="sale.group_discount_per_so_line"/>
+                                <field name="engine_fee"/>
+                                <field name="test_fee"/>
+                                <field name="quick_fee" force_save="1"/>
+                                <field name="test_tooling_fee"/>
+                                <field name="subtract"/>
+                                <field name="subtotal"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <!--客户留言、销售员留言、修改记录 -->
+                <xpath expr="//form/sheet/notebook/page[7]" position="after">
+                    <page string="Remarks">
+                        <group>
+                            <field name="cpo_text" force_save="1"/>
+                        </group>
+                    </page>
+                    <page string="Sale Remarks">
+                        <group>
+                            <field name="cpo_sale_text" force_save="1"/>
+                        </group>
+                    </page>
+                    <page string="Sale Order Modify Recording" attrs="{'invisible': [('modify_bool', '=', False)]}">
+                        <field name="modify_ids" mode="tree, form">
+                            <tree create="false" edit='false' delete='false'>
+                                <field name="order_id" invisible="1"/>
+                                <field name="cpo_seller"/>
+                                <field name="china_time"/>
+                                <field name="cpo_modify"/>
+                                <field name="cpo_old_field"/>
+                                <field name="cpo_new_field"/>
+                            </tree>
+                            <form create="false" edit="false" delete="false">
+                                <field name="order_id" invisible="1"/>
+                                <field name="cpo_seller" readonly="1"/>
+                                <field name="china_time" readonly="1"/>
+                                <field name="cpo_modify" readonly="1"/>
+                                <field name="cpo_old_field" readonly="1"/>
+                                <field name="cpo_new_field" readonly="1"/>
+                            </form>
+                        </field>
+                    </page>
+                    <page string="Production Process Information" attrs="{'invisible': [('state', '!=', 'manufacturing')]}">
+                        <field name="circuit_ids" mode="tree">
+                            <tree>
+                                <field name="make_time"/>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <!--查看PCB原始单 进行修改 完成修改 确定制造完成 填写快单号 确认客户收到产品-->
+                <xpath expr="//button[@name='analyze_bom']" position="after">
+                    <button name="update_sale_order_lock_true" type="object" string="Orders need to be modified" class="btn-primary" states="wait_confirm,sent" attrs="{'invisible': ['|', ('cpo_lock_bool', '=', True)]}" groups="sales_team.group_sale_salesman"/>
+                    <button name="update_sale_order_lock_false" type="object" string="Modified" class="btn-primary" states="wait_confirm,sent" attrs="{'invisible': ['|', ('cpo_lock_bool', '=', False)]}" groups="sales_team.group_sale_salesman"/>
+                    <button name="action_check_invoices" type="object" string="Check Invoices" states="wait_payment" class="btn-primary" groups="sales_team.group_sale_salesman"/>
+                    <button name="action_manufacturing" type="object" string="Manufacturing" states="wait_make" class="btn-primary" groups="sales_team.group_sale_salesman"/>
+                    <button name="action_open_additional_cost_view" type="object" string="Additional Cost" states="wait_make" class="btn-primary" groups="sales_team.group_sale_salesman"/>
+                    <button name="action_manufacturing_completed" type="object" string="Manufacturing Completed" class="btn-primary" states="manufacturing" confirm="Please determine if the manufacturing is complete" groups="sales_team.group_sale_salesman"/>
+                    <button name="action_tracking_number" type="object" string="Ship" class="btn-primary" states="wait_delivery" confirm="Please confirm the courier number and please contact the customer." groups="sales_team.group_sale_salesman"/>
+                    <button name="action_confirm_receipt" type="object" string="Confirm Receipt" class="btn-primary" states="wait_receipt" confirm="Please determine if the customer receives the product" groups="sales_team.group_sale_salesman_all_leads"/>
+                    <button name="Previous" type="object" string="Previous" states="sale,wait_payment"/>
+                    <button name="Check_PCB_views" type="object" string="View PCB"/>
+                    <button name="action_cancel_package" type="object" string="Cancel Package" states="wait_confirm,sent" attrs="{'invisible': ['|', ('package_bool', '=', False)]}" groups="sales_team.group_sale_salesman"/>
+                </xpath>
+                <!--邮件发送 如果销售员在修改 该按钮隐藏-->
+                <xpath expr="//button[@name='action_quotation_send']" position="replace" >
+                    <button name="action_quotation_send" string="Send by Email" type="object" states="wait_confirm,wait_payment,wait_make,manufacturing,wait_delivery,wait_receipt,complete"
+                            attrs="{'invisible': ['|','|','|',('cpo_lock_bool', '=', True), ('calculate_bool', '=', False)]}" groups="sales_team.group_sale_salesman"/>
+                </xpath>
+                <!--计算按钮 在修改情况下 隐藏-->
+                <xpath expr="//button[@name='calculate_price']" position="replace">
+                    <button name="calculate_price" type="object" string="Calculate Quotation" class="btn-primary" states="wait_confirm,sent"
+                            attrs="{'invisible': ['|', ('cpo_lock_bool', '=', True)]}" groups="sales_team.group_sale_salesman,sales_team.group_sale_manager,sales_team.group_sale_salesman_all_leads"/>
+                </xpath>
+                <!--确认销售 修改情况下 隐藏-->
+                <xpath expr="//button[@name='action_confirm']" position="replace">
+                    <button name="action_confirm" type="object" string="Confirm Sale" class="btn-primary" states="wait_confirm,sent"
+                            attrs="{'invisible': ['|', ('cpo_lock_bool', '=', True), '|', ('calculate_bool', '=', False)]}" groups="sales_team.group_sale_salesman,sales_team.group_sale_manager,sales_team.group_sale_salesman_all_leads"/>
+                </xpath>
+                <!--锁 这个按钮隐藏-->
+                <xpath expr="//button[@name='action_done']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <!--取消 按钮-->
+                <xpath expr="//button[@name='action_cancel']" position="replace">
+                    <button name="action_cancel" states="draft,sent,sale,wait_confirm,wait_payment,wait_make,manufacturing,wait_delivery,wait_receipt,complete"
+                            type="object" string="Cancel" groups="sales_team.group_sale_manager" confirm="Once this order is cancelled, it is possible to void!"/>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page/field[@name='order_line']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('cpo_lock_bool', '=', False), ('state', '!=', 'draft')]}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/group/group/field[@name='partner_id']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('state', '!=', 'draft')]}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/group/group/field[@name='partner_invoice_id']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('state', '!=', 'draft')]}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/group/group/field[@name='partner_shipping_id']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('state', '!=', 'draft')]}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/group/group/field[@name='validity_date']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('state', '!=', 'draft')]}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page/group/group/field[@name='user_id']" position="attributes">
+                    <attribute name="domain">[('share', '=', False)]</attribute>
+                </xpath>
+            </field>
+        </record>
+        <!--order_tree类型分类-->
+        <record id="inhert_view_order_tree" model="ir.ui.view">
+            <field name="name">inhert_view_order_tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <!--产品名称类别-->
+                <xpath expr="//tree/field[@name='name']" position="before">
+                    <field name="product_type" force_save="1" invisible="1"/>
+                    <field name="product_name" force_save="1"/>
+                </xpath>
+                <!--将销售订单的invoice_status 替换成state-->
+                <xpath expr="//tree/field[@name='invoice_status']" position="replace">
+                    <field name="state"/>
+                </xpath>
+            </field>
+        </record>
+        <!--quotation_tree类型分类-->
+        <record id="inhert_view_quotation_tree" model="ir.ui.view">
+            <field name="name">inhert_view_quotation_tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='name']" position="before">
+                    <field name="product_type" force_save="1" invisible="1"/>
+                    <field name="product_name" force_save="1"/>
+                </xpath>
+                <xpath expr="//tree/field[@name='state']" position="before">
+                    <field name="order_markup_bool"/>
+                </xpath>
+            </field>
+        </record>
+        <!--发票invoice_line_tree增加用费字段-->
+        <record id="inherit_view_invoice_line_tree" model="ir.ui.view">
+            <field name="name">inherit_view_invoice_line_tree</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account.view_invoice_line_tree"/>
+            <field name="arch" type="xml">
+                <!--增加 运费 折扣费用 产品总计价格 非实际 总价-->
+                <xpath expr="//tree/field[@name='price_subtotal']" position="before">
+                    <field name="cpo_shipping_cost" force_save="1"/>
+                    <field name="cpo_discount_total" force_save="1"/>
+                    <field name="cpo_product_price_subtotal" force_save="1"/>
+                </xpath>
+                <xpath expr="//tree/field[@name='price_subtotal']" position="attributes">
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        <!--发票invoice_form增加用费字段-->
+        <record id="inherit_invoice_form" model="ir.ui.view">
+            <field name="name">inherit_invoice_supplier_form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <!--增加发票中user_id的筛选-->
+                <xpath expr="//form/sheet/group/group/field[@name='user_id']" position="attributes">
+                    <attribute name="domain">[('share', '=', False)]</attribute>
+                </xpath>
+                <!--在票中进行销售单追踪-->
+                <xpath expr="//form/sheet/group/group/field[@name='user_id']" position="before">
+                    <field name="sale_order_id"/>
+                </xpath>
+                <!--增加 运费 折扣费用 产品总计价格 非实际 总价-->
+                <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='price_subtotal']" position="before">
+                    <field name="cpo_shipping_cost" force_save="1"/>
+                    <field name="cpo_discount_total" force_save="1"/>
+                    <field name="cpo_product_price_subtotal" force_save="1"/>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='price_subtotal']" position="attributes">
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <!--按钮查看付款交易记录-->
+                <xpath expr="//form/header/button[@name='action_invoice_draft']" position="before">
+                    <button name="action_transaction" type="object" string="View transaction history"/>
+                </xpath>
+            </field>
+        </record>
+        <!--搜索分组 处理 通过新的状态处理-->
+        <record id="inherit_rfq_sale_order_search" model="ir.ui.view">
+            <field name="name">inherit_rfq_sale_order_search</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/field[@name='product_id']" position="before">
+                    <field name="state"/>
+                    <group string="Status" expand="1">
+                        <filter name="group_by_state" string="Status" context="{'group_by':'state'}" domain="[]"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <!--这是报价单的window-->
+        <record id="sale_pcb_rfq.action_quotations" model="ir.actions.act_window">
+            <field name="name">Quotations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="sale.view_quotation_tree"/>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+            <field name="domain">['&amp;', ('markup_bool', '=', False), ('state', 'not in', ('cancel', 'draft', 'complete', 'refunded'))]</field>
+            <field name="context">{'hide_sale': True,'search_default_group_by_state': 1}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Create a Quotation, the first step of a new sale.
+              </p><p>
+                There are currently no operational quotations.
+              </p>
+            </field>
+        </record>
+        <!--询价单的window-->
+        <record id="sale_pcb_rfq.rfq_sale_order_quotations" model="ir.actions.act_window">
+            <field name="name">RFQ</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="sale.view_quotation_tree"/>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+            <field name="domain">['&amp;', ('markup_bool', '=', False), ('state', 'in', ('draft', 'cancel'))]</field>
+            <field name="context">{'search_default_group_by_state': 0}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Create a Quotation, the first step of a new sale.
+              </p><p>
+                There is currently no inquiry
+              </p>
+            </field>
+        </record>
+        <!--这是完成的订单的window-->
+        <record id="sale_pcb_rfq.action_orders" model="ir.actions.act_window">
+            <field name="name">Completed Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_sale"/>
+            <field name="domain">['&amp;', ('markup_bool', '=', False), ('state', '=', 'complete')]</field>
+            <field name="context">{'search_default_group_by_state': 0}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create a Quotation, the first step of a new sale.
+                </p><p>
+                    Currently no <i>Completed Order</i>.
+                </p>
+            </field>
+        </record>
+        <menuitem id="sale_pcb_rfq.menu_sale_order_rfq" action="sale_pcb_rfq.rfq_sale_order_quotations" parent="sales_team.menu_sales"
+                  sequence="10" name="RFQ" groups="sales_team.group_sale_manager"/>
+        <menuitem id="sale.menu_sale_quotations" action="sale_pcb_rfq.action_quotations" parent="sales_team.menu_sales" sequence="11"
+                  groups="sales_team.group_sale_salesman"/>
+        <menuitem action="sale_pcb_rfq.action_orders" id="sale.menu_sale_order" parent="sales_team.menu_sales"
+                  sequence="12" groups="sales_team.group_sale_salesman" name="Completed Order"/>
+
+        <!--重写SaleOrder Tree视图 只是给加价的调用-->
+        <record id="markup_view_order_tree" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="message_needaction" invisible="1"/>
+                    <field name="name" string="Quotation Number"/>
+                    <field name="date_order" string="Quotation Date"/>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                    <field name="amount_total" sum="Total Tax Included" widget="monetary"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="state"/>
+                    <field name="currency_id" invisible="True"/>
+                </tree>
+            </field>
+        </record>
+        <!--重写SaleOrder Form视图 只是给加价的调用-->
+        <record id="markup_view_order_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <form string="Sales Order" class="o_sale_order">
+                    <header>
+                        <button name="action_additional_cost" type="object" string="Determine Additional Cost" states="draft,sent"/>
+                        <button name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice" type="action" class="btn-primary" attrs="{'invisible': [('invoice_status', '!=', 'to invoice')]}"/>
+                        <button name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice" type="action" context="{'default_advance_payment_method': 'percentage'}" attrs="{'invisible': ['|',('invoice_status', '!=', 'no'), ('state', '!=', 'sale')]}"/>
+                        <button name="action_additional_email" string="Send by Email" type="object" states="draft" class="btn-primary"/>
+                        <button name="action_additional_email" string="Send by Email" type="object" states="sent,sale"/>
+                        <!--<button name="action_additional_print" string="Print" type="object" states="draft" class="btn-primary o_sale_print"/>-->
+                        <!--<button name="action_additional_print" string="Print" type="object" states="sent,sale" class="o_sale_print"/>-->
+                        <button name="action_cancel" states="draft,sent,sale,wait_make" type="object" string="Cancel"/>
+                        <button name="action_unlock" type="object" string="Unlock" states="done" groups="sales_team.group_sale_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,markup"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_invoice" type="object" class="oe_stat_button" icon="fa-pencil-square-o" attrs="{'invisible': [('invoice_count', '=', 0)]}">
+                                <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="partner_id" domain="[('customer','=',True)]" context="{'search_default_customer':1, 'show_address': 1}" options='{"always_reload": True}'/>
+                                <field name="partner_invoice_id" groups="sale.group_delivery_invoice_address" context="{'default_type':'invoice'}"/>
+                                <field name="partner_shipping_id" groups="sale.group_delivery_invoice_address" context="{'default_type':'delivery'}"/>
+                                <label for="markup_order_id" string="Extra Charge Orders"/>
+                                <div>
+                                    <field name="markup_order_id" class="oe_inline" readonly="1"/>
+                                </div>
+                                <field name="markup_bool" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="validity_date" attrs="{'invisible': [('state', 'in', ['sale', 'done'])]}"/>
+                                <field name="confirmation_date" attrs="{'invisible': [('state', 'in', ['draft', 'sent', 'cancel'])]}"/>
+                                <field name="pricelist_id" groups="product.group_sale_pricelist"/>
+                                <field name="payment_term_id" options="{'no_create': True}"/>
+                                <field name="first_order_partner" string="Discount"/>
+                                <field name="currency_id" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Order Lines">
+                                <field name="order_line" mode="tree,kanban" attrs="{'readonly': [('state', 'in', ('done','cancel'))]}">
+                                    <form string="Sales Order Lines">
+                                        <group>
+                                            <group>
+                                                <field name="product_id" context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"
+                                                       attrs="{'readonly': ['|', ('qty_invoiced', '&gt;', 0), ('procurement_ids', '!=', [])]}" force_save="1"/>
+                                                <field name="layout_category_id" groups="sale.group_sale_layout"/>
+                                                <label for="product_uom_qty" string="Ordered Quantity"/>
+                                                <div>
+                                                    <field context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'uom_qty_change':True, 'company_id': parent.company_id}"
+                                                           name="product_uom_qty" class="oe_inline"/>
+                                                    <field name="product_uom" groups="product.group_uom" class="oe_inline oe_no_button" attrs="{'readonly': [('state', 'in', ('sale','done', 'cancel'))]}"/>
+                                                </div>
+                                                <label for="qty_delivered" string="Delivered Quantity" invisible="context.get('hide_sale')"/>
+                                                <div invisible="context.get('hide_sale')">
+                                                    <field name="qty_delivered" attrs="{'readonly': [('qty_delivered_updateable', '=', False)]}"/>
+                                                </div>
+                                                <label for="qty_invoiced" string="Invoiced Quantity" invisible="context.get('hide_sale')"/>
+                                                <div invisible="context.get('hide_sale')">
+                                                    <field name="qty_invoiced" invisible="context.get('hide_sale')"/>
+                                                </div>
+                                                <!--<field name="price_unit"/>-->
+                                                <label for="discount" groups="sale.group_discount_per_so_line"/>
+                                                <div name="discount" groups="sale.group_discount_per_so_line">
+                                                    <field name="discount" class="oe_inline"/> %%
+                                                </div>
+                                                <field name="invoice_status" invisible="1"/>
+                                                <field name="qty_to_invoice" invisible="1"/>
+                                                <field name="qty_delivered_updateable" invisible="1"/>
+                                                <field name="procurement_ids" invisible="1"/>
+                                                <field name="price_subtotal" invisible="1"/>
+                                            </group>
+                                            <group>
+                                                <!--<field name="tax_id" widget="many2many_tags" domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]" attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"/>-->
+                                                <label for="customer_lead"/>
+                                                <div>
+                                                    <field name="customer_lead" class="oe_inline"/> days
+                                                </div>
+                                                <label for="analytic_tag_ids" groups="analytic.group_analytic_accounting"/>
+                                                <div>
+                                                    <field name="analytic_tag_ids" widget="many2many_tags" groups="analytic.group_analytic_accounting" options="{'color_field': 'color'}"/>
+                                                </div>
+                                                <field name="markup_cost"/>
+                                            </group>
+                                        </group>
+                                        <label for="name"/>
+                                        <field name="name"/>
+                                        <div groups="base.group_no_one">
+                                            <label for="invoice_lines"/>
+                                            <field name="invoice_lines"/>
+                                        </div>
+                                        <field name="state" invisible="1"/>
+                                    </form>
+                                    <tree string="Sales Order Lines" decoration-info="invoice_status=='to invoice'">
+                                        <!--<field name="sequence" widget="handle"/>-->
+                                        <field name="product_id" attrs="{'readonly': ['|', ('qty_invoiced', '&gt;', 0), ('procurement_ids', '!=', [])]}" force_save="1"
+                                               context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"/>
+                                        <field name="layout_category_id" groups="sale.group_sale_layout"/>
+                                        <field name="name"/>
+                                        <field name="product_uom_qty" string="Ordered Qty"
+                                               context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"/>
+                                        <field name="qty_delivered" invisible="1" attrs="{'readonly': [('qty_delivered_updateable', '=', False)]}"/>
+                                        <field name="qty_invoiced" invisible="1"/>
+                                        <field name="qty_to_invoice" invisible="1"/>
+                                        <field name="analytic_tag_ids" groups="analytic.group_analytic_accounting" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                        <field name="price_unit" attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}" invisible="1"/>
+                                        <field name="tax_id" widget="many2many_tags" domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]" attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}" invisible="1"/>
+                                        <field name="discount" groups="sale.group_discount_per_so_line"/>
+                                        <field name="price_subtotal" widget="monetary" groups="sale.group_show_price_subtotal"/>
+                                        <field name="price_total" widget="monetary" groups="sale.group_show_price_total"/>
+                                        <field name="product_uom" attrs="{'readonly': [('state', 'in', ('sale','done', 'cancel'))]}"
+                                               context="{'company_id': parent.company_id}" groups="product.group_uom" options='{"no_open": True}' invisible="1"/>
+                                        <field name="qty_delivered_updateable" invisible="1"/>
+                                        <field name="procurement_ids" invisible="1"/>
+                                        <field name="state" invisible="1"/>
+                                        <field name="invoice_status" invisible="1"/>
+                                        <field name="customer_lead" invisible="1"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                    <kanban class="o_kanban_mobile">
+                                        <field name="product_id"/>
+                                        <field name="product_uom_qty"/>
+                                        <field name="product_uom" groups="product.group_uom"/>
+                                        <field name="price_subtotal"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <strong>
+                                                                <span>
+                                                                    <t t-esc="record.product_id.value"/>
+                                                                </span>
+                                                            </strong>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-8 text-muted">
+                                                            <span>
+                                                                <t t-esc="record.product_uom_qty.value"/>
+                                                                <t t-esc="record.product_uom.value"/>
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-xs-4 text-muted">
+                                                            <span class="pull-right text-right">
+                                                                <t t-esc="record.price_subtotal.value"/>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                    <field name="amount_untaxed" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                    <field name="amount_tax" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                    <field name="discount_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                        <label for="amount_total"/>
+                                        <button name="button_dummy" states="draft,sent" string="(update)" type="object" class="oe_edit_only oe_link"/>
+                                    </div>
+                                    <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                </group>
+                                <field name="note" class="oe_inline" placeholder="Setup default terms and conditions in your company settings."/>
+                                <div class="oe_clear"/>
+                            </page>
+                            <page string="Other Information">
+                                <group>
+                                    <group string="Sales Information" name="sales_person">
+                                        <field name="user_id"/>
+                                        <field name="team_id" options="{'no_create': True}"/>
+                                        <field name="client_order_ref"/>
+                                        <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                                        <field name="project_id" context="{'default_partner_id':partner_invoice_id, 'default_name':name}" groups="analytic.group_analytic_accounting"/>
+                                        <field name="related_project_id" attrs="{'readonly': ['|',('project_id','!=',False),('invoice_count','!=',0),('state','=','sale')],'invisible':[('state','!=','sale')]}"
+                                               context="{'default_partner_id':partner_invoice_id, 'default_name':name}" groups="analytic.group_analytic_accounting"/>
+                                    </group>
+                                    <group name="sale_pay" string="Invoicing">
+                                        <field name="date_order" attrs="{'invisible': [('state', 'in', ['sale', 'done', 'cancel'])]}"/>
+                                        <field name="fiscal_position_id" options="{'no_create': True}"/>
+                                        <field name="invoice_status" attrs="{'invisible': [('state', 'not in', ('sale','done'))]}"/>
+                                    </group>
+                                    <group string="Reporting" name="technical" groups="base.group_no_one">
+                                        <field groups="base.group_no_one" name="origin"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--重写SaleOrder Actions动作 只是给加价的调用-->
+        <record id="markup_actions" model="ir.actions.act_window">
+            <field name="name">Extra Charge Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_ids" eval="[(5,0,0),
+            (0,0,{'view_mode':'tree','view_id':ref('markup_view_order_tree')}),
+            (0,0,{'view_mode':'form','view_id':ref('markup_view_order_form')})]"/>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+            <field name="domain">[('markup_bool', '=', True)]</field>
+        </record>
+        <menuitem action="sale_pcb_rfq.markup_actions" id="menu_markup_1" parent="sales_team.menu_sales" sequence="13" groups="sales_team.group_sale_salesman" name="Extra Charge Order"/>
+    </data>
+</odoo>

@@ -1,0 +1,358 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* message_system
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-29 03:26+0000\n"
+"PO-Revision-Date: 2019-12-29 03:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_all_client_bool
+msgid "All Client"
+msgstr "所有客户"
+
+#. module: message_system
+#: selection:message.center,order_type:0
+msgid "All Type"
+msgstr "所有类型"
+
+#. module: message_system
+#: selection:message.center,state:0
+#: selection:message.center.line,state:0
+msgid "Cancel"
+msgstr "取消"
+
+#. module: message_system
+#: model:ir.ui.view,arch_db:message_system.seller_news_form
+msgid "Cancel Notify"
+msgstr "取消通知"
+
+#. module: message_system
+#: model:ir.actions.act_window,name:message_system.chat_window
+#: model:ir.model,name:message_system.model_chat_message
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_chat_ids
+msgid "Chat Message"
+msgstr "聊天记录"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_city
+msgid "City"
+msgstr "城市"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_client_ids
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_client_id
+msgid "Client"
+msgstr "客户"
+
+#. module: message_system
+#: selection:message.center.line,state:0
+msgid "Client Consultation"
+msgstr "客户咨询"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_chat_message_client_msg
+msgid "Client Message"
+msgstr "客户留言"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_reply_bool
+msgid "Client Reply"
+msgstr "客户回复"
+
+#. module: message_system
+#: selection:message.center,msg_type:0
+#: selection:message.center.line,msg_type:0
+msgid "Consulting Message"
+msgstr "咨询留言"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_country
+msgid "Country"
+msgstr "国家"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_coupon_id
+msgid "Coupon"
+msgstr "优惠券"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_chat_message_create_uid
+#: model:ir.model.fields,field_description:message_system.field_message_center_create_uid
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_chat_message_create_date
+#: model:ir.model.fields,field_description:message_system.field_message_center_create_date
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: message_system
+#: model:ir.actions.act_window,name:message_system.client_window
+#: model:ir.ui.menu,name:message_system.client_menu
+msgid "Customer Message Area"
+msgstr "客户留言专区"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_chat_message_display_name
+#: model:ir.model.fields,field_description:message_system.field_message_center_display_name
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: message_system
+#: selection:message.center,state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_email
+msgid "Email"
+msgstr "邮件"
+
+#. module: message_system
+#: model:ir.ui.view,arch_db:message_system.seller_news_form
+msgid "Filter Client Type"
+msgstr "筛选客户类型"
+
+#. module: message_system
+#: model:ir.ui.view,arch_db:message_system.seller_news_form
+msgid "Filter Customers By Registration Time"
+msgstr "筛选客户注册时间"
+
+#. module: message_system
+#: code:addons/message_system/models/cpo_message.py:72
+#, python-format
+msgid "Filter order type cannot be empty"
+msgstr "筛选下单类型不能为空"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_chat_message_id
+#: model:ir.model.fields,field_description:message_system.field_message_center_id
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: message_system
+#: model:ir.ui.view,arch_db:message_system.seller_news_form
+msgid "Information Type And Content"
+msgstr "消息类型和内容"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_chat_message___last_update
+#: model:ir.model.fields,field_description:message_system.field_message_center___last_update
+#: model:ir.model.fields,field_description:message_system.field_message_center_line___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_chat_message_write_uid
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_write_uid
+#: model:ir.model.fields,field_description:message_system.field_message_center_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_chat_message_write_date
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_write_date
+#: model:ir.model.fields,field_description:message_system.field_message_center_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_message
+#: model:ir.model.fields,field_description:message_system.field_message_center_message
+#: model:ir.ui.view,arch_db:message_system.seller_news_form
+msgid "Message"
+msgstr "消息"
+
+#. module: message_system
+#: model:ir.model,name:message_system.model_message_center
+#: model:ir.model.fields,field_description:message_system.field_chat_message_msg_id
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_msg_id
+#: model:ir.ui.menu,name:message_system.msg_menu_root
+msgid "Message Center"
+msgstr "留言中心"
+
+#. module: message_system
+#: model:ir.model,name:message_system.model_message_center_line
+#: model:ir.model.fields,field_description:message_system.field_chat_message_line_id
+#: model:ir.model.fields,field_description:message_system.field_message_center_msg_line_ids
+msgid "Message Center Line"
+msgstr "留言中心"
+
+#. module: message_system
+#: model:ir.ui.menu,name:message_system.msg_menu_1
+msgid "Message List"
+msgstr "消息列表"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_name
+msgid "Message Title"
+msgstr "消息主题"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_no_place_order_bool
+msgid "No Place An Order Client"
+msgstr "没有下过单的客户"
+
+#. module: message_system
+#: selection:message.center,msg_type:0
+#: selection:message.center.line,msg_type:0
+msgid "Notification Message"
+msgstr "通知消息"
+
+#. module: message_system
+#: model:ir.ui.view,arch_db:message_system.seller_news_form
+msgid "Notified Client"
+msgstr "通知客户"
+
+#. module: message_system
+#: selection:message.center,msg_type:0
+#: selection:message.center.line,msg_type:0
+msgid "Offer Message"
+msgstr "优惠消息"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_order_type
+msgid "Order Type"
+msgstr "报价类型"
+
+#. module: message_system
+#: selection:message.center,order_type:0
+msgid "PCB Type"
+msgstr "PCB"
+
+#. module: message_system
+#: selection:message.center,order_type:0
+msgid "PCBA Type"
+msgstr "PCBA"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_phone
+msgid "Phone"
+msgstr "电话"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_place_order_bool
+msgid "Place An Order Client"
+msgstr "下过单的客户"
+
+#. module: message_system
+#: selection:message.center.line,state:0
+msgid "Read"
+msgstr "已读"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_login_end
+msgid "Registration End Time"
+msgstr "注册结束时间"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_login_start
+msgid "Registration Start Time"
+msgstr "注册开始时间"
+
+#. module: message_system
+#: model:ir.ui.view,arch_db:message_system.chat_form
+#: model:ir.ui.view,arch_db:message_system.client_news_form
+msgid "Reply"
+msgstr "回复"
+
+#. module: message_system
+#: model:ir.actions.act_window,name:message_system.seller_window
+#: model:ir.ui.menu,name:message_system.seller_menu
+msgid "Sales Notification Area"
+msgstr "销售通知专区"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_seller_id
+#: model:ir.model.fields,field_description:message_system.field_message_center_seller_id
+msgid "Seller"
+msgstr "销售员"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_chat_message_seller_msg
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_msg_reply
+msgid "Seller Message"
+msgstr "销售员通知"
+
+#. module: message_system
+#: selection:message.center.line,state:0
+msgid "Seller Reply"
+msgstr "销售员回复"
+
+#. module: message_system
+#: selection:message.center,state:0
+msgid "Send Notification"
+msgstr "发送通知"
+
+#. module: message_system
+#: model:ir.ui.view,arch_db:message_system.seller_news_form
+msgid "Send Notify"
+msgstr "发送通知"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_send_time
+msgid "Send Time"
+msgstr "发送时间"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_state
+#: model:ir.model.fields,field_description:message_system.field_message_center_state
+msgid "Status"
+msgstr "状态"
+
+#. module: message_system
+#: selection:message.center,order_type:0
+msgid "Stencil Type"
+msgstr "钢网"
+
+#. module: message_system
+#: model:ir.ui.view,arch_db:message_system.seller_news_form
+msgid "Subject"
+msgstr "主题"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_name
+msgid "Title"
+msgstr "称谓"
+
+#. module: message_system
+#: model:ir.model.fields,field_description:message_system.field_message_center_line_msg_type
+#: model:ir.model.fields,field_description:message_system.field_message_center_msg_type
+msgid "Type"
+msgstr "类型"
+
+#. module: message_system
+#: selection:message.center.line,state:0
+msgid "Unread"
+msgstr "未读"
+
+#. module: message_system
+#: selection:message.center,state:0
+msgid "Withdraw"
+msgstr "撤回"
+
+#. module: message_system
+#: model:ir.ui.view,arch_db:message_system.seller_news_form
+msgid "Withdraw Message"
+msgstr "撤回消息"
+
+#. module: message_system
+#: model:ir.ui.view,arch_db:message_system.chat_form
+msgid "message"
+msgstr "消息"
+

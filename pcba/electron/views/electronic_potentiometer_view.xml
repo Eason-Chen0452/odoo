@@ -1,0 +1,84 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+  
+    <record model="ir.ui.view" id="content_potentiometer_list">
+      <field name="name">content_potentiometer list</field>
+      <field name="model">electron.content_potentiometer</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="pcb_number"/>
+            <field name="dash_number"/>
+            <field name="mini_quantity"/>
+            <field name="QOH"/>
+            <field name="price"/>
+            <field name="description"/>
+            <field name="series"/>
+            <field name="manufacture"/>
+        </tree>
+      </field>
+    </record>
+    
+     <record model="ir.ui.view" id="content_potentiometer_form">
+      <field name="name">content_potentiometer form</field>
+      <field name="model">electron.content_potentiometer</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group col="4">
+                    <group col="2" colspan="4">
+                        <field name="p_type"/>
+                        <field name="url_sources"/>
+                        <field name="cpo_image"/>
+                        <field name="name"/>
+                        <field name="pcb_number"/>
+                        <field name="dash_number"/>
+                        <field name="mini_quantity"/>
+                        <field name="QOH"/>
+                        <field name="price"/>
+                        <field name="description"/>
+                        <field name="series"/>
+                        <field name="manufacture"/>
+                        <field name="size"/>
+                        <field name="encapsulation"/>
+                        <field name="inst_type"/>
+                        <field name="parts_state"/>
+                        <field name="character"/>
+                        <field name="packaging"/>
+                        
+                        <field name="resi_val"/>
+                        <field name="shaft_size"/>
+                        <field name="TCR"/>
+                        <field name="cycles"/>
+                        <field name="knob"/>
+                        <field name="diameter"/>
+                        <field name="ingredient"/>
+                        <field name="rotation_angle"/>
+                        <field name="po_length"/>
+                        <field name="termination"/>
+                    </group>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+  
+  
+    <!-- actions opening views on models -->
+  
+    <record model="ir.actions.act_window" id="content_potentiometer_action_window">
+      <field name="name">content_potentiometer window</field>
+      <field name="res_model">electron.content_potentiometer</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+ 
+    <!-- actions -->
+
+    <menuitem name="content_potentiometer_List" id="content_potentiometer_menu_1_list" parent="electron.passive_element_menu_1"
+              action="content_potentiometer_action_window"/>
+              
+
+  </data>
+</odoo>
+

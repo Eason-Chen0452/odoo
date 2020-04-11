@@ -1,0 +1,285 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_cpo_advertising
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-17 03:46+0000\n"
+"PO-Revision-Date: 2020-01-17 03:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_cpo_advertising
+#: model:ir.ui.view,arch_db:website_cpo_advertising.ad_content_temp
+msgid "<br/>\n"
+"                                    <span class=\"all-ntfc-make\">\n"
+"                                        The iCloudFactory Team\n"
+"                                    </span>"
+msgstr "<br/>\n"
+"                                    <span class=\"all-ntfc-make\">\n"
+"                                        The iCloudFactory Team\n"
+"                                    </span>"
+
+#. module: website_cpo_advertising
+#: model:ir.ui.view,arch_db:website_cpo_advertising.page_natification_temp
+msgid "<span class=\"natifi-author\">The iCloudFactory Team</span>"
+msgstr "<span class=\"natifi-author\">The iCloudFactory Team</span>"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_page_advertising_ad_image
+msgid "AD Image"
+msgstr "下单页面广告"
+
+#. module: website_cpo_advertising
+#: model:ir.ui.menu,name:website_cpo_advertising.cpo_advertising_menu
+msgid "Advertising"
+msgstr "广告"
+
+#. module: website_cpo_advertising
+#: model:ir.actions.act_window,name:website_cpo_advertising.cpo_advertising_action_window
+#: model:ir.actions.act_window,name:website_cpo_advertising.cpo_page_advertising_action_window
+msgid "Advertising Action"
+msgstr "网站广告管理"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_ad_link
+msgid "Advertising Link"
+msgstr "广告链接"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_ad_now_time
+msgid "Advertising Now Time"
+msgstr "当前时间"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_ad_photo
+msgid "Advertising Picture"
+msgstr "广告图片"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_ad_content
+msgid "Advertising content"
+msgstr "广告内容"
+
+#. module: website_cpo_advertising
+#: model:ir.ui.view,arch_db:website_cpo_advertising.cpo_notification_form
+msgid "Are you sure to choose to change?"
+msgstr "确定要选择更新维护吗？"
+
+#. module: website_cpo_advertising
+#: selection:cpo_notification,state:0
+#: model:ir.ui.view,arch_db:website_cpo_advertising.cpo_notification_form
+msgid "Become invalid"
+msgstr "作废失效"
+
+#. module: website_cpo_advertising
+#: model:res.groups,name:website_cpo_advertising.cpo_website_advertising_view
+msgid "CPO ad notice view"
+msgstr "广告通知只读"
+
+#. module: website_cpo_advertising
+#: model:res.groups,name:website_cpo_advertising.cpo_website_advertising
+msgid "CPO advertising admin"
+msgstr "广告通知管理员"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_color
+msgid "Color"
+msgstr "颜色"
+
+#. module: website_cpo_advertising
+#: selection:cpo_notification,state:0
+#: model:ir.ui.view,arch_db:website_cpo_advertising.cpo_notification_form
+msgid "Complete update"
+msgstr "完成更新"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_create_uid
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_create_uid
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_page_advertising_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_create_date
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_create_date
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_page_advertising_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: website_cpo_advertising
+#: model:ir.ui.view,arch_db:website_cpo_advertising.ad_content_temp
+msgid "Date :"
+msgstr "Date :"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_notice_description
+msgid "Description"
+msgstr "说明"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_display_name
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_display_name
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_page_advertising_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: website_cpo_advertising
+#: selection:cpo_notification,state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_notice_bool
+msgid "Effective"
+msgstr "有效"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_ad_end_time
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_notice_end_time
+msgid "End time"
+msgstr "结束日期"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_id
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_id
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_page_advertising_id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_cpo_advertising
+#: model:ir.ui.menu,name:website_cpo_advertising.index_advertising_menu
+msgid "Index advertising"
+msgstr "首页广告"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising___last_update
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification___last_update
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_page_advertising___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_write_uid
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_write_uid
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_page_advertising_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_write_date
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_write_date
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_page_advertising_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: website_cpo_advertising
+#: model:ir.ui.menu,name:website_cpo_advertising.cpo_notification_menu
+msgid "Notification"
+msgstr "节假日网站公告等通知"
+
+#. module: website_cpo_advertising
+#: model:ir.ui.view,arch_db:website_cpo_advertising.ad_banner_temp
+msgid "Notification !"
+msgstr "Notification !"
+
+#. module: website_cpo_advertising
+#: model:ir.actions.act_window,name:website_cpo_advertising.cpo_notification_action_window
+msgid "Notification Action"
+msgstr "Notification Action"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_notice_bg
+msgid "Notification Background"
+msgstr "消息通知背景"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_notice_link
+msgid "Notification Link"
+msgstr "消息通知链接"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_notice_now_time
+msgid "Notification Time"
+msgstr "通知时间"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_notice_title
+msgid "Notification Title"
+msgstr "消息通知标题"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_notice_content
+msgid "Notification content"
+msgstr "消息通知内容"
+
+#. module: website_cpo_advertising
+#: model:ir.ui.view,arch_db:website_cpo_advertising.ad_banner_temp
+msgid "PCB &amp; PCBA one-stop service"
+msgstr "PCB &amp; PCBA one-stop service"
+
+#. module: website_cpo_advertising
+#: model:ir.ui.menu,name:website_cpo_advertising.page_advertising_menu
+msgid "Page advertising"
+msgstr "下单页面广告"
+
+#. module: website_cpo_advertising
+#: selection:cpo_notification,state:0
+#: model:ir.ui.view,arch_db:website_cpo_advertising.cpo_notification_form
+msgid "Release"
+msgstr "发布"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_ad_start_time
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_notice_start_time
+msgid "Start time"
+msgstr "开始时间"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_notification_state
+msgid "Status"
+msgstr "状态"
+
+#. module: website_cpo_advertising
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_advertising_ad_title
+#: model:ir.model.fields,field_description:website_cpo_advertising.field_cpo_page_advertising_ad_page_title
+msgid "Title"
+msgstr "称谓"
+
+#. module: website_cpo_advertising
+#: selection:cpo_notification,state:0
+#: model:ir.ui.view,arch_db:website_cpo_advertising.cpo_notification_form
+msgid "Update"
+msgstr "更新"
+
+#. module: website_cpo_advertising
+#: model:ir.ui.view,arch_db:website_cpo_advertising.page_natification_temp
+msgid "View More"
+msgstr "View More"
+
+#. module: website_cpo_advertising
+#: model:ir.ui.menu,name:website_cpo_advertising.cpo_web_top_notification_menu
+msgid "Website Notification"
+msgstr "网站顶部通知"
+
+#. module: website_cpo_advertising
+#: model:ir.model,name:website_cpo_advertising.model_cpo_advertising
+msgid "cpo_advertising"
+msgstr "cpo_advertising"
+
+#. module: website_cpo_advertising
+#: model:ir.model,name:website_cpo_advertising.model_cpo_notification
+msgid "cpo_notification"
+msgstr "cpo_notification"
+
+#. module: website_cpo_advertising
+#: model:ir.model,name:website_cpo_advertising.model_cpo_page_advertising
+msgid "cpo_page_advertising"
+msgstr "cpo_page_advertising"
+

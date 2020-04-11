@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--阻焊颜色 增加-->
+        <record id="inherid_cam_ink_color" model="ir.ui.view">
+            <field name="name">inherid_cam_ink_color</field>
+            <field name="model">cam.ink.color</field>
+            <field name="inherit_id" ref="cam.view_cam_ink_color_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group/field[@name='name']" position="after">
+                    <field name="english_name"/>
+                </xpath>
+            </field>
+        </record>
+        <!--表面工艺 增加-->
+        <record id="inherid_cam_surface_process" model="ir.ui.view">
+            <field name="name">inherid_cam_surface_process</field>
+            <field name="model">cam.surface.process</field>
+            <field name="inherit_id" ref="cam.view_cam_surface_process_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group/field[@name='name']" position="after">
+                    <field name="english_name"/>
+                </xpath>
+            </field>
+        </record>
+        <!--过孔工艺 增加-->
+        <record id="inherid_cam_via_process" model="ir.ui.view">
+            <field name="name">inherid_cam_via_process</field>
+            <field name="model">cam.via.process</field>
+            <field name="inherit_id" ref="cam.view_cam_via_process_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group/field[@name='name']" position="after">
+                    <field name="english_name"/>
+                </xpath>
+            </field>
+        </record>
+        <!--特殊工艺 增加-->
+        <record id="inherid_cam_special_process" model="ir.ui.view">
+            <field name="name">inherid_cam_special_process</field>
+            <field name="model">cam.special.process</field>
+            <field name="inherit_id" ref="cam.view_cam_special_process_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group/field[@name='name']" position="after">
+                    <field name="english_name"/>
+                    <field name="cpo_boolean"/>
+                </xpath>
+            </field>
+        </record>
+        <!--特殊材料 增加-->
+        <record id="inherid_cam_special_material" model="ir.ui.view">
+            <field name="name">inherid_cam_special_material</field>
+            <field name="model">cam.special.material</field>
+            <field name="inherit_id" ref="cam.view_cam_special_material_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group/field[@name='name']" position="after">
+                    <field name="english_name"/>
+                </xpath>
+            </field>
+        </record>
+        <!--基材类型 增加-->
+        <record id="inherid_cam_base_type" model="ir.ui.view">
+            <field name="name">inherid_cam_base_type</field>
+            <field name="model">cam.base.type</field>
+            <field name="inherit_id" ref="cam.view_cam_base_type_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group/field[@name='name']" position="after">
+                    <field name="english_name"/>
+                </xpath>
+            </field>
+        </record>
+        <!--金手指根数 tree-->
+        <record id="cam_root_number_tree" model="ir.ui.view">
+            <field name="name">cam_root_number_tree</field>
+            <field name="model">cam.root.number</field>
+            <field name="arch" type="xml">
+                <tree string="Root number">
+                    <field name="name" force_save="1"/>
+                    <field name="cpo_root_number"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <!--金手指根数 form-->
+        <record id="cam_root_number_form" model="ir.ui.view">
+            <field name="name">cam_root_number_form</field>
+            <field name="model">cam.root.number</field>
+            <field name="arch" type="xml">
+                <form string="Root number">
+                    <group>
+                        <field name="name" force_save="1"/>
+                        <field name="cpo_root_number"/>
+                        <field name="active"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!--金手指厚度 tree-->
+        <record id="cam_gold_finger_tree" model="ir.ui.view">
+            <field name="name">cam_gold_finger_tree</field>
+            <field name="model">cam.gold.finger</field>
+            <field name="arch" type="xml">
+                <tree string="Gold finger">
+                    <field name="name" force_save="1"/>
+                    <field name="cpo_gole_thickness"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <!--金手指厚度 form-->
+        <record id="cam_gold_finger_form" model="ir.ui.view">
+            <field name="name">cam_gold_finger_form</field>
+            <field name="model">cam.gold.finger</field>
+            <field name="arch" type="xml">
+                <form string="Gold finger">
+                    <group>
+                        <field name="name" force_save="1"/>
+                        <field name="cpo_gole_thickness"/>
+                        <field name="active"/>
+                    </group>
+                    <notebook>
+                        <page string="Root number">
+                            <field name="cam_root_number_id"/>
+                        </page>
+                        <page string="Memo">
+                            <field name="memo"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--验收标准 tree-->
+        <record id="cam_acceptance_criteria_tree" model="ir.ui.view">
+            <field name="name">cam_acceptance_criteria_tree</field>
+            <field name="model">cam.acceptance.criteria</field>
+            <field name="arch" type="xml">
+                <tree string="Acceptance Criteria">
+                    <field name="name" force_save="1"/>
+                    <field name="cpo_level"/>
+                    <field name="english_name"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <!--验收标准 form-->
+        <record id="cam_acceptance_criteria_form" model="ir.ui.view">
+            <field name="name">cam_acceptance_criteria_form</field>
+            <field name="model">cam.acceptance.criteria</field>
+            <field name="arch" type="xml">
+                <form string="Acceptance Criteria">
+                    <group>
+                        <field name="name" force_save="1"/>
+                        <field name="english_name"/>
+                        <field name="cpo_level"/>
+                        <field name="active"/>
+                    </group>
+                    <notebook>
+                        <page string="Memo">
+                            <field name="memo"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--金手指厚度 window-->
+        <record model="ir.actions.act_window" id="cam_gold_finger_action_window">
+            <field name="name">Gold finger Window</field>
+            <field name="res_model">cam.gold.finger</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--金手指根数 window-->
+        <record model="ir.actions.act_window" id="cam_root_number_action_window">
+            <field name="name">Root Number Window</field>
+            <field name="res_model">cam.root.number</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--验收标准 window-->
+        <record model="ir.actions.act_window" id="cam_acceptance_criteria_action_window">
+            <field name="name">Acceptance Criteria Window</field>
+            <field name="res_model">cam.acceptance.criteria</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--钢网 尺寸 tree-->
+        <record id="cam_laser_steel_mesh_size_tree" model="ir.ui.view">
+            <field name="name">cam_laser_steel_mesh_size_tree</field>
+            <field name="model">cam.laser.steel.mesh.size</field>
+            <field name="arch" type="xml">
+                <tree string="Laser steel mesh size">
+                    <field name="name" force_save="1"/>
+                    <field name="steel_mesh_thickness_id" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+        <!--钢网 尺寸 form-->
+        <record id="cam_laser_steel_mesh_size_form" model="ir.ui.view">
+            <field name="name">cam_laser_steel_mesh_size_form</field>
+            <field name="model">cam.laser.steel.mesh.size</field>
+            <field name="arch" type="xml">
+                <form string="Laser steel mesh size">
+                    <sheet>
+                        <field name="name" style="font-size:35px; font-weight:bold" force_save="1"/>
+                        <group colspan="4" col="4" string="Size and effective area">
+                            <label for="stencil_size_1" string="Steel mesh specification/MM"/>
+                            <div>
+                                <field name="stencil_size_1" style="max-width:75px;"/> *
+                                <field name="stencil_size_2" style="max-width:75px;"/>
+                            </div>
+                            <label for="effective_size_1" string="Effective area/MM"/>
+                            <div>
+                                <field name="effective_size_1" style="max-width:75px;"/> *
+                                <field name="effective_size_2" style="max-width:75px;"/>
+                            </div>
+                        </group>
+                        <separator string="Steel mesh thickness selection/MM"/>
+                        <field name="steel_mesh_thickness_id" widget="many2many_tags"/>
+                        <field name="product_ids"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--钢网 尺寸 window-->
+        <record model="ir.actions.act_window" id="cam_laser_steel_mesh_size_window">
+            <field name="name">Laser steel mesh size</field>
+            <field name="res_model">cam.laser.steel.mesh.size</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--钢网 厚度 tree-->
+        <record id="cam_steel_mesh_thickness_tree" model="ir.ui.view">
+            <field name="name">cam_steel_mesh_thickness_tree</field>
+            <field name="model">cam.steel.mesh.thickness</field>
+            <field name="arch" type="xml">
+                <tree string="Steel mesh thickness" editable="bottom">
+                    <field name="name" force_save="1"/>
+                </tree>
+            </field>
+        </record>
+        <!--钢网 厚度 window-->
+        <record model="ir.actions.act_window" id="cam_steel_mesh_thickness_window">
+            <field name="name">Steel mesh thickness</field>
+            <field name="res_model">cam.steel.mesh.thickness</field>
+            <field name="view_mode">tree</field>
+        </record>
+        <!--罗杰斯芯板厚度 tree-->
+        <record model="ir.ui.view" id="cam_rogers_setting_tree">
+            <field name="name">CAM Rogers Setting Tree</field>
+            <field name="model">cam.rogers.setting</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="material"/>
+                    <field name="core_thick"/>
+                    <field name="thick_1"/>
+                    <field name="thick_2"/>
+                </tree>
+            </field>
+        </record>
+        <!--罗杰斯芯板厚度 Windows-->
+        <record model="ir.actions.act_window" id="cam_rogers_setting_window">
+            <field name="name">CAM Rogers Setting</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cam.rogers.setting</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="menu_cam_rogers_setting" parent="cam.menu_cam_configs" action="cam_rogers_setting_window"/>
+        <menuitem id="menu_cam_steel_mesh_2" parent="cam.menu_cam_root" name="Steel mesh size thickness"/>
+        <menuitem id="menu_cam_steel_mesh_size" parent="menu_cam_steel_mesh_2" action="cam_laser_steel_mesh_size_window"/>
+        <menuitem id="menu_cam_steel_mesh_thickness" parent="menu_cam_steel_mesh_2" action="cam_steel_mesh_thickness_window"/>
+        <menuitem id="menu_cam_gold_finger" parent="cam.menu_cam_configs" action="cam_gold_finger_action_window"/>
+        <menuitem id="menu_cam_root_number" parent="menu_cam_gold_finger" action="cam_root_number_action_window"/>
+        <menuitem id="menu_cam_acceptance_criteria" parent="cam.menu_cam_configs" action="cam_acceptance_criteria_action_window"/>
+    </data>
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="AskMessage" name="Ask Message Assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/website_sale_rfq/static/src/ask.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

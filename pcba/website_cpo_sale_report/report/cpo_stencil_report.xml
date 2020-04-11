@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_stencil_quotation_report" model="report.paperformat">
+            <field name="name">Stencil Report</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">297</field>
+            <field name="page_width">210</field>
+            <!--<field name="orientation">Landscape</field>-->
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">3</field>
+            <field name="margin_right">3</field>
+            <field name="dpi">90</field>
+        </record>
+        <report
+            id="sale_cpo_stencil_report"
+            model="sale.order"
+            string="Stencil Quotation"
+            name="website_cpo_sale_report.cpo_stencil_report_templates"
+            file="website_cpo_sale_report.cpo_stencil_report_templates"
+            paperformat="paperformat_stencil_quotation_report"
+            report_type="qweb-pdf"/>
+
+        <template id="cpo_stencil_report_templates">
+            <t t-call="report.html_container">
+                <t t-call="report.external_layout">
+                    <link type="text/css" rel="styleSheet"  href="website_cpo_sale_report/static/str/css/report.css" />
+                    <t t-foreach="docs" t-as="doc" >
+                        <div class="page">
+                        <table id="table_pcb_quotation_01">
+                            <thead>
+                                <tr class="cpo_table_head_company">
+                                    <td colspan="9">
+                                         <div id="div_top">
+                                             <img src="website_cpo_sale_report/static/str/img/ChinaPCBOneLOGO.png" id="pcb_img"/>
+                                             <div class="cpo_top_right">
+                                                 <h2 class="h_margin_none cpo_company_chiness_name">深圳市瑞邦多层线路板科技有限公司</h2>
+                                                 <h2 class="h_margin_none cpo_company_english_name">Chinapcbone Technology Limited</h2>
+                                                 <h4 class="h_margin_none">
+                                                     <span>Tel:0086-755-23064206</span>
+                                                     <span>Fax:0086-755-23063520</span></h4>
+                                                 <h5 class="h_margin_none">
+                                                     <span>Mail:sales@chinapcbone.com.cn</span>
+                                                     <span>Web:http//www.chinapcbone.com</span>
+                                                 </h5>
+                                             </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="cpo_thead_head">
+                                    <td colspan="10">
+                                        <div id="cpo_order_name">
+                                            <p class="cpo_order_name_title">
+                                                Stencil&#160;&#160;&#160; QUOTATION
+                                            </p>
+                                            <div id="order_quotation_and_date">
+                                                <p class="cpo_order_manager">
+                                                    <span class="cpo_order_manager_line">Quotation No: </span>
+                                                    <span t-field="doc.name"/></p>
+                                                <p class="cpo_order_manager">
+                                                    <span class="cpo_order_manager_line">Date: </span>
+                                                    <span t-esc="order_date['date_order']"/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="9">
+                                        <ul class="cpo_order_customer_ul cpo_ul_info clearfix">
+                                            <li>
+                                                <span class="cpo_customer_title">Customer Info:</span>
+                                                <p class="cpo_customer_content"><span t-field="doc.partner_id.company_name"/></p>
+                                            </li>
+                                            <li>
+                                                <span class="cpo_customer_title">Bill Address:</span>
+                                                <p class="cpo_customer_content"><span t-field="doc.partner_shipping_id.street"/></p>
+                                            </li>
+                                            <li>
+                                                <span class="cpo_customer_title">Shipping Address:</span>
+                                                <p class="cpo_customer_content"><span t-field="doc.partner_shipping_id.street"/></p>
+                                            </li>
+                                        </ul>
+                                        <ul class="cpo_order_customer_ul cpo_ul_person clearfix">
+                                            <li>
+                                                <span class="cpo_customer_title">Contact Person:</span>
+                                                <p class="cpo_customer_content"><span t-field="doc.partner_shipping_id.name"/></p>
+                                            </li>
+                                            <li>
+                                                <span class="cpo_customer_title">Email Address:</span>
+                                                <p class="cpo_customer_content"><span t-field="doc.partner_shipping_id.email"/></p>
+                                            </li>
+                                            <li>
+                                                <span class="cpo_customer_title">Tel NO.:</span>
+                                                <p class="cpo_customer_content"><span t-field="doc.partner_shipping_id.phone"/></p>
+                                            </li>
+                                        </ul>
+                                        <span style="clear:both"></span>
+                                    </td>
+                                </tr>
+                                <tr class="cpo_cpecificarion_line">
+                                    <td colspan="10" class="font_weight">Stencil</td>
+                                </tr>
+                                <t t-call="website_cpo_sale_report.stencil_details_remarks"/>
+                                <tr>
+                                    <td colspan="10" class="font_weight">
+                                        <p>Additional Comments:</p>
+                                        <p><span t-field="doc.order_line.cpo_note"/></p>
+                                    </td>
+                                </tr>
+                                <tr style="padding: 0">
+                                    <td colspan="10">
+                                        <ul class="cpo_additional_comments">
+                                            <li><span>1:</span>Shipping Term: DDU.</li>
+                                            <li><span>2:</span>Payment terms: Prepayment by Paypal.</li>
+                                            <li><span>3:</span>The shipping fee is DHL cost to your door, use our account.</li>
+                                            <t t-if="doc.product_type=='PCBA'">
+                                                <li><span>4:</span>PCBA meet Lead-Free requirement.</li>
+                                                <li><span>5:</span>The quotation are valid for 2 weeks.</li>
+                                                <li><span>6:</span>Quotation will be updated if the requirement not meet what you write.</li>
+                                                <li style="border-bottom:none"><span>7:</span>The package meets ESD requirement. </li>
+                                            </t>
+                                            <t t-else="">
+                                                <li><span>4:</span>The quotation are valid for 2 weeks.</li>
+                                                <li style="border-bottom:none"><span>5:</span>The quote will be updated if the read date is not match what you provided.</li>
+                                            </t>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr style="position: relative;" id="cpo_order_logo">
+                                    <td colspan="10">
+                                        <div id="cpo_logo">
+                                            <img src="website_cpo_sale_report/static/str/img/ChinaPCBOneLOGO.png" width="240" height="80"/>
+                                            <p class="cpo_thanks">Thanks and Regards</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+</odoo>

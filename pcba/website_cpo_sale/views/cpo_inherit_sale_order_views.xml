@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="cpo_sale_order_website_cpo" model="ir.ui.view">
+            <field name="name">cpo_sale_order website cpo</field>
+            <field name="model">sale.order</field> 
+            <field name="inherit_id" ref="sale.view_order_form"/> 
+            <field name="arch" type="xml"> 
+                <!-- find field description and add the field idea_ids after it -->
+                <xpath expr="/form/sheet/notebook/page[2]" position="after">
+                    <page string="Express Line" attrs="{'invisible': [('express_bool', '=', False)]}">
+                        <field name="express_bool" invisible="1"/>
+                        <field name="express_order">
+                            <tree editable="bottom">
+                                <field name="express_provider" readonly="1"/>
+                                <field name="express_number" readonly="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='confirmation_date']" position="after">
+                    <field name="part_no"/>
+                    <field name="po_number"/>
+                </xpath>
+            </field> 
+        </record>
+        
+    </data>
+</odoo>        
+              
+            
+  

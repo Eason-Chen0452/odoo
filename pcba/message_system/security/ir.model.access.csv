@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_message_center,message.center,model_message_center,sales_team.group_sale_salesman,1,1,1,1
+access_message_center_line,message.center.line,model_message_center_line,sales_team.group_sale_salesman,1,1,1,1
+access_chat_message,chat.message,model_chat_message,sales_team.group_sale_salesman,1,1,1,1
+

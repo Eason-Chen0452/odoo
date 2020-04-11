@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--销售人员区域管理tree-->
+        <record model="ir.ui.view" id="sale_allocations_tree">
+            <field name="name">Sale Staff Assignments</field>
+            <field name="model">cpo_sale_allocations.allocations</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="web_code"/>
+                    <field name="seller_code"/>
+                </tree>
+            </field>
+        </record>
+        <!--销售人员区域管理form-->
+        <record model="ir.ui.view" id="sale_allocations_form">
+            <field name="name">Sale Staff Assignments</field>
+            <field name="model">cpo_sale_allocations.allocations</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium", "size": [90, 90]}'/>
+                        <group col="4" colspan="4" string="Salesperson Information">
+                            <field name="name" domain="[('share', '=', False)]"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="web_code" attrs="{'readonly':[('web_code', '=', False)]}"/>
+                            <field name="seller_code"/>
+                        </group>
+                        <group string="Management area type">
+                            <field name="cpo_continent_id" nolabel="1" widget="many2many_tags"/>
+                        </group>
+                        <group string="country">
+                            <field name="cpo_country_id" nolabel="1" widget="many2many_tags"/>
+                        </group>
+                        <group string="partner">
+                            <field name="cpo_partner_id" nolabel="1" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--销售人员区域管理win-->
+        <record model="ir.actions.act_window" id="sale_allocations_window">
+            <field name="name">Sale Staff Assignments</field>
+            <field name="res_model">cpo_sale_allocations.allocations</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--洲与国家的分配-->
+        <record model="ir.ui.view" id="cpo_sale_continent_tree">
+            <field name="name">cpo_sale_continent tree</field>
+            <field name="model">cpo_sale_continent.continent</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree string="cpo continent">
+                    <field name="number_name"/>
+                    <field name="continent_name"/>
+                    <field name="cpo_country_continent"/>
+                </tree>
+            </field>
+        </record>
+        <!--洲与国家的分配-->
+        <record model="ir.ui.view" id="cpo_sale_continent_form">
+            <field name="name">cpo_sale_continent form</field>
+            <field name="model">cpo_sale_continent.continent</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <form string="cpo continent">
+                    <group>
+                        <field name="number_name" force_save="1"/>
+                        <field name="continent_name"/>
+                        <field name="cpo_country_continent"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!-- 洲与国家的分配 -->
+        <record model="ir.actions.act_window" id="cpo_sale_continent_action_window">
+            <field name="name">cpo_sale_continent window</field>
+            <field name="res_model">cpo_sale_continent.continent</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--继承客户个人中心增加字段-->
+        <record id="inherit_personal_center_form" model="ir.ui.view">
+            <field name="name">Customer Personal Center</field>
+            <field name="model">personal.center</field>
+            <field name="inherit_id" ref="personal_center.personal_center_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[2]/group/group/field[@name='user_id']" position="before">
+                    <field name="seller_id" force_save="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <menuitem name="Salesperson jurisdiction" id="cpo_sale_allocations_menu_1" parent="sales_team.menu_base_partner" sequence="10"/>
+        <menuitem name="Salesperson" id="cpo_sale_allocations_menu_1_list"
+                  parent="cpo_sale_allocations_menu_1" action="sale_allocations_window" sequence="1" />
+        <menuitem name="Continent &amp; Country" id="cpo_sale_continent_menu_1_list"
+                  parent="cpo_sale_allocations_menu_1" action="cpo_sale_continent_action_window" sequence="2" />
+  </data>
+</odoo>

@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <report
+            id="simple_version_data_statistics_report"
+            model="data_statistics.simple_version"
+            string="Convenient version"
+            report_type="qweb-html"
+            name="data_statistics.simple_version_qweb_report"
+            file="simple_version_qweb_report"
+        	/>
+        <template id="simple_version_qweb_report" name="Simple version report">
+            <t t-call="report.html_container">
+				<t t-call="report.external_layout">
+					<link type="text/css" rel="styleSheet"  href="/data_statistics/static/src/css/data_statistics.css" />
+					<div class="page">
+						<div id="cpo_content">
+							<div class="panel-group" id="accordion">
+								<t t-set="all_sql_data" t-value="data.get('all_sql_data')"/>
+								<t t-set="pcb_and_pcba" t-value="all_sql_data.get('pcb_and_pcba')"/>
+								<t t-set="access" t-value="all_sql_data.get('access')"/>
+								<t t-set="source" t-value="all_sql_data.get('source')"/>
+								<!-- PCB and PCBA record begin -->
+								<t t-if="pcb_and_pcba">
+									<t t-set="today_data" t-value="pcb_and_pcba.get('today_data')"/>
+									<t t-set="week_data" t-value="pcb_and_pcba.get('week_data')"/>
+									<t t-set="month_data" t-value="pcb_and_pcba.get('month_data')"/>
+									<t t-set="today_time" t-value="today_data.get('time')"/>
+									<t t-set="week_time" t-value="week_data.get('time')"/>
+									<t t-set="month_time" t-value="month_data.get('time')"/>
+									<!-- Today Start -->
+									<t t-if="today_data">
+										<h3 class="text-center"><t t-esc="today_data.get('title')"/></h3>
+										<table class="table table_one">
+											<thead>
+												<tr>
+													<th>时间</th>
+													<th>数量（当前时间）</th>
+													<th>总数</th>
+													<th>Proportion</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><t t-esc="today_time[0]"/> ~ <t t-esc="today_time[1]"/></td>
+													<td><span class="cpo-font-red"><t t-esc="today_data.get('tp_data')"/></span></td>
+													<td><t t-esc="today_data.get('total_data')"/></td>
+													<td><span class="cpo-font-red"><t t-esc="today_data.get('proportion')"/>%</span></td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse in" data-parent="#accordion" href="#pcb_pcba">
+													PCB and PCBA quote data statistics detailed  <i class="fa fa-angle-double-down"></i>
+												</a>
+											</h4>
+										</div>
+										<div id="pcb_pcba" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<table class="table table_two">
+													<thead>
+														<tr>
+															<th>User Name</th>
+															<th>Country</th>
+															<th>IP</th>
+															<!--<th>Session ID</th>-->
+															<th>Session count</th>
+															<th>Calculation count</th>
+															<th>Comfirm count</th>
+															<th>Cart count</th>
+															<th>Selected count</th>
+															<th>Pending count</th>
+															<th>PCB count</th>
+															<th>PCBA count</th>
+															<th>All count</th>
+														</tr>
+													</thead>
+													<tbody>
+														<t t-foreach="today_data.get('sql_data')" t-as="sql">
+															<tr>
+																<td>
+																	<t t-if="sql.get('user_name')">
+																		<t t-esc="sql.get('user_name')"/>
+																	</t>
+																	<t t-if="not sql.get('user_name')">
+																		Public user
+																	</t>
+																</td>
+																<td><t t-esc="sql.get('cpo_country')"/></td>
+																<td><t t-esc="sql.get('user_ip')"/></td>
+																<!--<td><t t-esc="sql.get('session_id')"/></td>-->
+																<td><t t-esc="sql.get('session_count')"/></td>
+																<td><t t-esc="int(sql.get('calculation'))"/></td>
+																<td><t t-esc="int(sql.get('comfirm'))"/></td>
+																<td><t t-esc="int(sql.get('cart'))"/></td>
+																<td><t t-esc="int(sql.get('selected'))"/></td>
+																<td><t t-esc="int(sql.get('pending'))"/></td>
+																<td><t t-esc="int(sql.get('count_pcb'))"/></td>
+																<td><t t-esc="int(sql.get('count_pcba'))"/></td>
+																<td><t t-esc="int(sql.get('count_num'))"/></td>
+															</tr>
+														</t>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									</t>
+									<!-- Today End -->
+									<!-- Week Start -->
+									<t t-if="week_data">
+										<h3 class="text-center"><t t-esc="week_data.get('title')"/></h3>
+										<table class="table table_one">
+											<thead>
+												<tr>
+													<th>时间</th>
+													<th>数量（当前时间）</th>
+													<th>总数</th>
+													<th>Proportion</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><t t-esc="week_time[0]"/> ~ <t t-esc="week_time[1]"/></td>
+													<td><span class="cpo-font-red"><t t-esc="week_data.get('tp_data')"/></span></td>
+													<td><t t-esc="week_data.get('total_data')"/></td>
+													<td><span class="cpo-font-red"><t t-esc="week_data.get('proportion')"/>%</span></td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse in" data-parent="#accordion" href="#pcb_pcba">
+													PCB and PCBA quote data statistics detailed  <i class="fa fa-angle-double-down"></i>
+												</a>
+											</h4>
+										</div>
+										<div id="pcb_pcba" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<table class="table table_two">
+													<thead>
+														<tr>
+															<th>User Name</th>
+															<th>Country</th>
+															<th>IP</th>
+															<!--<th>Session ID</th>-->
+															<th>Session count</th>
+															<th>Calculation count</th>
+															<th>Comfirm count</th>
+															<th>Cart count</th>
+															<th>Selected count</th>
+															<th>Pending count</th>
+															<th>PCB count</th>
+															<th>PCBA count</th>
+															<th>All count</th>
+														</tr>
+													</thead>
+													<tbody>
+														<t t-foreach="week_data.get('sql_data')" t-as="sql">
+															<tr>
+																<td>
+																	<t t-if="sql.get('user_name')">
+																		<t t-esc="sql.get('user_name')"/>
+																	</t>
+																	<t t-if="not sql.get('user_name')">
+																		Public user
+																	</t>
+																</td>
+																<td><t t-esc="sql.get('cpo_country')"/></td>
+																<td><t t-esc="sql.get('user_ip')"/></td>
+																<!--<td><t t-esc="sql.get('session_id')"/></td>-->
+																<td><t t-esc="sql.get('session_count')"/></td>
+																<td><t t-esc="int(sql.get('calculation'))"/></td>
+																<td><t t-esc="int(sql.get('comfirm'))"/></td>
+																<td><t t-esc="int(sql.get('cart'))"/></td>
+																<td><t t-esc="int(sql.get('selected'))"/></td>
+																<td><t t-esc="int(sql.get('pending'))"/></td>
+																<td><t t-esc="int(sql.get('count_pcb'))"/></td>
+																<td><t t-esc="int(sql.get('count_pcba'))"/></td>
+																<td><t t-esc="int(sql.get('count_num'))"/></td>
+															</tr>
+														</t>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									</t>
+									<!-- Week End -->
+									<!-- Month Start -->
+									<t t-if="month_data">
+										<h3 class="text-center"><t t-esc="month_data.get('title')"/></h3>
+										<table class="table table_one">
+											<thead>
+												<tr>
+													<th>时间</th>
+													<th>数量（当前时间）</th>
+													<th>总数</th>
+													<th>Proportion</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><t t-esc="month_time[0]"/> ~ <t t-esc="month_time[1]"/></td>
+													<td><span class="cpo-font-red"><t t-esc="month_data.get('tp_data')"/></span></td>
+													<td><t t-esc="month_data.get('total_data')"/></td>
+													<td><span class="cpo-font-red"><t t-esc="month_data.get('proportion')"/>%</span></td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse in" data-parent="#accordion" href="#pcb_pcba">
+													PCB and PCBA quote data statistics detailed  <i class="fa fa-angle-double-down"></i>
+												</a>
+											</h4>
+										</div>
+										<div id="pcb_pcba" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<table class="table table_two">
+													<thead>
+														<tr>
+															<th>User Name</th>
+															<th>Country</th>
+															<th>IP</th>
+															<!--<th>Session ID</th>-->
+															<th>Session count</th>
+															<th>Calculation count</th>
+															<th>Comfirm count</th>
+															<th>Cart count</th>
+															<th>Selected count</th>
+															<th>Pending count</th>
+															<th>PCB count</th>
+															<th>PCBA count</th>
+															<th>All count</th>
+														</tr>
+													</thead>
+													<tbody>
+														<t t-foreach="month_data.get('sql_data')" t-as="sql">
+															<tr>
+																<td>
+																	<t t-if="sql.get('user_name')">
+																		<t t-esc="sql.get('user_name')"/>
+																	</t>
+																	<t t-if="not sql.get('user_name')">
+																		Public user
+																	</t>
+																</td>
+																<td><t t-esc="sql.get('cpo_country')"/></td>
+																<td><t t-esc="sql.get('user_ip')"/></td>
+																<!--<td><t t-esc="sql.get('session_id')"/></td>-->
+																<td><t t-esc="sql.get('session_count')"/></td>
+																<td><t t-esc="int(sql.get('calculation'))"/></td>
+																<td><t t-esc="int(sql.get('comfirm'))"/></td>
+																<td><t t-esc="int(sql.get('cart'))"/></td>
+																<td><t t-esc="int(sql.get('selected'))"/></td>
+																<td><t t-esc="int(sql.get('pending'))"/></td>
+																<td><t t-esc="int(sql.get('count_pcb'))"/></td>
+																<td><t t-esc="int(sql.get('count_pcba'))"/></td>
+																<td><t t-esc="int(sql.get('count_num'))"/></td>
+															</tr>
+														</t>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									</t>
+									<!-- Month End -->
+								</t>
+								<!-- PCB and PCBA end -->
+								<!-- Website visits begin -->
+								<t t-if="access">
+									<t t-set="today_access" t-value="access.get('today_data')"/>
+									<t t-set="week_access" t-value="access.get('week_data')"/>
+									<t t-set="month_access" t-value="access.get('month_data')"/>
+									<t t-set="access_today_time" t-value="today_access.get('time')"/>
+									<t t-set="access_week_time" t-value="week_access.get('time')"/>
+									<t t-set="access_month_time" t-value="month_access.get('time')"/>
+									<!-- Today start -->
+									<t t-if="today_access">
+										<h3 class="text-center"><t t-esc="today_access.get('title')"/></h3>
+										<table class="table table_one">
+											<thead>
+												<tr>
+													<th>时间</th>
+													<th>数量（当前时间）</th>
+													<th>总数</th>
+													<th>Proportion</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><t t-esc="access_today_time[0]"/> ~ <t t-esc="access_today_time[1]"/></td>
+													<td><span class="cpo-font-red"><t t-esc="today_access.get('tp_data')"/></span></td>
+													<td><t t-esc="today_access.get('total_data')"/></td>
+													<td><span class="cpo-font-red"><t t-esc="today_access.get('proportion')"/>%</span></td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse in" data-parent="#accordion" href="#pcb_pcba">
+														Website visits data statistics detailed  <i class="fa fa-angle-double-down"></i>
+													</a>
+												</h4>
+											</div>
+											<div id="pcb_pcba" class="panel-collapse collapse in">
+												<div class="panel-body">
+													<table class="table table_two">
+														<thead>
+															<tr>
+																<th>User Name</th>
+																<th>Country</th>
+																<!--<th>Session ID</th>-->
+																<th>Session count</th>
+																<th>Visits count</th>
+																<th>IP</th>
+																<th>Customer source</th>
+															</tr>
+														</thead>
+														<tbody>
+															<t t-foreach="today_access.get('sql_data')" t-as="sql">
+																<tr>
+																	<td>
+																		<t t-if="sql.get('user_name')">
+																			<t t-esc="sql.get('user_name')"/>
+																		</t>
+																		<t t-if="not sql.get('user_name')">
+																			Public user
+																		</t>
+																	</td>
+																	<td><t t-esc="sql.get('cpo_country')"/></td>
+																	<!--<td><t t-esc="sql.get('session_id')"/></td>-->
+																	<td><t t-esc="sql.get('session_num')"/></td>
+																	<td><t t-esc="int(sql.get('source_num'))"/></td>
+																	<td><t t-esc="sql.get('cpo_ip')"/></td>
+																	<td><t t-esc="sql.get('site_name')"/></td>
+																</tr>
+															</t>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</t>
+									<!-- Today end -->
+									<!-- Week start -->
+									<t t-if="week_access">
+										<h3 class="text-center"><t t-esc="week_access.get('title')"/></h3>
+										<table class="table table_one">
+											<thead>
+												<tr>
+													<th>时间</th>
+													<th>数量（当前时间）</th>
+													<th>总数</th>
+													<th>Proportion</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><t t-esc="access_week_time[0]"/> ~ <t t-esc="access_week_time[1]"/></td>
+													<td><span class="cpo-font-red"><t t-esc="week_access.get('tp_data')"/></span></td>
+													<td><t t-esc="week_access.get('total_data')"/></td>
+													<td><span class="cpo-font-red"><t t-esc="week_access.get('proportion')"/>%</span></td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse in" data-parent="#accordion" href="#pcb_pcba">
+														Website visits data statistics detailed  <i class="fa fa-angle-double-down"></i>
+													</a>
+												</h4>
+											</div>
+											<div id="pcb_pcba" class="panel-collapse collapse in">
+												<div class="panel-body">
+													<table class="table table_two">
+														<thead>
+															<tr>
+																<th>User Name</th>
+																<th>Country</th>
+																<!--<th>Session ID</th>-->
+																<th>Session count</th>
+																<th>Visits count</th>
+																<th>IP</th>
+																<th>Customer source</th>
+															</tr>
+														</thead>
+														<tbody>
+															<t t-foreach="week_access.get('sql_data')" t-as="sql">
+																<tr>
+																	<td>
+																		<t t-if="sql.get('user_name')">
+																			<t t-esc="sql.get('user_name')"/>
+																		</t>
+																		<t t-if="not sql.get('user_name')">
+																			Public user
+																		</t>
+																	</td>
+																	<td><t t-esc="sql.get('cpo_country')"/></td>
+																	<!--<td><t t-esc="sql.get('session_id')"/></td>-->
+																	<td><t t-esc="sql.get('session_num')"/></td>
+																	<td><t t-esc="int(sql.get('source_num'))"/></td>
+																	<td><t t-esc="sql.get('cpo_ip')"/></td>
+																	<td><t t-esc="sql.get('site_name')"/></td>
+																</tr>
+															</t>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</t>
+									<!-- Week end -->
+									<!-- Month start -->
+									<t t-if="month_access">
+										<h3 class="text-center"><t t-esc="month_access.get('title')"/></h3>
+										<table class="table table_one">
+											<thead>
+												<tr>
+													<th>时间</th>
+													<th>数量（当前时间）</th>
+													<th>总数</th>
+													<th>Proportion</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><t t-esc="access_month_time[0]"/> ~ <t t-esc="access_month_time[1]"/></td>
+													<td><span class="cpo-font-red"><t t-esc="month_access.get('tp_data')"/></span></td>
+													<td><t t-esc="month_access.get('total_data')"/></td>
+													<td><span class="cpo-font-red"><t t-esc="month_access.get('proportion')"/>%</span></td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse in" data-parent="#accordion" href="#pcb_pcba">
+														Website visits data statistics detailed  <i class="fa fa-angle-double-down"></i>
+													</a>
+												</h4>
+											</div>
+											<div id="pcb_pcba" class="panel-collapse collapse in">
+												<div class="panel-body">
+													<table class="table table_two">
+														<thead>
+															<tr>
+																<th>User Name</th>
+																<th>Country</th>
+																<!--<th>Session ID</th>-->
+																<th>Session count</th>
+																<th>Visits count</th>
+																<th>IP</th>
+																<th>Customer source</th>
+															</tr>
+														</thead>
+														<tbody>
+															<t t-foreach="month_access.get('sql_data')" t-as="sql">
+																<tr>
+																	<td>
+																		<t t-if="sql.get('user_name')">
+																			<t t-esc="sql.get('user_name')"/>
+																		</t>
+																		<t t-if="not sql.get('user_name')">
+																			Public user
+																		</t>
+																	</td>
+																	<td><t t-esc="sql.get('cpo_country')"/></td>
+																	<!--<td><t t-esc="sql.get('session_id')"/></td>-->
+																	<td><t t-esc="sql.get('session_num')"/></td>
+																	<td><t t-esc="int(sql.get('source_num'))"/></td>
+																	<td><t t-esc="sql.get('cpo_ip')"/></td>
+																	<td><t t-esc="sql.get('site_name')"/></td>
+																</tr>
+															</t>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</t>
+									<!-- Month end -->
+								</t>
+								<!-- Website visits end -->
+								<!-- Website visits begin -->
+								<t t-if="source">
+									<t t-set="today_source" t-value="source.get('today_data')"/>
+									<t t-set="week_source" t-value="source.get('week_data')"/>
+									<t t-set="month_source" t-value="source.get('month_data')"/>
+									<t t-set="source_today_time" t-value="today_source.get('time')"/>
+									<t t-set="source_week_time" t-value="week_source.get('time')"/>
+									<t t-set="source_month_time" t-value="month_source.get('time')"/>
+									<!-- Today start -->
+									<t t-if="today_source">
+										<h3 class="text-center"><t t-esc="today_source.get('title')"/></h3>
+										<table class="table table_one">
+											<thead>
+												<tr>
+													<th>时间</th>
+													<th>数量（当前时间）</th>
+													<th>总数</th>
+													<th>Proportion</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><t t-esc="source_today_time[0]"/> ~ <t t-esc="source_today_time[1]"/></td>
+													<td><span class="cpo-font-red"><t t-esc="today_source.get('tp_data')"/></span></td>
+													<td><t t-esc="today_source.get('total_data')"/></td>
+													<td><span class="cpo-font-red"><t t-esc="today_source.get('proportion')"/>%</span></td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse in" data-parent="#accordion" href="#pcb_pcba">
+														Promotion channels detailed  <i class="fa fa-angle-double-down"></i>
+													</a>
+												</h4>
+											</div>
+											<div id="pcb_pcba" class="panel-collapse collapse in">
+												<div class="panel-body">
+													<table class="table table_two">
+														<thead>
+															<tr>
+																<th>Site name</th>
+																<th>Source count</th>
+															</tr>
+														</thead>
+														<tbody>
+															<t t-foreach="today_source.get('sql_data')" t-as="sql">
+																<tr>
+																	<td><t t-esc="sql.get('name')"/></td>
+																	<td><t t-esc="int(sql.get('site_count'))"/></td>
+																</tr>
+															</t>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</t>
+									<!-- Today end -->
+									<!-- Week start -->
+									<t t-if="week_source">
+										<h3 class="text-center"><t t-esc="week_source.get('title')"/></h3>
+										<table class="table table_one">
+											<thead>
+												<tr>
+													<th>时间</th>
+													<th>数量（当前时间）</th>
+													<th>总数</th>
+													<th>Proportion</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><t t-esc="source_week_time[0]"/> ~ <t t-esc="source_week_time[1]"/></td>
+													<td><span class="cpo-font-red"><t t-esc="week_source.get('tp_data')"/></span></td>
+													<td><t t-esc="week_source.get('total_data')"/></td>
+													<td><span class="cpo-font-red"><t t-esc="week_source.get('proportion')"/>%</span></td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse in" data-parent="#accordion" href="#pcb_pcba">
+														Promotion channels detailed  <i class="fa fa-angle-double-down"></i>
+													</a>
+												</h4>
+											</div>
+											<div id="pcb_pcba" class="panel-collapse collapse in">
+												<div class="panel-body">
+													<table class="table table_two">
+														<thead>
+															<tr>
+																<th>Site name</th>
+																<th>Source count</th>
+															</tr>
+														</thead>
+														<tbody>
+															<t t-foreach="week_source.get('sql_data')" t-as="sql">
+																<tr>
+																	<td><t t-esc="sql.get('name')"/></td>
+																	<td><t t-esc="int(sql.get('site_count'))"/></td>
+																</tr>
+															</t>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</t>
+									<!-- Week end -->
+									<!-- Month start -->
+									<t t-if="month_source">
+										<h3 class="text-center"><t t-esc="month_source.get('title')"/></h3>
+										<table class="table table_one">
+											<thead>
+												<tr>
+													<th>时间</th>
+													<th>数量（当前时间）</th>
+													<th>总数</th>
+													<th>Proportion</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><t t-esc="source_month_time[0]"/> ~ <t t-esc="source_month_time[1]"/></td>
+													<td><span class="cpo-font-red"><t t-esc="month_source.get('tp_data')"/></span></td>
+													<td><t t-esc="month_source.get('total_data')"/></td>
+													<td><span class="cpo-font-red"><t t-esc="month_source.get('proportion')"/>%</span></td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse in" data-parent="#accordion" href="#pcb_pcba">
+														Promotion channels detailed  <i class="fa fa-angle-double-down"></i>
+													</a>
+												</h4>
+											</div>
+											<div id="pcb_pcba" class="panel-collapse collapse in">
+												<div class="panel-body">
+													<table class="table table_two">
+														<thead>
+															<tr>
+																<th>Site name</th>
+																<th>Source count</th>
+															</tr>
+														</thead>
+														<tbody>
+															<t t-foreach="month_source.get('sql_data')" t-as="sql">
+																<tr>
+																	<td><t t-esc="sql.get('name')"/></td>
+																	<td><t t-esc="int(sql.get('site_count'))"/></td>
+																</tr>
+															</t>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</t>
+									<!-- Month end -->
+								</t>
+								<!-- Website visits end -->
+							</div>
+						</div>
+					</div>
+                </t>
+            </t>
+        </template>
+	</data>
+</odoo>

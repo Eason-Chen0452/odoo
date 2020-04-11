@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Package Price Main tree-->
+        <record id="PPM_tree" model="ir.ui.view">
+            <field name="name">package_price_main_tree</field>
+            <field name="model">package.price.main</field>
+            <field name="arch" type="xml">
+                <tree string="PCB Package Price List">
+                    <field name="name"/>
+                    <field name="bale_partner_id"/>
+                    <field name="bale_general_bool"/>
+                    <field name="active" />
+                </tree>
+            </field>
+        </record>
+        <!--Package Price Main Form-->
+        <record id="PPM_form" model="ir.ui.view">
+            <field name="name">package_price_main_form</field>
+            <field name="model">package.price.main</field>
+            <field name="arch" type="xml">
+                <form string="PCB Package Price List">
+                    <group string="Package Price List Name">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <field name="name" nolabel="1" style="font-size:25px; font-weight:bold;"/>
+                            </div>
+                            <div class="oe_button_box" name="button_box" style="margin-right:55px; width:200px;">
+                                <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                    <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                                </button>
+                            </div>
+                        </div>
+                    </group>
+                    <group col="4" colspan="4" string="Effective Time">
+                        <field name="bale_start"/>
+                        <field name="bale_end"/>
+                    </group>
+                    <group col="4" colspan="4">
+                        <field name="bale_general_bool"/>
+                        <field name="bale_partner_id" attrs="{'readonly':[('bale_general_bool', '=', True)]}" domain="[('customer','=',True),('is_company','=',True)]"/>
+                        <field name="bale_currency_id" attrs="{'readonly':[('bale_general_bool', '=', True)]}"/>
+                    </group>
+                    <notebook>
+                        <page string="Specification Size Area">
+                            <field name="bale_area_id"/>
+                        </page>
+                        <page string="Memo">
+                            <field name="memo"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--Package Price Main Window-->
+        <record id="PPM_window" model="ir.actions.act_window">
+            <field name="name">PCB Package Price List</field>
+            <field name="res_model">package.price.main</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--Package Price Area Tree-->
+        <record id="PPM_area_tree" model="ir.ui.view">
+            <field name="name">package_price_area_tree</field>
+            <field name="model">pp.area</field>
+            <field name="arch" type="xml">
+                <tree string="Specification Size Area">
+                    <field name="main_id" invisible="1"/>
+                    <field name="area_min"/>
+                    <field name="area_max"/>
+                    <field name="area_size"/>
+                    <field name="area_quantity"/>
+                </tree>
+            </field>
+        </record>
+        <!--Package Price Area Form-->
+        <record id="PPM_area_form" model="ir.ui.view">
+            <field name="name">package_price_area_form</field>
+            <field name="model">pp.area</field>
+            <field name="arch" type="xml">
+                <form string="Specification Size Area">
+                    <sheet>
+                        <group string="Specification Size Area" colspan="4" col="4">
+                            <field name="area_min"/>
+                            <field name="area_max"/>
+                            <field name="area_size"/>
+                            <field name="area_quantity"/>
+                        </group>
+                        <notebook>
+                            <page string="Number of Layers">
+                                <field name="layer_id"/>
+                            </page>
+                            <page string="Surface Treatment">
+                                <field name="surface_id"/>
+                            </page>
+                            <page string="Text Color">
+                                <field name="text_id"/>
+                            </page>
+                            <page string="Solder Mask Color">
+                                <field name="solder_id"/>
+                            </page>
+                            <page string="Line Width Spacing">
+                                <field name="spacing_id"/>
+                            </page>
+                            <page string="Minimum hole">
+                                <field name="aperture_id"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--Package Price Layers Number tree-->
+        <record id="PPM_layers_number_tree" model="ir.ui.view">
+            <field name="name">package_price_layers_number_tree</field>
+            <field name="model">pp.layer.number</field>
+            <field name="arch" type="xml">
+                <tree string="Number of Layers">
+                    <field name="area_id" invisible="1"/>
+                    <field name="layer_number_id"/>
+                    <field name="delivery"/>
+                </tree>
+            </field>
+        </record>
+        <!--Package Price Layers Number Form-->
+        <record id="PPM_layers_number_form" model="ir.ui.view">
+            <field name="name">package_price_layers_number_form</field>
+            <field name="model">pp.layer.number</field>
+            <field name="arch" type="xml">
+                <form string="Number of Layers">
+                    <group col="4" colspan="4">
+                        <field name="layer_number_id"/>
+                        <field name="delivery"/>
+                        <field name="density"/>
+                        <field name="inner_line"/>
+                    </group>
+                    <notebook>
+                        <page string="Substrate">
+                            <field name="substrate_id"/>
+                        </page>
+                        <page string="Thickness">
+                            <field name="thickness_id"/>
+                        </page>
+                        <page string="Outer Copper">
+                            <field name="outer_copper_id"/>
+                        </page>
+                        <page string="Inner Copper">
+                            <field name="inner_copper_id"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--Package Price Substrate tree-->
+        <record id="PPM_substrate_tree" model="ir.ui.view">
+            <field name="name">package_price_substrate_tree</field>
+            <field name="model">pp.substrate</field>
+            <field name="arch" type="xml">
+                <tree string="Substrate" editable="bottom">
+                    <field name="ln_id" invisible="1"/>
+                    <field name="base_type"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+        <!--Package Price Outer Copper tree-->
+        <record id="PPM_outer_copper_tree" model="ir.ui.view">
+            <field name="name">package_price_outer_copper_tree</field>
+            <field name="model">pp.outer.copper</field>
+            <field name="arch" type="xml">
+                <tree string="Outer Copper" editable="bottom">
+                    <field name="ln_id" invisible="1"/>
+                    <field name="outer"/>
+                    <field name="price"/>
+                    <field name="add_delivery"/>
+                </tree>
+            </field>
+        </record>
+        <!--Package Price Inner Copper tree-->
+        <record id="PPM_inner_copper_tree" model="ir.ui.view">
+            <field name="name">package_price_inner_copper_tree</field>
+            <field name="model">pp.inner.copper</field>
+            <field name="arch" type="xml">
+                <tree string="Inner Copper" editable="bottom">
+                    <field name="ln_id" invisible="1"/>
+                    <field name="inner"/>
+                    <field name="price"/>
+                    <field name="add_delivery"/>
+                </tree>
+            </field>
+        </record>
+        <!--Package Price Thickness tree-->
+        <record id="PPM_thickness_tree" model="ir.ui.view">
+            <field name="name">package_price_thickness_tree</field>
+            <field name="model">pp.thickness</field>
+            <field name="arch" type="xml">
+                <tree string="Thickness" editable="bottom">
+                    <field name="ln_id" invisible="1"/>
+                    <field name="min_thick"/>
+                    <field name="max_thick"/>
+                    <field name="price"/>
+                    <field name="add_delivery"/>
+                </tree>
+            </field>
+        </record>
+        <!--Package Price Text Color tree-->
+        <record id="PPM_text_color_tree" model="ir.ui.view">
+            <field name="name">package_price_text_color_tree</field>
+            <field name="model">pp.text.color</field>
+            <field name="arch" type="xml">
+                <tree string="Text Color" editable="bottom">
+                    <field name="area_id" invisible="1"/>
+                    <field name="ink_color_id"/>
+                    <field name="price"/>
+                    <field name="add_delivery"/>
+                </tree>
+            </field>
+        </record>
+        <!--Package Price Solder Mask Color tree-->
+        <record id="PPM_solder_mask_color_tree" model="ir.ui.view">
+            <field name="name">package_price_solder_mask_color_tree</field>
+            <field name="model">pp.solder.mask.color</field>
+            <field name="arch" type="xml">
+                <tree string="Solder Mask Color" editable="bottom">
+                    <field name="area_id" invisible="1"/>
+                    <field name="ink_color_id"/>
+                    <field name="price"/>
+                    <field name="add_delivery"/>
+                </tree>
+            </field>
+        </record>
+        <!--Package Price Line Width Spacing tree-->
+        <record id="PPM_line_width_spacing_tree" model="ir.ui.view">
+            <field name="name">package_price_line_width_spacing_tree</field>
+            <field name="model">pp.line.width.spacing</field>
+            <field name="arch" type="xml">
+                <tree string="Line Width Spacing" editable="bottom">
+                    <field name="area_id" invisible="1"/>
+                    <field name="lws_min"/>
+                    <field name="lws_max"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+        <!--Package Price Aperture tree-->
+        <record id="PPM_aperture_tree" model="ir.ui.view">
+            <field name="name">package_price_aperture_tree</field>
+            <field name="model">pp.aperture</field>
+            <field name="arch" type="xml">
+                <tree string="Aperture" editable="bottom">
+                    <field name="area_id" invisible="1"/>
+                    <field name="aperture_min"/>
+                    <field name="aperture_max"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+        <!--Package Price Surface Treatment tree-->
+        <record id="PPM_surface_treatment_tree" model="ir.ui.view">
+            <field name="name">package_price_surface_treatment_tree</field>
+            <field name="model">pp.surface.treatment</field>
+            <field name="arch" type="xml">
+                <tree string="Aperture" editable="bottom">
+                    <field name="area_id" invisible="1"/>
+                    <field name="surface_id"/>
+                    <field name="thick_gold"/>
+                    <field name="price"/>
+                    <field name="add_delivery"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--第三级-->
+        <menuitem id="package_list_1" name="PCB Package Price List" parent="cpo_it_pcb.menu_pcb_quotation_pricelist_main" action="PPM_window" sequence="2"/>
+    </data>
+</odoo>

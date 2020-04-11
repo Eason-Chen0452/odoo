@@ -1,0 +1,31 @@
+<odoo>
+  <data>
+
+        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Website Assets">
+            <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/electron/static/src/css/templates_style.css" />
+            <link type="text/css" rel="StyleSheet" href="/electron/static/src/css/datatable/jquery.dataTables.min.css" />
+            <link type="text/css" rel="StyleSheet" href="/electron/static/src/css/datatable/buttons.dataTables.min.css" />
+            <!--<script type="text/javascript" src="/electron/static/src/js/jquery-1.12.4.js"></script>-->
+            <!--<script type="text/javascript" src="/electron/static/src/js/jquery-1.12.4.js"></script>-->
+            <!--<script type="text/javascript" src="/electron/static/src/js/templates.js"></script>-->
+            <!--<script type="text/javascript" src="/website_sale/static/src/js/website_sale_utils.js"></script>-->
+            <!--<script type="text/javascript" src="/website_sale/static/src/js/website_sale_payment.js"></script>-->
+            <!--<script type="text/javascript" src="/website_sale/static/src/js/website_sale_validate.js"></script>-->
+            <!--<script type="text/javascript" src="/website_sale/static/src/js/website_sale_tour_buy.js"></script>-->
+            <!--<script type="text/javascript" src="/website_sale/static/src/js/website_sale_rating.js"></script>-->
+            <!--<script type="text/javascript" src="/website_sale/static/src/js/website_sale_tracking.js"></script>-->
+            </xpath>
+            <xpath expr="//script[last()]" position="after">
+                <script type="text/javascript" src="/electron/static/src/js/laertejjunior-freezeheader-0e17009/js/jquery.freezeheader.js"></script>
+                <script type="text/javascript" src="/electron/static/src/js/templates.js"></script>
+                <script type="text/javascript" src="/electron/static/src/js/table_sort.js"></script>
+                <script type="text/javascript" src="/electron/static/src/js/jquery.lazyload.js"></script>
+                <script type="text/javascript" src="/electron/static/src/js/datatable/jquery.dataTables.min.js"></script>
+                <script type="text/javascript" src="/electron/static/src/js/datatable/dataTables.buttons.min.js"></script>
+                <script type="text/javascript" src="/electron/static/src/js/datatable/buttons.colVis.min.js"></script>
+            </xpath>
+      </template>
+   
+  </data>
+</odoo>

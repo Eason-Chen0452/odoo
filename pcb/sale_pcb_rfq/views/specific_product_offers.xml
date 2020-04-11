@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="specific_tree" model="ir.ui.view">
+            <field name="name">Specific Product Offers</field>
+            <field name="model">specific.product.offers</field>
+            <field name="arch" type="xml">
+                <tree string="Specific Product Offers">
+                    <field name="use_bool"/>
+                    <field name="product"/>
+                    <field name="discount"/>
+                    <field name="args_bool"/>
+                    <field name="range_bool"/>
+                </tree>
+            </field>
+        </record>
+        <record id="specific_form" model="ir.ui.view">
+            <field name="name">Specific Product Offers</field>
+            <field name="model">specific.product.offers</field>
+            <field name="arch" type="xml">
+                <form string="Specific Product Offers">
+                    <header>
+                        <button name="PlanEffective" type="object" string="Plan Effective" class="btn-primary"/>
+                        <field name="state" widget="statusbar" statusbar_visible="Draft,Take Effect,Lapse" statusbar_colors='{"Draft":"red","Cancel":"red"}'/>
+                    </header>
+                    <sheet>
+                        <group colspan="4" col="4" string="Product Plan Discount Settings">
+                            <field name="product"/>
+                            <field name="discount"/>
+                            <field name="args_bool"/>
+                            <field name="range_bool"/>
+                            <field name="use_bool"/>
+                            <field name="time_bool"/>
+                        </group>
+                        <group colspan="4" col="4" string="Set Valid Time Period" attrs="{'invisible':[('time_bool','=', False)]}">
+                            <field name="start_time"/>
+                            <field name="end_time"/>
+                        </group>
+                        <group colspan="4" col="4" string="PCB Product Parameter Range Settings">
+                            <label for="length_1" string="Length Range"/>
+                            <div>
+                                <field name="length_1" class="oe_inline" style="max-width:60px;"/> -
+                                <field name="length_2" class="oe_inline" style="max-width:60px;"/>
+                            </div>
+                            <label for="width_1" string="Width Range"/>
+                            <div>
+                                <field name="width_1" class="oe_inline" style="max-width:60px;"/> -
+                                <field name="width_2" class="oe_inline" style="max-width:60px;"/>
+                            </div>
+                            <label for="outer_1" string="Outer Copper Thickness Range"/>
+                            <div>
+                                <field name="outer_1" class="oe_inline" style="max-width:60px;"/> -
+                                <field name="outer_2" class="oe_inline" style="max-width:60px;"/>
+                            </div>
+                            <label for="inner_1" string="Inner Copper Thickness Range"/>
+                            <div>
+                                <field name="inner_1" class="oe_inline" style="max-width:60px;"/> -
+                                <field name="inner_2" class="oe_inline" style="max-width:60px;"/>
+                            </div>
+                            <label for="qty_1" string="Quantity Range"/>
+                            <div>
+                                <field name="qty_1" class="oe_inline" style="max-width:60px;"/> -
+                                <field name="qty_2" class="oe_inline" style="max-width:60px;"/>
+                            </div>
+                            <label for="thick_1" string="Plate Thickness Range"/>
+                            <div>
+                                <field name="thick_1" class="oe_inline" style="max-width:60px;"/> -
+                                <field name="thick_2" class="oe_inline" style="max-width:60px;"/>
+                            </div>
+                            <label for="combine_1" string="Number Imposition Range"/>
+                            <div>
+                                <field name="combine_1" class="oe_inline" style="max-width:60px;"/> -
+                                <field name="combine_2" class="oe_inline" style="max-width:60px;"/>
+                            </div>
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="mask_id" options="{'no_open':True}"/>
+                            <field name="text_id" options="{'no_open':True}"/>
+                            <field name="surface_ids" widget="many2many_tags" options="{'no_open':True}"/>
+                            <field name="via_ids" widget="many2many_tags" options="{'no_open':True}"/>
+                            <field name="process_ids" widget="many2many_tags" options="{'no_open':True}"/>
+                            <field name="material_ids" widget="many2many_tags" options="{'no_open':True}"/>
+                            <field name="layer_ids" widget="many2many_tags" options="{'no_open':True}"/>
+                            <field name="base_ids" widget="many2many_tags" options="{'no_open':True}"/>
+                            <field name="ipc_ids" widget="many2many_tags" options="{'no_open':True}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="specific_window" model="ir.actions.act_window">
+            <field name="name">Specific Product Offers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">specific.product.offers</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem action="sale_pcb_rfq.specific_window" id="menu_specific_1" parent="sales_team.menu_sales" sequence="99" groups="sales_team.group_sale_manager" name="Specific Product Offers"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_preferential_administrator" model="res.groups">
+            <field name="name">Super administratort</field>
+        </record>
+
+        <record id="group_preferential_users" model="res.groups">
+            <field name="name">Preferential Users</field>
+        </record>
+
+    </data>
+</odoo>

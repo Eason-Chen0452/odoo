@@ -1,0 +1,1688 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* electron
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-02 01:20+0000\n"
+"PO-Revision-Date: 2018-08-02 01:20+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.disk_center_form
+msgid "ADD Init Fields rel"
+msgstr "ADD Init Fields rel"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_access_time
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_access_time
+msgid "Access Time"
+msgstr "Access Time"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.ele_cpo_category
+msgid "All components"
+msgstr "所有元件"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_ancillary_use
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_ancillary_use
+msgid "Ancillary Use"
+msgstr "配套使用产品/相关产品"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_applications
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_applications
+msgid "Applications"
+msgstr "Applications"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_item_atta_id
+#: model:ir.model.fields,field_description:electron.field_electron_content_atta_id
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_atta_id
+msgid "Atta"
+msgstr "Atta"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_authentication
+#: model:ir.model.fields,field_description:electron.field_electron_filters_authentication
+msgid "Authentication"
+msgstr "认可/认证"
+
+#. module: electron
+#: model:ir.actions.server,name:electron.auto_check_repeat_recorde_ir_actions_server
+#: model:ir.cron,cron_name:electron.auto_check_repeat_recorde
+#: model:ir.cron,name:electron.auto_check_repeat_recorde
+msgid "Auto Check Repeat"
+msgstr "Auto Check Repeat"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_semi_conductor_id
+msgid "Automatically created field to link to parent electron.semi_conductor"
+msgstr "Automatically created field to link to parent electron.semi_conductor"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_item_base_id
+#: model:ir.model.fields,field_description:electron.field_electron_content_base_id
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_base_id
+msgid "Base"
+msgstr "基础"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_atta_big_image_herf
+#: model:ir.model.fields,field_description:electron.field_electron_content_big_image_herf
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_big_image_herf
+msgid "Big Image Herf"
+msgstr "大图像链接"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_capacitance
+#: model:ir.model.fields,field_description:electron.field_electron_content_capacitance
+msgid "Capacitance"
+msgstr "电容"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_capacitor_id
+msgid "Capacitor"
+msgstr "Capacitor"
+
+#. module: electron
+#: code:addons/electron/models/product_product.py:33
+#, python-format
+msgid "Chack electron encapsulation error, Current encapsulation already exists!"
+msgstr "Chack electron encapsulation error, Current encapsulation already exists!"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_channels
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_channels
+msgid "Channels"
+msgstr "频道"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_character
+#: model:ir.model.fields,field_description:electron.field_electron_content_character
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_character
+msgid "Character"
+msgstr "特性"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.disk_center_form
+msgid "Check repeat Product"
+msgstr "Check repeat Product"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_checked
+msgid "Checked"
+msgstr "Checked"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_product_product_checked_repeat
+msgid "Checked Repeat"
+msgstr "Checked Repeat"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_electronic_child_ids
+msgid "Child"
+msgstr "Child"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_pcb_number
+#: model:ir.model.fields,field_description:electron.field_electron_content_pcb_number
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_pcb_number
+msgid "ChinaPCBONE P/N"
+msgstr "瑞邦信息 零件编号"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_clock_rate
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_clock_rate
+msgid "Clock Rate"
+msgstr "Clock Rate"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_coating
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_coating
+msgid "Coating, Shell Type"
+msgstr "涂层，外壳类型"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_electronic_code
+#: model:ir.model.fields,field_description:electron.field_electron_type_code_code
+msgid "Code"
+msgstr "代号"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_conduction_r
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_conduction_r
+msgid "Conduction resistance (maximum)"
+msgstr "Conduction resistance (maximum)"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.cpo_search_selections
+msgid "Confirm"
+msgstr "确认"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_connectivity
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_connectivity
+msgid "Connectivity"
+msgstr "Connectivity"
+
+#. module: electron
+#: model:ir.model,name:electron.model_res_partner
+msgid "Contact"
+msgstr "联系人"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_controller_series
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_controller_series
+msgid "Controller Series"
+msgstr "Controller Series"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_controller_type
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_controller_type
+msgid "Controller Type"
+msgstr "Controller Type"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_coprocessor
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_coprocessor
+msgid "Coprocessor DSP"
+msgstr "Coprocessor DSP"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_core_dimensions
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_core_dimensions
+msgid "Core Dimensions"
+msgstr "Core Dimensions"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_core_processor
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_core_processor
+msgid "Core Processor"
+msgstr "Core Processor"
+
+#. module: electron
+#: model:res.groups,name:electron.crawler_operator
+msgid "Crawler Operator"
+msgstr "Crawler Operator"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_cpo_electron_encapsulation_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_atta_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_base_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_base_item_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_content_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_disk_center_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_disk_fields_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_electronic_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_filters_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_type_code_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_create_uid
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_line_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_cpo_electron_encapsulation_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_atta_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_base_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_base_item_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_content_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_disk_center_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_disk_fields_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_electronic_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_filters_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_type_code_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_create_date
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_line_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_cycles
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_cycles
+msgid "Cycles"
+msgstr "圈数"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_ddr_sdram
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_ddr_sdram
+msgid "DDR SDRAM"
+msgstr "DDR SDRAM"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_data_converter
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_data_converter
+msgid "Data Converter"
+msgstr "Data Converter"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_data_rate
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_data_rate
+msgid "Data Rate"
+msgstr "Data Rate"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_data_bytes
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_data_bytes
+msgid "Data SRAM Bytes"
+msgstr "Data SRAM Bytes"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_atta_url_sources
+#: model:ir.model.fields,field_description:electron.field_electron_content_url_sources
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_url_sources
+msgid "Data Sources"
+msgstr "数据来源"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.content
+msgid "Datasheet"
+msgstr "Datasheet"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_dc_resistance
+#: model:ir.model.fields,field_description:electron.field_electron_filters_dc_resistance
+msgid "Dc Resistance(DCR)"
+msgstr "直流电阻(DCR)(最大)"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_description
+#: model:ir.model.fields,field_description:electron.field_electron_content_description
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_description
+msgid "Description"
+msgstr "说明"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_diameter
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_diameter
+msgid "Diameter"
+msgstr "直径"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_dielectrics
+#: model:ir.model.fields,field_description:electron.field_electron_content_dielectrics
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_dielectrics
+msgid "Dielectric Material"
+msgstr "介电材料"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_digi_number
+#: model:ir.model.fields,field_description:electron.field_electron_content_digi_number
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_digi_number
+msgid "Digikey P/N"
+msgstr "Digi-Key 零件编号"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_line_disk_rel_id
+msgid "Disk Rel id"
+msgstr "Disk Rel id"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_cpo_electron_encapsulation_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_atta_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_base_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_base_item_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_content_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_disk_center_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_disk_fields_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_electronic_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_filters_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_type_code_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_display_name
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_line_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_display_interface
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_display_interface
+msgid "Display With Interface Controller"
+msgstr "Display With Interface Controller"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_eeprom_capacity
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_eeprom_capacity
+msgid "EEPROM Capacity"
+msgstr "EEPROM Capacity"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele001
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele001
+msgid "Ele001"
+msgstr "Ele001"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele002
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele002
+msgid "Ele002"
+msgstr "Ele002"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele003
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele003
+msgid "Ele003"
+msgstr "Ele003"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele004
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele004
+msgid "Ele004"
+msgstr "Ele004"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele005
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele005
+msgid "Ele005"
+msgstr "Ele005"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele006
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele006
+msgid "Ele006"
+msgstr "Ele006"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele007
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele007
+msgid "Ele007"
+msgstr "Ele007"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele008
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele008
+msgid "Ele008"
+msgstr "Ele008"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele009
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele009
+msgid "Ele009"
+msgstr "Ele009"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele010
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele010
+msgid "Ele010"
+msgstr "Ele010"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele011
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele011
+msgid "Ele011"
+msgstr "Ele011"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele012
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele012
+msgid "Ele012"
+msgstr "Ele012"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele013
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele013
+msgid "Ele013"
+msgstr "Ele013"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele014
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele014
+msgid "Ele014"
+msgstr "Ele014"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele015
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele015
+msgid "Ele015"
+msgstr "Ele015"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele016
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele016
+msgid "Ele016"
+msgstr "Ele016"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele017
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele017
+msgid "Ele017"
+msgstr "Ele017"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele018
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele018
+msgid "Ele018"
+msgstr "Ele018"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele019
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele019
+msgid "Ele019"
+msgstr "Ele019"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele020
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele020
+msgid "Ele020"
+msgstr "Ele020"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele021
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele021
+msgid "Ele021"
+msgstr "Ele021"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele022
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele022
+msgid "Ele022"
+msgstr "Ele022"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele023
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele023
+msgid "Ele023"
+msgstr "Ele023"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele024
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele024
+msgid "Ele024"
+msgstr "Ele024"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele025
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele025
+msgid "Ele025"
+msgstr "Ele025"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele026
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele026
+msgid "Ele026"
+msgstr "Ele026"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele027
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele027
+msgid "Ele027"
+msgstr "Ele027"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele028
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele028
+msgid "Ele028"
+msgstr "Ele028"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele029
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele029
+msgid "Ele029"
+msgstr "Ele029"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_ele030
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_ele030
+msgid "Ele030"
+msgstr "Ele030"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.electron_update_field_sequence_wizard_form
+msgid "Electron Fields"
+msgstr "Electron Fields"
+
+#. module: electron
+#: code:addons/electron/models/electron_base.py:18
+#, python-format
+msgid "Electron Type code rel table general field must only one!"
+msgstr "Electron Type code rel table general field must only one!"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_line_ele_update_id
+msgid "Electron Update Field Sequence"
+msgstr "Electron Update Field Sequence"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_ele_fields
+msgid "Electron Update Sequence"
+msgstr "Electron Update Sequence"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_electronic_name
+msgid "Electron component"
+msgstr "类别"
+
+#. module: electron
+#: model:product.category,name:electron.product_category_electronic_material
+#: model:website.menu,name:electron.menu_electron_search
+msgid "Electronic material"
+msgstr "电子物料"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_encapsulation
+#: model:ir.model.fields,field_description:electron.field_electron_content_encapsulation
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_encapsulation
+#: model:ir.model.fields,field_description:electron.field_product_product_encapsulation
+#: model:ir.model.fields,field_description:electron.field_product_template_encapsulation
+msgid "Encapsulation"
+msgstr "封装/外壳"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_ethernet
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_ethernet
+msgid "Ethernet"
+msgstr "Ethernet"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_QOH
+#: model:ir.model.fields,field_description:electron.field_electron_content_QOH
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_QOH
+msgid "Existing Number"
+msgstr "现有数量"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_fpga_bfm
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_fpga_bfm
+msgid "FPGA BFM"
+msgstr "FPGA BFM"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_grid
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_grid
+msgid "FPGA Grid Electrode"
+msgstr "FPGA Grid Electrode"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_kernel_unit
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_kernel_unit
+msgid "FPGA Kernel Unit"
+msgstr "FPGA Kernel Unit"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_fpge_SRAM
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_fpge_SRAM
+msgid "FPGA SRAM"
+msgstr "FPGA SRAM"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_fault_rate
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_fault_rate
+msgid "Fault Rate"
+msgstr "故障率"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel_ele_disk_field_id
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_line_ele_disk_field_id
+msgid "Field id"
+msgstr "Field id"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel_filter_can
+msgid "Filter can"
+msgstr "Filter can"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_filters_id
+msgid "Filters"
+msgstr "Filters"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_filters_type
+#: model:ir.model.fields,field_description:electron.field_electron_filters_filters_type
+msgid "Filters Type"
+msgstr "滤波器类型"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_framework
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_framework
+msgid "Framework"
+msgstr "Framework"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_functionality
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_functionality
+msgid "Functionality"
+msgstr "Functionality"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_type_code_general
+msgid "General"
+msgstr "General"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_grade
+#: model:ir.model.fields,field_description:electron.field_electron_filters_grade
+msgid "Grade"
+msgstr "等级"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_height
+#: model:ir.model.fields,field_description:electron.field_electron_content_height
+#: model:ir.model.fields,field_description:electron.field_electron_filters_height
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_height
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_height
+msgid "Height-Installation"
+msgstr "高度-安装(最大值)"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.product_type_path
+msgid "Home"
+msgstr "首页"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_IO_count
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_IO_count
+msgid "I/O Count"
+msgstr "I/O Count"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_IC_type
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_IC_type
+msgid "IC Type"
+msgstr "IC Type"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_cpo_electron_encapsulation_id
+#: model:ir.model.fields,field_description:electron.field_electron_atta_id
+#: model:ir.model.fields,field_description:electron.field_electron_base_id
+#: model:ir.model.fields,field_description:electron.field_electron_base_item_id
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_id
+#: model:ir.model.fields,field_description:electron.field_electron_content_id
+#: model:ir.model.fields,field_description:electron.field_electron_disk_center_id
+#: model:ir.model.fields,field_description:electron.field_electron_disk_fields_id
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel_id
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_id
+#: model:ir.model.fields,field_description:electron.field_electron_electronic_id
+#: model:ir.model.fields,field_description:electron.field_electron_filters_id
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_id
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_id
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_id
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_id
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_id
+#: model:ir.model.fields,field_description:electron.field_electron_type_code_id
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_id
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_atta_cpo_image
+#: model:ir.model.fields,field_description:electron.field_electron_content_cpo_image
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_cpo_image
+msgid "Image"
+msgstr "图像"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_impedance
+#: model:ir.model.fields,field_description:electron.field_electron_filters_impedance
+msgid "Impedance"
+msgstr "不同频率时的阻抗"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_inductor_id
+msgid "Inductor"
+msgstr "Inductor"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_ingredient
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_ingredient
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_ingredient
+msgid "Ingredient"
+msgstr "成分"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_input_type
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_input_type
+msgid "Input Type"
+msgstr "Input Type"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_inst_type
+#: model:ir.model.fields,field_description:electron.field_electron_content_inst_type
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_inst_type
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_inst_type
+msgid "Install Type"
+msgstr "安装类型"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_install_features
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_install_features
+msgid "Installation Features"
+msgstr "安装特性"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_interface
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_interface
+msgid "Interface"
+msgstr "Interface"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_kernel_type
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_kernel_type
+msgid "Kernel Type"
+msgstr "Kernel Type"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_kernel
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_kernel
+msgid "Kernel/Bus Width"
+msgstr "Kernel/Bus Width"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_knob
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_knob
+msgid "Knob"
+msgstr "调节类型"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_cpo_electron_encapsulation___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_atta___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_base___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_base_item___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_content___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_disk_center___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_disk_fields___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_electronic___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_filters___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_inductor___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_resistance___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_type_code___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence___last_update
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_line___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_cpo_electron_encapsulation_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_atta_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_base_item_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_base_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_content_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_disk_center_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_disk_fields_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_electronic_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_filters_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_type_code_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_line_write_uid
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_cpo_electron_encapsulation_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_atta_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_base_item_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_base_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_content_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_disk_center_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_disk_fields_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_disk_unit_one_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_electronic_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_filters_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_type_code_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_line_write_date
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_lead_form
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_lead_form
+msgid "Lead Form"
+msgstr "引线形式"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_interval
+#: model:ir.model.fields,field_description:electron.field_electron_content_interval
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_interval
+msgid "Lead Spacing"
+msgstr "引线间距"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_po_length
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_po_length
+msgid "Length"
+msgstr "长度"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_manufacture
+#: model:ir.model.fields,field_description:electron.field_electron_content_manufacture
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_manufacture
+msgid "Manufacturer"
+msgstr "制造商"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_dash_number
+#: model:ir.model.fields,field_description:electron.field_electron_content_dash_number
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_dash_number
+msgid "Manufacturer P/N"
+msgstr "制造商零件编号"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_memory_capacity
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_memory_capacity
+msgid "Memory Capacity"
+msgstr "Memory Capacity"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_memory_format
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_memory_format
+msgid "Memory Format"
+msgstr "Memory Format"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_memory_interface
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_memory_interface
+msgid "Memory Interface"
+msgstr "Memory Interface"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_atta_mini_image_herf
+#: model:ir.model.fields,field_description:electron.field_electron_content_mini_image_herf
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_mini_image_herf
+msgid "Mini Image Herf"
+msgstr "小图像链接"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_mini_quantity
+#: model:ir.model.fields,field_description:electron.field_electron_content_mini_quantity
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_mini_quantity
+msgid "Minimum Order Quantity"
+msgstr "最低订购数量"
+
+#. module: electron
+#: code:addons/electron/models/electron_base.py:59
+#, python-format
+msgid "Model: electron_base,Feild: digi_number, ids:{field} already exists!"
+msgstr "Model: electron_base,Feild: digi_number, ids:{field} already exists!"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_mb_type
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_mb_type
+msgid "Module/Board Type"
+msgstr "Module/Board Type"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_cpo_electron_encapsulation_name
+#: model:ir.model.fields,field_description:electron.field_electron_disk_center_name
+#: model:ir.model.fields,field_description:electron.field_electron_disk_fields_name
+#: model:ir.model.fields,field_description:electron.field_electron_type_code_name
+msgid "Name"
+msgstr "名称"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_voltage_rating
+#: model:ir.model.fields,field_description:electron.field_electron_content_voltage_rating
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_voltage_rating
+msgid "Nominal Voltage"
+msgstr "电压-额定"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_electronic_not_show
+msgid "Not show"
+msgstr "Not show"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_number_lines
+#: model:ir.model.fields,field_description:electron.field_electron_filters_number_lines
+msgid "Number Of Lines"
+msgstr "线路数"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_onoff_circuit
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_onoff_circuit
+msgid "On-off Circuit"
+msgstr "On-off Circuit"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.listing
+msgid "One-stop Shop, Fast and convenient"
+msgstr "One-stop Shop, Fast and convenient"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.cpo_it_electron_website_url
+msgid "Open electron WebSite"
+msgstr "打开网站"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_oscillator_type
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_oscillator_type
+msgid "Oscillator Type"
+msgstr "Oscillator Type"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_output_type
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_output_type
+msgid "Output Type"
+msgstr "Output Type"
+
+#. module: electron
+#: model:product.category,name:electron.product_category_pcb
+msgid "PCB"
+msgstr "PCB"
+
+#. module: electron
+#: model:product.category,name:electron.product_category_pcba
+msgid "PCBA"
+msgstr "PCBA"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.cpo_ele_content
+#: model:ir.ui.view,arch_db:electron.cpo_ele_content2
+#: model:ir.ui.view,arch_db:electron.cpo_ele_content3
+msgid "PDF"
+msgstr "PDF"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_name
+#: model:ir.model.fields,field_description:electron.field_electron_content_name
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_name
+msgid "PDF Explain"
+msgstr "PDF 说明"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.cpo_ele_content
+#: model:ir.ui.view,arch_db:electron.cpo_ele_content2
+#: model:ir.ui.view,arch_db:electron.cpo_ele_content3
+#: model:ir.ui.view,arch_db:electron.cpo_ele_content4
+msgid "PDF说明"
+msgstr "PDF说明"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_packaging
+#: model:ir.model.fields,field_description:electron.field_electron_content_packaging
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_packaging
+msgid "Packaging"
+msgstr "包装"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_electronic_parent_id
+msgid "Parent electronic"
+msgstr "所属类别"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_parts_state
+#: model:ir.model.fields,field_description:electron.field_electron_content_parts_state
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_parts_state
+msgid "Parts State"
+msgstr "零售状态"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_peripheral
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_peripheral
+msgid "Peripheral"
+msgstr "Peripheral"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_peripherals
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_peripherals
+msgid "Peripherals"
+msgstr "Peripherals"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_cpo_electron_encapsulation_pin_number
+msgid "Pin Number"
+msgstr "Pin Number"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.cpo_search_selections
+msgid "Post-screening results:<span class=\"searh_count\"/>"
+msgstr "Post-screening results:<span class=\"searh_count\"/>"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_potentiometer_id
+msgid "Potentiometer"
+msgstr "Potentiometer"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_price
+#: model:ir.model.fields,field_description:electron.field_electron_content_price
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_price
+msgid "Price"
+msgstr "价格"
+
+#. module: electron
+#: model:ir.model,name:electron.model_product_product
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_product_id
+msgid "Product"
+msgstr "产品"
+
+#. module: electron
+#: model:ir.model,name:electron.model_product_template
+msgid "Product Template"
+msgstr "产品模板"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.cpo_product_attribute_value
+msgid "Product attribute value"
+msgstr "Product attribute value"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.cpo_product_category
+msgid "Product category"
+msgstr "Product category"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.cpo_product_template
+msgid "Product template"
+msgstr "Product template"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.cpo_product_product
+msgid "Product var"
+msgstr "Product var"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_program_c_type
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_program_c_type
+msgid "Program Memory Type"
+msgstr "Program Memory Type"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_program_bytes
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_program_bytes
+msgid "Program SRAM Bytes"
+msgstr "Program SRAM Bytes"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_storage_capacity
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_storage_capacity
+msgid "Program Storage Capacity"
+msgstr "Program Storage Capacity"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_programmable_type
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_programmable_type
+msgid "Programmable Type"
+msgstr "Programmable Type"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_Q_value
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_Q_value
+msgid "Q at different frequencies"
+msgstr "不同频率时的Q值"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.listing
+msgid "Quality Assurance"
+msgstr "Quality Assurance"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_RAM_capacity
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_RAM_capacity
+msgid "RAM Capacity"
+msgstr "RAM Capacity"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_ram_controller
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_ram_controller
+msgid "RAM Controller"
+msgstr "RAM Controller"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_rated_current
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_rated_current
+msgid "Rated Current"
+msgstr "端子数"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_filters_rated_current
+msgid "Rated Current(Max)"
+msgstr "额定电流(最大)"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_rv_AC
+#: model:ir.model.fields,field_description:electron.field_electron_filters_rv_AC
+msgid "Rated Voltage(AC)"
+msgstr "额定电压(AC)"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_rv_DC
+#: model:ir.model.fields,field_description:electron.field_electron_filters_rv_DC
+msgid "Rated Voltage(DC)"
+msgstr "额定电压(DC)"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_realview
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_realview
+msgid "RealView"
+msgstr "RealView"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_resistance_id
+msgid "Resistance"
+msgstr "Resistance"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_resi_val
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_resi_val
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_resi_val
+msgid "Resistance Value"
+msgstr "电阻值"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_center_result
+msgid "Reslut"
+msgstr "Reslut"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_rotation_angle
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_rotation_angle
+msgid "Rotation Angle"
+msgstr "旋转角度"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_sata
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_sata
+msgid "SATA"
+msgstr "SATA"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_security_feat
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_security_feat
+msgid "Security Feature"
+msgstr "Security Feature"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_semi_conductor_id
+msgid "Semi Conductor"
+msgstr "Semi Conductor"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel_sequence
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_line_sequence
+msgid "Sequence"
+msgstr "序号"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_serializer
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_serializer
+msgid "Serializer"
+msgstr "Serializer"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_series
+#: model:ir.model.fields,field_description:electron.field_electron_content_series
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_series
+msgid "Series"
+msgstr "系列"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.electron_update_field_sequence_wizard_form
+msgid "Set Default"
+msgstr "Set Default"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_shaft_size
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_shaft_size
+msgid "Shaft Size"
+msgstr "轴尺寸"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_signal_conditioning
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_signal_conditioning
+msgid "Signal Conditioning"
+msgstr "Signal Conditioning"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_size
+#: model:ir.model.fields,field_description:electron.field_electron_content_size
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_size
+msgid "Size"
+msgstr "尺寸："
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_speed
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_speed
+msgid "Speed"
+msgstr "Speed"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_standard
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_standard
+msgid "Standard"
+msgstr "Standard"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_res_partner_supplier_description
+#: model:ir.model.fields,field_description:electron.field_res_users_supplier_description
+msgid "Supplier Description"
+msgstr "供应商描述"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_supplier_enca
+msgid "Supplier Device Package"
+msgstr "Supplier Device Package"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_supplier_enca
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_supplier_enca
+msgid "Supplier Encapsulation"
+msgstr "供应商器件封装"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_TCR
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_TCR
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_TCR
+msgid "TCR"
+msgstr "温度系数"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_technology
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_technology
+msgid "Technology"
+msgstr "Technology"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_termination
+#: model:ir.model.fields,field_description:electron.field_electron_content_termination
+#: model:ir.model.fields,field_description:electron.field_electron_potentiometer_termination
+msgid "Termination"
+msgstr "端子类型"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_macro_number
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_macro_number
+msgid "The macro unit number"
+msgstr "The macro unit number"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.listing
+msgid "The relevant data cannot be matched !"
+msgstr "The relevant data cannot be matched !"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_center_title
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel_ele_title
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_line_ele_title
+msgid "Title"
+msgstr "称谓"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.disk_center_form
+msgid "To Use Disk rel"
+msgstr "To Use Disk rel"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_tolerance
+#: model:ir.model.fields,field_description:electron.field_electron_content_tolerance
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_tolerance
+msgid "Tolerance"
+msgstr "容差"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_p_type
+#: model:ir.model.fields,field_description:electron.field_electron_content_p_type
+#: model:ir.model.fields,field_description:electron.field_electron_disk_center_p_type
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel_tt_type
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_p_type
+#: model:ir.model.fields,field_description:electron.field_electron_update_field_sequence_ele_type
+#: model:ir.ui.view,arch_db:electron.cpo_ele_content
+#: model:ir.ui.view,arch_db:electron.cpo_ele_content2
+#: model:ir.ui.view,arch_db:electron.cpo_ele_content3
+msgid "Type"
+msgstr "类型"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_type_code
+#: model:ir.model.fields,field_description:electron.field_electron_content_type_code
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_type_code
+msgid "Type code"
+msgstr "Type code"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_usb
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_usb
+msgid "USB"
+msgstr "USB"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_unit_one_id
+msgid "Unit One"
+msgstr "Unit One"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_base_update_type_code
+#: model:ir.model.fields,field_description:electron.field_electron_content_update_type_code
+#: model:ir.model.fields,field_description:electron.field_electron_origin_data_update_type_code
+msgid "Update Type Code"
+msgstr "Update Type Code"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_voltage_io
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_voltage_io
+msgid "Voltage I/O"
+msgstr "Voltage I/O"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_voltage
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_voltage
+msgid "Voltage-I/O"
+msgstr "Voltage-I/O"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_voltage_power
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_voltage_power
+msgid "Voltage-power Supply"
+msgstr "Voltage-power Supply"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_capacitor_temperature
+#: model:ir.model.fields,field_description:electron.field_electron_content_temperature
+#: model:ir.model.fields,field_description:electron.field_electron_filters_temperature
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_temperature
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_temperature
+msgid "Woking Temperature"
+msgstr "工作温度"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_write_cycle
+#: model:ir.model.fields,field_description:electron.field_electron_semi_conductor_write_cycle
+msgid "Write cycle time-word,page"
+msgstr "Write cycle time-word,page"
+
+#. module: electron
+#: model:ir.actions.act_window,name:electron.base_action_window
+msgid "base window"
+msgstr "base window"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.base_menu_1_list
+msgid "base_menu_List"
+msgstr "基本数据"
+
+#. module: electron
+#: model:ir.actions.act_url,name:electron.action_url
+msgid "cpo Electron Website url"
+msgstr "cpo Electron Website url"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.cpo_update_electron_field_wizard_menu
+msgid "cpo update electron field seq"
+msgstr "类型排序"
+
+#. module: electron
+#: model:ir.model,name:electron.model_cpo_electron_encapsulation
+msgid "cpo.electron.encapsulation"
+msgstr "cpo.electron.encapsulation"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.electron_disk_center_menu
+msgid "electron disk center menu"
+msgstr "初始设置"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.electron_disk_fields_menu
+msgid "electron disk fields menu"
+msgstr "元器件参数"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.electron_disk_rel_menu
+msgid "electron disk rel menu"
+msgstr "元器件参数设置"
+
+#. module: electron
+#: model:ir.actions.act_window,name:electron.electron_encapsulation_action_window
+msgid "electron encapsulation window"
+msgstr "electron encapsulation window"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.electron_origin_data_menu
+msgid "electron origin data menu"
+msgstr "所有元器件"
+
+#. module: electron
+#: model:ir.actions.act_window,name:electron.electronic_type_code_action_window
+msgid "electron type code window"
+msgstr "electron type code window"
+
+#. module: electron
+#: model:ir.actions.act_window,name:electron.electron_update_field_sequence_wizard_action
+msgid "electron update field sequence"
+msgstr "electron update field sequence"
+
+#. module: electron
+#: model:ir.actions.act_window,name:electron.electronic_action_window
+msgid "electron window"
+msgstr "electron window"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_atta
+msgid "electron.atta"
+msgstr "electron.atta"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_base
+msgid "electron.base"
+msgstr "electron.base"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_base_item
+msgid "electron.base.item"
+msgstr "electron.base.item"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_capacitor
+msgid "electron.capacitor"
+msgstr "electron.capacitor"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_content
+msgid "electron.content"
+msgstr "electron.content"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_disk_center
+msgid "electron.disk_center"
+msgstr "electron.disk_center"
+
+#. module: electron
+#: model:ir.actions.act_window,name:electron.disk_center_action_window
+msgid "electron.disk_center window"
+msgstr "electron.disk_center window"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_disk_fields
+msgid "electron.disk_fields"
+msgstr "electron.disk_fields"
+
+#. module: electron
+#: model:ir.actions.act_window,name:electron.disk_fields_action_window
+msgid "electron.disk_fields window"
+msgstr "electron.disk_fields window"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_disk_rel
+msgid "electron.disk_rel"
+msgstr "electron.disk_rel"
+
+#. module: electron
+#: model:ir.actions.act_window,name:electron.disk_rel_action_window
+msgid "electron.disk_rel window"
+msgstr "electron.disk_rel window"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_disk_unit_one
+msgid "electron.disk_unit_one"
+msgstr "electron.disk_unit_one"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_electronic
+msgid "electron.electronic"
+msgstr "electron.electronic"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_filters
+msgid "electron.filters"
+msgstr "electron.filters"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_inductor
+msgid "electron.inductor"
+msgstr "electron.inductor"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_origin_data
+msgid "electron.origin_data"
+msgstr "electron.origin_data"
+
+#. module: electron
+#: model:ir.actions.act_window,name:electron.origin_data_action_window
+msgid "electron.origin_data window"
+msgstr "electron.origin_data window"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_potentiometer
+msgid "electron.potentiometer"
+msgstr "electron.potentiometer"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_resistance
+msgid "electron.resistance"
+msgstr "electron.resistance"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_semi_conductor
+msgid "electron.semi_conductor"
+msgstr "electron.semi_conductor"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_type_code
+msgid "electron.type.code"
+msgstr "electron.type.code"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_update_field_sequence
+msgid "electron.update_field_sequence"
+msgstr "electron.update_field_sequence"
+
+#. module: electron
+#: model:ir.model,name:electron.model_electron_update_field_sequence_line
+msgid "electron.update_field_sequence_line"
+msgstr "electron.update_field_sequence_line"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.electron_encapsulation_menu_1_list
+msgid "electron_encapsultaion_menu_List"
+msgstr "electron_encapsultaion_menu_List"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.electronic_menu_root
+msgid "electronic"
+msgstr "电子元器件库"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.electronic_menu_1
+msgid "electronic_Menu_1"
+msgstr "基本分类"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.electronic_menu_disk_root
+msgid "electronic_Menu_disk_root"
+msgstr "元器件参数及设置"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.electron_menu_1_list
+msgid "electronic_menu_List"
+msgstr "电子元器件分类"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.electron_type_code_rel_menu_1_list
+msgid "electronic_type_code_rel_menu_List"
+msgstr "类型关系设置"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.content
+msgid "image"
+msgstr "image"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_inductance
+#: model:ir.model.fields,field_description:electron.field_electron_inductor_inductance
+msgid "inductance"
+msgstr "电感"
+
+#. module: electron
+#: model:product.attribute,name:electron.product_attribute_mini_number
+msgid "mini_number"
+msgstr "mini_number"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_disk_rel_not_show
+msgid "not show"
+msgstr "not show"
+
+#. module: electron
+#: model:product.attribute,name:electron.product_attribute_package
+msgid "package"
+msgstr "package"
+
+#. module: electron
+#: model:ir.model.fields,field_description:electron.field_electron_content_power
+#: model:ir.model.fields,field_description:electron.field_electron_resistance_power
+msgid "power(W)"
+msgstr "功率(W)"
+
+#. module: electron
+#: model:ir.ui.menu,name:electron.cpo_electron_product
+msgid "product"
+msgstr "product"
+
+#. module: electron
+#: model:ir.ui.view,arch_db:electron.disk_center_form
+msgid "test get disk rel"
+msgstr "test get disk rel"
+

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cpo_notification_tree">
+            <field name="name">Notification Tree</field>
+            <field name="model">cpo_notification</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="notice_title"/>
+                    <field name="notice_content"/>
+                    <field name="notice_start_time"/>
+                    <field name="notice_end_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_notification_form">
+            <field name="name">Notification Form</field>
+            <field name="model">cpo_notification</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                         <button name="do_release" states="draft" type="object" string="Release" class="oe_highlight"
+                                 groups="website_cpo_advertising.cpo_website_advertising"/>
+                         <button name="do_update" states="release" type="object" string="Update" class="oe_highlight"
+                                 confirm="Are you sure to choose to change?" groups="website_cpo_advertising.cpo_website_advertising"/>
+                         <button name="do_complete" states="update" type="object" string="Complete update" class="oe_highlight"
+                                 groups="website_cpo_advertising.cpo_website_advertising"/>
+                         <button name="do_invalid" states="draft,release,update" type="object" string="Become invalid" class="oe_highlight"
+                                 groups="website_cpo_advertising.cpo_website_advertising"   />
+                         <field name="state" widget="statusbar" statusbar_visible="draft,release,update,invalid"/>
+                     </header>
+                    <sheet>
+                        <group colspan="4">
+                            <group colspan="4">
+                                <field name="notice_title" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete'))]}"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="notice_link" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete'))]}"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="notice_now_time" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete'))]}"/>
+                            </group>
+                            <!--<group colspan="2" col="2">-->
+                                <!--<field name="notice_photo" widget="image" class="oe_avatar oe_left"/>-->
+                            <!--</group>-->
+                             <group col="2">
+                                <field name="notice_start_time" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete'))]}"/>
+                            </group>
+                            <group col="2">
+                                <field name="notice_end_time" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete'))]}"/>
+                            </group>
+                            <group colspan="4">
+                                <field name="notice_description" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete'))]}"/>
+                            </group>
+                            <group colspan="4">
+                                <field name="notice_content" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete'))]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_notification_action_window">
+            <field name="name">Notification Action</field>
+            <field name="res_model">cpo_notification</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- actions -->
+        <menuitem name="Website Notification" id="cpo_web_top_notification_menu" parent="website_cpo_index.cpo_web_root_menu"/>
+        <menuitem name="Notification" id="cpo_notification_menu" parent="website_cpo_advertising.cpo_web_top_notification_menu"
+              action="cpo_notification_action_window"/>
+    </data>
+</odoo>

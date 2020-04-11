@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<!--	PCB quotation record chart（图表）Begin	-->
+        <record id="cpo_pcb_record_graph" model="ir.ui.view">
+            <field name="name">PCB Quotation Graph</field>
+            <field name="model">cpo_pcb_record</field>
+            <field name="arch" type="xml">
+                <graph string="PCB" >
+                     <field name="user_name" />
+                     <field name="cpo_country" />
+                </graph>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="cpo_pcb_record_calendar_view">
+            <field name="name">PCB Quotation Calendar</field>
+            <field name="model">cpo_pcb_record</field>
+            <field name="arch" type="xml">
+                <calendar string="Ideas" date_start="cpo_time" >
+                    <field name="cpo_country"/>
+                    <field name="user_name"/>
+                </calendar>
+            </field>
+        </record>
+		<!--	PCB quotation record chart（图表）End	-->
+
+		<!--	PCBA quotation record chart（图表）Begin	-->
+        <record id="cpo_pcba_record_graph" model="ir.ui.view">
+            <field name="name">PCBA Quotation Graph</field>
+            <field name="model">cpo_pcba_record</field>
+            <field name="arch" type="xml">
+                <graph string="PCB" >
+                     <field name="user_name" />
+                     <field name="cpo_country" />
+                </graph>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="cpo_pcba_record_view">
+            <field name="name">PCBA Quotation Calendar</field>
+            <field name="model">cpo_pcba_record</field>
+            <field name="arch" type="xml">
+                <calendar string="Ideas" date_start="cpo_time" >
+                    <field name="cpo_country"/>
+                    <field name="user_name"/>
+                </calendar>
+            </field>
+        </record>
+		<!--	PCBA quotation record chart（图表）End	-->
+
+		<!--	PCBA and PCB quotation record chart（图表）Begin	-->
+        <record id="cpo_pcb_and_pcba_record_graph" model="ir.ui.view">
+            <field name="name">PCBA And PCB Quotation Graph</field>
+            <field name="model">cpo_pcb_and_pcba_record</field>
+            <field name="arch" type="xml">
+                <graph string="PCB" >
+                     <field name="user_name" />
+                     <field name="cpo_country" />
+                </graph>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="cpo_pcb_and_pcba_record_calendar">
+            <field name="name">PCBA And PCB Quotation Calendar</field>
+            <field name="model">cpo_pcb_and_pcba_record</field>
+            <field name="arch" type="xml">
+                <calendar string="Ideas" date_start="cpo_time" >
+                    <field name="cpo_country"/>
+                    <field name="user_name"/>
+                </calendar>
+            </field>
+        </record>
+		<!--	PCBA and PCB quotation record chart（图表）End	-->
+
+        <!--	Session chart（图表）Begin	-->
+        <record id="cpo_session_association_graph" model="ir.ui.view">
+            <field name="name">Session Association Graph</field>
+            <field name="model">cpo_session_association</field>
+            <field name="arch" type="xml">
+                <graph string="PCB" >
+                     <field name="session_id" />
+                     <field name="user_name" />
+                </graph>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="cpo_session_association_calendar">
+            <field name="name">Session Association Calendar</field>
+            <field name="model">cpo_session_association</field>
+            <field name="arch" type="xml">
+                <calendar string="Ideas" date_start="cpo_time" >
+                    <field name="session_id"/>
+                    <field name="user_name"/>
+                </calendar>
+            </field>
+        </record>
+		<!--	Session chart（图表）End	-->
+
+	</data>
+
+</odoo>

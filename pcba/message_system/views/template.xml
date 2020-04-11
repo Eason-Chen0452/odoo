@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="cpo_message_system" name="Message Assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/message_system/static/src/reset.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="cpo_package_price_tree">
+            <field name="name">Package Price Tree</field>
+            <field name="model">cpo_package_price</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="cpo_product_name"/>
+                    <field name="cpo_product_area"/>
+                    <field name="cpo_process"/>
+                    <field name="cpo_product_amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_package_price_form">
+            <field name="name">Package Price Form</field>
+            <field name="model">cpo_package_price</field>
+            <field name="arch" type="xml">
+                <form>
+                     <header>
+                         <button name="do_draft" states="invalid" type="object" string="Draft" />
+                         <button name="do_release" states="draft" type="object" string="Release" />
+                         <button name="do_maintain" states="release" type="object" string="Maintenance update" confirm="Are you sure to choose to change?"/>
+                         <button name="do_complete_maintain" states="maintain" type="object" string="Complete maintenance update" />
+                         <button name="do_invalid" states="draft,release,maintain,complete_maintain" type="object" string="Become invalid" />
+                         <field name="state" widget="statusbar" statusbar_visible="draft,release,maintain,invalid"/>
+                     </header>
+                    <div style="width:49%;display:inline-block;margin-right:10px;border-right:1px solid #ddd;">
+                        <group colspan="4">
+                            <group colspan="4">
+                                <group colspan="2">
+                                    <field name="cpo_layer_photo" widget="image" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                    <p>E.g: width &lt;=350px, height &lt;= 250px;</p>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_product_name" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                    <p>E.g: 2 Layers</p>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_product_area" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                    <p>E.g: Area &lt;= 0.2</p>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_process" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_product_amount" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                    <p>E.g: $ xxx +</p>
+                                </group>
+                                <group colspan="2">
+                                    <field name="link" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                    <p>E.g PCB Package Price: /pcb/package-price</p>
+                                </group>
+
+                            </group>
+                        </group>
+                    </div>
+                    <div style="width: 50%;display: inline-block;vertical-align: top;" class="cpo_content_view_right">
+                        <div class="row" style="margin: 0;">
+                            <notebook>
+                                <page string="Preview 1">
+                                    <div style="margin: 20px;width: 282.14px;border: 1px solid #ddd;">
+                                        <div style="width:99%;overflow:hidden;padding:25px 12px 5px;">
+                                            <div class="text-center">
+                                                <div class="layer_img_photo" style="width: 100%;display: inline-block;max-width: 130px;margin: auto;">
+                                                    <field name="cpo_layer_photo" widget="image"
+                                                           attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"></field>
+                                                </div>
+                                            </div>
+                                            <ul style="margin:0;padding: 15px 10px 30px;">
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:100%;display:inline-block;text-align:center;">
+                                                        <field name="cpo_product_name"
+                                                               attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"></field>
+                                                    </span>
+                                                </li>
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:100%;display:inline-block;text-align:center;">
+                                                        <field name="cpo_product_area"
+                                                               attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"></field>
+                                                    </span>
+                                                </li>
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:100%;display:inline-block;text-align:center;">
+                                                        <field name="cpo_process"
+                                                               attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"></field>
+                                                    </span>
+                                                </li>
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:100%;display:inline-block;text-align:center;font-size:30px;font-weight:600;color:#6bcad2;">
+                                                        <field name="cpo_product_amount"
+                                                               attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"></field>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <a class="btn" style="width: 60%;background-color: #6bcad2;margin: 0 auto 0;color: #FFFFFF;display: block;" >
+                                                Quotation Now
+                                            </a>
+                                        </div>
+                                    </div>
+                                </page>
+                                <page string="Preview 2">
+                                    <h3>Strive to improve...</h3>
+                                </page>
+                            </notebook>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Kanban View  -->
+        <record model="ir.ui.view" id="cpo_package_price_kanban">
+            <field name="name">Package Price Kanban</field>
+            <field name="model">cpo_package_price</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile o_kanban_small_column">
+                    <field name="sequence" widget="handle"/>
+                    <field name="cpo_layer_photo" widget="image" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <field name="sequence" widget="handle"/>
+                                <div class="row">
+                                    <div class="col-xs-6" groups="base.group_user">
+                                        <field name="cpo_layer_photo" widget="image" />
+                                    </div>
+                                    <div class="col-xs-6 pull-right">
+                                        <div class="layer_img_layernum" style="display: inline-block;vertical-align: top;padding-left: 20px;">
+                                            <h3 class="layer_num_qty" style="margin: 10px auto;width: 100%;font-size:18px;color: #2e8bc3;">
+                                                <field name="cpo_product_name"></field>
+                                            </h3>
+                                            <span class="layer_money_total" style="font-weight:600;font-size:16px;color:#FF0000;">
+                                                <field name="cpo_product_amount"></field>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!--搜索视图-->
+        <record id="cpo_package_price_search" model="ir.ui.view">
+            <field name="name">Package Price Search</field>
+            <field name="model">cpo_package_price</field>
+            <field name="arch" type="xml">
+                <search string="Ideas">
+                    <field name="cpo_product_name"/>
+                    <field name="cpo_product_amount"/>
+                    <group string="Group By">
+                        <filter name="group_by_cpo_product_name" string="Product Name" context="{'group_by': 'cpo_product_name'}"/>
+                        <!--<filter name="group_by_manufacturer_id" string="制造商编号" context="{'group_by': 'manufacturer_id'}"/>-->
+                        <!--<filter name="group_by_confirm_time" string="确认时间" context="{'group_by': 'confirm_time'}"/>-->
+                    </group>
+                </search>
+              </field>
+        </record>
+        <!--  -->
+        <record model="ir.ui.view" id="cpo_package_price_graph">
+            <field name="name">Package Price Graph</field>
+            <field name="model">cpo_package_price</field>
+            <field name="arch" type="xml">
+                <graph string="Sales Orders">
+                    <field name="cpo_product_name"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_package_price_action_window">
+            <field name="name">Package Price Action</field>
+            <field name="res_model">cpo_package_price</field>
+            <field name="view_mode">kanban,tree,form,graph</field>
+        </record>
+
+        <!-- actions -->
+        <menuitem name="Front-end website settings" id="cpo_web_root_menu"/>
+
+        <menuitem sequence="1" name="Front page page function settings" id="cpo_product_release_all_menu" parent="website_cpo_index.cpo_web_root_menu" />
+
+        <menuitem name="Package Price" id="cpo_package_price_menu" parent="website_cpo_index.cpo_product_release_all_menu"
+              action="cpo_package_price_action_window" />
+
+    </data>
+</odoo>

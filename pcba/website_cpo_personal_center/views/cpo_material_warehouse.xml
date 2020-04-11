@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!--客户自供快递信息填写-->
+    <template id="cpo_personal_material_warehouse" name="Material Warehouse">
+        <t t-call="website_portal.portal_layout">
+            <t t-call="website_cpo_personal_center.cpo_personal_material_warehouse_data"/>
+        </t>
+    </template>
+
+    <template id="cpo_personal_material_warehouse_data" name="Material Warehouse">
+        <div id="cpo_material_warehouse_box">
+            <div class="container">
+                <div class="material-title clearfix">
+                    <h3 class="cpo-all-material-name">All materials</h3>
+                    <div class="material-classification">
+                        <div class="gift-materail">Gift
+                            <small class="ml8">
+                                <span class='badge'>300</span>
+                            </small>
+                        </div>
+                        <div class="gift-materail">Buy
+                            <small class="ml8">
+                                <span class='badge'>152</span>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="personal-material">
+                    <ul>
+                        <li>SC01000710 | CAP SILICON 10PF 20% SMD | 0.010" 长 x 0.010" 宽（0.25mm x 0.25mm）</li>
+                        <li>SC01000710 | CAP SILICON 10PF 20% SMD | 0.010" 长 x 0.010" 宽（0.25mm x 0.25mm）</li>
+                        <li>SC01000710 | CAP SILICON 10PF 20% SMD | 0.010" 长 x 0.010" 宽（0.25mm x 0.25mm）</li>
+                        <li>SC01000710 | CAP SILICON 10PF 20% SMD | 0.010" 长 x 0.010" 宽（0.25mm x 0.25mm）</li>
+                        <li>SC01000710 | CAP SILICON 10PF 20% SMD | 0.010" 长 x 0.010" 宽（0.25mm x 0.25mm）</li>
+                        <li>SC01000710 | CAP SILICON 10PF 20% SMD | 0.010" 长 x 0.010" 宽（0.25mm x 0.25mm）</li>
+                        <li>SC01000710 | CAP SILICON 10PF 20% SMD | 0.010" 长 x 0.010" 宽（0.25mm x 0.25mm）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!-- 首页优惠券展示 -->
+        <template id="cpo_index_coupon">
+            <t t-set="cpo_add_class" t-value="'cash-coupon-box-received'"/>
+            <div class="mt-time2">
+                <a class="btn btn-primary" href="/coupon">Get more</a>
+            </div>
+            <t t-foreach="objects" t-as="object">
+                <div class="stamp stamp-box">
+                    <div class="par">
+                        <p><t t-esc="object['name_title']"/></p>
+                        <t t-if="object['cpo_card_bool'] == True">
+                            <t t-if="object['cpo_discount_type'] == '%'">
+                                <span>
+                                    <t t-esc="object['cpo_card_money']"/>
+                                </span>
+                                <sub class="sign">%</sub>
+                            </t>
+                            <t t-else="">
+                                <sub class="sign">$</sub>
+                                <span>
+                                    <t t-esc="object['cpo_card_money']"/>
+                                </span>
+                            </t>
+                        </t>
+                        <t t-else="">
+                            <t t-if="object['cpo_discount_type'] == '%'">
+                                <span>
+                                    <t t-esc="object['cpo_no_card_money']"/>
+                                </span>
+                                <sub class="sign">%</sub>
+                            </t>
+                            <t t-else="">
+                                <sub class="sign">$</sub>
+                                <span>
+                                    <t t-esc="object['cpo_no_card_money']"/>
+                                </span>
+                            </t>
+                        </t>
+                        <sub>Coupon</sub>
+                        <p>Only for new users!</p>
+                    </div>
+                    <div class="copy">
+                        Deputy coupon
+                        <p>
+                            <t t-esc="object['cpo_start_time']"></t>
+                            <br/>
+                            <t t-esc="object['cpo_end_time']"></t>
+                        </p>
+                        <t t-if="object.id in coupon_list">
+                            <a class="cpo-receive" t-att-id="object['id']">Received</a>
+                        </t>
+                        <t t-if="object.id not in coupon_list">
+                            <a class="cpo-receive" t-att-id="object['id']" style="background: #61b9ef">Receive</a>
+                        </t>
+                    </div>
+                    <t t-if="object.id in coupon_list">
+                        <i></i>
+                    </t>
+                </div>
+            </t>
+        </template>
+        <template id="cpo_index_coupon03">
+            <!-- author： charlie -->
+            <t t-set="cpo_add_class" t-value="'cash-coupon-box-received'"/>
+            <t t-foreach="objects" t-as="object">
+                <t t-if="object.id in coupon_list">
+                    <div t-att-class="'cash-coupon-box %s' % (cpo_add_class)">
+                        <div class="cash-coupon-content">
+                            <div class="cash-box cash-left">
+                                <t t-if="object['cpo_card_bool'] == True">
+                                    <span class="cpo-cash-money">
+                                        <t t-if="object['cpo_discount_type'] == '%'">
+                                            <t t-esc="object['cpo_card_money']"/>
+                                            <i>%</i>
+                                        </t>
+                                        <t t-else="">
+                                            <i>$</i>
+                                            <t t-esc="object['cpo_card_money']"/>
+                                        </t>
+                                    </span>
+                                </t>
+                                <t t-else="">
+                                    <span class="cpo-cash-money">
+                                        <t t-if="object['cpo_discount_type'] == '%'">
+                                            <t t-esc="object['cpo_no_card_money']"/>
+                                            <i>%</i>
+                                        </t>
+                                        <t t-else="">
+                                            <i>$</i>
+                                            <t t-esc="object['cpo_no_card_money']"/>
+                                        </t>
+                                    </span>
+                                </t>
+                                <span class="cash-condition">Only PCB orders are available!</span>
+                                <p class="cpo-cash-d"><t t-esc="object['name_title']"/></p>
+                            </div>
+                            <div t-att-class="'cash-box cash-right %s' % 'cpo-none'">
+                                <div class="cpo-cash-btn" t-att-id="object['id']">Receive</div>
+                            </div>
+                        </div>
+                        <div class="cpo-coupon-receive cpo-block"></div>
+                    </div>
+                </t>
+                <t t-else="">
+                    <div class="cash-coupon-box">
+                        <div class="cash-coupon-content">
+                            <div class="cash-box cash-left">
+                                <t t-if="object['cpo_card_bool'] == True">
+                                    <span class="cpo-cash-money">
+                                        <t t-if="object['cpo_discount_type'] == '%'">
+                                            <t t-esc="object['cpo_card_money']"/>
+                                            <i>%</i>
+                                        </t>
+                                        <t t-else="">
+                                            <i>$</i>
+                                            <t t-esc="object['cpo_card_money']"/>
+                                        </t>
+                                    </span>
+                                </t>
+                                <t t-else="">
+                                    <span class="cpo-cash-money">
+                                        <t t-if="object['cpo_discount_type'] == '%'">
+                                            <t t-esc="object['cpo_no_card_money']"/>
+                                            <i>%</i>
+                                        </t>
+                                        <t t-else="">
+                                            <i>$</i>
+                                            <t t-esc="object['cpo_no_card_money']"/>
+                                        </t>
+                                    </span>
+                                </t>
+                                <span class="cash-condition">Only PCB orders are available!</span>
+                                <p class="cpo-cash-d"><t t-esc="object['name_title']"/></p>
+                            </div>
+                            <div class="cash-box cash-right">
+                                <div class="cpo-cash-btn" t-att-id="object['id']">Receive</div>
+                            </div>
+                        </div>
+                        <div class="cpo-coupon-receive cpo-none"></div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <template id="cpo_coupon_list">
+            <t t-foreach="objects" t-as="object">
+                <!--<t t-esc="list.keys()"/>-->
+                <div class="coupon-box">
+                    <div class="cpo-text">
+                        <t t-foreach="coupon_list" t-as="cpo_list">
+                            <!--<div class="cpo-receiced">-->
+                                <!--<t t-foreach="cpo_list" t-as="list_id">-->
+                                    <!--<span><t t-esc="list_id['row_id']"/></span>-->
+                                <!--</t>-->
+                            <!--</div>-->
+                            <!--<t t-if="object['id'] in cpo_list">-->
+                                <!--<div class="cpo-received cpo-block">-->
+                                      <!--Received-->
+                                <!--</div>-->
+                            <!--</t>-->
+                            <!--<t t-else="">-->
+                                 <!--<div class="cpo-received cpo-none">-->
+                                      <!--Received-->
+                                 <!--</div>-->
+                            <!--</t>-->
+                             <t t-if="object.id in cpo_list">
+                                 <div class="cpo-received cpo-block">
+                                      Received
+                                 </div>
+                             </t>
+                             <t t-else="">
+                                 <div class="cpo-received cpo-none">
+                                      Received
+                                 </div>
+                            </t>
+                            <!--<t t-foreach="cpo_list" t-as="list_id">-->
+                                <!--<t t-if="object['id'] == list_id">-->
+                                    <!--<div class="cpo-received cpo-block">-->
+                                        <!--Received-->
+                                    <!--</div>-->
+                                <!--</t>-->
+                                <!--<t t-else="">-->
+                                    <!--<div class="cpo-received cpo-none">-->
+                                        <!--Received-->
+                                    <!--</div>-->
+                                <!--</t>-->
+                            <!--</t>-->
+                        </t>
+                        <span class="txt-span">Get it right now</span>
+                        <input type="hidden" t-att-value="object['id']"/>
+                    </div>
+                    <div class="cpo-cont">
+                        <div class="coupon-top" >
+                            <!--<t t-if="cpo_no_card_bool == False">-->
+                                <t t-if="object['cpo_card_bool'] == True">
+                                    <t t-if="object['cpo_discount_type'] == '%'">
+                                        <em></em>
+                                        <span class="txt-amount"><t t-esc="object['cpo_card_money']"/>%</span>
+                                    </t>
+                                    <t t-else="">
+                                        <em>$</em>
+                                        <span class="txt-amount"><t t-esc="object['cpo_card_money']"/></span>
+                                    </t>
+                                    <span class="txt-condition">Full <t t-esc="object['cpo_card_term']" /> available</span>
+                                </t>
+                                <t t-else="">
+                                    <t t-if="object['cpo_discount_type'] == '%'">
+                                        <em></em>
+                                        <span class="txt-amount"><t t-esc="object['cpo_no_card_money']"/>%</span>
+                                    </t>
+                                    <t t-else="">
+                                        <em>$</em>
+                                        <span class="txt-amount"><t t-esc="object['cpo_no_card_money']"/></span>
+                                    </t>
+                                </t>
+                            <p class="cpo-time"><t t-esc="object['cpo_start_time']"/> ~ <t t-esc="object['cpo_end_time']"/></p>
+                        </div>
+                        <div class="coupon-bottom">
+                            <p class="txt-p">Only the first order for PCB and PCBA is available!</p>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="cpo_coupon_center" name="Coupon center">
+            <t t-call="website.layout">
+                <t t-set="additional_title">Coupon Center</t>
+                <section class="jumbotron s_big_message oe_img_bg oe_custom_bg cpo_all_coupon_content" style="">
+                    <div class="container">
+                        <div class="row" style="color:#FFFFFF;">
+                            <div class="col-md-8 mt64 mb64 bg-black-25">
+                                <h2 class="o_default_snippet_text">Coupon Center</h2>
+                                <p class="o_default_snippet_text">Enjoy the quality service of ChinaPCBOne !</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div id="cpo_receive_coupon">
+                            <t t-set="cpo_add_class" t-value="'cash-coupon-box-received'"/>
+                            <t t-if="objects">
+                                <t t-foreach="objects" t-as="object">
+                                    <div class="stamp stamp-box">
+                                        <div class="par">
+                                            <p><t t-esc="object['name_title']"/></p>
+                                            <t t-if="object['cpo_card_bool'] == True">
+                                                <t t-if="object['cpo_discount_type'] == '%'">
+                                                    <span>
+                                                        <t t-esc="object['cpo_card_money']"/>
+                                                    </span>
+                                                    <sub class="sign">%</sub>
+                                                </t>
+                                                <t t-if="object['cpo_discount_type'] == 'money'">
+                                                    <sub class="sign">$</sub>
+                                                    <span>
+                                                        <t t-esc="object['cpo_card_money']"/>
+                                                    </span>
+                                                </t>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-if="object['cpo_discount_type'] == '%'">
+                                                    <span>
+                                                        <t t-esc="object['cpo_no_card_money']"/>
+                                                    </span>
+                                                    <sub class="sign">%</sub>
+                                                </t>
+                                                <t t-else="">
+                                                    <sub class="sign">$</sub>
+                                                    <span>
+                                                        <t t-esc="object['cpo_no_card_money']"/>
+                                                    </span>
+                                                </t>
+                                            </t>
+                                            <!--<sub class="sign">$</sub>-->
+                                            <!--<span>50.00</span>-->
+                                            <sub>Coupon</sub>
+                                            <p>For PCB orders only!</p>
+                                        </div>
+                                        <div class="copy">
+                                            Deputy coupon
+                                            <p>
+                                                <t t-esc="object['cpo_start_time']"></t>
+                                                <br/>
+                                                <t t-esc="object['cpo_end_time']"></t>
+                                            </p>
+                                            <t t-if="object.id in coupon_list">
+                                                <a href="/pcb">Use</a>
+                                            </t>
+                                            <t t-if="object.id not in coupon_list">
+                                                <a class="cpo-receive" t-att-id="object['id']">Receive</a>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </t>
+                            </t>
+                            <t t-else="">
+                                <h2 class="text-center">Sorry, no coupons are available!</h2>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+            </t>
+        </template>
+
+        <template id="cpo_coupon_center03" name="Coupon center">
+            <!--<t t-call="web.layout">-->
+            <t t-call="website.layout">
+                <!--<t t-set="additional_title">Service</t>-->
+                <section class="jumbotron s_big_message oe_img_bg oe_custom_bg cpo_all_coupon_content" style="">
+                    <div class="container">
+                        <div class="row" style="color:#FFFFFF;">
+                            <div class="col-md-8 mt64 mb64 bg-black-25">
+                                <h2 class="o_default_snippet_text">Coupon Center</h2>
+                                <p class="o_default_snippet_text">Enjoy the quality service of ChinaPCBOne !</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div id="cpo_receive_coupon">
+                            <t t-set="cpo_add_class" t-value="'cash-coupon-box-received'"/>
+                            <t t-if="objects">
+                                <t t-foreach="objects" t-as="object">
+                                    <t t-if="object.id in coupon_list">
+                                        <div t-att-class="'cash-coupon-box %s' % (cpo_add_class)">
+                                            <div class="cash-coupon-content">
+                                                <div class="cash-box cash-left">
+                                                    <t t-if="object['cpo_card_bool'] == True">
+                                                        <span class="cpo-cash-money">
+                                                            <t t-if="object['cpo_discount_type'] == '%'">
+                                                                <t t-esc="object['cpo_card_money']"/>
+                                                                <i>%</i>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <i>$</i>
+                                                                <t t-esc="object['cpo_card_money']"/>
+                                                            </t>
+                                                        </span>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span class="cpo-cash-money">
+                                                            <t t-if="object['cpo_discount_type'] == '%'">
+                                                                <t t-esc="object['cpo_no_card_money']"/>
+                                                                <i>%</i>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <i>$</i>
+                                                                <t t-esc="object['cpo_no_card_money']"/>
+                                                            </t>
+                                                        </span>
+                                                    </t>
+                                                    <span class="cash-condition">Only PCB orders are available!</span>
+                                                    <p class="cpo-cash-d"><t t-esc="object['name_title']"/></p>
+                                                </div>
+                                                <div t-att-class="'cash-box cash-right %s' % 'cpo-none'">
+                                                    <div class="cpo-cash-btn" t-att-id="object['id']">Receive</div>
+                                                </div>
+                                            </div>
+                                            <div class="cpo-coupon-receive cpo-block"></div>
+                                        </div>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="cash-coupon-box">
+                                            <div class="cash-coupon-content">
+                                                <div class="cash-box cash-left">
+                                                    <t t-if="object['cpo_card_bool'] == True">
+                                                        <span class="cpo-cash-money">
+                                                            <t t-if="object['cpo_discount_type'] == '%'">
+                                                                <t t-esc="object['cpo_card_money']"/>
+                                                                <i>%</i>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <i>$</i>
+                                                                <t t-esc="object['cpo_card_money']"/>
+                                                            </t>
+                                                        </span>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span class="cpo-cash-money">
+                                                            <t t-if="object['cpo_discount_type'] == '%'">
+                                                                <t t-esc="object['cpo_no_card_money']"/>
+                                                                <i>%</i>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <i>$</i>
+                                                                <t t-esc="object['cpo_no_card_money']"/>
+                                                            </t>
+                                                        </span>
+                                                    </t>
+                                                    <span class="cash-condition">Only PCB orders are available!</span>
+                                                    <p class="cpo-cash-d"><t t-esc="object['name_title']"/></p>
+                                                </div>
+                                                <div class="cash-box cash-right">
+                                                    <div class="cpo-cash-btn" t-att-id="object['id']">Receive</div>
+                                                </div>
+                                            </div>
+                                            <div class="cpo-coupon-receive cpo-none"></div>
+                                        </div>
+                                    </t>
+                                </t>
+                            </t>
+                            <t t-if="not objects">
+                                <h2 class="text-center">Sorry, no coupons are available!</h2>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+            </t>
+        </template>
+
+    </data>
+</odoo>

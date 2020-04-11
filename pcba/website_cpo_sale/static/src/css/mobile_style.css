@@ -1,0 +1,941 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 300px) {
+    header a.navbar-brand img{
+        height: 55px;
+        margin-top: 0;
+    }
+    header .container ul li a{
+        padding: 5px 7px !important;
+        height: 36px!important;
+        line-height: 32px!important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #modal_express .form_express{
+        width: auto!important;
+        height: auto!important;
+        line-height: inherit!important;
+        text-align: center;
+    }
+    #modal_express .express_conter{
+        float: none!important;
+    }
+    .modal-footer{
+        text-align: center!important;
+    }
+    .website_news .news_right{ width: 64%!important; }
+    .my-video-dimensions{ width: 350px!important;height: 214px!important;margin: auto auto;}
+    .coupon-top em{ margin: 10px 0 0 0!important; }
+    .cpo-7{ padding: 0; }
+    .cpo_country_list{ max-width: 268px; }
+    .combo-select{ max-width: 268px; }
+    .cpo_country_list input{ width: 266px; }
+    #cpo_foot_logo ul li{ width: 76px;height: 76px; }
+    #cpo_foot_logo ul li img{ width: 76px;height: 76px; }
+
+
+}
+@media screen and (max-width: 500px) {
+
+    /* Index */
+    header .navbar{
+        position: relative;
+    }
+    header .navbar-default .navbar-collapse{
+        width: 100%;margin: auto auto;
+    }
+    header .container ul.nav{
+        background-color: #FFFFFF;
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+    }
+    header .container ul li{ line-height: 36px;
+    }
+    header .container ul li a {
+        height: 100%;
+        line-height: 36px;
+        padding: 0 0 0 15px;
+    }
+    header .navbar .navbar-nav>li>a{
+        padding: 5px 10px;
+    }
+    .navbar.navbar-static-top ul.nav > li.divider{
+        margin-top: 0;
+        padding: 0;
+    }
+    .navbar-nav .open .dropdown-menu{
+        background-color: #FFFFFF;
+    }
+    .container > .navbar-header{
+        padding-top: 1px;
+        height: 60px;
+        background: #FFFFFF;
+        width: 100%;
+    }
+    .navbar-header .logo .img-responsive{ height: 100%; }
+    #row_style .row{
+        margin: 0!important;
+    }
+    #panel_btn{
+        position: static!important;
+        left: 0!important;
+        margin-left: 0!important;
+    }
+    #panel_btn .panel-body p span{
+        display: none;
+    }
+    #cpo_foot_logo ul{
+        height:100px;
+        padding-left:0;
+    }
+    #info{
+        padding-left: 15px;
+    }
+    header a.navbar-brand.logo{
+        width: 80%;height: 60px;
+    }
+    /* 产品介绍按钮 */
+    .slick-prev{
+        width: 16%;left: -3%;z-index: 9;
+    }
+    .slick-next{
+        width: 16%;right: -3%;z-index: 9;
+    }
+    /* index page */
+    .cpo-material-box{
+        position: relative;
+    }
+    .cpo-product-an ul li{
+        margin: 35px 0;font-size: 12px;padding: 10px 2px;
+    }
+    .mat-time .cpo-mat-discr{
+        margin-top: 5px;
+    }
+    #index-coupon .cash-coupon-box{
+        margin: 2px 0;
+    }
+    #cpo_receive_coupon .cash-coupon-box{
+        margin: 5px 0;
+    }
+    /* banner */
+    .banner-left .ad-process h1{
+        font-size: 10px;margin: 24px 0 16px 0;
+    }
+    .banner-left .ad-process .ad-money .m-title{
+        font-size: 16px;margin-top: 10px;
+    }
+    .banner-left .ad-process .ad-money .m-digis{
+        font-size: 25px;
+    }
+    .natifi-cont{
+        padding: 10px;
+    }
+    .navbar-default .navbar-nav > li > a:hover{ background-color: #ffffff;border-bottom: none; }
+    .step_process{ display: none; }
+    .cpo_product_left .content_lb{ margin: auto; }
+    .cpo_product_right .content_lb{ margin: auto; }
+    .news_right{ width: 65% !important; }
+    .website_news{ margin-top: 10px }
+    .product_left_title p{ max-width: 100%; }
+    .cpo_order_content .col-md-5{ padding: 10px 5px; }
+    .cpo-5{ background: url(../images/tools_img/coupon_bg.png) no-repeat 0px 0px;background-size: 100% 100%;margin-top: 5px; }
+    .coupon-row{ max-height: 100%; }
+    .my-video-dimensions{ width: 384px;height: 214px;margin: auto; }
+    .cpo-md-5{ width: 100%;margin: auto; }
+    .cpo-left{ width: 30%; }
+    .cpo-right{ width: 68%; }
+    #my_iframe{ max-width: 414px; }
+    #process_video{ height: 231px; }
+    #order_tutorial{ min-height: 231px;height: 100%; }
+
+    #cpo_col_md_padding{ padding: 0;min-width: 100%!important; }
+    #cpo_quotations_list{ padding: 0 5px; }
+    .cpo-banner-line .pcb_line .pcb_dimensions input{ width: 33%; }
+    #cpo_col_md_padding .pcb_instant_quote .pcb_line{ margin: 2px auto 0!important;padding-bottom: 10px!important; }
+    .cpo-banner-line .pcb_line .pcb_pub_style .pcba_unit{ width: 18%!important; }
+    .electronic_search{ width: 78%; }
+    .stencil_pub_style select.cpo_stencil_size{ width: 64%;padding: 2px 0;font-size: 12px; }
+    /* banner */
+    .height-82vh{
+        height: 100vh;
+    }
+    .cpo-slider-content{
+        top: -164px;right: 0;
+    }
+    .cpo_index_title{
+        position: relative;
+        top: -250px;
+        width: 338px;
+        left: 0;
+    }
+    .redister_content{
+        width: 90%;margin: 18% auto 0;
+    }
+    .cpo_index_title h1{
+        font-size: 20px!important;
+    }
+    .cpo_index_title h4{
+        font-size: 14px;
+    }
+    .owl-dots{
+        bottom: 70px;
+    }
+    .slider-active.owl-carousel .owl-nav div{
+        display: none;
+    }
+    .cpo-slider-content{
+        left: 0;
+    }
+    .cpo-slider-c-p{
+        width: 100%;
+    }
+    .cpo-w88{
+        width: 84%;
+    }
+    .cpo_board{
+        width: 40%;
+    }
+    input.cpo-submit{
+        width: 66%;
+    }
+    .slider-content-wrap{
+        padding: 20px;
+    }
+    .cpo-mt-100{
+        height: 100%;max-height: 226px;padding: 0;
+    }
+    .cpo-flex-item{
+        width: 45%;
+    }
+    .banner-left{
+        margin-top: 360px;
+    }
+    .cpo-apfc-area{
+        padding-top: 0!important;
+    }
+    .cpo-notification{
+        box-shadow: none;
+    }
+    .natifi-close{
+        top: 6%;
+    }
+    /* 优惠券 */
+    .stamp-box{
+        padding: 0;width: 350px;
+    }
+    .stamp .par{
+        width: 194px!important;
+    }
+    .stamp-box .copy{
+        min-height: 112px;
+    }
+    .mt-time2{
+        top: 130px;
+        right: 39%;
+    }
+    .mt-time2 .btn{
+        transform: rotate(0deg);
+    }
+
+    #create_pcba_order input.cpo-w88{
+        width: 84%!important;
+    }
+    #movie_process .modal-dialog,
+    #movie_company .modal-dialog{
+        width: 342px;margin: auto auto;
+    }
+    #movie_company_video{
+        width: 340px!important;
+    }
+    #movie_process_video{
+        width: 340px!important;
+    }
+    #movie_process .modal-body{
+        padding: 0!important;
+    }
+    #movie_company .modal-body{
+        padding: 0!important;
+    }
+    .cpo-product-an ul{
+        width: 100%;
+    }
+    .cpo-product-img{
+        width: 100%;margin-right: 0;
+    }
+    .cpo-product-desc-one{
+        width: 100%;
+    }
+    .cpo-pd-item{
+        min-height: 190px;
+    }
+    .copyright .text-muted{
+        font-size: 14px; text-align: center;
+    }
+    .copyright .social-icon ul{
+        text-align: center;
+    }
+    .open-time ul li span{
+        float: inherit;
+    }
+    /* PCB */
+    .order-nav-ul{
+        flex-wrap: wrap;
+    }
+    .order-nav-li{
+        flex: auto;
+    }
+    .order-nav-active{
+        background: none;
+    }
+    .flex_form{
+        padding: 0 15px;
+    }
+    .show_pcb_special{
+        width: 50%;
+    }
+    .pcb_other_fee{
+        width: 100%;
+    }
+
+    /* order style */
+    .cpo-box{
+        margin: 0 auto 10px;
+    }
+    .cpo-box .cpo-box-select{
+        width: 90%;
+    }
+    .cpo-box .cpo-box-input{
+        width: 64%;
+    }
+    .cpo-box .cpo-box-width{
+        width: 40%;
+    }
+    .cpo-box .cpo-box-length{
+        width: 40%;
+    }
+    .pcb_need_special_btn{
+        width: 50%;
+    }
+
+    .cpo_pcb_special .cpo-box .cpo-box-select{
+        width: 90%;
+    }
+    .cpo_pcb_special .cpo-box .cpo-box-input{
+        width: 90%;
+    }
+    .cpo_pcb_special .special_title{
+        font-size: 16px;margin-bottom: 30px;
+    }
+    /* Service 协议 */
+    .terms_conditions_btn{
+        position: relative;left: 50%;margin-left: -35px;bottom: 0;
+    }
+    .cpo_temrs_content{
+        padding: 0 15px;
+    }
+    .cpo_service_box{
+        margin-top: 40px;
+    }
+    /* help page */
+    .help-container{
+        padding: 0;
+    }
+    .help-page .d-flex{
+        flex-wrap: wrap;
+    }
+    .help-page nav.side-navbar{
+        max-width: 100%;min-width: 100%;
+    }
+    .help-page .navbar-collapse{
+        padding: 0 0 10px 0;
+    }
+    .help-page .navbar-toggle .icon-bar{
+        background-color: #888;
+    }
+    /* AD  */
+    .cpo_conversation_content h2.conversation_title{ font-size: 20px; }
+    .cpo_im_box_p p{ font-size: 15px; }
+
+    /* PCB page */
+    .cpo_update_file{ padding: 5px 0 10px 0; }
+    .cpo_update_file .cpo_file_line{ margin-top: 5px; }
+    .panel_img_size{ display: none; }
+    .cpo_input_material a{ margin-bottom: 5px; }
+    #pcb_need{ width: 50%; }
+    #cpo_calcula_title{ position: static; }
+    .special_line{ height: 100%; }
+    .cpo_pcb_special .special_title{ height: 100%;line-height: 18px;text-align: center; }
+    .special_length_line{ text-align: center; }
+    .cpo_pcb_special .special_title{ text-align: center; }
+    .cpo_about_us{ display: none!important; }
+    .show_pcb_info{ width: 45%!important; }
+    .cpo_conversation_content{ display: none!important; }
+    #cpo_shrink_magnify{ display: none; }
+    .cpo_calcula_title{ max-width: 100%; }
+    .cpo_try_quantity_title{ margin-top: 5px; }
+    .cpo_try_order_quantity { padding-top: 5px; }
+    /* Stencil page */
+    .cpo_stencil_special .stencil_special_re{ width: 96%; }
+
+
+    /* confrim data */
+    .pcb_other_fee{ left: 0; }
+    .cpo-fee .cpo-big-line label{ padding-left: 5px; }
+    .cpo-fee .cpo-control{ width: 40%; }
+    .cpo-fee .cpo-big-line input.form-control{ width: 70%; }
+    .cpo-order-detailed .special_line{ width: 100%; }
+    .cpo-order-detailed .cpo-big-line label{ width: 48%; }
+    /* Shopping Cart */
+    .generated_order_upload .order_upload_btn{ font-size: 12px;padding: 4px; }
+    .oe_website_sale .oe_cart table thead, .oe_website_sale #modal_optional_products table thead{ display: contents!important; }
+    #cpo_delivery_methods{ text-align: left; }
+    #cpo_delivery_methods .methods_chinapcbone{ vertical-align: bottom; }
+    #cpo_delivery_methods .methods_select{ display: block; }
+    #pcb_sale_quotation_line{ font-size: 12px; }
+
+    /* account B */
+    .orders_vertical_align{ font-size: 12px; }
+    .orders_vertical_align .cpo-xs-4-span{ padding: 0; }
+    table.dataTable tbody th, table.dataTable tbody td{ font-size: 12px!important; }
+    #cart_products tbody th, #cart_products tbody td{ padding: 2px 5px!important;font-size: 12px; }
+    .get_express_table .col-xs-4{ padding: 2px; }
+    .express_ul li p.cpo_express_ul_p{ display: block;line-height: 18px;text-align: left;margin: 0;padding: 0; }
+    .express_ul li{ height: 100%; }
+    .express_ul li a{ width: 100%;display: block;visibility: initial!important;text-align: center; }
+    .express_ul .cpo_provider_name{ margin-left: 0px; }
+    .express_ul .cpo_provider_no{ margin-left: 0px; }
+    .content-inner header.ac-header .container-fluid{
+        padding: 0;
+    }
+    .ac-page .container-fluid{
+        padding: 0 10px;
+    }
+    .item-flex .item{
+        min-width: 33.33333%;
+    }
+    section.dashboard-counts .number strong, section.dashboard-paid .number strong{
+        font-size: 20px;
+    }
+    section.dashboard-counts .icon i, section.dashboard-paid .icon i{
+        font-size: 20px;
+    }
+    section.dashboard-counts .title, section.dashboard-paid .title{
+        font-size: 12px;
+    }
+    /* account E */
+
+    /* Electronic */
+    #ele_cpo_all{
+        position: static!important;
+        display: none;
+    }
+    #all_cpo_ele_right{
+        position: relative!important;
+        margin-left: 0!important;
+    }
+    #cpo_header_selection{
+        overflow: scroll;
+        margin-left: 0!important;
+    }
+    #table2xx_wrapper{
+        overflow: scroll;
+    }
+
+    /* Contact Us */
+    .contactus_content h4{
+        padding-left: 0!important;
+    }
+    #con_add_pho .cpo_massage_descrip{
+        padding: 10px;
+    }
+
+    /* PCBA */
+    #xiangdao{
+        max-width: 414px;
+        display: none;
+    }
+    #quotation_row_sty{
+        margin: 0;
+    }
+    #ele_table{
+        width: 95%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #ele_table #hint_lenght{
+        margin-top: 0;
+    }
+
+    #ele_table_middle{
+        width: 95%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #ele_table_middle #button_jisuan{
+        margin-top: 5%;
+        margin-left: 40%;
+    }
+
+    #ele_table_right{
+        width: 95%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    /* PCB */
+    #pcb_quo .table .pcb_urgent{
+        width: 65%!important;
+        margin-top: 5px;
+    }
+
+    /* remove button */
+    .js_cpo_delete_product{
+        display: block!important;
+    }
+
+    /* Upload file */
+    #cpo_confirm_back_bom{
+        position: absolute;
+        right: 36%;
+        top: 80%;
+    }
+    #pcb_form_act #check_file_atta{
+        font-size: 12px!important;
+        padding: 4px 6px!important;
+    }
+
+
+    #cpo_title_top .cpo_select_font{
+        height: 120px;
+    }
+    #cpo_title_top #select_nav .cpo_check_excel_set{
+        width: 100%;
+    }
+     #cpo_title_top #select_nav .cpo_bom_fields_ref{
+        float: right;
+    }
+     #content_table{
+         overflow: scroll;
+     }
+
+     #mfesecure-ts-image{
+         margin-bottom: 40px!important;
+     }
+
+     .o_chat_window{
+        z-index: 1000004!important;
+    }
+     /* bom */
+    #bom_order_detail_row .cpo_text_right{
+        float: left!important;
+    }
+
+    /* pcb calculate*/
+    #cpo_pcb_quotation .form-group .form-control{
+        font-size: 12px!important;
+        padding-right: 0!important;
+        padding-left: 0!important;
+    }
+    #cpo_pcb_btn{
+        margin: 10px auto!important;
+        text-align: center!important;
+    }
+    .pcb_surface .cpo_pcb_surface{
+        width: 40%!important;
+    }
+    .pcb_surface .cpo_pcb_surface_more{
+        width: 40%!important;
+    }
+    .pcb_surface .cpo_pcb_surface .pcb_immersion_title{
+        margin-left:5px!important;
+    }
+    .row_padding_value{
+        padding-left: 15px!important;
+        padding-right: 15px!important;ght: 0!important;
+        /*top: 100%!important;*/
+    }
+    #pcb_col_md_8{
+        height: 100%!important;
+        padding: 60px 14px!important;
+        width: 96%!important;
+        margin-left: -48%!important;
+    }
+    #pcb_col_md_8 .table tr td{
+        line-height: 20px!important;
+    }
+    #pcb_myModal .pcb_confirm_radio .pcb_urgent_day{
+        width: 21%!important;
+    }
+    #cpo_pcb_expedited_select{
+        position: static!important;
+        right: 0;
+    }
+    #pcb_select_result .pcb_surface{
+        width: 100%!important;
+    }
+    /* confrim order */
+    .check_data{ width: 50%; }
+    .cpo_td_sp3{ overflow: scroll; }
+    #pcb_need{ width: 44%; }
+    .cpo_input_needpcb_group .set_contetn .set_pcs_qty{ width: 60px;padding: 5px 0; }
+    .cpo_input_size .set_contetn{ padding: 0; }
+    #cpo_iframe{ width: 100%!important;height: 216px;margin: auto; }
+    /* 个人中心 */
+    .ac-page .navbar-toggle .icon-bar{
+        background-color: #888;
+    }
+    .ac-page .d-flex{
+        flex-wrap: wrap;
+    }
+    .ac-page nav.side-navbar{
+        min-width: 100%;max-width: 100%;
+    }
+    .ac-page .pi-info{
+        flex-wrap: wrap;
+    }
+    .ac-page .pi-info .pi-info-left{
+        width: 100%;
+    }
+    .ac-page .pi-info .pi-info-left .pi-tx{
+        width: 70px;height: 70px;
+    }
+    .ac-page .pi-info .pi-info-left .pi-tx img{
+        width: 60px;height: 60px;margin: 4px auto;
+    }
+    .ac-page .pi-info .pi-info-right{
+        width: 100%;margin-left: 0;
+    }
+    .ac-page .pi-info .pi-info-right .pi-info-ul .pi-info-li p.pi-info-balance{
+        width: 60%;
+    }
+    .ac-page .pi-info .pi-info-right .pi-info-ul .pi-info-li p.pi-info-balance input{
+        font-size: 24px;
+    }
+    .ac-page .pi-info-li label{
+        font-size: 14px;
+    }
+    .cpo-od-ul{
+        width: 500px;
+    }
+    .cpo-od-ul .cpo-od-li .od-li-content .od-li-span{
+        font-size: 12px;
+    }
+    #home_order_details_Modal .modal-dialog{
+        width: 94%;
+    }
+    #home_order_details_Modal .order-details-data .odd-li div{
+        min-width: 100%;
+    }
+    .ac-page .card-body .cpo_message_tabel {
+        width: 500px;
+    }
+    #cpo_message_content_form .form-group .message-content{
+        width: 68%;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 767px){
+    /* Index */
+    header .container ul.nav{
+        background-color: #FFFFFF;
+        z-index: 1000;
+        height: 300px;
+        margin-top: 0;
+    }
+    .navbar-nav > li > .dropdown-menu{
+        background-color: #FFFFFF;
+    }
+    .navbar-nav > li{
+        background-color: #FFFFFF;
+    }
+    .navbar-default .navbar-collapse{
+        margin-top: 30px;
+    }
+
+    .navbar.navbar-static-top ul.nav > li.divider{
+        margin-top: 0;
+        padding: 0;
+    }
+    header .container ul li a{
+        height: 40px;
+        line-height: 21px;
+    }
+    #panel_btn{
+        left: 0!important;
+        margin-left: 0!important;
+    }
+     #panel_btn .panel-body p{
+        display: -webkit-flex;
+        display: flex;
+        display: -ms-flexbox;
+    }
+    #panel_btn .panel-body .cpo_panel_btn{
+        flex: 1;
+        max-width: 240px;
+        font-size: 14px;
+        margin: 5px 5px;
+        -ms-flex: 1;
+    }
+
+    #cpo_foot_logo ul{
+        height:100px;
+        padding-left:0;
+    }
+    #info{
+        padding-left: 15px;
+    }
+
+    /* remove button */
+    .js_cpo_delete_product{
+        display: block!important;
+    }
+
+    /* Electron */
+    #ele_cpo_all{
+        width: 100%!important;
+        position: static!important;
+    }
+    #all_cpo_ele_right{
+        margin-left: 15px!important;
+    }
+
+    /* PCBA */
+    #xiangdao{
+        max-width: 414px;
+        display: none;
+    }
+    #quotation_row_sty{
+        margin: 0;
+    }
+    #ele_table{
+        width: 95%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #ele_table #hint_lenght{
+        margin-top: 0;
+    }
+
+    #ele_table_middle{
+        width: 95%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #ele_table_middle #button_jisuan{
+        margin-top: 5%;
+        margin-left: 40%;
+    }
+    #ele_table_right{
+        width: 95%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+
+    /* Upload file */
+    #cpo_confirm_back_bom{
+        position: absolute;
+        right: 40%;
+        top: 80%;
+    }
+    #cpo_title_top .cpo_select_font{
+        height: 120px;
+    }
+    #cpo_title_top #select_nav .cpo_check_excel_set{
+        width: 100%;
+    }
+     #cpo_title_top #select_nav .cpo_bom_fields_ref{
+        float: right;
+    }
+     #content_table{
+         overflow: scroll;
+     }
+
+     #mfesecure-ts-image{
+         margin-bottom: 40px!important;
+     }
+
+     .o_chat_window{
+        z-index: 1000004!important;
+    }
+
+    #cpo_pcb_btn{
+        margin: 10px auto!important;
+        text-align: center!important;
+    }
+    #pcb_col_md_8{
+        /*padding-bottom: 329px;*/
+        padding: 60px 40px!important;
+        width: 98%!important;
+        margin-left: -48%!important;
+    }
+    #cpo_pcb_expedited_select{
+        position: static!important;
+        right: 0;
+    }
+    .cpo_about_us{ display: none!important; }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px){
+     #panel_btn{
+        left: 0!important;
+        margin-left: 0!important;
+    }
+    #panel_btn .panel-body .cpo_panel_btn{
+        width: 200px;
+        margin: 5px 30px;
+    }
+
+
+    #cpo_foot_logo ul{
+        height:100px;
+        padding-left:0;
+    }
+    #info{
+        padding-left: 15px;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    header .container ul li a{
+        font-size: 10px;
+        padding: 10px 4px;
+        line-height: 68px;
+    }
+    .navbar.navbar-static-top ul.nav > li.divider{
+        margin-top: 0;
+        padding: 0;
+    }
+    #ele_cpo_all{
+        float: left;
+    }
+    #all_cpo_ele_right{
+        float: right;
+    }
+
+    #cpo_pcb_btn{
+        margin: 10px auto!important;
+        text-align: center!important;
+    }
+    .container > .navbar-header{
+        width: 18%!important;
+        margin-top: 18px!important;
+    }
+   #pcb_col_md_8{
+        margin-left: -54%!important;
+        width: 110%!important;
+   }
+   .website_news{ height: 120px; }
+   .website_news .cpo_md6_over{ overflow: hidden; }
+    .step_process li.online_quote .process_photo{ background: url("../images/process/stepprocess_01.png") 16px 7px no-repeat;background-size: 20px 20px; }
+   .step_process li.add_to_cart .process_photo{ background: url("../images/process/stepprocess_03.png") 16px 7px no-repeat;background-size: 20px 20px; }
+   .step_process li.review_order .process_photo{ background: url("../images/process/stepprocess_05.png") 16px 7px no-repeat;background-size: 20px 20px; }
+   .step_process li.billing_shipping .process_photo{ background: url("../images/process/stepprocess_07.png") 16px 7px no-repeat;background-size: 20px 20px; }
+   .step_process li.wait_confirm .process_photo{ background: url("../images/process/stepprocess_09.png") 16px 7px no-repeat;background-size: 20px 20px; }
+   .step_process li.delivery .process_photo{ background: url("../images/process/stepprocess_11.png") 16px 7px no-repeat;background-size: 20px 20px; }
+   .step_process li.confirmation .process_photo{ background: url("../images/process/stepprocess_13.png") 16px 7px no-repeat;background-size: 20px 20px; }
+   .step_process li .process_decoration{ width: 5px;margin-top: 18px; }
+   .step_process li .process_photo{ width: 52px;height: 38px;margin: 0 10px; }
+   .step_process p{ font-size: 12px; }
+   .online_prompt{ height: 38px; }
+   .my-video-dimensions{ width: 100%; }
+
+   .cpo_product_right .content_lb{ max-width: 100%; }
+   .product_left_title p{ max-width: 100%; }
+   .cpo_product_left .content_lb{ max-width: 100%; }
+   .content_lb .lb_click_item{ max-width: 100%; }
+   .content_lb .lb_click_item img{ width: 100%!important; }
+   .cpo_order_people img{ width: 100%; }
+   .cpo_why_select_from{ margin: 20px 0; }
+
+}
+@media screen and (min-width: 991px) and (max-width: 1199px){
+    #ele_cpo_all{
+        float: left;
+    }
+    /*#xiangdao ul li{ width: 14%; }*/
+    #all_cpo_ele_right{
+        margin-left: 0!important;
+        width: 60%;
+        float: right;
+    }
+    .container > .navbar-header{
+        width: 19%!important;
+    }
+    .pcb_surface .cpo_pcb_surface{
+        width: 40%!important;
+    }
+    .pcb_surface .cpo_pcb_surface_more{
+        width: 40%!important;
+    }
+    #pcb_col_md_8 .table tr td{
+        line-height: normal!important;
+    }
+   #pcb_col_md_8{
+        padding: 60px 40px!important;
+        margin-left: -46%!important;
+    }
+   #pcb_price_calculate .pcb_all_fee_details{
+       /*top: -672px!important;*/
+   }
+   .step_process li.online_quote .process_photo{ background: url("../images/process/stepprocess_01.png") 16px 7px no-repeat;background-size: 26px 26px; }
+   .step_process li.add_to_cart .process_photo{ background: url("../images/process/stepprocess_03.png") 16px 7px no-repeat;background-size: 26px 26px; }
+   .step_process li.review_order .process_photo{ background: url("../images/process/stepprocess_05.png") 16px 7px no-repeat;background-size: 26px 26px; }
+   .step_process li.billing_shipping .process_photo{ background: url("../images/process/stepprocess_07.png") 16px 7px no-repeat;background-size: 26px 26px; }
+   .step_process li.wait_confirm .process_photo{ background: url("../images/process/stepprocess_09.png") 16px 7px no-repeat;background-size: 26px 26px; }
+   .step_process li.delivery .process_photo{ background: url("../images/process/stepprocess_11.png") 16px 7px no-repeat;background-size: 26px 26px; }
+   .step_process li.confirmation .process_photo{ background: url("../images/process/stepprocess_13.png") 16px 7px no-repeat;background-size: 26px 26px; }
+   .step_process li .process_decoration{ width: 15px; }
+   .step_process li .process_photo{ width: 64px;margin: 0 10px; }
+   .step_process p{ font-size: 12px; }
+   #cpo_col_md_padding{ min-width: 426px; }
+}
+
+@media screen and (min-width: 768px) {
+    #panel_btn .panel-body p{
+        display: -webkit-flex;
+        display: flex;
+    }
+    #panel_btn .panel-body .cpo_panel_btn{
+        flex: 1;
+        -ms-flex: 1 0 0px;
+        -ms-min-width: 300px;
+    }
+    #select_nav .cpo_nav_content{
+        display: -webkit-flex;
+        display: flex;
+        min-width: 1024px;
+    }
+    #select_nav .cpo_nav_content .select_item{
+        flex: 1;
+        flex-shrink: 0;
+        -ms-flex: 1 0 0px;
+    }
+
+    #select_nav .select_item i{
+        height: 20px;
+        line-height: 25px;
+
+    }
+    #cpoUploadModal .modal-dialog{
+        width: 800px;
+    }
+    .cpo-banner-ul .cpo-banner-li{
+        width: 400px;
+    }
+   /*#cpo_hdi_all_data .form-horizontal .control-label{*/
+       /*margin-top: 0;*/
+   /*}*/
+
+
+}
+@media screen and (min-width: 1199px){
+    #xiangdao ul li{ width: 12%; }
+}
+@media screen and (min-width: 1200px) and (max-width: 1335px){
+    #cpo_col_md_padding{ min-width: 456px; }
+}

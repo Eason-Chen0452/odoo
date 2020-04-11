@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Sequences for PCB Quotation -->
+        <record id="seq_type_pcb_quotation_pricelist_sales" model="ir.sequence.type">
+            <field name="name">PCB Quotation Price List For Sales</field>
+            <field name="code">pcb.quotation.pricelist.sales</field>
+        </record>
+
+        <record id="seq_pcb_quotation_pricelist_sales" model="ir.sequence">
+            <field name="name">PCB Quotation Price List Sequence For Sales</field>
+            <field name="code">pcb.quotation.pricelist.sales</field>
+            <field name="prefix">PLS</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_type_pcb_quotation_pricelist_purchase" model="ir.sequence.type">
+            <field name="name">PCB Quotation Price List For Purchase</field>
+            <field name="code">pcb.quotation.pricelist.purchase</field>
+        </record>
+
+        <record id="seq_pcb_quotation_pricelist_purchase" model="ir.sequence">
+            <field name="name">PCB Quotation Price List Sequence For Purchase</field>
+            <field name="code">pcb.quotation.pricelist.purchase</field>
+            <field name="prefix">PLP</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

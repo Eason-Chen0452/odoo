@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cpo_page_advertising_tree">
+            <field name="name">Advertising Tree</field>
+            <field name="model">cpo_page_advertising</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ad_page_title"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_page_advertising_form">
+            <field name="name">Advertising Form</field>
+            <field name="model">cpo_page_advertising</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group colspan="4">
+                            <group colspan="2" col="2">
+                                <field name="ad_page_title"/>
+                            </group>
+                            <group colspan="2" col="2">
+                                <field name="ad_image" widget="image"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_page_advertising_action_window">
+            <field name="name">Advertising Action</field>
+            <field name="res_model">cpo_page_advertising</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- actions -->
+        <menuitem name="Page advertising" id="page_advertising_menu" parent="cpo_advertising_menu"
+              action="cpo_page_advertising_action_window"/>
+    </data>
+
+</odoo>

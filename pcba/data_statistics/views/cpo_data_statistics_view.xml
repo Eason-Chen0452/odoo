@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="data_statistics_wizard_form">
+            <field name="name">Data statistics wizard form</field>
+            <field name="model">data_statistics.data_statistics</field>
+            <field name="arch" type="xml">
+                <form string="form视图显示名">
+					<group col="4">
+						<group colspan="2">
+							<field name="start_date"/>
+						</group>
+						<group colspan="2">
+							<field name="end_date"/>
+						</group>
+						<group colspan="2">
+							<field name="quote_record"/>
+						</group>
+						<group colspan="2">
+							<field name="source_data"/>
+						</group>
+						<group colspan="2">
+							<field name="access_data"/>
+						</group>
+						<group colspan="4">
+							<div>
+								<span style="display: inline-block;width: 16%;height: 30px;border-right: 1px solid #ccc;line-height: 30px;font-size: 14px;font-weight: 600;vertical-align: middle;">
+									Quick query :
+								</span>
+								<button name="get_to_today" type="object" string="Today" class="btn btn-primary" style="margin: 0 10px;"></button>
+								<button name="get_to_week" type="object" string="Week" class="btn btn-primary" style="margin: 0 10px;"></button>
+								<button name="get_to_month" type="object" string="Month" class="btn btn-primary" style="margin: 0 10px;"></button>
+							</div>
+						</group>
+					</group>
+                     <footer>
+                        <button name="get_data_statistics" type="object" string="Confirm" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+		<!-- 设置action打开视图-->
+		<record model="ir.actions.act_window" id="data_statistics_actions">
+			<field name="name">Data statistics</field>
+			<field name="res_model">data_statistics.data_statistics</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem name="Data statistics menu" id="data_statistics_menu" parent="personal_center.personal_root" sequence="11"/>
+        <menuitem name="Advanced version data statistics" id="data_statistics_act_menu" parent="data_statistics.data_statistics_menu"
+                action="data_statistics_actions"/>
+
+    </data>
+</odoo>

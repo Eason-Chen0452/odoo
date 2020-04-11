@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_frontend_temrs" inherit_id="website.assets_frontend" name="Temrs Conditions">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/website_cpo_sale/static/src/css/cpo_service.css"/>
+        </xpath>
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/website_cpo_sale/static/src/js/cpo_service.js"></script>
+        </xpath>
+    </template>
+
+    <template id="cpo_web_service" name="Terms &amp; Conditions">
+        <!--<t t-call="web.layout">-->
+        <t t-call="website.layout">
+            <!--<t t-set="additional_title">Service</t>-->
+            <section class="jumbotron s_big_message oe_img_bg oe_custom_bg cpo_service_box" style="background-image: url('/website_cpo_sale/static/src/images/banner_1.jpg');">
+                <div class="container">
+                    <div class="row" style="color:#FFFFFF;">
+                        <div class="col-md-8 mt64 mb64 bg-black-25">
+                            <h2 class="o_default_snippet_text">Terms &amp; Conditions!</h2>
+                            <p class="o_default_snippet_text">General terms and conditions of sale</p>
+                            <!--<a class="btn btn-warning btn-lg o_default_snippet_text" href="/en_US/page/website.contactus">联系我们</a>-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--<section id="banner_bg" class="s_text_block_image_fw oe_img_bg">-->
+                <!--<div class="container">-->
+                    <!--<div class="col-md-8 mt64 mb64 bg-black-25">-->
+                        <!--<h2 class="o_default_snippet_text">PCB &amp; PCBA &#45;&#45; One Stop Service</h2>-->
+                        <!--<h4 class="o_default_snippet_text">Chinapcbone Technology Limited</h4>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</section>-->
+            <h2 class="text-center" id="cpo_terms_title">Terms &amp; Conditions</h2>
+            <section class="s_three_columns">
+                <div class="container">
+                    <div class="row" id="cpo_temrs_conditions">
+                        <div class="cpo_temrs_content">
+                            <h4>GENERAL TERMS AND CONDITIONS OF SALE</h4>
+                            <p>
+                                The present General Terms and Conditions of Sale (GT&amp;CS) are subject to change. The current version
+                                is the one appearing on our website www.icloudfactory.com: GENERAL TERMS AND CONDITIONS OF SALE.
+                            </p>
+                            <p>
+                                In the absence of any special written agreements, the placement of an order by the Customer indicate
+                                acceptance of the GT&amp;CS herein.
+                            </p>
+                            <p>
+                                They prevail, according to the provisions of the article L. 441-6 of the Commercial Code, on all purchase
+                                conditions, unless special sale conditions were written in agreement with both parties.
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4>AND CONDITIONS OF SALE</h4>
+                            <p>
+                                The present General Terms and Conditions of Sale (GT&amp;CS) are subject to change.
+                                The current version is the one appearing on our website www.icloudfactory.com: GENERAL TERMS
+                            </p>
+                            <p>
+                                All contractual agreements entered into will be between ChinaPCBOne Group and business clients
+                                (herein referred to as “the Client”) who must be 18 years of age and legally competent.
+                            </p>
+                            <p>
+                                If ChinaPCBOne Group should unintentionally enter into a contractual agreement with a person legally
+                                incapable to enter contracts, any contractual agreement between the two parties becomes void with immediate effect.
+                            </p>
+                            <p>
+                                Placing an order on www.icloudfactory.com requires the Client to register/set up an ChinaPCBOne online account (i.e. user profile).
+                                Clients must register under their own name and complete all mandatory fields correctly.
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4>ACCOUNT OPENING</h4>
+                            <p>
+                                For any company account opening, the customer must provide to ChinaPCBOne Group his company name, the contact name, his department,
+                                his contact information (address, telephone number, Fax, ...) as well as his VAT number and / or his SIRET number (France only).
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4>PRICE</h4>
+                            <p>
+                                The current prices are those appearing on the offer written to the client.
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4>ORDERS</h4>
+                            <p>
+                                We provide an acknowledgement of order from the moment that the order is confirmed by our technical service,
+                                and we inform the client in case of product unavailability, deferred delivery, …
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4>DELIVERY</h4>
+                            <p>
+                                We provide an acknowledgement of order from the moment that the order is confirmed by our technical service,
+                                and we inform the client in case of product unavailability, deferred delivery, …
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4>GUARANTEE</h4>
+                            <p>
+                                Liability is only limited to merchandise supplied by ChinaPCBOne Group and does not apply to damage,
+                                injury or loss of income coming from a defective component.
+                            </p>
+                            <p>
+                                Goods sold are guaranteed against any faulty operation due to a defect in material, defect
+                                in the fabrication or conception, for a period of 3 months as from the date of invoice,
+                                subject to a conform use of the product.
+                            </p>
+                            <p>
+                                Thus, the guarantee is excluded if the defect results from a modification of the product,
+                                neglect or lack of maintenance of it by the user.
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4>LIMITATION OF THE GUARANTEE</h4>
+                            <p>
+                                Our guarantee is limited to repair or replacement of printed circuits PROVIDED BY ChinaPCBOne
+                                Group recognized as defective by our technical service. The guarantee does not extend to
+                                the repair time, transformation or change of equipment.
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4>DELAY, RETURNS, CLAIMS, CONTESTING</h4>
+                            <p>
+                                The customer must ensure at the time of delivery, in the presence of the carrier,
+                                that the packages do not hold any trace of suffering, debris, burglary and that
+                                the number of packages corresponds to the one stated on the shipping documents.
+                            </p>
+                            <p>
+                                The customer must mention the reserves on shipping documents, otherwise he must
+                                notify it, according to the article L. 133-3 of the Commercial Code, to the
+                                carrier by registered letter with recorded delivery at the latest within
+                                three days after the delivery, with a copy sent to ChinaPCBOne Group. Otherwise,
+                                no claims can be accepted by ChinaPCBOne Group.
+                            </p>
+                            <p>
+                                The printed circuit boards (PCB) must be returned with the delivery note or
+                                the corresponding invoice, within maximum 5 days from the reception.
+                                The returned printed circuit board (PCB) will be subject to a quality control before any decision-making.
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4>RETENTION OF TITLE AND TRANSFER OF RISK</h4>
+                            <p>
+                                Under the article 2367 and following ones of the Civil Code, the sold goods remain
+                                the property of ChinaPCBOne Group until the full payment of the price and its accessories
+                                (property clauses). In case of dispute or contesting from the customer, no compensation of any kind,
+                                cannot call into question the title retention clause.
+                            </p>
+                            <p>
+                                This layout shall not interfere with the transfer to the customer as early as after the delivery,
+                                risk of loss and damage of sold goods, as well as the damage they could cause.
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4>PROTECTION AND USE OF DATA</h4>
+                            <p>
+                                In order to ensure the best service for our customers, ChinaPCBOne Group and its partners
+                                use some information provided by customers and only for a professional reason.
+                                By adhering to the general terms and conditions of sale, the customer agrees to this so-called use.
+                            </p>
+                            <p>
+                                According to the Data Protection Act of 6 July 1978, you have a right of access and rectification of the data.
+                            </p>
+                            <p>
+                                According to the LCEN law, the online registration allows ChinaPCBOne Group to collect the permission to
+                                receive emails. If the addresses are provided by the traditional trade channel, a commercial
+                                message is sent to the client in order to confirm the use of his address. The relevance of
+                                messages sending by ChinaPCBOne Group is based on information collected during the user
+                                registration or at the interview with our sales force members.
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4> FORCE MAJEURE</h4>
+                            <p>
+                                ChinaPCBOne Group should in no way be held responsible for delay or execution failure of its obligations
+                                in case of force majeure, in particular in cases of natural disaster, bad weather,
+                                fire, explosion, flood, national strike, accident, riot or civil disorder, abnormal
+                                delay due to supplier, shortages of goods and material.
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4>CANCELLATION CLAUSE</h4>
+                            <p>
+                                In case of breach of contract by either party, this contract is automatically committed of right
+                                in favor of the other party, without prejudice to damages and interests which may be claimed
+                                from the defaulting party. The resolution takes effect 10 days after a sending formal
+                                remained unsuccessful.
+                            </p>
+                        </div>
+                        <div class="cpo_temrs_content">
+                            <h4>COMPETENCE ASSIGNATION</h4>
+                            <p>
+                                All disputes arising out of sales transactions subject to these GENERAL TERMS AND CONDITIONS
+                                OF SALE depend on the exclusive jurisdiction of the Commercial Court of Hauts de Seine (92).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--<section id="cpo_terms_and_conditions">-->
+                <!--<div class="row">-->
+                    <!--<div class="container">-->
+                        <!--<a class="btn btn-primary" id="cpo_accept_temrs_conditions">Accept</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</section>-->
+        </t>
+        <!--</t>-->
+    </template>
+</odoo>

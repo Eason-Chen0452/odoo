@@ -1,0 +1,181 @@
+.cpo_electronic .cpo_ele_container{
+    text-align: center;
+
+}
+.cpo_electronic .oe_search_button,.cpo_electronic .oe_search_box {
+    /*margin-left: 8px;*/
+    /*padding: 9px;*/
+    border: 1px solid #FF9900;
+}
+.cpo_electronic .title {
+    background-color : #69c;
+    text-align: center;
+    margin-bottom: 60px;
+}
+#cpo_header_selection{
+    margin-left:39px;
+}
+
+#cpo_header_selection td{
+    padding:2px;
+    margin: 0 auto;
+}
+#cpo_header_selection select{
+    border: 1px solid #FF9900;
+}
+
+/* clear button */
+#cpo_header_selection table button{
+    margin-top: 10px;
+    background-color: #fff;
+    border: none;
+    outline-style: none;
+}
+
+
+/* category */
+
+#ele_cpo_container{
+    margin-bottom: 90px;
+}
+
+#ele_cpo_all{
+    border-right: 1px solid #000000;
+}
+#ele_cpo_all ul{
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+#ele_cpo_all li{
+    list-style: none;
+    padding-left: 10px;
+}
+#ele_cpo_all h3{
+    width: 100%;
+    color: #FFFFFF;
+    background-color: #337AB7;
+    margin: 0 auto;
+    padding: 14px 0;
+    text-align: center;
+}
+#ele_cpo_all p{
+    border-bottom: 2px solid #0c0c0c;
+}
+
+/* table */
+ .containerxx .con_right{
+        padding: 10px;
+        margin: 0 10px;
+    }
+
+
+ #category_cpo_ele li a{
+     font-size: 16px;
+     font-weight: bold;
+     cursor: pointer;
+ }
+ #all_cpo_ele_con>li{
+     list-style: none;
+     font-weight: bold;
+     font-size: 16px;
+ }
+
+  #all_cpo_ele_con li ul li{
+      font-size: 14px;
+      font-weight: 500;
+      margin: 5px 0;
+  }
+#table2xx th{
+    vertical-align: middle;
+    padding: 0;
+    text-align: center;
+    font-size: 12px;
+}
+#table2xx td{
+    vertical-align: middle;
+    padding: 0;
+    text-align: left;
+    font-size: 12px;
+    text-align: center;
+    padding: 0 5px;
+}
+#table2xx td img{
+    text-align: center;
+    margin: auto auto;
+}
+#table2xx p{
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0 15px;
+}
+
+
+
+/*
+.cpo_electronic  html,body,div,ul,li{
+                margin: 0;
+                color: #000;
+            }
+body .cpo_electronic    {
+        background-image: url('/electron/static/src/images/guides.jpg')
+    }
+     .cpo_electronic  #header{
+        width: 100%;
+        padding: 20px 0;
+        background-color: #0D53A0;
+     }
+ .cpo_electronic   #logo{
+        float: left;
+        width: 16.7em;
+        height: 5.8em;
+        background-image: url('/electron/static/src/images/Logo.png')
+     }
+            
+  .cpo_electronic  .bbox{
+        padding: 0;
+    }
+  .cpo_electronic  #row_style a{
+      color:#0000EE;
+    }
+ .cpo_electronic    .con_left{
+        padding: 0;
+    }
+ .cpo_electronic     .con_right{
+        padding: 0;
+    }
+ .cpo_electronic    .con_left ul{
+        padding-left: 50px;
+    }
+ .cpo_electronic    .table{
+        background-color: #FCFCFC;
+    }
+            
+ .cpo_electronic    .pro_search{
+        width: 30em;
+        margin: auto;
+        
+    }
+ .cpo_electronic    #search_tab{
+        padding: 20px 100px;
+    }
+ .cpo_electronic  #pro_page{
+        margin: auto;
+        text-align: center;
+  }
+  
+ .cpo_electronic  footer{
+    margin-top: 20px;
+    padding: 20px 0;
+    background-color: #0D53A0;
+  }
+ .cpo_electronic  footer ul{
+    color: #ffffff;
+  }
+  
+ .cpo_electronic  footer ul a{
+    color: #ffffff;
+  }
+ .cpo_electronic    footer ul a:hover{
+    color: #E5E5E5;
+  }
+  */

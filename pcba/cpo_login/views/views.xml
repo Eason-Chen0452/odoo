@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="cpo_login.list">
+      <field name="name">cpo_login list</field>
+      <field name="model">cpo_login.cpo_login</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="cpo_login.action_window">
+      <field name="name">cpo_login window</field>
+      <field name="res_model">cpo_login.cpo_login</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="cpo_login.action_server">
+      <field name="name">cpo_login server</field>
+      <field name="model_id" ref="model_cpo_login_cpo_login"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="cpo_login" id="cpo_login.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="cpo_login.menu_1" parent="cpo_login.menu_root"/>
+    <menuitem name="Menu 2" id="cpo_login.menu_2" parent="cpo_login.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="cpo_login.menu_1_list" parent="cpo_login.menu_1"
+              action="cpo_login.action_window"/>
+    <menuitem name="Server to list" id="cpo_login" parent="cpo_login.menu_2"
+              action="cpo_login.action_server"/>
+    -->
+  </data>
+</odoo>

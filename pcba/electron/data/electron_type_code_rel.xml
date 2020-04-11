@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Type Code rel-->
+        <record id="electron_res_type_code_rel" model="electron.type.code">
+            <field name="name">电阻器</field>
+            <field name="code">res</field>
+        </record>
+        
+        <record id="electron_capa_type_code_rel" model="electron.type.code">
+            <field name="name">电容器</field>
+            <field name="code">capa</field>
+        </record>
+
+        <record id="electron_general_type_code_rel" model="electron.type.code">
+            <field name="name">通用</field>
+            <field name="code">general</field>
+        </record>
+
+        <record id="electron_electronic_type_general" model="electron.electronic">
+            <field name="name">通用</field>
+        </record>
+
+        <record id="electron_base_type_code_rel" model="electron.type.code">
+            <field name="name">基本类</field>
+            <field name="code">base</field>
+        </record>
+
+        <record id="electron_electronic_type_base" model="electron.electronic">
+            <field name="name">基本类</field>
+        </record>
+
+        <record id="product_category_electronic_material" model="product.category">
+            <field name="parent_id" ref="product.product_category_1"/>
+            <field name="name">Electronic Component Purchase</field>
+        </record>
+
+        <record id="product_category_pcb" model="product.category">
+            <field name="parent_id" ref="product.product_category_1"/>
+            <field name="name">PCB</field>
+        </record>
+
+        <record id="product_category_pcba" model="product.category">
+            <field name="parent_id" ref="product.product_category_1"/>
+            <field name="name">PCBA</field>
+        </record>
+
+        <record id="product_attribute_mini_number" model="product.attribute">
+            <field name="name">mini_number</field>
+        </record>
+        <record id="product_attribute_package" model="product.attribute">
+            <field name="name">package</field>
+        </record>
+
+        <!--<record id="menu_electron_search" model="website.menu">-->
+            <!--<field name="name">Electronic material</field>-->
+            <!--<field name="url">/electron/electronic/category/</field>-->
+            <!--<field name="parent_id" ref="website.main_menu"/>-->
+            <!--<field name="sequence" type="int">15</field>-->
+        <!--</record>-->
+    </data>
+</odoo>

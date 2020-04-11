@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--quotation_line form视图-->
+        <record id="view_sale_quotation_line_form" model="ir.ui.view">
+            <field name="name">sale.quotation.line.form</field>
+            <field name="model">sale.quotation.line</field>
+            <field name="arch" type="xml">
+                <form string="PCB Quotation Lines">
+                    <header>
+                        <button name="RecalculatePrice" type="object" string="Recalculate Price" attrs="{'invisible':['|', ('cpo_lock_bool', '=', False), ('unquote_bool', '=', True)]}" context="{'Force': False}" class="btn-primary"/>
+                        <button name="RecalculatePrice" type="object" string="Force Price Modification" attrs="{'invisible':[('cpo_lock_bool', '=', False)]}" context="{'Force': True}"/>
+                    </header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done" statusbar_colors='{"exception":"red","cancel":"red"}' invisible="1"/>
+                    <field name="cpo_lock_bool" invisible="1"/>
+                    <field name="unquote_bool" invisible="1"/>
+                    <field name="state" invisible="1"/>
+                    <group colspan="4" col="4">
+                        <field name="product_no"/>
+                        <field name="reorder_no_change"/>
+                        <field name="customer_file_name"/>
+                        <field name="volume_type"/>
+                        <field name="sequence" attrs="{'readonly':[('state','!=','draft')]}" force_save="1"/>
+                    </group>
+                    <group colspan="4" col="4">
+                        <label for="product_uom_qty"/>
+                        <div name="product_uom_qty">
+                            <field name="product_uom_qty" class="oe_inline" style="max-width:60px;"/> SET
+                            <field name="pcs_number" class="oe_inline" readonly="1" force_save="1"/> PCS
+                            <field name="combine_number" class="oe_inline" style="max-width:60px;"/> Item
+                        </div>
+                        <label for="pcs_per_set" string="PCS Per Set"/>
+                        <div name="pcs_per_set">
+                            1 X <field name='pcs_per_set' class="oe_inline" style="max-width:60px;"/>
+                            <field name="pcb_delivery_uos" class="oe_inline"/>
+                        </div>
+                        <label for="pcs_size"/>
+                        <div name="pcs_size">
+                            <field name="pcs_size" class="oe_inline" attrs="{'readonly':True}" force_save="1"/> cm²
+                        </div>
+                        <field name="price_unit" context="{'price_unit':price_unit}"/>
+                        <label for="total_size"/>
+                        <div name="total_size">
+                            <field name="total_size" class="oe_inline" attrs="{'readonly':True}" force_save="1"/> ㎡
+                        </div>
+                        <field name="total" attrs="{'readonly': True}" force_save="1" context="{'default_total':total}"/>
+                        <label for="cpo_deliver_day" string="Delivery"/>
+                        <div>
+                            <field name="cpo_delivery_day" force_save="1"/> Days
+                        </div>
+                        <label for="spare_qty" string="Spare Parts"/>
+                        <div name="spare_qty">
+                            <field name="spare_qty" class="oe_inline" style="max-width:60px;"/> PCS
+                            <field name="spare_bad" class="oe_inline"/> NO OK
+                        </div>
+                        <field name="delivery_hour" groups="sales_team.group_sale_salesman_all_leads"/>
+                        <field name="increase_delivery_hour" groups="sales_team.group_sale_salesman_all_leads"/>
+                        <label for="discount" attrs="{'invisible':[('discount','=', False)]}"/>
+                        <div attrs="{'invisible':[('discount','=', False)]}">
+                            Order Discount
+                            <field name="discount" readonly="1"/> %%
+                        </div>
+                        <field name="tax_id" widget="many2many_tags" domain="[('type_tax_use','&lt;&gt;','purchase')]" invisible="1"/>
+                        <field name="subtotal" attrs="{'readonly': True}"  invisible="1" context="{'subtotal':subtotal}"/>
+                    </group>
+                    <notebook>
+                        <page string="Normal Info">
+                            <group colspan="4" col="4">
+                                <label for="cpo_length" string="PCB Size"/>
+                                <div>
+                                    <field name="cpo_length" class="oe_inline" style="max-width:60px;"/> X
+                                    <field name="cpo_width" class="oe_inline" style="max-width:60px;"/> mm
+                                </div>
+                                <label for="thickness"/>
+                                <div>
+                                    <field name="thickness" class="oe_inline" style="max-width:60px;"/> mm
+                                </div>
+                                <label for="layer_number" string="Layer And Material Brand"/>
+                                <div>
+                                    <field name="layer_number" options="{'no_open':True}" class="oe_inline" style="max-width:100px;"/>
+                                    <field name="material_brand" options="{'no_open':True}" class="oe_inline" style="max-width:100px;"/>
+                                </div>
+                                <field name="base_type" options="{'no_open':True}"/>
+                                <label for="cpo_item_number"/>
+                                <div>
+                                    <field name="cpo_item_number" force_save="1"/>
+                                </div>
+                                <label for="cpo_core_number" string="Core Board And PP Number"/>
+                                <div>
+                                    Core Board
+                                    <field name="cpo_core_number" force_save="1" class="oe_inline" style="max-width:60px;"/>
+                                    PP Number
+                                    <field name="cpo_pp_number" force_save="1" class="oe_inline" style="max-width:60px;"/>
+                                </div>
+                                <label for="cpo_standard"/>
+                                <div>
+                                    <field name="cpo_standard" options="{'no_open':True}" force_save="1"/>
+                                </div>
+                                <label for="core_thick" string="Thickness and number"/>
+                                <div>
+                                    <field name="core_thick" force_save="1" class="oe_inline"/> mil
+                                    <field name="rogers_number" force_save="1" class="oe_inline"/> numbers
+                                </div>
+                            </group>
+                            <group colspan="4" col="4">
+                                <field name="silkscreen_color" options="{'no_open':True}"/>
+                                <field name="text_color" options="{'no_open':True}"/>
+                                <field name="surface" options="{'no_open':True}"/>
+                                <field name="cpo_type_steel_mesh"/>
+                                <label for="gold_thickness" string="Gold Thick Nickel Thickness And Coated Area"/>
+                                <div>
+                                    Gold Thickness
+                                    <field name="gold_thickness" class="oe_inline" style="max-width:50px;"/> U''
+                                    Nickel Thickness
+                                    <field name="cpo_nickel_thickness" class="oe_inline" style="max-width:55px;"/> U''
+                                    Coated Area
+                                    <field name="gold_size" class="oe_inline" style="max-width:50px;"/> %%
+                                </div>
+                            </group>
+                            <group colspan="6" col="6">
+                                <label for='tooling'/>
+                                <div name="tooling">
+                                    <field name="tooling" class="oe_inline"/>
+                                    <field name="tooling_source" attrs="{'invisible':[('tooling', '=', False)]}" class="oe_inline" force_save="1"/>
+                                </div>
+                                <field name="fly_probe"/>
+                                <field name="cnc"/>
+                                <field name="v_cut"/>
+                                <field name="drilling"/>
+                                <field name="back"/>
+                            </group>
+                        </page>
+                        <page string="Process for PCB">
+                            <group colspan="6" col="6">
+                                <label for="min_line_cpo_width"/>
+                                <div name="min_line_cpo_width">
+                                    <field name="min_line_cpo_width" class="oe_inline" style="max-width:60px;"/> mil
+                                </div>
+                                <label for="min_line_distance"/>
+                                <div name="min_line_distance">
+                                    <field name="min_line_distance" class="oe_inline" style="max-width:60px;"/> mil
+                                </div>
+                                <label for="min_hole"/>
+                                <div name="min_hole">
+                                    <field name="min_hole" class="oe_inline" style="max-width:60px;"/> mil
+                                </div>
+                                <label for="cpo_gold_height" string="Gold finger length and width"/>
+                                <div>
+                                    <field name="cpo_gold_height" force_save="1" class="oe_inline" style="max-width:60px;"/> X
+                                    <field name="cpo_gold_width" force_save="1" class="oe_inline" style="max-width:60px;"/>
+                                </div>
+                                <field name="cpo_gold_thick" class="oe_inline" force_save="1" style="max-width:60px;"/>
+                                <field name="cpo_gold_root" class="oe_inline" force_save="1" style="max-width:60px;"/>
+                            </group>
+                            <group colspan="4" col="4">
+                                <label for="line_to_hole_distance"/>
+                                <div name="line_to_hole_distance">
+                                    <field name="line_to_hole_distance" class="oe_inline" style="max-width:70px;"/> mil
+                                </div>
+                                <label for="cpo_hole_copper"/>
+                                <div name="cpo_hole_copper">
+                                    <field name="cpo_hole_copper" class="oe_inline" force_save="1" style="max-width:70px;"/> UM
+                                </div>
+                                <label for="outer_copper" string="Copper (OZ)"/>
+                                <div name="outer_copper">
+                                    Outer Copper
+                                    <field name="outer_copper" class="oe_inline" style="max-width:50px;"/>
+                                    Inner Copper
+                                    <field name="inner_copper" class="oe_inline" style="max-width:50px;"/>
+                                </div>
+                                <field name="via_process" options="{'no_open':True}"/>
+                                <field name="sprocess_ids" widget="many2many_tags" options="{'no_open':True}" force_save="1"/>
+                                <field name="smaterial_ids"  widget="many2many_tags" options="{'no_open':True}" force_save="1"/>
+                                <field name="test_points" style="max-width:70px;"/>
+                                <field name="total_holes" style="max-width:70px;"/>
+                            </group>
+                        </page>
+                        <page string="HDI">
+                            <group>
+                                <field name="cpo_hdi"/>
+                            </group>
+                        </page>
+                        <page string="Soft and hard combination">
+                            <group colspan="6" col="6">
+                                <field name="soft_level"/>
+                                <field name="window_bool"/>
+                                <field name="soft_number"/>
+                            </group>
+                        </page>
+                        <page string="Cost for PCB">
+                            <group colspan="4" col="4">
+                                <label for="material_fee"/>
+                                <div name="material_fee">
+                                    <field name="material_fee" class="oe_inline" context="{'default_material_fee':material_fee}"/>
+                                    <field name="set_material_fee" class="oe_inline" invisible="1" force_save="1" readonly="1"/>
+                                </div>
+                                <label for="film_fee"/>
+                                <div name="film_fee">
+                                    <field name="film_fee" class="oe_inline" context="{'default_film_fee':film_fee}"/>
+                                    <field name="set_film_fee" class="oe_inline" invisible="1" force_save="1" readonly="1"/>
+                                </div>
+                                <label for="test_tooling_fee"/>
+                                <div name="test_tooling_fee">
+                                    <field name="test_tooling_fee" class="oe_inline" context="{'default_test_tooling_fee':test_tooling_fee}"/>
+                                    <field name="set_test_tooling_fee" class="oe_inline" invisible="1" force_save="1" readonly="1"/>
+                                </div>
+                                <label for="drill_fee"/>
+                                <div name="drill_fee">
+                                    <field name="drill_fee" class="oe_inline" context="{'default_drill_fee':drill_fee}"/>
+                                    <field name="set_drill_fee" class="oe_inline" invisible="1" force_save="1" readonly="1"/>
+                                </div>
+                                <label for="engine_fee"/>
+                                <div name="engine_fee">
+                                    <field name="engine_fee" class="oe_inline" context="{'default_engine_fee':engine_fee}"/>
+                                    <field name="set_engine_fee" class="oe_inline" invisible="1" force_save="1" readonly="1"/>
+                                </div>
+                                <label for="test_fee"/>
+                                <div name="test_fee">
+                                    <field name="test_fee" class="oe_inline" context="{'default_test_fee':test_fee}"/>
+                                    <field name="set_test_fee" class="oe_inline" invisible="1" force_save="1" readonly="1"/>
+                                </div>
+                                <label for="process_fee"/>
+                                <div name="process_fee">
+                                    <field name="process_fee" class="oe_inline" context="{'default_process_fee':process_fee}"/>
+                                    <field name="set_process_fee" class="oe_inline" invisible="1" force_save="1" readonly="1"/>
+                                </div>
+                                <label for="other_fee"/>
+                                <div name="other_fee">
+                                    <field name="other_fee" class="oe_inline" context="{'default_other_fee':other_fee}"/>
+                                </div>
+                            </group>
+                            <group colspan="4" col="4">
+                                <field name="subtract" context="{'default_subtract':subtract}"/>
+                                <field name="quick_fee" force_save="1"/>
+                                <field name="cpo_percentage" force_save="1"/>
+                                <field name="cpo_line_percentage" force_save="1"/>
+                            </group>
+                        </page>
+                        <page string="Level Attribute">
+                            <group colspan="4" col="4">
+                                <field name="urgent" string="The Urgent"/>
+                                <field name="aa_partner" string="AA Partner"/>
+                                <field name="a_partner" string="A Partner"/>
+                                <field name="b_partner" string="B Partner"/>
+                                <field name="c_partner" string="C Partner"/>
+                            </group>
+                        </page>
+                        <page string="Other Information">
+                            <label for="request"/>
+                            <div name="request">
+                                <field name="request"/>
+                            </div>
+                            <group colspan="4" col="4">
+                                <label for="product_uom"/>
+                                <div>
+                                    <field name="product_uom_qty" class="oe_inline" style="max-width:60px;"/>
+                                    <field name="product_uom" class="oe_inline oe_no_button" options="{'no_open':True}" style="max-width:60px;"/>
+                                </div>
+                                <field name="pricelist_id" readonly="1" options="{'no_open':True}"/>
+                                <label for="product_uos_qty"/>
+                                <div>
+                                    <field name="product_uos_qty" class="oe_inline" style="max-width:60px;"/>
+                                    <field name="product_uos" options='{"no_open": True}' class="oe_inline" style="max-width:60px;"/>
+                                </div>
+                            </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--quotation_line tree视图-->
+        <record id="view_sale_quotation_line_tree" model="ir.ui.view">
+            <field name="name">sale.quotation.line.tree</field>
+            <field name="model">sale.quotation.line</field>
+            <field name="arch" type="xml">
+                <tree string="PCB Quotation Lines">
+                    <field name="sequence" widget="handle"/>
+                    <field name="state" invisible="1"/>
+                    <field name="customer_file_name" string="File Name"/>
+                    <field name="product_uom_qty"/>
+                    <field name="product_uom" groups="product.group_uom" options='{"no_open": True}' invisible="1"/>
+                    <field name="product_uos_qty" groups="product.group_uos" invisible="1"/>
+                    <field name="product_uos" string="UoS" groups="product.group_uos" invisible="1"/>
+                    <field name="layer_number" context="{'show_number':1}" options='{"always_reload": True}'/>
+                    <field name="base_type"/>
+                    <field name="total_size"/>
+                    <field name="price_unit"/>
+                    <field name="discount"/>
+                    <field name="engine_fee"/>
+                    <field name="test_fee"/>
+                    <field name="quick_fee" force_save="1"/>
+                    <field name="test_tooling_fee"/>
+                    <field name="subtract"/>
+                    <field name="subtotal"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

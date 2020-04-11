@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="link_rule_form_inhert" model="ir.ui.view">
+            <field name="name">Link rule</field>
+            <field name="model">routing_parameter.link_rule</field>
+            <field name="inherit_id" ref="routing_parameter.link_rule_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page" position="inside">
+                    <field name="partner_source_id" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

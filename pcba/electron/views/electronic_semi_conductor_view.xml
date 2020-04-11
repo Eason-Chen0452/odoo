@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="electron_semi_conductor_list">
+          <field name="name">Semi Conductor List</field>
+          <field name="model">electron.semi_conductor</field>
+          <field name="arch" type="xml">
+            <tree>
+              <field name="applications"/>
+              <field name="IC_type"/>
+              <field name="supplier_enca"/>
+              <field name="ddr_sdram"/>
+              <field name="memory_format"/>
+              <field name="technology"/>
+              <field name="memory_capacity"/>
+              <field name="clock_rate"/>
+              <field name="write_cycle"/>
+              <field name="access_time"/>
+              <field name="memory_interface"/>
+            </tree>
+          </field>
+        </record>
+        
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="electron_semi_conductor_window">
+          <field name="name">Semi Conductor Window</field>
+          <field name="res_model">electron.semi_conductor</field>
+          <field name="view_mode">tree</field>
+        </record>
+        
+        <menuitem name="electron_semi_conductor_Menu_1" id="electron_semi_conductor_menu_1" parent="electronic_menu_root"/>
+ 
+
+        <menuitem name="electron_semi_conductor_List" id="electron_semi_conductor_menu_1_list" parent="electron_semi_conductor_menu_1"
+              action="electron_semi_conductor_window"/>
+
+    </data>
+</odoo>

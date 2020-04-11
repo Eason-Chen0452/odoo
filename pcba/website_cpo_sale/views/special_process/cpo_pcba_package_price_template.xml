@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="cpo_pages_assets_frontend" inherit_id="website.assets_frontend" name="Website Pages">
+        <xpath expr="." position="inside">
+        </xpath>
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/website_cpo_sale/static/src/js/pcb_package_price/cpo_pcb_package_price.js"></script>
+        </xpath>
+    </template>
+    <!-- 不需要可供物料 -->
+    <template id="website_smt_no_material_template" name="PCBA Package Price">
+         <t t-call="website.layout">
+             <t t-set="additional_title">Package Price</t>
+             <!-- 登录页面 -->
+             <t t-call="website_cpo_sale.cpo_pcb_login_signup"/>
+             <t t-call="website_cpo_sale.pcba_package_price_quotation_online"/>
+         </t>
+    </template>
+    <!-- 需要可供物料 -->
+    <template id="website_smt_material_template" name="PCBA Package Price">
+         <t t-call="website.layout">
+             <t t-set="additional_title">Package Price</t>
+             <!-- 登录页面 -->
+             <t t-call="website_cpo_sale.cpo_pcb_login_signup"/>
+             <t t-call="website_cpo_sale.pcba_package_price_material"/>
+         </t>
+    </template>
+
+     <!-- //////-含物料-////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <!--PCBA 数据 Version-0.3 不含物料打包价  -->
+    <template id="pcba_package_price_quotation_online">
+        <div class="row" id="xiangdao">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <t t-call="website_sale.wizard_checkout">
+                    <t t-set="step" t-value="5"/>
+                </t>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="container">
+            <!-- 未注册/登录先让用户注册/登录 -->
+            <t t-if="cpo_login">
+                <t t-call="website_cpo_sale.cpo_register_new_user"/>
+            </t>
+            <div class="row">
+                <!--<div id="xiangdao">-->
+                    <!--<t t-call="website_sale.wizard_checkout">-->
+                        <!--<t t-set="step" t-value="60" />-->
+                    <!--</t>-->
+                <!--</div>-->
+                <div class="pcba_pack_nav">
+                    <div class="order-nav-list">
+                        <ul class="order-nav-ul">
+                            <li class="order-nav-li order-nav-active">
+                                <a href="/pcba?type=nomaterial">Order SMT Get PCB Free</a>
+                            </li>
+                            <li class="order-nav-li">
+                                <a href="/pcba?type=material">Order SMT+Components Get PCB Free</a>
+                            </li>
+                            <li class="order-nav-li">
+                                <a href="/pcba?type=standard">SMT Process Get Quote</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row cpo_content_row">
+                <!--<t t-call="website_cpo_sale.cpo_pcba_upload_file"/>-->
+                <table class="table table-bordered cpo-pcba-pack-tips">
+                    <caption id="tab_title">Online offer <span>(Components Provided by Customer; Order Quantity ≤ 20 PCS; Parts Quantity ≤ 50, Get PCB Free.)</span></caption>
+                </table>
+                <!--错误提示框-->
+                <div class="cpo-warning"></div>
+                <div class="col-md-8 cpo_col_pcba_md8">
+                    <div id="cpo_pcba_online_content">
+                        <t t-call="website_cpo_sale.cpo_source_template"/>
+                        <t t-if="edit or login">
+                            <t t-call="website_cpo_sale.cpo_pcba_package_quotation_form"/>
+                        </t>
+                        <t t-if="not edit and not login">
+                            <t t-call="website_cpo_sale.cpo_pcba_package_quotation_form_edit_05"/>
+                        </t>
+                    </div>
+                    <!--<div id="cpo_pcb_online_content">-->
+                        <!--<div class="cpo_pcb_requirements">-->
+                            <!--<t t-call="website_cpo_sale.cpo_pcb_online_quotation"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="col-md-4 p-0">
+                    <div id="cpo_calcula_title">
+                        <t t-call="website_cpo_sale.cpo_pcba_package_calculation_results"/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </template>
+    <!-- PCBA 数据 不含物料打包价-->
+    <template id="cpo_pcba_package_quotation_form">
+        <form class="form-horizontal" role="form" method="POST" action="/get_pcba_price" enctype="multipart/form-data"
+            id="pcba_package_data_quotation">
+            <!--数量 长宽-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Production Quantity</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" name="cpo_input_quantity"
+                                   t-att-value="int(edit_values.get('product_uom_qty'))" placeholder="Quantity"
+                                data-toggle="tooltip" data-placement="top" title="Order Quantity ≤ 20 PCS"
+                            onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/>
+                            <span class="cpo-ps-rl cpo-box-unit">
+                                <i class="cpo-box-radio cpo-radio-select"></i>
+                                <span>PCS</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">PCB/PCB panel size</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input cpo-box-length" name="cpo_input_lenght"
+                                   t-att-value="edit_values.get('pcb_length')" placeholder="Length"
+                                data-toggle="tooltip" data-placement="top" title="Length ≤ 100 ㎜" />
+                            <span class="cpo-box-unit">×</span>
+                            <input type="text" class="cpo-box-input cpo-box-width" name="cpo_input_width"
+                                   t-att-value="edit_values.get('pcb_width')" placeholder="Width"
+                                data-toggle="tooltip" data-placement="top" title="Width ≤ 100 ㎜" />
+                            <span class="cpo-box-unit">MM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--DIP SMT-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">DIP through hole quantity</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" name="cpo_input_dip" t-att-value="edit_values.get('smt_plug_qty')"
+                                   placeholder="DIP through hole quantity" data-toggle="tooltip" data-placement="top" title="DIP through hole quantity ≤ 50" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">SMT parts quantity</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" name="cpo_input_smt"
+                                    t-att-value="edit_values.get('smt_component_qty')" placeholder="SMT parts quantity"
+                                data-toggle="tooltip" data-placement="top" title="Parts Quantity ≤ 50" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--板厚 单双面贴片-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Single side/double side SMT</div>
+                        <div class="cpo-box-content">
+                            <t t-set="layer_pcb" t-value="edit_values.get('layer_pcb')"/>
+                            <select class="cpo-box-select pcba_smt_side" disabled="disabled">
+                                <option value="1">Single side</option>
+                                <option value="2">Double side</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Board thickness</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" disabled="disabled" name="cpo_input_thick"
+                                   t-att-value="edit_values.get('pcb_thickness')"  placeholder=""/>
+                            <span class="cpo-box-unit">MM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--其他需求-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Surface Treatment</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select surface_value" disabled="disabled">
+                                <option value="Lead Free HASL">Lead Free HASL</option>
+                                <!--<option value="No">No</option>-->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 col-sm-6">-->
+                    <!--<div class="cpo-box cpo-none">-->
+                        <!--<div class="cpo-box-title">Components supply</div>-->
+                        <!--<div class="cpo-box-content">-->
+                            <!--<select class="cpo-box-select pcba_package_included">-->
+                                <!--<option value="no">Not included</option>-->
+                                <!--<option value="yes">Included</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </form>
+    </template>
+    <!-- PCBA打包价不含物料 开始 -->
+    <template id="cpo_pcba_package_quotation_form_edit_05">
+        <form class="form-horizontal" role="form" method="POST" action="/get_pcba_price" enctype="multipart/form-data"
+            id="pcba_package_data_quotation">
+            <!--数量 长宽-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Production Quantity</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" name="cpo_input_quantity" value="20" placeholder="Quantity"
+                                data-toggle="tooltip" data-placement="top" title="Order Quantity ≤ 20 PCS"
+                            onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/>
+                            <span class="cpo-ps-rl cpo-box-unit">
+                                <i class="cpo-box-radio cpo-radio-select"></i>
+                                <span>PCS</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">PCB/PCB panel size</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input cpo-box-length" name="cpo_input_lenght" value="100" placeholder="Length"
+                                data-toggle="tooltip" data-placement="top" title="Length ≤ 100 ㎜" />
+                            <span class="cpo-box-unit">×</span>
+                            <input type="text" class="cpo-box-input cpo-box-width" name="cpo_input_width" value="100" placeholder="Width"
+                                data-toggle="tooltip" data-placement="top" title="Width ≤ 100 ㎜" />
+                            <span class="cpo-box-unit">MM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--DIP SMT-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">DIP through hole quantity</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" name="cpo_input_dip" value="25"
+                                   placeholder="DIP through hole quantity" data-toggle="tooltip" data-placement="top" title="DIP through hole quantity ≤ 50" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">SMT parts quantity</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" name="cpo_input_smt" value="25" placeholder="SMT parts quantity"
+                                data-toggle="tooltip" data-placement="top" title="Parts Quantity ≤ 50" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--板厚 单双面贴片-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Single side/double side SMT</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select pcba_smt_side" disabled="disabled">
+                                <option value="1">Single side</option>
+                                <option value="2">Double side</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Board thickness</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" disabled="disabled" name="cpo_input_thick" value="1.6" placeholder=""/>
+                            <span class="cpo-box-unit">MM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--其他需求-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Surface Treatment</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select surface_value" disabled="disabled">
+                                <option value="Lead Free HASL">Lead Free HASL</option>
+                                <!--<option value="No">No</option>-->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 col-sm-6">-->
+                    <!--<div class="cpo-box cpo-none">-->
+                        <!--<div class="cpo-box-title">Components supply</div>-->
+                        <!--<div class="cpo-box-content">-->
+                            <!--<select class="cpo-box-select pcba_package_included">-->
+                                <!--<option value="no">Not included</option>-->
+                                <!--<option value="yes">Included</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </form>
+    </template>
+    <!-- PCBA打包价不含物料 结束 -->
+    <!-- 右边布局 Version-0.3 不含物料打包价 -->
+    <template id="cpo_pcba_package_calculation_results">
+        <div class="pcba_nomaterial_package_calculation_results">
+            <t t-call="website_cpo_sale.cpo_pcba_upload_file_new"/>
+            <t t-call="website_cpo_sale.upload_file_05"/>
+            <div class="cpo_smt_assembly_cost">
+                <button class="btn btn-primary cpo_calculation"><i class="fa fa-calculator fa-lg"></i>Calculation</button>
+            </div>
+            <p class="cpo_price_reminder">Click the button to quote !</p>
+            <div class="calculation_content cpo-none">
+                <form class="form-horizontal"
+                            t-attf-action="/shop/product/#{ slug(product_id) }"
+                            method="post"
+                            action="/get_pcba_detail"
+                            role="form"
+                            id="cpo_pcba_package_no_material">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <div class="cpo_cost_fee">
+                        <!--Quantity-->
+                        <div class="cpo_assembly_cost cpo_quantity_qty">
+                            <span class="cpo_cost_span">Production Quantity</span>
+                            <span class="cpo_cost_fee cpo-pdl-0">
+                                <input type="text" class="cpo_pcba_quantity" name="cpo_pcba_quantity" value="0"  readonly="readonly"/>
+                            </span>
+                        </div>
+                        <div class="cpo_assembly_cost">
+                            <span class="cpo_cost_span">Total</span>
+                            <span class="cpo_cost_fee">
+                                <i>$</i>
+                                <input type="text" class="total_cost" name="total_cost" value="0.00"  readonly="readonly"/>
+                            </span>
+                        </div>
+                        <!--多种数量比较-->
+                        <div class="cpo_try_order_quantity pcba_try_quantity cpo-none">
+                            <p class="cpo_try_quantity_title">
+                                <!--<span>Choose</span>-->
+                                <span>Quantity</span>
+                                <span>Total</span>
+                            </p>
+                            <div class="cpo_quantity_content">
+                                <div class="cpo_quantiry_line cpo_quantity_select">
+                                    <div class="cpo_try_select_icon"></div>
+                                    <p class="cpo_try_quantity">
+                                        <span>100</span>
+                                        <span>$ 120</span>
+                                    </p>
+                                </div>
+                                <div class="cpo_quantiry_line">
+                                    <div class="cpo_try_icon"></div>
+                                    <p class="cpo_try_quantity">
+                                        <span>150</span>
+                                        <span>$ 170</span>
+                                    </p>
+                                </div>
+                                <div class="cpo_quantiry_line">
+                                    <div class="cpo_try_icon"></div>
+                                    <p class="cpo_try_quantity">
+                                        <span>200</span>
+                                        <span>$ 210</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cpo_step_next">
+                            <button type="submit" class="btn btn-primary" id="step_next" data-toggle="modal" data-target="#cpo_need_pcb_modal">Next step</button>
+                            <!--<i class="fa fa-calculator fa-lg"></i>-->
+
+                            <div id="cpo_pcba_result"></div>
+                            <div class="file_ids cpo-none">
+                                <div class="cpo_file_ids">
+                                    <t t-if="edit or login">
+                                        <t t-if="edit_values.get('ir_file_ids')">
+                                            <t t-foreach="edit_values.get('ir_file_ids')" t-as="ir_f">
+                                                <t t-if="ir_f.description == 'Gerber File'">
+                                                    <input type="hidden" name="gerber_atta_id" t-att-value="ir_f.id"/>
+                                                    <input type="hidden" name="gerber_file_id" t-att-value="ir_f.res_id"/>
+                                                    <input type="hidden" name="gerber_file_name" t-att-value="ir_f.name"/>
+                                                </t>
+                                                <t t-if="ir_f.description == 'BOM File'">
+                                                    <input type="hidden" name="bom_atta_id" t-att-value="ir_f.id"/>
+                                                    <input type="hidden" name="bom_file_id" t-att-value="ir_f.res_id"/>
+                                                    <input type="hidden" name="bom_file_name" t-att-value="ir_f.name"/>
+                                                </t>
+                                                <t t-if="ir_f.description == 'SMT File'">
+                                                    <input type="hidden" name="smt_atta_id" t-att-value="ir_f.id"/>
+                                                    <input type="hidden" name="smt_file_id" t-att-value="ir_f.res_id"/>
+                                                    <input type="hidden" name="smt_file_name" t-att-value="ir_f.name"/>
+                                                </t>
+                                            </t>
+                                        </t>
+                                    </t>
+                                </div>
+                                <div class="gerber_box">
+                                    <input name="gerber_file_id" value="" class="gerber_file_id"/>
+                                    <input name="gerber_atta_id" value="" class="gerber_atta_id"/>
+                                    <input name="gerber_file_name" value="" class="gerber_file_name"/>
+                                </div>
+                                <div class="bom_box">
+                                    <input name="bom_file_id" value="" class="bom_file_id"/>
+                                    <input name="bom_atta_id" value="" class="bom_atta_id"/>
+                                    <input name="bom_file_name" value="" class="bom_file_name"/>
+                                </div>
+                                <div class="smt_box">
+                                    <input name="smt_file_id" value="" class="smt_file_id"/>
+                                    <input name="smt_atta_id" value="" class="smt_atta_id"/>
+                                    <input name="smt_file_name" value="" class="smt_file_name"/>
+                                </div>
+                            </div>
+                            <div class="all-package-quantity cpo-none">
+                                <input type="hidden" class="cpo_quantity" name="cpo_quantity" value=""/>
+                            </div>
+                            <div id="cpo_pcba_result" class="cpo-none">
+
+                            </div>
+                            <div class="pcb_edit cpo-none">
+                                <t t-if="edit">
+                                    <input type="hidden" name="edit_id" t-att-value="edit_values.get('edit_id')"/>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="order_page_ad">
+                <div class="page-close-btn"><i class="fa fa-times-circle fa-2x"></i></div>
+                <a class="order-page-content"></a>
+            </div>
+        </div>
+    </template>
+
+    <!-- //////-含物料-////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- PCBA 数据 含物料打包价-->
+    <template id="pcba_package_price_material">
+        <div class="row" id="xiangdao">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <t t-call="website_sale.wizard_checkout">
+                    <t t-set="step" t-value="5"/>
+                </t>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="container">
+            <!-- 未注册/登录先让用户注册/登录 -->
+            <t t-if="cpo_login">
+                <t t-call="website_cpo_sale.cpo_register_new_user"/>
+            </t>
+            <div class="row">
+                <!--<div id="xiangdao">-->
+                    <!--<t t-call="website_sale.wizard_checkout">-->
+                        <!--<t t-set="step" t-value="60" />-->
+                    <!--</t>-->
+                <!--</div>-->
+                <div class="pcba_pack_nav">
+                    <div class="order-nav-list">
+                        <ul class="order-nav-ul">
+                            <li class="order-nav-li">
+                                <a href="/pcba?type=nomaterial">Order SMT Get PCB Free</a>
+                            </li>
+                            <li class="order-nav-li order-nav-active">
+                                <a href="/pcba?type=material">Order SMT+Components Get PCB Free</a>
+                            </li>
+                            <li class="order-nav-li">
+                                <a href="/pcba?type=standard">SMT Process Get Quote</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row cpo_content_row">
+                <!--<t t-call="website_cpo_sale.cpo_pcba_upload_file"/>-->
+                <table class="table table-bordered cpo-pcba-pack-tips">
+                    <caption id="tab_title">Online offer <span>(Order Quantity ≤ 5 PCS; Parts Types ≤ 50; Parts Quantity ≤ 50, Get PCB Free.)</span></caption>
+                </table>
+                <!--错误提示框-->
+                <div class="cpo-warning"></div>
+                <div class="col-md-8 cpo_col_pcba_md8">
+                    <div id="cpo_pcba_online_content">
+                        <t t-call="website_cpo_sale.cpo_source_template"/>
+                        <t t-if="edit or login">
+                            <t t-call="website_cpo_sale.cpo_pcba_package_material_quotation_edit_05"/>
+                        </t>
+                        <t t-if="not edit and not login">
+                            <t t-call="website_cpo_sale.cpo_pcba_package_material_quotation"/>
+                        </t>
+                    </div>
+                    <!--<div id="cpo_pcb_online_content">-->
+                        <!--<div class="cpo_pcb_requirements">-->
+                            <!--<t t-call="website_cpo_sale.cpo_pcb_online_quotation"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="col-md-4 p-0">
+                    <div id="cpo_calcula_title">
+                        <t t-call="website_cpo_sale.cpo_pcba_package_material_calculation_results"/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </template>
+    <!-- PCBA 数据 含物料打包价-->
+    <template id="cpo_pcba_package_material_quotation">
+        <form class="form-horizontal" role="form" method="POST" action="/get_pcba_price" enctype="multipart/form-data"
+            id="pcba_package_data_quotation">
+            <!--数量 长宽-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Production Quantity</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" name="cpo_input_quantity" value="5" placeholder="Quantity"
+                                data-toggle="tooltip" data-placement="top" title="Order Quantity ≤ 5 PCS" />
+                            <span class="cpo-ps-rl cpo-box-unit">
+                                <i class="cpo-box-radio cpo-radio-select"></i>
+                                <span>PCS</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">PCB/PCB panel size</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input cpo-box-length" name="cpo_input_lenght" value="100" placeholder="Length"
+                                data-toggle="tooltip" data-placement="top" title="Length ≤ 100 ㎜" />
+                            <span class="cpo-box-unit">×</span>
+                            <input type="text" class="cpo-box-input cpo-box-width" name="cpo_input_width" value="100" placeholder="Width"
+                                data-toggle="tooltip" data-placement="top" title="Width ≤ 100 ㎜" />
+                            <span class="cpo-box-unit">MM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--DIP SMT-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Parts Types</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" name="cpo_material_type" value="25"
+                                   placeholder="Material type quantity" data-toggle="tooltip" data-placement="top" title="Parts Types ≤ 50"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Parts Quantity</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" name="cpo_input_smt" value="25" placeholder="SMT parts quantity"
+                                data-toggle="tooltip" data-placement="top" title="Parts Quantity ≤ 50" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--板厚 单双面贴片-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Single side/double side SMT</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select pcba_smt_side" disabled="disabled">
+                                <option value="1">Single side</option>
+                                <option value="2">Double side</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Board thickness</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" disabled="disabled" name="cpo_input_thick" value="1.6" placeholder=""/>
+                            <span class="cpo-box-unit">MM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--其他需求-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Surface Treatment</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select surface_value" disabled="disabled">
+                                <option value="Lead Free HASL">Lead Free HASL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 col-sm-6">-->
+                    <!--<div class="cpo-box cpo-none">-->
+                        <!--<div class="cpo-box-title">Components supply</div>-->
+                        <!--<div class="cpo-box-content">-->
+                            <!--<select class="cpo-box-select pcba_package_included">-->
+                                <!--<option value="no">Not included</option>-->
+                                <!--<option value="yes">Included</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </form>
+    </template>
+    <!-- PCBA含物料打包价编辑 0.5 开始 -->
+    <template id="cpo_pcba_package_material_quotation_edit_05">
+        <form class="form-horizontal" role="form" method="POST" action="/get_pcba_price" enctype="multipart/form-data"
+            id="pcba_package_data_quotation">
+            <!--数量 长宽-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Production Quantity</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" name="cpo_input_quantity" t-att-value="int(edit_values.get('product_uom_qty'))"
+                                   placeholder="Quantity" data-toggle="tooltip" data-placement="top" title="Order Quantity ≤ 5 PCS" />
+                            <span class="cpo-ps-rl cpo-box-unit">
+                                <i class="cpo-box-radio cpo-radio-select"></i>
+                                <span>PCS</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">PCB/PCB panel size</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input cpo-box-length" name="cpo_input_lenght" t-att-value="edit_values.get('pcb_length')"
+                                   placeholder="Length" data-toggle="tooltip" data-placement="top" title="Length ≤ 100 ㎜" />
+                            <span class="cpo-box-unit">×</span>
+                            <input type="text" class="cpo-box-input cpo-box-width" name="cpo_input_width" t-att-value="edit_values.get('pcb_width')"
+                                   placeholder="Width" data-toggle="tooltip" data-placement="top" title="Width ≤ 100 ㎜" />
+                            <span class="cpo-box-unit">MM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--DIP SMT-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Parts Types</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" name="cpo_material_type" t-att-value="edit_values.get('bom_material_type')"
+                                   placeholder="Material type quantity" data-toggle="tooltip" data-placement="top" title="Parts Types ≤ 50"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Parts Quantity</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" name="cpo_input_smt" t-att-value="edit_values.get('smt_component_qty')"
+                                   placeholder="SMT parts quantity" data-toggle="tooltip" data-placement="top" title="Parts Quantity ≤ 50" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--板厚 单双面贴片-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Single side/double side SMT</div>
+                        <div class="cpo-box-content">
+                            <t t-set="layer_pcb" t-value="edit_values.get('layer_pcb')"/>
+                            <select class="cpo-box-select pcba_smt_side" disabled="disabled">
+                                <option value="1">Single side</option>
+                                <option value="2">Double side</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Board thickness</div>
+                        <div class="cpo-box-content">
+                            <input type="text" class="cpo-box-input" disabled="disabled" name="cpo_input_thick"
+                                   t-att-value="edit_values.get('pcb_thickness')" placeholder=""/>
+                            <span class="cpo-box-unit">MM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--其他需求-->
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Surface Treatment</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select surface_value" disabled="disabled">
+                                <option value="Lead Free HASL">Lead Free HASL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </template>
+    <!-- PCBA含物料打包价编辑 0.5 结束 -->
+
+    <!-- 右边布局 Version-0.3 含物料打包价 -->
+    <template id="cpo_pcba_package_material_calculation_results">
+        <div class="pcba_material_package_calculation_results">
+            <t t-call="website_cpo_sale.cpo_pcba_upload_file_new"/>
+            <t t-call="website_cpo_sale.upload_file_05"/>
+            <div class="cpo_smt_assembly_cost">
+                <button class="btn btn-primary cpo_calculation"><i class="fa fa-calculator fa-lg"></i>Calculation</button>
+            </div>
+            <p class="cpo_price_reminder">Click the button to quote !</p>
+            <div class="calculation_content cpo-none">
+                <form class="form-horizontal"
+                            t-attf-action="/shop/product/#{ slug(product_id) }"
+                            method="post"
+                            action="/get_pcba_detail"
+                            role="form"
+                            id="cpo_pcba_package_material">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <div class="cpo_cost_fee">
+                        <!--Quantity-->
+                        <div class="cpo_assembly_cost cpo_quantity_qty">
+                            <span class="cpo_cost_span">Production Quantity</span>
+                            <span class="cpo_cost_fee cpo-pdl-0">
+                                <input type="text" class="cpo_pcba_quantity" name="cpo_pcba_quantity" value="0"  readonly="readonly"/>
+                            </span>
+                        </div>
+                        <div class="cpo_assembly_cost">
+                            <span class="cpo_cost_span">Total</span>
+                            <span class="cpo_cost_fee">
+                                <i>$</i>
+                                <input type="text" class="total_cost" name="total_cost" value="0.00"  readonly="readonly"/>
+                            </span>
+                        </div>
+                        <div class="cpo_step_next">
+                            <button type="submit" class="btn btn-primary" id="step_next" data-toggle="modal" data-target="#cpo_need_pcb_modal">Next step</button>
+                            <!--<i class="fa fa-calculator fa-lg"></i>-->
+
+                            <div id="cpo_pcba_result"></div>
+                            <div class="file_ids cpo-none">
+                                <div class="cpo_file_ids">
+                                    <t t-if="edit or login">
+                                        <t t-if="edit_values.get('ir_file_ids')">
+                                            <t t-foreach="edit_values.get('ir_file_ids')" t-as="ir_f">
+                                                <t t-if="ir_f.description == 'Gerber File'">
+                                                    <input type="hidden" name="gerber_atta_id" t-att-value="ir_f.id"/>
+                                                    <input type="hidden" name="gerber_file_id" t-att-value="ir_f.res_id"/>
+                                                    <input type="hidden" name="gerber_file_name" t-att-value="ir_f.name"/>
+                                                </t>
+                                                <t t-if="ir_f.description == 'BOM File'">
+                                                    <input type="hidden" name="bom_atta_id" t-att-value="ir_f.id"/>
+                                                    <input type="hidden" name="bom_file_id" t-att-value="ir_f.res_id"/>
+                                                    <input type="hidden" name="bom_file_name" t-att-value="ir_f.name"/>
+                                                </t>
+                                                <t t-if="ir_f.description == 'SMT File'">
+                                                    <input type="hidden" name="smt_atta_id" t-att-value="ir_f.id"/>
+                                                    <input type="hidden" name="smt_file_id" t-att-value="ir_f.res_id"/>
+                                                    <input type="hidden" name="smt_file_name" t-att-value="ir_f.name"/>
+                                                </t>
+                                            </t>
+                                        </t>
+                                    </t>
+                                </div>
+                                <div class="gerber_box">
+                                    <input name="gerber_file_id" value="" class="gerber_file_id"/>
+                                    <input name="gerber_atta_id" value="" class="gerber_atta_id"/>
+                                    <input name="gerber_file_name" value="" class="gerber_file_name"/>
+                                </div>
+                                <div class="bom_box">
+                                    <input name="bom_file_id" value="" class="bom_file_id"/>
+                                    <input name="bom_atta_id" value="" class="bom_atta_id"/>
+                                    <input name="bom_file_name" value="" class="bom_file_name"/>
+                                </div>
+                                <div class="smt_box">
+                                    <input name="smt_file_id" value="" class="smt_file_id"/>
+                                    <input name="smt_atta_id" value="" class="smt_atta_id"/>
+                                    <input name="smt_file_name" value="" class="smt_file_name"/>
+                                </div>
+                            </div>
+                            <div class="all-package-quantity cpo-none">
+                                <input type="hidden" class="cpo_quantity" name="cpo_quantity" value=""/>
+                            </div>
+                            <div id="cpo_pcba_result" class="cpo-none">
+
+                            </div>
+                        </div>
+                        <div class="pcb_edit cpo-none">
+                            <t t-if="edit">
+                                <input type="hidden" name="edit_id" t-att-value="edit_values.get('edit_id')"/>
+                            </t>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="order_page_ad">
+                <div class="page-close-btn"><i class="fa fa-times-circle fa-2x"></i></div>
+                <a class="order-page-content"></a>
+            </div>
+        </div>
+    </template>
+</odoo>

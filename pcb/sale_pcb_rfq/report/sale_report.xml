@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report auto="False" id="report_sale_quotation" model="sale.quotation" name="sale.quotation"
+                rml="sale_pcb_rfq/report/sale_quotation.rml" string="Quotation / Order"
+                usage="default" menu="False"/>
+                
+        <report auto="False" id="report_sale_quotation_report_pcb" model="sale.quotation" name="sale.quotation.report.pcb"
+        rml="sale_pcb_rfq/report/sale_quotation_report.rml" string="Sale Quotation PCB report" menu="True"/>
+        
+        <report auto="False" id="report_sale_quotation_report_pcb_cn" model="sale.quotation" name="sale.quotation.report.pcb.cn"
+        rml="sale_pcb_rfq/report/sale_quotation_report_cn.rml" string="Sale Quotation PCB report CN" menu="True"/>
+
+    </data>
+</openerp>

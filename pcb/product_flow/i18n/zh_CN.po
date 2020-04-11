@@ -1,0 +1,524 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_flow
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-15 11:22+0000\n"
+"PO-Revision-Date: 2019-09-15 11:22+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_flow
+#: model:mail.template,body_html:product_flow.flow_email_sale_template
+msgid "\n"
+"                \n"
+"                % set access_action = object.with_context(force_website=True).get_access_action()\n"
+"                % set is_online = access_action and access_action['type'] == 'ir.actions.act_url'\n"
+"                % set doc_name = 'View Progress'\n"
+"                % set access_name = is_online and object.template_id and doc_name == 'quotation' and 'Accept and pay %s online' % doc_name or '%s' % doc_name\n"
+"                % set access_url = is_online and '/my/manufacturing' or ''\n"
+"                % set product_type = object.GetProductType()\n"
+"\n"
+"                <p>Dear ${object.partner_id.name}\n"
+"                % if object.partner_id.parent_id:\n"
+"                    (<i>${object.partner_id.parent_id.name}</i>)\n"
+"                % endif\n"
+"                ,</p>\n"
+"                <p>\n"
+"                    Here is the ${doc_name} <strong>${object.name}</strong>\n"
+"\n"
+"                    order goes to\n"
+"                    <strong>\n"
+"                    % if product_type == 'PCB':\n"
+"                        ${object.pcb_flow}\n"
+"                    % elif product_type == 'PCBA':\n"
+"                        ${object.pcba_flow}\n"
+"                    % endif\n"
+"                    </strong> process\n"
+"                    from ${object.company_id.name}.\n"
+"                </p>\n"
+"\n"
+"                % if is_online and not ctx.get('proforma'):\n"
+"                    <br/><br/>\n"
+"                    <center>\n"
+"                        <a href=\"${access_url}\" style=\"background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\" class=\"o_default_snippet_text\">${access_name}</a>\n"
+"                        <br/><br/><br/>\n"
+"                    </center>\n"
+"                    <br/>\n"
+"                % endif\n"
+"\n"
+"                <p>You can reply to this email if you have any questions.</p>\n"
+"                <p>Thank you,</p>\n"
+"\n"
+"                <p style=\"color:#888888;\">\n"
+"                % if object.user_id and object.user_id.signature:\n"
+"                    ${object.user_id.signature | safe}\n"
+"                % endif\n"
+"                </p>\n"
+"                \n"
+"            "
+msgstr "\n"
+"                \n"
+"                % set access_action = object.with_context(force_website=True).get_access_action()\n"
+"                % set is_online = access_action and access_action['type'] == 'ir.actions.act_url'\n"
+"                % set doc_name = 'View Progress'\n"
+"                % set access_name = is_online and object.template_id and doc_name == 'quotation' and 'Accept and pay %s online' % doc_name or '%s' % doc_name\n"
+"                % set access_url = is_online and '/my/manufacturing' or ''\n"
+"                % set product_type = object.GetProductType()\n"
+"\n"
+"                <p>Dear ${object.partner_id.name}\n"
+"                % if object.partner_id.parent_id:\n"
+"                    (<i>${object.partner_id.parent_id.name}</i>)\n"
+"                % endif\n"
+"                ,</p>\n"
+"                <p>\n"
+"                    Here is the ${doc_name} <strong>${object.name}</strong>\n"
+"\n"
+"                    order goes to\n"
+"                    <strong>\n"
+"                    % if product_type == 'PCB':\n"
+"                        ${object.pcb_flow}\n"
+"                    % elif product_type == 'PCBA':\n"
+"                        ${object.pcba_flow}\n"
+"                    % endif\n"
+"                    </strong> process\n"
+"                    from ${object.company_id.name}.\n"
+"                </p>\n"
+"\n"
+"                % if is_online and not ctx.get('proforma'):\n"
+"                    <br/><br/>\n"
+"                    <center>\n"
+"                        <a href=\"${access_url}\" style=\"background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\" class=\"o_default_snippet_text\">${access_name}</a>\n"
+"                        <br/><br/><br/>\n"
+"                    </center>\n"
+"                    <br/>\n"
+"                % endif\n"
+"\n"
+"                <p>You can reply to this email if you have any questions.</p>\n"
+"                <p>Thank you,</p>\n"
+"\n"
+"                <p style=\"color:#888888;\">\n"
+"                % if object.user_id and object.user_id.signature:\n"
+"                    ${object.user_id.signature | safe}\n"
+"                % endif\n"
+"                </p>\n"
+"                \n"
+"            "
+
+#. module: product_flow
+#: model:mail.template,subject:product_flow.flow_email_sale_template
+msgid "${object.company_id.name} Order (Ref ${object.name or 'n/a' }) Product Process Notification"
+msgstr "${object.company_id.name} Order (Ref ${object.name or 'n/a' }) Product Process Notification"
+
+#. module: product_flow
+#: model:mail.template,subject:product_flow.flow_mail_template
+msgid "${object.subject}"
+msgstr "${object.subject}"
+
+#. module: product_flow
+#: model:mail.template,body_html:product_flow.flow_mail_template
+msgid "<html>\n"
+"                <head></head>\n"
+"                % set record = ctx.get('record')\n"
+"                % set company = record and record.company_id or user.company_id\n"
+"                <body style=\"margin: 0; padding: 0;\">\n"
+"                <table border=\"0\" width=\"100%\" cellpadding=\"0\" bgcolor=\"#ededed\" style=\"padding: 20px; background-color: #ededed; border-collapse:separate;\" summary=\"o_mail_notification\">\n"
+"                    <tbody>\n"
+"\n"
+"                      <!-- HEADER -->\n"
+"                      <tr>\n"
+"                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;\">\n"
+"                            <tr>\n"
+"                              <td valign=\"middle\">\n"
+"                                  <span style=\"font-size:20px; color:white; font-weight: bold;\">\n"
+"                                      ${object.record_name}\n"
+"                                  </span>\n"
+"                              </td>\n"
+"                              <td valign=\"middle\" align=\"right\">\n"
+"                                  <img src=\"/logo.png?company=${company.id}\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${company.name}\">\n"
+"                              </td>\n"
+"                            </tr>\n"
+"                          </table>\n"
+"                        </td>\n"
+"                      </tr>\n"
+"\n"
+"                      <!-- CONTENT -->\n"
+"                      <tr>\n"
+"                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#ffffff\" style=\"min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px; border-collapse:separate;\">\n"
+"                            <tbody>\n"
+"                              <td valign=\"top\" style=\"font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;\">\n"
+"                                ${object.body | safe}\n"
+"                              </td>\n"
+"                            </tbody>\n"
+"                          </table>\n"
+"                        </td>\n"
+"                      </tr>\n"
+"\n"
+"                      <!-- FOOTER -->\n"
+"                      <tr>\n"
+"                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;\">\n"
+"                            <tr>\n"
+"                              <td valign=\"middle\" align=\"left\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;\">\n"
+"                                ${company.name}<br/>\n"
+"                                ${company.phone or ''}\n"
+"                              </td>\n"
+"                              <td valign=\"middle\" align=\"right\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;\">\n"
+"                                % if company.email:\n"
+"                                <a href=\"mailto:${company.email}\" style=\"text-decoration:none; color: white;\">${company.email}</a><br/>\n"
+"                                % endif\n"
+"                                % if company.website:\n"
+"                                    <a href=\"${company.website}\" style=\"text-decoration:none; color: white;\">\n"
+"                                        ${company.website}\n"
+"                                    </a>\n"
+"                                % endif\n"
+"                              </td>\n"
+"                            </tr>\n"
+"                          </table>\n"
+"                        </td>\n"
+"                      </tr>\n"
+"                      <tr>\n"
+"                        <td align=\"center\">\n"
+"                            Powered by <a target=\"_blank\" href=\"https://www.odoo.com\">Odoo</a>.\n"
+"                        </td>\n"
+"                      </tr>\n"
+"                    </tbody>\n"
+"                </table>\n"
+"                </body>\n"
+"                </html>\n"
+"            "
+msgstr "<html>\n"
+"                <head></head>\n"
+"                % set record = ctx.get('record')\n"
+"                % set company = record and record.company_id or user.company_id\n"
+"                <body style=\"margin: 0; padding: 0;\">\n"
+"                <table border=\"0\" width=\"100%\" cellpadding=\"0\" bgcolor=\"#ededed\" style=\"padding: 20px; background-color: #ededed; border-collapse:separate;\" summary=\"o_mail_notification\">\n"
+"                    <tbody>\n"
+"\n"
+"                      <!-- HEADER -->\n"
+"                      <tr>\n"
+"                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;\">\n"
+"                            <tr>\n"
+"                              <td valign=\"middle\">\n"
+"                                  <span style=\"font-size:20px; color:white; font-weight: bold;\">\n"
+"                                      ${object.record_name}\n"
+"                                  </span>\n"
+"                              </td>\n"
+"                              <td valign=\"middle\" align=\"right\">\n"
+"                                  <img src=\"/logo.png?company=${company.id}\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${company.name}\">\n"
+"                              </td>\n"
+"                            </tr>\n"
+"                          </table>\n"
+"                        </td>\n"
+"                      </tr>\n"
+"\n"
+"                      <!-- CONTENT -->\n"
+"                      <tr>\n"
+"                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#ffffff\" style=\"min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px; border-collapse:separate;\">\n"
+"                            <tbody>\n"
+"                              <td valign=\"top\" style=\"font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;\">\n"
+"                                ${object.body | safe}\n"
+"                              </td>\n"
+"                            </tbody>\n"
+"                          </table>\n"
+"                        </td>\n"
+"                      </tr>\n"
+"\n"
+"                      <!-- FOOTER -->\n"
+"                      <tr>\n"
+"                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;\">\n"
+"                            <tr>\n"
+"                              <td valign=\"middle\" align=\"left\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;\">\n"
+"                                ${company.name}<br/>\n"
+"                                ${company.phone or ''}\n"
+"                              </td>\n"
+"                              <td valign=\"middle\" align=\"right\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;\">\n"
+"                                % if company.email:\n"
+"                                <a href=\"mailto:${company.email}\" style=\"text-decoration:none; color: white;\">${company.email}</a><br/>\n"
+"                                % endif\n"
+"                                % if company.website:\n"
+"                                    <a href=\"${company.website}\" style=\"text-decoration:none; color: white;\">\n"
+"                                        ${company.website}\n"
+"                                    </a>\n"
+"                                % endif\n"
+"                              </td>\n"
+"                            </tr>\n"
+"                          </table>\n"
+"                        </td>\n"
+"                      </tr>\n"
+"                      <tr>\n"
+"                        <td align=\"center\">\n"
+"                            Powered by <a target=\"_blank\" href=\"https://www.odoo.com\">Odoo</a>.\n"
+"                        </td>\n"
+"                      </tr>\n"
+"                    </tbody>\n"
+"                </table>\n"
+"                </body>\n"
+"                </html>\n"
+"            "
+
+#. module: product_flow
+#: model:ir.ui.view,arch_db:product_flow.flow_email_message_wizard
+msgid "<span attrs=\"{'invisible': [('composition_mode', '!=', 'mass_mail')]}\">\n"
+"                                <strong>Email mass mailing</strong> on\n"
+"                                <span attrs=\"{'invisible': [('use_active_domain', '=', True)]}\">the selected records</span>\n"
+"                                <span attrs=\"{'invisible': [('use_active_domain', '=', False)]}\">the current search filter</span>.\n"
+"                            </span>\n"
+"                            <span attrs=\"{'invisible':['|', ('model', '=', False), ('composition_mode', '=', 'mass_mail')]}\">Followers of the document and</span>"
+msgstr "<span attrs=\"{'invisible': [('composition_mode', '!=', 'mass_mail')]}\">\n"
+"<strong>电子邮件群发邮件</strong> 在\n"
+"<span attrs=\"{'invisible': [('use_active_domain', '=', True)]}\">选定的记录</span>\n"
+"<span attrs=\"{'invisible': [('use_active_domain', '=', False)]}\">当前搜索筛选</span>.\n"
+"</span>\n"
+"<span attrs=\"{'invisible':['|', ('model', '=', False), ('composition_mode', '=', 'mass_mail')]}\">文档的追随者和</span>"
+
+#. module: product_flow
+#: model:ir.ui.view,arch_db:product_flow.flow_email_message_wizard
+msgid "<span attrs=\"{'invisible': [('use_active_domain', '=', True)]}\">\n"
+"                                    If you want to use all records according to you search criterion instead check this selection box :\n"
+"                                </span>\n"
+"                                <span attrs=\"{'invisible': [('use_active_domain', '=', False)]}\">\n"
+"                                    If you want to use only selected records please uncheck this selection box :\n"
+"                                </span>"
+msgstr "<span attrs=\"{'invisible': [('use_active_domain', '=', True)]}\">\n"
+"                                    If you want to use all records according to you search criterion instead check this selection box :\n"
+"                                </span>\n"
+"                                <span attrs=\"{'invisible': [('use_active_domain', '=', False)]}\">\n"
+"                                    If you want to use only selected records please uncheck this selection box :\n"
+"                                </span>"
+
+#. module: product_flow
+#: model:ir.ui.view,arch_db:product_flow.flow_email_message_wizard
+msgid "<strong>\n"
+"                                    All records matching your current search filter will be mailed,\n"
+"                                    not only the ids selected in the list view.\n"
+"                                </strong><br/>\n"
+"                                If you want to send a lot of emails, we recommend you to use the mass mailing module.<br/>\n"
+"                                Confirming this wizard will probably take a few minutes blocking your browser."
+msgstr "<strong>\n"
+"                                    All records matching your current search filter will be mailed,\n"
+"                                    not only the ids selected in the list view.\n"
+"                                </strong><br/>\n"
+"                                If you want to send a lot of emails, we recommend you to use the mass mailing module.<br/>\n"
+"                                Confirming this wizard will probably take a few minutes blocking your browser."
+
+#. module: product_flow
+#: model:ir.ui.view,arch_db:product_flow.flow_email_message_wizard
+msgid "<strong>Only records checked in list view will be used.</strong><br/>\n"
+"                                If you want to send a lot of emails, we recommend you to use the mass mailing module."
+msgstr "<strong>Only records checked in list view will be used.</strong><br/>\n"
+"                                If you want to send a lot of emails, we recommend you to use the mass mailing module."
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "AOI Check"
+msgstr "AOI Check"
+
+#. module: product_flow
+#: model:ir.ui.view,arch_db:product_flow.flow_email_message_wizard
+msgid "Add contacts to notify..."
+msgstr "添加联系人到通知中  ..."
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Browning"
+msgstr "Browning"
+
+#. module: product_flow
+#: model:ir.ui.view,arch_db:product_flow.flow_email_message_wizard
+msgid "Cancel"
+msgstr "取消"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Character"
+msgstr "Character"
+
+#. module: product_flow
+#: model:ir.model.fields,field_description:product_flow.field_sale_order_check_quotation_line
+msgid "Check PCB"
+msgstr "检查PCB"
+
+#. module: product_flow
+#: model:ir.ui.view,arch_db:product_flow.flow_email_message_wizard
+msgid "Compose Email"
+msgstr "撰写邮件"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Copper Sink/Board Power"
+msgstr "Copper Sink/Board Power"
+
+#. module: product_flow
+#: model:ir.model,name:product_flow.model_personal_center
+msgid "Customer Personal Center"
+msgstr "客户个人中心"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Cutting"
+msgstr "Cutting"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Drilling"
+msgstr "Drilling"
+
+#. module: product_flow
+#: model:ir.ui.view,arch_db:product_flow.flow_email_message_wizard
+msgid "Email address to redirect replies..."
+msgstr "电子邮件地址重定向回复..."
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Etching/Check"
+msgstr "Etching/Check"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+#: selection:sale.order,pcba_flow:0
+msgid "FQA"
+msgstr "FQA"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "FQC"
+msgstr "FQC"
+
+#. module: product_flow
+#: selection:sale.order,pcba_flow:0
+msgid "Final Store"
+msgstr "Final Store"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Forming"
+msgstr "Forming"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Graphic Plating"
+msgstr "Graphic Plating"
+
+#. module: product_flow
+#: selection:sale.order,pcba_flow:0
+msgid "Incoming"
+msgstr "Incoming"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Inner Layer Wiring/Etching"
+msgstr "Inner Layer Wiring/Etching"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Lamination"
+msgstr "Lamination"
+
+#. module: product_flow
+#: model:ir.ui.view,arch_db:product_flow.inherit_sale_order_flow
+msgid "Notify Product Progress"
+msgstr "告知产品进展"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Outer Line/Check"
+msgstr "Outer Line/Check"
+
+#. module: product_flow
+#: model:ir.model.fields,field_description:product_flow.field_sale_order_pcb_flow
+msgid "PCB Product Flow"
+msgstr "PCB产品流程"
+
+#. module: product_flow
+#: model:ir.model.fields,field_description:product_flow.field_sale_order_pcba_flow
+msgid "PCBA Product Flow"
+msgstr "PCBA产品流程"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Package"
+msgstr "Package"
+
+#. module: product_flow
+#: selection:sale.order,pcba_flow:0
+msgid "Packing"
+msgstr "Packing"
+
+#. module: product_flow
+#: selection:sale.order,pcba_flow:0
+msgid "Pre-reflow Assurance"
+msgstr "Pre-reflow Assurance"
+
+#. module: product_flow
+#: selection:sale.order,pcba_flow:0
+msgid "Quality Assurance Pro-reflow"
+msgstr "Quality Assurance Pro-reflow"
+
+#. module: product_flow
+#: selection:sale.order,pcba_flow:0
+msgid "Raw Material Inspection"
+msgstr "Raw Material Inspection"
+
+#. module: product_flow
+#: model:ir.ui.view,arch_db:product_flow.flow_email_message_wizard
+msgid "Recipients"
+msgstr "收件人"
+
+#. module: product_flow
+#: selection:sale.order,pcba_flow:0
+msgid "Reflow"
+msgstr "Reflow"
+
+#. module: product_flow
+#: model:ir.model,name:product_flow.model_sale_order
+msgid "Sales Order"
+msgstr "销售订单"
+
+#. module: product_flow
+#: model:ir.ui.view,arch_db:product_flow.flow_email_message_wizard
+msgid "Send"
+msgstr "发送"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Solder Mask/Check"
+msgstr "Solder Mask/Check"
+
+#. module: product_flow
+#: selection:sale.order,pcba_flow:0
+msgid "Solder Paste Printing/Check"
+msgstr "Solder Paste Printing/Check"
+
+#. module: product_flow
+#: model:ir.ui.view,arch_db:product_flow.flow_email_message_wizard
+msgid "Subject..."
+msgstr "主题..."
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Surface Treatment"
+msgstr "Surface Treatment"
+
+#. module: product_flow
+#: selection:sale.order,pcb_flow:0
+msgid "Test"
+msgstr "Test"
+
+#. module: product_flow
+#: selection:sale.order,pcba_flow:0
+msgid "Testing or Measurement"
+msgstr "Testing or Measurement"
+

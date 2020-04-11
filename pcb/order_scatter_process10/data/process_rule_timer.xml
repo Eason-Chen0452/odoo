@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ir_cron_send_action" model="ir.cron" forcecreate="True">
+            <field name="name">Send Process Server</field>
+            <field name="model">orders.synced.process</field>
+            <field name="doall">False</field>
+            <field name="active">False</field>
+            <field name="interval_number">10</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_orders_synced_process"/>
+            <field name="state">code</field>
+            <field name="code">model.ApplyOrderSynced()</field>
+            <field name="priority">2</field>
+            <field name="website_published">False</field>
+        </record>
+    </data>
+</odoo>

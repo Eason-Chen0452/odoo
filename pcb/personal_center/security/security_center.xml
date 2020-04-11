@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="center_manager_group" model="res.groups">
+            <field name="name">Customer Personal Center Manager</field>
+        </record>
+
+    </data>
+</odoo>

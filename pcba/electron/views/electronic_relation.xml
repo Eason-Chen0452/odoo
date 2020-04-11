@@ -1,0 +1,213 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+  
+    <record model="ir.ui.view" id="electron.disk_fields_list">
+      <field name="name">electron.disk_fields list</field>
+      <field name="model">electron.disk_fields</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+        </tree>
+      </field>
+    </record>
+    
+     <record model="ir.ui.view" id="electron.disk_fields_form">
+      <field name="name">electron.disk_fields form</field>
+      <field name="model">electron.disk_fields</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name"/>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+  
+  
+    <!-- actions opening views on models -->
+  
+    <record model="ir.actions.act_window" id="electron.disk_fields_action_window">
+      <field name="name">electron.disk_fields window</field>
+      <field name="res_model">electron.disk_fields</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+ 
+    <!-- actions -->
+
+    <menuitem name="electronic_Menu_disk_root" id="electronic_menu_disk_root" parent="electron.electronic_menu_root"/>
+    <menuitem name="electron disk fields menu" id="electron_disk_fields_menu" parent="electron.electronic_menu_disk_root"
+              action="electron.disk_fields_action_window"/>
+
+              
+    <!-- explicit list view definition -->
+  
+    <record model="ir.ui.view" id="electron.disk_rel_list">
+      <field name="name">electron.disk_rel list</field>
+      <field name="model">electron.disk_rel</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="tt_type"/>
+            <field name="ele_disk_field_id"/>
+            <field name="ele_title"/>
+            <field name="filter_can"/>
+            <field name="not_show"/>
+        </tree>
+      </field>
+    </record>
+    
+     <record model="ir.ui.view" id="electron.disk_rel_form">
+      <field name="name">electron.disk_rel form</field>
+      <field name="model">electron.disk_rel</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="tt_type"/>
+                    <field name="ele_disk_field_id"/>
+                    <field name="ele_title"/>
+                    <field name="filter_can"/>
+                    <field name="not_show"/>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+  
+  
+    <!-- actions opening views on models -->
+  
+    <record model="ir.actions.act_window" id="electron.disk_rel_action_window">
+      <field name="name">electron.disk_rel window</field>
+      <field name="res_model">electron.disk_rel</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="electron disk rel menu" id="electron_disk_rel_menu" parent="electron.electronic_menu_disk_root"
+              action="electron.disk_rel_action_window"/>
+
+    <record model="ir.ui.view" id="electron.origin_data_list">
+      <field name="name">electron.origin_data list</field>
+      <field name="model">electron.origin_data</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="cpo_image" widget="image"/>
+            <field name="name"/>
+            <field name="product_id"/>
+            <field name="p_type"/>
+            <field name="type_code"/>
+            <field name="pcb_number"/>
+            <field name="dash_number"/>
+            <field name="digi_number"/>
+            <field name="mini_quantity"/>
+            <field name="price"/>
+            <field name="description"/>
+            <field name="series"/>
+            <field name="manufacture"/>
+            <field name="packaging"/>
+            <field name="checked"/>
+        </tree>
+      </field>
+    </record>
+    
+     <record model="ir.ui.view" id="electron.origin_data_form">
+      <field name="name">electron.origin_data form</field>
+      <field name="model">electron.origin_data</field>
+      <field name="arch" type="xml">
+        <form>
+            <header>
+                <!--<button name="update_digi_number_only_one" type="object" string="check_digi_nubmer"/>-->
+            </header>
+            <sheet>
+                <group>
+                    <field name="cpo_image" widget="image"/>
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="p_type"/>
+                    <field name="type_code"/>
+                    <field name="pcb_number"/>
+                    <field name="dash_number"/>
+                    <field name="digi_number"/>
+                    <field name="mini_quantity"/>
+                    <field name="price"/>
+                    <field name="description"/>
+                    <field name="series"/>
+                    <field name="manufacture"/>
+                    <field name="packaging"/>
+                    <field name="checked"/>
+                    <field name="url_sources"/>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+  
+  
+    <!-- actions opening views on models -->
+  
+    <record model="ir.actions.act_window" id="electron.origin_data_action_window">
+      <field name="name">electron.origin_data window</field>
+      <field name="res_model">electron.origin_data</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="electron origin data menu" id="electron_origin_data_menu" parent="electron.electronic_menu_disk_root"
+              action="electron.origin_data_action_window"/>
+
+
+    <record model="ir.ui.view" id="electron.disk_center_list">
+      <field name="name">electron.disk_center list</field>
+      <field name="model">electron.disk_center</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="p_type"/>
+            <field name="title"/>
+            <field name="result"/>
+        </tree>
+      </field>
+    </record>
+    
+     <record model="ir.ui.view" id="electron.disk_center_form">
+      <field name="name">electron.disk_center form</field>
+      <field name="model">electron.disk_center</field>
+      <field name="arch" type="xml">
+        <form>
+            <header>
+                <button name="add_init_fields_rel" type="object" string="ADD Init Fields rel"/>
+                <button name="button_get_disk_rel" type="object" string="test get disk rel"/>
+                <button name="button_to_use_disk_rel" type="object" string="To Use Disk rel"/>
+                <button name="check_repeat_product" type="object" string="Check repeat Product"/>
+            </header>
+            <sheet>
+                <group>
+                    <field name="p_type"/>
+                    <field name="title"/>
+                </group>
+                <group>
+                    <!--<field name="name"/>-->
+                    <field name="result"/>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+  
+  
+    <!-- actions opening views on models -->
+  
+    <record model="ir.actions.act_window" id="electron.disk_center_action_window">
+      <field name="name">electron.disk_center window</field>
+      <field name="res_model">electron.disk_center</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="electron disk center menu" id="electron_disk_center_menu" parent="electron.electronic_menu_disk_root"
+              action="electron.disk_center_action_window"/>
+  </data>
+</odoo>

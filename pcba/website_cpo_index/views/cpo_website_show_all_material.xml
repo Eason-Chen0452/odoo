@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="cpo_all_material_show_404" name="All Material">
+        <t t-call="website.layout">
+            <t t-set="additional_title">All Material</t>
+            <t t-call="website_cpo_index.cpo_material_error"/>
+        </t>
+    </template>
+
+    <!-- 前端页面展示所有的赠送电子物料 Version-0.3 -->
+    <template id="cpo_all_material_show" name="All Material">
+        <t t-call="website.layout">
+            <t t-set="additional_title">All Material</t>
+            <t t-if="all_data">
+                <t t-call="website_cpo_index.show_all_material"/>
+            </t>
+            <t t-else="">
+                <t t-call="website_cpo_index.cpo_material_error"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="show_all_material">
+        <div class="container material-content-all">
+            <h3 class="text-center"><t t-esc="all_data.get('month')"/> Can receive materials !</h3>
+            <div class="show_content">
+                <t t-foreach="all_data" t-as="ad">
+                    <t t-if="ad != 'month'">
+                        <t t-set="ad_count_val" t-value="all_data.get(ad)"/>
+                        <div class="col-md-6">
+                            <h5 class="text-center"><t t-esc="ad"/></h5>
+                            <ul>
+                                <t t-foreach="ad_count_val" t-as="ad_val">
+                                    <li>
+                                        <span class="material-name"><t t-esc="ad_val"/></span>
+                                        <span><t t-esc="ad_count_val.get(ad_val)"/></span>
+                                    </li>
+                                </t>
+                            </ul>
+                        </div>
+                    </t>
+                </t>
+            </div>
+        </div>
+
+    </template>
+
+    <template id="cpo_material_error">
+        <h3 class="text-center">Stay tuned !</h3>
+    </template>
+
+</odoo>

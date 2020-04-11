@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="contactus_message.list">
+      <field name="name">contactus_message list</field>
+      <field name="model">contactus_message.contactus_message</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="contactus_message.action_window">
+      <field name="name">contactus_message window</field>
+      <field name="res_model">contactus_message.contactus_message</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="contactus_message.action_server">
+      <field name="name">contactus_message server</field>
+      <field name="model_id" ref="model_contactus_message_contactus_message"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="contactus_message" id="contactus_message.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="contactus_message.menu_1" parent="contactus_message.menu_root"/>
+    <menuitem name="Menu 2" id="contactus_message.menu_2" parent="contactus_message.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="contactus_message.menu_1_list" parent="contactus_message.menu_1"
+              action="contactus_message.action_window"/>
+    <menuitem name="Server to list" id="contactus_message" parent="contactus_message.menu_2"
+              action="contactus_message.action_server"/>
+    -->
+  </data>
+</odoo>

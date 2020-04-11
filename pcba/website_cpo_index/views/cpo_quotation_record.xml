@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- PCB Tree -->
+        <record model="ir.ui.view" id="cpo_quotation_tree">
+            <field name="name">CPO Quotation Tree</field>
+            <field name="model">cpo_quotation_record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="order_type"/>
+                    <field name="quantity"/>
+                    <field name="material"/>
+                    <field name="width"/>
+                    <field name="lenght"/>
+                    <field name="thickne"/>
+                    <field name="layers"/>
+                    <field name="file_name"/>
+                    <field name="mask_color"/>
+                    <field name="silkscreen_color"/>
+                    <field name="cpo_country"/>
+                    <field name="cpo_city"/>
+                    <field name="session_id"/>
+                    <field name="user_ip"/>
+                    <field name="total"/>
+                    <field name="cpo_time"/>
+                </tree>
+            </field>
+        </record>
+        <!-- PCBA Tree -->
+        <record model="ir.ui.view" id="cpo_pcba_quotation_tree">
+            <field name="name">CPO Quotation Tree</field>
+            <field name="model">cpo_quotation_record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="order_type"/>
+                    <field name="quantity"/>
+                    <field name="bom_type"/>
+                    <field name="width"/>
+                    <field name="lenght"/>
+                    <field name="thickne"/>
+                    <field name="smt_qty"/>
+                    <field name="dip_qty"/>
+                    <field name="file_name"/>
+                    <field name="smt_side"/>
+                    <field name="cpo_country"/>
+                    <field name="cpo_city"/>
+                    <field name="session_id"/>
+                    <field name="user_ip"/>
+                    <field name="total"/>
+                    <field name="cpo_time"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Service Protocol Tree -->
+        <record model="ir.ui.view" id="cpo_service_protocol_set_tree">
+            <field name="name">CPO Quotation Tree</field>
+            <field name="model">cpo_quotation_record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="user_id"/>
+                    <field name="user_name"/>
+                    <field name="cpo_country"/>
+                    <field name="cpo_city"/>
+                    <field name="session_id"/>
+                    <field name="user_ip"/>
+                    <field name="cpo_time"/>
+                </tree>
+            </field>
+        </record>
+        <!-- 协议点击记录 -->
+        <record model="ir.ui.view" id="cpo_service_protocol_set_form">
+            <field name="name">CPO Quotation Form</field>
+            <field name="model">cpo_quotation_record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="user_id" />
+                            </group>
+                            <group colspan="2">
+                                <field name="user_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_country" />
+                            </group>
+                            <group colspan="2">
+                                <field name="session_id" />
+                            </group>
+                            <group colspan="2">
+                                <field name="user_ip" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_city" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- 报价记录 -->
+        <record model="ir.ui.view" id="cpo_quotation_form">
+            <field name="name">CPO Quotation Form</field>
+            <field name="model">cpo_quotation_record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="order_type" />
+                            </group>
+                            <group colspan="2">
+                                <field name="material" />
+                            </group>
+                            <group colspan="2">
+                                <field name="bom_type" />
+                            </group>
+                            <group colspan="2">
+                                <field name="quantity" />
+                            </group>
+                            <group colspan="2">
+                                <field name="layers" />
+                            </group>
+                            <group colspan="2">
+                                <field name="width" />
+                            </group>
+                            <group colspan="2">
+                                <field name="lenght" />
+                            </group>
+                            <group colspan="2">
+                                <field name="thickne" />
+                            </group>
+                            <group colspan="2">
+                                <field name="inner_copper" />
+                            </group>
+                            <group colspan="2">
+                                <field name="outer_copper" />
+                            </group>
+                            <group colspan="2">
+                                <field name="smt_qty" />
+                            </group>
+                            <group colspan="2">
+                                <field name="dip_qty" />
+                            </group>
+                            <group colspan="2">
+                                <field name="smt_side" />
+                            </group>
+                            <group colspan="2">
+                                <field name="file_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="mask_color" />
+                            </group>
+                            <group colspan="2">
+                                <field name="silkscreen_color" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_country" />
+                            </group>
+                            <group colspan="2">
+                                <field name="session_id" />
+                            </group>
+                            <group colspan="2">
+                                <field name="user_ip" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_city" />
+                            </group>
+                            <group colspan="2">
+                                <field name="total" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_time" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- PCB -->
+        <record model="ir.actions.act_window" id="cpo_quotation_actions">
+            <field name="name">CPO Quotation Actions</field>
+            <field name="res_model">cpo_quotation_record</field>
+            <field name="domain">[('order_type','in', ('PCB', 'PCB Package', 'HDI', 'Rigid-FLex'))]</field>
+            <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'tree','view_id':ref('cpo_quotation_tree')}),(0,0,{'view_mode':'form','view_id':ref('cpo_quotation_form')})]"/>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- PCBA  -->
+        <record model="ir.actions.act_window" id="cpo_pcba_quotation_actions">
+            <field name="name">PCBA Quotation Record Actions</field>
+            <field name="res_model">cpo_quotation_record</field>
+            <field name="domain">[('order_type','in', ('PCBA', 'PCBA Package Price'))]</field>
+            <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'tree','view_id':ref('cpo_pcba_quotation_tree')}),(0,0,{'view_mode':'form','view_id':ref('cpo_quotation_form')})]"/>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- Service -->
+        <record model="ir.actions.act_window" id="cpo_service_protocol_set_actions">
+            <field name="name">PCBA Quotation Record Actions</field>
+            <field name="res_model">cpo_quotation_record</field>
+            <field name="domain">[('order_type','=', 'Service Protocol')]</field>
+            <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'tree','view_id':ref('cpo_service_protocol_set_tree')}),(0,0,{'view_mode':'form','view_id':ref('cpo_service_protocol_set_form')})]"/>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="CPO Quotation Record" id="cpo_quotation_top_menu" parent="website_cpo_index.cpo_web_root_menu" />
+        <!-- PCB btn -->
+        <menuitem name="Old PCB Quotation Record" id="cpo_quotation_menu" parent="website_cpo_index.cpo_quotation_top_menu"
+                action="cpo_quotation_actions"/>
+        <!-- PCBA btn -->
+        <menuitem name="Old PCBA Quotation Record" id="cpo_pcba_quotation_menu" parent="website_cpo_index.cpo_quotation_top_menu"
+                action="cpo_pcba_quotation_actions"/>
+        <!-- service btn -->
+        <menuitem name="Old Service Protocol Record" id="cpo_service_protocol_set_menu" parent="website_cpo_index.cpo_quotation_top_menu"
+                action="cpo_service_protocol_set_actions"/>
+
+    </data>
+</odoo>

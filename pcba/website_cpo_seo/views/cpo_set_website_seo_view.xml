@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="cpo_set_website_seo_tree">
+            <field name="name">Set Website Seo Tree</field>
+            <field name="model">cpo_set_website_seo</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cpo_page_name"/>
+                    <field name="cpo_title"/>
+                    <!--<field name="cpo_date"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_set_website_seo_form">
+            <field name="name">Set Website Seo Form</field>
+            <field name="model">cpo_set_website_seo</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="cpo_page_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_title" />
+                            </group>
+                            <group colspan="4">
+                                <field name="cpo_keyworks" />
+                            </group>
+                            <group colspan="4">
+                                <field name="cpo_description" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_date" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_set_website_seo_actions">
+            <field name="name">Set Website Seo Actions</field>
+            <field name="res_model">cpo_set_website_seo</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="SEO Menu" id="cpo_set_website_seo_menu"/>
+        <menuitem name="Setting Data" id="cpo_setting_seo_data_menu" parent="website_cpo_seo.cpo_set_website_seo_menu"/>
+        <menuitem name="Setting SEO Menu" id="cpo_setting_website_seo_menu" parent="website_cpo_seo.cpo_setting_seo_data_menu"
+                  action="cpo_set_website_seo_actions"/>
+
+    </data>
+</odoo>

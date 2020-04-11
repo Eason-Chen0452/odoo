@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+
+        <!--<template id="data_statistics_layout" name="Report layout">&lt;!DOCTYPE html&gt;-->
+            <!--<html t-att-lang="lang and lang.replace('_', '-')"-->
+                  <!--t-att-data-editable="'1' if editable else None"-->
+                  <!--t-att-data-translatable="'1' if translatable else None"-->
+                  <!--t-att-data-edit_translations="'1' if edit_translations else None"-->
+                  <!--t-att-data-main-object="repr(main_object) if editable else None"-->
+                  <!--t-att-data-report-margin-top="data_report_margin_top"-->
+                  <!--t-att-data-report-header-spacing="data_report_header_spacing"-->
+                  <!--t-att-data-report-dpi="data_report_dpi"-->
+                  <!--t-att-web-base-url="web_base_url">-->
+                <!--<head>-->
+                    <!--<meta charset="utf-8" />-->
+                    <!--<meta name="viewport" content="initial-scale=1"/>-->
+                    <!--<title><t t-esc="title or 'Odoo Report'"/></title>-->
+                    <!--<t t-call-assets="web.assets_common" t-js="false"/>-->
+                    <!--<t t-call-assets="report.assets_common" t-js="false"/>-->
+                    <!--<t t-if="editable">-->
+                        <!--<t t-call-assets="web_editor.summernote" t-js="false"/>-->
+                        <!--<t t-call-assets="web_editor.assets_editor" t-js="false"/>-->
+                        <!--<t t-call-assets="report.assets_editor" t-js="false"/>-->
+                    <!--</t>-->
+                    <!--<t t-if="editable">-->
+                        <!--<t t-call-assets="web.assets_common" t-css="false"/>-->
+                        <!--<t t-call-assets="web_editor.summernote" t-css="false"/>-->
+                        <!--<t t-call-assets="web_editor.assets_editor" t-css="false"/>-->
+                        <!--<t t-call-assets="report.assets_editor" t-css="false"/>-->
+                    <!--</t>-->
+                <!--</head>-->
+                <!--<body>-->
+                    <!--<div id="wrapwrap" style="padding: 0 30px;">-->
+                        <!--<main>-->
+                            <!--<t t-raw="0"/>-->
+                        <!--</main>-->
+                    <!--</div>-->
+                <!--</body>-->
+            <!--</html>-->
+        <!--</template>-->
+
+        <!--<template id="data_html_container">-->
+            <!--<t t-set="body_classname" t-value="'container'"/>-->
+            <!--<t t-call="data_statistics.data_statistics_layout">-->
+                <!--<t t-raw="0"/>-->
+            <!--</t>-->
+        <!--</template>-->
+
+    </data>
+</odoo>

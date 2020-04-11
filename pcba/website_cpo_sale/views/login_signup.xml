@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- -->
+	<template>
+		<iframe class="j_minilogin_iframe" style="background: rgb(250, 250, 250);" width="100%" scrolling="yes"
+				height="480" frameborder="no" src="/quote/login"></iframe>
+
+
+
+		//login.taobao.com/member/login.jhtml?
+		style=miniall&amp;newMini2=true&amp;enup=true&amp;from=tmall&amp;
+		allp=assets_css%3D3.0.10/login_pc.css&amp;full_redirect=false&amp;
+		tpl_redirect_url=https%3A%2F%2Fmdetail.tmall.com%2Fcross%2Fx_cross_iframe.htm%3Ftype%3Dminilogin%26t%3D2013072520131122%26callback%3Dg_tml_callbak1577158678208
+	</template>
+</odoo>

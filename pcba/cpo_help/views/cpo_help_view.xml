@@ -1,0 +1,68 @@
+<odoo>
+	<data>
+		<!-- explicit list view definition -->
+		<record model="ir.ui.view" id="cpo_help_list">
+			<field name="name">Help list</field>
+			<field name="model">cpo_help.help</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name"/>
+					<field name="type"/>
+					<field name="update_time"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="cpo_help_form">
+            <field name="name">Help form</field>
+            <field name="model">cpo_help.help</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <!--<button name="help_draft" type="object" string="Draft" class="oe_highlight" states="draft"/>-->
+                        <button name="help_release" type="object" string="Release" class="oe_highlight" states="draft"/>
+                        <button name="help_update" type="object" string="Update" class="oe_highlight" states="release,update" confirm="Are you sure you want to update?"/>
+                        <button name="help_complete" type="object" string="Release" class="oe_highlight" states="update"/>
+                        <button name="help_invalid" type="object" string="Invalid" class="oe_highlight" states="release"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,release,invalid"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="name" attrs="{'readonly': [('state', 'in', ('release','invalid'))]}" placeholder="Name"/>
+                        </h1>
+						<group col="4">
+							<group  colspan="2">
+                            	<field name="type" attrs="{'readonly': [('state', 'in', ('release','invalid'))]}"/>
+							</group>
+							<group  colspan="2">
+                            	<field name="update_time" attrs="{'readonly': [('state', 'in', ('release','invalid'))]}"/>
+							</group>
+                        </group>
+					</sheet>
+					<notebook>
+						<page string="Message">
+							<div class="cpo_help_content">
+								<field name="content" attrs="{'readonly': [('state', 'in', ('release','invalid'))]}"/>
+							</div>
+						</page>
+					</notebook>
+                </form>
+            </field>
+        </record>
+
+		<!-- actions opening views on models -->
+		<record model="ir.actions.act_window" id="cpo_help_action_window">
+			<field name="name">Help window</field>
+			<field name="res_model">cpo_help.help</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<!-- Top menu item -->
+		  <!-- actions -->
+        <menuitem name="Help Menu" id="cpo_help_menu" parent="website_cpo_index.cpo_web_root_menu" />
+
+        <menuitem name="Help" id="cpo_help_menu_list" parent="cpo_help.cpo_help_menu"
+              action="cpo_help_action_window" />
+
+	</data>
+</odoo>

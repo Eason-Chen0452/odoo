@@ -1,0 +1,476 @@
+<odoo>
+    <data>
+        <!--<template id="assets_backend" name="Index Model" inherit_id="web.assets_backend">-->
+            <!--<xpath expr="." position="inside">-->
+                <!--<link rel="stylesheet" href="/website_cpo_index/static/src/css/cpo_conmon_preview.css"/>-->
+            <!--</xpath>-->
+        <!--</template>-->
+
+        <!-- 打包价 -->
+        <template id="cpo_get_package_price_list">
+            <t t-foreach="objects" t-as="pl">
+                <div class="package-item">
+                    <div class="pack-price-box cpo-box-sd-5 pt-10">
+                        <!--<img alt="" class="img img-responsive" t-att-src="'data:image/png;base64,%s' %  pl.cpo_layer_photo"/>-->
+                        <img class="img img-responsive" t-att-src="'\website\cpo_image_show\package_price\%s' % slug(pl)"/>
+                        <div class="package-content text-center">
+                            <p><t t-esc="pl.cpo_product_name"/></p>
+                            <p><t t-esc="pl.cpo_product_area"/></p>
+                            <p><t t-esc="pl.cpo_process"/></p>
+                            <span><t t-esc="pl.cpo_product_amount"/></span>
+                        </div>
+                        <div class="pack-btn-con">
+                            <a t-att-href="pl.link" class="btn btn-primary">Quotation Now</a>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <!-- 工艺介绍 -->
+        <template id="cpo_advertage_products_temp">
+            <t t-foreach="objects" t-as="ap">
+                <div class="col-md-3">
+                    <div class="single-process cpo-box-sd-5 mb-30">
+                        <div class="process-img">
+                            <a>
+<!--                                <img alt="" class="img img-responsive" t-att-src="'data:image/png;base64,%s' %  ap.cpo_ad_poto"/>-->
+                                <img class="img img-responsive" t-att-src="'website\cpo_image_show\products_advertage\%s' % slug(ap)"/>
+                            </a>
+                        </div>
+                        <!--高多层-->
+                        <div class="processpost-desc">
+                            <h1>
+                                <t t-esc="ap.cpo_product_name"/>
+                            </h1>
+                            <p>
+                                <t t-esc="ap.cpo_product_desc"/>
+                            </p>
+                            <a class="readmore" t-att-href="ap.cpo_link" t-att-title="ap.cpo_product_name">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <!--首页banner-->
+                <!--首页banner-->
+        <template id="cpo_banner_image_temp">
+            <t t-set="banner_left" t-value="0"/>
+            <t t-foreach="rows" t-as="row">
+                <t t-set="banner_left" t-value="banner_left+1"/>
+                <t t-set="cpo_style" t-value="'background-color: %s;' % (row.cpo_main_color)"/>
+                <div class="single-slider bg-img height-82vh d-flex align-items-center justify-content-center cpo-slider-area-slider1"
+                     t-att-style="'%s' % cpo_style">
+                    <div class="cpo_bg_svg">
+                        <img class="img img-responsive" t-att-src="'\website\cpo_image_show\cpo_banner\%s' % slug(row)"/>
+                    </div>
+                    <div class="container p-0">
+                        <div class="col-md-6">
+                            <t t-set="cpo_add_class" t-value="'banner_left%s' % banner_left"/>
+                            <div t-att-class="'slider-content cpo_slider_content_left %s' % (cpo_add_class)">
+                                <t t-raw="row.cpo_banner_description"/>
+                                <!--<div class="slider-content-wrap slider-animated-1 cpo_index_title">-->
+                                    <!--<h1 class="cpo-banner-disc">-->
+                                        <!--<t t-raw="row.cpo_banner_title"/>-->
+                                    <!--</h1>-->
+                                    <!--<h4>-->
+                                        <!--<t t-raw="row.cpo_banner_description"/>-->
+                                    <!--</h4>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="slider-content"></div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+        <template id="cpo_banner_image_temp1111">
+            <t t-set="banner_left" t-value="0"/>
+            <t t-foreach="objects" t-as="ib">
+                <t t-set="banner_left" t-value="banner_left+1"/>
+                <t t-set="cpo_value" t-value="objects.get(ib)"/>
+                <t t-if="cpo_value.get('type') == 'svg'">
+                    <t t-set="cpo_style" t-value="'background-color: %s;' % (cpo_value.get('color'))"/>
+                </t>
+                <t t-else="">
+                    <t t-set="cpo_style" t-value="'data:image/png;base64,%s;background-color: %s;' % (cpo_value.get('data'),cpo_value.get('color'))"/>
+                </t>
+                <!--t-att-style="'%s' % cpo_style"-->
+                <div class="single-slider bg-img height-82vh d-flex align-items-center justify-content-center cpo-slider-area-slider1"
+                     t-att-style="'%s' % cpo_style">
+<!--                    <div class="cpo_bg_svg">-->
+<!--                        <img class="img img-responsive" t-att-src="'\cpo\image\cpo_banner\%s' % ('svg-12')"/>-->
+<!--                    </div>-->
+                    <t t-if="cpo_value.get('type') == 'svg'">
+                        <div class="cpo_bg_svg">
+                            <t t-raw="cpo_value.get('data')"/>
+                        </div>
+                    </t>
+                    <div class="container p-0">
+                        <div class="col-md-6">
+                            <t t-set="cpo_add_class" t-value="'banner_left%s' % banner_left"/>
+                            <div t-att-class="'slider-content cpo_slider_content_left %s' % (cpo_add_class)">
+                                <div class="slider-content-wrap slider-animated-1 cpo_index_title">
+                                    <h1 class="cpo-banner-disc">
+                                        <t t-raw="cpo_value.get('title')"/>
+                                        <!--<t t-esc="cpo_value.get('title')"/>-->
+                                    </h1>
+                                    <h4>
+                                        <t t-raw="cpo_value.get('description')"/>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="slider-content"></div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <!-- PCBA 打包价设置条件 -->
+        <template id="cpo_pcba_condition_template">
+            <t t-if="objects">
+                <t t-foreach="objects" t-as="obj">
+                    <div class="cpo_choose_item">
+                        <div class="single-quotation text-center mb-30">
+                            <div class="quotation-img-icon overlay">
+                                <img class="img img-responsive" t-att-src="'\website\cpo_image_show\pcba_condition\%s' % slug(obj)"/>
+<!--                                <img t-att-src="'data:image/png;base64,%s' %  obj.condition_photo" />-->
+                            </div>
+                            <div class="quotation-info">
+                                <div class="pcba-material-box cpo-no-matraial-pcba-condit">
+                                    <h3><t t-esc="obj.condition_title"/></h3>
+                                    <h5 t-if="obj.condition_one"><t t-esc="obj.condition_one"/></h5>
+                                    <h5 t-if="obj.condition_two"><t t-esc="obj.condition_two"/></h5>
+                                    <h5 t-if="obj.condition_three"><t t-esc="obj.condition_three"/></h5>
+                                </div>
+                                <a class="btn btn-primary" t-att-href="obj.condition_link">Get Quote Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+
+        <!-- PCBA 打包价设置条件 -->
+        <template id="cpo_pcba_condition_temp">
+            <t t-foreach="objects" t-as="obj">
+                <div class="single-quotation text-center mb-30">
+                    <div class="quotation-img-icon overlay">
+                        <img t-att-src="'data:image/png;base64,%s' %  obj.condition_photo" />
+                    </div>
+                    <div class="quotation-info">
+                        <div class="pcba-material-box cpo-no-matraial-pcba-condit">
+                            <h3><t t-esc="obj.condition_title"/></h3>
+                            <h5><t t-esc="obj.condition_one"/></h5>
+                            <h5><t t-esc="obj.condition_two"/></h5>
+                            <h5><t t-esc="obj.condition_three"/></h5>
+                        </div>
+                        <a class="btn btn-primary" t-att-href="obj.condition_link">Get Quote Now</a>
+                    </div>
+                </div>
+            </t>
+        </template>
+        <template id="cpo_index_cash_temp">
+
+        </template>
+        <!-- 物料赠送 -->
+        <template id="cpo_get_material_temp">
+            <t t-set="m_data" t-value="objects.get('value')"/>
+            <div class="mat-time">
+                <span><t t-esc="objects.get('time')"/></span>
+                <span>: Present material for the current time period</span>
+                <a href="/page/material" class="btn btn-primary">View More</a>
+            </div>
+            <div class="mat-data-show">
+                <div id="material-scroll">
+                    <ul class="cpo_show_material_data">
+                        <t t-foreach="m_data" t-as="mt">
+                            <li>
+                                <span><t t-esc="mt.manufacturer"/></span>
+                                <span><t t-esc="mt.description"/></span>
+                            </li>
+                        </t>
+                    </ul>
+                </div>
+            </div>
+        </template>
+
+        <!--<template id="cpo_banner_content">-->
+            <!--<ul class="cpo_lb">-->
+                <!--<t t-foreach="objects" t-as="obj">-->
+                    <!--<li class="lb_item">-->
+                        <!--<img t-att-src="'data:image/png;base64,%s' %  obj.cpo_banner_img"/>-->
+                    <!--</li>-->
+                <!--</t>-->
+            <!--</ul>-->
+            <!--<ul class="lb_btn">-->
+                <!--<t t-foreach="numbers" t-as="number">-->
+                    <!--<t t-if="number == 0">-->
+                        <!--<li class="li_ac">-->
+                            <!--<t t-esc="number+1"/>-->
+                        <!--</li>-->
+                    <!--</t>-->
+                    <!--<t t-else="">-->
+                        <!--<li>-->
+                            <!--<t t-esc="number+1"/>-->
+                        <!--</li>-->
+                    <!--</t>-->
+                <!--</t>-->
+            <!--</ul>-->
+        <!--</template>-->
+
+        <!--<template id="cpo_pcb_online_content">-->
+            <!--<t t-foreach="online_content" t-as="oline">-->
+            <!--<div class="col-md-3 layer_board_box">-->
+                <!--<div class="cpo_layer_board">-->
+                    <!--<div class="board_title">-->
+                        <!--<div class="layer_img_photo">-->
+                            <!--<img class="img img-responsive" t-att-src="'data:image/png;base64,%s' %  oline.cpo_layer_photo"/>-->
+                        <!--</div>-->
+                        <!--<div class="layer_img_layernum">-->
+                            <!--<h3 class="layer_num_qty">-->
+                                <!--<t t-esc="oline.cpo_product_name"/>-->
+                            <!--</h3>-->
+                            <!--<span class="layer_money_total">-->
+                                <!--<t t-esc="oline.cpo_product_amount"/>-->
+                            <!--</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<ul>-->
+                        <!--<li>-->
+                            <!--<label class="cpo_board_left">Layer count</label>-->
+                            <!--<span class="cpo_board_right">-->
+                                <!--<t t-esc="oline.cpo_product_layers"/>-->
+                            <!--</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<label class="cpo_board_left">Turn time</label>-->
+                            <!--<span class="cpo_board_right">-->
+                                <!--<t t-esc="oline.cpo_turn_time"/>-->
+                            <!--</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<label class="cpo_board_left">Qty req.</label>-->
+                            <!--<span class="cpo_board_right">-->
+                                <!--<t t-esc="oline.cpo_qty_req"/>-->
+                            <!--</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<label class="cpo_board_left">Materials</label>-->
+                            <!--<span class="cpo_board_right">-->
+                                <!--<t t-esc="oline.cpo_product_materials"/>-->
+                            <!--</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<label class="cpo_board_left">Finished copper</label>-->
+                            <!--<span class="cpo_board_right">-->
+                                <!--<t t-esc="oline.cpo_finished_copper"/>-->
+                            <!--</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<label class="cpo_board_left">Trace / space</label>-->
+                            <!--<span class="cpo_board_right">-->
+                                <!--<t t-esc="oline.cpo_trace_space"/>-->
+                            <!--</span>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                    <!--<a href="/pcb/package-price" target="_blank" class="btn product_price_total">Buy now</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--</t>-->
+        <!--</template>-->
+
+
+        <template id="cpo_company_video">
+                <t t-if="video_link">
+                    <t t-debug=""/>
+                </t>
+                <t t-set="foo">
+                    <t t-esc="video_link.cpo_video_link"/>
+                </t>
+                <t t-esc="video_link.cpo_video_link"/>
+        </template>
+
+        <template>
+            <!--<div class="slider-content cpo_slider_content_right">-->
+                <!--<div class="slider-content-wrap slider-animated-1 cpo-box-sd-5">-->
+                    <!--<div class="cpo-quo-tt">-->
+                        <!--<div class="quo-tt-ls quo-tt-active">-->
+                            <!--<h4>PCB</h4>-->
+                        <!--</div>-->
+                        <!--<div class="quo-tt-ls">-->
+                            <!--<h4>PCBA</h4>-->
+                        <!--</div>-->
+                        <!--<div class="quo-tt-ls">-->
+                            <!--<h4>Stencil</h4>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<ul class="cpo-banner-ul">-->
+                        <!--<li class="cpo-banner-li cpo-block">-->
+                            <!--<div class="cpo_order_content">-->
+                                <!--<form role="form" method="POST" action="/pcb?type=standard"-->
+                                      <!--id="cpo_pcb_action">-->
+                                    <!--<input type="hidden" name="csrf_token"-->
+                                           <!--t-att-value="request.csrf_token()"/>-->
+                                    <!--<h2 class="mb-4 mt-0 text-center"></h2>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<input type="text"-->
+                                               <!--class="form-control reverse cpo-home-input cpo-w88"-->
+                                               <!--placeholder="Quantity" name="pcb_quantity"/>-->
+                                        <!--<span class="cpo_quo_unit">pcs</span>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<input type="text"-->
+                                               <!--class="form-control reverse cpo-home-input cpo_board"-->
+                                               <!--placeholder="Height" name="pcb_length"/>-->
+                                        <!--<span class="cpo_quo_unit">×</span>-->
+                                        <!--<input type="text"-->
+                                               <!--class="form-control reverse cpo-home-input cpo_board"-->
+                                               <!--placeholder="Width" name="pcb_width"/>-->
+                                        <!--<span class="cpo_quo_unit">㎜</span>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<select class="form-control reverse cpo-home-input cpo-w88">-->
+                                            <!--<option value="1">1 Layer</option>-->
+                                            <!--<option value="2">2 Layer</option>-->
+                                            <!--<option value="4">4 Layer</option>-->
+                                            <!--<option value="6">6 Layer</option>-->
+                                            <!--<option value="8">8 Layer</option>-->
+                                            <!--<option value="10">10 Layer</option>-->
+                                            <!--<option value="12">12 Layer</option>-->
+                                        <!--</select>-->
+                                        <!--<input type="hidden"-->
+                                               <!--class="form-control reverse cpo-home-input cpo-w88"-->
+                                               <!--value="1" name="pcb_layers" id="pcb_layers"/>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<input type="text"-->
+                                               <!--class="form-control reverse cpo-home-input cpo-w88"-->
+                                               <!--placeholder="Thickness" name="pcb_thickness"-->
+                                               <!--value="1.6"/>-->
+                                        <!--<span class="cpo_height-50 cpo_quo_unit">㎜</span>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<input type="submit" class="btn btn-primary cpo-submit"-->
+                                               <!--value="Quotation Now"/>-->
+                                    <!--</div>-->
+                                <!--</form>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li class="cpo-banner-li cpo-none">-->
+                            <!--<div class="cpo_order_content">-->
+                                <!--<form action="/pcba" id="create_pcba_order" method="POST">-->
+                                    <!--<input type="hidden" name="csrf_token"-->
+                                           <!--t-att-value="request.csrf_token()"/>-->
+                                    <!--<h2 class="mb-4 mt-0 text-center"></h2>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<input type="text"-->
+                                               <!--class="form-control reverse cpo-home-input cpo-w88"-->
+                                               <!--name="pcba_quantity" placeholder="Quantity"/>-->
+                                        <!--<span class="cpo_quo_unit">pcs</span>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<input type="text"-->
+                                               <!--class="form-control reverse cpo-home-input cpo_board"-->
+                                               <!--name="pcb_length" placeholder="Height"/>-->
+                                        <!--<span class="cpo_quo_unit">×</span>-->
+                                        <!--<input type="text"-->
+                                               <!--class="form-control reverse cpo-home-input cpo_board"-->
+                                               <!--name="pcb_width" placeholder="Width"/>-->
+                                        <!--<span class="cpo_quo_unit">㎜</span>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<input type="text"-->
+                                               <!--class="form-control reverse cpo-home-input cpo-w88"-->
+                                               <!--name="pcba_dip"-->
+                                               <!--placeholder="DIP through hole quantity"/>-->
+                                        <!--<span class="cpo_quo_unit">L</span>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<input type="text"-->
+                                               <!--class="form-control reverse cpo-home-input cpo-w88"-->
+                                               <!--name="pcba_smt"-->
+                                               <!--placeholder="SMT parts quantity"/>-->
+                                        <!--&lt;!&ndash;<span class="cpo_height-50 cpo_quo_unit">㎜</span>&ndash;&gt;-->
+                                    <!--</div>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<input type="submit" class="btn btn-primary cpo-submit"-->
+                                               <!--value="Quotation Now"/>-->
+                                    <!--</div>-->
+                                <!--</form>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li class="cpo-banner-li cpo-none">-->
+                            <!--<div class="cpo_order_content">-->
+                                <!--<form role="form" method="POST" action="/stencil"-->
+                                      <!--id="cpo_stencil_action">-->
+                                    <!--<input type="hidden" name="csrf_token"-->
+                                           <!--t-att-value="request.csrf_token()"/>-->
+                                    <!--<h2 class="mb-4 mt-0 text-center"></h2>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<input type="text"-->
+                                               <!--class="form-control reverse cpo-home-input cpo-w88"-->
+                                               <!--name="pcb_quantity" placeholder="Quantity"/>-->
+                                        <!--<span class="cpo_quo_unit">pcs</span>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<select class="form-control reverse cpo-home-input cpo-w88"-->
+                                                <!--id="stencil_frame">-->
+                                            <!--<option value="370*470mm">370×470mm (Valid area-->
+                                                <!--190×290mm)-->
+                                            <!--</option>-->
+                                            <!--<option value="420*520mm">420×520mm (Valid area-->
+                                                <!--240×340mm)-->
+                                            <!--</option>-->
+                                            <!--<option value="450*550mm">450×550mm (Valid area-->
+                                                <!--270×370mm)-->
+                                            <!--</option>-->
+                                            <!--<option value="580*580mm">580×580mm (Valid area-->
+                                                <!--380×380mm)-->
+                                            <!--</option>-->
+                                            <!--<option value="550*650mm">550×650mm (Valid area-->
+                                                <!--350×450mm)-->
+                                            <!--</option>-->
+                                            <!--<option value="736*736mm">736×736mm (Valid area-->
+                                                <!--500×500mm)-->
+                                            <!--</option>-->
+                                        <!--</select>-->
+                                        <!--<input type="hidden"-->
+                                               <!--class="form-control reverse cpo-home-input cpo-w88"-->
+                                               <!--name="cpo_stencil_size" value="370*470mm"-->
+                                               <!--id="cpo_stencil_size"/>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<select class="form-control reverse cpo-home-input cpo-w88">-->
+                                            <!--<option value="0.08">0.08 MM</option>-->
+                                            <!--<option value="0.10">0.10 MM</option>-->
+                                            <!--<option value="0.12">0.12 MM</option>-->
+                                            <!--<option value="0.15">0.15 MM</option>-->
+                                        <!--</select>-->
+                                        <!--<input type="hidden"-->
+                                               <!--class="form-control reverse cpo-home-input cpo-w88"-->
+                                               <!--name="stencil_thickness" value="0.08"-->
+                                               <!--id="cpo_stencil_thickness"/>-->
+                                    <!--</div>-->
+                                    <!--<div class="form-group cpo-mb64"></div>-->
+                                    <!--<div class="form-group clearfix">-->
+                                        <!--<input type="submit" class="btn btn-primary cpo-submit"-->
+                                               <!--value="Quotation Now"/>-->
+                                    <!--</div>-->
+                                <!--</form>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</div>-->
+        </template>
+
+    </data>
+</odoo>

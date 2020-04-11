@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_advertising_all_users,cpo_advertising,model_cpo_advertising,cpo_website_advertising_view,1,0,0,0
+access_cpo_page_advertising_users,cpo_page_advertising,model_cpo_page_advertising,cpo_website_advertising_view,1,0,0,0
+access_cpo_notification_read,cpo_notification,model_cpo_notification,cpo_website_advertising_view,1,0,0,0
+
+access_advertising_cpo_website_advertising,cpo_advertising_cpo_website_advertising,model_cpo_advertising,cpo_website_advertising,1,1,1,1
+access_cpo_page_advertising,cpo_page_advertising,model_cpo_page_advertising,cpo_website_advertising,1,1,1,1
+access_cpo_notification,cpo_notification,model_cpo_notification,cpo_website_advertising,1,1,1,1

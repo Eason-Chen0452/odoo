@@ -1,0 +1,613 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* personal_center
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-16 05:46+0000\n"
+"PO-Revision-Date: 2019-10-16 05:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: personal_center
+#: model:mail.template,body_html:personal_center.mail_activation_template
+msgid "\n"
+"            % set signup_url = object.get_signup_url()\n"
+"            <div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <table cellspacing=\"0\" cellpadding=\"0\" style=\"width:600px;border-collapse:collapse;background:inherit;color:inherit\">\n"
+"                    <tbody>\n"
+"                        <tr><td valign=\"center\" width=\"200\" style=\"padding:10px 10px 10px 5px;font-size: 12px\">\n"
+"                            <img src=\"/logo.png\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${user.company_id.name}\">\n"
+"                        </td></tr>\n"
+"                    </tbody>\n"
+"                </table>\n"
+"            </div>\n"
+"            <div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Dear ${object.name},</p>\n"
+"                <p>You can activate your account via the link below, which is still valid for 1 hours:</p>\n"
+"                <div style=\"text-align: center; margin-top: 16px;\">\n"
+"                    <a href=\"${signup_url}\" style=\"padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#875A7B; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #875A7B; border: 1px solid #875A7B; border-radius:3px\">Activate the account</a>\n"
+"                </div>\n"
+"                <p>If you do not expect this, you can safely ignore this email.</p>\n"
+"                <p>Best regards,</p>\n"
+"            </div>\n"
+"            <div style=\"padding:0px;width:600px;margin:auto; margin-top: 10px; background: #fff repeat top /100%;color:#777777\">\n"
+"                ${user.signature | safe}\n"
+"            </div>\n"
+"            "
+msgstr "\n"
+"            % set signup_url = object.get_signup_url()\n"
+"            <div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <table cellspacing=\"0\" cellpadding=\"0\" style=\"width:600px;border-collapse:collapse;background:inherit;color:inherit\">\n"
+"                    <tbody>\n"
+"                        <tr><td valign=\"center\" width=\"200\" style=\"padding:10px 10px 10px 5px;font-size: 12px\">\n"
+"                            <img src=\"/logo.png\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${user.company_id.name}\">\n"
+"                        </td></tr>\n"
+"                    </tbody>\n"
+"                </table>\n"
+"            </div>\n"
+"            <div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Dear ${object.name},</p>\n"
+"                <p>You can activate your account via the link below, which is still valid for 1 hours:</p>\n"
+"                <div style=\"text-align: center; margin-top: 16px;\">\n"
+"                    <a href=\"${signup_url}\" style=\"padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#875A7B; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #875A7B; border: 1px solid #875A7B; border-radius:3px\">Activate the account</a>\n"
+"                </div>\n"
+"                <p>If you do not expect this, you can safely ignore this email.</p>\n"
+"                <p>Best regards,</p>\n"
+"            </div>\n"
+"            <div style=\"padding:0px;width:600px;margin:auto; margin-top: 10px; background: #fff repeat top /100%;color:#777777\">\n"
+"                ${user.signature | safe}\n"
+"            </div>\n"
+"            "
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "(edit)"
+msgstr "(编辑)"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_balance
+#: model:ir.ui.view,arch_db:personal_center.personal_center_kanban
+msgid "Account Balance"
+msgstr "账户余额"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_search
+#: selection:personal.center,activation_type:0
+msgid "Activation"
+msgstr "已激活"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_active
+msgid "Active"
+msgstr "有效"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Address"
+msgstr "地址"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_type
+msgid "Address Type"
+msgstr "地址类型"
+
+#. module: personal_center
+#: code:addons/personal_center/controllers/controllers.py:55
+#, python-format
+msgid "Another user is already registered using this email address."
+msgstr "Another user is already registered using this email address."
+
+#. module: personal_center
+#: code:addons/personal_center/models/models.py:304
+#, python-format
+msgid "Cannot send email: user %s has no email address."
+msgstr "Cannot send email: user %s has no email address."
+
+#. module: personal_center
+#: model:ir.model.fields,help:personal_center.field_personal_center_is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "若客户性质属公司客户请打勾，个人客户请勿勾选。"
+
+#. module: personal_center
+#: model:ir.model.fields,help:personal_center.field_personal_center_customer
+msgid "Check this box if this contact is a customer."
+msgstr "如果该联系人是客户就选择这个框"
+
+#. module: personal_center
+#: model:ir.model.fields,help:personal_center.field_personal_center_supplier
+msgid "Check this box if this contact is a vendor. If it's not checked, purchase people will not see it when encoding a purchase order."
+msgstr "此联系人为供应商时请勾选此复选框。否则，采购人员在采购订单时将无法选取此联系人。"
+
+#. module: personal_center
+#: model:mail.template,subject:personal_center.mail_activation_template
+msgid "China PCB One Account Activation"
+msgstr "China PCB One Account Activation"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_city
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "City"
+msgstr "城市"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_partner_id
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_user_id
+msgid "Client"
+msgstr "客户"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_color
+msgid "Color Index"
+msgstr "颜色索引"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_commercial_partner_id
+msgid "Commercial Entity"
+msgstr "商业实体"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_company_id
+msgid "Company"
+msgstr "公司"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_company_type
+msgid "Company Type"
+msgstr "公司类别"
+
+#. module: personal_center
+#: model:ir.model,name:personal_center.model_res_partner
+msgid "Contact"
+msgstr "联系"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Contact / Address"
+msgstr "联系人/地址"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Contact Name"
+msgstr "联系人姓名"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_child_ids
+msgid "Contacts"
+msgstr "联系人"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Contacts & Addresses"
+msgstr "联系人 & 地址"
+
+#. module: personal_center
+#: code:addons/personal_center/controllers/controllers.py:61
+#, python-format
+msgid "Could not create a new account."
+msgstr "Could not create a new account."
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_country
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_country_id
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_session_country
+#: model:ir.model.fields,field_description:personal_center.field_sale_order_country
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Country"
+msgstr "国家"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: personal_center
+#: model:ir.actions.act_window,name:personal_center.act_order
+#: model:ir.actions.act_window,name:personal_center.act_paid
+#: model:ir.actions.act_window,name:personal_center.personal_center_window
+#: model:ir.model,name:personal_center.model_personal_center
+#: model:ir.ui.menu,name:personal_center.personal_center_1
+msgid "Customer Personal Center"
+msgstr "客户个人中心"
+
+#. module: personal_center
+#: model:res.groups,name:personal_center.center_manager_group
+msgid "Customer Personal Center Manager"
+msgstr "客户个人中心管理员"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_email
+#: model:ir.ui.view,arch_db:personal_center.resend
+msgid "Email"
+msgstr "Email"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_fax
+msgid "Fax"
+msgstr "传真"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Fax:"
+msgstr "传真："
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_search
+msgid "Filter"
+msgstr "筛选"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_id
+msgid "ID"
+msgstr "ID"
+
+#. module: personal_center
+#: model:ir.model.fields,help:personal_center.field_personal_center_lang
+msgid "If the selected language is loaded in the system, all documents related to this contact will be printed in this language. If not, it will be English."
+msgstr "如果所选语言被载入系统，所有相关文档将以此语言显示。否则，以英语显示。"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_image
+msgid "Image"
+msgstr "图像"
+
+#. module: personal_center
+#: selection:personal.center,activation_type:0
+msgid "Inactivated"
+msgstr "未激活"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_ref
+msgid "Internal Reference"
+msgstr "内部参考"
+
+#. module: personal_center
+#: model:ir.model,name:personal_center.model_account_invoice
+msgid "Invoice"
+msgstr "发票"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_is_company
+msgid "Is a Company"
+msgstr "是公司"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_customer
+msgid "Is a Customer"
+msgstr "是客户"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_supplier
+msgid "Is a Vendor"
+msgstr "是供应商"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_function
+msgid "Job Position"
+msgstr "工作岗位"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_lang
+msgid "Language"
+msgstr "语言"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: personal_center
+#: model:ir.ui.menu,name:personal_center.personal_root
+msgid "Marketing Analysis Strategy"
+msgstr "营销战略分析"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_image_medium
+msgid "Medium-sized image"
+msgstr "中等尺寸图像"
+
+#. module: personal_center
+#: model:ir.model.fields,help:personal_center.field_personal_center_image_medium
+msgid "Medium-sized image of this contact. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
+msgstr "该联系人的中等尺寸照片，它自动缩放为128x128px，保存纵横比。表单视图和一些看板视图使用这个字段"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Misc"
+msgstr "杂项"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_mobile
+msgid "Mobile"
+msgstr "手机"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Mobile:"
+msgstr "手机"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_name
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Name"
+msgstr "名称"
+
+#. module: personal_center
+#: code:addons/personal_center/models/models.py:145
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_pcb_order
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+#, python-format
+msgid "PCB Order"
+msgstr "PCB订单"
+
+#. module: personal_center
+#: code:addons/personal_center/models/models.py:149
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_pcba_order
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+#, python-format
+msgid "PCBA Order"
+msgstr "PCBA订单"
+
+#. module: personal_center
+#: code:addons/personal_center/models/models.py:157
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_paid
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_paid_bool
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+#, python-format
+msgid "Paid"
+msgstr "已付款"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_word
+msgid "Password"
+msgstr "密码"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_phone
+msgid "Phone"
+msgstr "电话"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Phone:"
+msgstr "电话:"
+
+#. module: personal_center
+#: code:addons/personal_center/controllers/controllers.py:58
+#, python-format
+msgid "Please activate your account in your registered email address."
+msgstr "Please activate your account in your registered email address."
+
+#. module: personal_center
+#: code:addons/personal_center/controllers/controllers.py:69
+#, python-format
+msgid "Please check and reply email with activate information within 1 hour, otherwise invalid!!"
+msgstr "Please check and reply email with activate information within 1 hour, otherwise invalid!!"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Purchase"
+msgstr "采购"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_tree
+msgid "Registration Time"
+msgstr "注册时间"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.resend
+msgid "Resend activation email"
+msgstr "Resend activation email"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Sale"
+msgstr "销售"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Sales & Purchases"
+msgstr "销售与采购"
+
+#. module: personal_center
+#: model:ir.model,name:personal_center.model_sale_order
+msgid "Sales Order"
+msgstr "销售订单"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_industry_id
+msgid "Sector of Activity"
+msgstr "活动部门"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_image_small
+msgid "Small-sized image"
+msgstr "小尺寸图像"
+
+#. module: personal_center
+#: model:ir.model.fields,help:personal_center.field_personal_center_image_small
+msgid "Small-sized image of this contact. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr "联系人小尺寸图像。自动缩放为64x64px ，保留纵横比。此字段用于任何需要小图像的场合"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_state_id
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "State"
+msgstr "省/ 州"
+
+#. module: personal_center
+#: code:addons/personal_center/models/models.py:153
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_stencil_order
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+#, python-format
+msgid "Stencil Order"
+msgstr "钢网订单"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_street
+msgid "Street"
+msgstr "街道"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Street 2..."
+msgstr "街道2..."
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Street..."
+msgstr "街道..."
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_street2
+msgid "Street2"
+msgstr "街道 2"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_vat
+msgid "TIN"
+msgstr "税务登记证号码"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_category_id
+msgid "Tags"
+msgstr "标签"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "Tags..."
+msgstr "标签..."
+
+#. module: personal_center
+#: model:ir.model.fields,help:personal_center.field_personal_center_vat
+msgid "Tax Identification Number. Fill it if the company is subjected to taxes. Used by the some of the legal statements."
+msgstr "税务识别号码。 如果公司需要纳税，请填写。 由一些法律声明使用。"
+
+#. module: personal_center
+#: code:addons/personal_center/controllers/controllers.py:26
+#, python-format
+msgid "The account is not activated yet, please activate it in your email. If you not receive the email, please click the button below."
+msgstr "The account is not activated yet, please activate it in your email. If you not receive the email, please click the button below."
+
+#. module: personal_center
+#: model:ir.model.fields,help:personal_center.field_personal_center_image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "该字段保存的图像用作联系人的头像，限制为1024x1024px"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_title
+msgid "Title"
+msgstr "称谓"
+
+#. module: personal_center
+#: code:addons/personal_center/controllers/controllers.py:82
+#, python-format
+msgid "URL link invalid"
+msgstr "URL link invalid"
+
+#. module: personal_center
+#: model:ir.model.fields,help:personal_center.field_personal_center_type
+msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+msgstr "用于通过销售与采购单据上下文来自动选择正确的地址。"
+
+#. module: personal_center
+#: model:ir.model,name:personal_center.model_res_users
+msgid "Users"
+msgstr "用户"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_website
+msgid "Website"
+msgstr "网站"
+
+#. module: personal_center
+#: model:ir.model.fields,help:personal_center.field_personal_center_website
+msgid "Website of Partner or Company"
+msgstr "业务伙伴或公司的网站"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_activation_type
+msgid "Whether the account is activated"
+msgstr "账号是否激活"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "ZIP"
+msgstr "ZIP"
+
+#. module: personal_center
+#: model:ir.model.fields,field_description:personal_center.field_personal_center_zip
+msgid "Zip"
+msgstr "邮政编码"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_kanban
+msgid "at"
+msgstr "在"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "e.g. BE0477472701"
+msgstr "举例: BE0477472701"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "e.g. Mr."
+msgstr "例如：先生"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "e.g. Sales Director"
+msgstr "例如：销售总监"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "e.g. www.odoo.com"
+msgstr "例如：www.odoo.com"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_form
+msgid "internal note..."
+msgstr "内部备注..."
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_kanban
+msgid "pcb"
+msgstr "pcb"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_kanban
+msgid "pcba"
+msgstr "pcba"
+
+#. module: personal_center
+#: model:ir.ui.view,arch_db:personal_center.personal_center_kanban
+msgid "stencil"
+msgstr "钢网"
+

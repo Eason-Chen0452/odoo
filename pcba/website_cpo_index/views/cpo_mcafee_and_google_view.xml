@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="cpo_mcafee_and_google_tree">
+            <field name="name">McaFee And Google Tree</field>
+            <field name="model">cpo_mcafee_and_google</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="cpo_data_title"/>
+                    <field name="cpo_data_link"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_mcafee_and_google_form">
+            <field name="name">McaFee And Google Form</field>
+            <field name="model">cpo_mcafee_and_google</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group colspan="4">
+                            <group col="2">
+                                <field name="cpo_data_title"/>
+                            </group>
+                            <group colspan="4">
+                                <field name="cpo_data_link"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_mcafee_and_google_action">
+            <field name="name">McaFee And Google Action</field>
+            <field name="res_model">cpo_mcafee_and_google</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="McaFee And Google" id="cpo_mcafee_and_google_menu" parent="website_cpo_index.cpo_product_release_all_menu"
+            action="cpo_mcafee_and_google_action"/>
+    </data>
+</odoo>

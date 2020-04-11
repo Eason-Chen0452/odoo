@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="cam_root_number_1branch" model="cam.root.number">
+            <field name="name">20branch</field>
+            <field name="cpo_root_number">20</field>
+        </record>
+        <record id="cam_root_number_2branch" model="cam.root.number">
+            <field name="name">40branch</field>
+            <field name="cpo_root_number">40</field>
+        </record>
+        <record id="cam_root_number_3branch" model="cam.root.number">
+            <field name="name">60branch</field>
+            <field name="cpo_root_number">60</field>
+        </record>
+        <record id="cam_root_number_4branch" model="cam.root.number">
+            <field name="name">80branch</field>
+            <field name="cpo_root_number">80</field>
+        </record>
+        <record id="cam_root_number_5branch" model="cam.root.number">
+            <field name="name">100branch</field>
+            <field name="cpo_root_number">100</field>
+        </record>
+        <record id="cam_root_number_6branch" model="cam.root.number">
+            <field name="name">120branch</field>
+            <field name="cpo_root_number">120</field>
+        </record>
+        <record id="cam_root_number_7branch" model="cam.root.number">
+            <field name="name">140branch</field>
+            <field name="cpo_root_number">140</field>
+        </record>
+        <record id="cam_root_number_8branch" model="cam.root.number">
+            <field name="name">160branch</field>
+            <field name="cpo_root_number">160</field>
+        </record>
+        <record id="cam_root_number_9branch" model="cam.root.number">
+            <field name="name">180branch</field>
+            <field name="cpo_root_number">180</field>
+        </record>
+        <record id="cam_root_number_10branch" model="cam.root.number">
+            <field name="name">200branch</field>
+            <field name="cpo_root_number">200</field>
+        </record>
+        <record id="cam_root_number_11branch" model="cam.root.number">
+            <field name="name">220branch</field>
+            <field name="cpo_root_number">220</field>
+        </record>
+        <record id="cam_root_number_12branch" model="cam.root.number">
+            <field name="name">240branch</field>
+            <field name="cpo_root_number">240</field>
+        </record>
+        <record id="cam_root_number_13branch" model="cam.root.number">
+            <field name="name">260branch</field>
+            <field name="cpo_root_number">260</field>
+        </record>
+        <record id="cam_root_number_14branch" model="cam.root.number">
+            <field name="name">280branch</field>
+            <field name="cpo_root_number">280</field>
+        </record>
+        <record id="cam_root_number_15branch" model="cam.root.number">
+            <field name="name">300branch</field>
+            <field name="cpo_root_number">300</field>
+        </record>
+
+        <record id="cam_gold_finger_3u" model="cam.gold.finger">
+            <field name="name">3.0μ"</field>
+            <field name="cpo_gole_thickness">3</field>
+        </record>
+        <record id="cam_gold_finger_5u" model="cam.gold.finger">
+            <field name="name">5.0μ"</field>
+            <field name="cpo_gole_thickness">5</field>
+        </record>
+        <record id="cam_gold_finger_10u" model="cam.gold.finger">
+            <field name="name">10.0μ"</field>
+            <field name="cpo_gole_thickness">10</field>
+        </record>
+        <record id="cam_gold_finger_15u" model="cam.gold.finger">
+            <field name="name">15.0μ"</field>
+            <field name="cpo_gole_thickness">15</field>
+        </record>
+        <record id="cam_gold_finger_20u" model="cam.gold.finger">
+            <field name="name">20.0μ"</field>
+            <field name="cpo_gole_thickness">20</field>
+        </record>
+        <record id="cam_gold_finger_25u" model="cam.gold.finger">
+            <field name="name">25.0μ"</field>
+            <field name="cpo_gole_thickness">25</field>
+        </record>
+        <record id="cam_gold_finger_30u" model="cam.gold.finger">
+            <field name="name">30.0μ"</field>
+            <field name="cpo_gole_thickness">30</field>
+        </record>
+        <record id="cam_gold_finger_35u" model="cam.gold.finger">
+            <field name="name">35.0μ"</field>
+            <field name="cpo_gole_thickness">35</field>
+        </record>
+        <record id="cam_gold_finger_40u" model="cam.gold.finger">
+            <field name="name">40.0μ"</field>
+            <field name="cpo_gole_thickness">40</field>
+        </record>
+        <record id="cam_gold_finger_45u" model="cam.gold.finger">
+            <field name="name">45.0μ"</field>
+            <field name="cpo_gole_thickness">45</field>
+        </record>
+        <record id="cam_gold_finger_50u" model="cam.gold.finger">
+            <field name="name">50.0μ"</field>
+            <field name="cpo_gole_thickness">50</field>
+        </record>
+
+        <record id="rogers4003c_12" model="cam.rogers.setting">
+            <field name="material" ref="cam.typeRogers_4003C"/>
+            <field name="core_thick">12</field>
+            <field name="thick_1">0.4</field>
+            <field name="thick_2">0.5</field>
+        </record>
+        <record id="rogers4003c_16" model="cam.rogers.setting">
+            <field name="material" ref="cam.typeRogers_4003C"/>
+            <field name="core_thick">16</field>
+            <field name="thick_1">0.5</field>
+            <field name="thick_2">0.6</field>
+        </record>
+        <record id="rogers4003c_20" model="cam.rogers.setting">
+            <field name="material" ref="cam.typeRogers_4003C"/>
+            <field name="core_thick">20</field>
+            <field name="thick_1">0.6</field>
+            <field name="thick_2">0.7</field>
+        </record>
+        <record id="rogers4003c_32" model="cam.rogers.setting">
+            <field name="material" ref="cam.typeRogers_4003C"/>
+            <field name="core_thick">32</field>
+            <field name="thick_1">0.9</field>
+            <field name="thick_2">1.0</field>
+        </record>
+        <record id="rogers4003c_60" model="cam.rogers.setting">
+            <field name="material" ref="cam.typeRogers_4003C"/>
+            <field name="core_thick">60</field>
+            <field name="thick_1">1.6</field>
+            <field name="thick_2">1.7</field>
+        </record>
+
+        <record id="rogers4350b_10" model="cam.rogers.setting">
+            <field name="material" ref="cam.typeRogers_4350B"/>
+            <field name="core_thick">10</field>
+            <field name="thick_1">0.35</field>
+            <field name="thick_2">0.45</field>
+        </record>
+        <record id="rogers4350b_13" model="cam.rogers.setting">
+            <field name="material" ref="cam.typeRogers_4350B"/>
+            <field name="core_thick">13.3</field>
+            <field name="thick_1">0.45</field>
+            <field name="thick_2">0.55</field>
+        </record>
+        <record id="rogers4350b_16" model="cam.rogers.setting">
+            <field name="material" ref="cam.typeRogers_4350B"/>
+            <field name="core_thick">16</field>
+            <field name="thick_1">0.52</field>
+            <field name="thick_2">0.62</field>
+        </record>
+        <record id="rogers4350b_20" model="cam.rogers.setting">
+            <field name="material" ref="cam.typeRogers_4350B"/>
+            <field name="core_thick">20</field>
+            <field name="thick_1">0.6</field>
+            <field name="thick_2">0.7</field>
+        </record>
+        <record id="rogers4350b_30" model="cam.rogers.setting">
+            <field name="material" ref="cam.typeRogers_4350B"/>
+            <field name="core_thick">30</field>
+            <field name="thick_1">0.86</field>
+            <field name="thick_2">0.96</field>
+        </record>
+        <record id="rogers4350b_60" model="cam.rogers.setting">
+            <field name="material" ref="cam.typeRogers_4350B"/>
+            <field name="core_thick">60</field>
+            <field name="thick_1">1.6</field>
+            <field name="thick_2">1.7</field>
+        </record>
+    </data>
+</odoo>

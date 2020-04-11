@@ -1,0 +1,41 @@
+@charset "UTF-8";
+.cpo_service_box{
+    margin-top: 82px;
+}
+#cpo_terms_title{
+    margin: 25px auto;
+}
+#cpo_temrs_conditions{
+    margin-bottom: 40px;
+}
+#cpo_temrs_conditions .cpo_temrs_content h4{
+    font-weight: 600;
+    font-size: 16px;
+}
+#cpo_temrs_conditions .cpo_temrs_content p{
+    margin-bottom: 0;
+}
+
+#cpo_terms_and_conditions{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    bottom: 2px;
+    left: 0;
+    border-top: 1px solid #DDDDDD;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 2000;
+}
+#cpo_terms_and_conditions:hover{
+    background-color: rgba(255, 255, 255, 1);
+}
+#cpo_terms_and_conditions .row{
+    padding: 10px 0;
+    margin: 0;
+    height: 100%;
+}
+#cpo_accept_temrs_conditions{
+    width: 90px;
+    float: right;
+    margin-top: 10px;
+}

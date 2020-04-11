@@ -1,0 +1,1616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- 蓝胶-->
+        <record id='cpo_it_pcb_special_material_carbon_ink1' model='pcb.quotation.pricelist.special.material'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='smaterial' ref="cam.sm_carbon_ink"/>
+            <field name="min_size">0</field>
+            <field name='max_size'>1</field>
+            <field name='price_type'>item</field>
+            <field name='price'>20</field>
+            <field name="delivery_time">24</field>
+        </record>
+        <record id='cpo_it_pcb_special_material_carbon_ink2' model='pcb.quotation.pricelist.special.material'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='smaterial' ref="cam.sm_carbon_ink"/>
+            <field name="min_size">1</field>
+            <field name='max_size'>100</field>
+            <field name='price_type'>msize</field>
+            <field name='price'>10</field>
+            <field name="delivery_time">48</field>
+        </record>
+        <!--碳油-->
+        <record id='cpo_it_pcb_special_material_peelable_mask1' model='pcb.quotation.pricelist.special.material'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='smaterial' ref="cam.sm_peelable_mask"/>
+            <field name="min_size">0</field>
+            <field name='max_size'>1</field>
+            <field name='price_type'>item</field>
+            <field name='price'>20</field>
+            <field name="delivery_time">24</field>
+        </record>
+        <record id='cpo_it_pcb_special_material_peelable_mask2' model='pcb.quotation.pricelist.special.material'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='smaterial' ref="cam.sm_peelable_mask"/>
+            <field name="min_size">1</field>
+            <field name='max_size'>100</field>
+            <field name='price_type'>msize</field>
+            <field name='price'>10</field>
+            <field name="delivery_time">48</field>
+        </record>
+        <!--特殊工艺-->
+        <!--半孔-->
+        <record id='cpo_it_pcb_special_process_semi1' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.sf_half_plating_holes"/>
+            <field name="min_size">0</field>
+            <field name='max_size'>1</field>
+            <field name='price_type'>msize</field>
+            <field name='price'>50</field>
+            <field name="delivery_time">24</field>
+        </record>
+        <record id='cpo_it_pcb_special_process_semi2' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.sf_half_plating_holes"/>
+            <field name="min_size">1</field>
+            <field name='max_size'>5</field>
+            <field name='price_type'>msize</field>
+            <field name='price'>50</field>
+            <field name="delivery_time">48</field>
+        </record>
+        <record id='cpo_it_pcb_special_process_semi3' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.sf_half_plating_holes"/>
+            <field name="min_size">10</field>
+            <field name='max_size'>15</field>
+            <field name='price_type'>msize</field>
+            <field name='price'>35</field>
+            <field name="delivery_time">96</field>
+        </record>
+        <record id='cpo_it_pcb_special_process_semi4' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.sf_half_plating_holes"/>
+            <field name="min_size">5</field>
+            <field name='max_size'>10</field>
+            <field name='price_type'>msize</field>
+            <field name='price'>50</field>
+            <field name="delivery_time">72</field>
+        </record>
+        <record id='cpo_it_pcb_special_process_resin1' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.sf_via_in_pad"/>
+            <field name="min_size">0</field>
+            <field name='max_size'>1</field>
+            <field name='price_type'>msize</field>
+            <field name='price'>50</field>
+            <field name="delivery_time">72</field>
+        </record>
+        <record id='cpo_it_pcb_special_process_resin2' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.sf_via_in_pad"/>
+            <field name="min_size">1</field>
+            <field name='max_size'>10</field>
+            <field name='price_type'>msize</field>
+            <field name='price'>100</field>
+            <field name="delivery_time">144</field>
+        </record>
+        <record id='cpo_it_pcb_special_process_edge1' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.sf_edge_plating"/>
+            <field name="min_size">0</field>
+            <field name='max_size'>1</field>
+            <field name='price_type'>msize</field>
+            <field name='price'>0</field>
+        </record>
+        <record id='cpo_it_pcb_special_process_edge2' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.sf_edge_plating"/>
+            <field name="min_size">1</field>
+            <field name='max_size'>10</field>
+            <field name='price_type'>msize</field>
+            <field name='price'>0</field>
+        </record>
+        <record id='cpo_it_pcb_special_process_edge3' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.sf_edge_plating"/>
+            <field name="min_size">10</field>
+            <field name='max_size'>100</field>
+            <field name='price_type'>msize</field>
+            <field name='price'>0</field>
+        </record>
+        <record id='cpo_it_pcb_special_material_Press_fit_hole' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.Press_fit_hole"/>
+            <field name="min_size">0</field>
+            <field name='max_size'>100</field>
+            <field name='price_type'>msize</field>
+            <field name='percentage'>5</field>
+        </record>
+        <record id='cpo_it_pcb_special_material_impendance_1' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.sf_impendance_control"/>
+            <field name="min_size">0</field>
+            <field name='max_size'>1</field>
+            <field name='price_type'>msize</field>
+            <field name='percentage'>10</field>
+        </record>
+        <record id='cpo_it_pcb_special_material_impendance_2' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.sf_impendance_control"/>
+            <field name="min_size">1</field>
+            <field name='max_size'>100</field>
+            <field name='price_type'>msize</field>
+            <field name='percentage'>5</field>
+        </record>
+        <record id='cpo_it_pcb_special_material_impedance_strip' model='pcb.quotation.pricelist.special.process'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='sprocess' ref="cam.Impedance_and_impedance_strip"/>
+            <field name="min_size">1</field>
+            <field name='max_size'>100</field>
+            <field name='price_type'>msize</field>
+            <field name='percentage'>10</field>
+        </record>
+        <!--其他类 0-1 控制线宽线距 孔径 孔铜 验收标准-->
+        <record id='cpo_it_pcb_other_1' model='pcb.quotation.pricelist.other'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='min_size'>0</field>
+            <field name='max_size'>1</field>
+            <field name='other_line_ids'/>
+            <field name='other_hole_ids'/>
+        </record>
+        <!--线宽线距-->
+        <record id='cpo_it_pcb_other_1_line' model='pcb.quotation.pricelist.other.line'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="min_line_cpo_width">3</field>
+            <field name="max_line_cpo_width">3.6</field>
+            <field name="price_type">msize</field>
+            <field name="price">10</field>
+            <field name="price_class">%</field>
+        </record>
+        <record id='cpo_it_pcb_other_1_line_2' model='pcb.quotation.pricelist.other.line'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="min_line_cpo_width">3.6</field>
+            <field name="max_line_cpo_width">4</field>
+            <field name="price_type">msize</field>
+            <field name="price">5</field>
+            <field name="price_class">%</field>
+        </record>
+        <record id='cpo_it_pcb_other_1_line_3' model='pcb.quotation.pricelist.other.line'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="min_line_cpo_width">4</field>
+            <field name="max_line_cpo_width">15</field>
+            <field name="price_type">msize</field>
+            <field name="price">0</field>
+            <field name="price_class">%</field>
+        </record>
+        <record id='cpo_it_pcb_other_1_line_4' model='pcb.quotation.pricelist.other.line'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="min_line_cpo_width">15</field>
+            <field name="max_line_cpo_width">30</field>
+            <field name="price_type">msize</field>
+            <field name="price">0</field>
+            <field name="price_class">%</field>
+        </record>
+
+        <!--孔径-->
+        <record id='cpo_it_pcb_other_1_hole' model='pcb.quotation.pricelist.other.hole'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="min_hole">6</field>
+            <field name="max_hole">8</field>
+            <field name="price_type">msize</field>
+            <field name="price">10</field>
+            <field name="price_class">%</field>
+        </record>
+        <record id='cpo_it_pcb_other_1_hole_2' model='pcb.quotation.pricelist.other.hole'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="min_hole">6</field>
+            <field name="max_hole">6</field>
+            <field name="price_type">msize</field>
+            <field name="price">32</field>
+            <field name="price_class">%</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_1_hole_3' model='pcb.quotation.pricelist.other.hole'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="min_hole">8</field>
+            <field name="max_hole">10</field>
+            <field name="price_type">msize</field>
+            <field name="price">5</field>
+            <field name="price_class">%</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_1_hole_4' model='pcb.quotation.pricelist.other.hole'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="min_hole">10</field>
+            <field name="max_hole">60</field>
+            <field name="price_type">msize</field>
+            <field name="price">0</field>
+            <field name="price_class">%</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_1_copper' model='pcb.quotation.pricelist.other.hole.copper'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="hole_copper_thick">0</field>
+            <field name="hole_copper_thick1">20</field>
+            <field name="hole_copper_fee">0</field>
+            <field name="hole_copper_type">msize</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_1_copper_2' model='pcb.quotation.pricelist.other.hole.copper'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="hole_copper_thick">20</field>
+            <field name="hole_copper_thick1">35</field>
+            <field name="hole_copper_fee">10</field>
+            <field name="hole_copper_type">msize</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_1_copper_4' model='pcb.quotation.pricelist.other.hole.copper'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="hole_copper_thick">35</field>
+            <field name="hole_copper_thick1">70</field>
+            <field name="hole_copper_fee">20</field>
+            <field name="hole_copper_type">msize</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_1_copper_3' model='pcb.quotation.pricelist.other.hole.copper'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="hole_copper_thick">70</field>
+            <field name="hole_copper_thick1">71</field>
+            <field name="hole_copper_fee">40</field>
+            <field name="hole_copper_type">msize</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_1_Acceptance_Criteria_1' model='pcb.quotation.pricelist.acceptance.criteria'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="acceptance_criteria_id" ref="cam.Acceptance_Criteria_II"/>
+            <field name="price">0</field>
+            <field name="price_class">%</field>
+            <field name="acceptance_criteria_type">msize</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_1_Acceptance_Criteria_2' model='pcb.quotation.pricelist.acceptance.criteria'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_1"/>
+            <field name="acceptance_criteria_id" ref="cam.Acceptance_Criteria_III"/>
+            <field name="price">50</field>
+            <field name="price_class">%</field>
+            <field name="acceptance_criteria_type">msize</field>
+        </record>
+
+        <!--其他类 1-10平米 控制线宽线距 孔径 孔铜 验收标准-->
+        <record id='cpo_it_pcb_other_2' model='pcb.quotation.pricelist.other'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='min_size'>1</field>
+            <field name='max_size'>10</field>
+            <field name='other_line_ids'/>
+            <field name='other_hole_ids'/>
+        </record>
+        <!--线宽线距-->
+        <record id='cpo_it_pcb_other_2_line' model='pcb.quotation.pricelist.other.line'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="min_line_cpo_width">3</field>
+            <field name="max_line_cpo_width">3.6</field>
+            <field name="price_type">msize</field>
+            <field name="price">10</field>
+            <field name="price_class">%</field>
+        </record>
+        <record id='cpo_it_pcb_other_2_line_2' model='pcb.quotation.pricelist.other.line'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="min_line_cpo_width">3.6</field>
+            <field name="max_line_cpo_width">4</field>
+            <field name="price_type">msize</field>
+            <field name="price">5</field>
+            <field name="price_class">%</field>
+        </record>
+        <record id='cpo_it_pcb_other_2_line_3' model='pcb.quotation.pricelist.other.line'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="min_line_cpo_width">4</field>
+            <field name="max_line_cpo_width">15</field>
+            <field name="price_type">msize</field>
+            <field name="price">0</field>
+            <field name="price_class">%</field>
+        </record>
+        <record id='cpo_it_pcb_other_2_line_4' model='pcb.quotation.pricelist.other.line'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="min_line_cpo_width">15</field>
+            <field name="max_line_cpo_width">30</field>
+            <field name="price_type">msize</field>
+            <field name="price">0</field>
+            <field name="price_class">%</field>
+        </record>
+
+        <!--孔径-->
+        <record id='cpo_it_pcb_other_2_hole' model='pcb.quotation.pricelist.other.hole'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="min_hole">6</field>
+            <field name="max_hole">8</field>
+            <field name="price_type">msize</field>
+            <field name="price">10</field>
+            <field name="price_class">%</field>
+        </record>
+        <record id='cpo_it_pcb_other_2_hole_2' model='pcb.quotation.pricelist.other.hole'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="min_hole">6</field>
+            <field name="max_hole">6</field>
+            <field name="price_type">msize</field>
+            <field name="price">32</field>
+            <field name="price_class">%</field>
+        </record>
+        <record id='cpo_it_pcb_other_2_hole_3' model='pcb.quotation.pricelist.other.hole'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="min_hole">8</field>
+            <field name="max_hole">10</field>
+            <field name="price_type">msize</field>
+            <field name="price">5</field>
+            <field name="price_class">%</field>
+        </record>
+        <record id='cpo_it_pcb_other_2_hole_4' model='pcb.quotation.pricelist.other.hole'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="min_hole">10</field>
+            <field name="max_hole">60</field>
+            <field name="price_type">msize</field>
+            <field name="price">0</field>
+            <field name="price_class">%</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_2_copper' model='pcb.quotation.pricelist.other.hole.copper'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="hole_copper_thick">0</field>
+            <field name="hole_copper_thick1">20</field>
+            <field name="hole_copper_fee">0</field>
+            <field name="hole_copper_type">msize</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_2_copper_2' model='pcb.quotation.pricelist.other.hole.copper'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="hole_copper_thick">20</field>
+            <field name="hole_copper_thick1">35</field>
+            <field name="hole_copper_fee">10</field>
+            <field name="hole_copper_type">msize</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_2_copper_4' model='pcb.quotation.pricelist.other.hole.copper'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="hole_copper_thick">35</field>
+            <field name="hole_copper_thick1">70</field>
+            <field name="hole_copper_fee">20</field>
+            <field name="hole_copper_type">msize</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_2_copper_3' model='pcb.quotation.pricelist.other.hole.copper'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="hole_copper_thick">70</field>
+            <field name="hole_copper_thick1">71</field>
+            <field name="hole_copper_fee">40</field>
+            <field name="hole_copper_type">msize</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_2_Acceptance_Criteria_2' model='pcb.quotation.pricelist.acceptance.criteria'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="acceptance_criteria_id" ref="cam.Acceptance_Criteria_III"/>
+            <field name="price">30</field>
+            <field name="price_class">%</field>
+            <field name="acceptance_criteria_type">msize</field>
+        </record>
+
+        <record id='cpo_it_pcb_other_2_Acceptance_Criteria_1' model='pcb.quotation.pricelist.acceptance.criteria'>
+            <field name="price_other_fee_id" ref="cpo_it_pcb.cpo_it_pcb_other_2"/>
+            <field name="acceptance_criteria_id" ref="cam.Acceptance_Criteria_II"/>
+            <field name="price">0</field>
+            <field name="price_class">%</field>
+            <field name="acceptance_criteria_type">msize</field>
+        </record>
+
+        <!--测试架的数据-->
+        <record id='cpo_it_pcb_test_tooling1' model='pcb.quotation.pricelist.tooling'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='min_test_points'>0</field>
+            <field name='max_test_points'>500</field>
+            <field name='price_type'>point</field>
+            <field name='price'>0</field>
+        </record>
+
+        <record id='cpo_it_pcb_test_tooling2' model='pcb.quotation.pricelist.tooling'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='min_test_points'>500</field>
+            <field name='max_test_points'>1000</field>
+            <field name='price_type'>point</field>
+            <field name='price'>0.2</field>
+        </record>
+
+        <record id='cpo_it_pcb_test_tooling3' model='pcb.quotation.pricelist.tooling'>
+            <field name="price_version_id" ref="cpo_it_pcb.cpo_it_pcb_currency_002_test"/>
+            <field name='min_test_points'>1000</field>
+            <field name='max_test_points'>1500</field>
+            <field name='price_type'>point</field>
+            <field name='price'>0.4</field>
+        </record>
+
+        <!--钢网 独立报价的-->
+        <record id='laser_steel_mesh_price_1' model='laser.steel.mesh.price'>
+            <field name='name'>0-10 Quantity</field>
+            <field name='quantity_1'>0</field>
+            <field name='quantity_2'>10</field>
+            <field name='cpo_delivery'>72</field>
+            <field name='cpo_price'>100</field>
+            <field name='cpo_weight'>2.5</field>
+            <field name='steel_size_id' ref="cam.steel_mesh_size_1"/>
+            <field name='steel_thickness_id' eval="[(6,0,[ref('cam.steel_mesh_thickness_1'),ref('cam.steel_mesh_thickness_2'),
+                   ref('cam.steel_mesh_thickness_3'),ref('cam.steel_mesh_thickness_4')])]"/>
+        </record>
+        <record id='laser_steel_mesh_price_2' model='laser.steel.mesh.price'>
+            <field name='name'>0-10 Quantity</field>
+            <field name='quantity_1'>0</field>
+            <field name='quantity_2'>10</field>
+            <field name='cpo_delivery'>72</field>
+            <field name='cpo_price'>120</field>
+            <field name='cpo_weight'>2.8</field>
+            <field name='steel_size_id' ref="cam.steel_mesh_size_2"/>
+            <field name='steel_thickness_id' eval="[(6,0,[ref('cam.steel_mesh_thickness_1'),ref('cam.steel_mesh_thickness_2'),
+                   ref('cam.steel_mesh_thickness_3'),ref('cam.steel_mesh_thickness_4')])]"/>
+        </record>
+        <record id='laser_steel_mesh_price_3' model='laser.steel.mesh.price'>
+            <field name='name'>0-10 Quantity</field>
+            <field name='quantity_1'>0</field>
+            <field name='quantity_2'>10</field>
+            <field name='cpo_delivery'>72</field>
+            <field name='cpo_price'>130</field>
+            <field name='cpo_weight'>3</field>
+            <field name='steel_size_id' ref="cam.steel_mesh_size_3"/>
+            <field name='steel_thickness_id' eval="[(6,0,[ref('cam.steel_mesh_thickness_1'),ref('cam.steel_mesh_thickness_2'),
+                   ref('cam.steel_mesh_thickness_3'),ref('cam.steel_mesh_thickness_4')])]"/>
+        </record>
+        <record id='laser_steel_mesh_price_4' model='laser.steel.mesh.price'>
+            <field name='name'>0-10 Quantity</field>
+            <field name='quantity_1'>0</field>
+            <field name='quantity_2'>10</field>
+            <field name='cpo_delivery'>72</field>
+            <field name='cpo_price'>160</field>
+            <field name='cpo_weight'>4.2</field>
+            <field name='steel_size_id' ref="cam.steel_mesh_size_4"/>
+            <field name='steel_thickness_id' eval="[(6,0,[ref('cam.steel_mesh_thickness_1'),ref('cam.steel_mesh_thickness_2'),
+                   ref('cam.steel_mesh_thickness_3'),ref('cam.steel_mesh_thickness_4')])]"/>
+        </record>
+        <record id='laser_steel_mesh_price_5' model='laser.steel.mesh.price'>
+            <field name='name'>0-10 Quantity</field>
+            <field name='quantity_1'>0</field>
+            <field name='quantity_2'>10</field>
+            <field name='cpo_delivery'>72</field>
+            <field name='cpo_price'>160</field>
+            <field name='cpo_weight'>4.5</field>
+            <field name='steel_size_id' ref="cam.steel_mesh_size_5"/>
+            <field name='steel_thickness_id' eval="[(6,0,[ref('cam.steel_mesh_thickness_1'),ref('cam.steel_mesh_thickness_2'),
+                   ref('cam.steel_mesh_thickness_3'),ref('cam.steel_mesh_thickness_4')])]"/>
+        </record>
+        <record id='laser_steel_mesh_price_6' model='laser.steel.mesh.price'>
+            <field name='name'>0-10 Quantity</field>
+            <field name='quantity_1'>0</field>
+            <field name='quantity_2'>10</field>
+            <field name='cpo_delivery'>72</field>
+            <field name='cpo_price'>200</field>
+            <field name='cpo_weight'>6</field>
+            <field name='steel_size_id' ref="cam.steel_mesh_size_6"/>
+            <field name='steel_thickness_id' eval="[(6,0,[ref('cam.steel_mesh_thickness_1'),ref('cam.steel_mesh_thickness_2'),
+                   ref('cam.steel_mesh_thickness_3'),ref('cam.steel_mesh_thickness_4')])]"/>
+        </record>
+
+        <!--金手指-->
+        <record id="cpo_it_pcb_currency_002_test" model="pcb.quotation.pricelist.version">
+            <field name="pricelist_id" ref='cpo_it_pcb.cpo_it_pcb_currency_001_test'/>
+            <field name='gold_finger_id'/>
+            <field name="with_frame_ids"/>
+        </record>
+
+        <record id="steel_mesh_1" model="pcb.quotation.pricelist.other.steel.mesh">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="type_steel_mesh">No</field>
+            <field name="cpo_frame_fee">0</field>
+            <field name="cpo_frame_kg">0</field>
+        </record>
+
+        <record id="steel_mesh_2" model="pcb.quotation.pricelist.other.steel.mesh">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="type_steel_mesh">Without_Frame</field>
+            <field name="cpo_frame_fee">80</field>
+            <field name="cpo_frame_kg">1</field>
+        </record>
+
+        <record id="steel_mesh_3" model="pcb.quotation.pricelist.other.steel.mesh">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="type_steel_mesh">With_Frame</field>
+            <field name="cpo_frame_fee">100</field>
+            <field name="cpo_frame_kg">2.5</field>
+        </record>
+
+        <!--3.0μ"-->
+        <record id="gold_finger_3u" model="pcb.quotation.pricelist.gold.finger">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="cpo_gold_finger_number_id"/>
+            <field name="name">3.0μ"</field>
+            <field name="cpo_gold_finger_thickness">3</field>
+            <field name="cpo_gold_finger_fee">0.1700</field>
+        </record>
+
+        <record id="gold_finger_Number_3_1" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_1branch"/>
+            <field name="cpo_gold_finger_fee">0.1700</field>
+        </record>
+
+        <record id="gold_finger_Number_3_2" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_2branch"/>
+            <field name="cpo_gold_finger_fee">0.2013</field>
+        </record>
+
+        <record id="gold_finger_Number_3_3" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_3branch"/>
+            <field name="cpo_gold_finger_fee">0.2345</field>
+        </record>
+
+        <record id="gold_finger_Number_3_4" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_4branch"/>
+            <field name="cpo_gold_finger_fee">0.2658</field>
+        </record>
+
+        <record id="gold_finger_Number_3_5" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_5branch"/>
+            <field name="cpo_gold_finger_fee">0.2756</field>
+        </record>
+
+        <record id="gold_finger_Number_3_6" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_6branch"/>
+            <field name="cpo_gold_finger_fee">0.3069</field>
+        </record>
+
+        <record id="gold_finger_Number_3_7" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_7branch"/>
+            <field name="cpo_gold_finger_fee">0.3499</field>
+        </record>
+
+        <record id="gold_finger_Number_3_8" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_8branch"/>
+            <field name="cpo_gold_finger_fee">0.3812</field>
+        </record>
+
+        <record id="gold_finger_Number_3_9" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_9branch"/>
+            <field name="cpo_gold_finger_fee">0.4105</field>
+        </record>
+
+        <record id="gold_finger_Number_3_10" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_10branch"/>
+            <field name="cpo_gold_finger_fee">0.4398</field>
+        </record>
+
+        <record id="gold_finger_Number_3_11" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_11branch"/>
+            <field name="cpo_gold_finger_fee">0.4711</field>
+        </record>
+
+        <record id="gold_finger_Number_3_12" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_12branch"/>
+            <field name="cpo_gold_finger_fee">0.5004</field>
+        </record>
+
+        <record id="gold_finger_Number_3_13" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_13branch"/>
+            <field name="cpo_gold_finger_fee">0.5317</field>
+        </record>
+
+        <record id="gold_finger_Number_3_14" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_14branch"/>
+            <field name="cpo_gold_finger_fee">0.5610</field>
+        </record>
+
+        <record id="gold_finger_Number_3_15" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_3u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_15branch"/>
+            <field name="cpo_gold_finger_fee">0.5903</field>
+        </record>
+
+        <!--5.0μ"-->
+        <record id="gold_finger_5u" model="pcb.quotation.pricelist.gold.finger">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="cpo_gold_finger_number_id"/>
+            <field name="name">5.0μ"</field>
+            <field name="cpo_gold_finger_thickness">5</field>
+            <field name="cpo_gold_finger_fee">0.2169</field>
+        </record>
+
+        <record id="gold_finger_Number_5_1" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_1branch"/>
+            <field name="cpo_gold_finger_fee">0.2169</field>
+        </record>
+
+        <record id="gold_finger_Number_5_2" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_2branch"/>
+            <field name="cpo_gold_finger_fee">0.2463</field>
+        </record>
+
+        <record id="gold_finger_Number_5_3" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_3branch"/>
+            <field name="cpo_gold_finger_fee">0.2756</field>
+        </record>
+
+        <record id="gold_finger_Number_5_4" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_4branch"/>
+            <field name="cpo_gold_finger_fee">0.3069</field>
+        </record>
+
+        <record id="gold_finger_Number_5_5" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_5branch"/>
+            <field name="cpo_gold_finger_fee">0.3636</field>
+        </record>
+
+        <record id="gold_finger_Number_5_6" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_6branch"/>
+            <field name="cpo_gold_finger_fee">0.3987</field>
+        </record>
+
+        <record id="gold_finger_Number_5_7" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_7branch"/>
+            <field name="cpo_gold_finger_fee">0.4320</field>
+        </record>
+
+        <record id="gold_finger_Number_5_8" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_8branch"/>
+            <field name="cpo_gold_finger_fee">0.4378</field>
+        </record>
+
+        <record id="gold_finger_Number_5_9" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_9branch"/>
+            <field name="cpo_gold_finger_fee">0.5082</field>
+        </record>
+
+        <record id="gold_finger_Number_5_10" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_10branch"/>
+            <field name="cpo_gold_finger_fee">0.5454</field>
+        </record>
+
+        <record id="gold_finger_Number_5_11" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_11branch"/>
+            <field name="cpo_gold_finger_fee">0.5806</field>
+        </record>
+
+        <record id="gold_finger_Number_5_12" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_12branch"/>
+            <field name="cpo_gold_finger_fee">0.6157</field>
+        </record>
+
+        <record id="gold_finger_Number_5_13" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_13branch"/>
+            <field name="cpo_gold_finger_fee">0.6509</field>
+        </record>
+
+        <record id="gold_finger_Number_5_14" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_14branch"/>
+            <field name="cpo_gold_finger_fee">0.7057</field>
+        </record>
+
+        <record id="gold_finger_Number_5_15" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_5u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_15branch"/>
+            <field name="cpo_gold_finger_fee">0.7233</field>
+        </record>
+
+        <!--10.0μ"-->
+        <record id="gold_finger_10u" model="pcb.quotation.pricelist.gold.finger">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="cpo_gold_finger_number_id"/>
+            <field name="name">10.0μ"</field>
+            <field name="cpo_gold_finger_thickness">10</field>
+            <field name="cpo_gold_finger_fee">0.2932</field>
+        </record>
+
+        <record id="gold_finger_Number_10_1" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_1branch"/>
+            <field name="cpo_gold_finger_fee">0.2932</field>
+        </record>
+
+        <record id="gold_finger_Number_10_2" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_2branch"/>
+            <field name="cpo_gold_finger_fee">0.3460</field>
+        </record>
+
+        <record id="gold_finger_Number_10_3" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_3branch"/>
+            <field name="cpo_gold_finger_fee">0.3987</field>
+        </record>
+
+        <record id="gold_finger_Number_10_4" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_4branch"/>
+            <field name="cpo_gold_finger_fee">0.4515</field>
+        </record>
+
+        <record id="gold_finger_Number_10_5" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_5branch"/>
+            <field name="cpo_gold_finger_fee">0.5082</field>
+        </record>
+
+        <record id="gold_finger_Number_10_6" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_6branch"/>
+            <field name="cpo_gold_finger_fee">0.5590</field>
+        </record>
+
+        <record id="gold_finger_Number_10_7" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_7branch"/>
+            <field name="cpo_gold_finger_fee">0.6177</field>
+        </record>
+
+        <record id="gold_finger_Number_10_8" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_8branch"/>
+            <field name="cpo_gold_finger_fee">0.6998</field>
+        </record>
+
+        <record id="gold_finger_Number_10_9" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_9branch"/>
+            <field name="cpo_gold_finger_fee">0.7839</field>
+        </record>
+
+        <record id="gold_finger_Number_10_10" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_10branch"/>
+            <field name="cpo_gold_finger_fee">0.8679</field>
+        </record>
+
+        <record id="gold_finger_Number_10_11" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_11branch"/>
+            <field name="cpo_gold_finger_fee">0.9520</field>
+        </record>
+
+        <record id="gold_finger_Number_10_12" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_12branch"/>
+            <field name="cpo_gold_finger_fee">1.0360</field>
+        </record>
+
+        <record id="gold_finger_Number_10_13" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_13branch"/>
+            <field name="cpo_gold_finger_fee">1.1181</field>
+        </record>
+
+        <record id="gold_finger_Number_10_14" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_14branch"/>
+            <field name="cpo_gold_finger_fee">1.2061</field>
+        </record>
+
+        <record id="gold_finger_Number_10_15" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_10u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_15branch"/>
+            <field name="cpo_gold_finger_fee">1.2902</field>
+        </record>
+
+        <!--15.0μ"-->
+        <record id="gold_finger_15u" model="pcb.quotation.pricelist.gold.finger">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="cpo_gold_finger_number_id"/>
+            <field name="name">15.0μ"</field>
+            <field name="cpo_gold_finger_thickness">15</field>
+            <field name="cpo_gold_finger_fee">0.4046</field>
+        </record>
+
+        <record id="gold_finger_Number_15_1" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_1branch"/>
+            <field name="cpo_gold_finger_fee">0.4046</field>
+        </record>
+
+        <record id="gold_finger_Number_15_2" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_2branch"/>
+            <field name="cpo_gold_finger_fee">0.4828</field>
+        </record>
+
+        <record id="gold_finger_Number_15_3" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_3branch"/>
+            <field name="cpo_gold_finger_fee">0.5610</field>
+        </record>
+
+        <record id="gold_finger_Number_15_4" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_4branch"/>
+            <field name="cpo_gold_finger_fee">0.6392</field>
+        </record>
+
+        <record id="gold_finger_Number_15_5" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_5branch"/>
+            <field name="cpo_gold_finger_fee">0.7096</field>
+        </record>
+
+        <record id="gold_finger_Number_15_6" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_6branch"/>
+            <field name="cpo_gold_finger_fee">0.7878</field>
+        </record>
+
+        <record id="gold_finger_Number_15_7" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_7branch"/>
+            <field name="cpo_gold_finger_fee">0.8894</field>
+        </record>
+
+        <record id="gold_finger_Number_15_8" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_8branch"/>
+            <field name="cpo_gold_finger_fee">1.0165</field>
+        </record>
+
+        <record id="gold_finger_Number_15_9" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_9branch"/>
+            <field name="cpo_gold_finger_fee">1.1416</field>
+        </record>
+
+        <record id="gold_finger_Number_15_10" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_10branch"/>
+            <field name="cpo_gold_finger_fee">1.2667</field>
+        </record>
+
+        <record id="gold_finger_Number_15_11" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_11branch"/>
+            <field name="cpo_gold_finger_fee">1.3918</field>
+        </record>
+
+        <record id="gold_finger_Number_15_12" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_12branch"/>
+            <field name="cpo_gold_finger_fee">1.5189</field>
+        </record>
+
+        <record id="gold_finger_Number_15_13" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_13branch"/>
+            <field name="cpo_gold_finger_fee">1.6596</field>
+        </record>
+
+        <record id="gold_finger_Number_15_14" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_14branch"/>
+            <field name="cpo_gold_finger_fee">1.7691</field>
+        </record>
+
+        <record id="gold_finger_Number_15_15" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_15u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_15branch"/>
+            <field name="cpo_gold_finger_fee">1.8981</field>
+        </record>
+
+
+        <!--20.0μ"-->
+        <record id="gold_finger_20u" model="pcb.quotation.pricelist.gold.finger">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="cpo_gold_finger_number_id"/>
+            <field name="name">20.0μ"</field>
+            <field name="cpo_gold_finger_thickness">20</field>
+            <field name="cpo_gold_finger_fee">0.5512</field>
+        </record>
+
+        <record id="gold_finger_Number_20_1" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_1branch"/>
+            <field name="cpo_gold_finger_fee">0.5512</field>
+        </record>
+
+        <record id="gold_finger_Number_20_2" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_2branch"/>
+            <field name="cpo_gold_finger_fee">0.6490</field>
+        </record>
+
+        <record id="gold_finger_Number_20_3" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_3branch"/>
+            <field name="cpo_gold_finger_fee">0.7467</field>
+        </record>
+
+        <record id="gold_finger_Number_20_4" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_4branch"/>
+            <field name="cpo_gold_finger_fee">0.8445</field>
+        </record>
+
+        <record id="gold_finger_Number_20_5" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_5branch"/>
+            <field name="cpo_gold_finger_fee">0.9461</field>
+        </record>
+
+        <record id="gold_finger_Number_20_6" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_6branch"/>
+            <field name="cpo_gold_finger_fee">1.0458</field>
+        </record>
+
+        <record id="gold_finger_Number_20_7" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_7branch"/>
+            <field name="cpo_gold_finger_fee">1.1944</field>
+        </record>
+
+        <record id="gold_finger_Number_20_8" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_8branch"/>
+            <field name="cpo_gold_finger_fee">1.3703</field>
+        </record>
+
+        <record id="gold_finger_Number_20_9" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_9branch"/>
+            <field name="cpo_gold_finger_fee">1.5424</field>
+        </record>
+
+        <record id="gold_finger_Number_20_10" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_10branch"/>
+            <field name="cpo_gold_finger_fee">1.7144</field>
+        </record>
+
+        <record id="gold_finger_Number_20_11" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_11branch"/>
+            <field name="cpo_gold_finger_fee">1.8884</field>
+        </record>
+
+        <record id="gold_finger_Number_20_12" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_12branch"/>
+            <field name="cpo_gold_finger_fee">2.0604</field>
+        </record>
+
+        <record id="gold_finger_Number_20_13" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_13branch"/>
+            <field name="cpo_gold_finger_fee">2.2324</field>
+        </record>
+
+        <record id="gold_finger_Number_20_14" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_14branch"/>
+            <field name="cpo_gold_finger_fee">2.4045</field>
+        </record>
+
+        <record id="gold_finger_Number_20_15" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_20u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_15branch"/>
+            <field name="cpo_gold_finger_fee">2.5804</field>
+        </record>
+
+        <!--25.0μ"-->
+        <record id="gold_finger_25u" model="pcb.quotation.pricelist.gold.finger">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="cpo_gold_finger_number_id"/>
+            <field name="name">25.0μ"</field>
+            <field name="cpo_gold_finger_thickness">25</field>
+            <field name="cpo_gold_finger_fee">0.6803</field>
+        </record>
+
+        <record id="gold_finger_Number_25_1" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_1branch"/>
+            <field name="cpo_gold_finger_fee">0.6803</field>
+        </record>
+
+        <record id="gold_finger_Number_25_2" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_2branch"/>
+            <field name="cpo_gold_finger_fee">0.8034</field>
+        </record>
+
+        <record id="gold_finger_Number_25_3" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_3branch"/>
+            <field name="cpo_gold_finger_fee">0.9285</field>
+        </record>
+
+        <record id="gold_finger_Number_25_4" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_4branch"/>
+            <field name="cpo_gold_finger_fee">1.0517</field>
+        </record>
+
+        <record id="gold_finger_Number_25_5" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_5branch"/>
+            <field name="cpo_gold_finger_fee">1.1807</field>
+        </record>
+
+        <record id="gold_finger_Number_25_6" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_6branch"/>
+            <field name="cpo_gold_finger_fee">1.3039</field>
+        </record>
+
+        <record id="gold_finger_Number_25_7" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_7branch"/>
+            <field name="cpo_gold_finger_fee">1.4759</field>
+        </record>
+
+        <record id="gold_finger_Number_25_8" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_8branch"/>
+            <field name="cpo_gold_finger_fee">1.6929</field>
+        </record>
+
+        <record id="gold_finger_Number_25_9" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_9branch"/>
+            <field name="cpo_gold_finger_fee">1.9099</field>
+        </record>
+
+        <record id="gold_finger_Number_25_10" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_10branch"/>
+            <field name="cpo_gold_finger_fee">2.1269</field>
+        </record>
+
+        <record id="gold_finger_Number_25_11" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_11branch"/>
+            <field name="cpo_gold_finger_fee">2.3419</field>
+        </record>
+
+        <record id="gold_finger_Number_25_12" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_12branch"/>
+            <field name="cpo_gold_finger_fee">2.5569</field>
+        </record>
+
+        <record id="gold_finger_Number_25_13" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_13branch"/>
+            <field name="cpo_gold_finger_fee">2.7720</field>
+        </record>
+
+        <record id="gold_finger_Number_25_14" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_14branch"/>
+            <field name="cpo_gold_finger_fee">2.9870</field>
+        </record>
+
+        <record id="gold_finger_Number_25_15" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_25u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_15branch"/>
+            <field name="cpo_gold_finger_fee">3.2040</field>
+        </record>
+
+        <!--30.0μ"-->
+        <record id="gold_finger_30u" model="pcb.quotation.pricelist.gold.finger">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="cpo_gold_finger_number_id"/>
+            <field name="name">30.0μ"</field>
+            <field name="cpo_gold_finger_thickness">30</field>
+            <field name="cpo_gold_finger_fee">0.7584</field>
+        </record>
+
+        <record id="gold_finger_Number_30_1" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_1branch"/>
+            <field name="cpo_gold_finger_fee">0.7584</field>
+        </record>
+
+        <record id="gold_finger_Number_30_2" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_2branch"/>
+            <field name="cpo_gold_finger_fee">0.9285</field>
+        </record>
+
+        <record id="gold_finger_Number_30_3" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_3branch"/>
+            <field name="cpo_gold_finger_fee">1.0966</field>
+        </record>
+
+        <record id="gold_finger_Number_30_4" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_4branch"/>
+            <field name="cpo_gold_finger_fee">1.2667</field>
+        </record>
+
+        <record id="gold_finger_Number_30_5" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_5branch"/>
+            <field name="cpo_gold_finger_fee">1.4309</field>
+        </record>
+
+        <record id="gold_finger_Number_30_6" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_6branch"/>
+            <field name="cpo_gold_finger_fee">1.5951</field>
+        </record>
+
+        <record id="gold_finger_Number_30_7" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_7branch"/>
+            <field name="cpo_gold_finger_fee">1.8434</field>
+        </record>
+
+        <record id="gold_finger_Number_30_8" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_8branch"/>
+            <field name="cpo_gold_finger_fee">2.1151</field>
+        </record>
+
+        <record id="gold_finger_Number_30_9" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_9branch"/>
+            <field name="cpo_gold_finger_fee">2.3869</field>
+        </record>
+
+        <record id="gold_finger_Number_30_10" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_10branch"/>
+            <field name="cpo_gold_finger_fee">2.6606</field>
+        </record>
+
+        <record id="gold_finger_Number_30_11" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_11branch"/>
+            <field name="cpo_gold_finger_fee">2.9323</field>
+        </record>
+
+        <record id="gold_finger_Number_30_12" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_12branch"/>
+            <field name="cpo_gold_finger_fee">3.2040</field>
+        </record>
+
+        <record id="gold_finger_Number_30_13" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_13branch"/>
+            <field name="cpo_gold_finger_fee">3.4757</field>
+        </record>
+
+        <record id="gold_finger_Number_30_14" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_14branch"/>
+            <field name="cpo_gold_finger_fee">3.7494</field>
+        </record>
+
+        <record id="gold_finger_Number_30_15" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_30u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_15branch"/>
+            <field name="cpo_gold_finger_fee">4.0212</field>
+        </record>
+
+        <!--35.0μ"-->
+        <record id="gold_finger_35u" model="pcb.quotation.pricelist.gold.finger">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="cpo_gold_finger_number_id"/>
+            <field name="name">35.0μ"</field>
+            <field name="cpo_gold_finger_thickness">35</field>
+            <field name="cpo_gold_finger_fee">0.9148</field>
+        </record>
+
+        <record id="gold_finger_Number_35_1" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_1branch"/>
+            <field name="cpo_gold_finger_fee">0.9148</field>
+        </record>
+
+        <record id="gold_finger_Number_35_2" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_2branch"/>
+            <field name="cpo_gold_finger_fee">1.1123</field>
+        </record>
+
+        <record id="gold_finger_Number_35_3" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_3branch"/>
+            <field name="cpo_gold_finger_fee">1.3078</field>
+        </record>
+
+        <record id="gold_finger_Number_35_4" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_4branch"/>
+            <field name="cpo_gold_finger_fee">1.5052</field>
+        </record>
+
+        <record id="gold_finger_Number_35_5" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_5branch"/>
+            <field name="cpo_gold_finger_fee">1.7281</field>
+        </record>
+
+        <record id="gold_finger_Number_35_6" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_6branch"/>
+            <field name="cpo_gold_finger_fee">1.9353</field>
+        </record>
+
+        <record id="gold_finger_Number_35_7" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_7branch"/>
+            <field name="cpo_gold_finger_fee">2.2637</field>
+        </record>
+
+        <record id="gold_finger_Number_35_8" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_8branch"/>
+            <field name="cpo_gold_finger_fee">2.5863</field>
+        </record>
+
+        <record id="gold_finger_Number_35_9" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_9branch"/>
+            <field name="cpo_gold_finger_fee">2.9147</field>
+        </record>
+
+        <record id="gold_finger_Number_35_10" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_10branch"/>
+            <field name="cpo_gold_finger_fee">3.2451</field>
+        </record>
+
+        <record id="gold_finger_Number_35_11" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_11branch"/>
+            <field name="cpo_gold_finger_fee">3.5735</field>
+        </record>
+
+        <record id="gold_finger_Number_35_12" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_12branch"/>
+            <field name="cpo_gold_finger_fee">3.9000</field>
+        </record>
+
+        <record id="gold_finger_Number_35_13" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_13branch"/>
+            <field name="cpo_gold_finger_fee">4.2303</field>
+        </record>
+
+        <record id="gold_finger_Number_35_14" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_14branch"/>
+            <field name="cpo_gold_finger_fee">4.5587</field>
+        </record>
+
+        <record id="gold_finger_Number_35_15" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_35u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_15branch"/>
+            <field name="cpo_gold_finger_fee">4.8911</field>
+        </record>
+
+        <!--40.0μ"-->
+        <record id="gold_finger_40u" model="pcb.quotation.pricelist.gold.finger">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="cpo_gold_finger_number_id"/>
+            <field name="name">40.0μ"</field>
+            <field name="cpo_gold_finger_thickness">40</field>
+            <field name="cpo_gold_finger_fee">1.0732</field>
+        </record>
+
+        <record id="gold_finger_Number_40_1" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_1branch"/>
+            <field name="cpo_gold_finger_fee">1.0732</field>
+        </record>
+
+        <record id="gold_finger_Number_40_2" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_2branch"/>
+            <field name="cpo_gold_finger_fee">1.2960</field>
+        </record>
+
+        <record id="gold_finger_Number_40_3" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_3branch"/>
+            <field name="cpo_gold_finger_fee">1.5189</field>
+        </record>
+
+        <record id="gold_finger_Number_40_4" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_4branch"/>
+            <field name="cpo_gold_finger_fee">1.7418</field>
+        </record>
+
+        <record id="gold_finger_Number_40_5" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_5branch"/>
+            <field name="cpo_gold_finger_fee">2.0272</field>
+        </record>
+
+        <record id="gold_finger_Number_40_6" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_6branch"/>
+            <field name="cpo_gold_finger_fee">2.2754</field>
+        </record>
+
+        <record id="gold_finger_Number_40_7" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_7branch"/>
+            <field name="cpo_gold_finger_fee">2.6821</field>
+        </record>
+
+        <record id="gold_finger_Number_40_8" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_8branch"/>
+            <field name="cpo_gold_finger_fee">3.0593</field>
+        </record>
+
+        <record id="gold_finger_Number_40_9" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_9branch"/>
+            <field name="cpo_gold_finger_fee">3.4425</field>
+        </record>
+
+        <record id="gold_finger_Number_40_10" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_10branch"/>
+            <field name="cpo_gold_finger_fee">3.8315</field>
+        </record>
+
+        <record id="gold_finger_Number_40_11" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_11branch"/>
+            <field name="cpo_gold_finger_fee">4.2147</field>
+        </record>
+
+        <record id="gold_finger_Number_40_12" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_12branch"/>
+            <field name="cpo_gold_finger_fee">4.5978</field>
+        </record>
+
+        <record id="gold_finger_Number_40_13" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_13branch"/>
+            <field name="cpo_gold_finger_fee">4.9849</field>
+        </record>
+
+        <record id="gold_finger_Number_40_14" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_14branch"/>
+            <field name="cpo_gold_finger_fee">5.3700</field>
+        </record>
+
+        <record id="gold_finger_Number_40_15" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_40u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_15branch"/>
+            <field name="cpo_gold_finger_fee">5.7511</field>
+        </record>
+
+        <!--45.0μ"-->
+        <record id="gold_finger_45u" model="pcb.quotation.pricelist.gold.finger">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="cpo_gold_finger_number_id"/>
+            <field name="name">45.0μ"</field>
+            <field name="cpo_gold_finger_thickness">45</field>
+            <field name="cpo_gold_finger_fee">1.2843</field>
+        </record>
+
+        <record id="gold_finger_Number_45_1" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_1branch"/>
+            <field name="cpo_gold_finger_fee">1.2843</field>
+        </record>
+
+        <record id="gold_finger_Number_45_2" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_2branch"/>
+            <field name="cpo_gold_finger_fee">1.5463</field>
+        </record>
+
+        <record id="gold_finger_Number_45_3" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_3branch"/>
+            <field name="cpo_gold_finger_fee">1.8082</field>
+        </record>
+
+        <record id="gold_finger_Number_45_4" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_4branch"/>
+            <field name="cpo_gold_finger_fee">2.0721</field>
+        </record>
+
+        <record id="gold_finger_Number_45_5" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_5branch"/>
+            <field name="cpo_gold_finger_fee">2.4299</field>
+        </record>
+
+        <record id="gold_finger_Number_45_6" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_6branch"/>
+            <field name="cpo_gold_finger_fee">2.7329</field>
+        </record>
+
+        <record id="gold_finger_Number_45_7" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_7branch"/>
+            <field name="cpo_gold_finger_fee">3.2372</field>
+        </record>
+
+        <record id="gold_finger_Number_45_8" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_8branch"/>
+            <field name="cpo_gold_finger_fee">3.6888</field>
+        </record>
+
+        <record id="gold_finger_Number_45_9" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_9branch"/>
+            <field name="cpo_gold_finger_fee">4.1482</field>
+        </record>
+
+        <record id="gold_finger_Number_45_10" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_10branch"/>
+            <field name="cpo_gold_finger_fee">4.6135</field>
+        </record>
+
+        <record id="gold_finger_Number_45_11" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_11branch"/>
+            <field name="cpo_gold_finger_fee">5.0729</field>
+        </record>
+
+        <record id="gold_finger_Number_45_12" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_12branch"/>
+            <field name="cpo_gold_finger_fee">5.5284</field>
+        </record>
+
+        <record id="gold_finger_Number_45_13" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_13branch"/>
+            <field name="cpo_gold_finger_fee">5.9936</field>
+        </record>
+
+        <record id="gold_finger_Number_45_14" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_14branch"/>
+            <field name="cpo_gold_finger_fee">6.4569</field>
+        </record>
+
+        <record id="gold_finger_Number_45_15" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_45u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_15branch"/>
+            <field name="cpo_gold_finger_fee">6.9203</field>
+        </record>
+
+        <!--50.0μ"-->
+        <record id="gold_finger_50u" model="pcb.quotation.pricelist.gold.finger">
+            <field name="price_version_id" ref='cpo_it_pcb.cpo_it_pcb_currency_002_test'/>
+            <field name="cpo_gold_finger_number_id"/>
+            <field name="name">50.0μ"</field>
+            <field name="cpo_gold_finger_thickness">50</field>
+            <field name="cpo_gold_finger_fee">1.7085</field>
+        </record>
+
+        <record id="gold_finger_Number_50_1" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_1branch"/>
+            <field name="cpo_gold_finger_fee">1.7085</field>
+        </record>
+
+        <record id="gold_finger_Number_50_2" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_2branch"/>
+            <field name="cpo_gold_finger_fee">2.1386</field>
+        </record>
+
+        <record id="gold_finger_Number_50_3" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_3branch"/>
+            <field name="cpo_gold_finger_fee">2.3927</field>
+        </record>
+
+        <record id="gold_finger_Number_50_4" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_4branch"/>
+            <field name="cpo_gold_finger_fee">2.7348</field>
+        </record>
+
+        <record id="gold_finger_Number_50_5" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_5branch"/>
+            <field name="cpo_gold_finger_fee">3.2451</field>
+        </record>
+
+        <record id="gold_finger_Number_50_6" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_6branch"/>
+            <field name="cpo_gold_finger_fee">3.6341</field>
+        </record>
+
+        <record id="gold_finger_Number_50_7" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_7branch"/>
+            <field name="cpo_gold_finger_fee">4.3203</field>
+        </record>
+
+        <record id="gold_finger_Number_50_8" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_8branch"/>
+            <field name="cpo_gold_finger_fee">4.9204</field>
+        </record>
+
+        <record id="gold_finger_Number_50_9" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_9branch"/>
+            <field name="cpo_gold_finger_fee">5.5264</field>
+        </record>
+
+        <record id="gold_finger_Number_50_10" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_10branch"/>
+            <field name="cpo_gold_finger_fee">6.1442</field>
+        </record>
+
+        <record id="gold_finger_Number_50_11" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_11branch"/>
+            <field name="cpo_gold_finger_fee">6.7600</field>
+        </record>
+
+        <record id="gold_finger_Number_50_12" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_12branch"/>
+            <field name="cpo_gold_finger_fee">7.3621</field>
+        </record>
+
+        <record id="gold_finger_Number_50_13" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_13branch"/>
+            <field name="cpo_gold_finger_fee">7.9778</field>
+        </record>
+
+        <record id="gold_finger_Number_50_14" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_14branch"/>
+            <field name="cpo_gold_finger_fee">8.5956</field>
+        </record>
+
+        <record id="gold_finger_Number_50_15" model="pcb.quotation.pricelist.gold.finger.number">
+            <field name="cpo_gold_finger_id" ref='cpo_it_pcb.gold_finger_50u'/>
+            <field name="cpo_gold_finger_number" ref="cam.cam_root_number_15branch"/>
+            <field name="cpo_gold_finger_fee">9.2114</field>
+        </record>
+
+    </data>
+</odoo>

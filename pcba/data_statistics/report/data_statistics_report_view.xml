@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <report
+            id="account_data_statistics_report"
+            model="website_cpo_index.cpo_partner_source"
+            string="Advanced version"
+            report_type="qweb-html"
+            name="data_statistics.get_data_statistics_qweb_report"
+            file="get_data_statistics_qweb_report"
+        	/>
+        <template id="get_data_statistics_qweb_report" name="Advanced version report">
+            <t t-call="report.html_container">
+				<t t-call="report.external_layout">
+					<link type="text/css" rel="styleSheet"  href="/data_statistics/static/src/css/data_statistics.css" />
+					<link type="text/css" rel="styleSheet"  href="/data_statistics/static/src/js/data_statistics.js" />
+					<div class="page">
+						<div id="cpo_content">
+							<div class="panel-group" id="accordion">
+								<t t-set="time" t-value="values.get('time')"/>
+
+								<t t-set="pcb_pcba" t-value="values.get('data_dict').get('pcb_pcba')"/>
+								<t t-set="sql_source" t-value="values.get('data_dict').get('sql_source')"/>
+								<t t-set="sql_partner" t-value="values.get('data_dict').get('sql_partner')"/>
+								<!-- PCB and PCBA Begin -->
+								<t t-if="pcb_pcba">
+									<t t-if="pcb_pcba.get('sql_data')">
+									<h3 class="text-center"><t t-esc="pcb_pcba.get('title')"/></h3>
+									<table class="table table_one">
+										<thead>
+											<tr>
+												<th>时间</th>
+												<th>数量（当前时间）</th>
+												<th>总数</th>
+												<th>Proportion</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><t t-esc="time[0]"/> ~ <t t-esc="time[1]"/></td>
+												<td><span class="cpo-font-red"><t t-esc="pcb_pcba.get('tp_data')"/></span></td>
+												<td><t t-esc="pcb_pcba.get('total_data')"/></td>
+												<td><span class="cpo-font-red"><t t-esc="pcb_pcba.get('proportion')"/>%</span></td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse in" data-parent="#accordion" href="#pcb_pcba">
+													PCB and PCBA quote data statistics detailed  <i class="fa fa-angle-double-down"></i>
+												</a>
+											</h4>
+										</div>
+										<div id="pcb_pcba" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<table class="table table_two">
+													<thead>
+														<tr>
+															<th>User Name</th>
+															<th>Country</th>
+															<th>IP</th>
+															<!--<th>Session ID</th>-->
+															<th>Session count</th>
+															<th>Calculation count</th>
+															<th>Comfirm count</th>
+															<th>Cart count</th>
+															<th>Selected count</th>
+															<th>Pending count</th>
+															<th>PCB count</th>
+															<th>PCBA count</th>
+															<th>All count</th>
+														</tr>
+													</thead>
+													<tbody>
+														<t t-foreach="pcb_pcba.get('sql_data')" t-as="sql">
+															<tr>
+																<td>
+																	<t t-if="sql.get('user_name')">
+																		<t t-esc="sql.get('user_name')"/>
+																	</t>
+																	<t t-if="not sql.get('user_name')">
+																		Public user
+																	</t>
+																</td>
+																<td><t t-esc="sql.get('cpo_country')"/></td>
+																<td><t t-esc="sql.get('user_ip')"/></td>
+																<!--<td><t t-esc="sql.get('session_id')"/></td>-->
+																<td><t t-esc="sql.get('session_count')"/></td>
+																<td><t t-esc="int(sql.get('calculation'))"/></td>
+																<td><t t-esc="int(sql.get('comfirm'))"/></td>
+																<td><t t-esc="int(sql.get('cart'))"/></td>
+																<td><t t-esc="int(sql.get('selected'))"/></td>
+																<td><t t-esc="int(sql.get('pending'))"/></td>
+																<td><t t-esc="int(sql.get('count_pcb'))"/></td>
+																<td><t t-esc="int(sql.get('count_pcba'))"/></td>
+																<td><t t-esc="int(sql.get('count_num'))"/></td>
+															</tr>
+														</t>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</t>
+								</t>
+								<!-- PCB and PCBA End -->
+								<!-- Website source Begin -->
+								<t t-if="sql_source">
+									<t t-if="sql_source.get('sql_data')">
+									<h3 class="text-center"><t t-esc="sql_source.get('title')"/></h3>
+									<table class="table table_one">
+										<thead>
+											<tr>
+												<th>时间</th>
+												<th>数量（当前时间）</th>
+												<th>总数</th>
+												<th>Proportion</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><t t-esc="time[0]"/> ~ <t t-esc="time[1]"/></td>
+												<td><span class="cpo-font-red"><t t-esc="sql_source.get('tp_data')"/></span></td>
+												<td><t t-esc="sql_source.get('total_data')"/></td>
+												<td><span class="cpo-font-red"><t t-esc="sql_source.get('proportion')"/>%</span></td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse in" data-parent="#accordion" href="#pcb_pcba">
+													Website visits data statistics detailed  <i class="fa fa-angle-double-down"></i>
+												</a>
+											</h4>
+										</div>
+										<div id="pcb_pcba" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<table class="table table_two">
+													<thead>
+														<tr>
+															<th>User Name</th>
+															<th>Country</th>
+															<!--<th>Session ID</th>-->
+															<th>Session count</th>
+															<th>Visits count</th>
+															<th>IP</th>
+															<th>Customer source</th>
+														</tr>
+													</thead>
+													<tbody>
+														<t t-foreach="sql_source.get('sql_data')" t-as="sql">
+															<tr>
+																<td>
+																	<t t-if="sql.get('user_name')">
+																		<t t-esc="sql.get('user_name')"/>
+																	</t>
+																	<t t-if="not sql.get('user_name')">
+																		Public user
+																	</t>
+																</td>
+																<td><t t-esc="sql.get('cpo_country')"/></td>
+																<!--<td><t t-esc="sql.get('session_id')"/></td>-->
+																<td><t t-esc="sql.get('session_num')"/></td>
+																<td><t t-esc="int(sql.get('source_num'))"/></td>
+																<td><t t-esc="sql.get('cpo_ip')"/></td>
+																<td><t t-esc="sql.get('site_name')"/></td>
+															</tr>
+														</t>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</t>
+								</t>
+								<!-- Website source End -->
+								<!-- Partner source Begin -->
+								<t t-if="sql_partner">
+									<t t-if="sql_partner.get('sql_data')">
+									<h3 class="text-center"><t t-esc="sql_partner.get('title')"/></h3>
+									<table class="table table_one">
+										<thead>
+											<tr>
+												<th>时间</th>
+												<th>数量（当前时间）</th>
+												<th>总数</th>
+												<th>Proportion</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><t t-esc="time[0]"/> ~ <t t-esc="time[1]"/></td>
+												<td><span class="cpo-font-red"><t t-esc="sql_partner.get('tp_data')"/></span></td>
+												<td><t t-esc="sql_partner.get('total_data')"/></td>
+												<td><span class="cpo-font-red"><t t-esc="sql_partner.get('proportion')"/>%</span></td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse in" data-parent="#accordion" href="#pcb_pcba">
+													Promotion channels detailed  <i class="fa fa-angle-double-down"></i>
+												</a>
+											</h4>
+										</div>
+										<div id="pcb_pcba" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<table class="table table_two">
+													<thead>
+														<tr>
+															<th>Site name</th>
+															<th>Source count</th>
+														</tr>
+													</thead>
+													<tbody>
+														<t t-foreach="sql_partner.get('sql_data')" t-as="sql">
+															<tr>
+																<td><t t-esc="sql.get('name')"/></td>
+																<td><t t-esc="int(sql.get('site_count'))"/></td>
+															</tr>
+														</t>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</t>
+								</t>
+								<!-- Partner source End -->
+
+								<!--<t t-if="pcb_data.get('pcb_quote')">-->
+									<!--<h3 class="text-center"><t t-esc="pcb_data.get('pcb_title')"/></h3>-->
+									<!--<table class="table table_one">-->
+										<!--<thead>-->
+											<!--<tr>-->
+												<!--<th>时间</th>-->
+												<!--<th>数量（当前时间）</th>-->
+												<!--<th>总数</th>-->
+												<!--<th>Proportion</th>-->
+											<!--</tr>-->
+										<!--</thead>-->
+										<!--<tbody>-->
+											<!--<tr>-->
+												<!--<td><t t-esc="time[0]"/> ~ <t t-esc="time[1]"/></td>-->
+												<!--<td><span class="cpo-font-red"><t t-esc="pcb_data.get('pcb_count')"/></span></td>-->
+												<!--<td><t t-esc="pcb_data.get('pcb_all')"/></td>-->
+												<!--<td><span class="cpo-font-red"><t t-esc="pcb_data.get('proportion')"/></span></td>-->
+											<!--</tr>-->
+										<!--</tbody>-->
+									<!--</table>-->
+								<!--</t>-->
+								<!-- PCB -->
+								<!--<t t-if="pcb_data.get('pcb_quote')">-->
+									<!--<div class="panel panel-default">-->
+										<!--<div class="panel-heading">-->
+											<!--<h4 class="panel-title">-->
+												<!--<a data-toggle="collapse in" data-parent="#accordion" href="#collapseOne">-->
+													<!--PCB quotation records detailed  <i class="fa fa-angle-double-down"></i>-->
+												<!--</a>-->
+											<!--</h4>-->
+										<!--</div>-->
+										<!--<div id="collapseOne" class="panel-collapse collapse in">-->
+											<!--<div class="panel-body">-->
+												<!--<table class="table table_two">-->
+													<!--<thead>-->
+														<!--<t t-if="pcb_data.get('pcb_docs')">-->
+															<!--<tr>-->
+																<!--<th>Order Type</th>-->
+																<!--<th>Quantity</th>-->
+																<!--<th>Width</th>-->
+																<!--<th>Length</th>-->
+																<!--<th>Country</th>-->
+																<!--<th>Status</th>-->
+																<!--<th>User Name</th>-->
+																<!--<th>Create Time</th>-->
+															<!--</tr>-->
+														<!--</t>-->
+													<!--</thead>-->
+													<!--<tbody>-->
+														<!--<t t-foreach="pcb_data.get('pcb_docs')" t-as="pcb">-->
+															<!--<tr>-->
+																<!--<td><t t-esc="pcb.order_type"/></td>-->
+																<!--<td><t t-esc="pcb.quantity"/></td>-->
+																<!--<td><t t-esc="pcb.width"/></td>-->
+																<!--<td><t t-esc="pcb.lenght"/></td>-->
+																<!--<td><t t-esc="pcb.cpo_country"/></td>-->
+																<!--<td><t t-esc="pcb.cpo_code"/></td>-->
+																<!--<td><t t-esc="pcb.user_info"/></td>-->
+																<!--<td><t t-esc="pcb.cpo_time"/></td>-->
+															<!--</tr>-->
+														<!--</t>-->
+													<!--</tbody>-->
+												<!--</table>-->
+											<!--</div>-->
+										<!--</div>-->
+									<!--</div>-->
+								<!--</t>-->
+								<!--<t t-if="pcba_data.get('pcba_quote')">-->
+									<!--<h3 class="text-center"><t t-esc="pcba_data.get('pcba_title')"/></h3>-->
+									<!--<table class="table table_one">-->
+										<!--<thead>-->
+											<!--<tr>-->
+												<!--<th>时间</th>-->
+												<!--<th>数量（当前时间）</th>-->
+												<!--<th>总数</th>-->
+												<!--<th>Proportion</th>-->
+											<!--</tr>-->
+										<!--</thead>-->
+										<!--<tbody>-->
+											<!--<tr>-->
+												<!--<td><t t-esc="time[0]"/> ~ <t t-esc="time[1]"/></td>-->
+												<!--<td><span class="cpo-font-red"><t t-esc="pcba_data.get('pcba_count')"/></span></td>-->
+												<!--<td><t t-esc="pcba_data.get('pcba_all')"/></td>-->
+												<!--<td><span class="cpo-font-red"><t t-esc="pcba_data.get('proportion')"/></span></td>-->
+											<!--</tr>-->
+										<!--</tbody>-->
+									<!--</table>-->
+								<!--</t>-->
+								<!-- PCBA -->
+								<!--<t t-if="pcba_data.get('pcba_quote')">-->
+									<!--<div class="panel panel-default">-->
+										<!--<div class="panel-heading">-->
+											<!--<h4 class="panel-title">-->
+												<!--<a data-toggle="collapse in" data-parent="#accordion" href="#collapsepcba">-->
+													<!--PCBA Quotation records detailed <i class="fa fa-angle-double-down"></i>-->
+												<!--</a>-->
+											<!--</h4>-->
+										<!--</div>-->
+										<!--<div id="collapsepcba" class="panel-collapse collapse in">-->
+											<!--<div class="panel-body">-->
+												<!--<table class="table table_two">-->
+													<!--<thead>-->
+														<!--<t t-if="pcba_data.get('pcba_docs')">-->
+															<!--<tr>-->
+																<!--<th>Order Type</th>-->
+																<!--<th>Quantity</th>-->
+																<!--<th>Width</th>-->
+																<!--<th>Length</th>-->
+																<!--<th>Country</th>-->
+																<!--<th>Status</th>-->
+																<!--<th>User Name</th>-->
+																<!--<th>Create Time</th>-->
+															<!--</tr>-->
+														<!--</t>-->
+													<!--</thead>-->
+													<!--<tbody>-->
+														<!--<t t-foreach="pcba_data.get('pcba_docs')" t-as="pcb">-->
+															<!--<tr>-->
+																<!--<td><t t-esc="pcb.order_type"/></td>-->
+																<!--<td><t t-esc="pcb.quantity"/></td>-->
+																<!--<td><t t-esc="pcb.width"/></td>-->
+																<!--<td><t t-esc="pcb.lenght"/></td>-->
+																<!--<td><t t-esc="pcb.cpo_country"/></td>-->
+																<!--<td><t t-esc="pcb.cpo_code"/></td>-->
+																<!--<td><t t-esc="pcb.user_info"/></td>-->
+																<!--<td><t t-esc="pcb.cpo_time"/></td>-->
+															<!--</tr>-->
+														<!--</t>-->
+													<!--</tbody>-->
+												<!--</table>-->
+											<!--</div>-->
+										<!--</div>-->
+									<!--</div>-->
+								<!--</t>-->
+								<!--<t t-if="promotion_data.get('promotion_bool')">-->
+									<!--<h3 class="text-center"><t t-esc="promotion_data.get('promotion_title')"/></h3>-->
+									<!--<table class="table">-->
+										<!--<thead>-->
+											<!--<tr>-->
+												<!--<th>时间</th>-->
+												<!--<th>数量（当前时间）</th>-->
+												<!--<th>总数</th>-->
+												<!--<th>Proportion</th>-->
+											<!--</tr>-->
+										<!--</thead>-->
+										<!--<tbody>-->
+											<!--<tr>-->
+												<!--<td><t t-esc="time[0]"/> ~ <t t-esc="time[1]"/></td>-->
+												<!--<td><span class="cpo-font-red"><t t-esc="promotion_data.get('promotion_count')"/></span></td>-->
+												<!--<td><t t-esc="promotion_data.get('promotion_all')"/></td>-->
+												<!--<td><span class="cpo-font-red"><t t-esc="promotion_data.get('proportion')"/></span></td>-->
+											<!--</tr>-->
+										<!--</tbody>-->
+									<!--</table>-->
+								<!--</t>-->
+								<!-- Partner source -->
+								<!--<t t-if="promotion_data.get('promotion_bool')">-->
+									<!--<div class="panel panel-default">-->
+										<!--<div class="panel-heading">-->
+											<!--<h4 class="panel-title">-->
+												<!--<a data-toggle="collapse in" data-parent="#accordion" href="#collapsepromote">-->
+													<!--Promote analysis details <i class="fa fa-angle-double-down"></i>-->
+												<!--</a>-->
+											<!--</h4>-->
+										<!--</div>-->
+										<!--<div id="collapsepromote" class="panel-collapse collapse in">-->
+											<!--<div class="panel-body">-->
+												<!--<table class="table table_two">-->
+													<!--<thead>-->
+														<!--<t t-if="promotion_data.get('promotion_docs')">-->
+															<!--<tr>-->
+																<!--<th>Site name</th>-->
+																<!--<th>name</th>-->
+																<!--<th>Session ID</th>-->
+																<!--<th>Date</th>-->
+															<!--</tr>-->
+														<!--</t>-->
+													<!--</thead>-->
+													<!--<tbody>-->
+														<!--<t t-foreach="promotion_data.get('promotion_docs')" t-as="pcb">-->
+															<!--<tr>-->
+																<!--<td><t t-esc="pcb.site_name.name"/></td>-->
+																<!--<td><t t-esc="pcb.cpo_name"/></td>-->
+																<!--<td><t t-esc="pcb.session_id.name"/></td>-->
+																<!--<td><t t-esc="pcb.cpo_time"/></td>-->
+															<!--</tr>-->
+														<!--</t>-->
+													<!--</tbody>-->
+												<!--</table>-->
+											<!--</div>-->
+										<!--</div>-->
+									<!--</div>-->
+								<!--</t>-->
+								<!--<t t-if="access_data.get('access_bool')">-->
+									<!--<h3 class="text-center"><t t-esc="access_data.get('access_title')"/></h3>-->
+									<!--<table class="table">-->
+										<!--<thead>-->
+											<!--<tr>-->
+												<!--<th>时间</th>-->
+												<!--<th>数量（当前时间）</th>-->
+												<!--<th>总数</th>-->
+												<!--<th>Proportion</th>-->
+											<!--</tr>-->
+										<!--</thead>-->
+										<!--<tbody>-->
+											<!--<tr>-->
+												<!--<td><t t-esc="time[0]"/> ~ <t t-esc="time[1]"/></td>-->
+												<!--<td><span class="cpo-font-red"><t t-esc="access_data.get('access_count')"/></span></td>-->
+												<!--<td><t t-esc="access_data.get('access_all')"/></td>-->
+												<!--<td><span class="cpo-font-red"><t t-esc="access_data.get('proportion')"/></span></td>-->
+											<!--</tr>-->
+										<!--</tbody>-->
+									<!--</table>-->
+								<!--</t>-->
+								<!-- Website source -->
+								<!--<t t-if="access_data.get('access_bool')">-->
+									<!--<div class="panel panel-default">-->
+										<!--<div class="panel-heading">-->
+											<!--<h4 class="panel-title">-->
+												<!--<a data-toggle="collapse in" data-parent="#accordion" href="#collapseaccess">-->
+													<!--Access to detailed records <i class="fa fa-angle-double-down"></i>-->
+												<!--</a>-->
+											<!--</h4>-->
+										<!--</div>-->
+										<!--<div id="collapseaccess" class="panel-collapse collapse in">-->
+											<!--<div class="panel-body">-->
+												<!--<table class="table table_two">-->
+													<!--<thead>-->
+														<!--<t t-if="access_data.get('access_docs')">-->
+															<!--<tr>-->
+																<!--<th>User name</th>-->
+																<!--<th>Related</th>-->
+																<!--<th>Source</th>-->
+																<!--<th>IP</th>-->
+																<!--<th>Country</th>-->
+																<!--<th>Session id</th>-->
+																<!--<th>Create Time</th>-->
+															<!--</tr>-->
+														<!--</t>-->
+													<!--</thead>-->
+													<!--<tbody>-->
+														<!--<t t-foreach="access_data.get('access_docs')" t-as="pcb">-->
+															<!--<tr>-->
+																<!--<td><t t-esc="pcb.user_name"/></td>-->
+																<!--<td><t t-esc="pcb.customer_related.name"/></td>-->
+																<!--<td><t t-esc="pcb.cpo_source"/></td>-->
+																<!--<td><t t-esc="pcb.cpo_ip"/></td>-->
+																<!--<td><t t-esc="pcb.cpo_country"/></td>-->
+																<!--<td><t t-esc="pcb.session_id.name"/></td>-->
+																<!--<td><t t-esc="pcb.cpo_time"/></td>-->
+															<!--</tr>-->
+														<!--</t>-->
+													<!--</tbody>-->
+												<!--</table>-->
+											<!--</div>-->
+										<!--</div>-->
+									<!--</div>-->
+								<!--</t>-->
+							</div>
+						</div>
+					</div>
+                </t>
+            </t>
+        </template>
+	</data>
+</odoo>

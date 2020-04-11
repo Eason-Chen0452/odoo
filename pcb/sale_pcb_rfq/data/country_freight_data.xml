@@ -1,0 +1,3497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="cpo_region_1" model="cpo.freight.region">
+            <field name="cpo_region">1</field>
+            <field name="cpo_pcb_freight_id"/>
+            <field name="cpo_pcb_weight_breakdown_id"/>
+            <field name="cpo_pcb_weight_breakdown_range_id"/>
+        </record>
+
+        <record id="weight_pcb_1_1" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">0.5</field>
+            <field name="cpo_freight_fee">40</field>
+        </record>
+
+        <record id="weight_pcb_1_2" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">1.0</field>
+            <field name="cpo_freight_fee">45</field>
+        </record>
+
+        <record id="weight_pcb_1_3" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">1.5</field>
+            <field name="cpo_freight_fee">50</field>
+        </record>
+
+        <record id="weight_pcb_1_4" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">2.0</field>
+            <field name="cpo_freight_fee">50</field>
+        </record>
+
+        <record id="weight_pcb_1_5" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">2.5</field>
+            <field name="cpo_freight_fee">60</field>
+        </record>
+
+        <record id="weight_pcb_1_6" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">3.0</field>
+            <field name="cpo_freight_fee">65</field>
+        </record>
+
+        <record id="weight_pcb_1_7" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">3.5</field>
+            <field name="cpo_freight_fee">70</field>
+        </record>
+
+        <record id="weight_pcb_1_8" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">4.0</field>
+            <field name="cpo_freight_fee">75</field>
+        </record>
+
+        <record id="weight_pcb_1_9" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">4.5</field>
+            <field name="cpo_freight_fee">80</field>
+        </record>
+
+        <record id="weight_pcb_1_10" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">5.0</field>
+            <field name="cpo_freight_fee">85</field>
+        </record>
+
+        <record id="weight_pcb_1_11" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">5.5</field>
+            <field name="cpo_freight_fee">90</field>
+        </record>
+
+        <record id="weight_pcb_1_12" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">6.0</field>
+            <field name="cpo_freight_fee">95</field>
+        </record>
+
+        <record id="weight_pcb_1_13" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">6.5</field>
+            <field name="cpo_freight_fee">100</field>
+        </record>
+
+        <record id="weight_pcb_1_14" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">7.0</field>
+            <field name="cpo_freight_fee">105</field>
+        </record>
+
+        <record id="weight_pcb_1_15" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">7.5</field>
+            <field name="cpo_freight_fee">110</field>
+        </record>
+
+        <record id="weight_pcb_1_16" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">8</field>
+            <field name="cpo_freight_fee">115</field>
+        </record>
+
+        <record id="weight_pcb_1_17" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">8.5</field>
+            <field name="cpo_freight_fee">120</field>
+        </record>
+
+        <record id="weight_pcb_1_18" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">9</field>
+            <field name="cpo_freight_fee">125</field>
+        </record>
+
+        <record id="weight_pcb_1_19" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">9.5</field>
+            <field name="cpo_freight_fee">130</field>
+        </record>
+
+        <record id="weight_pcb_1_20" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">10</field>
+            <field name="cpo_freight_fee">135</field>
+        </record>
+
+        <record id="weight_pcb_1_21" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">10.5</field>
+            <field name="cpo_freight_fee">135</field>
+        </record>
+
+        <record id="weight_pcb_1_22" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">11</field>
+            <field name="cpo_freight_fee">140</field>
+        </record>
+
+        <record id="weight_pcb_1_23" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">11.5</field>
+            <field name="cpo_freight_fee">140</field>
+        </record>
+
+        <record id="weight_pcb_1_24" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">12</field>
+            <field name="cpo_freight_fee">145</field>
+        </record>
+
+        <record id="weight_pcb_1_25" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">12.5</field>
+            <field name="cpo_freight_fee">145</field>
+        </record>
+
+        <record id="weight_pcb_1_26" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">13</field>
+            <field name="cpo_freight_fee">150</field>
+        </record>
+
+        <record id="weight_pcb_1_27" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">13.5</field>
+            <field name="cpo_freight_fee">150</field>
+        </record>
+
+        <record id="weight_pcb_1_28" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">14</field>
+            <field name="cpo_freight_fee">155</field>
+        </record>
+
+        <record id="weight_pcb_1_29" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">14.5</field>
+            <field name="cpo_freight_fee">160</field>
+        </record>
+
+        <record id="weight_pcb_1_30" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">15</field>
+            <field name="cpo_freight_fee">165</field>
+        </record>
+
+        <record id="weight_pcb_1_31" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">15.5</field>
+            <field name="cpo_freight_fee">170</field>
+        </record>
+
+        <record id="weight_pcb_1_32" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">16</field>
+            <field name="cpo_freight_fee">170</field>
+        </record>
+
+        <record id="weight_pcb_1_33" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">16.5</field>
+            <field name="cpo_freight_fee">175</field>
+        </record>
+
+        <record id="weight_pcb_1_34" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">17</field>
+            <field name="cpo_freight_fee">180</field>
+        </record>
+
+        <record id="weight_pcb_1_35" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">17.5</field>
+            <field name="cpo_freight_fee">185</field>
+        </record>
+
+        <record id="weight_pcb_1_36" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">18</field>
+            <field name="cpo_freight_fee">185</field>
+        </record>
+
+        <record id="weight_pcb_1_37" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">18.5</field>
+            <field name="cpo_freight_fee">190</field>
+        </record>
+
+        <record id="weight_pcb_1_38" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">19</field>
+            <field name="cpo_freight_fee">195</field>
+        </record>
+
+        <record id="weight_pcb_1_39" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">19.5</field>
+            <field name="cpo_freight_fee">200</field>
+        </record>
+
+        <record id="weight_pcb_1_40" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">20</field>
+            <field name="cpo_freight_fee">205</field>
+        </record>
+
+        <record id="weight_pcb_1_41" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">20.5</field>
+            <field name="cpo_freight_fee">210</field>
+        </record>
+
+        <record id="weight_pcb_1_42" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">21</field>
+            <field name="cpo_freight_fee">210</field>
+        </record>
+
+        <record id="weight_pcb_1_43" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">21.5</field>
+            <field name="cpo_freight_fee">215</field>
+        </record>
+
+        <record id="weight_pcb_1_44" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">22</field>
+            <field name="cpo_freight_fee">215</field>
+        </record>
+
+        <record id="weight_pcb_1_45" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">22.5</field>
+            <field name="cpo_freight_fee">220</field>
+        </record>
+
+        <record id="weight_pcb_1_46" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">23</field>
+            <field name="cpo_freight_fee">220</field>
+        </record>
+
+        <record id="weight_pcb_1_47" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">23.5</field>
+            <field name="cpo_freight_fee">225</field>
+        </record>
+
+        <record id="weight_pcb_1_48" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">24</field>
+            <field name="cpo_freight_fee">230</field>
+        </record>
+
+        <record id="weight_pcb_1_49" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">24.5</field>
+            <field name="cpo_freight_fee">235</field>
+        </record>
+
+        <record id="weight_pcb_1_50" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">25</field>
+            <field name="cpo_freight_fee">240</field>
+        </record>
+
+        <record id="weight_pcb_1_51" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">25.5</field>
+            <field name="cpo_freight_fee">245</field>
+        </record>
+
+        <record id="weight_pcb_1_52" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">26</field>
+            <field name="cpo_freight_fee">250</field>
+        </record>
+
+        <record id="weight_pcb_1_53" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">26.5</field>
+            <field name="cpo_freight_fee">255</field>
+        </record>
+
+        <record id="weight_pcb_1_54" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">27</field>
+            <field name="cpo_freight_fee">260</field>
+        </record>
+
+        <record id="weight_pcb_1_55" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">27.5</field>
+            <field name="cpo_freight_fee">265</field>
+        </record>
+
+        <record id="weight_pcb_1_56" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">28</field>
+            <field name="cpo_freight_fee">270</field>
+        </record>
+
+        <record id="weight_pcb_1_57" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">28.5</field>
+            <field name="cpo_freight_fee">275</field>
+        </record>
+
+        <record id="weight_pcb_1_58" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">29</field>
+            <field name="cpo_freight_fee">280</field>
+        </record>
+
+        <record id="weight_pcb_1_59" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">29.5</field>
+            <field name="cpo_freight_fee">285</field>
+        </record>
+
+        <record id="weight_pcb_1_60" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb">30</field>
+            <field name="cpo_freight_fee">290</field>
+        </record>
+
+        <record id="cpo_region_2" model="cpo.freight.region">
+            <field name="cpo_region">2</field>
+            <field name="cpo_pcb_freight_id"/>
+            <field name="cpo_pcb_weight_breakdown_id"/>
+            <field name="cpo_pcb_weight_breakdown_range_id"/>
+        </record>
+        <record id="weight_pcb_2_1" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">0.5</field>
+            <field name="cpo_freight_fee">40</field>
+        </record>
+
+        <record id="weight_pcb_2_2" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">1.0</field>
+            <field name="cpo_freight_fee">50</field>
+        </record>
+
+        <record id="weight_pcb_2_3" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">1.5</field>
+            <field name="cpo_freight_fee">60</field>
+        </record>
+
+        <record id="weight_pcb_2_4" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">2.0</field>
+            <field name="cpo_freight_fee">70</field>
+        </record>
+
+        <record id="weight_pcb_2_5" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">2.5</field>
+            <field name="cpo_freight_fee">80</field>
+        </record>
+
+        <record id="weight_pcb_2_6" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">3.0</field>
+            <field name="cpo_freight_fee">90</field>
+        </record>
+
+        <record id="weight_pcb_2_7" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">3.5</field>
+            <field name="cpo_freight_fee">95</field>
+        </record>
+
+        <record id="weight_pcb_2_8" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">4.0</field>
+            <field name="cpo_freight_fee">100</field>
+        </record>
+
+        <record id="weight_pcb_2_9" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">4.5</field>
+            <field name="cpo_freight_fee">110</field>
+        </record>
+
+        <record id="weight_pcb_2_10" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">5.0</field>
+            <field name="cpo_freight_fee">115</field>
+        </record>
+
+        <record id="weight_pcb_2_11" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">5.5</field>
+            <field name="cpo_freight_fee">125</field>
+        </record>
+
+        <record id="weight_pcb_2_12" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">6.0</field>
+            <field name="cpo_freight_fee">130</field>
+        </record>
+
+        <record id="weight_pcb_2_13" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">6.5</field>
+            <field name="cpo_freight_fee">135</field>
+        </record>
+
+        <record id="weight_pcb_2_14" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">7.0</field>
+            <field name="cpo_freight_fee">140</field>
+        </record>
+
+        <record id="weight_pcb_2_15" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">7.5</field>
+            <field name="cpo_freight_fee">150</field>
+        </record>
+
+        <record id="weight_pcb_2_16" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">8</field>
+            <field name="cpo_freight_fee">160</field>
+        </record>
+
+        <record id="weight_pcb_2_17" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">8.5</field>
+            <field name="cpo_freight_fee">165</field>
+        </record>
+
+        <record id="weight_pcb_2_18" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">9</field>
+            <field name="cpo_freight_fee">170</field>
+        </record>
+
+        <record id="weight_pcb_2_19" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">9.5</field>
+            <field name="cpo_freight_fee">175</field>
+        </record>
+
+        <record id="weight_pcb_2_20" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">10</field>
+            <field name="cpo_freight_fee">180</field>
+        </record>
+
+        <record id="weight_pcb_2_21" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">10.5</field>
+            <field name="cpo_freight_fee">185</field>
+        </record>
+
+        <record id="weight_pcb_2_22" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">11</field>
+            <field name="cpo_freight_fee">190</field>
+        </record>
+
+        <record id="weight_pcb_2_23" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">11.5</field>
+            <field name="cpo_freight_fee">195</field>
+        </record>
+
+        <record id="weight_pcb_2_24" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">12</field>
+            <field name="cpo_freight_fee">200</field>
+        </record>
+
+        <record id="weight_pcb_2_25" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">12.5</field>
+            <field name="cpo_freight_fee">205</field>
+        </record>
+
+        <record id="weight_pcb_2_26" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">13</field>
+            <field name="cpo_freight_fee">210</field>
+        </record>
+
+        <record id="weight_pcb_2_27" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">13.5</field>
+            <field name="cpo_freight_fee">215</field>
+        </record>
+
+        <record id="weight_pcb_2_28" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">14</field>
+            <field name="cpo_freight_fee">220</field>
+        </record>
+
+        <record id="weight_pcb_2_29" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">14.5</field>
+            <field name="cpo_freight_fee">225</field>
+        </record>
+
+        <record id="weight_pcb_2_30" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">15</field>
+            <field name="cpo_freight_fee">230</field>
+        </record>
+
+        <record id="weight_pcb_2_31" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">15.5</field>
+            <field name="cpo_freight_fee">235</field>
+        </record>
+
+        <record id="weight_pcb_2_32" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">16</field>
+            <field name="cpo_freight_fee">240</field>
+        </record>
+
+        <record id="weight_pcb_2_33" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">16.5</field>
+            <field name="cpo_freight_fee">245</field>
+        </record>
+
+        <record id="weight_pcb_2_34" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">17</field>
+            <field name="cpo_freight_fee">250</field>
+        </record>
+
+        <record id="weight_pcb_2_35" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">17.5</field>
+            <field name="cpo_freight_fee">255</field>
+        </record>
+
+        <record id="weight_pcb_2_36" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">18</field>
+            <field name="cpo_freight_fee">260</field>
+        </record>
+
+        <record id="weight_pcb_2_37" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">18.5</field>
+            <field name="cpo_freight_fee">265</field>
+        </record>
+
+        <record id="weight_pcb_2_38" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">19</field>
+            <field name="cpo_freight_fee">270</field>
+        </record>
+
+        <record id="weight_pcb_2_39" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">19.5</field>
+            <field name="cpo_freight_fee">275</field>
+        </record>
+
+        <record id="weight_pcb_2_40" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">20</field>
+            <field name="cpo_freight_fee">280</field>
+        </record>
+
+        <record id="weight_pcb_2_41" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">20.5</field>
+            <field name="cpo_freight_fee">285</field>
+        </record>
+
+        <record id="weight_pcb_2_42" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">21</field>
+            <field name="cpo_freight_fee">290</field>
+        </record>
+
+        <record id="weight_pcb_2_43" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">21.5</field>
+            <field name="cpo_freight_fee">295</field>
+        </record>
+
+        <record id="weight_pcb_2_44" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">22</field>
+            <field name="cpo_freight_fee">300</field>
+        </record>
+
+        <record id="weight_pcb_2_45" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">22.5</field>
+            <field name="cpo_freight_fee">305</field>
+        </record>
+
+        <record id="weight_pcb_2_46" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">23</field>
+            <field name="cpo_freight_fee">310</field>
+        </record>
+
+        <record id="weight_pcb_2_47" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">23.5</field>
+            <field name="cpo_freight_fee">315</field>
+        </record>
+
+        <record id="weight_pcb_2_48" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">24</field>
+            <field name="cpo_freight_fee">320</field>
+        </record>
+
+        <record id="weight_pcb_2_49" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">24.5</field>
+            <field name="cpo_freight_fee">330</field>
+        </record>
+
+        <record id="weight_pcb_2_50" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">25</field>
+            <field name="cpo_freight_fee">340</field>
+        </record>
+
+        <record id="weight_pcb_2_51" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">25.5</field>
+            <field name="cpo_freight_fee">345</field>
+        </record>
+
+        <record id="weight_pcb_2_52" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">26</field>
+            <field name="cpo_freight_fee">350</field>
+        </record>
+
+        <record id="weight_pcb_2_53" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">26.5</field>
+            <field name="cpo_freight_fee">355</field>
+        </record>
+
+        <record id="weight_pcb_2_54" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">27</field>
+            <field name="cpo_freight_fee">360</field>
+        </record>
+
+        <record id="weight_pcb_2_55" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">27.5</field>
+            <field name="cpo_freight_fee">380</field>
+        </record>
+        
+        <record id="weight_pcb_2_56" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">28</field>
+            <field name="cpo_freight_fee">390</field>
+        </record>
+        
+        <record id="weight_pcb_2_57" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">28.5</field>
+            <field name="cpo_freight_fee">400</field>
+        </record>
+
+        <record id="weight_pcb_2_58" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">29</field>
+            <field name="cpo_freight_fee">410</field>
+        </record>
+        
+        <record id="weight_pcb_2_59" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">29.5</field>
+            <field name="cpo_freight_fee">420</field>
+        </record>
+
+        <record id="weight_pcb_2_60" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb">30</field>
+            <field name="cpo_freight_fee">430</field>
+        </record>
+        
+        <record id="cpo_region_3" model="cpo.freight.region">
+            <field name="cpo_region">3</field>
+            <field name="cpo_pcb_freight_id"/>
+            <field name="cpo_pcb_weight_breakdown_id"/>
+            <field name="cpo_pcb_weight_breakdown_range_id"/>
+        </record>
+
+        <record id="weight_pcb_3_1" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">0.5</field>
+            <field name="cpo_freight_fee">40</field>
+        </record>
+
+        <record id="weight_pcb_3_2" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">1.0</field>
+            <field name="cpo_freight_fee">50</field>
+        </record>
+
+        <record id="weight_pcb_3_3" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">1.5</field>
+            <field name="cpo_freight_fee">60</field>
+        </record>
+
+        <record id="weight_pcb_3_4" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">2.0</field>
+            <field name="cpo_freight_fee">70</field>
+        </record>
+
+        <record id="weight_pcb_3_5" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">2.5</field>
+            <field name="cpo_freight_fee">80</field>
+        </record>
+
+        <record id="weight_pcb_3_6" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">3.0</field>
+            <field name="cpo_freight_fee">85</field>
+        </record>
+
+        <record id="weight_pcb_3_7" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">3.5</field>
+            <field name="cpo_freight_fee">90</field>
+        </record>
+
+        <record id="weight_pcb_3_8" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">4.0</field>
+            <field name="cpo_freight_fee">95</field>
+        </record>
+
+        <record id="weight_pcb_3_9" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">4.5</field>
+            <field name="cpo_freight_fee">100</field>
+        </record>
+
+        <record id="weight_pcb_3_10" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">5.0</field>
+            <field name="cpo_freight_fee">105</field>
+        </record>
+
+        <record id="weight_pcb_3_11" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">5.5</field>
+            <field name="cpo_freight_fee">110</field>
+        </record>
+
+        <record id="weight_pcb_3_12" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">6.0</field>
+            <field name="cpo_freight_fee">115</field>
+        </record>
+
+        <record id="weight_pcb_3_13" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">6.5</field>
+            <field name="cpo_freight_fee">125</field>
+        </record>
+
+        <record id="weight_pcb_3_14" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">7.0</field>
+            <field name="cpo_freight_fee">135</field>
+        </record>
+
+        <record id="weight_pcb_3_15" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">7.5</field>
+            <field name="cpo_freight_fee">145</field>
+        </record>
+
+        <record id="weight_pcb_3_16" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">8</field>
+            <field name="cpo_freight_fee">155</field>
+        </record>
+
+        <record id="weight_pcb_3_17" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">8.5</field>
+            <field name="cpo_freight_fee">165</field>
+        </record>
+
+        <record id="weight_pcb_3_18" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">9</field>
+            <field name="cpo_freight_fee">170</field>
+        </record>
+
+        <record id="weight_pcb_3_19" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">9.5</field>
+            <field name="cpo_freight_fee">175</field>
+        </record>
+
+        <record id="weight_pcb_3_20" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">10</field>
+            <field name="cpo_freight_fee">180</field>
+        </record>
+
+        <record id="weight_pcb_3_21" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">10.5</field>
+            <field name="cpo_freight_fee">185</field>
+        </record>
+
+        <record id="weight_pcb_3_22" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">11</field>
+            <field name="cpo_freight_fee">190</field>
+        </record>
+
+        <record id="weight_pcb_3_23" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">11.5</field>
+            <field name="cpo_freight_fee">195</field>
+        </record>
+
+        <record id="weight_pcb_3_24" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">12</field>
+            <field name="cpo_freight_fee">200</field>
+        </record>
+
+        <record id="weight_pcb_3_25" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">12.5</field>
+            <field name="cpo_freight_fee">205</field>
+        </record>
+
+        <record id="weight_pcb_3_26" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">13</field>
+            <field name="cpo_freight_fee">215</field>
+        </record>
+
+        <record id="weight_pcb_3_27" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">13.5</field>
+            <field name="cpo_freight_fee">220</field>
+        </record>
+
+        <record id="weight_pcb_3_28" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">14</field>
+            <field name="cpo_freight_fee">225</field>
+        </record>
+
+        <record id="weight_pcb_3_29" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">14.5</field>
+            <field name="cpo_freight_fee">230</field>
+        </record>
+
+        <record id="weight_pcb_3_30" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">15</field>
+            <field name="cpo_freight_fee">235</field>
+        </record>
+
+        <record id="weight_pcb_3_31" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">15.5</field>
+            <field name="cpo_freight_fee">240</field>
+        </record>
+
+        <record id="weight_pcb_3_32" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">16</field>
+            <field name="cpo_freight_fee">245</field>
+        </record>
+
+        <record id="weight_pcb_3_33" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">16.5</field>
+            <field name="cpo_freight_fee">250</field>
+        </record>
+
+        <record id="weight_pcb_3_34" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">17</field>
+            <field name="cpo_freight_fee">255</field>
+        </record>
+
+        <record id="weight_pcb_3_35" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">17.5</field>
+            <field name="cpo_freight_fee">260</field>
+        </record>
+
+        <record id="weight_pcb_3_36" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">18</field>
+            <field name="cpo_freight_fee">265</field>
+        </record>
+
+        <record id="weight_pcb_3_37" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">18.5</field>
+            <field name="cpo_freight_fee">270</field>
+        </record>
+
+        <record id="weight_pcb_3_38" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">19</field>
+            <field name="cpo_freight_fee">275</field>
+        </record>
+
+        <record id="weight_pcb_3_39" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">19.5</field>
+            <field name="cpo_freight_fee">280</field>
+        </record>
+
+        <record id="weight_pcb_3_40" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">20</field>
+            <field name="cpo_freight_fee">285</field>
+        </record>
+
+        <record id="weight_pcb_3_41" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">20.5</field>
+            <field name="cpo_freight_fee">295</field>
+        </record>
+
+        <record id="weight_pcb_3_42" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">21</field>
+            <field name="cpo_freight_fee">305</field>
+        </record>
+
+        <record id="weight_pcb_3_43" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">21.5</field>
+            <field name="cpo_freight_fee">315</field>
+        </record>
+
+        <record id="weight_pcb_3_44" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">22</field>
+            <field name="cpo_freight_fee">320</field>
+        </record>
+
+        <record id="weight_pcb_3_45" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">22.5</field>
+            <field name="cpo_freight_fee">325</field>
+        </record>
+
+        <record id="weight_pcb_3_46" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">23</field>
+            <field name="cpo_freight_fee">330</field>
+        </record>
+
+        <record id="weight_pcb_3_47" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">23.5</field>
+            <field name="cpo_freight_fee">335</field>
+        </record>
+
+        <record id="weight_pcb_3_48" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">24</field>
+            <field name="cpo_freight_fee">340</field>
+        </record>
+
+        <record id="weight_pcb_3_49" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">24.5</field>
+            <field name="cpo_freight_fee">345</field>
+        </record>
+
+        <record id="weight_pcb_3_50" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">25</field>
+            <field name="cpo_freight_fee">350</field>
+        </record>
+
+        <record id="weight_pcb_3_51" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">25.5</field>
+            <field name="cpo_freight_fee">360</field>
+        </record>
+
+        <record id="weight_pcb_3_52" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">26</field>
+            <field name="cpo_freight_fee">370</field>
+        </record>
+
+        <record id="weight_pcb_3_53" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">26.5</field>
+            <field name="cpo_freight_fee">380</field>
+        </record>
+
+        <record id="weight_pcb_3_54" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">27</field>
+            <field name="cpo_freight_fee">390</field>
+        </record>
+
+        <record id="weight_pcb_3_55" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">27.5</field>
+            <field name="cpo_freight_fee">400</field>
+        </record>
+        
+        <record id="weight_pcb_3_56" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">28</field>
+            <field name="cpo_freight_fee">405</field>
+        </record>
+        
+        <record id="weight_pcb_3_57" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">28.5</field>
+            <field name="cpo_freight_fee">410</field>
+        </record>
+
+        <record id="weight_pcb_3_58" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">29</field>
+            <field name="cpo_freight_fee">415</field>
+        </record>
+        
+        <record id="weight_pcb_3_59" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">29.5</field>
+            <field name="cpo_freight_fee">420</field>
+        </record>
+
+        <record id="weight_pcb_3_60" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb">30</field>
+            <field name="cpo_freight_fee">425</field>
+        </record>
+
+        <record id="cpo_region_4" model="cpo.freight.region">
+            <field name="cpo_region">4</field>
+            <field name="cpo_pcb_freight_id"/>
+            <field name="cpo_pcb_weight_breakdown_id"/>
+            <field name="cpo_pcb_weight_breakdown_range_id"/>
+        </record>
+
+        <record id="weight_pcb_4_1" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">0.5</field>
+            <field name="cpo_freight_fee">45</field>
+        </record>
+
+        <record id="weight_pcb_4_2" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">1.0</field>
+            <field name="cpo_freight_fee">55</field>
+        </record>
+
+        <record id="weight_pcb_4_3" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">1.5</field>
+            <field name="cpo_freight_fee">65</field>
+        </record>
+
+        <record id="weight_pcb_4_4" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">2.0</field>
+            <field name="cpo_freight_fee">75</field>
+        </record>
+
+        <record id="weight_pcb_4_5" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">2.5</field>
+            <field name="cpo_freight_fee">85</field>
+        </record>
+
+        <record id="weight_pcb_4_6" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">3.0</field>
+            <field name="cpo_freight_fee">95</field>
+        </record>
+
+        <record id="weight_pcb_4_7" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">3.5</field>
+            <field name="cpo_freight_fee">100</field>
+        </record>
+
+        <record id="weight_pcb_4_8" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">4.0</field>
+            <field name="cpo_freight_fee">105</field>
+        </record>
+
+        <record id="weight_pcb_4_9" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">4.5</field>
+            <field name="cpo_freight_fee">110</field>
+        </record>
+
+        <record id="weight_pcb_4_10" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">5.0</field>
+            <field name="cpo_freight_fee">115</field>
+        </record>
+
+        <record id="weight_pcb_4_11" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">5.5</field>
+            <field name="cpo_freight_fee">120</field>
+        </record>
+
+        <record id="weight_pcb_4_12" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">6.0</field>
+            <field name="cpo_freight_fee">125</field>
+        </record>
+
+        <record id="weight_pcb_4_13" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">6.5</field>
+            <field name="cpo_freight_fee">130</field>
+        </record>
+
+        <record id="weight_pcb_4_14" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">7.0</field>
+            <field name="cpo_freight_fee">135</field>
+        </record>
+
+        <record id="weight_pcb_4_15" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">7.5</field>
+            <field name="cpo_freight_fee">140</field>
+        </record>
+
+        <record id="weight_pcb_4_16" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">8</field>
+            <field name="cpo_freight_fee">145</field>
+        </record>
+
+        <record id="weight_pcb_4_17" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">8.5</field>
+            <field name="cpo_freight_fee">155</field>
+        </record>
+
+        <record id="weight_pcb_4_18" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">9</field>
+            <field name="cpo_freight_fee">165</field>
+        </record>
+
+        <record id="weight_pcb_4_19" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">9.5</field>
+            <field name="cpo_freight_fee">175</field>
+        </record>
+
+        <record id="weight_pcb_4_20" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">10</field>
+            <field name="cpo_freight_fee">185</field>
+        </record>
+
+        <record id="weight_pcb_4_21" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">10.5</field>
+            <field name="cpo_freight_fee">190</field>
+        </record>
+
+        <record id="weight_pcb_4_22" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">11</field>
+            <field name="cpo_freight_fee">195</field>
+        </record>
+
+        <record id="weight_pcb_4_23" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">11.5</field>
+            <field name="cpo_freight_fee">200</field>
+        </record>
+
+        <record id="weight_pcb_4_24" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">12</field>
+            <field name="cpo_freight_fee">205</field>
+        </record>
+
+        <record id="weight_pcb_4_25" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">12.5</field>
+            <field name="cpo_freight_fee">210</field>
+        </record>
+
+        <record id="weight_pcb_4_26" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">13</field>
+            <field name="cpo_freight_fee">215</field>
+        </record>
+
+        <record id="weight_pcb_4_27" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">13.5</field>
+            <field name="cpo_freight_fee">220</field>
+        </record>
+
+        <record id="weight_pcb_4_28" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">14</field>
+            <field name="cpo_freight_fee">230</field>
+        </record>
+
+        <record id="weight_pcb_4_29" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">14.5</field>
+            <field name="cpo_freight_fee">240</field>
+        </record>
+
+        <record id="weight_pcb_4_30" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">15</field>
+            <field name="cpo_freight_fee">245</field>
+        </record>
+
+        <record id="weight_pcb_4_31" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">15.5</field>
+            <field name="cpo_freight_fee">250</field>
+        </record>
+
+        <record id="weight_pcb_4_32" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">16</field>
+            <field name="cpo_freight_fee">255</field>
+        </record>
+
+        <record id="weight_pcb_4_33" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">16.5</field>
+            <field name="cpo_freight_fee">260</field>
+        </record>
+
+        <record id="weight_pcb_4_34" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">17</field>
+            <field name="cpo_freight_fee">265</field>
+        </record>
+
+        <record id="weight_pcb_4_35" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">17.5</field>
+            <field name="cpo_freight_fee">270</field>
+        </record>
+
+        <record id="weight_pcb_4_36" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">18</field>
+            <field name="cpo_freight_fee">280</field>
+        </record>
+
+        <record id="weight_pcb_4_37" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">18.5</field>
+            <field name="cpo_freight_fee">290</field>
+        </record>
+
+        <record id="weight_pcb_4_38" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">19</field>
+            <field name="cpo_freight_fee">295</field>
+        </record>
+
+        <record id="weight_pcb_4_39" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">19.5</field>
+            <field name="cpo_freight_fee">300</field>
+        </record>
+
+        <record id="weight_pcb_4_40" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">20</field>
+            <field name="cpo_freight_fee">305</field>
+        </record>
+
+        <record id="weight_pcb_4_41" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">20.5</field>
+            <field name="cpo_freight_fee">310</field>
+        </record>
+
+        <record id="weight_pcb_4_42" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">21</field>
+            <field name="cpo_freight_fee">320</field>
+        </record>
+
+        <record id="weight_pcb_4_43" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">21.5</field>
+            <field name="cpo_freight_fee">330</field>
+        </record>
+
+        <record id="weight_pcb_4_44" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">22</field>
+            <field name="cpo_freight_fee">335</field>
+        </record>
+
+        <record id="weight_pcb_4_45" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">22.5</field>
+            <field name="cpo_freight_fee">340</field>
+        </record>
+
+        <record id="weight_pcb_4_46" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">23</field>
+            <field name="cpo_freight_fee">345</field>
+        </record>
+
+        <record id="weight_pcb_4_47" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">23.5</field>
+            <field name="cpo_freight_fee">350</field>
+        </record>
+
+        <record id="weight_pcb_4_48" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">24</field>
+            <field name="cpo_freight_fee">355</field>
+        </record>
+
+        <record id="weight_pcb_4_49" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">24.5</field>
+            <field name="cpo_freight_fee">360</field>
+        </record>
+
+        <record id="weight_pcb_4_50" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">25</field>
+            <field name="cpo_freight_fee">365</field>
+        </record>
+
+        <record id="weight_pcb_4_51" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">25.5</field>
+            <field name="cpo_freight_fee">370</field>
+        </record>
+
+        <record id="weight_pcb_4_52" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">26</field>
+            <field name="cpo_freight_fee">380</field>
+        </record>
+
+        <record id="weight_pcb_4_53" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">26.5</field>
+            <field name="cpo_freight_fee">390</field>
+        </record>
+
+        <record id="weight_pcb_4_54" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">27</field>
+            <field name="cpo_freight_fee">400</field>
+        </record>
+
+        <record id="weight_pcb_4_55" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">27.5</field>
+            <field name="cpo_freight_fee">410</field>
+        </record>
+        
+        <record id="weight_pcb_4_56" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">28</field>
+            <field name="cpo_freight_fee">420</field>
+        </record>
+        
+        <record id="weight_pcb_4_57" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">28.5</field>
+            <field name="cpo_freight_fee">425</field>
+        </record>
+
+        <record id="weight_pcb_4_58" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">29</field>
+            <field name="cpo_freight_fee">430</field>
+        </record>
+        
+        <record id="weight_pcb_4_59" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">29.5</field>
+            <field name="cpo_freight_fee">435</field>
+        </record>
+
+        <record id="weight_pcb_4_60" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb">30</field>
+            <field name="cpo_freight_fee">440</field>
+        </record>
+
+        <record id="cpo_region_5" model="cpo.freight.region">
+            <field name="cpo_region">5</field>
+            <field name="cpo_pcb_freight_id"/>
+            <field name="cpo_pcb_weight_breakdown_id"/>
+            <field name="cpo_pcb_weight_breakdown_range_id"/>
+        </record>
+
+        <record id="weight_pcb_5_1" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">0.5</field>
+            <field name="cpo_freight_fee">40</field>
+        </record>
+
+        <record id="weight_pcb_5_2" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">1.0</field>
+            <field name="cpo_freight_fee">50</field>
+        </record>
+
+        <record id="weight_pcb_5_3" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">1.5</field>
+            <field name="cpo_freight_fee">60</field>
+        </record>
+
+        <record id="weight_pcb_5_4" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">2.0</field>
+            <field name="cpo_freight_fee">70</field>
+        </record>
+
+        <record id="weight_pcb_5_5" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">2.5</field>
+            <field name="cpo_freight_fee">80</field>
+        </record>
+
+        <record id="weight_pcb_5_6" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">3.0</field>
+            <field name="cpo_freight_fee">90</field>
+        </record>
+
+        <record id="weight_pcb_5_7" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">3.5</field>
+            <field name="cpo_freight_fee">100</field>
+        </record>
+
+        <record id="weight_pcb_5_8" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">4.0</field>
+            <field name="cpo_freight_fee">110</field>
+        </record>
+
+        <record id="weight_pcb_5_9" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">4.5</field>
+            <field name="cpo_freight_fee">120</field>
+        </record>
+
+        <record id="weight_pcb_5_10" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">5.0</field>
+            <field name="cpo_freight_fee">130</field>
+        </record>
+
+        <record id="weight_pcb_5_11" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">5.5</field>
+            <field name="cpo_freight_fee">140</field>
+        </record>
+
+        <record id="weight_pcb_5_12" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">6.0</field>
+            <field name="cpo_freight_fee">150</field>
+        </record>
+
+        <record id="weight_pcb_5_13" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">6.5</field>
+            <field name="cpo_freight_fee">160</field>
+        </record>
+
+        <record id="weight_pcb_5_14" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">7.0</field>
+            <field name="cpo_freight_fee">170</field>
+        </record>
+
+        <record id="weight_pcb_5_15" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">7.5</field>
+            <field name="cpo_freight_fee">180</field>
+        </record>
+
+        <record id="weight_pcb_5_16" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">8</field>
+            <field name="cpo_freight_fee">190</field>
+        </record>
+
+        <record id="weight_pcb_5_17" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">8.5</field>
+            <field name="cpo_freight_fee">200</field>
+        </record>
+
+        <record id="weight_pcb_5_18" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">9</field>
+            <field name="cpo_freight_fee">210</field>
+        </record>
+
+        <record id="weight_pcb_5_19" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">9.5</field>
+            <field name="cpo_freight_fee">220</field>
+        </record>
+
+        <record id="weight_pcb_5_20" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">10</field>
+            <field name="cpo_freight_fee">225</field>
+        </record>
+
+        <record id="weight_pcb_5_21" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">10.5</field>
+            <field name="cpo_freight_fee">230</field>
+        </record>
+
+        <record id="weight_pcb_5_22" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">11</field>
+            <field name="cpo_freight_fee">240</field>
+        </record>
+
+        <record id="weight_pcb_5_23" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">11.5</field>
+            <field name="cpo_freight_fee">250</field>
+        </record>
+
+        <record id="weight_pcb_5_24" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">12</field>
+            <field name="cpo_freight_fee">255</field>
+        </record>
+
+        <record id="weight_pcb_5_25" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">12.5</field>
+            <field name="cpo_freight_fee">260</field>
+        </record>
+
+        <record id="weight_pcb_5_26" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">13</field>
+            <field name="cpo_freight_fee">270</field>
+        </record>
+
+        <record id="weight_pcb_5_27" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">13.5</field>
+            <field name="cpo_freight_fee">280</field>
+        </record>
+
+        <record id="weight_pcb_5_28" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">14</field>
+            <field name="cpo_freight_fee">285</field>
+        </record>
+
+        <record id="weight_pcb_5_29" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">14.5</field>
+            <field name="cpo_freight_fee">290</field>
+        </record>
+
+        <record id="weight_pcb_5_30" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">15</field>
+            <field name="cpo_freight_fee">300</field>
+        </record>
+
+        <record id="weight_pcb_5_31" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">15.5</field>
+            <field name="cpo_freight_fee">305</field>
+        </record>
+
+        <record id="weight_pcb_5_32" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">16</field>
+            <field name="cpo_freight_fee">310</field>
+        </record>
+
+        <record id="weight_pcb_5_33" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">16.5</field>
+            <field name="cpo_freight_fee">320</field>
+        </record>
+
+        <record id="weight_pcb_5_34" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">17</field>
+            <field name="cpo_freight_fee">330</field>
+        </record>
+
+        <record id="weight_pcb_5_35" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">17.5</field>
+            <field name="cpo_freight_fee">340</field>
+        </record>
+
+        <record id="weight_pcb_5_36" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">18</field>
+            <field name="cpo_freight_fee">350</field>
+        </record>
+
+        <record id="weight_pcb_5_37" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">18.5</field>
+            <field name="cpo_freight_fee">355</field>
+        </record>
+
+        <record id="weight_pcb_5_38" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">19</field>
+            <field name="cpo_freight_fee">360</field>
+        </record>
+
+        <record id="weight_pcb_5_39" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">19.5</field>
+            <field name="cpo_freight_fee">370</field>
+        </record>
+
+        <record id="weight_pcb_5_40" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">20</field>
+            <field name="cpo_freight_fee">375</field>
+        </record>
+
+        <record id="weight_pcb_5_41" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">20.5</field>
+            <field name="cpo_freight_fee">380</field>
+        </record>
+
+        <record id="weight_pcb_5_42" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">21</field>
+            <field name="cpo_freight_fee">390</field>
+        </record>
+
+        <record id="weight_pcb_5_43" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">21.5</field>
+            <field name="cpo_freight_fee">400</field>
+        </record>
+
+        <record id="weight_pcb_5_44" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">22</field>
+            <field name="cpo_freight_fee">410</field>
+        </record>
+
+        <record id="weight_pcb_5_45" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">22.5</field>
+            <field name="cpo_freight_fee">420</field>
+        </record>
+
+        <record id="weight_pcb_5_46" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">23</field>
+            <field name="cpo_freight_fee">430</field>
+        </record>
+
+        <record id="weight_pcb_5_47" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">23.5</field>
+            <field name="cpo_freight_fee">435</field>
+        </record>
+
+        <record id="weight_pcb_5_48" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">24</field>
+            <field name="cpo_freight_fee">445</field>
+        </record>
+
+        <record id="weight_pcb_5_49" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">24.5</field>
+            <field name="cpo_freight_fee">455</field>
+        </record>
+
+        <record id="weight_pcb_5_50" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">25</field>
+            <field name="cpo_freight_fee">460</field>
+        </record>
+
+        <record id="weight_pcb_5_51" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">25.5</field>
+            <field name="cpo_freight_fee">470</field>
+        </record>
+
+        <record id="weight_pcb_5_52" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">26</field>
+            <field name="cpo_freight_fee">475</field>
+        </record>
+
+        <record id="weight_pcb_5_53" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">26.5</field>
+            <field name="cpo_freight_fee">485</field>
+        </record>
+
+        <record id="weight_pcb_5_54" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">27</field>
+            <field name="cpo_freight_fee">495</field>
+        </record>
+
+        <record id="weight_pcb_5_55" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">27.5</field>
+            <field name="cpo_freight_fee">505</field>
+        </record>
+        
+        <record id="weight_pcb_5_56" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">28</field>
+            <field name="cpo_freight_fee">510</field>
+        </record>
+        
+        <record id="weight_pcb_5_57" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">28.5</field>
+            <field name="cpo_freight_fee">520</field>
+        </record>
+
+        <record id="weight_pcb_5_58" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">29</field>
+            <field name="cpo_freight_fee">525</field>
+        </record>
+        
+        <record id="weight_pcb_5_59" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">29.5</field>
+            <field name="cpo_freight_fee">530</field>
+        </record>
+
+        <record id="weight_pcb_5_60" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb">30</field>
+            <field name="cpo_freight_fee">535</field>
+        </record>
+
+        <record id="cpo_region_6" model="cpo.freight.region">
+            <field name="cpo_region">6</field>
+            <field name="cpo_pcb_freight_id"/>
+            <field name="cpo_pcb_weight_breakdown_id"/>
+            <field name="cpo_pcb_weight_breakdown_range_id"/>
+        </record>
+
+        <record id="weight_pcb_6_1" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">0.5</field>
+            <field name="cpo_freight_fee">40</field>
+        </record>
+
+        <record id="weight_pcb_6_2" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">1.0</field>
+            <field name="cpo_freight_fee">50</field>
+        </record>
+
+        <record id="weight_pcb_6_3" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">1.5</field>
+            <field name="cpo_freight_fee">60</field>
+        </record>
+
+        <record id="weight_pcb_6_4" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">2.0</field>
+            <field name="cpo_freight_fee">70</field>
+        </record>
+
+        <record id="weight_pcb_6_5" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">2.5</field>
+            <field name="cpo_freight_fee">75</field>
+        </record>
+
+        <record id="weight_pcb_6_6" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">3.0</field>
+            <field name="cpo_freight_fee">80</field>
+        </record>
+
+        <record id="weight_pcb_6_7" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">3.5</field>
+            <field name="cpo_freight_fee">85</field>
+        </record>
+
+        <record id="weight_pcb_6_8" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">4.0</field>
+            <field name="cpo_freight_fee">90</field>
+        </record>
+
+        <record id="weight_pcb_6_9" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">4.5</field>
+            <field name="cpo_freight_fee">95</field>
+        </record>
+
+        <record id="weight_pcb_6_10" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">5.0</field>
+            <field name="cpo_freight_fee">100</field>
+        </record>
+
+        <record id="weight_pcb_6_11" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">5.5</field>
+            <field name="cpo_freight_fee">105</field>
+        </record>
+
+        <record id="weight_pcb_6_12" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">6.0</field>
+            <field name="cpo_freight_fee">110</field>
+        </record>
+
+        <record id="weight_pcb_6_13" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">6.5</field>
+            <field name="cpo_freight_fee">115</field>
+        </record>
+
+        <record id="weight_pcb_6_14" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">7.0</field>
+            <field name="cpo_freight_fee">120</field>
+        </record>
+
+        <record id="weight_pcb_6_15" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">7.5</field>
+            <field name="cpo_freight_fee">125</field>
+        </record>
+
+        <record id="weight_pcb_6_16" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">8</field>
+            <field name="cpo_freight_fee">130</field>
+        </record>
+
+        <record id="weight_pcb_6_17" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">8.5</field>
+            <field name="cpo_freight_fee">135</field>
+        </record>
+
+        <record id="weight_pcb_6_18" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">9</field>
+            <field name="cpo_freight_fee">140</field>
+        </record>
+
+        <record id="weight_pcb_6_19" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">9.5</field>
+            <field name="cpo_freight_fee">145</field>
+        </record>
+
+        <record id="weight_pcb_6_20" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">10</field>
+            <field name="cpo_freight_fee">150</field>
+        </record>
+
+        <record id="weight_pcb_6_21" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">10.5</field>
+            <field name="cpo_freight_fee">155</field>
+        </record>
+
+        <record id="weight_pcb_6_22" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">11</field>
+            <field name="cpo_freight_fee">160</field>
+        </record>
+
+        <record id="weight_pcb_6_23" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">11.5</field>
+            <field name="cpo_freight_fee">165</field>
+        </record>
+
+        <record id="weight_pcb_6_24" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">12</field>
+            <field name="cpo_freight_fee">170</field>
+        </record>
+
+        <record id="weight_pcb_6_25" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">12.5</field>
+            <field name="cpo_freight_fee">175</field>
+        </record>
+
+        <record id="weight_pcb_6_26" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">13</field>
+            <field name="cpo_freight_fee">180</field>
+        </record>
+
+        <record id="weight_pcb_6_27" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">13.5</field>
+            <field name="cpo_freight_fee">185</field>
+        </record>
+
+        <record id="weight_pcb_6_28" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">14</field>
+            <field name="cpo_freight_fee">190</field>
+        </record>
+
+        <record id="weight_pcb_6_29" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">14.5</field>
+            <field name="cpo_freight_fee">195</field>
+        </record>
+
+        <record id="weight_pcb_6_30" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">15</field>
+            <field name="cpo_freight_fee">200</field>
+        </record>
+
+        <record id="weight_pcb_6_31" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">15.5</field>
+            <field name="cpo_freight_fee">205</field>
+        </record>
+
+        <record id="weight_pcb_6_32" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">16</field>
+            <field name="cpo_freight_fee">210</field>
+        </record>
+
+        <record id="weight_pcb_6_33" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">16.5</field>
+            <field name="cpo_freight_fee">215</field>
+        </record>
+
+        <record id="weight_pcb_6_34" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">17</field>
+            <field name="cpo_freight_fee">220</field>
+        </record>
+
+        <record id="weight_pcb_6_35" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">17.5</field>
+            <field name="cpo_freight_fee">225</field>
+        </record>
+
+        <record id="weight_pcb_6_36" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">18</field>
+            <field name="cpo_freight_fee">230</field>
+        </record>
+
+        <record id="weight_pcb_6_37" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">18.5</field>
+            <field name="cpo_freight_fee">235</field>
+        </record>
+
+        <record id="weight_pcb_6_38" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">19</field>
+            <field name="cpo_freight_fee">240</field>
+        </record>
+
+        <record id="weight_pcb_6_39" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">19.5</field>
+            <field name="cpo_freight_fee">245</field>
+        </record>
+
+        <record id="weight_pcb_6_40" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">20</field>
+            <field name="cpo_freight_fee">250</field>
+        </record>
+
+        <record id="weight_pcb_6_41" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">20.5</field>
+            <field name="cpo_freight_fee">255</field>
+        </record>
+
+        <record id="weight_pcb_6_42" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">21</field>
+            <field name="cpo_freight_fee">260</field>
+        </record>
+
+        <record id="weight_pcb_6_43" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">21.5</field>
+            <field name="cpo_freight_fee">265</field>
+        </record>
+
+        <record id="weight_pcb_6_44" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">22</field>
+            <field name="cpo_freight_fee">270</field>
+        </record>
+
+        <record id="weight_pcb_6_45" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">22.5</field>
+            <field name="cpo_freight_fee">275</field>
+        </record>
+
+        <record id="weight_pcb_6_46" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">23</field>
+            <field name="cpo_freight_fee">280</field>
+        </record>
+
+        <record id="weight_pcb_6_47" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">23.5</field>
+            <field name="cpo_freight_fee">285</field>
+        </record>
+
+        <record id="weight_pcb_6_48" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">24</field>
+            <field name="cpo_freight_fee">290</field>
+        </record>
+
+        <record id="weight_pcb_6_49" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">24.5</field>
+            <field name="cpo_freight_fee">295</field>
+        </record>
+
+        <record id="weight_pcb_6_50" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">25</field>
+            <field name="cpo_freight_fee">300</field>
+        </record>
+
+        <record id="weight_pcb_6_51" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">25.5</field>
+            <field name="cpo_freight_fee">305</field>
+        </record>
+
+        <record id="weight_pcb_6_52" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">26</field>
+            <field name="cpo_freight_fee">310</field>
+        </record>
+
+        <record id="weight_pcb_6_53" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">26.5</field>
+            <field name="cpo_freight_fee">315</field>
+        </record>
+
+        <record id="weight_pcb_6_54" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">27</field>
+            <field name="cpo_freight_fee">320</field>
+        </record>
+
+        <record id="weight_pcb_6_55" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">27.5</field>
+            <field name="cpo_freight_fee">325</field>
+        </record>
+        
+        <record id="weight_pcb_6_56" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">28</field>
+            <field name="cpo_freight_fee">330</field>
+        </record>
+        
+        <record id="weight_pcb_6_57" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">28.5</field>
+            <field name="cpo_freight_fee">335</field>
+        </record>
+
+        <record id="weight_pcb_6_58" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">29</field>
+            <field name="cpo_freight_fee">340</field>
+        </record>
+        
+        <record id="weight_pcb_6_59" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">29.5</field>
+            <field name="cpo_freight_fee">345</field>
+        </record>
+
+        <record id="weight_pcb_6_60" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb">30</field>
+            <field name="cpo_freight_fee">350</field>
+        </record>
+
+        <record id="cpo_region_7" model="cpo.freight.region">
+            <field name="cpo_region">7</field>
+            <field name="cpo_pcb_freight_id"/>
+            <field name="cpo_pcb_weight_breakdown_id"/>
+            <field name="cpo_pcb_weight_breakdown_range_id"/>
+        </record>
+
+        <record id="weight_pcb_7_1" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">0.5</field>
+            <field name="cpo_freight_fee">40</field>
+        </record>
+
+        <record id="weight_pcb_7_2" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">1.0</field>
+            <field name="cpo_freight_fee">45</field>
+        </record>
+
+        <record id="weight_pcb_7_3" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">1.5</field>
+            <field name="cpo_freight_fee">45</field>
+        </record>
+
+        <record id="weight_pcb_7_4" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">2.0</field>
+            <field name="cpo_freight_fee">50</field>
+        </record>
+
+        <record id="weight_pcb_7_5" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">2.5</field>
+            <field name="cpo_freight_fee">55</field>
+        </record>
+
+        <record id="weight_pcb_7_6" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">3.0</field>
+            <field name="cpo_freight_fee">60</field>
+        </record>
+
+        <record id="weight_pcb_7_7" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">3.5</field>
+            <field name="cpo_freight_fee">70</field>
+        </record>
+
+        <record id="weight_pcb_7_8" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">4.0</field>
+            <field name="cpo_freight_fee">80</field>
+        </record>
+
+        <record id="weight_pcb_7_9" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">4.5</field>
+            <field name="cpo_freight_fee">90</field>
+        </record>
+
+        <record id="weight_pcb_7_10" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">5.0</field>
+            <field name="cpo_freight_fee">100</field>
+        </record>
+
+        <record id="weight_pcb_7_11" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">5.5</field>
+            <field name="cpo_freight_fee">110</field>
+        </record>
+
+        <record id="weight_pcb_7_12" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">6.0</field>
+            <field name="cpo_freight_fee">115</field>
+        </record>
+
+        <record id="weight_pcb_7_13" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">6.5</field>
+            <field name="cpo_freight_fee">120</field>
+        </record>
+
+        <record id="weight_pcb_7_14" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">7.0</field>
+            <field name="cpo_freight_fee">125</field>
+        </record>
+
+        <record id="weight_pcb_7_15" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">7.5</field>
+            <field name="cpo_freight_fee">130</field>
+        </record>
+
+        <record id="weight_pcb_7_16" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">8</field>
+            <field name="cpo_freight_fee">140</field>
+        </record>
+
+        <record id="weight_pcb_7_17" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">8.5</field>
+            <field name="cpo_freight_fee">145</field>
+        </record>
+
+        <record id="weight_pcb_7_18" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">9</field>
+            <field name="cpo_freight_fee">150</field>
+        </record>
+
+        <record id="weight_pcb_7_19" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">9.5</field>
+            <field name="cpo_freight_fee">155</field>
+        </record>
+
+        <record id="weight_pcb_7_20" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">10</field>
+            <field name="cpo_freight_fee">160</field>
+        </record>
+
+        <record id="weight_pcb_7_21" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">10.5</field>
+            <field name="cpo_freight_fee">165</field>
+        </record>
+
+        <record id="weight_pcb_7_22" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">11</field>
+            <field name="cpo_freight_fee">175</field>
+        </record>
+
+        <record id="weight_pcb_7_23" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">11.5</field>
+            <field name="cpo_freight_fee">190</field>
+        </record>
+
+        <record id="weight_pcb_7_24" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">12</field>
+            <field name="cpo_freight_fee">200</field>
+        </record>
+
+        <record id="weight_pcb_7_25" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">12.5</field>
+            <field name="cpo_freight_fee">210</field>
+        </record>
+
+        <record id="weight_pcb_7_26" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">13</field>
+            <field name="cpo_freight_fee">220</field>
+        </record>
+
+        <record id="weight_pcb_7_27" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">13.5</field>
+            <field name="cpo_freight_fee">225</field>
+        </record>
+
+        <record id="weight_pcb_7_28" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">14</field>
+            <field name="cpo_freight_fee">230</field>
+        </record>
+
+        <record id="weight_pcb_7_29" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">14.5</field>
+            <field name="cpo_freight_fee">235</field>
+        </record>
+
+        <record id="weight_pcb_7_30" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">15</field>
+            <field name="cpo_freight_fee">240</field>
+        </record>
+
+        <record id="weight_pcb_7_31" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">15.5</field>
+            <field name="cpo_freight_fee">250</field>
+        </record>
+
+        <record id="weight_pcb_7_32" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">16</field>
+            <field name="cpo_freight_fee">255</field>
+        </record>
+
+        <record id="weight_pcb_7_33" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">16.5</field>
+            <field name="cpo_freight_fee">265</field>
+        </record>
+
+        <record id="weight_pcb_7_34" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">17</field>
+            <field name="cpo_freight_fee">275</field>
+        </record>
+
+        <record id="weight_pcb_7_35" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">17.5</field>
+            <field name="cpo_freight_fee">280</field>
+        </record>
+
+        <record id="weight_pcb_7_36" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">18</field>
+            <field name="cpo_freight_fee">290</field>
+        </record>
+
+        <record id="weight_pcb_7_37" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">18.5</field>
+            <field name="cpo_freight_fee">295</field>
+        </record>
+
+        <record id="weight_pcb_7_38" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">19</field>
+            <field name="cpo_freight_fee">300</field>
+        </record>
+
+        <record id="weight_pcb_7_39" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">19.5</field>
+            <field name="cpo_freight_fee">310</field>
+        </record>
+
+        <record id="weight_pcb_7_40" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">20</field>
+            <field name="cpo_freight_fee">315</field>
+        </record>
+
+        <record id="weight_pcb_7_41" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">20.5</field>
+            <field name="cpo_freight_fee">320</field>
+        </record>
+
+        <record id="weight_pcb_7_42" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">21</field>
+            <field name="cpo_freight_fee">325</field>
+        </record>
+
+        <record id="weight_pcb_7_43" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">21.5</field>
+            <field name="cpo_freight_fee">330</field>
+        </record>
+
+        <record id="weight_pcb_7_44" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">22</field>
+            <field name="cpo_freight_fee">335</field>
+        </record>
+
+        <record id="weight_pcb_7_45" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">22.5</field>
+            <field name="cpo_freight_fee">340</field>
+        </record>
+
+        <record id="weight_pcb_7_46" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">23</field>
+            <field name="cpo_freight_fee">345</field>
+        </record>
+
+        <record id="weight_pcb_7_47" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">23.5</field>
+            <field name="cpo_freight_fee">350</field>
+        </record>
+
+        <record id="weight_pcb_7_48" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">24</field>
+            <field name="cpo_freight_fee">355</field>
+        </record>
+
+        <record id="weight_pcb_7_49" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">24.5</field>
+            <field name="cpo_freight_fee">360</field>
+        </record>
+
+        <record id="weight_pcb_7_50" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">25</field>
+            <field name="cpo_freight_fee">365</field>
+        </record>
+
+        <record id="weight_pcb_7_51" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">25.5</field>
+            <field name="cpo_freight_fee">370</field>
+        </record>
+
+        <record id="weight_pcb_7_52" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">26</field>
+            <field name="cpo_freight_fee">375</field>
+        </record>
+
+        <record id="weight_pcb_7_53" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">26.5</field>
+            <field name="cpo_freight_fee">380</field>
+        </record>
+
+        <record id="weight_pcb_7_54" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">27</field>
+            <field name="cpo_freight_fee">385</field>
+        </record>
+
+        <record id="weight_pcb_7_55" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">27.5</field>
+            <field name="cpo_freight_fee">390</field>
+        </record>
+        
+        <record id="weight_pcb_7_56" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">28</field>
+            <field name="cpo_freight_fee">395</field>
+        </record>
+        
+        <record id="weight_pcb_7_57" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">28.5</field>
+            <field name="cpo_freight_fee">400</field>
+        </record>
+
+        <record id="weight_pcb_7_58" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">29</field>
+            <field name="cpo_freight_fee">405</field>
+        </record>
+        
+        <record id="weight_pcb_7_59" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">29.5</field>
+            <field name="cpo_freight_fee">410</field>
+        </record>
+
+        <record id="weight_pcb_7_60" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb">30</field>
+            <field name="cpo_freight_fee">415</field>
+        </record>
+
+        <record id="cpo_region_8" model="cpo.freight.region">
+            <field name="cpo_region">8</field>
+            <field name="cpo_pcb_freight_id"/>
+            <field name="cpo_pcb_weight_breakdown_id"/>
+            <field name="cpo_pcb_weight_breakdown_range_id"/>
+        </record>
+
+        <record id="weight_pcb_8_1" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">0.5</field>
+            <field name="cpo_freight_fee">40</field>
+        </record>
+
+        <record id="weight_pcb_8_2" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">1.0</field>
+            <field name="cpo_freight_fee">50</field>
+        </record>
+
+        <record id="weight_pcb_8_3" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">1.5</field>
+            <field name="cpo_freight_fee">60</field>
+        </record>
+
+        <record id="weight_pcb_8_4" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">2.0</field>
+            <field name="cpo_freight_fee">70</field>
+        </record>
+
+        <record id="weight_pcb_8_5" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">2.5</field>
+            <field name="cpo_freight_fee">80</field>
+        </record>
+
+        <record id="weight_pcb_8_6" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">3.0</field>
+            <field name="cpo_freight_fee">90</field>
+        </record>
+
+        <record id="weight_pcb_8_7" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">3.5</field>
+            <field name="cpo_freight_fee">100</field>
+        </record>
+
+        <record id="weight_pcb_8_8" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">4.0</field>
+            <field name="cpo_freight_fee">110</field>
+        </record>
+
+        <record id="weight_pcb_8_9" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">4.5</field>
+            <field name="cpo_freight_fee">120</field>
+        </record>
+
+        <record id="weight_pcb_8_10" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">5.0</field>
+            <field name="cpo_freight_fee">125</field>
+        </record>
+
+        <record id="weight_pcb_8_11" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">5.5</field>
+            <field name="cpo_freight_fee">130</field>
+        </record>
+
+        <record id="weight_pcb_8_12" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">6.0</field>
+            <field name="cpo_freight_fee">135</field>
+        </record>
+
+        <record id="weight_pcb_8_13" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">6.5</field>
+            <field name="cpo_freight_fee">140</field>
+        </record>
+
+        <record id="weight_pcb_8_14" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">7.0</field>
+            <field name="cpo_freight_fee">145</field>
+        </record>
+
+        <record id="weight_pcb_8_15" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">7.5</field>
+            <field name="cpo_freight_fee">150</field>
+        </record>
+
+        <record id="weight_pcb_8_16" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">8</field>
+            <field name="cpo_freight_fee">155</field>
+        </record>
+
+        <record id="weight_pcb_8_17" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">8.5</field>
+            <field name="cpo_freight_fee">160</field>
+        </record>
+
+        <record id="weight_pcb_8_18" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">9</field>
+            <field name="cpo_freight_fee">165</field>
+        </record>
+
+        <record id="weight_pcb_8_19" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">9.5</field>
+            <field name="cpo_freight_fee">170</field>
+        </record>
+
+        <record id="weight_pcb_8_20" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">10</field>
+            <field name="cpo_freight_fee">180</field>
+        </record>
+
+        <record id="weight_pcb_8_21" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">10.5</field>
+            <field name="cpo_freight_fee">190</field>
+        </record>
+
+        <record id="weight_pcb_8_22" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">11</field>
+            <field name="cpo_freight_fee">200</field>
+        </record>
+
+        <record id="weight_pcb_8_23" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">11.5</field>
+            <field name="cpo_freight_fee">210</field>
+        </record>
+
+        <record id="weight_pcb_8_24" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">12</field>
+            <field name="cpo_freight_fee">215</field>
+        </record>
+
+        <record id="weight_pcb_8_25" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">12.5</field>
+            <field name="cpo_freight_fee">220</field>
+        </record>
+
+        <record id="weight_pcb_8_26" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">13</field>
+            <field name="cpo_freight_fee">225</field>
+        </record>
+
+        <record id="weight_pcb_8_27" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">13.5</field>
+            <field name="cpo_freight_fee">230</field>
+        </record>
+
+        <record id="weight_pcb_8_28" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">14</field>
+            <field name="cpo_freight_fee">235</field>
+        </record>
+
+        <record id="weight_pcb_8_29" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">14.5</field>
+            <field name="cpo_freight_fee">240</field>
+        </record>
+
+        <record id="weight_pcb_8_30" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">15</field>
+            <field name="cpo_freight_fee">250</field>
+        </record>
+
+        <record id="weight_pcb_8_31" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">15.5</field>
+            <field name="cpo_freight_fee">255</field>
+        </record>
+
+        <record id="weight_pcb_8_32" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">16</field>
+            <field name="cpo_freight_fee">260</field>
+        </record>
+
+        <record id="weight_pcb_8_33" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">16.5</field>
+            <field name="cpo_freight_fee">265</field>
+        </record>
+
+        <record id="weight_pcb_8_34" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">17</field>
+            <field name="cpo_freight_fee">270</field>
+        </record>
+
+        <record id="weight_pcb_8_35" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">17.5</field>
+            <field name="cpo_freight_fee">275</field>
+        </record>
+
+        <record id="weight_pcb_8_36" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">18</field>
+            <field name="cpo_freight_fee">280</field>
+        </record>
+
+        <record id="weight_pcb_8_37" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">18.5</field>
+            <field name="cpo_freight_fee">290</field>
+        </record>
+
+        <record id="weight_pcb_8_38" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">19</field>
+            <field name="cpo_freight_fee">300</field>
+        </record>
+
+        <record id="weight_pcb_8_39" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">19.5</field>
+            <field name="cpo_freight_fee">310</field>
+        </record>
+
+        <record id="weight_pcb_8_40" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">20</field>
+            <field name="cpo_freight_fee">315</field>
+        </record>
+
+        <record id="weight_pcb_8_41" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">20.5</field>
+            <field name="cpo_freight_fee">320</field>
+        </record>
+
+        <record id="weight_pcb_8_42" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">21</field>
+            <field name="cpo_freight_fee">325</field>
+        </record>
+
+        <record id="weight_pcb_8_43" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">21.5</field>
+            <field name="cpo_freight_fee">330</field>
+        </record>
+
+        <record id="weight_pcb_8_44" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">22</field>
+            <field name="cpo_freight_fee">335</field>
+        </record>
+
+        <record id="weight_pcb_8_45" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">22.5</field>
+            <field name="cpo_freight_fee">340</field>
+        </record>
+
+        <record id="weight_pcb_8_46" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">23</field>
+            <field name="cpo_freight_fee">345</field>
+        </record>
+
+        <record id="weight_pcb_8_47" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">23.5</field>
+            <field name="cpo_freight_fee">350</field>
+        </record>
+
+        <record id="weight_pcb_8_48" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">24</field>
+            <field name="cpo_freight_fee">355</field>
+        </record>
+
+        <record id="weight_pcb_8_49" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">24.5</field>
+            <field name="cpo_freight_fee">360</field>
+        </record>
+
+        <record id="weight_pcb_8_50" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">25</field>
+            <field name="cpo_freight_fee">365</field>
+        </record>
+
+        <record id="weight_pcb_8_51" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">25.5</field>
+            <field name="cpo_freight_fee">370</field>
+        </record>
+
+        <record id="weight_pcb_8_52" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">26</field>
+            <field name="cpo_freight_fee">375</field>
+        </record>
+
+        <record id="weight_pcb_8_53" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">26.5</field>
+            <field name="cpo_freight_fee">380</field>
+        </record>
+
+        <record id="weight_pcb_8_54" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">27</field>
+            <field name="cpo_freight_fee">385</field>
+        </record>
+
+        <record id="weight_pcb_8_55" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">27.5</field>
+            <field name="cpo_freight_fee">390</field>
+        </record>
+        
+        <record id="weight_pcb_8_56" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">28</field>
+            <field name="cpo_freight_fee">395</field>
+        </record>
+        
+        <record id="weight_pcb_8_57" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">28.5</field>
+            <field name="cpo_freight_fee">400</field>
+        </record>
+
+        <record id="weight_pcb_8_58" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">29</field>
+            <field name="cpo_freight_fee">405</field>
+        </record>
+        
+        <record id="weight_pcb_8_59" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">29.5</field>
+            <field name="cpo_freight_fee">410</field>
+        </record>
+
+        <record id="weight_pcb_8_60" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb">30</field>
+            <field name="cpo_freight_fee">415</field>
+        </record>
+
+        <record id="cpo_region_9" model="cpo.freight.region">
+            <field name="cpo_region">9</field>
+            <field name="cpo_pcb_freight_id"/>
+            <field name="cpo_pcb_weight_breakdown_id"/>
+            <field name="cpo_pcb_weight_breakdown_range_id"/>
+        </record>
+
+        <record id="weight_pcb_9_1" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">0.5</field>
+            <field name="cpo_freight_fee">90</field>
+        </record>
+
+        <record id="weight_pcb_9_2" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">1.0</field>
+            <field name="cpo_freight_fee">110</field>
+        </record>
+
+        <record id="weight_pcb_9_3" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">1.5</field>
+            <field name="cpo_freight_fee">130</field>
+        </record>
+
+        <record id="weight_pcb_9_4" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">2.0</field>
+            <field name="cpo_freight_fee">150</field>
+        </record>
+
+        <record id="weight_pcb_9_5" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">2.5</field>
+            <field name="cpo_freight_fee">170</field>
+        </record>
+
+        <record id="weight_pcb_9_6" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">3.0</field>
+            <field name="cpo_freight_fee">190</field>
+        </record>
+
+        <record id="weight_pcb_9_7" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">3.5</field>
+            <field name="cpo_freight_fee">210</field>
+        </record>
+
+        <record id="weight_pcb_9_8" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">4.0</field>
+            <field name="cpo_freight_fee">230</field>
+        </record>
+
+        <record id="weight_pcb_9_9" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">4.5</field>
+            <field name="cpo_freight_fee">245</field>
+        </record>
+
+        <record id="weight_pcb_9_10" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">5.0</field>
+            <field name="cpo_freight_fee">260</field>
+        </record>
+
+        <record id="weight_pcb_9_11" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">5.5</field>
+            <field name="cpo_freight_fee">275</field>
+        </record>
+
+        <record id="weight_pcb_9_12" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">6.0</field>
+            <field name="cpo_freight_fee">290</field>
+        </record>
+
+        <record id="weight_pcb_9_13" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">6.5</field>
+            <field name="cpo_freight_fee">305</field>
+        </record>
+
+        <record id="weight_pcb_9_14" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">7.0</field>
+            <field name="cpo_freight_fee">320</field>
+        </record>
+
+        <record id="weight_pcb_9_15" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">7.5</field>
+            <field name="cpo_freight_fee">335</field>
+        </record>
+
+        <record id="weight_pcb_9_16" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">8</field>
+            <field name="cpo_freight_fee">350</field>
+        </record>
+
+        <record id="weight_pcb_9_17" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">8.5</field>
+            <field name="cpo_freight_fee">365</field>
+        </record>
+
+        <record id="weight_pcb_9_18" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">9</field>
+            <field name="cpo_freight_fee">380</field>
+        </record>
+
+        <record id="weight_pcb_9_19" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">9.5</field>
+            <field name="cpo_freight_fee">395</field>
+        </record>
+
+        <record id="weight_pcb_9_20" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">10</field>
+            <field name="cpo_freight_fee">410</field>
+        </record>
+
+        <record id="weight_pcb_9_21" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">10.5</field>
+            <field name="cpo_freight_fee">425</field>
+        </record>
+
+        <record id="weight_pcb_9_22" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">11</field>
+            <field name="cpo_freight_fee">440</field>
+        </record>
+
+        <record id="weight_pcb_9_23" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">11.5</field>
+            <field name="cpo_freight_fee">450</field>
+        </record>
+
+        <record id="weight_pcb_9_24" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">12</field>
+            <field name="cpo_freight_fee">460</field>
+        </record>
+
+        <record id="weight_pcb_9_25" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">12.5</field>
+            <field name="cpo_freight_fee">470</field>
+        </record>
+
+        <record id="weight_pcb_9_26" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">13</field>
+            <field name="cpo_freight_fee">480</field>
+        </record>
+
+        <record id="weight_pcb_9_27" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">13.5</field>
+            <field name="cpo_freight_fee">495</field>
+        </record>
+
+        <record id="weight_pcb_9_28" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">14</field>
+            <field name="cpo_freight_fee">510</field>
+        </record>
+
+        <record id="weight_pcb_9_29" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">14.5</field>
+            <field name="cpo_freight_fee">525</field>
+        </record>
+
+        <record id="weight_pcb_9_30" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">15</field>
+            <field name="cpo_freight_fee">540</field>
+        </record>
+
+        <record id="weight_pcb_9_31" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">15.5</field>
+            <field name="cpo_freight_fee">555</field>
+        </record>
+
+        <record id="weight_pcb_9_32" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">16</field>
+            <field name="cpo_freight_fee">570</field>
+        </record>
+
+        <record id="weight_pcb_9_33" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">16.5</field>
+            <field name="cpo_freight_fee">585</field>
+        </record>
+
+        <record id="weight_pcb_9_34" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">17</field>
+            <field name="cpo_freight_fee">600</field>
+        </record>
+
+        <record id="weight_pcb_9_35" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">17.5</field>
+            <field name="cpo_freight_fee">615</field>
+        </record>
+
+        <record id="weight_pcb_9_36" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">18</field>
+            <field name="cpo_freight_fee">630</field>
+        </record>
+
+        <record id="weight_pcb_9_37" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">18.5</field>
+            <field name="cpo_freight_fee">645</field>
+        </record>
+
+        <record id="weight_pcb_9_38" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">19</field>
+            <field name="cpo_freight_fee">660</field>
+        </record>
+
+        <record id="weight_pcb_9_39" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">19.5</field>
+            <field name="cpo_freight_fee">675</field>
+        </record>
+
+        <record id="weight_pcb_9_40" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">20</field>
+            <field name="cpo_freight_fee">690</field>
+        </record>
+
+        <record id="weight_pcb_9_41" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">20.5</field>
+            <field name="cpo_freight_fee">705</field>
+        </record>
+
+        <record id="weight_pcb_9_42" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">21</field>
+            <field name="cpo_freight_fee">725</field>
+        </record>
+
+        <record id="weight_pcb_9_43" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">21.5</field>
+            <field name="cpo_freight_fee">745</field>
+        </record>
+
+        <record id="weight_pcb_9_44" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">22</field>
+            <field name="cpo_freight_fee">765</field>
+        </record>
+
+        <record id="weight_pcb_9_45" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">22.5</field>
+            <field name="cpo_freight_fee">785</field>
+        </record>
+
+        <record id="weight_pcb_9_46" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">23</field>
+            <field name="cpo_freight_fee">805</field>
+        </record>
+
+        <record id="weight_pcb_9_47" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">23.5</field>
+            <field name="cpo_freight_fee">825</field>
+        </record>
+
+        <record id="weight_pcb_9_48" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">24</field>
+            <field name="cpo_freight_fee">845</field>
+        </record>
+
+        <record id="weight_pcb_9_49" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">24.5</field>
+            <field name="cpo_freight_fee">865</field>
+        </record>
+
+        <record id="weight_pcb_9_50" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">25</field>
+            <field name="cpo_freight_fee">885</field>
+        </record>
+
+        <record id="weight_pcb_9_51" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">25.5</field>
+            <field name="cpo_freight_fee">905</field>
+        </record>
+
+        <record id="weight_pcb_9_52" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">26</field>
+            <field name="cpo_freight_fee">925</field>
+        </record>
+
+        <record id="weight_pcb_9_53" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">26.5</field>
+            <field name="cpo_freight_fee">945</field>
+        </record>
+
+        <record id="weight_pcb_9_54" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">27</field>
+            <field name="cpo_freight_fee">965</field>
+        </record>
+
+        <record id="weight_pcb_9_55" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">27.5</field>
+            <field name="cpo_freight_fee">985</field>
+        </record>
+        
+        <record id="weight_pcb_9_56" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">28</field>
+            <field name="cpo_freight_fee">1005</field>
+        </record>
+        
+        <record id="weight_pcb_9_57" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">28.5</field>
+            <field name="cpo_freight_fee">1025</field>
+        </record>
+
+        <record id="weight_pcb_9_58" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">29</field>
+            <field name="cpo_freight_fee">1045</field>
+        </record>
+        
+        <record id="weight_pcb_9_59" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">29.5</field>
+            <field name="cpo_freight_fee">1065</field>
+        </record>
+
+        <record id="weight_pcb_9_60" model="cpo.pcb.weight.breakdown">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb">30</field>
+            <field name="cpo_freight_fee">1085</field>
+        </record>
+
+        <!-- 运费范围的 -->
+        <record id="weight_range_pcb_1_1" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb_range_1">30</field>
+            <field name="weight_pcb_range_2">70</field>
+            <field name="cpo_freight_range_fee">7.2</field>
+        </record>
+
+        <record id="weight_range_pcb_1_2" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb_range_1">70</field>
+            <field name="weight_pcb_range_2">300</field>
+            <field name="cpo_freight_range_fee">7</field>
+        </record>
+
+        <record id="weight_range_pcb_1_3" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="weight_pcb_range_1">300</field>
+            <field name="weight_pcb_range_2">99999</field>
+            <field name="cpo_freight_range_fee">7.2</field>
+        </record>
+
+        <record id="weight_range_pcb_2_1" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb_range_1">30</field>
+            <field name="weight_pcb_range_2">70</field>
+            <field name="cpo_freight_range_fee">12.7</field>
+        </record>
+
+        <record id="weight_range_pcb_2_2" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb_range_1">70</field>
+            <field name="weight_pcb_range_2">300</field>
+            <field name="cpo_freight_range_fee">12.2</field>
+        </record>
+
+        <record id="weight_range_pcb_2_3" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="weight_pcb_range_1">300</field>
+            <field name="weight_pcb_range_2">99999</field>
+            <field name="cpo_freight_range_fee">12.7</field>
+        </record>
+
+        <record id="weight_range_pcb_3_1" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb_range_1">30</field>
+            <field name="weight_pcb_range_2">70</field>
+            <field name="cpo_freight_range_fee">12.7</field>
+        </record>
+
+        <record id="weight_range_pcb_3_2" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb_range_1">70</field>
+            <field name="weight_pcb_range_2">300</field>
+            <field name="cpo_freight_range_fee">12.2</field>
+        </record>
+
+        <record id="weight_range_pcb_3_3" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="weight_pcb_range_1">300</field>
+            <field name="weight_pcb_range_2">99999</field>
+            <field name="cpo_freight_range_fee">12.7</field>
+        </record>
+
+        <record id="weight_range_pcb_4_1" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb_range_1">30</field>
+            <field name="weight_pcb_range_2">70</field>
+            <field name="cpo_freight_range_fee">13.8</field>
+        </record>
+
+        <record id="weight_range_pcb_4_2" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb_range_1">70</field>
+            <field name="weight_pcb_range_2">300</field>
+            <field name="cpo_freight_range_fee">13.0</field>
+        </record>
+
+        <record id="weight_range_pcb_4_3" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="weight_pcb_range_1">300</field>
+            <field name="weight_pcb_range_2">99999</field>
+            <field name="cpo_freight_range_fee">13.8</field>
+        </record>
+
+        <record id="weight_range_pcb_5_1" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb_range_1">30</field>
+            <field name="weight_pcb_range_2">70</field>
+            <field name="cpo_freight_range_fee">17.7</field>
+        </record>
+
+        <record id="weight_range_pcb_5_2" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb_range_1">70</field>
+            <field name="weight_pcb_range_2">300</field>
+            <field name="cpo_freight_range_fee">17.1</field>
+        </record>
+
+        <record id="weight_range_pcb_5_3" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="weight_pcb_range_1">300</field>
+            <field name="weight_pcb_range_2">99999</field>
+            <field name="cpo_freight_range_fee">17.7</field>
+        </record>
+
+        <record id="weight_range_pcb_6_1" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb_range_1">30</field>
+            <field name="weight_pcb_range_2">70</field>
+            <field name="cpo_freight_range_fee">8.3</field>
+        </record>
+
+        <record id="weight_range_pcb_6_2" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb_range_1">70</field>
+            <field name="weight_pcb_range_2">300</field>
+            <field name="cpo_freight_range_fee">8.4</field>
+        </record>
+
+        <record id="weight_range_pcb_6_3" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="weight_pcb_range_1">300</field>
+            <field name="weight_pcb_range_2">99999</field>
+            <field name="cpo_freight_range_fee">9.6</field>
+        </record>
+
+        <record id="weight_range_pcb_7_1" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb_range_1">30</field>
+            <field name="weight_pcb_range_2">70</field>
+            <field name="cpo_freight_range_fee">8.6</field>
+        </record>
+
+        <record id="weight_range_pcb_7_2" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb_range_1">70</field>
+            <field name="weight_pcb_range_2">300</field>
+            <field name="cpo_freight_range_fee">8.6</field>
+        </record>
+
+        <record id="weight_range_pcb_7_3" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="weight_pcb_range_1">300</field>
+            <field name="weight_pcb_range_2">99999</field>
+            <field name="cpo_freight_range_fee">10</field>
+        </record>
+
+        <record id="weight_range_pcb_8_1" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb_range_1">30</field>
+            <field name="weight_pcb_range_2">70</field>
+            <field name="cpo_freight_range_fee">11.30</field>
+        </record>
+
+        <record id="weight_range_pcb_8_2" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb_range_1">70</field>
+            <field name="weight_pcb_range_2">300</field>
+            <field name="cpo_freight_range_fee">10.6</field>
+        </record>
+
+        <record id="weight_range_pcb_8_3" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="weight_pcb_range_1">300</field>
+            <field name="weight_pcb_range_2">99999</field>
+            <field name="cpo_freight_range_fee">11.3</field>
+        </record>
+
+        <record id="weight_range_pcb_9_1" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb_range_1">30</field>
+            <field name="weight_pcb_range_2">70</field>
+            <field name="cpo_freight_range_fee">32.8</field>
+        </record>
+
+        <record id="weight_range_pcb_9_2" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb_range_1">70</field>
+            <field name="weight_pcb_range_2">300</field>
+            <field name="cpo_freight_range_fee">31.8</field>
+        </record>
+
+        <record id="weight_range_pcb_9_3" model="cpo.pcb.weight.breakdown.range">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="weight_pcb_range_1">300</field>
+            <field name="weight_pcb_range_2">99999</field>
+            <field name="cpo_freight_range_fee">32.8</field>
+        </record>
+
+    </data>
+</odoo>

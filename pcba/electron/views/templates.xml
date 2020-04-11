@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+    
+   
+
+        <template id="web.electron_base_layout" name="Login Layout">
+            <t t-call="web.layout">
+                <t t-set="html_data" t-value="{'style': 'height: 100%;'}"/>
+                <t t-set="head">
+                    <t t-call-assets="web.assets_common" t-js="false"/>
+                    <t t-call-assets="web.assets_frontend" t-js="false"/>
+                    <t t-call-assets="web.assets_common" t-css="false"/>
+                    <t t-call-assets="web.assets_frontend" t-css="false"/>
+                </t>
+                <!--<t t-set="body_classname" t-value="'container'"/>-->
+
+                <!--<div class="row">-->
+                    <!--<div class="col-md-6 col-md-offset-3 o_database_list">-->
+                        <!--<div class="text-center">-->
+                            <!--<img t-attf-src="/web/binary/company_logo{{ '?dbname='+db if db else '' }}"/>-->
+                        <!--</div>-->
+                        <!--<t t-raw="0"/>-->
+                        <!--<div class="text-center" t-if="not disable_footer">-->
+                            <!--<t t-if="not disable_database_manager">-->
+                                <!--<a class="" href="/web/database/manager">Manage Databases</a> |-->
+                            <!--</t>-->
+                            <!--<a href="https://www.odoo.com" target="_blank">Powered by <span>Odoo</span></a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </t>
+        </template>
+
+        <template id="electron.cpo_search_selections"> 
+            <t t-if="category_obj and not product_id">
+            <t t-set="ele_head_list" t-value="get_filter_head(category_obj.name)"/>
+            <div t-if="[x for x in ele_head_list[1].values() if x and x != None]" id="cpo_header_selection">
+            <table>
+                <tr>
+                    <t t-foreach="ele_head_list[0]" t-as="row">
+                        <th><t t-esc="row"/></th>
+                    </t>
+                </tr>
+                <tr>
+                    <t t-foreach="ele_head_list[0]" t-as="row">
+                        <td align="center">
+                            <select multiple="" size="10" id="pv_0" class="pv_pcba" t-att-name="row" style="height: 168px" t-att-data-category="category_obj.id">
+                                <t t-foreach="ele_head_list[1].get(row)" t-as="col_l">
+                                    <option t-att-value="col_l" t-att-id="row" t-att-data-id="row"><t t-esc="col_l"/></option>
+                                </t>
+                            </select>
+                            <p><button class="cpo_clear"><i class="fa fa-trash fa-1x"></i></button></p>
+                        </td>
+                    </t>
+                </tr>
+            </table>
+            <p class="grey-text">Post-screening results:<span class="searh_count"></span></p>
+            <form class="to_filter_args" role="form" t-att-action="'/electron/electronic/category/'+str(category_obj.id)" method="post">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <input name="cpo_ids" type="hidden" t-att-value="-1"/>
+                <!--<input name="category_obj_id" type="hidden" t-att-value="category_obj.id"/>-->
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            </form>
+            </div>
+            </t>
+        </template>
+
+    <template id="search" name="Search Box">
+        <form t-if="not product_id" t-att-action="keep('/electron/electronic'+ ('/category/'+slug(category)) if category else None, search=0)" method="get" t-att-class="search_class">
+            <t t-if="attrib_values">
+                <t t-foreach="attrib_values" t-as="a">
+                    <input type="hidden" name="attrib" t-att-value="'%s-%s' % (a[0], a[1])" />
+                </t>
+            </t>
+            <t t-call="website.website_search_box" />
+        </form>
+    </template>
+
+        <template id="listing" > 
+        <t t-call="website.layout">
+         <div class="cpo_electronic">
+            <div class="jumbotron title">
+                <div class="container">
+                     <div class="col-md-8 mt64 mb64 bg-black-25">
+                        <h2 class="o_default_snippet_text">One-stop Shop, Fast and convenient</h2>
+                        <h4 class="o_default_snippet_text">Quality Assurance</h4>
+                    </div>
+                </div>
+            </div>
+             <!--<t t-call="web.electron_base_layout"/>-->
+                 <div id="wrap">
+                     <div class="containerxx">
+                          <div class="container">
+                            <div class="row" id="row_style">
+                                <div t-if="not content_list and search != ''">
+
+                                    <a class="btn btn-primary" value="Back" onclick="window.history.back()"><i class="fa fa-arrow-left fa-1x"></i></a>
+                                    <div>
+                                        <div class="products_pager">
+                                            <div class="row cpo_ele_container" style="width: 100%;margin-bottom:30px;">
+                                                <t t-call="electron.search">
+                                                    <t t-set="search_class" t-value="'pagination form-inline o_website_sale_search'"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <h3 style="text-align:center;">The relevant data cannot be matched !</h3>
+                                    </div>
+                                </div>
+                             </div>
+                         </div>
+                         <div class="container">
+                            <div class="row" id="row_style">
+
+                                 <div t-if="not content_list and search == ''">
+                                     <div class="products_pager">
+                                        <div class="row cpo_ele_container" style="width: 100%;margin-bottom:30px;">
+                                            <t t-call="electron.search">
+                                                <t t-set="search_class" t-value="'pagination form-inline o_website_sale_search'"/>
+                                            </t>
+                                        </div>
+                                     </div>
+                                     <t t-call="electron.ele_cpo_category"/>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="row" style="margin:0">
+                            <div t-if="content_list" class="con_right">
+                                 <t t-call="electron.cpo_search_selections"/>
+                                 <div class="products_pager">
+                                    <div class="row cpo_ele_container" style="width: 100%;">
+                                        <t t-call="electron.search">
+                                            <t t-set="search_class" t-value="'pagination form-inline o_website_sale_search'"/>
+                                        </t>
+                                    </div>
+                                 </div>
+                                 <div class="products_pager">
+                                    <div id="pro_page">
+                                        <t t-call="website.pager" />
+                                    </div>
+                                 </div>
+                                 <t t-call="electron.product_type_path"/>
+                                 <div id="content">
+                                     <t t-call="electron.content"></t>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                     </div>
+                 </t>
+         </template>
+         <!-- category -->
+         <template id="ele_cpo_category">
+             <div class="row">
+                 <div class="container" id="ele_cpo_container">
+                     <div class="col-md-3" id="ele_cpo_all">
+                         <h3>All components</h3>
+                         <ul class="bbox" id="category_cpo_ele">
+                            <t t-foreach="objects" t-as="object">
+                                 <li t-if="not object.not_show and object.code not in ['base', 'general']">
+                                    <a t-att-id="object.id">
+                                        <t t-esc="object.name"/>
+                                    </a>
+                                     <!--<t t-set="abc" t-value="get_childs(object)"/>-->
+                                     <!--<t t-call="electron.childs_name"/>-->
+                                 </li>
+                             </t>
+                          </ul>
+                     </div>
+                     <div class="col-md-9" id="all_cpo_ele_right">
+                        <ul class="bbox" id="all_cpo_ele_con">
+                            <t t-foreach="objects" t-as="object">
+                                 <li t-if="not object.not_show and object.code not in ['base', 'general']">
+                                    <!--<a t-attf-href="#{ root }/category/#{ object.id }">-->
+                                    <p t-att-id="object.id">
+                                        <t t-esc="object.name"/>
+                                    </p>
+                                     <t t-set="abc" t-value="get_childs(object)"/>
+                                     <t t-call="electron.childs_name"/>
+                                 </li>
+                             </t>
+                        </ul>
+                     </div>
+                 </div>
+             </div>
+         </template>
+         <template id="product_type_path">
+             <p>
+                <a t-attf-href="#{ root }/category/">Home</a>
+                <t t-foreach="[1]*(get_type_parent_len(category_obj))" t-as="c_x">
+                    <t t-set="cu_type_obj" t-value="category_obj.parent_id"/>
+                    <span t-if="cu_type_obj">></span>
+                    <a t-attf-href="#{ root }/category/#{cu_type_obj.id}"><t t-esc="cu_type_obj.name"/></a>
+                </t>
+                <span t-if="category_obj.id">></span>
+                <a t-attf-href="#{ root }/category/#{category_obj.id}"><t t-esc="category_obj.name"/></a>
+                <t t-if="product_id">
+                    <span t-if="product_id and product_id.id">></span>
+                    <a t-attf-href="#{ root }/category/#{category_obj.id}/product/#{ product_id.id }"><t t-esc="product_id.name"/></a>
+                </t>
+             </p>
+         </template>
+         <template id="website_cpo_product_detail">
+            <!--<a t-attf-href="#{ root }/category/#{category_obj.id}/product/new">add+</a>-->
+            <form class="to_filter_args" role="form" t-att-action="'/electron/electronic/category/'+str(category_obj.id)+'/product/add'" method="post">
+             <button t-if="product_new" type="submit" class="btn btn-primary">Confirm</button>
+             <table style="z-index: -2;" border="1" width="30%">
+                <tr>
+                    <td>参数</td>
+                    <td>值</td>
+                </tr>
+                <!--<t t-foreach="cpo_sorted(fields_rel_dict.keys(), category_obj=category_obj, field='ele_title', get_name=False)" t-as="c_row">-->
+                <t t-foreach="content_list[:1]" t-as="child"> 
+                <t t-set="field_title_rel_dict" t-value="dict([(x[1],x[0]) for x in fields_rel_dict.items()])"/>
+                <t t-if="product_new" t-foreach="cpo_sorted(fields_rel_dict.values(), category_obj=category_obj, field='ele_disk_field_id', get_name=True)" t-as="v"> 
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <input name="category" type="hidden" t-att-value="category_obj.id"/>
+                        <tr>
+                            <td>
+                                <t t-esc="field_title_rel_dict[v]"/>
+                            </td>
+                            <td>
+                                <input t-att-name="v"/>
+                            </td>
+                        </tr>
+                </t>
+                <t t-if="not product_new" t-foreach="cpo_sorted(fields_rel_dict.values(), category_obj=category_obj, field='ele_disk_field_id', get_name=True)" t-as="v"> 
+                    <tr>
+                        <td>
+                             <t t-esc="field_title_rel_dict[v]"/>
+                        </td>
+                        <td>
+                            <!--<t t-esc="getattr(child,v)"/>-->
+                            <t t-if="v!='cpo_image'" >
+                                <t t-if="v=='big_image_herf'">
+                                    <img class="img-responsive center-block" t-att-src="getattr(child,v)" width="64" height="64"/>
+                                    <!--<t t-esc="getattr(getattr(child,v),'name')"/>-->
+                                </t>
+                                <t t-elif="v=='dash_number'">
+                                    <a t-attf-href="#{ root }/category/#{category_obj.id}/product/#{ getattr(child,'id') }"><t t-esc="getattr(child,v)"/></a>
+                                </t>
+                                <t t-elif="v=='name'">
+                                    <t t-if="getattr(child,v) != '-'">
+                                        <a t-if="getattr(child,v)" t-att-href="getattr(child,v)" target="view_window"><img class="img-responsive center-block" src="\electron\static\src\images\datasheet.gif" width="18" height="20" alt="Datasheet"/></a>
+                                    </t>
+                                    <t t-else="">
+                                        <a href="javascript:;"><img class="img-responsive center-block" src="\electron\static\src\images\datasheet.gif" width="18" height="20" alt="Datasheet"/></a>
+                                    </t>
+                                    <!--<a t-att-href="getattr(child,v) if getattr(child,v) != '-' else '#'" target="view_window"><img class="img-responsive center-block" src="\electron\static\src\images\datasheet.gif" width="18" height="20" alt="Datasheet"/></a>-->
+                                    <!--<t t-esc="getattr(getattr(child,v),'name')"/>-->
+                                </t>
+                                <t t-elif="hasattr(getattr(child,v),'name')">
+                                    <t t-esc="getattr(getattr(child,v),'name')"/>
+                                </t>
+                                <t t-else="">
+                                    <t t-esc="getattr(child,v)"/>
+                                </t>
+                            </t>
+                            <img t-if="v=='cpo_image'" style="display: none;" t-att-src="'/web/image?model=product.product&amp;field=image_medium&amp;id='+str(child.product_id.id)"  alt="image"/>
+                        </td>
+                    </tr>
+                </t>
+                </t>
+             </table>
+            </form>
+         </template>
+         <template id="content">
+             <div id="con_idxx" class="scroll_table_content" t-if="product_id or product_new">
+                 <t t-call="electron.website_cpo_product_detail"/>
+             </div>
+             <div id="con_idxx" class="scroll_table_content" t-if="not product_id and not product_new">
+                <!--<a t-attf-href="#{ root }/category/#{category_obj.id}/product/new">add+</a>-->
+                <table class="table table-striped  pre-scrollable table-hover" id="table2xx" style="z-index: -2;" border="0" width="100%">
+                    <thead>
+                        <tr style="background-color:#dddddd;">
+                            <t t-foreach="cpo_sorted(fields_rel_dict.keys(), category_obj=category_obj, field='ele_title', get_name=False)" t-as="c_row">
+                                <t t-if="c_row == 'Manufacturer'">
+                                    <th>
+                                        <p><t t-esc="c_row"/></p>
+                                    </th>
+                                </t>
+                                <t t-elif="c_row == 'Big Image Herf'">
+                                    <th>
+                                        <p style="width:115px"><t t-esc="c_row"/></p>
+                                    </th>
+                                </t>
+                                <t t-elif="c_row == 'Manufacturer P/N'">
+                                    <th>
+                                        <p style="width:130px;">P/N:<t t-esc="c_row"/></p>
+                                    </th>
+                                </t>
+                                <t t-elif="c_row == 'Packaging'">
+                                    <th>
+                                        <p><t t-esc="c_row"/></p>
+                                    </th>
+                                </t>
+                                <t t-elif="c_row == 'Encapsulation'">
+                                    <th>
+                                        <p><t t-esc="c_row"/></p>
+                                    </th>
+                                </t>
+                                <t t-else="">
+                                    <th>
+                                        <p><t t-esc="c_row"/></p>
+                                    </th>
+                                </t>
+
+                            </t>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="content_list" t-as="child"> 
+                            <tr>
+                                <t t-foreach="cpo_sorted(fields_rel_dict.values(), category_obj=category_obj, field='ele_disk_field_id', get_name=True)" t-as="v"> 
+                                    <td>
+                                        <t t-if="v!='cpo_image'" >
+                                            <t t-if="v=='big_image_herf'">
+                                                <img class="img-responsive center-block" t-att-src="getattr(child,v)" width="64" height="64"/>
+                                                <!--<t t-esc="getattr(getattr(child,v),'name')"/>-->
+                                            </t>
+                                            <t t-elif="v=='dash_number'">
+                                                <a t-attf-href="#{ root }/category/#{category_obj.id}/product/#{ getattr(child,'id') }"><t t-esc="getattr(child,v)"/></a>
+                                            </t>
+                                            <t t-elif="v=='name'">
+                                                <t t-if="getattr(child,v) != '-'">
+                                                    <a t-att-href="getattr(child,v)" target="view_window"><img class="img-responsive center-block" src="\electron\static\src\images\datasheet.gif" width="18" height="20" alt="Datasheet"/></a>
+                                                </t>
+                                                <t t-else="">
+                                                    <a href="javascript:;"><img class="img-responsive center-block" src="\electron\static\src\images\datasheet.gif" width="18" height="20" alt="Datasheet"/></a>
+                                                </t>
+                                                <!--<a t-att-href="getattr(child,v) if getattr(child,v) != '-' else '#'" target="view_window"><img class="img-responsive center-block" src="\electron\static\src\images\datasheet.gif" width="18" height="20" alt="Datasheet"/></a>-->
+                                                <!--<t t-esc="getattr(getattr(child,v),'name')"/>-->
+                                            </t>
+                                            <t t-elif="hasattr(getattr(child,v),'name')">
+                                                <t t-esc="getattr(getattr(child,v),'name')"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-esc="getattr(child,v)"/>
+                                            </t>
+                                        </t>
+                                        <img t-if="v=='cpo_image'" style="display: none;" t-att-src="'/web/image?model=product.product&amp;field=image_medium&amp;id='+str(child.product_id.id)"  alt="image"/>
+                                    </td>
+                                </t>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+
+         <template id="search_data">
+            <form t-att-action="keep('/electron/electronic'+ ('/category/'+slug(category)) if category else None, keywords=None)" method="get" t-att-class="search_class">
+                <t t-if="attrib_values">
+                    <t t-foreach="attrib_values" t-as="a">
+                        <input type="hidden" name="attrib" t-att-value="'%s-%s' % (a[0], a[1])" />
+                    </t>
+                </t>
+                <t t-call="website.website_search_box" />
+            </form>
+         </template>
+         
+         <!--重复循环-->
+         <template id="cpo_ele_content">
+                
+             <div id="con_id">
+                <table class="table table-striped" id="table2" style="z-index: -2;">
+                    <thead>
+                        <tr style="background-color:#dddddd;">
+                          <th>PDF说明</th>
+                          <th>Type</th>
+                          <th>瑞邦信息 零件编号</th>
+                          <th>制造商 零件编号</th>
+                          <th>最低订购数量</th>
+                          <th>现有数量</th>
+                          <th>单价</th>
+                          <th>描述</th>
+                          <th>系列</th>
+                          <th>制造商</th>
+                          <th>封装/外壳</th>
+                          <th>容差</th>
+                          <th>大小/尺寸</th>
+                          <th>安装类型</th>
+                          <th>包装</th>
+                          <th>零件状态</th>
+                          <th>电阻值</th>
+                          <th>功率（W）</th>
+                          <th>成分</th>
+                          <th>温度系数</th>
+                          <th>工作温度</th>
+                          <th>特性</th>
+                          <th>涂层，外壳类型</th>
+                          <th>安装特性</th>
+                          <th>高度-安装(最大值)</th>
+                       </tr>
+                    </thead>
+                        <!--<tr style="width: 400px; height: 100px;"></tr>-->
+                    <tbody>
+                    <t t-foreach="content_list" t-as="child"> 
+                       <tr>
+                          <td><a t-att-href="child.name" target="view_window">PDF</a></td>
+                          <td><t t-esc="child.p_type.name"/></td>
+                          <td><a href="#"><t t-esc="child.pcb_number"/></a></td>
+                          <td><a href="#"><t t-esc="child.dash_number"/></a></td>
+                          <td><t t-esc="child.mini_quantity"/></td>
+                          <td><t t-esc="child.QOH"/></td>
+                          <td><t t-esc="child.price"/></td>
+                          <td><t t-esc="child.description"/></td>
+                          <td><t t-esc="child.series"/></td>
+                          <td><t t-esc="child.manufacture"/></td>
+                          <td><t t-esc="child.encapsulation"/></td>
+                          <td><t t-esc="child.tolerance"/></td>
+                          <td><t t-esc="child.size"/></td>
+                          <td><t t-esc="child.inst_type"/></td>
+                          <td><t t-esc="child.packaging"/></td>
+                          <td><t t-esc="child.parts_state"/></td>
+                          
+                          <td><t t-esc="child.resi_val"/></td>
+                          <td><t t-esc="child.power"/></td>
+                          <td><t t-esc="child.ingredient"/></td>
+                          <td><t t-esc="child.TCR"/></td>
+                          <td><t t-esc="child.temperature"/></td>
+                          <td><t t-esc="child.character"/></td>
+                          <td><t t-esc="child.coating"/></td>
+                          <td><t t-esc="child.install_features"/></td>
+                          <td><t t-esc="child.height"/></td>
+                       </tr>
+                   </t>
+                   </tbody>
+              </table>
+              </div>
+         </template>
+         <template id="cpo_ele_content2">
+             <div id="con_id">
+              <!--<table id="table2" class="table table-bordered" style="font-size: 12px;">-->
+                <table class="table table-striped" id="table2" style="z-index: -2;">
+                    <thead>
+                        <tr style="background-color:#dddddd;">
+                          <th>PDF说明</th>
+                          <th>Type</th>
+                          <!--<th>图像</th>-->
+                          <th>瑞邦信息 零件编号</th>
+                          <th>制造商 零件编号</th>
+                          <th>最低订购数量</th>
+                          <th>现有数量</th>
+                          <th>单价</th>
+                          <th>描述</th>
+                          <th>系列</th>
+                          <th>制造商</th>
+                          <th>容差</th>
+                          <th>大小/尺寸</th>
+                          <th>封装/外壳</th>
+                          <th>安装类型</th>
+                          <th>包装</th>
+                          <th>特性</th>
+                          <th>零件状态</th>
+                          <th>电容</th>
+                          <th>电压-额定</th>
+                          <th>介电材料</th>
+                          <th>工作温度</th>
+                          <th>引线间距</th>
+                          <th>端子类型</th>
+                          <th>高度-安装（最大值）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                   <t t-foreach="content_list" t-as="child"> 
+                       <tr>
+                          <td><a t-att-href="child.name" target="view_window">PDF</a></td>
+                          <td><t t-esc="child.p_type.name"/></td>
+                          <td><a href="#"><t t-esc="child.pcb_number"/></a></td>
+                          <td><a href="#"><t t-esc="child.dash_number"/></a></td>
+                          <td><t t-esc="child.mini_quantity"/></td>
+                          <td><t t-esc="child.QOH"/></td>
+                          <td><t t-esc="child.price"/></td>
+                          <td><t t-esc="child.description"/></td>
+                          <td><t t-esc="child.series"/></td>
+                          <td><t t-esc="child.manufacture"/></td>
+                          <td><t t-esc="child.tolerance"/></td>
+                          <td><t t-esc="child.size"/></td>
+                          <td><t t-esc="child.encapsulation"/></td>
+                          <td><t t-esc="child.inst_type"/></td>
+                          <td><t t-esc="child.packaging"/></td>
+                          <td><t t-esc="child.character"/></td>
+                          <td><t t-esc="child.parts_state"/></td>
+                                                    
+                          <td><t t-esc="child.capacitance"/></td>
+                          <td><t t-esc="child.voltage_rating"/></td>
+                          <td><t t-esc="child.dielectrics"/></td>
+                          <td><t t-esc="child.temperature"/></td>
+                          <td><t t-esc="child.interval"/></td>
+                          <td><t t-esc="child.termination"/></td>
+                          <td><t t-esc="child.height"/></td>
+                       </tr>
+                   </t>
+               </tbody>
+              </table>
+              </div>
+         </template>
+         <template id="cpo_ele_content3">
+             <div id="con_id">
+              <!--<table id="table2" class="table table-bordered" style="font-size: 12px;">-->
+                <table class="table table-striped" id="table2" style="z-index: -2;">
+                    <thead>
+                        <tr style="background-color:#dddddd;">
+                          <th>PDF说明</th>
+                          <th>Type</th>
+                          <th>瑞邦信息 零件编号</th>
+                          <th>制造商 零件编号</th>
+                          <th>最低订购数量</th>
+                          <th>现有数量</th>
+                          <th>单价</th>
+                          <th>描述</th>
+                          <th>系列</th>
+                          <th>制造商</th>
+                          <th>封装/外壳</th>
+                          <th>容差</th>
+                          <th>大小/尺寸</th>
+                          <th>安装类型</th>
+                          <th>包装</th>
+                          <th>零件状态</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                   <t t-foreach="content_list" t-as="child"> 
+                       <tr>
+                          <td><a t-att-href="child.name" target="view_window">PDF</a></td>
+                          <td><t t-esc="child.p_type.name"/></td>
+                          <td><a href="#"><t t-esc="child.pcb_number"/></a></td>
+                          <td><a href="#"><t t-esc="child.dash_number"/></a></td>
+                          <td><t t-esc="child.mini_quantity"/></td>
+                          <td><t t-esc="child.QOH"/></td>
+                          <td><t t-esc="child.price"/></td>
+                          <td><t t-esc="child.description"/></td>
+                          <td><t t-esc="child.series"/></td>
+                          <td><t t-esc="child.manufacture"/></td>
+                          <td><t t-esc="child.encapsulation"/></td>
+                          <td><t t-esc="child.tolerance"/></td>
+                          <td><t t-esc="child.size"/></td>
+                          <td><t t-esc="child.inst_type"/></td>
+                          <td><t t-esc="child.packaging"/></td>
+                          <td><t t-esc="child.parts_state"/></td>
+                       </tr>
+                   </t>
+               </tbody>
+              </table>
+              </div>
+         </template>
+        <template id="cpo_ele_content4">
+             <div id="con_id">
+              <!--<table id="table2" class="table table-bordered" style="font-size: 12px;">-->
+                <table class="table table-striped" id="table2" style="z-index: -2;">
+                    <thead>
+                        <tr style="background-color:#dddddd;">
+                          <th>PDF说明</th>
+                          <th>瑞邦信息 零件编号</th>
+                          <th>制造商 零件编号</th>
+                          <th>最低订购数量</th>
+                          <th>现有数量</th>
+                          <th>单价</th>
+                          <th>描述</th>
+                          <th>系列</th>
+                          <th>制造商</th>
+                          <th>电容</th>
+                          <th>容差</th>
+                          <th>电压-额定</th>
+                          <th>介电材料</th>
+                          <th>工作温度</th>
+                          <th>安装类型</th>
+                          <th>封装/外壳</th>
+                          <th>引线间距</th>
+                          <th>大小/尺寸</th>
+                          <th>高度-安装(最大值)</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                      
+                    
+                   <t t-foreach="content_list" t-as="child"> 
+                
+                       <tr>
+                          <td><t t-esc="child.name" target="view_window"/></td>
+                          <td><a href="#"><t t-esc="child.pcb_number"/></a></td>
+                          <td><a href="#"><t t-esc="child.dash_number"/></a></td>
+                          <td><t t-esc="child.mini_quantity"/></td>
+                          <td><t t-esc="child.QOH"/></td>
+                          <td><t t-esc="child.price"/></td>
+                          <td><t t-esc="child.description"/></td>
+                          <td><t t-esc="child.series"/></td>
+                          <td><t t-esc="child.manufacture"/></td>
+                          
+                          <td><t t-esc="child.capacitance"/></td>
+                          <td><t t-esc="child.tolerance"/></td>
+                          <td><t t-esc="child.voltage_rating"/></td>
+                          <td><t t-esc="child.dielectrics"/></td>
+                          <td><t t-esc="child.temperature"/></td>
+                          <td><t t-esc="child.inst_type"/></td>
+                          <td><t t-esc="child.packaging"/></td>
+                          <td><t t-esc="child.interval"/></td>
+                          <td><t t-esc="child.size"/></td>
+                          <td><t t-esc="child.height"/></td>
+                       </tr>
+                 
+                   </t>
+               </tbody>
+              </table>
+              </div>
+         </template>
+         
+         <template id="childs_name"> 
+           <ul>
+              <t t-foreach="abc" t-as="child"> 
+                  <li t-if="not child.not_show">
+                  <a t-attf-href="#{ root }/category/#{ child.id }">
+                    <t t-esc="child.name"/>
+                  </a>
+                    <t t-if="get_childs(child)">
+                      <t t-set="abc" t-value="get_childs(child)"/>
+                          <t t-call="electron.childs_name"/>
+                    </t>
+                  </li>
+               </t>
+            </ul>
+         </template> 
+         <template id="object"> 
+           <h1><t t-esc="object.name"/></h1> 
+           <dl> 
+             <t t-foreach="object._fields" t-as="field"> 
+                <dt><t t-esc="field"/></dt> 
+                <dd><t t-esc="object[field]"/></dd> 
+             </t> 
+           </dl> 
+         </template> 
+    </data>
+</odoo>

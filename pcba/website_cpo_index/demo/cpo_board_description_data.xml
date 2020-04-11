@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!--<record id="cpo_product_description_1" model="cpo_product_description">-->
+            <!--<field name="sequence">1</field>-->
+            <!--<field name="title">PCB Assembly</field>-->
+            <!--<field name='direction'>left</field>-->
+            <!--<field name="Cover_img" type="base64" file="website_cpo_index/static/src/images/images/pcba_1.jpg"/>-->
+            <!--<field name='description'>-->
+                    <!--The PCB blank board passes through the SMT upper part and passes through the entire process of the DIP plug-in,-->
+                    <!--referred to as PCBA.-->
+            <!--</field>-->
+            <!--<field name='content'>-->
+                <!--<![CDATA[-->
+                    <!--<p>-->
+                        <!--1. SMT/MES industry has three pillars. China's SMT/MES industry is mainly concentrated in the eastern coastal-->
+                        <!--areas. The total amount of SMT/MES in Guangdong, Fujian, Zhejiang, Shanghai, Jiangsu, Shandong, Tianjin,-->
+                        <!--Beijing and Liaoning accounts for 80% of the country. the above. By region, the Pearl River Delta and-->
+                        <!--surrounding areas are the strongest, followed by the Yangtze River Delta, and the third in the Bohai Sea-->
+                        <!--region. Although the total amount of SMT/MES in the Bohai Rim region is quite different from that in the-->
+                        <!--Pearl River Delta and the Yangtze River Delta, the growth potential is huge and the development momentum-->
+                        <!--is stronger. The relevant state departments announced that Binhai New Area in Tianjin will become the-->
+                        <!--third pole of China's economic growth after Shenzhen and Shanghai Pudong. In the near future, China's SMT/MES-->
+                        <!--industry will inevitably form the three pillars of the Pearl River Delta, the Yangtze River Delta and the-->
+                        <!--Bohai Sea region. The reason why China's SMT/MES industry has such a good situation is that the relevant-->
+                        <!--departments of the Chinese government attach great importance to the development of electronic information-->
+                        <!--products manufacturing industry and have formulated sound development policies and introduction policies.-->
+                        <!--The transfer of electronic manufacturing to the Chinese mainland is an important factor in countries and-->
+                        <!--regions where the world's electronic information products manufacturing industry is developed, such as the-->
+                        <!--United States, Japan, South Korea, Europe and Taiwan.-->
+                    <!--</p>-->
+                    <!--<img src="/website_cpo_index/static/src/images/images/pcba_1.jpg" />-->
+                    <!--<p>-->
+                        <!--After the electronic equipment adopts the printed board, due to the consistency of the same printed board,-->
+                        <!--the manual wiring is avoided, and the electronic components can be automatically inserted or mounted,-->
+                        <!--automatically soldered, and automatically detected to ensure the quality of the electronic equipment. ,-->
+<!--                         Increased labor productivity, reduced costs, and ease of maintenance.-->
+                    <!--</p>-->
+                <!--]]>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="cpo_product_description_2" model="cpo_product_description">-->
+            <!--<field name="sequence">2</field>-->
+            <!--<field name="title">PCB Product</field>-->
+            <!--<field name='direction'>right</field>-->
+            <!--<field name="Cover_img" type="base64" file="website_cpo_index/static/src/images/images/pcb_1.jpg"/>-->
+            <!--<field name='description'>Printed circuit board {PCB circuit board}, also known as printed circuit board, is the provider of-->
+                    <!--electrical connections for electronic components-->
+            <!--</field>-->
+            <!--<field name='content'>-->
+                <!--<![CDATA[-->
+                    <!--<p>-->
+                        <!--1. SMT/MES industry has three pillars. China's SMT/MES industry is mainly concentrated in the eastern coastal-->
+                        <!--areas. The total amount of SMT/MES in Guangdong, Fujian, Zhejiang, Shanghai, Jiangsu, Shandong, Tianjin,-->
+                        <!--Beijing and Liaoning accounts for 80% of the country. the above. By region, the Pearl River Delta and-->
+                        <!--surrounding areas are the strongest, followed by the Yangtze River Delta, and the third in the Bohai Sea-->
+                        <!--region. Although the total amount of SMT/MES in the Bohai Rim region is quite different from that in the-->
+                        <!--Pearl River Delta and the Yangtze River Delta, the growth potential is huge and the development momentum-->
+                        <!--is stronger. The relevant state departments announced that Binhai New Area in Tianjin will become the-->
+                        <!--third pole of China's economic growth after Shenzhen and Shanghai Pudong. In the near future, China's SMT/MES-->
+                        <!--industry will inevitably form the three pillars of the Pearl River Delta, the Yangtze River Delta and the-->
+                        <!--Bohai Sea region. The reason why China's SMT/MES industry has such a good situation is that the relevant-->
+                        <!--departments of the Chinese government attach great importance to the development of electronic information-->
+                        <!--products manufacturing industry and have formulated sound development policies and introduction policies.-->
+                        <!--The transfer of electronic manufacturing to the Chinese mainland is an important factor in countries and-->
+                        <!--regions where the world's electronic information products manufacturing industry is developed, such as the-->
+                        <!--United States, Japan, South Korea, Europe and Taiwan.-->
+                    <!--</p>-->
+                    <!--<img src="/website_cpo_index/static/src/images/images/pcb_1.jpg" />-->
+                    <!--<p>-->
+                        <!--After the electronic equipment adopts the printed board, due to the consistency of the same printed board,-->
+                        <!--the manual wiring is avoided, and the electronic components can be automatically inserted or mounted,-->
+                        <!--automatically soldered, and automatically detected to ensure the quality of the electronic equipment. ,-->
+<!--                         Increased labor productivity, reduced costs, and ease of maintenance.-->
+                    <!--</p>-->
+                <!--]]>-->
+            <!--</field>-->
+        <!--</record>-->
+    </data>
+</odoo>

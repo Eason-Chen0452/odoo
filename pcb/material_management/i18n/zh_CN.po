@@ -1,0 +1,441 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* material_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-16 03:28+0000\n"
+"PO-Revision-Date: 2019-08-16 03:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_active
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_active
+#: model:ir.model.fields,field_description:material_management.field_material_management_active
+msgid "Active"
+msgstr "有效"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_all_show_bool
+msgid "All materials are displayed on the homepage"
+msgstr "全部展示在首页中"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_management_sale_bool
+msgid "Can I Sell It For Sale?"
+msgstr "能否单售？"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.wizard_gift_form
+msgid "Check Views"
+msgstr "查看刚生成的数据"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_center_id
+msgid "Client"
+msgstr "客户"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+msgid "Create Again"
+msgstr "再次创建"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_create_uid
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_create_uid
+#: model:ir.model.fields,field_description:material_management.field_material_management_create_uid
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_create_date
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_create_date
+#: model:ir.model.fields,field_description:material_management.field_material_management_create_date
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: material_management
+#: model:ir.model,name:material_management.model_personal_center
+msgid "Customer Personal Center"
+msgstr "客户个人中心"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_display_name
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_display_name
+#: model:ir.model.fields,field_description:material_management.field_material_management_display_name
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: material_management
+#: selection:material.gift,state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+#: model:ir.ui.view,arch_db:material_management.material_management_form
+#: model:ir.ui.view,arch_db:material_management.wizard_gift_form
+msgid "End Time"
+msgstr "结束时间"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+msgid "General Information"
+msgstr "一般信息"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+#: selection:material.gift,state:0
+msgid "Gift Effective"
+msgstr "赠送有效"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+msgid "Gift Effective Time"
+msgstr "赠送有效时间"
+
+#. module: material_management
+#: selection:material.gift,state:0
+msgid "Gift Invalid"
+msgstr "赠送失效"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_management_gift_bool
+#: model:ir.model.fields,field_description:material_management.field_personal_center_gift_count
+#: model:ir.model.fields,field_description:material_management.field_personal_center_gift_count_bool
+#: model:ir.ui.view,arch_db:material_management.inherit_center_form
+msgid "Gift Material"
+msgstr "为赠送物料？"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_state
+#: model:ir.model.fields,field_description:material_management.field_material_gift_state
+msgid "Gift State"
+msgstr "赠送状态"
+
+#. module: material_management
+#: sql_constraint:material.gift:0
+msgid "Gift materials and gift time periods cannot be repeated."
+msgstr "赠送的物料以及赠送的时间段不能重复"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_number
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_number
+msgid "How Many People Receive"
+msgstr "多少人可领取"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_send
+#: model:ir.model.fields,field_description:material_management.field_material_gift_send
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_send
+msgid "How many pieces to send?"
+msgstr "一次送多少物料?"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_id
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_id
+#: model:ir.model.fields,field_description:material_management.field_material_management_id
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_id
+msgid "ID"
+msgstr "ID"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift___last_update
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line___last_update
+#: model:ir.model.fields,field_description:material_management.field_material_management___last_update
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_write_uid
+#: model:ir.model.fields,field_description:material_management.field_material_gift_write_uid
+#: model:ir.model.fields,field_description:material_management.field_material_management_write_uid
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_write_date
+#: model:ir.model.fields,field_description:material_management.field_material_gift_write_date
+#: model:ir.model.fields,field_description:material_management.field_material_management_write_date
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_assign_show_bool
+msgid "Manually specify the material display home page later"
+msgstr "稍后手动指定首页展示的物料"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_description
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_description
+#: model:ir.model.fields,field_description:material_management.field_material_management_description
+msgid "Material Description"
+msgstr "物料描述"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+#: model:ir.ui.view,arch_db:material_management.material_management_form
+msgid "Material Description And Other Statement"
+msgstr "物料描述及其他说明"
+
+#. module: material_management
+#: code:addons/material_management/models/models.py:152
+#: code:addons/material_management/wizard/wizard_gift.py:101
+#: model:ir.actions.act_window,name:material_management.material_gift_window
+#: model:ir.model,name:material_management.model_material_gift
+#: model:ir.model,name:material_management.model_wizard_material_gift
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_gift_id
+#: model:ir.ui.menu,name:material_management.material_1_list
+#: model:ir.ui.menu,name:material_management.material_menu_2
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+#: model:ir.ui.view,arch_db:material_management.wizard_gift_form
+#, python-format
+msgid "Material Gift"
+msgstr "物料赠送"
+
+#. module: material_management
+#: model:ir.actions.act_window,name:material_management.act_gift_line
+#: model:ir.model,name:material_management.model_material_gift_line
+#: model:ir.model.fields,field_description:material_management.field_material_gift_gift_line_ids
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+msgid "Material Gift Detail"
+msgstr "物料赠送明细"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+#: model:ir.ui.view,arch_db:material_management.wizard_gift_form
+msgid "Material Gift Setting"
+msgstr "物料赠送设置"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_gift_cycle
+#: model:ir.model.fields,field_description:material_management.field_material_gift_gift_end
+#: model:ir.model.fields,field_description:material_management.field_material_gift_gift_start
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_gift_cycle
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_gift_end
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_gift_start
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_gift_cycle
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_gift_end
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_gift_start
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+#: model:ir.ui.view,arch_db:material_management.wizard_gift_form
+msgid "Material Gift Time Period"
+msgstr "物料赠送时间周期"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_management_cycle
+#: model:ir.model.fields,field_description:material_management.field_material_management_end
+#: model:ir.model.fields,field_description:material_management.field_material_management_start
+#: model:ir.ui.view,arch_db:material_management.material_management_form
+msgid "Material Life Cycle"
+msgstr "物料保质时间周期"
+
+#. module: material_management
+#: model:ir.actions.act_window,name:material_management.material_management_window
+#: model:ir.model,name:material_management.model_material_management
+#: model:ir.ui.menu,name:material_management.material_menu_1
+#: model:ir.ui.view,arch_db:material_management.material_management_form
+msgid "Material Management Setting"
+msgstr "物料管理设置"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_manufacturer
+#: model:ir.model.fields,field_description:material_management.field_material_gift_manufacturer
+#: model:ir.model.fields,field_description:material_management.field_material_management_manufacturer
+msgid "Material Manufacturer Number"
+msgstr "物料制造商编号"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_material_id
+#: model:ir.model.fields,field_description:material_management.field_material_management_name
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_material_ids
+#: model:ir.ui.view,arch_db:material_management.material_management_form
+#: model:ir.ui.view,arch_db:material_management.wizard_gift_form
+msgid "Material Name"
+msgstr "物料名称"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_package
+#: model:ir.model.fields,field_description:material_management.field_material_gift_package
+#: model:ir.model.fields,field_description:material_management.field_material_management_package
+msgid "Material Package Number"
+msgstr "物料封装号"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_use_cycle
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_use_end
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_use_start
+#: model:ir.model.fields,field_description:material_management.field_material_gift_use_cycle
+#: model:ir.model.fields,field_description:material_management.field_material_gift_use_end
+#: model:ir.model.fields,field_description:material_management.field_material_gift_use_start
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_use_cycle
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_use_end
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_use_start
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+#: model:ir.ui.view,arch_db:material_management.wizard_gift_form
+msgid "Material Use Time Period"
+msgstr "物料使用时间周期"
+
+#. module: material_management
+#: model:ir.actions.act_window,help:material_management.wizard_gift_window
+msgid "Multiple gift materials can be set at the same time..."
+msgstr "可同时操作多个赠送物料..."
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_line_name
+msgid "Number"
+msgstr "编号"
+
+#. module: material_management
+#: selection:material.management,unit:0
+msgid "Plate"
+msgstr "盘"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_management_form
+msgid "Please describe the material in detail!"
+msgstr "请详细描述该物料!"
+
+#. module: material_management
+#: code:addons/material_management/models/models.py:115
+#: code:addons/material_management/wizard/wizard_gift.py:53
+#, python-format
+msgid "Please fill in how many materials the customer can receive at one time."
+msgstr "请填写客户一次可以领取多少颗物料"
+
+#. module: material_management
+#: code:addons/material_management/models/models.py:113
+#: code:addons/material_management/wizard/wizard_gift.py:51
+#, python-format
+msgid "Please fill in how many people can get it"
+msgstr "请填写多少人份"
+
+#. module: material_management
+#: code:addons/material_management/wizard/wizard_gift.py:55
+#, python-format
+msgid "Please set whether to show all or part of the gains"
+msgstr "请设置是否全部显示在首页中或指定显示"
+
+#. module: material_management
+#: model:ir.ui.menu,name:material_management.material_menu_root
+msgid "Present Customer Materials"
+msgstr "赠送客户物料"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_management_price
+#: model:ir.ui.view,arch_db:material_management.material_management_form
+msgid "Price"
+msgstr "价格"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_management_product_id
+msgid "Product"
+msgstr "产品"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_personal_center_buy_count
+#: model:ir.model.fields,field_description:material_management.field_personal_center_buy_count_bool
+msgid "Purchased Material"
+msgstr "购买的物料"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_management_quantity
+msgid "Quantity"
+msgstr "数量"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_sequence
+msgid "Sequence"
+msgstr "序号"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_management_form
+msgid "Set A Gift Or A Single Sale"
+msgstr "设置赠送或单售"
+
+#. module: material_management
+#: selection:material.management,unit:0
+msgid "Single"
+msgstr "个"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+#: model:ir.ui.view,arch_db:material_management.material_management_form
+#: model:ir.ui.view,arch_db:material_management.wizard_gift_form
+msgid "Start Time"
+msgstr "开始时间"
+
+#. module: material_management
+#: sql_constraint:material.management:0
+msgid "The system has detected that the material name is duplicated. Please name the material name from the new one."
+msgstr "系统检测到物料名称重复，请从新命名该物料名称"
+
+#. module: material_management
+#: model:ir.actions.act_window,help:material_management.material_gift_window
+msgid "There are currently no materials available, click Create to add a gift material..."
+msgstr "目前没有可赠送的物料,点击创建可新添加一款可赠送的物料..."
+
+#. module: material_management
+#: model:ir.actions.act_window,help:material_management.material_management_window
+msgid "There is currently no material, click Create to add a material..."
+msgstr "目前没有物料,点击创建可新添加一款物料..."
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_name
+msgid "Title"
+msgstr "称谓"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.wizard_gift_form
+msgid "Unified Creation"
+msgstr "统一创建"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_management_unit
+msgid "Unit"
+msgstr "单位"
+
+#. module: material_management
+#: model:ir.actions.act_window,name:material_management.wizard_gift_window
+#: model:ir.ui.menu,name:material_management.wizard_1_list
+msgid "Unity Operation Can Give Gifts"
+msgstr "统一操作可赠送物料"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+msgid "Use Effective Time"
+msgstr "使用有效时间"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_wizard_material_gift_gift_create_bool
+msgid "Whether To Create"
+msgstr "是否创建"
+
+#. module: material_management
+#: model:ir.model.fields,field_description:material_management.field_material_gift_show_bool
+msgid "Whether To Show"
+msgstr "是否展示？"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_management_form
+msgid "Which Material Is In Stock"
+msgstr "库存中哪种物料产品"
+
+#. module: material_management
+#: model:ir.ui.view,arch_db:material_management.material_gift_form
+msgid "Will create the current record again"
+msgstr "再次创建当前记录"
+

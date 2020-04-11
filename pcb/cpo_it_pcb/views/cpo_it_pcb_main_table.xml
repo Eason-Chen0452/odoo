@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--PCB价格表中 第一级的tree视图-->
+        <record id="pcb_quotation_pricelist_view_tree" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.tree</field>
+            <field name="model">pcb.quotation.pricelist</field>
+            <field name="arch" type="xml">
+                <tree string="PCB Price List">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="currency_id"/>
+                    <field name="pricelist_type"/>
+                    <field name="general_price" />
+                    <field name="cost_price" />
+                    <field name="active" />
+                </tree>
+            </field>
+        </record>
+        <!--PCB价格表中 第一级的form视图-->
+        <record id="pcb_quotation_pricelist_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.form</field>
+            <field name="model">pcb.quotation.pricelist</field>
+            <field name="arch" type="xml">
+                <form string="PCB Price List" version="7.0">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="general_price"/>
+                        </group>
+                        <group>
+                            <field name="pricelist_type"/>
+                            <field name="cost_price"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="partner_id" domain="[('customer','=',True),('is_company','=',True)]"
+                                   attrs="{'readonly':['|',('general_price','=',True),('cost_price','=',True)],'required':[('general_price','=',False),('cost_price','=',False)]}"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                            <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="date_created"/>
+                        </group>
+                        <group>
+                            <field name="date_updated"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Price List Version">
+                            <field name="version_id" String="Price List Version"/>
+                        </page>
+                        <page string="Memo">
+                            <field name="memo"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--PCB价格表中 第一级的search视图-->
+        <record model="ir.ui.view" id="pcb_quotation_pricelist_view_search">
+            <field name="name">pcb.quotation.pricelist.search</field>
+            <field name="model">pcb.quotation.pricelist</field>
+            <field name="arch" type="xml">
+                <search string="PCB Price List Search">
+                    <field name="name" string="PCB Price List"/>
+                    <field name="partner_id"/>
+                    <field name="pricelist_type"/>
+                    <field name="active" />
+                    <field name="currency_id" groups="base.group_multi_currency"/>
+                </search>
+            </field>
+        </record>
+        <!--PCB价格表中 第一级的window视图-->
+        <record id="pcb_quotation_pricelist_action" model="ir.actions.act_window">
+            <field name="name">PCB Routine Price List</field>
+            <field name="res_model">pcb.quotation.pricelist</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_pcb_quotation_pricelist_main" name="Price Lists" parent="sales_team.menu_base_partner" sequence="3"/>
+        <!--PCB价格表中 menu第三级-->
+        <menuitem action="pcb_quotation_pricelist_action" id="menu_pcb_quotation_pricelist_action" parent="menu_pcb_quotation_pricelist_main" sequence="1"/>
+    </data>
+</odoo>

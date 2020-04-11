@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template id="study_color_picker" xml:space="preserve">
+    <t t-extend="mail.ChatWindow">
+		<!--<div t-if='!widget.options.input_less' class="o_chat_composer"></div>-->
+        <t t-jquery="input.o_composer_text_field" t-operation="after">
+            <button id="cpo_send_message">Send</button>
+        </t>
+    </t>
+</template>

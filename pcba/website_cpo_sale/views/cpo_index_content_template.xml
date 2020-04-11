@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="cpo_index_content_assets_frontend" inherit_id="website.assets_frontend" name="CPO Content">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/website_cpo_sale/static/src/css/cpo_website_base.css" />
+                <link rel="stylesheet" href="/website_cpo_sale/static/src/css/cpo_index_content.css" />
+                <link rel="stylesheet" href="/website_cpo_sale/static/src/css/less/cpo_index.less" />
+                <link rel="stylesheet" href="/website_cpo_sale/static/src/css/plugins/plugins.css" />
+            </xpath>
+            <xpath expr="//script[last()]" position="after">
+                <script type="text/javascript" src="/website_cpo_sale/static/src/js/plugins/plugins.js"></script>
+                <script type="text/javascript" src="/website_cpo_sale/static/src/js/html5media.min.js"></script>
+                <!--<script src="/website_cpo_sale/static/src/js/plugins/slide-form.js"></script>-->
+            </xpath>
+        </template>
+        <!-- Product Description -->
+        <template id="website_product_description">
+            <div class="row">
+                <div class="cpo_product_description">
+                    <div class="col-md-6 cpo_product_right">
+                        <div class="product_right_title">
+                            <div class="col-md-4 product_left_title">
+                                <h3 class="left_pcba_title">PCB Product</h3>
+                                <p>
+                                    2L up to 48Layers Rigid Boards Rigid-Flex Boards HDI Boards High Freguency High -Tg material
+                                </p>
+                            </div>
+                        </div>
+                        <div class="product_right_content">
+                        <div class="content_lb">
+                            <ul class="cpo_click_lb">
+                                <li class="lb_click_item item_one">
+                                    <div class="product_desc">
+                                        <h4>2 Layer</h4>
+                                        <p>
+                                            2L up to 48Layers Rigid Boards Rigid-Flex Boards HDI Boards High Freguency High -Tg material
+                                        </p>
+                                    </div>
+                                    <img class="img img-responsive" src="/website_cpo_sale/static/src/images/tools_img/pcb_product_index.png"/>
+                                </li>
+                            </ul>
+                            <div class="btn btn_left"><i class="fa fa-chevron-left fa-lg"></i></div>
+                            <div class="btn btn_right"><i class="fa fa-chevron-right fa-lg"></i></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6 cpo_product_left">
+                        <div class="product_right_title">
+                            <div class="col-md-4 product_left_title">
+                                <h3 class="left_pcba_title">PCB Assembly</h3>
+                                <p>
+                                    Meet the IPC-610-E-II standard and in the ESD requirement, handling 01005 chip components and 0.2mm pitch BGA and precision connector.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="product_left_content">
+                            <div class="content_lb">
+                                <ul class="cpo_click_lb">
+                                    <li class="lb_click_item item_one">
+                                        <div class="product_desc">
+                                            <h4>PCB Assembly</h4>
+                                            <p>
+                                                Meet the IPC-610-E-II standard and in the ESD requirement, handling 01005 chip components and 0.2mm pitch BGA and precision connector.
+                                            </p>
+                                        </div>
+                                        <img class="img img-responsive" src="/website_cpo_sale/static/src/images/tools_img/pcba_index.png"/>
+                                    </li>
+                                </ul>
+                                <div class="btn btn_left"><i class="fa fa-chevron-left fa-lg"></i></div>
+                                <div class="btn btn_right"><i class="fa fa-chevron-right fa-lg"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="cpo_multilayer_board">
+            <div class="multilayer_board">
+                <!--<t t-call="website_cpo_advertising.cpo_pcb_online_content"/>-->
+                <div class="col-md-3 layer_board_box">
+                    <div class="cpo_layer_board">
+                        <div class="board_title">
+                            <div class="layer_img_photo">
+                                <img src="/website_cpo_sale/static/src/images/layerimg/layer_1_2.jpg"/>
+                            </div>
+                            <div class="layer_img_layernum">
+                                <h3 class="layer_num_qty">1-2 Layers</h3>
+                                <span class="layer_money_total">$ 850</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <label class="cpo_board_left">Layer count</label>
+                                <span class="cpo_board_right">1 - 2 Layers</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Turn time</label>
+                                <span class="cpo_board_right">As fast as 24 hours</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Qty req.</label>
+                                <span class="cpo_board_right">500</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Materials</label>
+                                <span class="cpo_board_right">FR4,Aluminum</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Finished copper</label>
+                                <span class="cpo_board_right">1-3 oz</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Trace / space</label>
+                                <span class="cpo_board_right">4/4mil (0.1mm)</span>
+                            </li>
+                        </ul>
+                        <a href="/pcb/package-price" class="btn product_price_total">Buy now</a>
+                    </div>
+                </div>
+                <div class="col-md-3 layer_board_box">
+                    <div class="cpo_layer_board">
+                        <div class="board_title">
+                            <div class="layer_img_photo">
+                                <img src="/website_cpo_sale/static/src/images/layerimg/layer_1_2.jpg"/>
+                            </div>
+                            <div class="layer_img_layernum">
+                                <h3 class="layer_num_qty">1-2 Layers</h3>
+                                <span class="layer_money_total">$ 223</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <label class="cpo_board_left">Layer count</label>
+                                <span class="cpo_board_right">1 - 2 Layers</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Turn time</label>
+                                <span class="cpo_board_right">As fast as 24 hours</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Qty req.</label>
+                                <span class="cpo_board_right">500</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Materials</label>
+                                <span class="cpo_board_right">FR4,Aluminum</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Finished copper</label>
+                                <span class="cpo_board_right">1-3 oz</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Trace / space</label>
+                                <span class="cpo_board_right">4/4mil (0.1mm)</span>
+                            </li>
+                        </ul>
+                        <a href="/pcb/package-price" class="btn product_price_total">Buy now</a>
+                    </div>
+                </div>
+                <div class="col-md-3 layer_board_box">
+                    <div class="cpo_layer_board">
+                        <div class="board_title">
+                            <div class="layer_img_photo">
+                                <img src="/website_cpo_sale/static/src/images/layerimg/layer_1_2.jpg"/>
+                            </div>
+                            <div class="layer_img_layernum">
+                                <h3 class="layer_num_qty">1-2 Layers</h3>
+                                <span class="layer_money_total">$ 320</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <label class="cpo_board_left">Layer count</label>
+                                <span class="cpo_board_right">1 - 2 Layers</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Turn time</label>
+                                <span class="cpo_board_right">As fast as 24 hours</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Qty req.</label>
+                                <span class="cpo_board_right">500</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Materials</label>
+                                <span class="cpo_board_right">FR4,Aluminum</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Finished copper</label>
+                                <span class="cpo_board_right">1-3 oz</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Trace / space</label>
+                                <span class="cpo_board_right">4/4mil (0.1mm)</span>
+                            </li>
+                        </ul>
+                        <a href="/pcb/package-price" class="btn product_price_total">Buy now</a>
+                    </div>
+                </div>
+                <div class="col-md-3 layer_board_box">
+                    <div class="cpo_layer_board">
+                        <div class="board_title">
+                            <div class="layer_img_photo">
+                                <img src="/website_cpo_sale/static/src/images/layerimg/layer_1_2.jpg"/>
+                            </div>
+                            <div class="layer_img_layernum">
+                                <h3 class="layer_num_qty">1-2 Layers</h3>
+                                <span class="layer_money_total">$ 450</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <label class="cpo_board_left">Layer count</label>
+                                <span class="cpo_board_right">1 - 2 Layers</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Turn time</label>
+                                <span class="cpo_board_right">As fast as 24 hours</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Qty req.</label>
+                                <span class="cpo_board_right">500</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Materials</label>
+                                <span class="cpo_board_right">FR4,Aluminum</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Finished copper</label>
+                                <span class="cpo_board_right">1-3 oz</span>
+                            </li>
+                            <li>
+                                <label class="cpo_board_left">Trace / space</label>
+                                <span class="cpo_board_right">4/4mil (0.1mm)</span>
+                            </li>
+                        </ul>
+                        <a href="/pcb/package-price" class="btn product_price_total">Buy now</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </template>
+
+        <template id="cpo_complete_case">
+            <div class="complete_case">
+                <div class="col-md-4">
+                    <div class="complete_case_content">
+                        <div class="case_left">
+                            <img src="/website_cpo_sale/static/src/images/cpo_pcb_ys.jpg"/>
+                            <a href="https://www.chinapcbone.com/pcb-products/pcb-process.html" target="_blank">View more</a>
+                        </div>
+                        <div class="case_right">
+                            <h4>PCB Design</h4>
+                            <p>ChinaPCBOne is good at making a special process PCB, such as: High Density PCB, HDI PCB, Heavy Copper PCB, Impedance Control PCB,
+                                Rigid Flex PCB, Buried &amp; Blind Via PCB, and more.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="complete_case_content">
+                        <div class="case_left">
+                            <img src="/website_cpo_sale/static/src/images/smt_photo_1.jpg"/>
+                            <a href="https://www.chinapcbone.com/china-pcb-manufacturer/advantage.html" target="_blank">View more</a>
+                        </div>
+                        <div class="case_right">
+                            <h4>SMT patch assembly</h4>
+                            <p>ChinaPCBOne is famous for a "Quick" Printed Circuit board Manufacturer. Quick quotes,
+                                Faster Response, Quick Turn</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="complete_case_content">
+                        <div class="case_left">
+                            <img src="/website_cpo_sale/static/src/images/cpo_bom_message.png"/>
+                            <a href="/my/bom" target="_blank">View more</a>
+                        </div>
+                        <div class="case_right">
+                            <h4>BOM analysis</h4>
+                            <p>You can upload your BOM file. To learn more, please click on ‘view more’</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="cpo_order_evaluation">
+            <div class="cpo_order_content">
+                <div class="col-md-4">
+                    <div class="cpo_order_people">
+                        <img class="img img-responsive" src="/website_cpo_sale/static/src/images/tools_img/gd_list.jpg"/>
+
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="cpo_why_select_from">
+                        <div class="select_from_title">
+                            <h3>Why Buy Your Printed Circuit Boards From Us? </h3>
+                            <ul>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-circle fa-fw"></i>
+                                        Prototype Fab with 24 hours Express
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-circle fa-fw"></i>
+                                        Team supported with over 50 professionals &amp; technical
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-circle fa-fw"></i>
+                                        99% on-Time Shipping with great support from DHL
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-circle fa-fw"></i>
+                                        Great quality approved by customers all over the world
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-circle fa-fw"></i>
+                                        Trusted Experience
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-circle fa-fw"></i>
+                                        24 hours Non-stop Tech Support and Production
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-circle fa-fw"></i>
+                                        Low Minimums
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-circle fa-fw"></i>
+                                        Factory Outlet PCBs with most competitive advantages
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-circle fa-fw"></i>
+                                        Chief PCB Manufacturer Located in China
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cpo_youtube_video">
+                        <a href="#">
+                            <img src="/website_cpo_sale/static/src/images/tools_img/view_video.png"/>
+                        </a>
+                    </div>
+                    <div class="cpo_sp_projects">
+                        <a href="https://www.facebook.com/chinapcbone/" target="_blank">
+                            <img src="/website_cpo_sale/static/src/images/tools_img/facebook_1.png"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="cpo_customer_review">
+            <div class="col-md-12">
+                <div class="cpo_comment">
+                    <div class="col-md-3">
+                        <div class="cpo_comment_content">
+                            <div class="update_photo">
+                                <img class="img img-responsive" src="/website_cpo_sale/static/src/images/cpo_pcb_ys.jpg"/>
+                            </div>
+                            <div class="cpo_comment_view">
+                                <div class="cpo_user_message">
+                                    <div class="cpo_user_tx">
+                                        <img src="/website_cpo_sale/static/src/images/tx/tx_1.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="cpo_user_view">
+                                    <div class="cpo_user_message_name">
+                                        <span>Jacqu** Li</span>
+                                    </div>
+                                    <div class="cpo_usre_view_mess">
+                                        <span class="cpo_view_qty">512</span>
+                                        <i class="cpo_view"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cpo_comment_description">
+                                <a>
+                                    <p>
+                                        we will conduct a manual review, which will be approved, and payment will be made after the check is correct!.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="cpo_comment_content">
+                            <div class="update_photo">
+                                <img class="img img-responsive" src="/website_cpo_sale/static/src/images/layerimg/pcb_test_2.jpg"/>
+                            </div>
+                            <div class="cpo_comment_view">
+                                <div class="cpo_user_message">
+                                    <div class="cpo_user_tx">
+                                        <img src="/website_cpo_sale/static/src/images/tx/tx_2.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="cpo_user_view">
+                                    <div class="cpo_user_message_name">
+                                        <span>Ka** Wang</span>
+                                    </div>
+                                    <div class="cpo_usre_view_mess">
+                                        <span class="cpo_view_qty">122</span>
+                                        <i class="cpo_view"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cpo_comment_description">
+                                <a>
+                                    <p>
+                                        we will conduct a manual review, which will be approved, and payment will be made after the check is correct!.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="cpo_comment_content">
+                            <div class="update_photo">
+                                <img class="img img-responsive" src="/website_cpo_sale/static/src/images/layerimg/pcb_test_1.jpg"/>
+                            </div>
+                            <div class="cpo_comment_view">
+                                <div class="cpo_user_message">
+                                    <div class="cpo_user_tx">
+                                        <img src="/website_cpo_sale/static/src/images/tx/tx_3.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="cpo_user_view">
+                                    <div class="cpo_user_message_name">
+                                        <span>Gwen**</span>
+                                    </div>
+                                    <div class="cpo_usre_view_mess">
+                                        <span class="cpo_view_qty">512</span>
+                                        <i class="cpo_view"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cpo_comment_description">
+                                <a>
+                                    <p>
+                                        we will conduct a manual review, which will be approved, and payment will be made after the check is correct!.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="cpo_comment_content">
+                            <div class="update_photo">
+                                <img class="img img-responsive" src="/website_cpo_sale/static/src/images/layerimg/pcb_test_1.jpg"/>
+                            </div>
+                            <div class="cpo_comment_view">
+                                <div class="cpo_user_message">
+                                    <div class="cpo_user_tx">
+                                        <img src="/website_cpo_sale/static/src/images/tx/tx_3.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="cpo_user_view">
+                                    <div class="cpo_user_message_name">
+                                        <span>Gwen**</span>
+                                    </div>
+                                    <div class="cpo_usre_view_mess">
+                                        <span class="cpo_view_qty">512</span>
+                                        <i class="cpo_view"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cpo_comment_description">
+                                <a>
+                                    <p>
+                                        we will conduct a manual review, which will be approved, and payment will be made after the check is correct!.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="management_manager_group" model="res.groups">
+            <field name="name">Material Setting Manager</field>
+        </record>
+
+        <record id="management_user_group" model="res.groups">
+            <field name="name">Material Setting General User</field>
+        </record>
+
+        <record id="gift_manager_group" model="res.groups">
+            <field name="name">Gift Setting Manager</field>
+        </record>
+
+        <record id="gift_user_group" model="res.groups">
+            <field name="name">Gift Setting General User</field>
+        </record>
+
+    </data>
+</odoo>

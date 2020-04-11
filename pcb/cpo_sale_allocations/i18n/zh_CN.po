@@ -1,0 +1,282 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* cpo_sale_allocations
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-27 08:50+0000\n"
+"PO-Revision-Date: 2019-12-27 08:50+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cpo_sale_allocations
+#: selection:cpo_sale_continent.continent,continent_name:0
+msgid "Africa"
+msgstr "非洲"
+
+#. module: cpo_sale_allocations
+#: selection:cpo_sale_continent.continent,continent_name:0
+msgid "Antarctica"
+msgstr "南极洲"
+
+#. module: cpo_sale_allocations
+#: selection:cpo_sale_continent.continent,continent_name:0
+msgid "Asia"
+msgstr "亚洲"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_seller_code
+msgid "Board Factory Seller Code"
+msgstr "板厂001销售编号"
+
+#. module: cpo_sale_allocations
+#: model:ir.ui.menu,name:cpo_sale_allocations.cpo_sale_continent_menu_1_list
+msgid "Continent & Country"
+msgstr "大洲 & 国家"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_continent_continent_cpo_country_continent
+msgid "Cpo Country Continent"
+msgstr "国家划分"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_create_uid
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_continent_continent_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_create_date
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_continent_continent_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: cpo_sale_allocations
+#: model:ir.model,name:cpo_sale_allocations.model_personal_center
+msgid "Customer Personal Center"
+msgstr "客户个人中心"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_display_name
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_continent_continent_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_email
+msgid "E-mail"
+msgstr "E-mail"
+
+#. module: cpo_sale_allocations
+#: selection:cpo_sale_continent.continent,continent_name:0
+msgid "Europe"
+msgstr "欧洲"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_id
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_continent_continent_id
+msgid "ID"
+msgstr "ID"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_image
+msgid "Image"
+msgstr "图像"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations___last_update
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_continent_continent___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_write_uid
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_continent_continent_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_write_date
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_continent_continent_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_cpo_continent_id
+#: model:ir.ui.view,arch_db:cpo_sale_allocations.sale_allocations_form
+msgid "Management area type"
+msgstr "管辖大洲"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_image_medium
+msgid "Medium-sized image"
+msgstr "中等尺寸图像"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,help:cpo_sale_allocations.field_cpo_sale_allocations_allocations_image_medium
+msgid "Medium-sized image of this contact. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
+msgstr "该联系人的中等尺寸照片，它自动缩放为128x128px，保存纵横比。表单视图和一些看板视图使用这个字段"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_seller_name
+msgid "Name"
+msgstr "名称"
+
+#. module: cpo_sale_allocations
+#: selection:cpo_sale_continent.continent,continent_name:0
+msgid "North_America"
+msgstr "北美洲"
+
+#. module: cpo_sale_allocations
+#: selection:cpo_sale_continent.continent,continent_name:0
+msgid "Oceania"
+msgstr "大洋洲"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_phone
+msgid "Phone"
+msgstr "电话"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_personal_center_seller_id
+msgid "Responsible Salesperson"
+msgstr "负责的销售员"
+
+#. module: cpo_sale_allocations
+#: model:ir.actions.act_window,name:cpo_sale_allocations.sale_allocations_window
+#: model:ir.model,name:cpo_sale_allocations.model_cpo_sale_allocations_allocations
+msgid "Sale Staff Assignments"
+msgstr "客户及区域分配管理"
+
+#. module: cpo_sale_allocations
+#: model:ir.model,name:cpo_sale_allocations.model_sale_order
+msgid "Sales Order"
+msgstr "销售订单"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_name
+#: model:ir.ui.menu,name:cpo_sale_allocations.cpo_sale_allocations_menu_1_list
+msgid "Salesperson"
+msgstr "销售员"
+
+#. module: cpo_sale_allocations
+#: model:ir.ui.view,arch_db:cpo_sale_allocations.sale_allocations_form
+msgid "Salesperson Information"
+msgstr "销售员信息"
+
+#. module: cpo_sale_allocations
+#: model:ir.ui.menu,name:cpo_sale_allocations.cpo_sale_allocations_menu_1
+msgid "Salesperson jurisdiction"
+msgstr "销售人员区域管理分配"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_web_code
+msgid "Seller Code"
+msgstr "销售员编码"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_image_small
+msgid "Small-sized image"
+msgstr "小尺寸图像"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,help:cpo_sale_allocations.field_cpo_sale_allocations_allocations_image_small
+msgid "Small-sized image of this contact. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr "联系人小尺寸图像。自动缩放为64x64px ，保留纵横比。此字段用于任何需要小图像的场合"
+
+#. module: cpo_sale_allocations
+#: selection:cpo_sale_continent.continent,continent_name:0
+msgid "South_America"
+msgstr "南美洲"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,help:cpo_sale_allocations.field_cpo_sale_allocations_allocations_image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "该字段保存的图像用作联系人的头像，限制为1024x1024px"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_continent_continent_continent_name
+msgid "continent"
+msgstr "大洲"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_cpo_country_id
+#: model:ir.ui.view,arch_db:cpo_sale_allocations.sale_allocations_form
+msgid "country"
+msgstr "管辖国家"
+
+#. module: cpo_sale_allocations
+#: model:ir.ui.view,arch_db:cpo_sale_allocations.cpo_sale_continent_form
+#: model:ir.ui.view,arch_db:cpo_sale_allocations.cpo_sale_continent_tree
+msgid "cpo continent"
+msgstr "大洲"
+
+#. module: cpo_sale_allocations
+#: model:ir.actions.act_window,name:cpo_sale_allocations.cpo_sale_continent_action_window
+msgid "cpo_sale_continent window"
+msgstr "大洲与国家的分配"
+
+#. module: cpo_sale_allocations
+#: model:ir.model,name:cpo_sale_allocations.model_cpo_sale_continent_continent
+msgid "cpo_sale_continent.continent"
+msgstr "七大洲与国家分配"
+
+#. module: cpo_sale_allocations
+#: code:addons/cpo_sale_allocations/models/models.py:58
+#, python-format
+msgid "current number {number_name1} {continent1} among {country1} and number {number_name2} {continent2} among {country2} repeat"
+msgstr "编号 {number_name1} {continent1} 当中的 {country1} 国家 与 编号 {number_name2} {continent2} 当中的 {country2} 国家重复"
+
+#. module: cpo_sale_allocations
+#: code:addons/cpo_sale_allocations/models/models.py:71
+#, python-format
+msgid "current number {number_name1} {continent1} among {country1} and salesperson {salesperson1} have jurisdiction over {country2} repeat"
+msgstr "编号 {number_name1} {continent1} 当中的 {country1} 国家 与 销售人员 {salesperson1} 管理的 {country2} 国家重复"
+
+#. module: cpo_sale_allocations
+#: code:addons/cpo_sale_allocations/models/models.py:184
+#, python-format
+msgid "current salesperson {salesperson1} have jurisdiction over {country1} and salesperson {salesperson2} have jurisdiction over {country2} repeat"
+msgstr "销售人员 {salesperson1} 管理的 {country1} 国家；与销售 {salesperson2} 管理的 {country2} 国家重复"
+
+#. module: cpo_sale_allocations
+#: code:addons/cpo_sale_allocations/models/models.py:195
+#, python-format
+msgid "current salesperson {salesperson1} have jurisdiction over {country1} and {number_name} {continent_name} among {country2} repeat"
+msgstr "销售人员 {salesperson1} 管理的 {country1} 国家 与 编号 {number_name} {continent_name} 当中的 {country2} 国家重复"
+
+#. module: cpo_sale_allocations
+#: code:addons/cpo_sale_allocations/models/models.py:157
+#, python-format
+msgid "current salesperson {salesperson1} have jurisdiction over {number1} {continent1} and salesperson {salesperson2} have jurisdiction over {number2} {continent2} repeat"
+msgstr "销售人员 {salesperson1} 管理的编号 {number1} {continent1} 与 销售人员 {salesperson2} 管理的编号 {number2} {continent2} 重复"
+
+#. module: cpo_sale_allocations
+#: code:addons/cpo_sale_allocations/models/models.py:220
+#, python-format
+msgid "current salesperson {salesperson1} have jurisdiction over {partner1} and salesperson {salesperson2} have jurisdiction over {partner2} repeat"
+msgstr "销售人员 {salesperson1} 管理的 {partner1} 客户 与 销售人员 {salesperson2} 管理的 {partner2} 客户重复"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_continent_continent_number_name
+msgid "number"
+msgstr "编号"
+
+#. module: cpo_sale_allocations
+#: model:ir.model.fields,field_description:cpo_sale_allocations.field_cpo_sale_allocations_allocations_cpo_partner_id
+#: model:ir.ui.view,arch_db:cpo_sale_allocations.sale_allocations_form
+msgid "partner"
+msgstr "管辖客户"
+
+#. module: cpo_sale_allocations
+#: code:addons/cpo_sale_allocations/models/models.py:232
+#, python-format
+msgid "{name} The salesperson to exist does not need to be created"
+msgstr "{name} 该销售人员已存在，不需要在创建一次"
+

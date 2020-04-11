@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_sale_order_express_waybill,sale_order.express_waybill,model_sale_order_express_waybill,,1,1,1,1
+access_express_waybill_website_operator,sale_order.express_waybill,model_sale_order_express_waybill,cpo_offer_base.cpo_offer_website_operator,1,1,1,0
+access_express_waybill_sale_operator,sale_order.express_waybill,model_sale_order_express_waybill,cpo_offer_base.cpo_offer_sale_operator,1,1,1,1
+

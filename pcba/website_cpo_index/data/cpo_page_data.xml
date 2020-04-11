@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- PBCA 报价菜单Data数据 -->
+        <record id="cpo_banner_image_001" model="cpo_banner_image">
+            <field name="cpo_banner_title">
+                <![CDATA[
+                    <span>Buy PCB</span><br/><span style="padding-left: 70px;">get Components free </span><br/><br/><span>Buy PCBA</span><br/><span style="padding-left: 70px;">get PCB free</span>
+                ]]>
+            </field>
+            <field name="cpo_banner_date">2020-01-13</field>
+            <field name="cpo_image_type">svg</field>
+            <field name="cpo_banner_img" type="base64" file="website_cpo_index/static/src/images/layerimg/home-hero-bg.svg"/>
+            <field name="cpo_main_color">#4a93fd</field>
+            <field name="cpo_banner_description">
+                <![CDATA[
+                    <div class="banner-left">
+                        <div class="ad-process">
+                            <div class="ad-left">
+                                <img class="ad-img" scr="/website_cpo_sale/static/src/images/banner/banner-paypal.png"/>
+                                <div class="ad-content">
+                                    <h1>Stop overpaying</h1>
+                                    <div class="ad-money">
+                                        <span class="m-title">for</span>
+                                        <span class="m-digis">Multi-layers !</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ad-right">
+                                <p>More than 50 countries' customer use ChinaPCBOne Quick Response &amp; Professional Services</p>
+                            </div>
+                        </div>
+                        <div class="ad-coupon">
+                            <a class="cp-box" href="/pcb?type=standard">
+                                <div class="cp-top">
+                                    <span class="cp-tm">50% OFF</span>
+                                </div>
+                                <img src="/website_cpo_sale/static/src/images/banner/cp-box-1.png"/>
+                                <p class="cp-tt">
+                                    Standard Offer:max 100mm*100mm, FR-4, 1.6MM (Finished Thickness), 1oz (Finished Cu Thickness), LF-HASL surface finishing,Green Solder mask and white silkscreen.
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                ]]>
+            </field>
+        </record>
+
+        <!-- 工艺介绍 -->
+        <record id="cpo_advertage_products_001" model="cpo_advertage_products">
+            <field name="sequence">1</field>
+            <field name="cpo_ad_poto" type="base64"
+                   file="website_cpo_sale/static/src/images/tools_img/process-standard.png"/>
+            <field name="cpo_product_name">Multilayer PCB</field>
+            <field name="cpo_product_desc">Not only double side PCBs,we provide up to 32layers PCBs.Special process like Heavy copper up to 20 OZ is possible.</field>
+            <field name="cpo_link">/pcb?type=standard</field>
+        </record>
+        <record id="cpo_advertage_products_002" model="cpo_advertage_products">
+            <field name="sequence">2</field>
+            <field name="cpo_ad_poto" type="base64"
+                   file="website_cpo_index/static/src/images/tools_img/process-multilayer.png"/>
+            <field name="cpo_product_name">High Frequency PCBs</field>
+            <field name="cpo_product_desc">Not only standard FR4,we provide boards with high frequency materials,like PTFE,Taconic,Rogers,copper base,etc.</field>
+            <field name="cpo_link">/pcb?type=standard</field>
+        </record>
+        <record id="cpo_advertage_products_003" model="cpo_advertage_products">
+            <field name="sequence">3</field>
+            <field name="cpo_ad_poto" type="base64"
+                   file="website_cpo_index/static/src/images/tools_img/process-rigid-flex.png"/>
+            <field name="cpo_product_name">Rigid-Flex PCB.</field>
+            <field name="cpo_product_desc">We provide up to 20layers Rigid+8layers Flex PCBs,line width/spacing can be 3/3mil.</field>
+            <field name="cpo_link">/pcb?type=rigid-flex</field>
+        </record>
+        <record id="cpo_advertage_products_004" model="cpo_advertage_products">
+            <field name="sequence">4</field>
+            <field name="cpo_ad_poto" type="base64"
+                   file="website_cpo_index/static/src/images/tools_img/process-high-density.png"/>
+            <field name="cpo_product_name">HDI PCBs</field>
+            <field name="cpo_product_desc">Not only mechanical drilling boards,we use Laser drilling for HDI boards,like 0.075mm and 0.1mm drilling size.</field>
+            <field name="cpo_link">/pcb?type=hdi</field>
+        </record>
+
+        <!-- 让用户注册登录 -->
+        <!--<record id="cpo_login_and_register_001" model="cpo_login_and_register">-->
+             <!--<field name="cpo_description">User registration to log in to quote</field>-->
+             <!--<field name="cpo_boolean">False</field>-->
+             <!--<field name="cpo_type">login_rigis</field>-->
+             <!--<field name="cpo_date"></field>-->
+             <!--<field name="state">draft</field>-->
+        <!--</record>-->
+    </data>
+</odoo>

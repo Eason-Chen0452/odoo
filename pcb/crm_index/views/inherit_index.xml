@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="crm_index.session_tree">
+            <field name="name">Session Association Tree</field>
+            <field name="model">cpo_session_association</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="customer_name"/>
+                    <field name="user_name"/>
+                    <field name="name"/>
+                    <field name="session_country"/>
+                    <field name="session_city"/>
+                    <field name="cpo_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="crm_index.session_form">
+            <field name="name">Session Association Form</field>
+            <field name="model">cpo_session_association</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4" colspan="4" string="Session Information">
+                            <field name="name"/>
+                            <field name="customer_name"/>
+                            <field name="session_id"/>
+                            <field name="user_name"/>
+                            <field name="cpo_time"/>
+                            <field name="session_ip"/>
+                            <field name="session_city"/>
+                            <field name="session_country"/>
+                        </group>
+                        <field name="user_id" invisible="1"/>
+                        <notebook>
+                            <page string="Website Quotation Record">
+                                <field name="trial_ids"/>
+                            </page>
+                            <page string="Behavior Record">
+                                <field name="behavior_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="crm_index.session_actions">
+            <field name="name">Session Association Actions</field>
+            <field name="res_model">cpo_session_association</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="view_ids" eval="[(5,0,0),
+            (0,0,{'view_mode':'tree','view_id':ref('crm_index.session_tree')}),
+            (0,0,{'view_mode':'form','view_id':ref('crm_index.session_form')})]"/>
+            <field name="context">{'search_default_current':1, 'search_default_group_by_user_name': 1}</field>
+        </record>
+
+        <menuitem name="Session Association" id="website_cpo_index.cpo_session_association_menu" parent="website_cpo_index.cpo_quotation_top_all_menu"
+                action="crm_index.session_actions"/>
+    </data>
+</odoo>

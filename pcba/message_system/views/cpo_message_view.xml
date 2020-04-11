@@ -1,0 +1,193 @@
+<odoo>
+	<data>
+        <!--销售员群发tree-->
+		<record model="ir.ui.view" id="seller_news_tree">
+			<field name="name">Seller Message Tree</field>
+			<field name="model">message.center</field>
+			<field name="arch" type="xml">
+                <tree decoration-muted="state=='cancel'"
+                      decoration-bf="state=='draft'"
+                      decoration-success="state=='send_notify'"
+                      decoration-info="state=='withdraw'">
+                    <field name="seller_id"/>
+                    <field name="name"/>
+                    <field name="msg_type"/>
+                    <field name="state"/>
+                    <field name="send_time"/>
+				</tree>
+			</field>
+		</record>
+        <!--销售员群发form-->
+		<record model="ir.ui.view" id="seller_news_form">
+            <field name="name">Client Message</field>
+            <field name="model">message.center</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="SendNotify" type="object" string="Send Notify" class="oe_highlight" states="draft,withdraw"/>
+                        <button name="WithdrawNotify" type="object" string="Withdraw Message" states="send_notify"/>
+                        <button name="CancelNotify" type="object" string="Cancel Notify" states="send_notify,withdraw"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,send_notify,withdraw"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="name" placeholder="Subject" attrs="{'readonly':[('state', 'in', ('send_notify','cancel'))]}"/>
+                        </h1>
+						<group col="4" colspan="4" string="Information Type And Content">
+                            <field name="msg_type" attrs="{'readonly':[('state', 'in', ('send_notify','cancel'))]}"/>
+                            <field name="seller_id" attrs="{'readonly':[('state', 'in', ('send_notify','cancel'))]}"/>
+                            <field name="send_time" readonly="1" attrs="{'invisible': [('send_time', '=', False)]}"/>
+                            <field name="coupon_id" attrs="{'readonly':[('state', 'in', ('send_notify','cancel'))], 'invisible': [('msg_type', '!=', 'o_msg')]}"/>
+                        </group>
+                        <group col="6" colspan="6" string="Filter Client Type">
+                            <field name="all_client_bool" attrs="{'readonly':['|','|', ('place_order_bool', '=', True), ('no_place_order_bool', '=', True), ('state', 'in', ('send_notify','cancel'))]}"/>
+                            <label for="place_order_bool"/>
+                            <div>
+                                <field name="place_order_bool" attrs="{'readonly':['|','|',('all_client_bool', '=', True), ('no_place_order_bool', '=', True), ('state', 'in', ('send_notify','cancel'))]}" class="oe_inline"/>
+                                <field name="order_type" class="oe_inline" attrs="{'invisible': [('place_order_bool', '=', False)], 'required': [('place_order_bool', '=', True)], 'readonly':[('state', 'in', ('send_notify','cancel'))]}"/>
+                            </div>
+                            <field name="no_place_order_bool" attrs="{'readonly':['|','|',('all_client_bool', '=', True),('place_order_bool', '=', True),('state', 'in', ('send_notify','cancel'))]}"/>
+                        </group>
+                        <group col="4" colspan="4" string="Filter Customers By Registration Time">
+                            <field name="login_start" attrs="{'readonly':[('state', 'in', ('send_notify','cancel'))]}"/>
+                            <field name="login_end" attrs="{'readonly':[('state', 'in', ('send_notify','cancel'))]}"/>
+                        </group>
+                        <group string="Notified Client">
+                            <field name="client_ids" nolabel="1" widget="many2many_tags" domain="[('activation_type','=','Activation')]" attrs="{'readonly':[('state', 'in', ('send_notify','cancel'))]}"/>
+                        </group>
+                        <div class="ly-msg">
+                            <field name="message" nolabel="1" attrs="{'readonly':[('state', 'in', ('send_notify','cancel'))]}"/>
+                        </div>
+                        <notebook>
+                            <page string="Message">
+                                <field name="msg_line_ids" mode="tree,form">
+                                    <tree create="0" decoration-muted="state=='cancel'"
+                                                     decoration-bf="state=='unread'"
+                                                     decoration-success="state=='read'">
+                                        <field name="client_id"/>
+                                        <field name="country"/>
+                                        <field name="city"/>
+                                        <field name="phone"/>
+                                        <field name="email"/>
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+					</sheet>
+                </form>
+            </field>
+        </record>
+		<!--客户留言tree-->
+		<record model="ir.ui.view" id="client_news_tree">
+			<field name="name">Client Message Tree</field>
+			<field name="model">message.center.line</field>
+			<field name="arch" type="xml">
+                <tree create="0" decoration-success="state=='read'"
+                                 decoration-primary="state=='s_reply'"
+                                 decoration-info="state=='c_consult'">
+                    <field name="client_id"/>
+                    <field name="create_date"/>
+                    <field name="name"/>
+                    <field name="msg_type"/>
+                    <field name="state"/>
+                    <field name="seller_id"/>
+                    <field name="reply_bool" invisible="1"/>
+				</tree>
+			</field>
+		</record>
+        <!--客户留言form-->
+        <record model="ir.ui.view" id="client_news_form">
+            <field name="name">Client Message Form</field>
+            <field name="model">message.center.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <header>
+                            <button name="GetReply" type="object" string="Reply" class="oe_highlight"/>
+                            <field name="state" widget="statusbar" statusbar_visible="c_consult,s_reply"/>
+                        </header>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <group colspan="4" col="4">
+                            <field name="msg_id" readonly="1"/>
+                            <field name="msg_type"/>
+                            <field name="client_id" readonly="1"/>
+                            <field name="country"/>
+                            <field name="city"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="seller_id"/>
+                        </group>
+                        <div class="ly-msg">
+                            <field name="message"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--销售员回复使用的form视图-->
+        <record model="ir.ui.view" id="chat_form">
+            <field name="name">Client Message Form</field>
+            <field name="model">message.center.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <footer>
+                        <button name="determine_reply" type="object" string="Reply" class="oe_highlight"/>
+                    </footer>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group colspan="4" col="4">
+                        <field name="msg_id" readonly="1"/>
+                        <field name="msg_type"/>
+                        <field name="client_id" readonly="1"/>
+                        <field name="country"/>
+                        <field name="city"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="seller_id"/>
+                    </group>
+                    <div class="ly-msg">
+                        <field name="message"/>
+                    </div>
+                    <notebook>
+                        <page string="message">
+                            <field name="msg_reply"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+		<!--客户留言window-->
+		<record model="ir.actions.act_window" id="client_window">
+			<field name="name">Customer Message Area</field>
+			<field name="res_model">message.center.line</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('reply_bool','=', True)]</field>
+            <field name="view_ids" eval="[(5,0,0),
+			(0,0,{'view_mode':'tree','view_id':ref('client_news_tree')}),
+			(0,0,{'view_mode':'form','view_id':ref('client_news_form')})]"/>
+		</record>
+		<!--销售群发window-->
+		<record model="ir.actions.act_window" id="seller_window">
+			<field name="name">Sales Notification Area</field>
+			<field name="res_model">message.center</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+        <!--聊天信息-->
+        <record model="ir.actions.act_window" id="chat_window">
+			<field name="name">Chat Message</field>
+			<field name="res_model">chat.message</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<!-- menu categories -->
+        <menuitem name="Message Center" id="msg_menu_root"/>
+        <menuitem name="Message List" id="msg_menu_1" parent="msg_menu_root"/>
+		<menuitem name="Customer Message Area" id="client_menu" parent="msg_menu_1" action="client_window"/>
+		<menuitem name="Sales Notification Area" id="seller_menu" parent="msg_menu_1" action="seller_window"/>
+
+	</data>
+</odoo>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="cpo_pcba_condition_tree">
+            <field name="name">Pages Condition Setting Tree</field>
+            <field name="model">cpo_pcba_condition</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="condition_type"/>
+                    <field name="condition_title"/>
+                    <field name="condition_one"/>
+                    <field name="condition_two"/>
+                    <field name="condition_three"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_pcba_condition_form">
+            <field name="name">Pages Condition Setting Form</field>
+            <field name="model">cpo_pcba_condition</field>
+            <field name="arch" type="xml">
+                <form>
+                     <header>
+                         <button name="do_draft" states="invalid" type="object" string="Draft" />
+                         <button name="do_release" states="draft" type="object" string="Release" />
+                         <button name="do_maintain" states="release" type="object" string="Maintenance update" confirm="Are you sure to choose to change?"/>
+                         <button name="do_complete_maintain" states="maintain" type="object" string="Complete maintenance update" />
+                         <button name="do_invalid" states="draft,release,maintain,complete_maintain" type="object" string="Become invalid" />
+                         <field name="state" widget="statusbar" statusbar_visible="draft,release,maintain,invalid"/>
+                     </header>
+                    <div style="width:49%;display:inline-block;margin-right:10px;border-right:1px solid #ddd;">
+                        <group colspan="4">
+                            <group colspan="4">
+                                <group colspan="2">
+                                    <field name="condition_photo" widget="image" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="condition_title" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="condition_type" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="condition_one" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                    <p>E.g: Order Quantity ≤ 5 PCS;</p>
+                                </group>
+                                <group colspan="2">
+                                    <field name="condition_two" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                    <p>E.g: Parts Types ≤ 50</p>
+                                </group>
+                                <group colspan="2">
+                                    <field name="condition_three" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                    <p>E.g: Parts Quantity ≤ 50</p>
+                                </group>
+                                <group colspan="2">
+                                    <field name="condition_link" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                                    <p>E.g: /pcba?type=nomaterial</p>
+                                </group>
+                            </group>
+                        </group>
+                    </div>
+                    <div style="width: 50%;display: inline-block;vertical-align: top;" class="cpo_content_view_right">
+                        <div class="row" style="margin: 0;">
+                            <notebook>
+                                <page string="Preview 1">
+                                    <div style="margin: 20px;width: 360px;border: 1px solid #ddd;">
+                                        <div style="width:99%;overflow:hidden;padding:25px 12px 5px;">
+                                            <ul style="margin:0;padding: 15px 10px 30px;">
+                                                <div class="text-center">
+                                                    <div class="layer_img_photo" style="width: 100%;display: inline-block;max-width: 130px;margin: auto;">
+                                                        <field name="condition_photo" widget="image"
+                                                               attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"></field>
+                                                    </div>
+                                                </div>
+                                                <li style="list-style:none;line-height:25px;font-size:16px;font-weight:600;">
+                                                    <span style="width:100%;display:inline-block;text-align:center;">
+                                                        <field name="condition_title"
+                                                               attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"></field>
+                                                    </span>
+                                                </li>
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:100%;display:inline-block;text-align:center;">
+                                                        <field name="condition_one"
+                                                               attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"></field>
+                                                    </span>
+                                                </li>
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:100%;display:inline-block;text-align:center;">
+                                                        <field name="condition_two"
+                                                               attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"></field>
+                                                    </span>
+                                                </li>
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:100%;display:inline-block;text-align:center;">
+                                                        <field name="condition_three"
+                                                               attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"></field>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </page>
+                                <page string="Preview 2">
+                                    <h3>Strive to improve...</h3>
+                                </page>
+                            </notebook>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <!--搜索视图-->
+        <record id="cpo_pcba_condition_search" model="ir.ui.view">
+            <field name="name">Pages Condition Setting Search</field>
+            <field name="model">cpo_pcba_condition</field>
+            <field name="arch" type="xml">
+                <search string="Ideas">
+                    <field name="condition_type"/>
+                    <group string="Group By">
+                        <filter name="group_by_condition_type" string="Product Name" context="{'group_by': 'condition_type'}"/>
+                    </group>
+                </search>
+              </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="cpo_pcba_condition_action_window">
+            <field name="name">Pages Condition Setting Action</field>
+            <field name="res_model">cpo_pcba_condition</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- actions -->
+        <menuitem name="Pages Condition Setting" id="cpo_pages_condition_setting_menu" parent="website_cpo_index.cpo_web_root_menu" />
+
+        <menuitem name="PCBA Package Price Condition" id="cpo_pcba_condition_menu" parent="website_cpo_index.cpo_pages_condition_setting_menu"
+              action="cpo_pcba_condition_action_window" />
+
+    </data>
+</odoo>

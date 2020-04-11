@@ -1,0 +1,55 @@
+<odoo>
+  <data>
+    
+    <!--form视图-->
+<record model="ir.ui.view" id="electron_update_field_sequence_wizard_form">
+    <field name="name">electron_update_field_sequence</field>
+    <field name="model">electron.update_field_sequence</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <header>
+                    <!--<button name="do_check" type="object" string="Check" />-->
+                    <button name="do_set_default" type="object" string="Set Default"/>
+                </header>
+                <group>
+                    <field name="ele_type" />
+                </group>
+                <notebook>
+                    <page string="Electron Fields">
+                        <field name="ele_fields" >
+                            <tree editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="disk_rel_id" invisible="1"/>
+                                <field name="ele_disk_field_id"/>
+                                <field name="ele_title"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+                <!--<footer>-->
+                    <!--<button special="cancel" string="Cancel" />-->
+                <!--</footer>-->
+            </sheet>
+        </form>
+    </field>
+</record>
+    
+
+    <!-- actions opening views on models -->
+    <record id="electron_update_field_sequence_wizard_action" model="ir.actions.act_window">
+        <field name="name">electron update field sequence</field>
+        <field name="res_model">electron.update_field_sequence</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="electron_update_field_sequence_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+<!--<field name="target">new</field>-->
+    <!-- actions -->
+    
+    <menuitem name="cpo update electron field seq" id="cpo_update_electron_field_wizard_menu" parent="electron.electronic_menu_disk_root"
+              action="electron_update_field_sequence_wizard_action" />
+              
+  </data>
+</odoo>

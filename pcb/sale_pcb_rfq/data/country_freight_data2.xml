@@ -1,0 +1,2020 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="cpo_country_1_HK" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="cpo_country_id" ref="base.hk"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_1_MO" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_1"/>
+            <field name="cpo_country_id" ref="base.mo"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+
+        <record id="cpo_country_2_TW" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="cpo_country_id" ref="base.tw"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_2_kr" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_2"/>
+            <field name="cpo_country_id" ref="base.kr"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+
+        <record id="cpo_country_3_jp" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_3"/>
+            <field name="cpo_country_id" ref="base.jp"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+
+        <record id="cpo_country_4_bn" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="cpo_country_id" ref="base.bn"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_4_ID" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="cpo_country_id" ref="base.id"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_4_kh" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="cpo_country_id" ref="base.kh"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_4_la" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="cpo_country_id" ref="base.la"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_4_my" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="cpo_country_id" ref="base.my"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_4_ph" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="cpo_country_id" ref="base.ph"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_4_th" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="cpo_country_id" ref="base.th"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_4_vn" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="cpo_country_id" ref="base.vn"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_4_sg" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_4"/>
+            <field name="cpo_country_id" ref="base.sg"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+
+        <record id="cpo_country_5_au" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="cpo_country_id" ref="base.au"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_5_nz" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_5"/>
+            <field name="cpo_country_id" ref="base.nz"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+
+        <record id="cpo_country_6_ca" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="cpo_country_id" ref="base.ca"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_6_us" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="cpo_country_id" ref="base.us"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_6_mx" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_6"/>
+            <field name="cpo_country_id" ref="base.mx"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+
+        <record id="cpo_country_7_ad" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.ad"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_at" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.at"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_be" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.be"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_bg" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.bg"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_ch" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.ch"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_cy" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.cy"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_cz" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.cz"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_de" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.de"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_dk" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.dk"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_ee" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.ee"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_fi" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.fi"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_fr" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.fr"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_es" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.es"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_uk" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.uk"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_gg" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.gg"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_gi" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.gi"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_gl" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.gl"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_gr" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.gr"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_hr" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.hr"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_hu" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.hu"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_ie" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.ie"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_in" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.in"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_is" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.is"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_it" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.it"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_je" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.je"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_li" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.li"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_lt" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.lt"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_lu" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.lu"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_lv" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.lv"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_mc" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.mc"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>        
+        <record id="cpo_country_7_mt" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.mt"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>        
+        <record id="cpo_country_7_nl" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.nl"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_no" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.no"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_pl" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.pl"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_pt" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.pt"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_se" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.se"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_si" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.si"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_sk" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.sk"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_7_va" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_7"/>
+            <field name="cpo_country_id" ref="base.va"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+
+        <record id="cpo_country_8_ae" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="cpo_country_id" ref="base.ae"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_8_af" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="cpo_country_id" ref="base.af"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_8_bh" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="cpo_country_id" ref="base.bh"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_8_om" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="cpo_country_id" ref="base.om"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_8_sa" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="cpo_country_id" ref="base.sa"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_8_il" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="cpo_country_id" ref="base.il"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_8_eg" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="cpo_country_id" ref="base.eg"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_8_jo" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="cpo_country_id" ref="base.jo"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_8_ly" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="cpo_country_id" ref="base.ly"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_8_kw" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="cpo_country_id" ref="base.kw"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_8_qa" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="cpo_country_id" ref="base.qa"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_8_tr" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_8"/>
+            <field name="cpo_country_id" ref="base.tr"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+
+        <record id="cpo_country_9_ag" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ag"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ai" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ai"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_al" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.al"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_am" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.am"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ao" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ao"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ar" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ar"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_as" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.as"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_aw" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.aw"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_az" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.az"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ba" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ba"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_bb" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.bb"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_bd" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.bd"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_bf" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.bf"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_bi" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.bi"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_bj" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.bj"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_bm" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.bm"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_bo" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.bo"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_br" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.br"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_bs" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.bs"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_bt" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.bt"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_bw" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.bw"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_by" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.by"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_bz" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.bz"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_cd" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.cd"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_cf" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.cf"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_cg" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.cg"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ci" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ci"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ck" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ck"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_cl" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.cl"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_cm" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.cm"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_co" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.co"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_cr" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.cr"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_cu" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.cu"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_cv" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.cv"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_dj" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.dj"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_dm" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.dm"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_do" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.do"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_dz" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.dz"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ec" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ec"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_er" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.er"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_et" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.et"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_fj" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.fj"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_fk" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.fk"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_fm" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.fm"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_fo" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.fo"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ga" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ga"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_gd" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.gd"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ge" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ge"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_gf" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.gf"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_gh" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.gh"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_gm" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.gm"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_gn" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.gn"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_gp" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.gp"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_gq" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.gq"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_gt" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.gt"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_gw" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.gw"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_gu" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.gu"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_gy" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.gy"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_hn" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.hn"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ht" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ht"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_iq" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.iq"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ir" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ir"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_jm" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.jm"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ke" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ke"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_kg" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.kg"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ki" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ki"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_km" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.km"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_kn" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.kn"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_kp" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.kp"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ky" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ky"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_kz" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.kz"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_lb" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.lb"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_lc" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.lc"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_lk" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.lk"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_lr" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.lr"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ls" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ls"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ma" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ma"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_md" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.md"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_me" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.me"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_mg" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.mg"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_mh" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.mh"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_mk" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.mk"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ml" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ml"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_mm" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.mm"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_mn" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.mn"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_mq" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.mq"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_mr" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.mr"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ms" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ms"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_mu" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.mu"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_mv" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.mv"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_mw" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.mw"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_mz" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.mz"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_na" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.na"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_nc" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.nc"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ne" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ne"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ng" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ng"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ni" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ni"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_np" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.np"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_nr" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.nr"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_nu" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.nu"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_pa" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.pa"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_pe" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.pe"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_pg" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.pg"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_pk" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.pk"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_pr" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.pr"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_pw" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.pw"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_py" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.py"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ro" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ro"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_rs" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.rs"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ru" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ru"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_rw" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.rw"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_sb" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.sb"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_sc" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.sc"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_sd" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.sd"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_sh" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.sh"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_sl" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.sl"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_sm" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.sm"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_sn" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.sn"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_so" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.so"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_sr" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.sr"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ss" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ss"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_st" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.st"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_sv" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.sv"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_sy" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.sy"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_sz" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.sz"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_tc" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.tc"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_td" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.td"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_tg" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.tg"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_tj" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.tj"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_tp" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.tp"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_tn" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.tn"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_to" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.to"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_tt" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.tt"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_tv" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.tv"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_tz" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.tz"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ua" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ua"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ug" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ug"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_uy" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.uy"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_uz" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.uz"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_vc" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.vc"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ve" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ve"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_vg" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.vg"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_vi" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.vi"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_vu" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.vu"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ws" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ws"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_ye" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.ye"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_yt" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.yt"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_za" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.za"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_zm" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.zm"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_zw" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.zw"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_cw" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.cw"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_mf" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.mf"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+        <record id="cpo_country_9_kn" model="cpo.pcb.freight">
+            <field name="cpo_freight_region_id" ref="cpo_region_9"/>
+            <field name="cpo_country_id" ref="base.kn"/>
+            <field name="cpo_size">1</field>
+            <field name="cpo_thickness">1.6</field>
+            <field name="cpo_oz">1</field>
+            <field name="cpo_oz_kg">0.15</field>
+            <field name="cpo_weight">3.5</field>
+        </record>
+    </data>
+</odoo>

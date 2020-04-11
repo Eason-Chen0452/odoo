@@ -1,0 +1,1605 @@
+<?xml version="1.0"?>
+<odoo>
+	<data>
+		<menuitem id="menu_cam_root" name="Product Data Setting"/>
+		<menuitem id="menu_cam_configs" name="Cam Configuration" parent="menu_cam_root" sequence="1"/>
+
+		<record id="view_cam_volume_level_form" model="ir.ui.view">
+			<field name="name">cam.volume.level.form</field>
+			<field name="model">cam.volume.level</field>
+			<field name="arch" type="xml">
+				<form string="Volume Level" version="7.0">
+					<group>
+						<group>
+							<field name="name" select="1"/>
+							<field name="min_size"/>
+							<field name="price_type"/>
+							<field name="active"/>
+						</group>
+						<group>
+							<field name="description"/>
+							<field name="max_size"/>
+							<field name="auto_create"/>
+							<field name="company_id" groups="base.group_multi_company" widget="selection"/>
+						</group>
+					</group>
+					<notebook>
+						<page string="Notices">
+							<field name='note' nolabel="1"/>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cam_volume_level_tree" model="ir.ui.view">
+			<field name="name">cam.volume.level.tree</field>
+			<field name="model">cam.volume.level</field>
+			<field name="arch" type="xml">
+				<tree string="Volume Level">
+					<field name="name"/>
+					<field name="description"/>
+					<field name="min_size"/>
+					<field name="max_size"/>
+					<field name="price_type"/>
+					<field name="auto_create"/>
+					<field name="active"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="cam_volume_level_act" model="ir.actions.act_window">
+			<field name="name">Volume Level</field>
+			<field name="res_model">cam.volume.level</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+				Click to  define volume level.
+				</p><p>
+				volume level,you can create it at here.
+				</p>
+			</field>
+		</record>
+
+		<menuitem name="Volume Level" action="cam_volume_level_act" id="menu_cam_volume_level_act" parent="menu_cam_configs"/>
+
+		<record id="view_cam_ink_color_form" model="ir.ui.view">
+			<field name="name">cam.ink.color.form</field>
+			<field name="model">cam.ink.color</field>
+			<field name="arch" type="xml">
+				<form string="Ink Color" version="7.0">
+					<group>
+						<group>
+							<field name="name" select="1"/>
+							<field name="silk_screen"/>
+							<field name="text"/>
+							<field name="price_type"/>
+							<field name="auto_create"/>
+							<field name="active"/>
+						</group>
+						<group>
+							<field name="color_property"/>
+							<field name="def_silk_screen"/>
+							<field name="def_text"/>
+							<field name="price"/>
+						</group>
+					</group>
+					<field name="company_id" groups="base.group_multi_company" widget="selection"/>
+					<field name="line_ids" widget="one2many_list">
+						<tree string="Compute Ink Price" editable="bottom">
+							<field name="ink_type"/>
+							<field name="max_size"/>
+							<field name="price_type"/>
+							<field name="price"/>
+						</tree>
+					</field>
+					<separator string="Notices"/>
+						<field name="note" nolabel="1"/>
+					<separator string="Memo"/>
+						<field name="memo" nolabel="1"/>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"/>
+						<field name="message_ids" colspan="4" widget="mail_thread" nolabel="1"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cam_ink_color_tree" model="ir.ui.view">
+			<field name="name">cam.ink.color.tree</field>
+			<field name="model">cam.ink.color</field>
+			<field name="arch" type="xml">
+				<tree string="Ink Color">
+					<field name="name"/>
+					<field name="silk_screen"/>
+					<field name="def_silk_screen"/>
+					<field name="text"/>
+					<field name="def_text"/>
+					<field name="price_type"/>
+					<field name="price"/>
+					<field name="auto_create"/>
+					<field name="active"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="cam_ink_color_act" model="ir.actions.act_window">
+			<field name="name">Ink Color</field>
+			<field name="res_model">cam.ink.color</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+				Click to  define new Ink Color.
+				</p><p>
+				Silkscreen ink color or Text ink color,you can create it at here.
+				</p>
+			</field>
+		</record>
+
+		<menuitem name="Ink Color" action="cam_ink_color_act" id="menu_cam_ink_color_act" parent="menu_cam_configs"/>
+
+		<record id="view_cam_surface_process_form" model="ir.ui.view">
+			<field name="name">cam.surface.process.form</field>
+			<field name="model">cam.surface.process</field>
+			<field name="arch" type="xml">
+				<form string="Surface Process" version="7.0">
+					<group>
+						<group>
+							<field name="name"/>
+							<field name="code"/>
+							<field name="def_surface"/>
+							<field name="rohs"/>
+							<field name="active"/>
+						</group>
+						<group>
+							<field name="price_type"/>
+							<field name="price"/>
+							<field name="auto_create"/>
+						</group>
+					</group>
+					<field name="company_id" groups="base.group_multi_company" widget="selection"/>
+					<field name="line_ids" widget="one2many_list">
+						<tree string="Compute Surface Process Price" editable="bottom">
+							<field name="max_size"/>
+							<field name="price_type"/>
+							<field name="price"/>
+						</tree>
+					</field>
+					<separator string="Notices"/>
+						<field name="note" nolabel="1"/>
+					<separator string="Memo"/>
+						<field name="memo" nolabel="1"/>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"/>
+						<field name="message_ids" colspan="4" widget="mail_thread" nolabel="1"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cam_surface_process_tree" model="ir.ui.view">
+			<field name="name">cam.surface.process.tree</field>
+			<field name="model">cam.surface.process</field>
+			<field name="arch" type="xml">
+				<tree string="Surface Process">
+					<field name="name"/>
+					<field name="code"/>
+					<field name="def_surface"/>
+					<field name="rohs"/>
+					<field name="price_type"/>
+					<field name="price"/>
+					<field name="auto_create"/>
+					<field name="note"/>
+					<field name="memo"/>
+					<field name="active"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="cam_surface_process_act" model="ir.actions.act_window">
+			<field name="name">Surface Process</field>
+			<field name="res_model">cam.surface.process</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="Help" type="html">
+				<p class="oe_view_nocontent_create">
+				Click to define a new surface process.
+				</p><p>
+				Our PCB Manufacturer used Surface Process, You can create here.
+				</p>
+			</field>
+		</record>
+
+		<menuitem name="Surface Process" action="cam_surface_process_act" id="menu_cam_surface_process_act" parent="menu_cam_configs"/>
+
+		<record id="view_cam_via_process_form" model="ir.ui.view">
+			<field name="name">cam.via.process.form</field>
+			<field name="model">cam.via.process</field>
+			<field name="arch" type="xml">
+				<form string="Via Process" version="7.0">
+					<group>
+						<group>
+							<field name="name"/>
+							<field name="auto_create"/>
+							<field name="active"/>
+						</group>
+						<group>
+							<field name="price_type"/>
+							<field name="price"/>
+							<field name="company_id" groups="base.group_multi_company" widget="selection"/>
+						</group>
+					</group>
+					<notebook>
+						<page string="Notices">
+							<field name="note" nolabel="1"/>
+						</page>
+						<page string="Memo">
+							<field name="memo" nolabel="1"/>
+						</page>
+					</notebook>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"/>
+						<field name="message_ids" colspan="4" widget="mail_thread" nolabel="1"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cam_via_process_tree" model="ir.ui.view">
+			<field name="name">cam.via.process.tree</field>
+			<field name="model">cam.via.process</field>
+			<field name="arch" type="xml">
+				<tree string="Via Process">
+					<field name="name"/>
+					<field name="price_type"/>
+					<field name="price"/>
+					<field name="auto_create"/>
+					<field name="note"/>
+					<field name="memo"/>
+					<field name="active"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="cam_via_process_act" model="ir.actions.act_window">
+			<field name="name">Via Process</field>
+			<field name="res_model">cam.via.process</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="Help" type="html">
+				<p class="oe_view_nocontent_create">
+				Click to define a new via process.
+				</p><p>
+				Our PCB Manufacturer used Via Process, You can create here.
+				</p>
+			</field>
+		</record>
+
+		<menuitem name="Via Process" action="cam_via_process_act" id="menu_cam_via_process_act" parent="menu_cam_configs"/>
+
+		<record id="view_cam_special_process_form" model="ir.ui.view">
+			<field name="name">cam.special.process.form</field>
+			<field name="model">cam.special.process</field>
+			<field name="arch" type="xml">
+				<form string="Special Process" version="7.0">
+					<group>
+						<group>
+							<field name="name"/>
+							<field name="auto_create"/>
+							<field name="active"/>
+						</group>
+						<group>
+							<field name="price_type"/>
+							<field name="price"/>
+						</group>
+					</group>
+					<field name="company_id" groups="base.group_multi_company" widget="selection"/>
+					<field name="line_ids" widget="one2many_list">
+						<tree string="Compute Special Material Price" editable="bottom">
+							<field name="max_size"/>
+							<field name="price_type"/>
+							<field name="price"/>
+						</tree>
+					</field>
+					<separator string="Notices"/>
+						<field name="note" nolabel="1"/>
+					<separator string="Memo"/>
+						<field name="memo" nolabel="1"/>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"/>
+						<field name="message_ids" colspan="4" widget="mail_thread" nolabel="1"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cam_special_process_tree" model="ir.ui.view">
+			<field name="name">cam.special.process.tree</field>
+			<field name="model">cam.special.process</field>
+			<field name="arch" type="xml">
+				<tree string="Special Process">
+					<field name="name"/>
+					<field name="price_type"/>
+					<field name="price"/>
+					<field name="auto_create"/>
+					<field name="note"/>
+					<field name="memo"/>
+					<field name="active"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="cam_special_process_act" model="ir.actions.act_window">
+			<field name="name">Special Process</field>
+			<field name="res_model">cam.special.process</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="Help" type="html">
+				<p class="oe_view_nocontent_create">
+				Click to define a new special process.
+				</p><p>
+				Our PCB Manufacturer used Special Process, You can create here.
+				</p>
+			</field>
+		</record>
+
+		<menuitem name="Special Process" action="cam_special_process_act" id="menu_cam_special_process_act" parent="menu_cam_configs"/>
+
+		<record id="view_cam_special_material_form" model="ir.ui.view">
+			<field name="name">cam.special.material.form</field>
+			<field name="model">cam.special.material</field>
+			<field name="arch" type="xml">
+				<form string="Special Process" version="7.0">
+					<group>
+						<group>
+							<field name="name"/>
+							<field name="auto_create"/>
+							<field name="active"/>
+						</group>
+						<group>
+							<field name="price_type"/>
+							<field name="price"/>
+						</group>
+					</group>
+					<field name="company_id" groups="base.group_multi_company" widget="selection"/>
+					<field name="line_ids" widget="one2many_list">
+						<tree string="Compute Special Material Price" editable="bottom">
+							<field name="max_size"/>
+							<field name="price_type"/>
+							<field name="price"/>
+						</tree>
+					</field>
+					<separator string="Notices"/>
+						<field name="note" nolabel="1"/>
+					<separator string="Memo"/>
+						<field name="memo" nolabel="1"/>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"/>
+						<field name="message_ids" colspan="4" widget="mail_thread" nolabel="1"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cam_special_material_tree" model="ir.ui.view">
+			<field name="name">cam.special.material.tree</field>
+			<field name="model">cam.special.material</field>
+			<field name="arch" type="xml">
+				<tree string="Special Material">
+					<field name="name"/>
+					<field name="price_type"/>
+					<field name="price"/>
+					<field name="auto_create"/>
+					<field name="note"/>
+					<field name="memo"/>
+					<field name="active"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="cam_special_material_act" model="ir.actions.act_window">
+			<field name="name">Special Material</field>
+			<field name="res_model">cam.special.material</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="Help" type="html">
+				<p class="oe_view_nocontent_create">
+				Click to define a new special Material.
+				</p><p>
+				Our PCB Manufacturer used Special Material, You can create here.
+				</p>
+			</field>
+		</record>
+
+		<menuitem name="Special Material" action="cam_special_material_act" id="menu_cam_special_material_act" parent="menu_cam_configs"/>
+
+		<record id="view_cam_material_brand_form" model="ir.ui.view">
+			<field name="name">cam.material.brand.form</field>
+			<field name="model">cam.material.brand</field>
+			<field name="arch" type="xml">
+				<form string="Material Brand" version="7.0">
+					<group>
+						<group>
+							<field name="name"/>
+							<field name="board"/>
+							<field name="pp"/>
+							<field name="auto_create"/>
+						</group>
+						<group>
+							<field name="ink"/>
+							<field name="price_type"/>
+							<field name="price"/>
+							<field name="active"/>
+							<field name="company_id" groups="base.group_multi_company" widget="selection"/>
+						</group>
+					</group>
+					<notebook>
+						<page string="Notices">
+							<field name="note" nolabel="1"/>
+						</page>
+						<page string="Memo">
+							<field name="memo" nolabel="1"/>
+						</page>
+					</notebook>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"/>
+						<field name="message_ids" colspan="4" widget="mail_thread" nolabel="1"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cam_material_brand_tree" model="ir.ui.view">
+			<field name="name">cam.material.brand.tree</field>
+			<field name="model">cam.material.brand</field>
+			<field name="arch" type="xml">
+				<tree string="Material Brand">
+					<field name="name"/>
+					<field name="ink"/>
+					<field name="board"/>
+					<field name="pp"/>
+					<field name="price_type"/>
+					<field name="price"/>
+					<field name="auto_create"/>
+					<field name="note"/>
+					<field name="memo"/>
+					<field name="active"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="cam_material_brand_act" model="ir.actions.act_window">
+			<field name="name">Material Brand</field>
+			<field name="res_model">cam.material.brand</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="Help" type="html">
+				<p class="oe_view_nocontent_create">
+				Click to define a new material brand.
+				</p><p>
+				Our PCB Manufacturer used Material Brand, You can create here.
+				</p>
+			</field>
+		</record>
+
+		<menuitem name="Material Brand" action="cam_material_brand_act" id="menu_cam_material_brand_act" parent="menu_cam_configs"/>
+
+		<record id="cam_layer_number_size_type_view" model="ir.ui.view">
+			<field name="name">cam.layer.number.size.type.tree</field>
+			<field name="model">cam.layer.number.size.type</field>
+			<field name="arch" type="xml">
+				<tree string="Price List of Copper Base" editable="bottom">
+					<field name="base_type"/>
+					<field name="material_fee_type"/>
+					<field name="material_fee"/>
+					<field name="engineering_fee_type"/>
+					<field name="engineering_fee"/>
+					<field name="etest_fee_type"/>
+					<field name="etest_fee"/>
+					<field name="film_fee_type"/>
+					<field name="film_fee"/>
+					<field name="min_delay_hours"/>
+					<field name="max_delay_hours"/>
+					<field name="quick_time"/>
+					<field name="quick_fee"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="cam_layer_number_size_type_form_view" model="ir.ui.view">
+			<field name="name">cam.layer.number.size.type.form</field>
+			<field name="model">cam.layer.number.size.type</field>
+			<field name="arch" type="xml">
+				<form string="Price List of Copper Base" version="7.0">
+					<group>
+						<group>
+							<label for="material_fee"/>
+							<div name="material_fee">
+								<field name="material_fee_type" class="oe_inline"/>
+								<field name="material_fee" class="oe_inline"/>
+							</div>
+							<label for="etest_fee"/>
+							<div name="etest_fee">
+								<field name="etest_fee_type" class="oe_inline"/>
+								<field name="etest_fee" class="oe_inline"/>
+							</div>
+						</group>
+						<group>
+							<label for="engineering_fee"/>
+							<div name="engineering_fee">
+								<field name="engineering_fee_type" class="oe_inline"/>
+								<field name="engineering_fee" class="oe_inline"/>
+							</div>
+							<label for="film_fee"/>
+							<div name="film_fee">
+								<field name="film_fee_type" class="oe_inline"/>
+								<field name="film_fee" class="oe_inline"/>
+							</div>
+						</group>
+					</group>
+					<group>
+						<group>
+							<label for="min_delay_hours"/>
+							<div name="min_delay_hours">
+								<field name="min_delay_hours" class="oe_inline"/> Hours
+							</div>
+							<label for="quick_time"/>
+							<div name="quick_time">
+								<field name="quick_time" class="oe_inline"/> Hours
+							</div>
+						</group>
+						<group>
+							<label for="max_delay_hours"/>
+							<div name="max_delay_hours">
+								<field name="max_delay_hours" class="oe_inline"/> Hours
+							</div>
+							<label for="quick_fee"/>
+							<div name="quick_fee">
+								<field name="quick_fee" class="oe_inline"/>%%
+							</div>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="cam_layer_number_size_tree_view" model="ir.ui.view">
+			<field name="name">cam.layer.number.size.tree</field>
+			<field name="model">cam.layer.number.size</field>
+			<field name="arch" type="xml">
+				<tree string="Price List of Board Size">
+					<field name="max_size"  string="Max Size(㎡)"/>
+					<field name="volume_type"/>
+					<field name="material_fee_type"/>
+					<field name="material_fee"/>
+					<field name="engineering_fee_type"/>
+					<field name="engineering_fee"/>
+					<field name="etest_fee_type"/>
+					<field name="etest_fee"/>
+					<field name="film_fee_type"/>
+					<field name="film_fee"/>
+					<field name="min_delay_hours"/>
+					<field name="max_delay_hours"/>
+					<field name="quick_time"/>
+					<field name="quick_fee"/>
+					<button name="act_auto_create" string="Auto Create" type="object" icon="gtk-apply"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="cam_layer_number_size_form_view" model="ir.ui.view">
+			<field name="name">cam.layer.number.size.form</field>
+			<field name="model">cam.layer.number.size</field>
+			<field name="arch" type="xml">
+				<form string="Price List of Board Size" version="7.0">
+					<group>
+						<group>
+							<label for="volume_type"/>
+							<div name="volume_type">
+								<field name="volume_type" class="oe_inline"/>
+							</div>
+						</group>
+						<group>
+							<label for="max_size"/>
+							<div name="max_size">
+								<field name="max_size" class="oe_inline"/> ㎡
+							</div>
+						</group>
+					</group>
+					<group>
+						<group>
+							<label for="material_fee"/>
+							<div name="material_fee">
+								<field name="material_fee_type" class="oe_inline"/>
+								<field name="material_fee" class="oe_inline"/>
+							</div>
+							<label for="etest_fee"/>
+							<div name="etest_fee">
+								<field name="etest_fee_type" class="oe_inline"/>
+								<field name="etest_fee" class="oe_inline"/>
+							</div>
+						</group>
+						<group>
+							<label for="engineering_fee"/>
+							<div name="engineering_fee">
+								<field name="engineering_fee_type" class="oe_inline"/>
+								<field name="engineering_fee" class="oe_inline"/>
+							</div>
+							<label for="film_fee"/>
+							<div name="film_fee">
+								<field name="film_fee_type" class="oe_inline"/>
+								<field name="film_fee" class="oe_inline"/>
+							</div>
+						</group>
+						<group>
+							<button name="act_auto_create" string="Auto Create" type="object" icon="gtk-apply"/>
+						</group>
+					</group>
+					<group>
+						<group>
+							<label for="min_delay_hours"/>
+							<div name="min_delay_hours">
+								<field name="min_delay_hours" class="oe_inline"/> Hours
+							</div>
+							<label for="quick_time"/>
+							<div name="quick_time">
+								<field name="quick_time" class="oe_inline"/> Hours
+							</div>
+						</group>
+						<group>
+							<label for="max_delay_hours"/>
+							<div name="max_delay_hours">
+								<field name="max_delay_hours" class="oe_inline"/> Hours
+							</div>
+							<label for="quick_fee"/>
+							<div name="quick_fee">
+								<field name="quick_fee" class="oe_inline"/>%%
+							</div>
+						</group>
+					</group>
+					<notebook>
+						<page string="Price List of Copper Base">
+							<field name="type_item_ids"
+							context="{'default_material_fee_type':material_fee_type, 'default_material_fee': material_fee,
+							'default_engineering_fee_type':engineering_fee_type, 'default_engineering_fee': engineering_fee,
+							'default_etest_fee_type':etest_fee_type, 'default_etest_fee': etest_fee,
+							'default_film_fee_type':film_fee_type, 'default_film_fee': film_fee,
+							'default_min_delay_hours': min_delay_hours, 'default_max_delay_hours': max_delay_hours,
+							'default_quick_time': quick_time, 'default_quick_fee': quick_fee}"/>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cam_layer_number_form" model="ir.ui.view">
+			<field name="name">cam.layer.number.form</field>
+			<field name="model">cam.layer.number</field>
+			<field name="arch" type="xml">
+				<form string="PCB Layer Number" version="7.0">
+					<group>
+						<group>
+							<field name="name"/>
+							<field name="min_thickness"/>
+							<field name="min_inner_copper"/>
+							<field name="min_outer_copper"/>
+							<field name="aperture_ratio"/>
+							<field name="active"/>
+						</group>
+						<group>
+							<field name="layer_number"/>
+							<field name="max_thickness"/>
+							<field name="max_inner_copper"/>
+							<field name="max_outer_copper"/>
+							<field name="auto_create" on_change="onchange_create()"/>
+						</group>
+					</group>
+					<field name="company_id" groups="base.group_multi_company" widget="selection"/>
+					<notebook>
+						<page string="PCB Layer Size Price">
+							<field name="size_ids"/>
+						</page>
+						<page string="Notices">
+							<field name="note" nolabel="1"/>
+						</page>
+						<page string="Memo">
+							<field name="memo" nolabel="1"/>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cam_layer_number_tree" model="ir.ui.view">
+			<field name="name">cam.layer.number.tree</field>
+			<field name="model">cam.layer.number</field>
+			<field name="arch" type="xml">
+				<tree string="PCB Layer Number">
+					<field name="name"/>
+					<field name="layer_number"/>
+					<field name="min_thickness"/>
+					<field name="max_thickness"/>
+					<field name="min_inner_copper"/>
+					<field name="max_inner_copper"/>
+					<field name="min_outer_copper"/>
+					<field name="max_outer_copper"/>
+					<field name="aperture_ratio"/>
+					<field name="active"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="cam_layer_number_act" model="ir.actions.act_window">
+			<field name="name">PCB Layer Number</field>
+			<field name="res_model">cam.layer.number</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="Help" type="html">
+				<p class="oe_view_nocontent_create">
+				Click to define a new material brand.
+				</p><p>
+				Our PCB Manufacturer used Layer Number, You can create here.
+				</p>
+			</field>
+		</record>
+
+		<menuitem name="PCB Layer Number" action="cam_layer_number_act" id="menu_cam_layer_number_act" parent="menu_cam_configs"/>
+
+		<record id="view_cam_base_type_form" model="ir.ui.view">
+			<field name="name">cam.base.type.form</field>
+			<field name="model">cam.base.type</field>
+			<field name="arch" type="xml">
+				<form string="Copper Base Type" version="7.0">
+					<group>
+						<group>
+							<field name="name"/>
+							<field name="price"/>
+							<field name="tg_value"/>
+							<field name="company_id" groups="base.group_multi_company" widget="selection"/>
+						</group>
+						<group>
+							<field name="price_type" invisible="1"/>
+							<field name="include_base_price"/>
+							<field name="price_class"/>
+							<field name="auto_create"/>
+							<field name="active"/>
+						</group>
+					</group>
+					<notebook>
+						<page string="Child Of Copper Base type">
+							<field name="child_ids" widget="one2many_list">
+								<tree string="Child Of Copper Base type" editable="bottom">
+									<field name="name"/>
+									<field name="tg_value"/>
+									<field name="price_type" invisible="1"/>
+									<field name="include_base_price"/>
+									<field name="price"/>
+									<field name="price_class"/>
+									<field name="auto_create"/>
+									<field name="note"/>
+									<field name="memo"/>
+									<field name="active"/>
+								</tree>
+							</field>
+						</page>
+						<page string="Notices">
+							<field name="note"/>
+						</page>
+						<page string="Memo">
+							<field name="memo"/>
+						</page>
+					</notebook>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"/>
+						<field name="message_ids" colspan="4" widget="mail_thread" nolabel="1"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cam_base_type_tree" model="ir.ui.view">
+			<field name="name">cam.base.type.tree</field>
+			<field name="model">cam.base.type</field>
+			<field name="arch" type="xml">
+				<tree string="Copper Base Type">
+					<field name="name"/>
+					<field name="tg_value"/>
+					<field name="price_type" invisible="1"/>
+					<field name="include_base_price"/>
+					<field name="price"/>
+					<field name="price_class"/>
+					<field name="auto_create"/>
+					<field name="note"/>
+					<field name="memo"/>
+					<field name="active"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="cam_base_type_act" model="ir.actions.act_window">
+			<field name="name">Copper Base Type</field>
+			<field name="res_model">cam.base.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="Help" type="html">
+				<p class="oe_view_nocontent_create">
+				Click to define a new copper base type.
+				</p><p>
+				Our PCB Manufacturer used Copper Base Type, You can create here.
+				</p>
+			</field>
+		</record>
+
+		<menuitem name="Copper Base Type" action="cam_base_type_act" id="menu_cam_base_type_act" parent="menu_cam_configs"/>
+
+        <!--<record id="view_cam_check_application_form" model="ir.ui.view">-->
+            <!--<field name="name">cam.check.application.form</field>-->
+            <!--<field name="model">cam.check.application</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<form string="CAM Check Application" version="7.0">-->
+                    <!--<header>-->
+                        <!--<button name="btn_sent" states="draft" string="Sent To" class="oe_highlight" type="workflow"/>-->
+                        <!--<button name="btn_cancel" states="draft,sent" string="Cancel" type="workflow"/>-->
+                        <!--<field name="state" widget="statusbar" statusbar_visible="draft,sent,done"/>-->
+                    <!--</header>-->
+                    <!--<sheet>-->
+                        <!--<h1>-->
+                            <!--<label string="CAM Check Application"/>-->
+                            <!--<field name="name" readonly="1" class="oe_inline"/>-->
+                        <!--</h1>-->
+                        <!--<group>-->
+                            <!--<group>-->
+                                <!--<field name="lead_id" invisible="context.get('lead', False)" options='{"no_open": True}' attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                <!--<field name="partner_id" domain="[('customer', '=', True), ('is_company', '=', True)]"-->
+                                <!--invisible="context.get('partner', False)" attrs="{'readonly':[('state','!=','draft')]}" options='{"no_open": True}'/>-->
+                                <!--<field name="priority"/>-->
+                            <!--</group>-->
+                            <!--<group>-->
+                                <!--<field name="app_date" readonly="1"/>-->
+                                <!--<field name="sent_date" readonly="1"/>-->
+                            <!--</group>-->
+                        <!--</group>-->
+                        <!--<notebook>-->
+                            <!--<page string="PCB Information">-->
+                                <!--<group>-->
+                                    <!--<group>-->
+                                        <!--<field name="customer_file_name" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                    <!--</group>-->
+                                    <!--<group>-->
+                                        <!--<field name="layer_number" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                        <!--<field name="base_type" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                    <!--</group>-->
+                                <!--</group>-->
+                                <!--<group>-->
+                                    <!--<group>-->
+                                        <!--<label for="cpo_length"/>-->
+                                        <!--<div name="cpo_length">-->
+                                            <!--<field name="cpo_length" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> cm-->
+                                        <!--</div>-->
+                                        <!--<label for="quantity"/>-->
+                                        <!--<div name="quantity">-->
+                                            <!--<field name="quantity" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> SET-->
+                                            <!--<field name='pcs_number' class="oe_inline" readonly="1"/> PCS-->
+                                            <!--<field name='combine_number' class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> Item-->
+                                        <!--</div>-->
+                                        <!--<label for="pcs_per_set" string="PCS Per Set" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                        <!--<div name="pcs_per_set">-->
+                                            <!--1 X <field name='pcs_per_set' class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> PCS-->
+                                        <!--</div>-->
+                                    <!--</group>-->
+                                    <!--<group>-->
+                                        <!--<label for="cpo_width"/>-->
+                                        <!--<div name="cpo_width">-->
+                                            <!--<field name="cpo_width" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> cm-->
+                                        <!--</div>-->
+                                        <!--<label for="thickness"/>-->
+                                        <!--<div name="thickness">-->
+                                            <!--<field name="thickness" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> mm-->
+                                        <!--</div>-->
+                                    <!--</group>-->
+                                <!--</group>-->
+                                <!--<group>-->
+                                    <!--<label for="unit_size"/>-->
+                                    <!--<div name="unit_size">-->
+                                        <!--<field name="unit_size" class="oe_inline" attrs="{'readonly':True}"/> cm²-->
+                                    <!--</div>-->
+                                    <!--<label for="size"/>-->
+                                    <!--<div name="size">-->
+                                        <!--<field name="size" class="oe_inline" attrs="{'readonly':True}"/> ㎡-->
+                                    <!--</div>-->
+                                    <!--<field name="company_id" groups="base.group_multi_company" widget="selection" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                <!--</group>-->
+                            <!--</page>-->
+                            <!--<page string="Customer Request">-->
+                                <!--<field name="request" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                            <!--</page>-->
+                            <!--<page string="Memo">-->
+                                <!--<field name="memo" nolabel="1" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                            <!--</page>-->
+                        <!--</notebook>-->
+                    <!--</sheet>-->
+                    <!--<div class="oe_chatter">-->
+                        <!--<field name="message_follower_ids" widget="mail_followers"/>-->
+                        <!--<field name="message_ids" colspan="4" widget="mail_thread" nolabel="1"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="view_cam_check_application_tree" model="ir.ui.view">-->
+            <!--<field name="name">cam.check.application.tree</field>-->
+            <!--<field name="model">cam.check.application</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<tree string="CAM Check Application"  fonts="bold:message_unread==True" colors="grey:state =='cancel';red:state=='draft';blue:state=='sent';green:state=='done'">-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="lead_id" invisible="context.get('lead', False)"/>-->
+                    <!--<field name="partner_id" invisible="context.get('partner', False)" context="{'show_code': 1}" options='{"always_reload": True}'/>-->
+                    <!--<field name="priority"/>-->
+                    <!--<field name="customer_file_name"/>-->
+                    <!--<field name="layer_number"/>-->
+                    <!--<field name="base_type" invisible="1"/>-->
+                    <!--<field name="thickness" invisible="1"/>-->
+                    <!--<field name="cpo_length" invisible="1"/>-->
+                    <!--<field name="cpo_width" invisible="1"/>-->
+                    <!--<field name="quantity"/>-->
+                    <!--<field name="unit_size"/>-->
+                    <!--<field name="size" invisible="1"/>-->
+                    <!--<field name="app_date" invisible="1"/>-->
+                    <!--<field name="sent_date"/>-->
+                    <!--<field name="state"/>-->
+                    <!--<field name="user_id"/>-->
+                    <!--<field name="message_unread" invisible="1"/>-->
+                <!--</tree>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record model="ir.ui.view" id="cam_check_application_partner_kanban_view">-->
+            <!--<field name="name">cam.check.application.partner.pcb.kanban</field>-->
+            <!--<field name="model">cam.check.application</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<kanban>-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="state"/>-->
+                    <!--<field name="partner_id"/>-->
+                    <!--<field name="priority"/>-->
+                    <!--<field name="customer_file_name"/>-->
+                    <!--<field name="layer_number"/>-->
+                    <!--<field name="user_id"/>-->
+                    <!--<templates>-->
+                        <!--<t t-name="kanban-box">-->
+                            <!--<div class="oe_kanban_vignette oe_semantic_html_override">-->
+                                <!--<a type="open">-->
+                                    <!--<t t-if="record.partner_id.raw_value">-->
+                                        <!--<img t-att-src='_s + "/cam/static/src/img/chinapcbone.png"' class="oe_kanban_image"/>-->
+                                    <!--</t>-->
+                                <!--</a>-->
+                                <!--<div class="oe_kanban_details">-->
+                                    <!--<h4 class="oe_partner_heading"><a type="open"><field name="name"/></a></h4>-->
+                                    <!--<div class="oe_kanban_partner_categories"/>-->
+                                    <!--<div class="oe_kanban_partner_links"/>-->
+                                    <!--<ul>-->
+                                        <!--<li t-if="record.partner_id.raw_value"><field name="partner_id"/></li>-->
+                                        <!--<li t-if="record.state.raw_value"><field name="state"/></li>-->
+                                        <!--<li t-if="record.priority.raw_value"><field name="priority"/></li>-->
+                                        <!--<li t-if="record.customer_file_name.raw_value"><field name="customer_file_name"/></li>-->
+                                        <!--<li t-if="record.layer_number.raw_value"><field name="layer_number"/></li>-->
+                                        <!--<li t-if="record.user_id.raw_value"><field name="user_id"/></li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</t>-->
+                    <!--</templates>-->
+                <!--</kanban>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record model="ir.ui.view" id="cam_check_application_lead_kanban_view">-->
+            <!--<field name="name">cam.check.application.lead.pcb.kanban</field>-->
+            <!--<field name="model">cam.check.application</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<kanban>-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="state"/>-->
+                    <!--<field name="lead_id"/>-->
+                    <!--<field name="priority"/>-->
+                    <!--<field name="customer_file_name"/>-->
+                    <!--<field name="layer_number"/>-->
+                    <!--<field name="user_id"/>-->
+                    <!--<templates>-->
+                        <!--<t t-name="kanban-box">-->
+                            <!--<div class="oe_kanban_vignette oe_semantic_html_override">-->
+                            <!--<a type="open">-->
+                                <!--<t t-if="record.lead_id.raw_value">-->
+                                    <!--<img t-att-src='_s + "/cam/static/src/img/chinapcbone.png"' class="oe_kanban_image"/>-->
+                                <!--</t>-->
+                            <!--</a>-->
+                                <!--<div class="oe_kanban_details">-->
+                                <!--<h4 class="oe_partner_heading"><a type="open"><field name="name"/></a></h4>-->
+                                <!--<div class="oe_kanban_partner_categories"/>-->
+                                <!--<div class="oe_kanban_partner_links"/>-->
+                                    <!--<ul>-->
+                                        <!--<li t-if="record.lead_id.raw_value"><field name="lead_id"/></li>-->
+                                        <!--<li t-if="record.state.raw_value"><field name="state"/></li>-->
+                                        <!--<li t-if="record.priority.raw_value"><field name="priority"/></li>-->
+                                        <!--<li t-if="record.customer_file_name.raw_value"><field name="customer_file_name"/></li>-->
+                                        <!--<li t-if="record.layer_number.raw_value"><field name="layer_number"/></li>-->
+                                        <!--<li t-if="record.user_id.raw_value"><field name="user_id"/></li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</t>-->
+                    <!--</templates>-->
+                <!--</kanban>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="view_cam_check_application_partner_filter" model="ir.ui.view">-->
+            <!--<field name="name">cam.check.application.partner.select</field>-->
+            <!--<field name="model">cam.check.application</field>-->
+            <!--<field name="arch" type="xml">-->
+                    <!--<search string="Search CAM Check Applicaton">-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="customer_file_name"/>-->
+                    <!--<field name="partner_id"/>-->
+                    <!--<field name="app_date"/>-->
+                    <!--<field name="sent_date"/>-->
+                    <!--<field name="user_id"/>-->
+                    <!--<field name="state"/>-->
+                    <!--<filter string="My CAM Check Application" icon="terp-personal+" domain="[('user_id','=',uid)]"/>-->
+                    <!--<separator/>-->
+                        <!--<filter string="Highest Priority" name="highest_priority" icon="terp-personal+" domain="[('priority','=','1')]"/>-->
+                        <!--<filter string="High Priority" name="high_priority" icon="terp-personal+" domain="[('priority','=','2')]"/>-->
+                        <!--<filter string="Normal Priority" name="normal_priority" icon="terp-personal+" domain="[('priority','=','3')]"/>-->
+                    <!--<separator/>-->
+                        <!--<filter string="New CAM Check Application" name="draft" domain="[('state','=','draft')]" help="New CAM Check Application"/>-->
+                        <!--<filter string="Cancelled CAM Check Application" name="cancel" domain="[('state','=','cancel')]" help="Cancelled CAM Check Application"/>-->
+                        <!--<filter string="Sended CAM Check Application" name="sent" domain="[('state','=','sent')]" help="Sended CAM Check Application"/>-->
+                        <!--<filter string="Finished CAM Check Applicaton" name="done" domain="[('state','=','done')]" help="Finished CAM Check Applicaton"/>-->
+                    <!--<group expand="0" string="Group By...">-->
+                        <!--<filter string="User" domain="[('lead_id', '=', False)]" context="{'group_by' : 'user_id'}" />-->
+                        <!--<filter string="Customer" domain="[('lead_id', '=', False)]" context="{'group_by': 'partner_id'}"/>-->
+                        <!--<filter string="Check State" domain="[('lead_id', '=', False)]" context="{'group_by': 'state'}"/>-->
+                        <!--<filter string="Application Date" domain="[('lead_id', '=', False)]" context="{'group_by': 'app_date'}"/>-->
+                        <!--<filter string="Sent Date" domain="[('lead_id', '=', False)]" context="{'group_by': 'sent_date'}"/>-->
+                    <!--</group>-->
+                <!--</search>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="cam_check_application_partner_act" model="ir.actions.act_window">-->
+            <!--<field name="name">Check Application For Customer</field>-->
+            <!--<field name="res_model">cam.check.application</field>-->
+            <!--<field name="view_type">form</field>-->
+            <!--<field name="view_mode">tree,kanban,form</field>-->
+            <!--<field name="domain">[('lead_id', '=', False)]</field>-->
+            <!--<field name="context">{'partner': False, 'lead': True, 'show_code': 1}</field>-->
+            <!--<field name="search_view_id" ref="view_cam_check_application_partner_filter"/>-->
+            <!--<field name="Help" type="html">-->
+                <!--<p class="oe_view_nocontent_create">-->
+                <!--Click to define a new CAM Check Application.-->
+                <!--</p><p>-->
+                <!--Our PCB Manufacturer used CAM Check Application, You can create here.-->
+                <!--</p>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window.view" id="cam_check_application_partner_act_tree">-->
+            <!--<field name="sequence" eval="1"/>-->
+            <!--<field name="view_mode">tree</field>-->
+            <!--<field name="view_id" ref="view_cam_check_application_tree"/>-->
+            <!--<field name="act_window_id" ref="cam_check_application_partner_act"/>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window.view" id="cam_check_application_partner_act_kanban">-->
+            <!--<field name="sequence" eval="2"/>-->
+            <!--<field name="view_mode">kanban</field>-->
+            <!--<field name="view_id" ref="cam_check_application_partner_kanban_view"/>-->
+            <!--<field name="act_window_id" ref="cam_check_application_partner_act"/>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window.view" id="cam_check_application_partner_act_form">-->
+            <!--<field name="sequence" eval="3"/>-->
+            <!--<field name="view_mode">form</field>-->
+            <!--<field name="view_id" ref="view_cam_check_application_form"/>-->
+            <!--<field name="act_window_id" ref="cam_check_application_partner_act"/>-->
+        <!--</record>-->
+
+        <!--<record id="view_cam_check_application_lead_filter" model="ir.ui.view">-->
+            <!--<field name="name">cam.check.application.lead.select</field>-->
+            <!--<field name="model">cam.check.application</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<search string="Search CAM Check Applicaton">-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="customer_file_name"/>-->
+                    <!--<field name="lead_id"/>-->
+                    <!--<field name="app_date"/>-->
+                    <!--<field name="sent_date"/>-->
+                    <!--<field name="user_id"/>-->
+                    <!--<field name="state"/>-->
+                    <!--<filter string="My CAM Check Application" icon="terp-personal+" domain="[('user_id','=',uid)]"/>-->
+                    <!--<separator/>-->
+                        <!--<filter string="Highest Priority" name="highest_priority" icon="terp-personal+" domain="[('priority','=','1')]"/>-->
+                        <!--<filter string="High Priority" name="high_priority" icon="terp-personal+" domain="[('priority','=','2')]"/>-->
+                        <!--<filter string="Normal Priority" name="normal_priority" icon="terp-personal+" domain="[('priority','=','3')]"/>-->
+                    <!--<separator/>-->
+                        <!--<filter string="New CAM Check Application" name="draft" domain="[('state','=','draft')]" help="New CAM Check Application"/>-->
+                        <!--<filter string="Cancelled CAM Check Application" name="cancel" domain="[('state','=','cancel')]" help="Cancelled CAM Check Application"/>-->
+                        <!--<filter string="Sended CAM Check Application" name="sent" domain="[('state','=','sent')]" help="Sended CAM Check Application"/>-->
+                        <!--<filter string="Finished CAM Check Applicaton" name="done" domain="[('state','=','done')]" help="Finished CAM Check Applicaton"/>-->
+                    <!--<group expand="0" string="Group By...">-->
+                        <!--<filter string="User" domain="[('partner_id', '=', False)]" context="{'group_by' : 'user_id'}" />-->
+                        <!--<filter string="Customer" domain="[('partner_id', '=', False)]" context="{'group_by': 'lead_id'}"/>-->
+                        <!--<filter string="Check State" domain="[('partner_id', '=', False)]" context="{'group_by': 'state'}"/>-->
+                        <!--<filter string="Application Date" domain="[('partner_id', '=', False)]" context="{'group_by': 'app_date'}"/>-->
+                        <!--<filter string="Sent Date" domain="[('partner_id', '=', False)]" context="{'group_by': 'sent_date'}"/>-->
+                    <!--</group>-->
+                <!--</search>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="cam_check_application_lead_act" model="ir.actions.act_window">-->
+            <!--<field name="name">Check Application For Lead</field>-->
+            <!--<field name="res_model">cam.check.application</field>-->
+            <!--<field name="view_type">form</field>-->
+            <!--<field name="view_mode">tree,kanban,form</field>-->
+            <!--<field name="domain">[('partner_id', '=', False)]</field>-->
+            <!--<field name="context">{'partner': True, 'lead': False}</field>-->
+            <!--<field name="search_view_id" ref="view_cam_check_application_lead_filter"/>-->
+            <!--<field name="Help" type="html">-->
+                <!--<p class="oe_view_nocontent_create">-->
+                <!--Click to define a new CAM Check Application.-->
+                <!--</p><p>-->
+                <!--Our PCB Manufacturer used CAM Check Application, You can create here.-->
+                <!--</p>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window.view" id="cam_check_application_lead_act_tree">-->
+            <!--<field name="sequence" eval="1"/>-->
+            <!--<field name="view_mode">tree</field>-->
+            <!--<field name="view_id" ref="view_cam_check_application_tree"/>-->
+            <!--<field name="act_window_id" ref="cam_check_application_lead_act"/>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window.view" id="cam_check_application_lead_act_kanban">-->
+            <!--<field name="sequence" eval="2"/>-->
+            <!--<field name="view_mode">kanban</field>-->
+            <!--<field name="view_id" ref="cam_check_application_lead_kanban_view"/>-->
+            <!--<field name="act_window_id" ref="cam_check_application_lead_act"/>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window.view" id="cam_check_application_lead_act_form">-->
+            <!--<field name="sequence" eval="3"/>-->
+            <!--<field name="view_mode">form</field>-->
+            <!--<field name="view_id" ref="view_cam_check_application_form"/>-->
+            <!--<field name="act_window_id" ref="cam_check_application_lead_act"/>-->
+        <!--</record>-->
+
+        <!--<record id="view_cam_engineering_check_tree" model="ir.ui.view">-->
+            <!--<field name="name">cam.engineering.check.tree</field>-->
+            <!--<field name="model">cam.engineering.check</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<tree string="Cam Pro-Check" fonts="bold:message_unread==True" colors="grey:state =='cancel';red:state=='draft';green:state=='done'">-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="partner_id" invisible="context.get('partner', False)" context="{'show_code': 1}" options='{"always_reload": True}'/>-->
+                    <!--<field name="lead_id" invisible="context.get('lead', False)"/>-->
+                    <!--<field name="priority"/>-->
+                    <!--<field name="application_id" invisible="1"/>-->
+                    <!--<field name="base_type"/>-->
+                    <!--<field name="layer_number"/>-->
+                    <!--<field name="thickness" invisible="1"/>-->
+                    <!--<field name="cpo_length" invisible="1"/>-->
+                    <!--<field name="cpo_width" invisible="1"/>-->
+                    <!--<field name="quantity"/>-->
+                    <!--<field name="size"/>-->
+                    <!--<field name="surface"/>-->
+                    <!--<field name="new_date"/>-->
+                    <!--<field name="update_date"/>-->
+                    <!--<field name="state" invisible="1"/>-->
+                    <!--<field name="message_unread" invisible="1"/>-->
+                <!--</tree>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="view_cam_engineering_check_form" model="ir.ui.view">-->
+            <!--<field name="name">cam.engineering.check.form</field>-->
+            <!--<field name="model">cam.engineering.check</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<form string="Cam Pro-Check" version="7.0">-->
+                    <!--<header>-->
+                        <!--<button name="btn_done" states="draft" string="Finish Pro-Check" class="oe_highlight" type="workflow"/>-->
+                        <!--<button name="set_to_draft" type="object" states="done" string="Set To Draft" class="oe_highlight"/>-->
+                        <!--<button name="btn_cancel" states="draft" string="Cancel Pro-Check" type="workflow"/>-->
+                        <!--<field name="state" widget="statusbar" statusbar_visible="draft,done"/>-->
+                    <!--</header>-->
+                    <!--<sheet>-->
+                        <!--<h1>-->
+                            <!--<label string="CAM Pro-Check"/>-->
+                            <!--<field name="name" class="oe_inline"/>-->
+                        <!--</h1>-->
+                        <!--<group>-->
+                            <!--<group>-->
+                                <!--<field name="partner_id" domain="[('customer','=',True), ('is_company', '=',True)]"-->
+                                <!--context="{'search_default_customer':1, 'show_code': 1}" options='{"always_reload": True,"no_open": True}'-->
+                                <!--invisible="context.get('partner', False)" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                <!--<field name="lead_id" invisible="context.get('lead', False)" options='{"no_open": True}' attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                <!--<field name="customer_file_name" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                <!--<field name="priority" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                <!--<field name="new_date"/>-->
+                                <!--<field name="company_id" groups="base.group_multi_company" widget="selection" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                            <!--</group>-->
+                            <!--<group>-->
+                                <!--<field name="application_id" domain="[('state', '=', 'sent')]" options='{"always_reload": True}' context ="{'show_layer_number':1}"-->
+                                <!--attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                <!--<field name="product_no" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                <!--<label for="quantity"/>-->
+                                <!--<div name="quantity">-->
+                                    <!--<field name="quantity" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> SET-->
+                                    <!--<field name="pcs_number" class="oe_inline" readonly="1"/> PCS-->
+                                    <!--<field name='combine_number' class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> Item-->
+                                <!--</div>-->
+                                <!--<label for="pcs_per_set" string="PCS Per Set" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                <!--<div name="pcs_per_set">-->
+                                    <!--1 X <field name='pcs_per_set' class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> PCS-->
+                                <!--</div>-->
+                                <!--<field name="update_date"/>-->
+                            <!--</group>-->
+                        <!--</group>-->
+                        <!--<notebook>-->
+                            <!--<page string="Info for PCB Make">-->
+                                <!--<group>-->
+                                    <!--<group>-->
+                                        <!--<field name="layer_number" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                        <!--<field name="base_type" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                        <!--<field name="material_brand" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                    <!--</group>-->
+                                    <!--<group>-->
+                                        <!--<label for="cpo_length"/>-->
+                                        <!--<div name="cpo_length">-->
+                                            <!--<field name="cpo_length" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> cm-->
+                                        <!--</div>-->
+                                        <!--<label for="cpo_width"/>-->
+                                        <!--<div name="cpo_width">-->
+                                            <!--<field name="cpo_width" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> cm-->
+                                        <!--</div>-->
+                                        <!--<label for="unit_size"/>-->
+                                        <!--<div name="unit_size">-->
+                                            <!--<field name="unit_size" class="oe_inline" attrs="{'readonly':True}"/> cm²-->
+                                        <!--</div>-->
+                                        <!--<label for="size"/>-->
+                                        <!--<div name="size">-->
+                                            <!--<field name="size" class="oe_inline" attrs="{'readonly':True}"/> ㎡-->
+                                        <!--</div>-->
+                                    <!--</group>-->
+                                <!--</group>-->
+                                <!--<group>-->
+                                    <!--<group>-->
+                                        <!--<label for="thickness"/>-->
+                                        <!--<div name="thickness">-->
+                                            <!--<field name="thickness" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> mm-->
+                                        <!--</div>-->
+                                        <!--<label for="inner_copper"/>-->
+                                        <!--<div name="inner_copper">-->
+                                            <!--<field name="inner_copper" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> OZ-->
+                                        <!--</div>-->
+                                        <!--<label for="outer_copper"/>-->
+                                        <!--<div name="outer_copper">-->
+                                            <!--<field name="outer_copper" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> OZ-->
+                                        <!--</div>-->
+                                    <!--</group>-->
+                                    <!--<group>-->
+                                        <!--<label for="min_hole"/>-->
+                                        <!--<div name="min_hole">-->
+                                            <!--<field name="min_hole" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> mm-->
+                                        <!--</div>-->
+                                        <!--<label for="min_line_cpo_width"/>-->
+                                        <!--<div name="min_line_cpo_width">-->
+                                            <!--<field name="min_line_cpo_width" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> mm-->
+                                        <!--</div>-->
+                                        <!--<label for="min_line_distance"/>-->
+                                        <!--<div name="min_line_distance">-->
+                                            <!--<field name="min_line_distance" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> mm-->
+                                        <!--</div>-->
+                                        <!--<label for="line_to_hole_distance"/>-->
+                                        <!--<div name="line_to_hole_distance">-->
+                                            <!--<field name="line_to_hole_distance" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> mm-->
+                                        <!--</div>-->
+                                    <!--</group>-->
+                                <!--</group>-->
+                                <!--<group>-->
+                                    <!--<group>-->
+                                        <!--<field name="total_holes" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                        <!--<field name="test_points" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                    <!--</group>-->
+                                    <!--<group>-->
+                                        <!--<field name="sprocess_ids" widget="many2many_tags" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                        <!--<field name="smaterial_ids" widget="many2many_tags" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                    <!--</group>-->
+                                <!--</group>-->
+                            <!--</page>-->
+                            <!--<page string="Info for Finished PCB">-->
+                                <!--<group>-->
+                                    <!--<group>-->
+                                        <!--<label for = 'surface'/>-->
+                                        <!--<div name='surface'>-->
+                                            <!--<field name="surface" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                        <!--</div>-->
+                                        <!--<label for = 'gold_thickness'/>-->
+                                        <!--<div name="gold_thickness">-->
+                                            <!--<field name="gold_thickness" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> U''-->
+                                        <!--</div>-->
+                                        <!--<label for = 'gold_size'/>-->
+                                        <!--<div name="gold_size">-->
+                                            <!--<field name="gold_size" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/> %%-->
+                                        <!--</div>-->
+                                        <!--<field name="gold_finger" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                        <!--<field name="champer_gold_finger" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                    <!--</group>-->
+                                    <!--<group>-->
+                                        <!--<field name="silkscreen_color" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                        <!--<field name="text_color" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                        <!--<field name="via_process" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                        <!--<field name="v_cut" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                    <!--</group>-->
+                                <!--</group>-->
+                                <!--<group>-->
+                                    <!--<group>-->
+                                        <!--<field name="cnc" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                        <!--<field name="punch" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                    <!--</group>-->
+                                    <!--<group>-->
+                                        <!--<label for='tooling'/>-->
+                                        <!--<div name="tooling" attrs="{'readonly': [('state','not in',('draft'))]}">-->
+                                            <!--<field name="tooling" class="oe_inline" attrs="{'readonly': [('state','not in',('draft'))]}"/>-->
+                                            <!--<field name="tooling_source" attrs="{'invisible':[('tooling', '=', False)],'readonly': [('state','not in',('draft'))]}" class="oe_inline"/>-->
+                                        <!--</div>-->
+                                        <!--<field name="fly_probe" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                                    <!--</group>-->
+                                <!--</group>-->
+                            <!--</page>-->
+                            <!--<page string="Other Information">-->
+                                <!--<field name="request" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                            <!--</page>-->
+                        <!--</notebook>-->
+                    <!--</sheet>-->
+                    <!--<div class="oe_chatter">-->
+                        <!--<field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>-->
+                        <!--<field name="message_ids" widget="mail_thread"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record model="ir.ui.view" id="cam_engineering_check_partner_kanban_view">-->
+            <!--<field name="name">cam.engineering.check.partner.pcb.kanban</field>-->
+            <!--<field name="model">cam.engineering.check</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<kanban>-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="state"/>-->
+                    <!--<field name="partner_id"/>-->
+                    <!--<field name="priority"/>-->
+                    <!--<field name="customer_file_name"/>-->
+                    <!--<field name="layer_number"/>-->
+                    <!--<field name="base_type"/>-->
+                    <!--<field name="user_id"/>-->
+                    <!--<templates>-->
+                        <!--<t t-name="kanban-box">-->
+                            <!--<div class="oe_kanban_vignette oe_semantic_html_override">-->
+                                <!--<a type="open">-->
+                                    <!--<t t-if="record.partner_id.raw_value">-->
+                                        <!--<img t-att-src='_s + "/cam/static/src/img/chinapcbone.png"' class="oe_kanban_image"/>-->
+                                    <!--</t>-->
+                                <!--</a>-->
+                                <!--<div class="oe_kanban_details">-->
+                                    <!--<h4 class="oe_partner_heading"><a type="open"><field name="name"/></a></h4>-->
+                                    <!--<div class="oe_kanban_partner_categories"/>-->
+                                    <!--<div class="oe_kanban_partner_links"/>-->
+                                    <!--<ul>-->
+                                        <!--<li t-if="record.partner_id.raw_value"><field name="partner_id"/></li>-->
+                                        <!--<li t-if="record.state.raw_value"><field name="state"/></li>-->
+                                        <!--<li t-if="record.priority.raw_value"><field name="priority"/></li>-->
+                                        <!--<li t-if="record.customer_file_name.raw_value"><field name="customer_file_name"/></li>-->
+                                        <!--<li t-if="record.layer_number.raw_value"><field name="layer_number"/>,<field name="base_type"/></li>-->
+                                        <!--<li t-if="record.user_id.raw_value"><field name="user_id"/></li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</t>-->
+                    <!--</templates>-->
+                <!--</kanban>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="view_cam_engineering_check_partner_filter" model="ir.ui.view">-->
+            <!--<field name="name">cam.engineering.check.partner.select</field>-->
+            <!--<field name="model">cam.engineering.check</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<search string="Search Cam Pro-Check">-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="customer_file_name"/>-->
+                    <!--<field name="partner_id"/>-->
+                    <!--<field name="application_id"/>-->
+                    <!--<field name="layer_number"/>-->
+                    <!--<field name="base_type"/>-->
+                    <!--<field name="user_id"/>-->
+                    <!--<field name="state"/>-->
+                    <!--<filter string="My CAM ProCheck" icon="terp-personal+" domain="[('user_id','=',uid)]"/>-->
+                    <!--<separator/>-->
+                        <!--<filter string="Highest Priority" name="highest_priority" icon="terp-personal+" domain="[('priority','=','1')]"/>-->
+                        <!--<filter string="High Priority" name="high_priority" icon="terp-personal+" domain="[('priority','=','2')]"/>-->
+                        <!--<filter string="Normal Priority" name="normal_priority" icon="terp-personal+" domain="[('priority','=','3')]"/>-->
+                    <!--<separator/>-->
+                        <!--<filter string="New CAM ProCheck" name="draft" domain="[('state','=','draft')]" help="New CAM ProCheck"/>-->
+                        <!--<filter string="Cancelled CAM ProCheck" name="cancel" domain="[('state','=','cancel')]" help="Cancelled CAM ProCheck"/>-->
+                        <!--<filter string="Finished CAM ProCheck" name="done" domain="[('state','=','done')]" help="Finished CAM ProCheck"/>-->
+                    <!--<group expand="0" string="Group By...">-->
+                        <!--<filter string="User" domain="[('lead_id', '=', False)]" context="{'group_by' : 'user_id'}" />-->
+                        <!--<filter string="Customer" domain="[('lead_id', '=', False)]" context="{'group_by': 'partner_id'}"/>-->
+                        <!--<filter string="Check State" domain="[('lead_id', '=', False)]" context="{'group_by': 'state'}"/>-->
+                        <!--<filter string="Creation Date" domain="[('lead_id', '=', False)]" context="{'group_by': 'new_date'}"/>-->
+                        <!--<filter string="Update Date" domain="[('lead_id', '=', False)]" context="{'group_by': 'update_date'}"/>-->
+                    <!--</group>-->
+                <!--</search>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="cam_engineering_check_partner_act" model="ir.actions.act_window">-->
+            <!--<field name="name">Cam Pro-Check For Customer</field>-->
+            <!--<field name="res_model">cam.engineering.check</field>-->
+            <!--<field name="view_type">form</field>-->
+            <!--<field name="view_mode">tree,form</field>-->
+            <!--<field name="domain">[('lead_id', '=', False)]</field>-->
+            <!--<field name="context">{'partner': False, 'lead': True, 'show_code': 1}</field>-->
+            <!--<field name="search_view_id" ref="view_cam_engineering_check_partner_filter"/>-->
+            <!--<field name="Help" type="html">-->
+                <!--<p class="oe_view_nocontent_create">-->
+                <!--Click to create new cam Pro-check for a gerber file of customer.-->
+                <!--</p><p>-->
+                <!--Colleague of Sales Deapartment  quotes according to a cam Pro-Check,-->
+                <!--so Pro-Check Engineer must create a cam Pro-check here.-->
+                <!--</p>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window.view" id="cam_engineering_check_partner_act_tree">-->
+            <!--<field name="sequence" eval="1"/>-->
+            <!--<field name="view_mode">tree</field>-->
+            <!--<field name="view_id" ref="view_cam_engineering_check_tree"/>-->
+            <!--<field name="act_window_id" ref="cam_engineering_check_partner_act"/>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window.view" id="cam_engineering_check_partner_act_kanban">-->
+            <!--<field name="sequence" eval="2"/>-->
+            <!--<field name="view_mode">kanban</field>-->
+            <!--<field name="view_id" ref="cam_engineering_check_partner_kanban_view"/>-->
+            <!--<field name="act_window_id" ref="cam_engineering_check_partner_act"/>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window.view" id="cam_engineering_check_partner_act_form">-->
+            <!--<field name="sequence" eval="3"/>-->
+            <!--<field name="view_mode">form</field>-->
+            <!--<field name="view_id" ref="view_cam_engineering_check_form"/>-->
+            <!--<field name="act_window_id" ref="cam_engineering_check_partner_act"/>-->
+        <!--</record>-->
+
+        <!--<record model="ir.ui.view" id="cam_engineering_check_lead_kanban_view">-->
+            <!--<field name="name">cam.engineering.check.lead.pcb.kanban</field>-->
+            <!--<field name="model">cam.engineering.check</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<kanban>-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="state"/>-->
+                    <!--<field name="partner_id"/>-->
+                    <!--<field name="priority"/>-->
+                    <!--<field name="customer_file_name"/>-->
+                    <!--<field name="layer_number"/>-->
+                    <!--<field name="base_type"/>-->
+                    <!--<field name="user_id"/>-->
+                    <!--<templates>-->
+                        <!--<t t-name="kanban-box">-->
+                            <!--<div class="oe_kanban_vignette oe_semantic_html_override">-->
+                                <!--<a type="open">-->
+                                    <!--<t t-if="record.lead_id.raw_value">-->
+                                        <!--<img t-att-src='_s + "/cam/static/src/img/chinapcbone.png"' class="oe_kanban_image"/>-->
+                                    <!--</t>-->
+                                <!--</a>-->
+                                <!--<div class="oe_kanban_details">-->
+                                    <!--<h4 class="oe_partner_heading"><a type="open"><field name="name"/></a></h4>-->
+                                    <!--<div class="oe_kanban_partner_categories"/>-->
+                                    <!--<div class="oe_kanban_partner_links"/>-->
+                                    <!--<ul>-->
+                                        <!--<li t-if="record.lead_id.raw_value"><field name="lead_id"/></li>-->
+                                        <!--<li t-if="record.state.raw_value"><field name="state"/></li>-->
+                                        <!--<li t-if="record.priority.raw_value"><field name="priority"/></li>-->
+                                        <!--<li t-if="record.customer_file_name.raw_value"><field name="customer_file_name"/></li>-->
+                                        <!--<li t-if="record.layer_number.raw_value"><field name="layer_number"/>,<field name="base_type"/></li>-->
+                                        <!--<li t-if="record.user_id.raw_value"><field name="user_id"/></li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</t>-->
+                    <!--</templates>-->
+                <!--</kanban>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="view_cam_engineering_check_lead_filter" model="ir.ui.view">-->
+            <!--<field name="name">cam.engineering.check.lead.select</field>-->
+            <!--<field name="model">cam.engineering.check</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<search string="Search Cam Pro-Check">-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="customer_file_name"/>-->
+                    <!--<field name="lead_id"/>-->
+                    <!--<field name="application_id"/>-->
+                    <!--<field name="layer_number"/>-->
+                    <!--<field name="base_type"/>-->
+                    <!--<field name="user_id"/>-->
+                    <!--<filter string="My CAM ProCheck" icon="terp-personal+" domain="[('user_id','=',uid)]"/>-->
+                    <!--<separator/>-->
+                        <!--<filter string="Highest Priority" name="highest_priority" icon="terp-personal+" domain="[('priority','=','1')]"/>-->
+                        <!--<filter string="High Priority" name="high_priority" icon="terp-personal+" domain="[('priority','=','2')]"/>-->
+                        <!--<filter string="Normal Priority" name="normal_priority" icon="terp-personal+" domain="[('priority','=','3')]"/>-->
+                    <!--<separator/>-->
+                        <!--<filter string="New CAM ProCheck" name="draft" domain="[('state','=','draft')]" help="New CAM ProCheck"/>-->
+                        <!--<filter string="Cancelled CAM ProCheck" name="cancel" domain="[('state','=','cancel')]" help="Cancelled CAM ProCheck"/>-->
+                        <!--<filter string="Finished CAM ProCheck" name="done" domain="[('state','=','done')]" help="Finished CAM ProCheck"/>-->
+                    <!--<group expand="0" string="Group By...">-->
+                        <!--<filter string="User" domain="[('partner_id', '=', False)]" context="{'group_by' : 'user_id'}" />-->
+                        <!--<filter string="Customer" domain="[('partner_id', '=', False)]" context="{'group_by': 'lead_id'}"/>-->
+                        <!--<filter string="Check State" domain="[('partner_id', '=', False)]" context="{'group_by': 'state'}"/>-->
+                        <!--<filter string="Creation Date" domain="[('partner_id', '=', False)]" context="{'group_by': 'new_date'}"/>-->
+                        <!--<filter string="Update Date" domain="[('partner_id', '=', False)]" context="{'group_by': 'update_date'}"/>-->
+                    <!--</group>-->
+                <!--</search>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="cam_engineering_check_lead_act" model="ir.actions.act_window">-->
+            <!--<field name="name">Cam Pro-Check For Lead</field>-->
+            <!--<field name="res_model">cam.engineering.check</field>-->
+            <!--<field name="view_type">form</field>-->
+            <!--<field name="view_mode">tree,form</field>-->
+            <!--<field name="domain">[('partner_id', '=', False)]</field>-->
+            <!--<field name="context">{'partner': True, 'lead': False}</field>-->
+            <!--<field name="search_view_id" ref="view_cam_engineering_check_lead_filter"/>-->
+            <!--<field name="Help" type="html">-->
+                <!--<p class="oe_view_nocontent_create">-->
+                <!--Click to create new cam Pro-check for a gerber file of customer.-->
+                <!--</p><p>-->
+                <!--Colleague of Sales Deapartment  quotes according to a cam Pro-Check,-->
+                <!--so Pro-Check Engineer must create a cam Pro-check here.-->
+                <!--</p>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window.view" id="cam_engineering_check_lead_act_tree">-->
+            <!--<field name="sequence" eval="1"/>-->
+            <!--<field name="view_mode">tree</field>-->
+            <!--<field name="view_id" ref="view_cam_engineering_check_tree"/>-->
+            <!--<field name="act_window_id" ref="cam_engineering_check_lead_act"/>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window.view" id="cam_engineering_check_lead_act_kanban">-->
+            <!--<field name="sequence" eval="2"/>-->
+            <!--<field name="view_mode">kanban</field>-->
+            <!--<field name="view_id" ref="cam_engineering_check_lead_kanban_view"/>-->
+            <!--<field name="act_window_id" ref="cam_engineering_check_lead_act"/>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window.view" id="cam_engineering_check_lead_act_form">-->
+            <!--<field name="sequence" eval="3"/>-->
+            <!--<field name="view_mode">form</field>-->
+            <!--<field name="view_id" ref="view_cam_engineering_check_form"/>-->
+            <!--<field name="act_window_id" ref="cam_engineering_check_lead_act"/>-->
+        <!--</record>-->
+
+		<!--<menuitem name="Application For Customer" action="cam_check_application_partner_act" id="menu_cam_check_application_partner_act" parent="menu_cam_do_cam" sequence="1"/>-->
+		<!--<menuitem name="Cam Pro-Check For Customer" action="cam_engineering_check_partner_act" id="menu_cam_engineering_check_partner_act" parent="menu_cam_do_cam" sequence="2"/>-->
+		<!--<menuitem name="Application For Lead" action="cam_check_application_lead_act" id="menu_cam_check_application_lead_act" parent="menu_cam_do_cam" sequence="3"/>-->
+		<!--<menuitem name="Cam Pro-Check For Lead" action="cam_engineering_check_lead_act" id="menu_cam_engineering_check_lead_act" parent="menu_cam_do_cam" sequence="4"/>-->
+	</data>
+</odoo>

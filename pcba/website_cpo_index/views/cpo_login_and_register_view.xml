@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="cpo_login_and_register_tree">
+            <field name="name">Login and Register Tree</field>
+            <field name="model">cpo_login_and_register</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="cpo_description"/>
+                    <field name="cpo_type"/>
+                    <field name="cpo_boolean"/>
+                    <field name="cpo_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_login_and_register_form">
+            <field name="name">Login and Register Form</field>
+            <field name="model">cpo_login_and_register</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="do_draft" states="invalid" type="object" string="Draft" class="btn btn-primary"/>
+                        <button name="do_release" states="draft" type="object" string="Release" class="btn btn-primary"/>
+                        <button name="do_maintain" states="release" type="object" string="Maintenance update"
+                                confirm="Are you sure to choose to change?" class="btn btn-primary"/>
+                        <button name="do_complete_maintain" states="maintain" type="object" string="Complete maintenance update"
+                                class="btn btn-primary"/>
+                        <button name="do_invalid" states="draft,release,maintain,complete_maintain" type="object"
+                                string="Become invalid" class="btn btn-primary"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,release,maintain,invalid"/>
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="4">
+                                <field name="cpo_description"  attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_type" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_boolean" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_date" attrs="{'readonly': [('state', 'in', ('release','invalid', 'complete_maintain'))]}" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_login_and_register_actions">
+            <field name="name">Login and Register Actions</field>
+            <field name="res_model">cpo_login_and_register</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Login and Register Menu" id="cpo_login_and_register_menu" parent="website_cpo_index.fron_page_cycle_setting_menu"
+                action="cpo_login_and_register_actions"/>
+
+    </data>
+</odoo>

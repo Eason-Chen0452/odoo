@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--session记录 tree-->
+        <record model="ir.ui.view" id="session_tree">
+            <field name="name">Client Session Record Tree</field>
+            <field name="model">session.record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="client_id"/>
+                    <field name="name"/>
+                    <field name="session_country"/>
+                    <field name="session_city"/>
+                    <field name="session_time"/>
+                </tree>
+            </field>
+        </record>
+        <!--session记录 form-->
+        <record model="ir.ui.view" id="session_form">
+            <field name="name">Client Session Record Form</field>
+            <field name="model">session.record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group colspan="4" col="4" string="Client Session Record">
+                            <field name="client_id"/>
+                            <field name="name"/>
+                            <field name="session_time"/>
+                            <field name="session_str"/>
+                            <field name="session_country"/>
+                            <field name="session_city"/>
+                            <field name="session_ip"/>
+                            <field name="association_id" invisible="0"/>
+                        </group>
+                        <notebook>
+                            <page string="Session Source">
+                                <field name="source_ids"/>
+                            </page>
+                            <page string="Behavior Record">
+                                <field name="behavior_ids"/>
+                            </page>
+                            <page string="Website Trial Price Record">
+                                <field name="trial_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--session记录 action-->
+        <record model="ir.actions.act_window" id="session_action_window">
+            <field name="name">Client Session Record</field>
+            <field name="res_model">session.record</field>
+            <field name="view_model">tree,form</field>
+        </record>
+        <!--试价记录tree-->
+        <record model="ir.ui.view" id="trial_tree">
+            <field name="name">Website Trial Price Record Tree</field>
+            <field name="model">trial_price.record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="client_id"/>
+                    <field name="country"/>
+                    <field name="trial_time"/>
+                    <field name="trial_type"/>
+                    <field name="state"/>
+                    <field name="trial_file"/>
+                    <field name="trial_fee"/>
+                    <field name="record_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <!--试价记录from-->
+        <record model="ir.ui.view" id="trial_form">
+            <field name="name">Website Trial Price Record Form</field>
+            <field name="model">trial_price.record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="record_id" invisible="1"/>
+                        <group colspan="4" col="4" string="Quotation Record Information" style="margin-top:0px;margin-bottom:0px;">
+                            <field name="client_id"/>
+                            <field name="country"/>
+                            <field name="city"/>
+                            <field name="trial_time"/>
+                            <field name="state"/>
+                        </group>
+                        <group colspan="4" col="4" string="Quotation Basic Parameter Information" style="margin-top:0px;margin-bottom:0px;">
+                            <field name="trial_type"/>
+                            <field name="trial_file"/>
+                            <field name="trial_fee"/>
+                            <field name="trial_length"/>
+                            <field name="trial_number"/>
+                            <field name="trial_width"/>
+                            <field name="trial_thick"/>
+                        </group>
+                        <group colspan="4" col="4" string="PCB Parameters" style="margin-top:0px;margin-bottom:0px;" attrs="{'invisible': [('pcb_bool', '=', False)]}">
+                            <field name="trial_layer"/>
+                            <field name="trial_material"/>
+                            <field name="trial_inner"/>
+                            <field name="trial_outer"/>
+                            <field name="trial_mask"/>
+                            <field name="trial_text"/>
+                            <field name="trial_surface"/>
+                            <field name="trial_test"/>
+                            <field name="trial_means" attrs="{'invisible': [('trial_means', '=', 0)]}"/>
+                            <field name="trial_pcs" attrs="{'invisible': [('trial_pcs', '=', False)]}"/>
+                            <field name="pcb_bool" invisible="1"/>
+                        </group>
+                        <group colspan="4" col="4" string="PCBA Parameters" style="margin-top:0px;margin-bottom:0px;" attrs="{'invisible': [('pcba_bool', '=', False)]}">
+                            <field name="trial_bom"/>
+                            <field name="trial_smt"/>
+                            <field name="trial_dip"/>
+                            <field name="trial_side"/>
+                            <field name="pcba_bool" invisible="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Technical Information">
+                                <group colspan="4" col="4">
+                                    <field name="client_ip"/>
+                                    <field name="session_id"/>
+                                    <field name="session_str"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--试价记录action-->
+        <record model="ir.actions.act_window" id="trial_action_window">
+            <field name="name">Website Trial Price Record</field>
+            <field name="res_model">trial_price.record</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Website Trial Price Record" id="menu_index_1" action="trial_action_window" parent="crm_msa.msa_menu_1" sequence="5"/>
+        <menuitem name="Client Session Record" id="menu_index_2" action="session_action_window" parent="crm_msa.msa_menu_1" sequence="6"/>
+    </data>
+</odoo>

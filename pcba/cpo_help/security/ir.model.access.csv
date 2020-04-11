@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cpo_help_cpo_help_web_read,cpo_help.help,model_cpo_help_help,,1,0,0,0
+access_cpo_help_cpo_help_web,cpo_help.help,model_cpo_help_help,website_cpo_index.cpo_website_aperation_authority,1,1,1,1

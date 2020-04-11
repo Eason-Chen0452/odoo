@@ -1,0 +1,42 @@
+@charset "utf-8";
+.container-fluid{
+    padding: 0!important;
+}
+.container-fluid .accordion-heading{
+    text-align: center!important;
+    font-size: 18px!important;
+    padding: 10px 0!important;
+    font-weight: 600;
+}
+.page .cpo_table_two{
+    max-height: 600px;
+    border-top: 1px solid #CCCCCC;
+    overflow-y: scroll;
+}
+#cpo_content .table tr{
+    page-break-inside: avoid !important;
+}
+#cpo_content .table_one tr td, #cpo_content .table_one tr th{
+    padding: 8px 4px!important;
+}
+#cpo_content .table_two > tbody > tr > th{
+    text-align: center;!important;
+}
+#cpo_content .table_one #tab_title h2{
+    /*color: #4a93fd;*/
+}
+#cpo_content .table_one tr td .cpo-font-red{
+    font-weight: 600;
+    color: #ff2c2f;
+}
+.ul-content{
+    padding: 0;
+    margin: 0;
+}
+.ul-content .li-item{
+    display: flex;
+    list-style: none;
+}
+.li-item span{
+    flex: 1;
+}

@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="paperformat_pcb_and_pcba_quotation_report" model="report.paperformat">
+            <field name="name">pcb quotation report</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">297</field>
+            <field name="page_width">210</field>
+            <!--<field name="orientation">Landscape</field>-->
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">3</field>
+            <field name="margin_right">3</field>
+            <field name="dpi">90</field>
+        </record>
+        <report
+            id="sale_cpo_pcb_and_pcba_report"
+            model="sale.order"
+            string="CPO Quotation Report"
+            name="website_cpo_sale_report.sale_cpo_report_templates33"
+            file="website_cpo_sale_report.sale_cpo_report_templates33"
+            paperformat="paperformat_pcb_and_pcba_quotation_report"
+            report_type="qweb-pdf"/>
+
+        <template id="sale_cpo_report_templates33">
+            <t t-call="report.html_container">
+                <t t-call="report.external_layout">
+                    <t t-foreach="docs" t-as="doc" >
+                        <div class="page">
+                        <link type="text/css" rel="styleSheet"  href="website_cpo_sale_report/static/str/css/report.css" />
+
+                        <table id="table_pcb_quotation_01">
+                            <thead>
+                                <tr class="cpo_table_head_company">
+                                    <td colspan="11">
+                                         <div id="div_top">
+                                             <img src="website_cpo_sale_report/static/str/img/ChinaPCBOneLOGO.png" id="pcb_img"/>
+                                             <div class="cpo_top_right">
+                                                 <h2 class="h_margin_none cpo_company_chiness_name">深圳市瑞邦多层线路板科技有限公司</h2>
+                                                 <h2 class="h_margin_none cpo_company_english_name">Chinapcbone Technology Limited</h2>
+                                                 <h4 class="h_margin_none">
+                                                     <span>Tel:0086-755-23064206</span>
+                                                     <span>Fax:0086-755-23063520</span></h4>
+                                                 <h5 class="h_margin_none">
+                                                     <span>Mail:sales@chinapcbone.com.cn</span>
+                                                     <span>Web:http//www.chinapcbone.com</span>
+                                                 </h5>
+                                             </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="cpo_thead_head">
+                                    <td colspan="11">
+                                        <div id="cpo_order_name">
+                                            <p class="cpo_order_name_title">
+                                                <t t-if="doc.product_type=='PCBA'">
+                                                    PCBA&#160;&#160;&#160; Quotation
+                                                </t>
+                                                <t t-elif="doc.product_type=='Stencil'">
+                                                    Stencil&#160;&#160;&#160; Quotation
+                                                </t>
+                                                <t t-else="">
+                                                    PCB&#160;&#160;&#160; Quotation
+                                                </t>
+                                            </p>
+                                            <div id="order_quotation_and_date">
+                                                <p class="cpo_order_manager">
+                                                    <span class="cpo_order_manager_line">Quotation No: </span>
+                                                    <span t-field="doc.name"/></p>
+                                                <p class="cpo_order_manager">
+                                                    <span class="cpo_order_manager_line">Date: </span>
+                                                    <!--<span t-field="doc.date_order"/>-->
+                                                    <span t-esc="pcb_and_pcba_line['date_order']"/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="11">
+                                        <div class="ul_content">
+                                            <ul class="cpo_order_customer_ul cpo_ul_person clearfix">
+                                                <li>
+                                                    <span class="cpo_customer_title">Email Address:</span>
+                                                    <p class="cpo_customer_content"><span t-field="doc.partner_shipping_id.email"/></p>
+                                                </li>
+                                                <li>
+                                                    <!--<span class="cpo_customer_title"></span>-->
+                                                    <!--<p class="cpo_customer_content"></p>-->
+                                                </li>
+                                            </ul>
+                                            <ul class="cpo_order_customer_ul cpo_ul_info clearfix">
+                                                <li>
+                                                    <span class="cpo_customer_title">Contact Person:</span>
+                                                    <p class="cpo_customer_content"><span t-field="doc.partner_shipping_id.name"/></p>
+                                                </li>
+                                                <li>
+                                                    <span class="cpo_customer_title">Tel NO.:</span>
+                                                    <p class="cpo_customer_content"><span t-field="doc.partner_shipping_id.phone"/></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <ul class="cpo_customer_address">
+                                            <li>
+                                                <span class="cpo_customer_title">Company Name:</span>
+                                                <p class="cpo_customer_content"><span t-field="doc.partner_id.company_name"/></p>
+                                            </li>
+                                            <li>
+                                                <span class="cpo_customer_title">Bill Address:</span>
+                                                <p class="cpo_customer_content"><span t-field="doc.partner_shipping_id.street"/></p>
+                                            </li>
+                                            <li>
+                                                <span class="cpo_customer_title">Shipping Address:</span>
+                                                <p class="cpo_customer_content"><span t-field="doc.partner_shipping_id.street"/></p>
+                                            </li>
+                                        </ul>
+                                        <span style="clear:both"></span>
+                                    </td>
+                                </tr>
+                                <!--PCB and PCBA-->
+                                <t t-if="doc.product_type=='Stencil'">
+                                    <tr class="cpo_cpecificarion_line">
+                                        <td colspan="11" class="font_weight">Stencil</td>
+                                    </tr>
+                                    <t t-call="website_cpo_sale_report.stencil_details_remarks"/>
+                                </t>
+                                <t t-else="">
+                                    <t t-call="website_cpo_sale_report.pcb_and_pcba_info"/>
+                                </t>
+                                <t t-if="doc.modify_ids">
+                                    <t t-call="website_cpo_sale_report.pcb_modify_details"/>
+                                </t>
+                                <tr>
+                                    <td colspan="11" class="font_weight">
+                                        <p class="cpo_ac_title">Additional Comments:</p>
+                                        <p><span t-field="doc.order_line.cpo_note"/></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="11"><p class="cpo_ac_disc"><span>1:</span>Shipping Term: DDU.</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="11"><p class="cpo_ac_disc"><span>2:</span>Payment terms: Prepayment by Paypal.</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="11"><p class="cpo_ac_disc"><span>3:</span>The shipping fee is DHL cost to your door, use our account.</p></td>
+                                </tr>
+                                <t t-if="doc.product_type=='PCBA'">
+                                    <tr>
+                                        <td colspan="11"><p class="cpo_ac_disc"><span>4:</span>PCBA meet Lead-Free requirement.</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="11"><p class="cpo_ac_disc"><span>5:</span>The quotation are valid for 2 weeks.</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="11"><p class="cpo_ac_disc"><span>6:</span>Quotation will be updated if the requirement not meet what you write.</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="11"><p class="cpo_ac_disc"><span>7:</span>The package meets ESD requirement. </p></td>
+                                    </tr>
+                                </t>
+                                <t t-else="">
+                                    <tr>
+                                        <td colspan="11"><p class="cpo_ac_disc"><span>4:</span>The quotation are valid for 2 weeks.</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="11"><p class="cpo_ac_disc"><span>5:</span>The quote will be updated if the read date is not match what you provided.</p></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfooter>
+                                <tr id="cpo_order_logo">
+                                    <td colspan="11">
+                                        <div id="cpo_logo">
+                                            <img src="website_cpo_sale_report/static/str/img/ChinaPCBOneLOGO.png" width="240" height="80"/>
+                                            <p class="cpo_thanks text-center">Thanks and Regards</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfooter>
+                        </table>
+                    </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="pcb_and_pcba_info">
+            <tr class="cpo_cpecificarion_line">
+                <td colspan="11" class="font_weight">PCB Specification</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="font_left">File Name:</td>
+                <t t-if="doc.product_type=='PCBA'">
+                    <td colspan="2" class="font_weight"><span t-field="doc.order_line.customer_file_name"/></td>
+                </t>
+                <t t-else="">
+                    <td colspan="2" class="font_weight"><span t-field="doc.quotation_line.customer_file_name"/></td>
+                </t>
+                <td colspan="3">Minimum line width:</td>
+                <td colspan="3"><span t-field="doc.quotation_line.min_line_cpo_width"/>&#160;
+                    <t t-if="doc.quotation_line.min_line_cpo_width">mil</t>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="font_left">Layer count:</td>
+                <td colspan="2" class="color_red"><span t-field="doc.quotation_line.layer_number.layer_number"/>
+                    <t t-if="doc.quotation_line.layer_number.layer_number">L</t>
+                </td>
+                <!--layer_number.layer-->
+                <td colspan="3">Minimum line space:</td>
+                <td colspan="3"><span t-field="doc.quotation_line.min_line_distance"/>&#160;
+                    <t t-if="doc.quotation_line.min_line_distance">mil</t>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="font_left">Material/Finished board thickness:</td>
+                <td colspan="2">
+                    <span t-field="doc.quotation_line.base_type"/>
+                    <t t-if="doc.quotation_line.base_type">/</t>
+                    <span t-field="doc.quotation_line.thickness"/>
+                    <t t-if="doc.quotation_line.thickness">mm</t>
+                </td>
+                <td colspan="3">Minimum Hole</td>
+                <td colspan="3"><span t-field="doc.quotation_line.min_hole"/>&#160;
+                    <t t-if="doc.quotation_line.min_hole">mil</t>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="font_left">Finished Copper Thickness(OZ):</td>
+                <td colspan="2">
+                    <span t-field="doc.quotation_line.outer_copper"/>&#160;&#160;
+                    <span t-field="doc.quotation_line.inner_copper"/>
+                    <t t-if="doc.quotation_line.outer_copper">oz</t>
+                </td>
+                <td colspan="3">Peelable mask:</td>
+                <!-- Peelable mask -->
+                <t t-if="doc.quotation_line.smaterial_ids">
+                    <td colspan="3">
+                        <t t-foreach="doc.quotation_line.smaterial_ids" t-as="eng_name">
+                            <t t-if="eng_name.english_name == 'Peelable_mask'">
+                                <span>Yes</span>
+                            </t>
+                        </t>
+                    </td>
+                </t>
+                <t t-else="">
+                    <td colspan="3">
+                        <span>No</span>
+                    </td>
+                </t>
+            </tr>
+            <tr>
+                <td colspan="3" class="font_left">Soldermask color:</td>
+                <td colspan="2" class="color_green"><span t-field="doc.quotation_line.text_color"/></td>
+                <td colspan="3">Semi-hole:</td>
+                <!-- Semi-hole -->
+                <t t-if="doc.quotation_line.sprocess_ids">
+                    <td colspan="3">
+                        <t t-foreach="doc.quotation_line.sprocess_ids" t-as="eng_name">
+                            <t t-if="eng_name.english_name == 'Semi-hole'">
+                                <span>Yes</span>
+                            </t>
+                        </t>
+                    </td><!--&nbsp;-->
+                </t>
+                <t t-else="">
+                    <td colspan="3">
+                        <span>No</span>
+                    </td>
+                </t>
+            </tr>
+            <tr>
+                <td colspan="3" class="font_left">Panel size(mm):</td>
+                <td colspan="2">
+                    <span t-field="doc.quotation_line.cpo_length"/>
+                    <t t-if="doc.quotation_line.cpo_length">*</t>
+                    <span t-field="doc.quotation_line.cpo_width"/>
+                    <t t-if="doc.quotation_line.cpo_width">/</t>
+                    <t t-if="doc.quotation_line.cpo_width">1* </t>
+                    <span t-field="doc.quotation_line.pcs_per_set"/>
+                    <t t-if="doc.quotation_line.cpo_item_number">
+                      ( <span t-field="doc.quotation_line.cpo_item_number"/>item)
+                    </t>
+                </td>
+                <td colspan="3">Edge plating:</td>
+                <!-- Edge plating -->
+                <t t-if="doc.quotation_line.sprocess_ids">
+                    <td colspan="3">
+                        <t t-foreach="doc.quotation_line.sprocess_ids" t-as="eng_name">
+                            <t t-if="eng_name.english_name == 'Edge Plating'">
+                                <span>Yes</span>
+                            </t>
+                        </t>
+                    </td><!--&nbsp;-->
+                </t>
+                <t t-else="">
+                    <td colspan="3">
+                        <span>No</span>
+                    </td>
+                </t>
+            </tr>
+            <tr>
+                <td colspan="3" class="font_left">Silkscreen color:</td>
+                <td colspan="2"><span t-field="doc.quotation_line.silkscreen_color"/></td>
+                <!--<td colspan="2"></td>-->
+                <td colspan="3">Impendance:</td>
+                <!--<td colspan="2"></td>-->
+                <!-- Impendance -->
+                <t t-if="doc.quotation_line.sprocess_ids">
+                    <td colspan="3">
+                        <t t-foreach="doc.quotation_line.sprocess_ids" t-as="eng_name">
+                            <t t-if="eng_name.english_name == 'Impendance'">
+                                <span>Yes</span>
+                            </t>
+                        </t>
+                    </td>
+                </t>
+                <t t-else="">
+                    <td colspan="3">
+                        <span>No</span>
+                    </td>
+                </t>
+            </tr>
+            <tr>
+                <!--<td colspan="2" class="font_left">Finishing:</td>-->
+                <td colspan="3" class="font_left">Surface treatment:</td>
+                <td colspan="2" class="color_red"><span t-field="doc.quotation_line.surface.english_name"/></td>
+                <td colspan="3">Press-fit:</td>
+                <t t-if="doc.quotation_line.sprocess_ids">
+                    <td colspan="3">
+                        <t t-foreach="doc.quotation_line.sprocess_ids" t-as="eng_name">
+                            <t t-if="eng_name.english_name == 'Press-fit'">
+                                <span>Yes</span>
+                            </t>
+                        </t>
+                    </td>
+                </t>
+                <t t-else="">
+                    <td colspan="3">
+                        <span>No</span>
+                    </td>
+                </t>
+                <!--<td colspan="2"></td>-->
+            </tr>
+            <tr>
+                <td colspan="3">Quality Standard:</td>
+                <td colspan="2">
+                    <t t-if="doc.quotation_line.cpo_standard.cpo_level==2">
+                        <span>IPC-A-600J-Class 2</span>
+                    </t>
+                    <t t-elif="doc.quotation_line.cpo_standard.cpo_level==3">
+                        <span>IPC-A-600J-Class 3</span>
+                    </t>
+                    <t t-else="">
+                        <span></span>
+                    </t>
+                    <!--<span t-field="doc.quotation_line.cpo_standard"/>-->
+                </td>
+                <!--<td colspan="2"><span t-esc="pcb_and_pcba_line['cpo_standard_quantity']"/></td>-->
+                <!--<td colspan="2"><span t-field="doc.quotation_line.smaterial_ids"/></td>-->
+                <td colspan="3">Carbon ink:</td>
+                <t t-if="doc.quotation_line.smaterial_ids">
+                    <td colspan="3">
+                        <t t-foreach="doc.quotation_line.smaterial_ids" t-as="eng_name">
+                            <t t-if="eng_name.english_name == 'Peelable_mask'">
+                                <span>Yes</span>
+                            </t>
+                        </t>
+                    </td>
+                </t>
+                <t t-else="">
+                    <td colspan="3">
+                        <span>No</span>
+                    </td>
+                </t>
+            </tr>
+            <t t-if="doc.product_type=='PCBA'">
+                <t t-call="website_cpo_sale_report.pcba_details_remarks"/>
+            </t>
+            <t t-else="">
+                <t t-call="website_cpo_sale_report.pcb_details_remarks"/>
+            </t>
+            <t t-if="doc.cpo_sale_text">
+                <tr>
+                    <td colspan="11">
+                        <p class="modify_remark">
+                            <span class="cpo_remark">Remarks :</span><t t-esc="doc.cpo_sale_text"/>
+                        </p>
+                    </td>
+                </tr>
+            </t>
+        </template>
+
+        <template id="pcba_details_remarks">
+             <tr class="cpo_order_all_fee cpo_cpecificarion_line">
+                <td id="border_left_1px">Quantity</td>
+                <td>Bare board</td>
+                <!--<td>Unit price</td>-->
+                <td>Components</td>
+                <td>Assembly</td>
+                <td>Stencil</td>
+                <td colspan="2">Management</td>
+                <td>Shipping</td>
+                <td>Discount Total</td>
+                <td>Total Amount</td>
+                <td id="border_right_1px" colspan="1">
+                    <div id="div_lead_Time">lead<br/>Time(days)</div>
+                </td>
+            </tr>
+            <tr class="cpo_table_line">
+                <td><span t-esc="pcb_and_pcba_line['pcba_quantity']"/></td>
+                <td>$<span t-esc="pcb_and_pcba_line['pcb_plate_fee']"/></td>
+                <td>$<span t-esc="pcb_and_pcba_line['bom_material_fee']"/></td>
+                <td>$<span t-esc="pcb_and_pcba_line['smt_assembly_fee']"/></td>
+                <td>$<span t-esc="pcb_and_pcba_line['stencil_fee']"/></td>
+                <td>$<span t-esc="doc.discount_total"/></td>
+                <td colspan="2">$<span t-esc="pcb_and_pcba_line['bom_material_manage_fee']"/></td>
+                <td>
+                    <t t-if="doc.cpo_courier_bool">
+                        <span style="font-size:12px;">freight collect</span>
+                    </t>
+                    <t t-else="">
+                        $<span t-esc="pcb_and_pcba_line['shipping_fee']"/>
+                    </t>
+                </td>
+                <td><span t-field="doc.amount_total"/></td>
+                <td colspan="1"><span t-esc="pcb_and_pcba_line['etdel']"/></td>
+            </tr>
+            <tr  class="cpo_table_line">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </template>
+
+        <template id="pcb_details_remarks">
+            <tr class="border_left_right_none cpo_order_all_fee cpo_cpecificarion_line">
+                <td id="border_left_1px" colspan="1">File Name</td>
+                <td>Quantity</td>
+                <td>Unit price</td>
+                <td>Set up</td>
+                <td>E-test tooling</td>
+                <td>Process fee</td>
+                <td>Stencil fee</td>
+                <td>Shipping cost</td>
+                <td>Discount Total</td>
+                <td>Total Amount</td>
+                <td id="border_right_1px">
+                    <div id="div_lead_Time">lead<br/>Time(days)</div>
+                </td>
+            </tr>
+            <tr class="cpo_table_line">
+                <t t-if="doc.product_type=='PCBA'">
+                    <td colspan="1" class="font_weight"><span t-field="doc.order_line.customer_file_name"/></td>
+                </t>
+                <t t-else="">
+                    <td colspan="1" class="font_weight"><span t-field="doc.quotation_line.customer_file_name"/></td>
+                </t>
+                <!--<td colspan="2"><span t-field="doc.quotation_line.customer_file_name"/></td>-->
+                <td><span t-esc="pcb_and_pcba_line['pcb_quantity']"/></td>
+                <td>$<span t-esc="pcb_and_pcba_line['price_unit']"/></td>
+                <td>$<span t-esc="pcb_and_pcba_line['engine_fee']"/></td>
+                <td>$<span t-esc="pcb_and_pcba_line['test_fee']"/></td>
+                <td>$<span t-esc="doc.quotation_line.process_fee"/></td>
+                <td>$<span t-esc="pcb_and_pcba_line['cpo_pcb_frame_fee']"/></td>
+                <td>
+                    <t t-if="doc.cpo_courier_bool">
+                        <span style="font-size:12px;">freight collect</span>
+                    </t>
+                    <t t-else="">
+                        $<span t-esc="pcb_and_pcba_line['shipping_fee']"/>
+                    </t>
+                </td>
+                <td>$<span t-esc="doc.discount_total"/></td>
+                <td>$<span t-esc="pcb_and_pcba_line['all_amount_total']"/></td>
+                <td><span t-esc="pcb_and_pcba_line['delivery_hour']"/></td>
+                <!--<td colspan="2"><span t-field="doc.quotation_line.customer_file_name"/></td>-->
+                <!--<td><span t-field="doc.quotation_line.product_uom_qty"/></td>-->
+                <!--<td><span t-field="doc.quotation_line.price_unit"/></td>-->
+                <!--<td><span t-field="doc.quotation_line.engine_fee"/></td>-->
+                <!--<td><span t-field="doc.quotation_line.test_fee"/></td>-->
+                <!--<td><span t-field="doc.shipping_fee"/></td>-->
+                <!--<td><span t-field="doc.amount_total"/></td>-->
+            </tr>
+            <!--<t t-if="doc.quotation_line.process_fee > 0">-->
+            <!--<tr t-if="doc.quotation_line.process_fee > 0">-->
+                <!--<td colspan="10">-->
+                    <!--<span class="process_fee">Due to the production of the process, the current order requires additional processing fees: $ <span t-esc="doc.quotation_line.process_fee"/></span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--</t>-->
+            <tr class="cpo_table_line">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </template>
+
+        <template id="pcb_modify_details">
+            <tr class="cpo_order_all_fee cpo_cpecificarion_line modify_title">
+                <td colspan="3">
+                    <span class="modify_tt">Change item</span>
+                </td>
+                <td colspan="4">
+                    <span class="modify_tt">Before change</span>
+                </td>
+                <td colspan="3">
+                    <span class="modify_tt">After the change</span>
+                </td>
+            </tr>
+            <t t-foreach="doc.modify_ids" t-as="modify_item">
+                <tr class="modify-change">
+                    <td colspan="3"><span t-esc="modify_item.cpo_modify"/></td>
+                    <td colspan="4"><span t-esc="modify_item.cpo_old_field"/></td>
+                    <td colspan="3"><span t-esc="modify_item.cpo_new_field"/></td>
+                </tr>
+            </t>
+        </template>
+
+        <template id="stencil_details_remarks">
+            <tr class="border_left_right_none cpo_order_all_fee cpo_cpecificarion_line">
+                <!--<td colspan="9"></td>-->
+                <td class="border_left_1px">Name</td>
+                <td>Quantity</td>
+                <td colspan="4">Size</td>
+                <td>Weight</td>
+                <td>Shipping cost</td>
+                <td>Total Amount</td>
+                <td class="border_right_1px" colspan="1">Lead Time</td>
+            </tr>
+            <tr class="cpo_table_line">
+                <td colspan="1"><span t-field="doc.product_id.name"/></td>
+                <td><span t-esc="doc.stencil_line.cpo_stencil_qty"/></td>
+                <td colspan="4"><span class="stencil_size" t-esc="doc.stencil_line.steel_mesh_size_id.name"/></td>
+                <td><span t-esc="doc.stencil_line.cpo_stencil_weight"/>/Kg</td>
+                <td>$ <span t-esc="doc.shipping_fee"/></td>
+                <td>$ <span t-esc="doc.amount_total"/></td>
+                <td><span t-esc="doc.stencil_line.cpo_stencil_delivery"/>/Hours</td>
+            </tr>
+            <tr class="cpo_table_line">
+                <td colspan="1"><span/></td>
+                <td><span/></td>
+                <td colspan="4"><span class="stencil_size"/></td>
+                <td><span/></td>
+                <td><span/></td>
+                <td><span/></td>
+                <td><span/></td>
+            </tr>
+            <tr class="cpo_table_line">
+                <td colspan="1"><span/></td>
+                <td><span/></td>
+                <td colspan="4"><span class="stencil_size"/></td>
+                <td><span/></td>
+                <td><span/></td>
+                <td><span/></td>
+                <td><span/></td>
+            </tr>
+            <tr class="cpo_table_line">
+                <td colspan="1"><span/></td>
+                <td><span/></td>
+                <td colspan="4"><span class="stencil_size"/></td>
+                <td><span/></td>
+                <td><span/></td>
+                <td><span/></td>
+                <td><span/></td>
+            </tr>
+
+        </template>
+
+    </data>
+</odoo>

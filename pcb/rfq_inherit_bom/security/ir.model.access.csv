@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_bom_situation,bom.situation,model_bom_situation,cpo_offer_base.group_bom_bomadmin,1,1,1,1

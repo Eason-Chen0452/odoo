@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <!--express waybill-->
+        <record model="ir.ui.view" id="sale_order_express_waybill_tree">
+              <field name="name">Sale Order Express List</field>
+              <field name="model">sale_order.express_waybill</field>
+              <field name="arch" type="xml">
+                    <tree>
+                        <field name="order_number"/>
+                        <field name="express_provider"/>
+                        <field name="express_number"/>
+                    </tree>
+              </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="sale_order_express_waybill_form">
+             <field name="name">Sale Order Express Form</field>
+             <field name="model">sale_order.express_waybill</field>
+             <field name="arch" type="xml">
+                  <form create="false">
+                      <sheet>
+                          <group col="4">
+                              <group col="2" colspan="2">
+                                  <field name="order_number"/>
+                              </group>
+                              <group col="4" colspan="2">
+                                  <field name="express_provider"/>
+                                  <field name="express_number"/>
+                              </group>
+                          </group>
+                      </sheet>
+                  </form>
+             </field>
+        </record>
+
+            <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="sale_order_express_waybill_action_window">
+             <field name="name">Sale Order Express window</field>
+             <field name="res_model">sale_order.express_waybill</field>
+             <field name="view_mode">tree,form</field>
+        </record>
+
+    <!-- actions -->
+         <menuitem name="Express order information" id="sale_order_express_waybill" parent="sales_team.menu_sales"
+              action="sale_order_express_waybill_action_window" sequence="70"/>
+
+    </data>
+</odoo>

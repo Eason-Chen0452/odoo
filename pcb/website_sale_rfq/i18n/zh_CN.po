@@ -1,0 +1,472 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_sale_rfq
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-29 08:49+0000\n"
+"PO-Revision-Date: 2019-12-29 08:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sale_rfq
+#: code:addons/website_sale_rfq/models/models.py:29
+#, python-format
+msgid "%s Ask Guest Line"
+msgstr "%s 问客明细"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+msgid "Agree Refund"
+msgstr "同意退款"
+
+#. module: website_sale_rfq
+#: selection:sales.refund,state:0
+msgid "Agree To A Refund"
+msgstr "同意退款"
+
+#. module: website_sale_rfq
+#: model:ir.actions.act_window,help:website_sale_rfq.RefundOrder
+msgid "All Refund Orders"
+msgstr "所有退款订单"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sale_order_applied_bool
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_applied_bool
+msgid "Already Submitted"
+msgstr "已申请"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.sale_refund_form
+msgid "Are you sure of a direct refund?"
+msgstr "您确定直接退款吗?"
+
+#. module: website_sale_rfq
+#: model:ir.actions.act_window,name:website_sale_rfq.ask_guest_window
+#: model:ir.model,name:website_sale_rfq.model_ask_guest
+#: model:ir.model,name:website_sale_rfq.model_ask_guest_line
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_line_ask_guest_id
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_line_ids
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sale_order_ask_ids
+#: model:ir.ui.menu,name:website_sale_rfq.menu_ask_guest
+#: model:ir.ui.view,arch_db:website_sale_rfq.refund_order_form_view
+msgid "Ask Guest"
+msgstr "问客"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_city
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_city
+msgid "City"
+msgstr "城市"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_partner_id
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_partner_id
+msgid "Client"
+msgstr "客户"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+msgid "Client Reason For Requesting Refund"
+msgstr "客户要求退款的原因"
+
+#. module: website_sale_rfq
+#: selection:sales.refund,state:0
+msgid "Client Refund Application"
+msgstr "客户退款申请"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_line_reply
+msgid "Client Reply"
+msgstr "客户回复"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_country_id
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_country_id
+msgid "Country"
+msgstr "国家"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_create_uid
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_line_create_uid
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_create_date
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_line_create_date
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_currency_id
+msgid "Currency"
+msgstr "币种"
+
+#. module: website_sale_rfq
+#: selection:sales.refund,state:0
+msgid "Customer Cancelled Refund"
+msgstr "客户取消退款"
+
+#. module: website_sale_rfq
+#: selection:ask.guest,state:0
+msgid "Customer Has Responded"
+msgstr "客户回复"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form_append
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+#: model:ir.ui.view,arch_db:website_sale_rfq.sale_refund_form
+msgid "Customer Information"
+msgstr "客户信息"
+
+#. module: website_sale_rfq
+#: selection:ask.guest,state:0
+msgid "Customer Read"
+msgstr "客户已读"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_client_refund
+msgid "Customer Request Refund"
+msgstr "客户申请退款"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+msgid "Customer Request Refund Time"
+msgstr "申请退款时间"
+
+#. module: website_sale_rfq
+#: model:ir.actions.act_window,name:website_sale_rfq.client_refund_window
+#: model:ir.ui.menu,name:website_sale_rfq.menu_list_2
+msgid "Customer Requests Refund"
+msgstr "客户申请退款"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,help:website_sale_rfq.field_ask_guest_confirmation_date
+#: model:ir.model.fields,help:website_sale_rfq.field_sales_refund_confirmation_date
+msgid "Date on which the sales order is confirmed."
+msgstr "确认销售订单的日期"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.sale_refund_form
+msgid "Determine Refund"
+msgstr "确定退款"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.sale_refund_form
+msgid "Direct Refund"
+msgstr "直接退款"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+msgid "Disagree Refund"
+msgstr "不同意退款"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_display_name
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_line_display_name
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: website_sale_rfq
+#: selection:sales.refund,state:0
+msgid "Do Not Agree To Refund"
+msgstr "不同意退款"
+
+#. module: website_sale_rfq
+#: selection:ask.guest,state:0
+#: selection:sales.refund,state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_email
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_email
+msgid "E-mail"
+msgstr "E-mail"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_id
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_line_id
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+msgid "If 'disagree with refund', please attach detailed instructions for customers to understand why"
+msgstr "如果“不同意退款”, 请附上详细说明, 以便客户了解原因"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+msgid "If you 'agree to a refund', please attach a brief description and return the amount as soon as possible to avoid customer complaints"
+msgstr "如果您“同意退款”, 请附上简短说明并尽快退还款项, 以避免客户投诉"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.refund_order_form_view
+msgid "Initiate Ask Guest"
+msgstr "问客"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.refund_order_form_view
+#: model:ir.ui.view,arch_db:website_sale_rfq.sale_refund_form
+msgid "Initiate Refund"
+msgstr "退款"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest___last_update
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_line___last_update
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_line_write_uid
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_write_uid
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_line_write_date
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_write_date
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: website_sale_rfq
+#: selection:sales.refund,state:0
+msgid "Merchant Direct Refund"
+msgstr "商户直接退款"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_ask_message
+msgid "Message"
+msgstr "消息"
+
+#. module: website_sale_rfq
+#: model:ir.actions.act_window,help:website_sale_rfq.client_refund_window
+msgid "No customers currently request a refund."
+msgstr "目前没有客户要求退款。"
+
+#. module: website_sale_rfq
+#: model:ir.actions.act_window,help:website_sale_rfq.sale_refund_window
+msgid "No direct initiated refund."
+msgstr "No direct initiated refund."
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_confirmation_date
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_confirmation_date
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form_append
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+#: model:ir.ui.view,arch_db:website_sale_rfq.sale_refund_form
+msgid "Order Confirmation Date"
+msgstr "订单确定时间"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form_append
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+#: model:ir.ui.view,arch_db:website_sale_rfq.sale_refund_form
+msgid "Order Information"
+msgstr "订单信息"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_order_amount
+msgid "Order Original Amount"
+msgstr "订单金额"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_order_state
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_order_state
+msgid "Order Status"
+msgstr "订单状态"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_phone
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_phone
+msgid "Phone"
+msgstr "电话"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form_append
+msgid "Please describe the feedback in short language!"
+msgstr "请用简短的语言描述问题!"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_name
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_name_title
+msgid "Problem"
+msgstr "问题"
+
+#. module: website_sale_rfq
+#: selection:sales.refund,state:0
+msgid "Processing"
+msgstr "处理"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+#: model:ir.ui.view,arch_db:website_sale_rfq.refund_order_form_view
+msgid "Processing Refund"
+msgstr "处理退款"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+#: model:ir.ui.view,arch_db:website_sale_rfq.sale_refund_form
+msgid "Processing Refund Information"
+msgstr "处理退款信息"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_product_name
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_product_name
+msgid "Product Name"
+msgstr "产品名称"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form
+msgid "Propose Suggest"
+msgstr "提出建议"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form_append
+msgid "Questioning/Reply"
+msgstr "追问/回复"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_sale_refund
+msgid "Reason For Salesperson Refund"
+msgstr "销售员退款原因"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_refund_amount
+msgid "Refund Amount"
+msgstr "退款金额"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_name
+msgid "Refund Code"
+msgstr "退款码"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+#: model:ir.ui.view,arch_db:website_sale_rfq.sale_refund_form
+msgid "Refund Instructions For Salesperson"
+msgstr "销售员退款说明"
+
+#. module: website_sale_rfq
+#: model:ir.actions.act_window,name:website_sale_rfq.RefundOrder
+#: model:ir.ui.menu,name:website_sale_rfq.menu_list_1
+msgid "Refund Order"
+msgstr "退款订单"
+
+#. module: website_sale_rfq
+#: model:ir.actions.act_window,name:website_sale_rfq.sale_refund_window
+#: model:ir.ui.menu,name:website_sale_rfq.menu_list_3
+msgid "Sale Initiate Refund"
+msgstr "销售发起退款"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_order_id
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_order_id
+msgid "Sale Order"
+msgstr "销售订单"
+
+#. module: website_sale_rfq
+#: model:ir.model,name:website_sale_rfq.model_sale_order
+msgid "Sales Order"
+msgstr "销售订单"
+
+#. module: website_sale_rfq
+#: model:ir.ui.menu,name:website_sale_rfq.menu_sales_refund
+msgid "Sales Order Refund"
+msgstr "销售订单退款"
+
+#. module: website_sale_rfq
+#: model:ir.ui.view,arch_db:website_sale_rfq.client_refund_form
+msgid "Sales Processing Refund Time"
+msgstr "销售员处理退款时间"
+
+#. module: website_sale_rfq
+#: model:ir.model,name:website_sale_rfq.model_sales_refund
+msgid "Sales Refund"
+msgstr "销售退款"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_seller_id
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_seller_id
+msgid "Seller"
+msgstr "销售员"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_state
+#: model:ir.model.fields,field_description:website_sale_rfq.field_sales_refund_state
+msgid "Status"
+msgstr "状态"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_ask_reason
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_line_reason
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form
+#: model:ir.ui.view,arch_db:website_sale_rfq.ask_guest_form_append
+msgid "Suggestions"
+msgstr "意见建议"
+
+#. module: website_sale_rfq
+#: code:addons/website_sale_rfq/models/models.py:89
+#, python-format
+msgid "The refund amount cannot be greater than the order amount"
+msgstr "退款金额不能大于订单金额"
+
+#. module: website_sale_rfq
+#: code:addons/website_sale_rfq/models/models.py:241
+#, python-format
+msgid "The system detected that 'Suggestions' was not filled in, please fill in the details in the confirmation."
+msgstr "系统检测到“建议”未填写，请在确认中填写详细信息。"
+
+#. module: website_sale_rfq
+#: code:addons/website_sale_rfq/models/models.py:141
+#, python-format
+msgid "The system detected that the 'Refund Instructions For Salesperson' field did not fill in the reason for consent."
+msgstr "系统检测到“销售人员退款说明”未填写同意原因。"
+
+#. module: website_sale_rfq
+#: code:addons/website_sale_rfq/models/models.py:148
+#, python-format
+msgid "The system detected that the 'Refund Instructions For Salesperson' field was not filled in."
+msgstr "系统检测到“销售人员退款说明”未填写不同意原因。"
+
+#. module: website_sale_rfq
+#: code:addons/website_sale_rfq/models/models.py:130
+#, python-format
+msgid "The system detected that the 'Refund Instructions For Salesperson' was not filled in, please explain in detail the reason for the direct refund."
+msgstr "系统检测到“销售员退款说明”未填写，请详细说明直接退款的原因。"
+
+#. module: website_sale_rfq
+#: code:addons/website_sale_rfq/models/models.py:243
+#, python-format
+msgid "The system detected that there are no related orders, please select the order to ask for customers."
+msgstr "系统检测到没有相关的订单，请选择订单以询问客户。"
+
+#. module: website_sale_rfq
+#: model:ir.model.fields,field_description:website_sale_rfq.field_ask_guest_time_cost
+msgid "Time Cost"
+msgstr "用时"
+
+#. module: website_sale_rfq
+#: selection:ask.guest,state:0
+msgid "Waiting For Customer Response"
+msgstr "等待客户回复"
+

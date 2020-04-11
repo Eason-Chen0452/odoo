@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="cpo_product_description">
+            <t t-foreach="objects" t-as="obj">
+                <div class="single-testi-text">
+                    <p>
+                        <t t-esc="obj.description"/>
+                    </p>
+                </div>
+            </t>
+        </template>
+
+        <template id="cpo_product_img_title">
+            <t t-foreach="objects" t-as="obj">
+                <div class="single-testi-img">
+                    <!--<img class="img img-responsive" t-att-src="'data:image/png;base64,%s' %  object.Cover_img"/>-->
+                    <img class="img img-responsive" t-att-src="'data:image/png;base64,%s' %  obj.Cover_img"
+                         t-att-alt="obj.title" t-att-title="obj.title" />
+                    <h1><t t-esc="obj.title"/></h1>
+                </div>
+            </t>
+        </template>
+
+        <template id="cpo_board_description_link">
+                <!--<ul class="cpo_click_lb">-->
+                    <t t-foreach="objects" t-as="object">
+                        <li class="lb_click_item item_one">
+                            <a t-attf-href="/page/#{ object.id }">
+                                <div class="product_desc">
+                                    <h4><t t-esc="object.title"/></h4>
+                                    <p><t t-esc="object.description"/></p>
+                                </div>
+                                <img class="img img-responsive" t-att-src="'data:image/png;base64,%s' %  object.Cover_img"/>
+                            </a>
+                        </li>
+                    </t>
+                <!--</ul>-->
+                <!--<div class="btn btn_left"><i class="fa fa-chevron-left fa-lg"></i></div>-->
+                <!--<div class="btn btn_right"><i class="fa fa-chevron-right fa-lg"></i></div>-->
+        </template>
+
+        <template id="cpo_board_right_link">
+                <!--<ul class="cpo_click_lb">-->
+                    <t t-foreach="objects" t-as="object">
+                        <li class="lb_click_item item_one">
+                            <a t-attf-href="/page/#{ object.id }">
+                                <div class="product_desc">
+                                    <h4><t t-esc="object.title"/></h4>
+                                    <p><t t-esc="object.description"/></p>
+                                </div>
+                                <img class="img img-responsive" t-att-src="'data:image/png;base64,%s' %  object.Cover_img"/>
+                            </a>
+                        </li>
+                    </t>
+                <!--</ul>-->
+                <!--<div class="btn btn_left"><i class="fa fa-chevron-left fa-lg"></i></div>-->
+                <!--<div class="btn btn_right"><i class="fa fa-chevron-right fa-lg"></i></div>-->
+        </template>
+
+        <template id="cpo_board_description_content">
+            <t t-call="website.layout">
+                <div class="container">
+                    <div id="cpo_news_content_all">
+                        <div class="cpo_new_value_title">
+                            <h3 class="text-center"><t t-esc="product_list.title"/></h3>
+                        </div>
+                        <!--<div class="cpo_new_value_date">-->
+                            <!--<p class="text-center">-->
+                                <!--<t t-esc="values['date']"/>-->
+                            <!--</p>-->
+                        <!--</div>-->
+                        <!--<div class="cpo_new_value_editor">-->
+                            <!--<p class="text-center">-->
+                                <!--<t t-esc="values['editor']"/>-->
+                            <!--</p>-->
+                        <!--</div>-->
+                        <div class="cpo_new_value_content" t-field="product_list.content" />
+                    </div>
+                    <p><a href="/" class="btn btn-primary">Back</a></p>
+                </div>
+            </t>
+        </template>
+
+        <!-- 产品展示 -->
+        <template>
+            <t t-set="key_arr" t-value="objects.keys()"/>
+            <div class="cpo-product-big-ul">
+                <ul class="cpo-product-lb">
+                    <t t-foreach="objects" t-as="pd">
+                        <t t-if="key_arr[0]">
+                            <li class="cpo-product-item slideInRight cpo-block">
+                                <div class="cpo-pd-item cpo-product-img">
+                                    <img class="img img-responsive"
+                                         src="/website_cpo_sale/static/src/images/process/product-001.png"/>
+                                </div>
+                                <div class="cpo-pd-item cpo-product-desc-one">
+                                    <h3><t t-esc="pd.title"/></h3>
+                                    <span>
+                                        <t t-esc="pd.description"/>
+                                    </span>
+                                </div>
+                                <!--<div class="cpo-pd-item cpo-product-desc-two"></div>-->
+                            </li>
+                        </t>
+                        <li class="cpo-product-item slideInRight cpo-block">
+                            <div class="cpo-pd-item cpo-product-img">
+                                <img class="img img-responsive"
+                                     src="/website_cpo_sale/static/src/images/process/product-001.png"/>
+                            </div>
+                            <div class="cpo-pd-item cpo-product-desc-one">
+                                <h3>PCB Manufacturing Services</h3>
+                                <span>
+                                    PCB fabrication service for High Density PCB, Rigid-Flex PCB, High Multilayer PCB, HDI
+                                    PCB, Impedance Control PCB, Hard Gold Plating PCB, Rogers PCB, Aluminum PCB.
+                                </span>
+                            </div>
+                            <!--<div class="cpo-pd-item cpo-product-desc-two"></div>-->
+                        </li>
+
+                    </t>
+                </ul>
+            </div>
+            <div class="cpo-product-an">
+                <ul>
+                    <li class="pd-an-active">
+                        <span class="cpo-select-up"></span>
+                        PCBA
+                    </li>
+                    <li>PCB</li>
+                </ul>
+            </div>
+        </template>
+
+    </data>
+</odoo>

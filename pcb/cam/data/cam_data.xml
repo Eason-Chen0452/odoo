@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--平米数级别-->
+        <record forcecreate="True" id="cam_volume_level_prototype" model="cam.volume.level">
+            <field name="name">prototype</field>
+            <field name="description">Prototype</field>
+            <field name="min_size">0.0</field>
+            <field name="max_size">1.0</field>
+            <field name="price_type">item</field>
+        </record>
+        <record forcecreate="True" id="cam_volume_level_small" model="cam.volume.level">
+            <field name="name">small</field>
+            <field name="description">Small Volume</field>
+            <field name="min_size">1.0</field>
+            <field name="max_size">10.0</field>
+            <field name="price_type">csize</field>
+        </record>
+        <record forcecreate="True" id="cam_volume_level_medium" model="cam.volume.level">
+            <field name="name">medium</field>
+            <field name="description">Medium Volume</field>
+            <field name="min_size">10.0</field>
+            <field name="max_size">50.0</field>
+            <field name="price_type">msize</field>
+        </record>
+        <record forcecreate="True" id="cam_volume_level_large" model="cam.volume.level">
+            <field name="name">large</field>
+            <field name="description">Large Volume</field>
+            <field name="min_size">50.0</field>
+            <field name="max_size">100.0</field>
+            <field name="price_type">msize</field>
+        </record>
+        <record forcecreate="True" id="cam_volume_level_type_larger" model="cam.volume.level">
+            <field name="name">larger</field>
+            <field name="description">Larger Volume</field>
+            <field name="min_size">100.0</field>
+            <field name="max_size">1000.0</field>
+            <field name="price_type">msize</field>
+        </record>
+
+        <!-- CAM-related subtypes for messaging / Chatter -->
+        <record id="mt_engineering_check_create" model="mail.message.subtype">
+            <field name="name">CAM Pro-Check Created</field>
+            <field name="res_model">cam.engineering.check</field>
+            <field name="default" eval="False"/>
+            <field name="description">CAM Pro-Check created</field>
+        </record>
+
+        <record id="mt_engineering_check_finish" model="mail.message.subtype">
+            <field name="name">CAM Pro-Check Finished</field>
+            <field name="res_model">cam.engineering.check</field>
+   
+            <field name="default" eval="False"/>
+            <field name="description">CAM Pro-Check Finished</field>
+        </record>
+
+        <record id="mt_engineering_check_cancel" model="mail.message.subtype">
+            <field name="name">CAM Pro-Check Canceled</field>
+            <field name="res_model">cam.engineering.check</field>
+            <field name="default" eval="False"/>
+            <field name="description">CAM Pro-Check Canceled</field>
+        </record>
+    
+        <!--颜色-->
+        <record id="color_white_normal" model="cam.ink.color">
+            <field name="name">White</field>
+            <field name="silk_screen" eval="True"/>
+            <field name="def_silk_screen" eval="False"/>
+            <field name="text" eval="True"/>
+            <field name="def_text" eval="True"/>
+            <field name="rohs" eval="True"/>
+            <field name="price_type">item</field>
+            <field name="english_name">White</field>
+        </record>
+
+        <record id="color_green_normal" model="cam.ink.color">
+            <field name="name">Green</field>
+            <field name="silk_screen" eval="True"/>
+            <field name="def_silk_screen" eval="True"/>
+            <field name="text" eval="True"/>
+            <field name="def_text" eval="False"/>
+            <field name="rohs" eval="True"/>
+            <field name="price_type">item</field>
+            <field name="english_name">Green</field>
+        </record>
+
+        <record id="color_black_normal" model="cam.ink.color">
+            <field name="name">Black</field>
+            <field name="silk_screen" eval="True"/>
+            <field name="def_silk_screen" eval="False"/>
+            <field name="text" eval="True"/>
+            <field name="def_text" eval="False"/>
+            <field name="rohs" eval="True"/>
+            <field name="price_type">item</field>
+            <field name="english_name">Black</field>
+        </record>
+
+        <record id="color_yellow_normal" model="cam.ink.color">
+            <field name="name">Yellow</field>
+            <field name="silk_screen" eval="True"/>
+            <field name="def_silk_screen" eval="False"/>
+            <field name="text" eval="True"/>
+            <field name="def_text" eval="False"/>
+            <field name="rohs" eval="True"/>
+            <field name="price_type">item</field>
+            <field name="english_name">Yellow</field>
+        </record>
+        <record id="color_blue_normal" model="cam.ink.color">
+            <field name="name">Blue</field>
+            <field name="silk_screen" eval="True"/>
+            <field name="def_silk_screen" eval="False"/>
+            <field name="text" eval="True"/>
+            <field name="def_color" eval="False"/>
+            <field name="rohs" eval="True"/>
+            <field name="price_type">item</field>
+            <field name="english_name">Blue</field>
+        </record>
+        <record id="color_red_normal" model="cam.ink.color">
+            <field name="name">Red</field>
+            <field name="silk_screen" eval="True"/>
+            <field name="def_silk_screen" eval="False"/>
+            <field name="text" eval="True"/>
+            <field name="def_text" eval="False"/>
+            <field name="rohs" eval="True"/>
+            <field name="price_type">item</field>
+            <field name="english_name">Red</field>
+        </record>
+        <!--哑绿-->
+        <record id="inkDumb" model="cam.ink.color">
+            <field name="english_name">Matt green</field>
+            <field name="name">Dumb green</field>
+        </record>
+        <!--哑黑-->
+        <record id="inkMatte" model="cam.ink.color">
+            <field name="english_name">Matt black</field>
+            <field name="name">Dumb black</field>
+        </record>
+        <!--浅绿-->
+        <record id="inkqianlv" model="cam.ink.color">
+            <field name="english_name">Light green</field>
+            <field name="name">Light green</field>
+        </record>
+        <!--紫色-->
+        <record id="inkPurple" model="cam.ink.color">
+            <field name="english_name">Purple</field>
+            <field name="name">Purple</field>
+        </record>
+        <!--哑蓝-->
+        <record id="ink5" model="cam.ink.color">
+            <field name="english_name">Matt Blue</field>
+            <field name="name">Dumb Blue</field>
+        </record>
+        <!--灰色-->
+        <record id="inkhuise" model="cam.ink.color">
+            <field name="name">Gray</field>
+            <field name="english_name">Gray</field>
+        </record>
+        <!--透明油-->
+        <record id="inkTranslucent" model="cam.ink.color">
+            <field name="name">Transparent oil</field>
+            <field name="english_name">Transparent</field>
+        </record>
+
+        <!--表面处理-->
+        <record id="surface_hasl_lf" model="cam.surface.process">
+            <field name="name">HASL-Lead Free</field>
+            <field name="def_surface" eval="True"/>
+            <field name="rohs" eval="True"/>
+            <field name="code">L</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Lead Free HASL</field>
+        </record>
+        
+        <record id="surface_hasl_l" model="cam.surface.process">
+            <field name="name">HASL-Lead</field>
+            <field name="def_surface" eval="False"/>
+            <field name="rohs" eval="True"/>
+            <field name="code">H</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Leaded HASL</field>
+        </record>
+
+        <record id="surface_enig" model="cam.surface.process">
+            <field name="name">ENIG</field>
+            <field name="def_surface" eval="False"/>
+            <field name="rohs" eval="True"/>
+            <field name="code">C</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Immersion gold</field>
+        </record>
+
+        <record id="surface_osp" model="cam.surface.process">
+            <field name="name">OSP</field>
+            <field name="def_surface" eval="False"/>
+            <field name="rohs" eval="True"/>
+            <field name="code">E</field>
+            <field name="price_type">item</field>
+            <field name="english_name">OSP</field>
+        </record>
+
+        <record id="surface_silver" model="cam.surface.process">
+            <field name="name">Immersion Silver</field>
+            <field name="def_surface" eval="False"/>
+            <field name="rohs" eval="True"/>
+            <field name="code">S</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Immersion Silver</field>
+        </record>
+
+        <record id="surface_tin" model="cam.surface.process">
+            <field name="name">Immersion Tin</field>
+            <field name="def_surface" eval="False"/>
+            <field name="rohs" eval="True"/>
+            <field name="code">P</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Immersion Tin</field>
+        </record>
+        <!--电金-->
+        <record id="process1_Electroless" model="cam.surface.process">
+            <field name="name">Electroless nickel gold</field>
+            <field name="code">A</field>
+            <field name="english_name">Electroless nickel gold</field>
+        </record>
+        <!--沉金+OSP-->
+        <record id="process2_gold_OSP" model="cam.surface.process">
+            <field name="name">ENIG+OSP</field>
+            <field name="code">C+E</field>
+            <field name="english_name">Immersion gold+ OSP</field>
+        </record>
+        <!--沉金+电金-->
+        <record id="process3_gold_Electroless" model="cam.surface.process">
+            <field name="name">ENIG+Electroless nickel gold</field>
+            <field name="code">C+D</field>
+            <field name="english_name">Immersion gold+ Electroless nickel gold</field>
+        </record>
+        <!--镍钯金-->
+        <record id="process_Nickel" model="cam.surface.process">
+            <field name="name">Nickel palladium gold</field>
+            <field name="code">O</field>
+            <field name="english_name">Nickel palladium gold</field>
+        </record>
+
+        <!--特殊工艺-->
+        <record id="sf_half_plating_holes" model="cam.special.process">
+            <field name="name">Half Plating Holes</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Semi-hole</field>
+        </record>
+
+        <record id="sf_edge_plating" model="cam.special.process">
+            <field name="name">Edge Plating</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Edge Plating</field>
+        </record>
+
+        <record id="sf_via_in_pad" model="cam.special.process">
+            <field name="name">Via In PAD</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Filled by Resin</field>
+        </record>
+
+        <!--压接孔-->
+        <record model="cam.special.process" id="Press_fit_hole">
+            <field name="name">Press-fit</field>
+            <field name="english_name">Press-fit</field>
+        </record>
+
+        <record id="sf_impendance_control" model="cam.special.process">
+            <field name="name">Impendance Control</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Impendance</field>
+        </record>
+        <!--阻抗 + 阻抗条-->
+        <record id="Impedance_and_impedance_strip" model="cam.special.process">
+            <field name="name">Impedance and impedance strip</field>
+            <field name="english_name">Impedance and impedance strip</field>
+        </record>
+
+        <!--埋盲孔结构-->
+        <record id="sf_blind_via" model="cam.special.process">
+            <field name="name">Blind Via</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Blind hole structure</field>
+        </record>
+        <!--埋盲孔钻带数-->
+        <record id="sf_buried_blind_via" model="cam.special.process">
+            <field name="name">Buried and Blind Via</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Blind&amp;Buired via</field>
+        </record>
+        <!--沉头/控深孔-->
+        <record id="sf_counter_sink_holes" model="cam.special.process">
+            <field name="name">Counter Sink Holes</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Number of countersunk/deep holes</field>
+        </record>
+        <!--控深锣-->
+        <record id="sf_depth_control_holes" model="cam.special.process">
+            <field name="name">Depth Control Holes</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Depth control routing</field>
+        </record>
+        <!--特殊材料-->
+        <record id="sm_carbon_ink" model="cam.special.material">
+            <field name="name">Carbon Ink</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Carbon_oil</field>
+        </record>
+        <record id="sm_peelable_mask" model="cam.special.material">
+            <field name="name">Peelable Mask</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Peelable_mask</field>
+        </record>
+        <record id="sm_counter_sink_drill" model="cam.special.material">
+            <field name="name">Counter Sink Drill</field>
+            <field name="price_type">item</field>
+        </record>
+
+        <!--Material Brand-->
+        
+        <record id="mb_ilm" model="cam.material.brand">
+            <field name="name">ILM</field>
+            <field name="ink" eval="False"/>
+            <field name="board" eval="True"/>
+            <field name="pp" eval="False"/>
+            <field name="price_type">item</field>
+        </record>
+
+        <record id="mb_ilm" model="cam.material.brand">
+            <field name="name">ILM</field>
+            <field name="ink" eval="False"/>
+            <field name="board" eval="True"/>
+            <field name="pp" eval="False"/>
+            <field name="price_type">item</field>
+        </record>
+
+        <record id="mb_shengyi" model="cam.material.brand">
+            <field name="name">SHENG YI</field>
+            <field name="ink" eval="False"/>
+            <field name="board" eval="True"/>
+            <field name="pp" eval="True"/>
+            <field name="price_type">item</field>
+        </record>
+
+        <record id="mb_nanya" model="cam.material.brand">
+            <field name="name">NANYA</field>
+            <field name="ink" eval="True"/>
+            <field name="board" eval="True"/>
+            <field name="pp" eval="True"/>
+            <field name="price_type">item</field>
+        </record>
+
+        <record id="mb_iteq" model="cam.material.brand">
+            <field name="name">ITEQ</field>
+            <field name="ink" eval="False"/>
+            <field name="board" eval="True"/>
+            <field name="pp" eval="True"/>
+            <field name="price_type">item</field>
+        </record>
+
+        <record id="mb_rogers" model="cam.material.brand">
+            <field name="name">ROGERS</field>
+            <field name="ink" eval="False"/>
+            <field name="board" eval="True"/>
+            <field name="pp" eval="False"/>
+            <field name="price_type">item</field>
+        </record>
+
+        <record id="mb_nelco" model="cam.material.brand">
+            <field name="name">Nelco</field>
+            <field name="ink" eval="False"/>
+            <field name="board" eval="True"/>
+            <field name="pp" eval="False"/>
+            <field name="price_type">item</field>
+        </record>
+
+        <record id="mb_isola" model="cam.material.brand">
+            <field name="name">Isola</field>
+            <field name="ink" eval="False"/>
+            <field name="board" eval="True"/>
+            <field name="pp" eval="False"/>
+            <field name="price_type">item</field>
+        </record>
+
+        <record id="mb_arlon" model="cam.material.brand">
+            <field name="name">Arlon</field>
+            <field name="ink" eval="False"/>
+            <field name="board" eval="True"/>
+            <field name="pp" eval="False"/>
+            <field name="price_type">item</field>
+        </record>
+
+        <record id="mb_taconic" model="cam.material.brand">
+            <field name="name">Taconic</field>
+            <field name="ink" eval="False"/>
+            <field name="board" eval="True"/>
+            <field name="pp" eval="False"/>
+            <field name="price_type">item</field>
+        </record>
+
+        <record id="mb_taiyo" model="cam.material.brand">
+            <field name="name">TAIYO</field>
+            <field name="ink" eval="True"/>
+            <field name="board" eval="False"/>
+            <field name="pp" eval="False"/>
+            <field name="price_type">item</field>
+        </record>
+        
+        <!--Via Process-->
+
+        <record id="va_solder_mask_opening" model="cam.via.process">
+            <field name="name">Solder Mask Openning</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Opening</field>
+        </record>
+
+        <record id="va_vias_covered_solder_mask" model="cam.via.process">
+            <field name="name">Vias Covered by Solder Mask</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Cover</field>
+        </record>
+
+        <record id="va_plugged_vias" model="cam.via.process">
+            <field name="name">Plugged Vias</field>
+            <field name="price_type">item</field>
+            <field name="english_name">Filled by SM</field>
+        </record>
+
+        <!--基材-->
+        <record id="base_type_fr4" model="cam.base.type">
+            <field name="name">FR4TG150</field>
+            <field name="tg_value">150</field>
+            <field name="price_type">item</field>
+            <field name="english_name">FR4-Tg150</field>
+        </record>
+        <record id="base_type_fr4tg170" model="cam.base.type">
+            <field name="name">FR4TG170</field>
+            <field name="tg_value">170</field>
+            <field name="price_type">item</field>
+            <field name="english_name">FR4-Tg170</field>
+            <field name="parent_id" eval="ref('base_type_fr4')"/>
+        </record>
+        <record id="base_type_fr4tg135" model="cam.base.type">
+            <field name="name">FR4TG135</field>
+            <field name="tg_value">135</field>
+            <field name="price_type">item</field>
+            <field name="english_name">FR4-Tg135</field>
+            <field name="parent_id"  eval="ref('base_type_fr4')"/>
+        </record>
+
+        <record id="typeRogers_4350B" model="cam.base.type">
+            <field name="name">Rogers 4350B</field>
+            <field name="english_name">Rogers 4350B</field>
+        </record>
+        <record id="typeRogers_4003C" model="cam.base.type">
+            <field name="name">Rogers 4003C</field>
+            <field name="english_name">Rogers 4003C</field>
+        </record>
+
+        <record id="base_type_teflon" model="cam.base.type">
+            <field name="name">Teflon</field>
+            <field name="tg_value">150</field>
+            <field name="price_type">item</field>
+        </record>
+
+        <record id="base_type_ceramics" model="cam.base.type">
+            <field name="name">Ceramics</field>
+            <field name="tg_value">150</field>
+            <field name="price_type">item</field>
+        </record>
+
+        <record id="base_type_aluminum" model="cam.base.type">
+            <field name="name">Aluminum</field>
+            <field name="tg_value">150</field>
+            <field name="price_type">item</field>
+        </record>
+        <!--hdi-->
+        <record id="base_type_fr4tg135_hdi" model="cam.base.type">
+            <field name="name">FR4-Tg135-HDI</field>
+            <field name="english_name">FR4-Tg135-HDI</field>
+            <field name="tg_value">135</field>
+            <field name="price_type">item</field>
+        </record>
+        <record id="base_type_fr4tg150_hdi" model="cam.base.type">
+            <field name="name">FR4-Tg150-HDI</field>
+            <field name="english_name">FR4-Tg150-HDI</field>
+            <field name="tg_value">150</field>
+            <field name="price_type">item</field>
+        </record>
+        <record id="base_type_fr4tg170_hdi" model="cam.base.type">
+            <field name="name">FR4-Tg170-HDI</field>
+            <field name="english_name">FR4-Tg170-HDI</field>
+            <field name="tg_value">170</field>
+            <field name="price_type">item</field>
+        </record>
+        <!--铝基-->
+        <record id="typeluji" model="cam.base.type">
+            <field name="name">Aluminum base</field>
+            <field name="english_name"></field>
+        </record>
+        <!--铜基-->
+        <record id="typetongji" model="cam.base.type">
+            <field name="name">Copper base</field>
+            <field name="english_name"></field>
+        </record>
+        <record id="typePTFE" model="cam.base.type">
+            <field name="name">PTFE</field>
+            <field name="english_name"></field>
+        </record>
+        <record id="typeCEM_1" model="cam.base.type">
+            <field name="name">CEM-1</field>
+            <field name="english_name"></field>
+        </record>
+        <record id="typeCEM_3" model="cam.base.type">
+            <field name="name">CEM-3</field>
+            <field name="english_name"></field>
+        </record>
+
+        <!--验收标准-->
+        <record model="cam.acceptance.criteria" id="Acceptance_Criteria_II">
+            <field name="name">IPC Class II</field>
+            <field name="cpo_level">2</field>
+            <field name="english_name">IPC Class II</field>
+        </record>
+        <record model="cam.acceptance.criteria" id="Acceptance_Criteria_III">
+            <field name="name">IPC Class III</field>
+            <field name="cpo_level">3</field>
+            <field name="english_name">IPC Class III</field>
+        </record>
+
+        <!--钢网-->
+        <record model="cam.steel.mesh.thickness" id="steel_mesh_thickness_1">
+            <field name="name">0.08</field>
+        </record>
+        <record model="cam.steel.mesh.thickness" id="steel_mesh_thickness_2">
+            <field name="name">0.1</field>
+        </record>
+        <record model="cam.steel.mesh.thickness" id="steel_mesh_thickness_3">
+            <field name="name">0.12</field>
+        </record>
+        <record model="cam.steel.mesh.thickness" id="steel_mesh_thickness_4">
+            <field name="name">0.15</field>
+        </record>
+        <record model="cam.laser.steel.mesh.size" id="steel_mesh_size_1">
+            <field name="name">370.0*470.0/190.0*290.0</field>
+            <field name="stencil_size_1">370</field>
+            <field name="stencil_size_2">470</field>
+            <field name="effective_size_1">190</field>
+            <field name="effective_size_2">290</field>
+            <field name="steel_mesh_thickness_id"
+                   eval="[(6,0,[ref('steel_mesh_thickness_1'),ref('steel_mesh_thickness_2'),
+                   ref('steel_mesh_thickness_3'),ref('steel_mesh_thickness_4')])]"/>
+        </record>
+        <record model="cam.laser.steel.mesh.size" id="steel_mesh_size_2">
+            <field name="name">420.0*520.0/240.0*340.0</field>
+            <field name="stencil_size_1">420</field>
+            <field name="stencil_size_2">520</field>
+            <field name="effective_size_1">240</field>
+            <field name="effective_size_2">340</field>
+            <field name="steel_mesh_thickness_id"
+                   eval="[(6,0,[ref('steel_mesh_thickness_1'),ref('steel_mesh_thickness_2'),
+                   ref('steel_mesh_thickness_3'),ref('steel_mesh_thickness_4')])]"/>
+        </record>
+        <record model="cam.laser.steel.mesh.size" id="steel_mesh_size_3">
+            <field name="name">450.0*550.0/270.0*370.0</field>
+            <field name="stencil_size_1">450</field>
+            <field name="stencil_size_2">550</field>
+            <field name="effective_size_1">270</field>
+            <field name="effective_size_2">370</field>
+            <field name="steel_mesh_thickness_id"
+                   eval="[(6,0,[ref('steel_mesh_thickness_1'),ref('steel_mesh_thickness_2'),
+                   ref('steel_mesh_thickness_3'),ref('steel_mesh_thickness_4')])]"/>
+        </record>
+        <record model="cam.laser.steel.mesh.size" id="steel_mesh_size_4">
+            <field name="name">580.0*580.0/380.0*450.0</field>
+            <field name="stencil_size_1">580</field>
+            <field name="stencil_size_2">580</field>
+            <field name="effective_size_1">380</field>
+            <field name="effective_size_2">450</field>
+            <field name="steel_mesh_thickness_id"
+                   eval="[(6,0,[ref('steel_mesh_thickness_1'),ref('steel_mesh_thickness_2'),
+                   ref('steel_mesh_thickness_3'),ref('steel_mesh_thickness_4')])]"/>
+        </record>
+        <record model="cam.laser.steel.mesh.size" id="steel_mesh_size_5">
+            <field name="name">550.0*650.0/350.0*450.0</field>
+            <field name="stencil_size_1">550</field>
+            <field name="stencil_size_2">650</field>
+            <field name="effective_size_1">350</field>
+            <field name="effective_size_2">450</field>
+            <field name="steel_mesh_thickness_id"
+                   eval="[(6,0,[ref('steel_mesh_thickness_1'),ref('steel_mesh_thickness_2'),
+                   ref('steel_mesh_thickness_3'),ref('steel_mesh_thickness_4')])]"/>
+        </record>
+        <record model="cam.laser.steel.mesh.size" id="steel_mesh_size_6">
+            <field name="name">736.0*736.0/500.0*500.0</field>
+            <field name="stencil_size_1">736</field>
+            <field name="stencil_size_2">736</field>
+            <field name="effective_size_1">500</field>
+            <field name="effective_size_2">500</field>
+            <field name="steel_mesh_thickness_id"
+                   eval="[(6,0,[ref('steel_mesh_thickness_1'),ref('steel_mesh_thickness_2'),
+                   ref('steel_mesh_thickness_3'),ref('steel_mesh_thickness_4')])]"/>
+        </record>
+    </data>
+</odoo>

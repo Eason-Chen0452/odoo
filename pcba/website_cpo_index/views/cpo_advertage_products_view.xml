@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="cpo_advertage_products_tree">
+            <field name="name">Advertage Products Tree</field>
+            <field name="model">cpo_advertage_products</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="cpo_product_name"/>
+                    <field name="cpo_product_desc"/>
+                    <field name="cpo_link"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_advertage_products_form">
+            <field name="name">Advertage Products Form</field>
+            <field name="model">cpo_advertage_products</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div style="width:49%;display:inline-block;margin-right:10px;border-right:1px solid #ddd;">
+                        <group colspan="4">
+                            <group colspan="4">
+                                <group colspan="2">
+                                    <field name="cpo_ad_poto" widget="image" />
+                                    <p>E.g: width &lt;=540px, height &lt;= 252px;</p>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_product_name"/>
+                                    <p>E.g: Multilayer PCB</p>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_product_desc"/>
+                                    <p>E.g: Not only double side PCB ...</p>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_link"/>
+                                    <p>E.g: www.chinapcbone.com</p>
+                                </group>
+                            </group>
+                        </group>
+                    </div>
+                    <div style="width: 50%;display: inline-block;vertical-align: top;" class="cpo_content_view_right">
+                        <div class="row" style="margin: 0;">
+                            <notebook>
+                                <page string="Preview 1">
+                                    <div style="margin: 20px;width: 282.14px;border: 1px solid #ddd;">
+                                        <div style="width:99%;overflow:hidden;padding:25px 12px 5px;">
+                                            <div class="text-center">
+                                                <div class="cpo_ad_poto" style="width: 100%;display: inline-block;max-width: 130px;margin: auto;">
+                                                    <field name="cpo_ad_poto" widget="image"></field>
+                                                </div>
+                                            </div>
+                                            <ul style="margin:0;padding: 15px 10px 30px;">
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:100%;display:inline-block;text-align:center;font-size: 30px;font-weight: 600;">
+                                                        <field name="cpo_product_name"></field>
+                                                    </span>
+                                                </li>
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:100%;display:inline-block;text-align:left;">
+                                                        <field name="cpo_product_desc"></field>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <a style="width: 60%;color: #6bcad2;display: block;font-weight:600;">
+                                               <i class="fa fa-angle-double-right"></i> READ MORE
+                                            </a>
+                                        </div>
+                                    </div>
+                                </page>
+                                <page string="Preview 2">
+                                    <h3>Strive to improve...</h3>
+                                </page>
+                            </notebook>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Kanban View  -->
+        <record model="ir.ui.view" id="cpo_advertage_products_kanban">
+            <field name="name">Advertage Products Kanban</field>
+            <field name="model">cpo_advertage_products</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile o_kanban_small_column">
+                    <field name="cpo_ad_poto" widget="image" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="row">
+                                    <div class="col-xs-6" groups="base.group_user">
+                                        <field name="cpo_ad_poto" widget="image" />
+                                    </div>
+                                    <div class="col-xs-6 pull-right">
+                                        <div class="layer_img_layernum" style="display: inline-block;vertical-align: top;">
+                                            <h3 class="layer_num_qty" style="margin: 10px auto;width: 100%;font-size:14px;color: #2e8bc3;">
+                                                <field name="cpo_product_name"></field>
+                                            </h3>
+                                            <span class="layer_money_total" style="font-weight:600;font-size:12px;color:#FF0000;">
+                                                <field name="cpo_link"></field>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!--搜索视图-->
+        <record id="cpo_advertage_products_search" model="ir.ui.view">
+            <field name="name">Advertage Products Search</field>
+            <field name="model">cpo_advertage_products</field>
+            <field name="arch" type="xml">
+                <search string="Ideas">
+                    <field name="cpo_product_name"/>
+                    <field name="cpo_link"/>
+                    <group string="Group By">
+                        <filter name="group_by_cpo_product_name" string="Product Name" context="{'group_by': 'cpo_product_name'}"/>
+                        <!--<filter name="group_by_manufacturer_id" string="制造商编号" context="{'group_by': 'manufacturer_id'}"/>-->
+                        <!--<filter name="group_by_confirm_time" string="确认时间" context="{'group_by': 'confirm_time'}"/>-->
+                    </group>
+                </search>
+              </field>
+        </record>
+        <!--  -->
+        <record model="ir.ui.view" id="cpo_advertage_products_graph">
+            <field name="name">Advertage Products Graph</field>
+            <field name="model">cpo_advertage_products</field>
+            <field name="arch" type="xml">
+                <graph string="Sales Orders">
+                    <field name="cpo_product_name"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_advertage_products_action_window">
+            <field name="name">Advertage Products Action</field>
+            <field name="res_model">cpo_advertage_products</field>
+            <field name="view_mode">kanban,tree,form,graph</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create a new record.
+                </p>
+                <!--<p>-->
+                    <!--Once the quotation is confirmed, it becomes a sales order.-->
+                    <!--You'll be able to invoice it and collect payments.-->
+                    <!--From the <i>Sales Orders</i> menu, you can track delivery-->
+                    <!--orders or services.-->
+                <!--</p>-->
+            </field>
+        </record>
+
+        <!-- actions -->
+        <!--<menuitem name="Package Price all" id="cpo_product_release_all_menu" parent="sales_team.menu_sales" />-->
+
+        <menuitem name="Advertage Products" id="cpo_advertage_products_menu" parent="website_cpo_index.cpo_product_release_all_menu"
+              action="cpo_advertage_products_action_window" />
+
+    </data>
+</odoo>

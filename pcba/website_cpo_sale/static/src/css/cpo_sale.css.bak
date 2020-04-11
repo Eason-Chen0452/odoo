@@ -1,0 +1,551 @@
+
+#cpo_website_ele_cart_order{
+    border: 1px solid #BDBDBD;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.ele_cart_check_box_root{
+    margin-left: 25px;
+    position: relative;
+}
+
+.ele_cart_check_box_root .ele_cart_check_box{
+    position: absolute;
+    /*width:100px;*/
+    /*height: 50px;*/
+    top:50%;
+    /*left:50%;*/
+    margin-left:-50px;
+    margin-top:-25px;
+    text-align: center;
+}
+
+.jumbotron{
+    background: url('../images/banner_1.jpg')
+}
+
+.bg-black-25{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#ele_quote{
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 0 12.25%;
+}
+
+#ele_quote .text-primary{
+    color: #000;
+    font-weight: 600;
+}
+/*from*/
+#ele_table{
+    margin-top: 30px;
+    padding: 10px;
+}
+
+/* button */
+
+
+#ele_table_middle{
+    position: relative;
+    height: 100%;
+}
+.ele_btn_js{
+    margin-top: 160%;
+    margin-left: 18%;
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #337AB7;
+}
+#button_jisuan input{
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    margin:0;
+    outline-style: none;
+    border-radius: 50%;
+    border: none;
+    background-image: url('../images/anniu.png');
+    background-size: 80px 80px;
+}
+#button_jisuan span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -21px 0 0 2px;
+    color: #ffffff;
+    
+}
+.jumbotron{
+    padding: 0;
+}
+
+
+
+#ele_table{
+    margin-top: 30px;
+    padding: 10px;
+}
+#ele_table_right{
+    margin-top: 30px;
+    padding: 10px;
+}
+
+#ele_table label{
+    text-align: left;
+    font-size: 12px;
+}
+#ele_table input{
+    margin: 0;
+}
+#ele_table i{
+    color: #E21918;
+    padding: 7px 5px 6px 0;
+}
+#ele_table span{
+    margin: 0;
+    padding: 6px 12px 6px 0;
+}
+#button_jisuan .cpo_sbmit{
+    margin: 0 auto;
+}
+
+#button_jisuan .cpo_submit .submit{
+    margin: 0 auto;
+    background-color: #337AB7;
+}
+#xiangdao{
+    width: 670px;
+    margin: 0 auto;
+    height: 90px;
+}
+
+/*units pcs*/
+#ele_table .ele_enter{
+    position: relative;
+    padding-right: 0;
+}
+#ele_table .ele_enter span{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#ele_table .ele_pcb_wh input{
+    display: inline-block;
+    width: 76px;
+
+}
+
+#ele_table .ele_pcb_wh i{
+    display: inline-block;
+    width: 16px;
+    height: 34px;
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+    font-size: 25px;
+    line-height: 34px;
+    vertical-align: bottom;
+    color: #000000;
+}
+#ele_table .ele_pcb_wh span{
+    display: inline-block;
+    padding-right: 0;
+
+}
+
+
+#ele_table_right{
+    margin-top: 30px;
+    padding: 10px;
+    /*border: 1px solid #DBE5EB;*/
+}
+
+#ele_table .cpo_submit .submit{
+    margin: 0 auto;
+    background-color: #337AB7;
+   
+}
+#ele_result i{
+    font-style: normal;
+}
+
+#ele_table label{
+    text-align: left;
+    font-size: 12px;
+}
+#ele_table input{
+    margin: 0;
+}
+#ele_table i{
+    color: #E21918;
+    padding: 6px 5px 6px 0;
+}
+#ele_table span{
+    margin: 0;
+    padding: 6px 12px 6px 0;
+}
+
+#ele_table .cpo_submit .submit{
+    margin: 0 auto;
+    background-color: #27AE61;
+}
+
+#click_details{
+    margin: 0 auto;
+    display: none;
+}
+
+/*title*/
+#tab_title{
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #949191;
+}
+#tab_title span{
+    font-size: 12px;
+    color: #666666;
+}
+
+#ele_table table tr td .dw{
+    padding-left: 5px;
+    margin-left: 5px;
+}
+
+#sele_btn input{
+    text-align: center;
+    padding: 6px 12px 6px 12px;
+    border-radius: 5px;
+    outline-style: none;
+    border: 1px solid #4E4E4D;
+    background-color: #ffffff;
+}
+#sele_btn .in_active{
+    color:  #27AE61;
+    border: 1px solid #27AE61;
+}
+
+#jisuan_one table input{
+    outline-style: none;
+    border: none;
+    max-width: 100px;
+    margin: auto auto;
+    background: none;
+    text-align: center;
+}
+
+#jisuan_one table td{
+    vertical-align: middle;
+}
+#jisuan_one table a{
+    text-direction: none;
+    padding-right: 10px;
+}
+#jisuan_one table a:hover{
+    text-decoration: none;
+}
+#jisuan_one table i{
+    font-weight: 600;
+    font-size: 16px;
+    padding-right: 5px;
+    color: #000000;
+}
+
+/*pcba_details*/
+
+#pcb_details .form-group{
+    margin-bottom: 0;
+}
+#pcb_details button{
+    font-size: 12px;
+    padding: 0;
+}
+#pcb_details span{
+    font-size: 14px;
+    margin-right: 10px;
+}
+#pcb_details tr{
+    border: none;
+}
+#pcb_details th{
+    text-align: center;
+    background-color: #E8E8E8;
+}
+
+#pcb_details table i{
+    font-weight: 600;
+    font-size: 16px;
+    color: #CC0000;
+    padding-right: 5px;
+}
+.cpo_check_excel_set{
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+.cpo_express_inf{
+    margin-bottom: 20px;
+    line-height: 24px;
+}
+/*check button */
+#pcb_form_act{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/*cpo_check_excel_file*/
+#check_banner{
+    position: relative;
+}
+.cpo_select_font{
+    font-family: "Microsoft YaHei", "SimSun", '\5b8b\4f53', sans-serif;
+    border-bottom: 2px solid #BDBDBD;
+    padding: 10px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+#express_pro{
+    line-height: 24px;
+    margin: 15px 0 0 15px;
+    float: left;
+}
+#express_pro span{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+
+}
+#express_pro select{
+    display: inline-block;
+    width: 179px;
+    padding: 5px 10px;
+    text-align: center;
+    margin-left: 5px;
+    border-radius: 5px;
+    outline-style: none;
+    border: 1px solid #BDBDBD;
+}
+
+#express_num{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 0;
+    margin: 15px 15px 0 15px;
+    float: left;
+}
+#express_num p{
+    text-align: left;
+
+}
+#cpo_ele_excel_table_content{
+    margin: 0 auto;
+}
+
+#express_num input{
+    margin-left: 10px;
+    padding: 2px 0 2px 5px;
+    border-radius: 5px;
+    border: 1px solid #BDBDBD;
+}
+#express_btn{
+    margin-left: 15px;
+    text-decoration: none;
+    position: absolute;
+    left: 10%;
+}
+#express_btn_a{
+    position: absolute;
+    left: 18%;
+    border-radius: 5px;
+    border: 1px solid #BDBDBD;
+    background-color: #F8F8FF;
+    padding: 8px 18px;
+    font-weight: bold;
+    color: #000;
+}
+#express_btn_a a{
+    color: #000;
+    text-decoration: none;
+}
+#express_btn_a a:hover{
+    background-color: #FFFFFF;
+    color: #0E76A8;
+}
+#express_btn button{
+    border-radius: 5px;
+    border: 1px solid #BDBDBD;
+    background-color: #F8F8FF;
+    padding: 8px 18px;
+    font-weight: bold;
+    color: #000;
+}
+#express_btn button:hover{
+    background-color: #FFFFFF;
+    color: #0E76A8;
+}
+
+#select_nav .cpo_nav_content{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+
+#express_btn #cpo_back_bom_supply:hover{
+    background-color: #FFFFFF;
+    color: #0E76A8;
+}
+
+#select_nav .select_cont{
+    width: 66%;
+    margin: 0 auto;
+    height: 65px;
+}
+
+#select_nav{
+    padding: 0;
+    margin: 0;
+}
+#select_nav .select_item{
+    padding: 0;
+    float: left;
+}
+#select_nav .select_item i{
+    color: #db0700;
+    display: inline-block;
+    padding-top: 2px;
+    width: 10px;
+    height: 32px;
+    font-size: 18px;
+    font-weight: bold;
+    vertical-align: middle;
+    line-height: 32px;
+    margin-rigth: 5px;
+}
+#select_nav .select_item input{
+    float: right;
+}
+#select_nav .select_item p{
+    font-weight: bold;
+}
+#select_nav .select_item select{
+    display: inline-block;
+    width: 135px;
+    margin-left: 10px;
+}
+
+#cpo_ele_excel_table_content{
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+#content_table table td{
+    text-align: center;
+    padding: 8px 20px;
+}
+#content_table table td select{
+    border: none;
+    outline-style: none;
+}
+#content_table table td select option{
+    padding: 5px 0;
+}
+.cpo_check_red_error {
+    border: 1px solid red;
+}
+
+/*express*/
+#express_order_detail .get_order_num{
+    color: #000000;
+    text-decoration: none;
+}
+#express_order_detail .get_order_num:hover{
+    color:#337ab7;
+    cursor: pointer;
+}
+#express_order_detail .get_order_num i{
+    margin-right: 5px;
+}
+#express_order_detail .cpo_titel_express{
+    font-weight: bold;
+    margin-bottom: 0;
+}
+#modal_express .express_conter{
+    display: inline-block;
+    float: right;
+    width: 200px;
+    line-height: 50px;
+}
+#modal_express .express_conter input{
+    margin-top: 9px;
+}
+#modal_express .express_conter select{
+    margin-top: 9px;
+}
+#modal_express .form_express{
+    width: 350px;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+}
+#modal_express .form_express i{
+    color: #db0700;
+    margin-right: 10px;
+}
+.express_ul{
+    margin: 0;
+    padding: 0;
+}
+
+.express_ul li{
+    list-style: none;
+    padding: 0;
+    border-bottom: 1px dashed #6B6464;
+    margin-top: -1px;
+}
+.express_ul li p{
+    float: left;
+    line-height: 30px;
+}
+.express_ul li a{
+    float: right;
+    line-height: 30px;
+    visibility:hidden;
+}
+
+
+/*shop cart*/
+#cpo_calculate_tatol #cpo_fixed{
+    position: relative;
+}
+
+#cpo_calculate_tatol .cpo_all_checked{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+#cpo_calculate_tatol .cpo_all_checked label{
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+
+
+#cpo_calculate_tatol.calculate_tatol{
+    position:fixed!important;
+    width:100%;
+    left: 0;
+    bottom: 0px;
+    background-color: #E5E5E5;
+    z-index: 99;
+    margin:0 auto;
+}
+

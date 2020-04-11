@@ -1,0 +1,151 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* cpo_help
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-30 01:57+0000\n"
+"PO-Revision-Date: 2019-12-30 01:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cpo_help
+#: selection:cpo_help.help,type:0
+msgid "Account"
+msgstr "Account"
+
+#. module: cpo_help
+#: model:ir.ui.view,arch_db:cpo_help.cpo_help_form
+msgid "Are you sure you want to update?"
+msgstr "你确定要更新吗?"
+
+#. module: cpo_help
+#: selection:cpo_help.help,state:0
+msgid "Complete"
+msgstr "完成"
+
+#. module: cpo_help
+#: model:ir.model.fields,field_description:cpo_help.field_cpo_help_help_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: cpo_help
+#: model:ir.model.fields,field_description:cpo_help.field_cpo_help_help_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: cpo_help
+#: selection:cpo_help.help,type:0
+msgid "Default"
+msgstr "Default"
+
+#. module: cpo_help
+#: model:ir.model.fields,field_description:cpo_help.field_cpo_help_help_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: cpo_help
+#: selection:cpo_help.help,state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: cpo_help
+#: model:ir.ui.menu,name:cpo_help.cpo_help_menu_list
+msgid "Help"
+msgstr "帮助"
+
+#. module: cpo_help
+#: model:ir.model.fields,field_description:cpo_help.field_cpo_help_help_content
+msgid "Help Content"
+msgstr "帮助内容"
+
+#. module: cpo_help
+#: model:ir.ui.menu,name:cpo_help.cpo_help_menu
+msgid "Help Menu"
+msgstr "帮助菜单"
+
+#. module: cpo_help
+#: model:ir.model.fields,field_description:cpo_help.field_cpo_help_help_type
+msgid "Help Type"
+msgstr "帮助类型"
+
+#. module: cpo_help
+#: model:ir.actions.act_window,name:cpo_help.cpo_help_action_window
+msgid "Help window"
+msgstr "Help window"
+
+#. module: cpo_help
+#: model:ir.model.fields,field_description:cpo_help.field_cpo_help_help_id
+msgid "ID"
+msgstr "ID"
+
+#. module: cpo_help
+#: selection:cpo_help.help,state:0
+#: model:ir.ui.view,arch_db:cpo_help.cpo_help_form
+msgid "Invalid"
+msgstr "作废"
+
+#. module: cpo_help
+#: model:ir.model.fields,field_description:cpo_help.field_cpo_help_help___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: cpo_help
+#: model:ir.model.fields,field_description:cpo_help.field_cpo_help_help_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: cpo_help
+#: model:ir.model.fields,field_description:cpo_help.field_cpo_help_help_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: cpo_help
+#: model:ir.ui.view,arch_db:cpo_help.cpo_help_form
+msgid "Message"
+msgstr "消息"
+
+#. module: cpo_help
+#: model:ir.model.fields,field_description:cpo_help.field_cpo_help_help_name
+#: model:ir.ui.view,arch_db:cpo_help.cpo_help_form
+msgid "Name"
+msgstr "名称"
+
+#. module: cpo_help
+#: selection:cpo_help.help,type:0
+msgid "Order"
+msgstr "Order"
+
+#. module: cpo_help
+#: selection:cpo_help.help,state:0
+#: model:ir.ui.view,arch_db:cpo_help.cpo_help_form
+msgid "Release"
+msgstr "发布"
+
+#. module: cpo_help
+#: model:ir.model.fields,field_description:cpo_help.field_cpo_help_help_state
+msgid "Status"
+msgstr "状态"
+
+#. module: cpo_help
+#: selection:cpo_help.help,state:0
+#: model:ir.ui.view,arch_db:cpo_help.cpo_help_form
+msgid "Update"
+msgstr "更新"
+
+#. module: cpo_help
+#: model:ir.model.fields,field_description:cpo_help.field_cpo_help_help_update_time
+msgid "Update Time"
+msgstr "更新时间"
+
+#. module: cpo_help
+#: model:ir.model,name:cpo_help.model_cpo_help_help
+msgid "cpo_help.help"
+msgstr "cpo_help.help"
+

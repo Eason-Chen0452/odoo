@@ -1,0 +1,2127 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* cpo_it_pcb
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-10 02:14+0000\n"
+"PO-Revision-Date: 2019-10-10 02:14+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_layer_item_form_view
+msgid "/PCS"
+msgstr "/PCS"
+
+#. module: cpo_it_pcb
+#: model:laser.steel.mesh.price,name:cpo_it_pcb.laser_steel_mesh_price_1
+#: model:laser.steel.mesh.price,name:cpo_it_pcb.laser_steel_mesh_price_2
+#: model:laser.steel.mesh.price,name:cpo_it_pcb.laser_steel_mesh_price_3
+#: model:laser.steel.mesh.price,name:cpo_it_pcb.laser_steel_mesh_price_4
+#: model:laser.steel.mesh.price,name:cpo_it_pcb.laser_steel_mesh_price_5
+#: model:laser.steel.mesh.price,name:cpo_it_pcb.laser_steel_mesh_price_6
+msgid "0-10 Quantity"
+msgstr "0-10 数量"
+
+#. module: cpo_it_pcb
+#: model:pcb.quotation.pricelist.gold.finger,name:cpo_it_pcb.gold_finger_10u
+msgid "10.0μ\""
+msgstr "10.0μ\""
+
+#. module: cpo_it_pcb
+#: model:pcb.quotation.pricelist.gold.finger,name:cpo_it_pcb.gold_finger_15u
+msgid "15.0μ\""
+msgstr "15.0μ\""
+
+#. module: cpo_it_pcb
+#: model:pcb.quotation.pricelist.gold.finger,name:cpo_it_pcb.gold_finger_20u
+msgid "20.0μ\""
+msgstr "20.0μ\""
+
+#. module: cpo_it_pcb
+#: model:pcb.quotation.pricelist.gold.finger,name:cpo_it_pcb.gold_finger_25u
+msgid "25.0μ\""
+msgstr "25.0μ\""
+
+#. module: cpo_it_pcb
+#: model:pcb.quotation.pricelist.gold.finger,name:cpo_it_pcb.gold_finger_3u
+msgid "3.0μ\""
+msgstr "3.0μ\""
+
+#. module: cpo_it_pcb
+#: model:pcb.quotation.pricelist.gold.finger,name:cpo_it_pcb.gold_finger_30u
+msgid "30.0μ\""
+msgstr "30.0μ\""
+
+#. module: cpo_it_pcb
+#: model:pcb.quotation.pricelist.gold.finger,name:cpo_it_pcb.gold_finger_35u
+msgid "35.0μ\""
+msgstr "35.0μ\""
+
+#. module: cpo_it_pcb
+#: model:pcb.quotation.pricelist.gold.finger,name:cpo_it_pcb.gold_finger_40u
+msgid "40.0μ\""
+msgstr "40.0μ\""
+
+#. module: cpo_it_pcb
+#: model:pcb.quotation.pricelist.gold.finger,name:cpo_it_pcb.gold_finger_45u
+msgid "45.0μ\""
+msgstr "45.0μ\""
+
+#. module: cpo_it_pcb
+#: model:pcb.quotation.pricelist.gold.finger,name:cpo_it_pcb.gold_finger_5u
+msgid "5.0μ\""
+msgstr "5.0μ\""
+
+#. module: cpo_it_pcb
+#: model:pcb.quotation.pricelist.gold.finger,name:cpo_it_pcb.gold_finger_50u
+msgid "50.0μ\""
+msgstr "50.0μ\""
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_acceptance_criteria
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_acceptance_criteria_acceptance_criteria_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_other_acceptance_criteria_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_other_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_acceptance_criteria_tree
+msgid "Acceptance Criteria"
+msgstr "验收标准"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_acceptance_criteria_price
+msgid "Acceptance Criteria Fee"
+msgstr "验收标准费用"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_acceptance_criteria_acceptance_criteria_type
+msgid "Acceptance Criteria Type"
+msgstr "增加费用类型"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_active
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_active
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_active
+msgid "Active"
+msgstr "有效"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_add_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_add_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_add_fee
+msgid "Add Fee"
+msgstr "增加费用"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_add_fee_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_add_fee_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_add_fee_type
+msgid "Add Fee Type"
+msgstr "增加费用类型"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_project_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material_project_fee
+msgid "Add Project costs"
+msgstr "增加工程费"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pp_aperture
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_aperture_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_aperture_tree
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_surface_treatment_tree
+msgid "Aperture"
+msgstr "埋盲孔"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_area_size
+msgid "Area Size"
+msgstr "尺寸cm²"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_cpo_benchmark_fee_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_cpo_benchmark_fee_type
+msgid "Benchmark Fee Type"
+msgstr "基准价类型"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_cpo_benchmark_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_cpo_benchmark_fee
+msgid "Benchmark Unit Price"
+msgstr "基准价"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_version_form_view
+msgid "Board Material"
+msgstr "板材及层数"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_soft_board2
+msgid "Board Soft / 0.2<S<3 m²"
+msgstr "板费/ 0.2<S<3 m²"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_soft_board3
+msgid "Board Soft / 3<S<10 m²"
+msgstr "板费/ 3<S<10 m²"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_soft_board
+msgid "Board Soft / S<0.2 m²"
+msgstr "板费/ S<0.2 m²"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_combine_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_combine_fee
+msgid "Combine Fee"
+msgstr "拼版收费方式"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_combine_fee_number
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_combine_fee_number
+msgid "Combine Fee Number"
+msgstr "拼版收费数量"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_combine_number
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_combine_number
+msgid "Combine Number"
+msgstr "免费拼版数量"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_company_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_company_id
+msgid "Company"
+msgstr "公司"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_base_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material_base_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_substrate_base_type
+msgid "Copper Base Tye"
+msgstr "基材类型"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.size.type:0
+msgid "Copper Base Tye must be unique in Price List of Copper Base for every verson of price list!"
+msgstr "在每个有效版本的价格表中必须保持基材类型的唯一性!"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_core_fee
+msgid "Core fee"
+msgstr "芯板费用"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material_core_thick
+msgid "Core plate thickness"
+msgstr "芯板厚度"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_cost_price
+msgid "Cost Price List"
+msgstr "成本价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_number_cpo_gold_finger_id
+msgid "Cpo Gold Finger"
+msgstr "金手指"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_date_created
+msgid "Created Date"
+msgstr "创建日期"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_acceptance_criteria_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_etest_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_film_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_number_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_copper_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_steel_mesh_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_text_color_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_tooling_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_aperture_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_inner_copper_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_line_width_spacing_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_outer_copper_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_solder_mask_color_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_substrate_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_surface_treatment_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_text_color_create_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_thickness_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_acceptance_criteria_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_etest_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_film_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_number_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_copper_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_steel_mesh_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_text_color_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_tooling_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_aperture_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_inner_copper_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_line_width_spacing_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_outer_copper_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_solder_mask_color_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_substrate_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_surface_treatment_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_text_color_create_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_thickness_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_bale_currency_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_currency_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_currency_id
+msgid "Currency"
+msgstr "币种"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_delivery
+msgid "Delivery period"
+msgstr "交期/天"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_cpo_delivery
+msgid "Delivery period/H"
+msgstr "交期时间/小时"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.laser_steel_mesh_price_form
+msgid "Delivery time / H"
+msgstr "交期时间 / 小时"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_acceptance_criteria_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_etest_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_film_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_number_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_copper_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_steel_mesh_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_text_color_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_tooling_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_aperture_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_inner_copper_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_line_width_spacing_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_outer_copper_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_solder_mask_color_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_substrate_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_surface_treatment_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_text_color_display_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_thickness_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_etest_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_etest_fee
+msgid "ETest Fee"
+msgstr "测试费"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_etest_fee_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_etest_fee_type
+msgid "ETest Fee Type"
+msgstr "测试费类型"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_form
+msgid "Effective Time"
+msgstr "有效时间"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_bale_end
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_date_end
+msgid "End Date"
+msgstr "结束日期"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_engineering_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_engineering_fee
+msgid "Engineering Fee"
+msgstr "工程费"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_engineering_fee_exceeding
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_engineering_fee_exceeding
+msgid "Engineering Fee Exceeding"
+msgstr "工程超出费"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_engineering_fee_exceeding_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_engineering_fee_exceeding_type
+msgid "Engineering Fee Exceeding type"
+msgstr "工程超出尺寸cm²"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_engineering_fee_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_engineering_fee_type
+msgid "Engineering Fee Type"
+msgstr "工程费类型"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_soft_inner
+msgid "Engineering Soft Inner /m²"
+msgstr "软板内层 /m²"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_soft_outer
+msgid "Engineering Soft Outer /m²"
+msgstr "软板外层 /m²"
+
+#. module: cpo_it_pcb
+#: constraint:pcb.quotation.pricelist.other.line:0
+msgid "Error!\n"
+"The row Line cpo_width and distance overlap other rows."
+msgstr "错误!最小线宽和线距与其他行重叠。"
+
+#. module: cpo_it_pcb
+#: constraint:pcb.quotation.pricelist.film:0
+msgid "Error!\n"
+"The row film min size and max size overlap other rows."
+msgstr "错误!当前行菲林最小面积和最大面积与其它行重叠."
+
+#. module: cpo_it_pcb
+#: constraint:pcb.quotation.pricelist.other.hole:0
+msgid "Error!\n"
+"The row min hole and max hole overlap other rows."
+msgstr "错误！当前行的最小孔径和最大孔径同其它行孔径有重叠！"
+
+#. module: cpo_it_pcb
+#: constraint:pcb.quotation.pricelist.layer.inner.copper:0
+msgid "Error!\n"
+"The row min inner copper and max inner copper overlap other rows."
+msgstr "错误!当前行的最小内层铜厚和最大内层铜厚与其它行有重叠."
+
+#. module: cpo_it_pcb
+#: constraint:pcb.quotation.pricelist.layer.outer.copper:0
+msgid "Error!\n"
+"The row min outer copper and max outer copper overlap other rows."
+msgstr "错误!当前行的最小外层铜厚和最大外层铜厚与其它行有重叠."
+
+#. module: cpo_it_pcb
+#: constraint:pcb.quotation.pricelist.layer.thickness:0
+msgid "Error!\n"
+"The row min thickness and max thickness overlap other rows."
+msgstr "错误!当前行的最小板厚和最大板厚与其它行有重叠."
+
+#. module: cpo_it_pcb
+#: constraint:pcb.quotation.pricelist.other:0
+msgid "Error!\n"
+"The row other fee size overlap other rows."
+msgstr "错误！当前行的其它费用面积与其它行面积重叠！"
+
+#. module: cpo_it_pcb
+#: constraint:pcb.quotation.pricelist.etest:0
+#: constraint:pcb.quotation.pricelist.tooling:0
+msgid "Error!\n"
+"The row test points overlap other rows."
+msgstr "错误！当前行的测试点数与其它行的重叠！"
+
+#. module: cpo_it_pcb
+#: constraint:pcb.quotation.pricelist.version:0
+msgid "Error!\n"
+"This version End Date less than Start Date or Don't have 2 pricelist versions that overlap!"
+msgstr "错误！此版本的结束日期小于开始日期或没有重叠的2个价格表版本！"
+
+#. module: cpo_it_pcb
+#: constraint:pcb.quotation.pricelist:0
+msgid "Every partner price list be unique in active price list."
+msgstr "每个合作伙伴价格表在活动价格表中都是唯一的。"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_extra_markup
+msgid "Extra markup"
+msgstr "额外加收费"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_film_film_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_film_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_film_fee
+msgid "Film Fee"
+msgstr "菲林费菲林费变更计划"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_film_film_fee_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_film_fee_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_film_fee_type
+msgid "Film Fee Type"
+msgstr "菲林费类别"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_cpo_film_upper_limit_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_cpo_film_upper_limit_fee
+msgid "Film Upper Limit Fee"
+msgstr "菲林费最高上限"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.film:0
+msgid "Film size must be unique in active version of pcb price list!"
+msgstr "菲林面积在当前有效版本的价格表中必须确保其唯一性!"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,help:cpo_it_pcb.field_pcb_quotation_pricelist_version_date_start
+msgid "First valid date for the version."
+msgstr "当前价格表版本的第一个有效日期"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_bale_general_bool
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_general_price
+msgid "General Price List"
+msgstr "通用价格表"
+
+#. module: cpo_it_pcb
+#: constraint:pcb.quotation.pricelist:0
+msgid "General Price or Cost Price must be unique in active price list."
+msgstr "一般价格或成本价格在有效价格表中必须是唯一的。"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,help:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_sequence
+msgid "Gives the order in which the pricelist size items will be checked. The evaluation gives highest priority to lowest sequence and stops as soon as a matching item is found."
+msgstr "每个价格表中的不同面积价格项目的序号，用于系统在确认线路板价格计算的时候不同项目的优先级别，序号越小的序号优先级越高以此类推，直到找到相符的项目的时候为此。"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_cpo_gold_finger_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_number_cpo_gold_finger_fee
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_version_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_gold_finger_from
+msgid "Gold Finger Fee"
+msgstr "金手指费用"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_number_cpo_gold_finger_number
+msgid "Gold Finger Number"
+msgstr "金手指根数"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_cpo_gold_finger_thickness
+msgid "Gold Finger Thickness"
+msgstr "金手指金厚"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_copper_hole_copper_fee
+msgid "Hole Copper Fee"
+msgstr "孔铜费用"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_other_hole_copper
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_other_hole_copper_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_other_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_hole_copper_tree
+msgid "Hole Copper Thickness"
+msgstr "孔铜厚度"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_copper_hole_copper_type
+msgid "Hole Copper Type"
+msgstr "收费类型"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_density
+msgid "Hole density"
+msgstr "孔密度-万孔/M2"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_Layer_size_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_size_type_form_view
+msgid "Hours"
+msgstr "小时"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_acceptance_criteria_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_etest_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_film_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_number_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_copper_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_steel_mesh_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_text_color_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_tooling_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_id_4952
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_aperture_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_inner_copper_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_line_width_spacing_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_outer_copper_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_solder_mask_color_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_substrate_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_surface_treatment_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_text_color_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_thickness_id
+msgid "ID"
+msgstr "ID"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,help:cpo_it_pcb.field_pcb_quotation_pricelist_general_price
+msgid "If Checked this option, it will allow you to all PCB Quotation without partner ID"
+msgstr "如果你确认此项，将准许此报价表不指定报价。也就是此报价表为通用报价表，所有没有专用价格表的业务伙伴将适用此报价表。"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,help:cpo_it_pcb.field_package_price_main_active
+#: model:ir.model.fields,help:cpo_it_pcb.field_pcb_quotation_pricelist_active
+msgid "If unchecked, it will allow you to hide the pricelist without removing it."
+msgstr "如果不选中，允许你隐藏价格表而无需删除"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_tax
+msgid "Include Tax"
+msgstr "含税价"
+
+#. module: cpo_it_pcb
+#: code:addons/cpo_it_pcb/models/models.py:180
+#, python-format
+msgid "Incorrect 'General Price List and Prict List Type' value"
+msgstr "“常规价格清单和价格清单类型”值不正确"
+
+#. module: cpo_it_pcb
+#: code:addons/cpo_it_pcb/models/package_price_pcb.py:32
+#, python-format
+msgid "Incorrect 'General Price List' value"
+msgstr "“常规价格清单”值不正确"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material_delivery
+msgid "Increase delivery"
+msgstr "增加交期时间/(H)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_delivery3
+msgid "Increase delivery / S<10m²"
+msgstr "增加交期/ S<10m²"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_delivery
+msgid "Increase delivery / S<1m²"
+msgstr "增加交期/ S<1m²"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_delivery2
+msgid "Increase delivery / S<3m²"
+msgstr "增加交期/ S<3m²"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_inner_copper_add_delivery
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_outer_copper_add_delivery
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_solder_mask_color_add_delivery
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_surface_treatment_add_delivery
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_text_color_add_delivery
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_thickness_add_delivery
+msgid "Increase delivery time"
+msgstr "增加交期时间/天"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_delivery_time
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_delivery_time
+msgid "Increase delivery time (H)"
+msgstr "增加交期时间(H)"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pp_inner_copper
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_inner_copper_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_inner_copper_tree
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_layers_number_form
+msgid "Inner Copper"
+msgstr "内铜"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_inner_copper_inner
+msgid "Inner copper thickness"
+msgstr "内铜厚"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_inner_hole_line
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_inner_line
+msgid "Inner hole to line"
+msgstr "内层孔到线"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_inner_hole_line_fee
+msgid "Inner hole to line fee"
+msgstr "内层孔到线费用"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_form_view
+#: selection:pcb.quotation.pricelist.acceptance.criteria,acceptance_criteria_type:0
+#: selection:pcb.quotation.pricelist.etest,price_type:0
+#: selection:pcb.quotation.pricelist.film,film_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.inner.copper,add_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.outer.copper,add_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,cpo_benchmark_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,engineering_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,etest_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,film_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,material_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.thickness,add_fee_type:0
+#: selection:pcb.quotation.pricelist.other.hole,price_type:0
+#: selection:pcb.quotation.pricelist.other.hole.copper,hole_copper_type:0
+#: selection:pcb.quotation.pricelist.other.line,price_type:0
+#: selection:pcb.quotation.pricelist.silkscreen.color,price_type:0
+#: selection:pcb.quotation.pricelist.size.type,cpo_benchmark_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,engineering_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,etest_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,film_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,material_fee_type:0
+#: selection:pcb.quotation.pricelist.special.material,price_type:0
+#: selection:pcb.quotation.pricelist.special.process,price_type:0
+#: selection:pcb.quotation.pricelist.surface.process,price_type:0
+#: selection:pcb.quotation.pricelist.text.color,price_type:0
+#: selection:pcb.quotation.pricelist.tooling,price_type:0
+msgid "Item"
+msgstr "款"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.layer.size,volume_type:0
+msgid "Large Volume"
+msgstr "大批量"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.layer.size,volume_type:0
+msgid "Larger Volume"
+msgstr "超大批量"
+
+#. module: cpo_it_pcb
+#: model:ir.actions.act_window,name:cpo_it_pcb.laser_steel_mesh_price_window
+#: model:ir.ui.menu,name:cpo_it_pcb.menu_laser_price
+msgid "Laser Steel Mesh Price"
+msgstr "激光钢网价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_laser_steel_mesh_price
+#: model:ir.ui.view,arch_db:cpo_it_pcb.laser_steel_mesh_price_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.laser_steel_mesh_price_tree
+msgid "Laser steel mesh price"
+msgstr "激光钢网价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_acceptance_criteria___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_etest___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_film___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_number___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_copper___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_steel_mesh___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_text_color___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_tooling___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_aperture___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_inner_copper___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_line_width_spacing___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_outer_copper___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_solder_mask_color___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_substrate___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_surface_treatment___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_text_color___last_update
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_thickness___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_acceptance_criteria_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_etest_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_film_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_number_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_copper_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_steel_mesh_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_text_color_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_tooling_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_aperture_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_inner_copper_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_line_width_spacing_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_outer_copper_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_solder_mask_color_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_substrate_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_surface_treatment_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_text_color_write_uid
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_thickness_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_acceptance_criteria_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_etest_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_film_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_number_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_copper_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_steel_mesh_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_text_color_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_tooling_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_aperture_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_inner_copper_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_line_width_spacing_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_outer_copper_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_solder_mask_color_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_substrate_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_surface_treatment_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_text_color_write_date
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_thickness_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,help:cpo_it_pcb.field_pcb_quotation_pricelist_version_date_end
+msgid "Last valid date for the version."
+msgstr "此版本的最大有效时间。"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_layer_number
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_layer_number_id
+msgid "Layer Number"
+msgstr "层数"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.layer.item:0
+msgid "Layer Number must be unique in Price List of Board Material for every version of price list!"
+msgstr "必须确保线路板层数的唯一性在每个版本的板材价格表中!"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.layer.size:0
+msgid "Layer size must be unique for per partner in Price List of Board Size!"
+msgstr "请确保线路板面积的唯一性在每个效版本的不同面积板材价格表中!"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_form_view
+msgid "Line Hole Density"
+msgstr "孔径"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pp_line_width_spacing
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_spacing_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_area_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_line_width_spacing_tree
+msgid "Line Width Spacing"
+msgstr "细线费用倍数"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_form_view
+msgid "Line cpo_Width"
+msgstr "线宽"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_moq_pcs_fee
+msgid "MOQ"
+msgstr "MOQ"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_cpo_max_fee
+msgid "MOQ <= /Min Fee"
+msgstr "MOQ<=最低收费"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_cpo_min_fee
+msgid "MOQ > /Min Fee"
+msgstr "MOQ>最低收费"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_cpo_moq
+msgid "MOQ/μ\""
+msgstr "金手指金厚标准MOQ/μ\""
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_material_fee_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_material_fee_type
+msgid "Material Fee Type"
+msgstr "材料费类型"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_material_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_material_fee
+msgid "Material Unit Price"
+msgstr "板材单价"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_max_delay_hours
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_max_delay_hours
+msgid "Max Delay Hours"
+msgstr "正常交期(H)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_max_hole
+msgid "Max Hole"
+msgstr "最大孔径"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_copper_hole_copper_thick1
+msgid "Max Hole Copper Thick"
+msgstr "最大孔铜厚度"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_hole_tree_view
+msgid "Max Hole(mil)"
+msgstr "最大孔径(mil)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_max_inner_copper
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_max_inner_copper
+msgid "Max Inner Copper"
+msgstr "最大内层铜厚"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line_max_line_cpo_width
+msgid "Max Line cpo_Width and Distance"
+msgstr "最大线宽和线距"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_line_tree_view
+msgid "Max Line cpo_Width(mil)"
+msgstr "最大线宽与线距(mil)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_max_outer_copper
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_max_outer_copper
+msgid "Max Outer Copper"
+msgstr "最大外层铜厚"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_film_max_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_max_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_max_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_max_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_max_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_max_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_max_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_max_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_text_color_max_size
+msgid "Max Size"
+msgstr "最大面积"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_size_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_silkscreen_color_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_special_material_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_special_process_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_surface_process_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_text_color_tree_view
+msgid "Max Size(㎡)"
+msgstr "最大面积(㎡)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_etest_max_test_points
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_tooling_max_test_points
+msgid "Max Test Points"
+msgstr "最大测试点"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_max_thickness
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_max_thickness
+msgid "Max Thickness"
+msgstr "最大板厚"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_tree_view
+msgid "Max Thickness(mm)"
+msgstr "最大板厚(mm)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_aperture_aperture_max
+msgid "Maximum Aperture"
+msgstr "最大孔径/mil"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_area_max
+msgid "Maximum Area"
+msgstr "最大面积/㎡"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_line_width_spacing_lws_max
+msgid "Maximum line width"
+msgstr "最大线宽线距/mil"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_thickness_max_thick
+msgid "Maximum thickness"
+msgstr "最大板厚/mm"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.layer.size,volume_type:0
+msgid "Medium Volume"
+msgstr "中批量"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_memo
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_memo
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_memo
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_version_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_view
+msgid "Memo"
+msgstr "备忘录"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_min_delay_hours
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_min_delay_hours
+msgid "Min Delay Hours"
+msgstr "最快交期(H)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_min_hole
+msgid "Min Hole"
+msgstr "最小孔"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_copper_hole_copper_thick
+msgid "Min Hole Copper Thick"
+msgstr "最小孔铜厚度"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.other.hole:0
+msgid "Min Hole and Max Hole must be unique per Price List verson!!"
+msgstr "最小孔径与最大孔径不同面积的价格表中必须保持唯一性!!"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_hole_tree_view
+msgid "Min Hole(mil)"
+msgstr "最小孔径(mil)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_min_inner_copper
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_min_inner_copper
+msgid "Min Inner Copper"
+msgstr "最小内层铜厚"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line_min_line_cpo_width
+msgid "Min Line cpo_Width and Distance"
+msgstr "线宽与线距"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.other.line:0
+msgid "Min Line cpo_Width and Max Line cpo_Width must be unique per Price List verson!!"
+msgstr "最小线宽和最大线宽必须是每个价格列表唯一的!!"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_line_tree_view
+msgid "Min Line cpo_Width(mil)"
+msgstr "最小线宽与线距(mil)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_min_outer_copper
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_min_outer_copper
+msgid "Min Outer Copper"
+msgstr "最小外层铜厚"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_film_min_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_min_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_min_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_min_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_min_size
+msgid "Min Size"
+msgstr "最小面积"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_special_material_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_special_process_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_tree_view
+msgid "Min Size(㎡)"
+msgstr "最小面积(㎡)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_etest_min_test_points
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_tooling_min_test_points
+msgid "Min Test Points"
+msgstr "最小测试点"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.tooling:0
+msgid "Min Test Points and Max Test Points must be unique per Price List verson!"
+msgstr "最小测试点与最大测试点在当前版本中必须保持其唯一性!"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.etest:0
+msgid "Min Test Points and Max Test Points must be unique per Price List verson!!"
+msgstr "最小测点和最大测试点在其它费用价格表必须确保其唯一性!!"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_min_thickness
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_min_thickness
+msgid "Min Thickness"
+msgstr "最小板厚/mm"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_tree_view
+msgid "Min Thickness(mm)"
+msgstr "最小板厚(mm)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_aperture_aperture_min
+msgid "Minimum Aperture"
+msgstr "最小孔径/mil"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_area_min
+msgid "Minimum Area"
+msgstr "最小面积/㎡"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_area_form
+msgid "Minimum hole"
+msgstr "最小孔"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_line_width_spacing_lws_min
+msgid "Minimum line width"
+msgstr "最小线宽线距/mil"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_thickness_min_thick
+msgid "Minimum thickness"
+msgstr "最小板厚/mm"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_name
+msgid "Name"
+msgstr "名称"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.other.steel.mesh,type_steel_mesh:0
+msgid "No"
+msgstr "不需要"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pp_layer_number
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_layer_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_inner_copper_ln_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_outer_copper_ln_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_substrate_ln_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_thickness_ln_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_area_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_layers_number_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_layers_number_tree
+msgid "Number of Layers"
+msgstr "层数"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_cpo_weight
+msgid "One slice weight/KG"
+msgstr "单片重量/KG"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_version_form_view
+msgid "Other Fee"
+msgstr "其它费用"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_acceptance_criteria_price_other_fee_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_copper_price_other_fee_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_price_other_fee_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line_price_other_fee_id
+msgid "Other Fee of Price List"
+msgstr "其它费用价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pp_outer_copper
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_outer_copper_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_layers_number_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_outer_copper_tree
+msgid "Outer Copper"
+msgstr "外铜"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_outer_copper_outer
+msgid "Outer copper thickness"
+msgstr "外铜厚"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.layer.inner.copper:0
+msgid "PCB Board Inner Copper must be unique per price list!"
+msgstr "线路板内层铜厚在每个有效版本价格表中必须确保其唯一性！"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.layer.outer.copper:0
+msgid "PCB Board Outer Copper must be unique per price list!"
+msgstr "线路板外层铜厚在每个效版本必须保持其唯一性!"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.layer.thickness:0
+msgid "PCB Board Thickness must be unique per price list!"
+msgstr "PCB板厚必须确保其唯一性!"
+
+#. module: cpo_it_pcb
+#: model:ir.actions.act_window,name:cpo_it_pcb.PPM_window
+#: model:ir.model,name:cpo_it_pcb.model_package_price_main
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_main_id
+#: model:ir.ui.menu,name:cpo_it_pcb.package_list_1
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_tree
+msgid "PCB Package Price List"
+msgstr "PCB打包价价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_view_search
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_view_tree
+msgid "PCB Price List"
+msgstr "PCB价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_view_search
+msgid "PCB Price List Search"
+msgstr "价格表查询"
+
+#. module: cpo_it_pcb
+#: model:ir.actions.act_window,name:cpo_it_pcb.pcb_quotation_pricelist_action
+#: model:ir.ui.menu,name:cpo_it_pcb.menu_pcb_quotation_pricelist_action
+msgid "PCB Routine Price List"
+msgstr "PCB常规价格表"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.acceptance.criteria,acceptance_criteria_type:0
+#: selection:pcb.quotation.pricelist.film,film_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.inner.copper,add_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.outer.copper,add_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,cpo_benchmark_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,engineering_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,etest_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,film_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,material_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.thickness,add_fee_type:0
+#: selection:pcb.quotation.pricelist.other.hole,price_type:0
+#: selection:pcb.quotation.pricelist.other.hole.copper,hole_copper_type:0
+#: selection:pcb.quotation.pricelist.other.line,price_type:0
+#: selection:pcb.quotation.pricelist.silkscreen.color,price_type:0
+#: selection:pcb.quotation.pricelist.size.type,cpo_benchmark_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,engineering_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,etest_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,film_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,material_fee_type:0
+#: selection:pcb.quotation.pricelist.special.material,price_type:0
+#: selection:pcb.quotation.pricelist.special.process,price_type:0
+#: selection:pcb.quotation.pricelist.surface.process,price_type:0
+#: selection:pcb.quotation.pricelist.text.color,price_type:0
+msgid "PCS"
+msgstr "PCS"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_pp_fee
+msgid "PP fee"
+msgstr "PP费用"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_name
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_form
+msgid "Package Price List Name"
+msgstr "打包价格表名称"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_bale_partner_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_partner_id
+msgid "Partner"
+msgstr "业务伙伴"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_form_view
+msgid "Per"
+msgstr "每"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_percentage
+msgid "Percentage"
+msgstr "百分比"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.version:0
+msgid "Please make sure of currency, tax, date start and date end in every active price lsit version!"
+msgstr "请确保每个有效价格表版本的货币，税，日期开始和日期结束!"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.etest,price_type:0
+#: selection:pcb.quotation.pricelist.tooling,price_type:0
+msgid "Point"
+msgstr "点"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_pore_density
+msgid "Pore density"
+msgstr "孔密度"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_pore_density_fee
+msgid "Pore density fee"
+msgstr "孔密度费用"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_cpo_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_etest_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_text_color_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_tooling_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_aperture_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_inner_copper_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_line_width_spacing_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_outer_copper_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_solder_mask_color_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_substrate_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_surface_treatment_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_text_color_price
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_thickness_price
+msgid "Price"
+msgstr "价格"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_acceptance_criteria_price_class
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_price_class
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line_price_class
+msgid "Price Class"
+msgstr "价格属性"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_pricelist_id
+msgid "Price List"
+msgstr "价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_name
+msgid "Price List Number"
+msgstr "价格表单号"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_pricelist_type
+msgid "Price List Type"
+msgstr "价格表类型"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_view
+msgid "Price List Version"
+msgstr "价格表版本"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_version
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_etest_price_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_film_price_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_price_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_price_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_price_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_steel_mesh_price_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_price_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_price_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_price_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_price_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_text_color_price_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_tooling_price_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_price_version_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_version_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_version_tree_view
+msgid "Price List Versions"
+msgstr "价格表版本"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_layer_item
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_layer_item_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_layer_item_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_layer_item_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_layer_item_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_items_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material_layer_item_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_tree_view
+msgid "Price List of Board Material"
+msgstr "不同板材价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_layer_size
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_item_size_ids
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_size_item_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_Layer_size_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_size_tree_view
+msgid "Price List of Board Size"
+msgstr "各面积板材价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_layer_thickness
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_item_thickness_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_form_view
+msgid "Price List of Board Thickness"
+msgstr "各板厚价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_size_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_type_item_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_Layer_size_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_inner_copper_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_outer_copper_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_thickness_tree_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_size_type_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_size_type_tree_view
+msgid "Price List of Copper Base"
+msgstr "基材价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_etest
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_etest_ids
+msgid "Price List of ETest"
+msgstr "飞针测试价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_film
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_film_ids
+msgid "Price List of Film"
+msgstr "菲林价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_gold_finger
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_gold_finger_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_gold_finger_from
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_gold_finger_tree
+msgid "Price List of Gold Finger"
+msgstr "金手指价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_gold_finger_number
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_cpo_gold_finger_number_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_gold_finger_number_tree
+msgid "Price List of Gold Finger Number"
+msgstr "金手指根数"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_other_hole
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_other_hole_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_hole_tree_view
+msgid "Price List of Hole Density"
+msgstr "不同孔径价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_layer_inner_copper
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_item_inner_copper_ids
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_item_rogers_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_form_view
+msgid "Price List of Inner Copper"
+msgstr "各厚度内铜价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_other_line
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_other_line_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_line_tree_view
+msgid "Price List of Line cpo_width and Distance"
+msgstr "不同线宽与线距价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_other
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_other_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_tree_view
+msgid "Price List of Other Fee"
+msgstr "其它费用"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_layer_outer_copper
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_item_item_outer_copper_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_form_view
+msgid "Price List of Outer Copper"
+msgstr "各厚度外铜价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_silkscreen_color
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_silkscreencolor_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_silkscreen_color_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_silkscreen_color_tree_view
+msgid "Price List of Silkscreen Color"
+msgstr "阻焊油墨的价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_special_material
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_smaterial_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_special_material_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_special_material_tree_view
+msgid "Price List of Special Material"
+msgstr "特殊材料价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_special_process
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_sprocess_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_special_process_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_special_process_tree_view
+msgid "Price List of Special Process"
+msgstr "特殊工艺价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_surface_process
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_surfaceprocess_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_surface_process_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_surface_process_tree_view
+msgid "Price List of Surface Process"
+msgstr "工艺价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_tooling
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_tooling_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_tooling_tree_view
+msgid "Price List of Test Tooling"
+msgstr "测试架价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_text_color
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_textcolor_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_text_color_form_view
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_text_color_tree_view
+msgid "Price List of Text Color"
+msgstr "字符油墨价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.menu,name:cpo_it_pcb.menu_pcb_quotation_pricelist_main
+msgid "Price Lists"
+msgstr "PCB价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_etest_price_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_hole_price_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_line_price_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_price_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_price_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_price_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_price_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_text_color_price_type
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_tooling_price_type
+msgid "Price Type"
+msgstr "价格类型"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.laser_steel_mesh_price_form
+msgid "Price and weight"
+msgstr "价格和重量"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_rogers_material_price
+msgid "Price/㎡"
+msgstr "价格/㎡"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_cpo_profit_ratio
+msgid "Profit ratio/%"
+msgstr "利润/%"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.layer.size,volume_type:0
+msgid "Prototype"
+msgstr "样板"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist,pricelist_type:0
+msgid "Purchase Price List"
+msgstr "采购价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_name
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_quantity_1
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_quantity_2
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_area_quantity
+msgid "Quantity"
+msgstr "数量"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.laser_steel_mesh_price_form
+msgid "Quantity and delivery"
+msgstr "数量和交期"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.laser_steel_mesh_price_form
+msgid "Quantity range"
+msgstr "数量范围"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_quick_fee
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_quick_fee
+msgid "Quick Fee(%)"
+msgstr "加急费用(%)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_quick_time
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_quick_time
+msgid "Quick Time(H)"
+msgstr "加急时间(H)"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_rogers_material
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_layer_item_form_view
+msgid "Rogers Material"
+msgstr "Rogers材料"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_delivery_time_1
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_delivery_time_1
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_delivery_time_1
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_delivery_time_1
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_delivery_time_1
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_delivery_time_1
+msgid "S<3/Increase delivery time (H)"
+msgstr "S<3/增加交期时间 (H)"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_delivery_time_2
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_inner_copper_delivery_time_2
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_outer_copper_delivery_time_2
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_thickness_delivery_time_2
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_delivery_time_2
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_delivery_time_2
+msgid "S>=3/Increase delivery time (H)"
+msgstr "S>=3/增加交期时间 (H)"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.acceptance.criteria,acceptance_criteria_type:0
+#: selection:pcb.quotation.pricelist.film,film_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.inner.copper,add_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.outer.copper,add_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,cpo_benchmark_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,engineering_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,etest_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,film_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,material_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.thickness,add_fee_type:0
+#: selection:pcb.quotation.pricelist.other.hole,price_type:0
+#: selection:pcb.quotation.pricelist.other.hole.copper,hole_copper_type:0
+#: selection:pcb.quotation.pricelist.other.line,price_type:0
+#: selection:pcb.quotation.pricelist.silkscreen.color,price_type:0
+#: selection:pcb.quotation.pricelist.size.type,cpo_benchmark_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,engineering_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,etest_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,film_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,material_fee_type:0
+#: selection:pcb.quotation.pricelist.special.material,price_type:0
+#: selection:pcb.quotation.pricelist.special.process,price_type:0
+#: selection:pcb.quotation.pricelist.surface.process,price_type:0
+#: selection:pcb.quotation.pricelist.text.color,price_type:0
+msgid "SET"
+msgstr "SET"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist,pricelist_type:0
+msgid "Sales Price List"
+msgstr "销售价格表"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_sequence
+msgid "Sequence"
+msgstr "序号"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_silkscreen_color_silkscreen_color
+msgid "SilkScreen Color"
+msgstr "阻焊颜色"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_version_form_view
+msgid "Silkscreen Color"
+msgstr "阻焊颜色"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.silkscreen.color:0
+msgid "Silkscreen Color and Max Size must be unique per customer!"
+msgstr "每个业务合作伙伴价格表的每个版本中阻焊颜色和最大面积必须保持唯一性！"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.laser_steel_mesh_price_form
+msgid "Size and thickness"
+msgstr "尺寸和厚度"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.acceptance.criteria,acceptance_criteria_type:0
+#: selection:pcb.quotation.pricelist.film,film_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.inner.copper,add_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.outer.copper,add_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,cpo_benchmark_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,engineering_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,etest_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,film_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,material_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.thickness,add_fee_type:0
+#: selection:pcb.quotation.pricelist.other.hole,price_type:0
+#: selection:pcb.quotation.pricelist.other.hole.copper,hole_copper_type:0
+#: selection:pcb.quotation.pricelist.other.line,price_type:0
+#: selection:pcb.quotation.pricelist.silkscreen.color,price_type:0
+#: selection:pcb.quotation.pricelist.size.type,cpo_benchmark_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,engineering_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,etest_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,film_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,material_fee_type:0
+#: selection:pcb.quotation.pricelist.special.material,price_type:0
+#: selection:pcb.quotation.pricelist.special.process,price_type:0
+#: selection:pcb.quotation.pricelist.surface.process,price_type:0
+#: selection:pcb.quotation.pricelist.text.color,price_type:0
+msgid "Size(cm²)"
+msgstr "面积(cm²)"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.acceptance.criteria,acceptance_criteria_type:0
+#: selection:pcb.quotation.pricelist.film,film_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.inner.copper,add_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.outer.copper,add_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,cpo_benchmark_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,engineering_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,etest_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,film_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.size,material_fee_type:0
+#: selection:pcb.quotation.pricelist.layer.thickness,add_fee_type:0
+#: selection:pcb.quotation.pricelist.other.hole,price_type:0
+#: selection:pcb.quotation.pricelist.other.hole.copper,hole_copper_type:0
+#: selection:pcb.quotation.pricelist.other.line,price_type:0
+#: selection:pcb.quotation.pricelist.silkscreen.color,price_type:0
+#: selection:pcb.quotation.pricelist.size.type,cpo_benchmark_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,engineering_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,etest_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,film_fee_type:0
+#: selection:pcb.quotation.pricelist.size.type,material_fee_type:0
+#: selection:pcb.quotation.pricelist.special.material,price_type:0
+#: selection:pcb.quotation.pricelist.special.process,price_type:0
+#: selection:pcb.quotation.pricelist.surface.process,price_type:0
+#: selection:pcb.quotation.pricelist.text.color,price_type:0
+msgid "Size(㎡)"
+msgstr "面积(㎡)"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.layer.size,volume_type:0
+msgid "Small Volume"
+msgstr "小批量"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_soft_hard
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_soft_hard_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_version_form_view
+msgid "Soft Hard"
+msgstr "软硬结合"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pp_solder_mask_color
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_solder_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_solder_mask_color_ink_color_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_area_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_solder_mask_color_tree
+msgid "Solder Mask Color"
+msgstr "阻焊颜色"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_material_smaterial
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_version_form_view
+msgid "Special Material"
+msgstr "特殊材料"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.special.material:0
+msgid "Special Material and Max Size must be unique per price list for every customer!"
+msgstr "每个业务伙伴的价格表中每个版本的特殊材料和最小面积必须保持唯一性！"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_special_process_sprocess
+msgid "Special Process"
+msgstr "特殊工艺"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.special.process:0
+msgid "Special Process and Max Size must be unique per pricelist for every customer!"
+msgstr "每个业务伙伴的不同版本的价格表中特殊工艺和最大面积必须保持唯一性！"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_version_form_view
+msgid "Special Sprocess"
+msgstr "特殊工艺"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pp_area
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_bale_area_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_aperture_area_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_area_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_line_width_spacing_area_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_solder_mask_color_area_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_surface_treatment_area_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_text_color_area_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_area_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_area_tree
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_form
+msgid "Specification Size Area"
+msgstr "规格尺寸"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_package_price_main_bale_start
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_date_start
+msgid "Start Date"
+msgstr "开始日期"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_other_steel_mesh_tree
+msgid "Steel Mesh"
+msgstr "钢网"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_steel_thickness_id
+msgid "Steel Thickness"
+msgstr "钢网厚度"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pcb_quotation_pricelist_other_steel_mesh
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_with_frame_ids
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_version_form_view
+msgid "Steel mesh"
+msgstr "钢网"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_laser_steel_mesh_price_steel_size_id
+msgid "Steel mesh size"
+msgstr "尺寸及有效面积"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_steel_mesh_cpo_frame_kg
+msgid "Steel mesh weight / KG"
+msgstr "钢网重量"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_steel_mesh_cpo_frame_fee
+msgid "Steel net fee"
+msgstr "钢网费"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pp_substrate
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_substrate_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_layers_number_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_substrate_tree
+msgid "Substrate"
+msgstr "基材"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_surface
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_surface_treatment_surface_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_version_form_view
+msgid "Surface Process"
+msgstr "表面工艺"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.surface.process:0
+msgid "Surface Process and Max Size and Thick gold must be unique per pricelist!"
+msgstr "每个价格表必须是唯一的表面处理、最大尺寸、厚金！"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pp_surface_treatment
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_surface_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_area_form
+msgid "Surface Treatment"
+msgstr "表面处理"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_version_tax_id
+msgid "Taxes"
+msgstr "税金"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_version_form_view
+msgid "Test Tooling"
+msgstr "测试架"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pp_text_color
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_text_color_text_color
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_area_text_id
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_text_color_ink_color_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_area_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_text_color_tree
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_version_form_view
+msgid "Text Color"
+msgstr "文字颜色"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.text.color:0
+msgid "Text Color and Max Size must be unique per pricelist for every customer!"
+msgstr "每一个业务伙伴不同版本的价格表中必须保持字符颜色和最大面积的唯一性！"
+
+#. module: cpo_it_pcb
+#: code:addons/cpo_it_pcb/models/increase_models.py:115
+#, python-format
+msgid "The blind hole or burying of your choice should be set in the ‘Blind hole’ section."
+msgstr "你选择的埋盲孔或者埋盲请在‘埋盲孔’栏目进行设置"
+
+#. module: cpo_it_pcb
+#: code:addons/cpo_it_pcb/models/package_price_pcb.py:33
+#, python-format
+msgid "The general package price list already exists and cannot be created"
+msgstr "通用打包价价格表已经存在无需再创建"
+
+#. module: cpo_it_pcb
+#: code:addons/cpo_it_pcb/models/models.py:181
+#, python-format
+msgid "The general price sales table already exists and no longer create"
+msgstr "一般价格销售表已存在且不再创建"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_surface_process_thick_gold
+msgid "Thick gold"
+msgstr "金厚"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_surface_process_tree_view
+msgid "Thick gold(μ\")"
+msgstr "金厚(μ\")"
+
+#. module: cpo_it_pcb
+#: model:ir.model,name:cpo_it_pcb.model_pp_thickness
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_layer_number_thickness_id
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_layers_number_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.PPM_thickness_tree
+msgid "Thickness"
+msgstr "板厚"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pp_surface_treatment_thick_gold
+msgid "Thickness Gold"
+msgstr "金厚"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,help:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_max_delay_hours
+#: model:ir.model.fields,help:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_max_delay_hours
+msgid "This is the max delay in days between the sales order confirmation and the  reception of goods for this PCB and for the customer. It is used by the scheduler to order requests based on reordering delays."
+msgstr "正常交期是指客户确认订单到客户收到线路板的工厂正常生产和投递时间(也就是不加急的情况下)。工厂生产安排也根据此日期来进行生产安排。"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,help:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_min_delay_hours
+#: model:ir.model.fields,help:cpo_it_pcb.field_pcb_quotation_pricelist_size_type_min_delay_hours
+msgid "This is the min delay in days between the sales order confirmation and the  reception of goods for this PCB and for the customer. It is used by the scheduler to order requests based on reordering delays."
+msgstr "最快交期是指客户确认订单与客户收到线路板的最快时间。最快交付日期通过被用于系统安排生产的依据。"
+
+#. module: cpo_it_pcb
+#: code:addons/cpo_it_pcb/models/increase_models.py:114
+#, python-format
+msgid "Tips"
+msgstr "温馨提示"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_soft_hard_total_layers
+msgid "Total Layers"
+msgstr "总层数"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_other_steel_mesh_type_steel_mesh
+msgid "Type Steel Mesh"
+msgstr "钢网类型"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_cpo_cost_fee
+msgid "Unit costs"
+msgstr "单价计算成本"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_date_updated
+msgid "Updated Date"
+msgstr "变更日期"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_layer_size_volume_type
+msgid "Volume Type"
+msgstr "批量类型"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,help:cpo_it_pcb.field_pcb_quotation_pricelist_version_active
+msgid "When a version is duplicated it is set to non active, so that the dates do not overlaps with original version. You should change the dates and reactivate the pricelist"
+msgstr "当复制一个版本的报价表时候系统自动将其设置为非活跃状态以保证与原来版本的日期不重叠。你必须改变复制版本的有效日间然后重新激活它。"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.other.steel.mesh,type_steel_mesh:0
+msgid "With Frame"
+msgstr "有边钢网"
+
+#. module: cpo_it_pcb
+#: selection:pcb.quotation.pricelist.other.steel.mesh,type_steel_mesh:0
+msgid "Without Frame"
+msgstr "无边钢网"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_layer_size_form
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_size_type_form
+msgid "cm²"
+msgstr "cm²"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.inherid_pcb_quotation_pricelist_layer_item_form_view
+msgid "mil"
+msgstr "mil"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist.other:0
+msgid "min size and max size of the Other fee must be unique per Price List verson!!"
+msgstr "最小面积和厚大面积在其它费用价格表中必须确保其唯一性!!"
+
+#. module: cpo_it_pcb
+#: model:ir.ui.view,arch_db:cpo_it_pcb.pcb_quotation_pricelist_layer_item_form_view
+msgid "mm"
+msgstr "mm"
+
+#. module: cpo_it_pcb
+#: model:ir.model.fields,field_description:cpo_it_pcb.field_pcb_quotation_pricelist_gold_finger_name
+msgid "name"
+msgstr "名称"
+
+#. module: cpo_it_pcb
+#: sql_constraint:pcb.quotation.pricelist:0
+msgid "price list must be unique per partner!"
+msgstr "价格表必须是每个合作伙伴的唯一！"
+
+#. module: cpo_it_pcb
+#: model:pcb.quotation.pricelist,name:cpo_it_pcb.cpo_it_pcb_currency_001_test
+#: model:pcb.quotation.pricelist.version,name:cpo_it_pcb.cpo_it_pcb_currency_002_test
+msgid "价格基准-001"
+msgstr "价格基准-001"
+

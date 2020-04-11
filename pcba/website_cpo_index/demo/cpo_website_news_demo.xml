@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="cpo_website_news_list_1" model="cpo_news_list">
+            <!--<field name="cpo_layer_photo" type="base64" file="website_cpo_advertising/static/src/images/layerimg/layer_1_2.jpg"/>-->
+            <field name="sequence">2</field>
+            <field name="cpo_new_title">What is a PCB?</field>
+            <field name='cpo_new_date'>2019-01-20</field>
+            <field name='cpo_new_editor'>Charlie</field>
+            <field name='cpo_new_content'>
+                <![CDATA[
+                    <p>
+                        PCB (Printed Circuit Board), the Chinese name for printed circuit boards, also known as printed circuit boards,
+                        is an important electronic component, a support for electronic components, and a carrier for electrical
+                        connection of electronic components. Because it is made by electronic printing, it is called a "printing" circuit board.
+                    </p>
+                    <img src="/website_cpo_advertising/static/src/images/layerimg/layer_1_2.jpg" />
+                    <p>
+                        After the electronic equipment adopts the printed board, due to the consistency of the same printed board,
+                        the manual wiring is avoided, and the electronic components can be automatically inserted or mounted,
+                        automatically soldered, and automatically detected to ensure the quality of the electronic equipment. ,
+                         Increased labor productivity, reduced costs, and ease of maintenance.
+                    </p>
+                ]]>
+            </field>
+        </record>
+        <record id="cpo_website_news_list_2" model="cpo_news_list">
+            <!--<field name="cpo_layer_photo" type="base64" file="website_cpo_advertising/static/src/images/layerimg/layer_1_2.jpg"/>-->
+            <field name="sequence">1</field>
+            <field name="cpo_new_title">What is a PCBA?</field>
+            <field name='cpo_new_date'>2019-01-23</field>
+            <field name='cpo_new_editor'>Charlie</field>
+            <field name='cpo_new_content'>
+                <![CDATA[
+                    <p>
+                        PCBA is the abbreviation of Printed Circuit Board +Assembly in English, which means that the PCB blank board
+                        passes through the SMT upper part, and then passes through the whole process of DIP plug-in, referred to as PCBA.
+                        This is a commonly used method in the country, and the standard way of writing in Europe and America is PCB'A,
+                        plus "'", which is called the official idiom.
+                    </p>
+                    <img src="/website_cpo_sale/static/src/images/pcba_1.jpg"/>
+                    <p>
+                        Printed circuit boards, also known as printed circuit boards, printed circuit boards, often use the English
+                        abbreviation PCB (Printed circuit board), is an important electronic component, is the support of electronic
+                        components, It is the provider of the circuit connection of electronic components. Because it is made using
+                        electronic printing technology, it is called a "printing" circuit board.
+                    </p>
+                    <p>
+                        Prior to the advent of printed circuit boards, the interconnection between electronic components relied on
+                        wires to form a complete line.
+                    </p>
+                ]]>
+            </field>
+        </record>
+        <record id="cpo_website_news_list_3" model="cpo_news_list">
+            <!--<field name="cpo_layer_photo" type="base64" file="website_cpo_advertising/static/src/images/layerimg/layer_1_2.jpg"/>-->
+            <field name="sequence">3</field>
+            <field name="cpo_new_title">What is a PCBA?</field>
+            <field name='cpo_new_date'>2019-01-22</field>
+            <field name='cpo_new_editor'>Charlie</field>
+            <field name='cpo_new_content'>
+                <![CDATA[
+                    <p>
+                        SMT is a surface mount technology (short for Surface Mount Technology) called surface mount or surface mount
+                        technology. It is currently the most popular technology and process in the electronics assembly industry.
+                    </p>
+                    <img src="/website_cpo_sale/static/src/images/smt_1.jpg.jpg"/>
+                    <p>
+                        It is a surface or other substrate surface on which a leadless or short lead surface mount component (SMC/SMD,
+                        Chinese called a chip component) is mounted on a printed circuit board (PCB). In the above, the circuit
+                        assembly technology is assembled by soldering or dip soldering.
+                    </p>
+                    <p>
+                        Since the beginning of the 21st century, China's electronic information products manufacturing industry has
+                        grown at a rate of more than 20% per year, and its scale has ranked second in the world for three consecutive
+                        years since 2004. Driven by the rapid development of China's electronic information industry, China's surface
+                        mount technology (SMT) and production lines have also developed rapidly. The key equipment for surface mount
+                        production lines, the automatic placement machine, has been among the best in the world.
+                    </p>
+                ]]>
+            </field>
+        </record>
+        <record id="cpo_website_news_list_4" model="cpo_news_list">
+            <!--<field name="cpo_layer_photo" type="base64" file="website_cpo_advertising/static/src/images/layerimg/layer_1_2.jpg"/>-->
+            <field name="sequence">4</field>
+            <field name="cpo_new_title">Why do you have to deal with the special surface of the PCB?</field>
+            <field name='cpo_new_date'>2019-01-22</field>
+            <field name='cpo_new_editor'>Charlie</field>
+            <field name='cpo_new_content'>
+                <![CDATA[
+                    <p>
+                        SMT is a surface mount technology (short for Surface Mount Technology) called surface mount or surface mount
+                        technology. It is currently the most popular technology and process in the electronics assembly industry.
+                    </p>
+                    <img src="/website_cpo_sale/static/src/images/smt_1.jpg"/>
+                    <p>
+                        It is a surface or other substrate surface on which a leadless or short lead surface mount component (SMC/SMD,
+                        Chinese called a chip component) is mounted on a printed circuit board (PCB). In the above, the circuit
+                        assembly technology is assembled by soldering or dip soldering.
+                    </p>
+                    <p>
+                        Since the beginning of the 21st century, China's electronic information products manufacturing industry has
+                        grown at a rate of more than 20% per year, and its scale has ranked second in the world for three consecutive
+                        years since 2004. Driven by the rapid development of China's electronic information industry, China's surface
+                        mount technology (SMT) and production lines have also developed rapidly. The key equipment for surface mount
+                        production lines, the automatic placement machine, has been among the best in the world.
+                    </p>
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_sale_leadtosale_order_partner" model="ir.ui.view">
+            <field name="name">sale.lead.to.partner.form</field>
+            <field name="model">sale.lead.to.partner</field>
+            <field name="arch" type="xml">
+                <form string="Convert to Opportunity" version="7.0">
+                  <!--  <group name="name">
+                        <field name="name" class="oe_inline"/>
+                    </group>
+                    <group string="Opportunities">
+                        <field name="opportunity_ids" attrs="{'invisible': [('name', '!=', 'merge')]}" nolabel="1">
+                            <tree>
+                                <field name="create_date"/>
+                                <field name="name"/>
+                                <field name="type"/>
+                                <field name="contact_name"/>
+                                <field name="country_id" invisible="context.get('invisible_country', True)"/>
+                                <field name="email_from"/>
+                                <field name="phone"/>
+                                <field name="stage_id"/>
+                                <field name="user_id"/>
+                                <field name="section_id"/>
+                            </tree>
+                        </field>
+                    </group>-->
+                    <group name="action"><!-- attrs="{'invisible': [('name', '!=', 'convert')]}">-->
+                        <field name="action" on_change="onchange_action(action, context)" class="oe_inline"/>
+                        <field name="partner_id"
+                            attrs="{'required': [('action', '=', 'exist')], 'invisible':[('action','!=','exist')]}"
+                            domain="[('is_company','=',True)]"
+                            class="oe_inline"/>
+                    </group>
+                    <group>
+                        <field name="confirm_line">
+                            <tree string="PCB Quotation Line" editable="bottom" create="false" delete="false">
+                                <field name="customer_file_name" readonly='1'/>
+                                <field name="product_no"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="action_apply" string="Create Sale Order" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_sale_leadtosale_order_partner" model="ir.actions.act_window">
+            <field name="name">Convert to Sale Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.lead.to.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_sale_leadtosale_order_partner"/>
+            <field name="target">new</field>
+        </record>
+
+<!--        <act_window id="action_lead_order_to_sale_order"
+            multi="True"
+            key2="client_action_multi" name="Convert to Sale Order"
+            res_model="sale.lead.to.partner" src_model="sale.pcb.rfq"
+            view_mode="form" target="new" view_type="form"
+            context="{'lead_order_convert' : True}"
+            view_id="view_sale_leadtosale_order_partner"/>-->
+
+    </data>
+</openerp>

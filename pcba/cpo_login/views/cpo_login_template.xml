@@ -1,0 +1,92 @@
+<odoo>
+    <data>
+        <!--<template id="cpo_web_helpers" inherit_id="web.less_helpers">-->
+            <!--<xpath expr="." position="inside">-->
+                <!--<link rel="stylesheet" type="text/css" href="/cpo_login/static/src/css/cpo_login.css"/>-->
+            <!--</xpath>-->
+            <!--<xpath expr="//script[last()]" position="after">-->
+        <!--</template>-->
+        <template id="cpo_login_layout" name="Main layout">
+            <t t-call="web.layout">
+                <t t-set="html_data" t-value="{'style': 'height: 100%;'}"/>
+                <t t-set="title">Web Tests</t>
+                <t t-set="head">
+                    <!--<t t-call="web.less_helpers"/>-->
+                    <link rel="stylesheet" type="text/css" href="/web/static/lib/bootstrap/css/bootstrap.css"/>
+                    <link rel="stylesheet" type="text/css" href="/cpo_login/static/src/css/cpo_login.css"/>
+                    <t t-call="web.assets_common"/>
+                    <!--<base target="_blank" />-->
+                    <!--<base target="_parent" />-->
+                </t>
+                <body>
+                    <div class="page login-page">
+                        <div class="d-flex align-items-center">
+                            <div class="form-holder has-shadow">
+                                <form class="form oe_login_form" role="form" target="_parent"
+                                      action="/quote/login" method="post"
+                                      onsubmit="this.action = this.action + location.hash">
+                                    <t t-call="cpo_login.cpo_login_error"/>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <t t-call="cpo_login.cpo_svg_loading"/>
+                </body>
+            </t>
+        </template>
+
+        <template id="cpo_login_error" name="Login Error">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <div class="form-group">
+                <input id="login" type="text" name="login" t-att-value="login"
+                       required="required"
+                       data-msg="Please enter a valid email address"
+                       autofocus="autofocus" autocapitalize="off"
+                       class="input-material"/>
+                <label for="login" class="label-material">Email Address</label>
+            </div>
+            <div class="form-group">
+                <input id="password" type="password" name="password" required="required"
+                       data-msg="Please enter your password" class="input-material"
+                       autocomplete="current-password"
+                       maxlength="4096"/>
+                <label for="password" class="label-material">Password
+                </label>
+            </div>
+            <p class="alert alert-danger" t-if="error">
+                <t t-raw="error"/>
+            </p>
+            <p class="alert alert-success" t-if="message">
+                <t t-raw="message"/>
+            </p>
+            <input type="hidden" name="redirect" t-att-value="redirect"/>
+            <input type="hidden" name="src" t-att-value="src"/>
+            <input type="hidden" name="type" t-att-value="type"/>
+            <div class="form-group oe_login_buttons">
+                <a class="btn btn-primary cpo_login_btn">Log in
+                </a>
+                <br/>
+                <a t-if="reset_password_enabled" t-attf-href="/web/reset_password?{{ keep_query() }}"
+                   class="forgot-pass">Forgot Password?
+                </a>
+                <br/>
+                <small>Do not have an account?</small>
+                <a href="/web/signup" class="signup" target="_parent">
+                    Signup
+                </a>
+            </div>
+            <script type="text/javascript" src="/cpo_login/static/src/js/cpo_login.js"></script>
+        </template>
+        <!-- 加载图标（旋转） -->
+        <template id="cpo_svg_loading" name="Loading">
+            <div class="svg_loading cpo-none">
+                <div class="svg_loading_content">
+                    <svg class="load" viewBox="10 10 80 80">
+                        <circle class="loading" cx="50" cy="50" r="30" />
+                    </svg>
+                </div>
+            </div>
+        </template>
+
+    </data>
+</odoo>

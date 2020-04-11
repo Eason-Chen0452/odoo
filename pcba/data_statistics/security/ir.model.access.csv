@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_website_data_statistics,data_statistics.data_statistics,model_data_statistics_data_statistics,sales_team.group_sale_manager,1,1,1,1
+access_website_simple_version,data_statistics.simple_version,model_data_statistics_simple_version,sales_team.group_sale_manager,1,1,1,1

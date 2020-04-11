@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="cpo_pcb_report_sale_order"
+            string="PCB Quotation / Order"
+            model="sale.order"
+            report_type="qweb-pdf"
+            file="website_cpo_sale_report.cpo_pcb_report_saleorder_document"
+            name="website_cpo_sale_report.cpo_pcb_report_saleorder_document"
+        />
+
+        <template id="report_saleorder">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="website_cpo_sale_report.cpo_pcb_report_saleorder_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+        <template id="cpo_pcb_report_saleorder_document">
+            <t t-call="report.external_layout">
+                <h3>12321313</h3>
+            </t>
+        </template>
+    </data>
+</odoo>

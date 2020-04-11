@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="assets_backend" name="Help Style" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/cpo_help/static/src/css/cpo_help.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

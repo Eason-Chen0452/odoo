@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.module.category" id="module_category_bom_admin">
+            <field name="name">Bom Management</field>
+            <field name="sequence">1</field>
+        </record>
+        <!--数据按钮-->
+        <record id="cpo_bom_button" model="res.groups">
+            <field name="name">BOM Button</field>
+        </record>
+
+        <!--BOM管理员-->
+        <record id="cpo_bom_admin" model="res.groups">
+            <field name="name">BOM</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+        <record model="res.groups" id="cpo_offer_website_operator">
+            <field name="name" >Website Operator</field>
+        </record>
+
+        <record model="res.groups" id="cpo_offer_sale_operator">
+            <field name="name" >Sale Operator</field>
+        </record>
+
+        <record model="res.groups" id="cpo_sale_order_rate_admin">
+            <field name="name" >Sale Order Rate</field>
+        </record>
+
+        <record id="group_bom_bomadmin" model="res.groups">
+            <field name="name">User: Own Bom Only</field>
+            <field name="category_id" ref="module_category_bom_admin"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user')), (4, ref('cpo_offer_base.cpo_bom_admin'))]"/>
+            <field name="comment">the user will have access to his own data in the bom application.</field>
+        </record>
+        <record id="group_bom_bomadmin_all" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="module_category_bom_admin"/>
+            <field name="implied_ids" eval="[(4, ref('group_bom_bomadmin'))]"/>
+            <field name="comment">the user will have access to his own data in the bom application.</field>
+        </record>
+
+    </data>
+</odoo>

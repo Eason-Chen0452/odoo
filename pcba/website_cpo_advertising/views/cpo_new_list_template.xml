@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <template id="cpo_new_list_link">
+            <ul>
+                <t t-foreach="objects" t-as="object">
+                    <li>
+                        <a t-attf-href="/news/#{ object.id }">
+                            <span><t t-esc="object.cpo_new_date"/></span>
+                            <t t-esc="object.cpo_new_title"/>
+                        </a>
+                    </li>
+                </t>
+                <!--<li>-->
+                    <!--<a><span>2019-01-05</span>How to Read &amp; Understand a Circuit Diagram</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a><span>2019-01-04</span>Suitable Temperature Curve of Lead-free Solder</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a><span>2019-01-04</span>Suitable Temperature Curve of Lead-free Solder</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a><span>2019-01-04</span>Suitable Temperature Curve of Lead-free Solder</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a><span>2019-01-04</span>Suitable Temperature Curve of Lead-free Solder</a>-->
+                <!--</li>-->
+            </ul>
+        </template>
+
+        <template id="cpo_new_list_content">
+            <t t-call="website.layout">
+                <div class="container">
+                    <div id="cpo_news_content_all">
+                        <div class="cpo_new_value_title">
+                            <h3 class="text-center"><t t-esc="values['title']"/></h3>
+                        </div>
+                        <div class="cpo_new_value_date">
+                            <p class="text-center">
+                                <t t-esc="values['date']"/>
+                            </p>
+                        </div>
+                        <div class="cpo_new_value_editor">
+                            <p class="text-center">
+                                <t t-esc="values['editor']"/>
+                            </p>
+                        </div>
+                        <div class="cpo_new_value_content" t-field="new_list.cpo_new_content" />
+                    </div>
+                </div>
+                <!--<h3>Welcome ChinaPCBOne !</h3>-->
+                    <!--<h3><t t-esc="values['title']"/></h3>-->
+            </t>
+        </template>
+
+    </data>
+</odoo>

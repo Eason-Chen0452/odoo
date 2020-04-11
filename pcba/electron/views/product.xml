@@ -1,0 +1,78 @@
+<odoo>
+    <data>
+
+    <record id="view_product_form_electron" model="ir.ui.view">
+            <field name="name">product.template.inherit.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view" />
+            <field name="arch" type="xml">
+                <field name="categ_id" position="after">
+                    <field name="encapsulation"/>
+                </field>
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page string="Level Price">
+                        <field name="level_price_line">
+                            <tree editable="true">
+                                <field name="cpo_min_number"/>
+                                <field name="cpo_price"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <menuitem name="product" id="cpo_electron_product" parent="electronic_menu_root"/>
+
+    <menuitem name="Product var" id="cpo_product_product" parent="cpo_electron_product" sequence="30"
+              action="product.product_normal_action_sell"/>
+    <menuitem name="Product template" id="cpo_product_template" parent="cpo_electron_product" sequence="33"
+              action="product.product_template_action"/>
+
+    <menuitem name="Product attribute value" id="cpo_product_attribute_value" parent="cpo_electron_product" sequence="38"
+              action="product.variants_action"/>
+
+    <menuitem name="Product category" id="cpo_product_category" parent="cpo_electron_product" sequence="41"
+              action="product.product_category_action_form"/>
+
+
+    <record model="ir.ui.view" id="cpo_electron_encapsulation_list">
+      <field name="name">electron encapsulation</field>
+      <field name="model">cpo.electron.encapsulation</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="pin_number"/>
+        </tree>
+      </field>
+    </record>
+    
+     <record model="ir.ui.view" id="cpo_electron_encapsulation_form">
+      <field name="name">electron encapsulation form</field>
+      <field name="model">cpo.electron.encapsulation</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+              <group col="4">
+                <field name="name"/>
+                <field name="pin_number"/>
+              </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+  
+    <!-- actions opening views on models -->
+  
+    <record model="ir.actions.act_window" id="electron_encapsulation_action_window">
+      <field name="name">electron encapsulation window</field>
+      <field name="res_model">cpo.electron.encapsulation</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- actions -->
+
+    <menuitem name="electron_encapsultaion_menu_List" id="electron_encapsulation_menu_1_list" parent="cpo_electron_product" sequence="58"
+              action="electron.electron_encapsulation_action_window"/>
+  </data>
+</odoo>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--运费区域 非 管理区域-->
+        <record model="ir.ui.view" id="sale_pcb_rfq.cpo_freight_region_tree">
+            <field name="name">cpo.freight.region.tree</field>
+            <field name="model">cpo.freight.region</field>
+            <field name="arch" type="xml">
+                <tree string="cpo freight region">
+                    <field name="cpo_region"/>
+                    <field name="cpo_country" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+        <!--运费区域 非 管理区域-->
+        <record model="ir.ui.view" id="sale_pcb_rfq.cpo_freight_region_form">
+            <field name="name">cpo.freight.region.form</field>
+            <field name="model">cpo.freight.region</field>
+            <field name="arch" type="xml">
+                <form string="cpo continent">
+                    <group>
+                        <field name="cpo_region" force_save="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Country">
+                            <field name="cpo_pcb_freight_id" mode="tree">
+                                <tree string="Country" editable="bottom">
+                                    <field name="cpo_country_id"/>
+                                    <field name="cpo_size"/>
+                                    <field name="cpo_thickness"/>
+                                    <field name="cpo_oz"/>
+                                    <field name="cpo_oz_kg"/>
+                                    <field name="cpo_weight"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Weight Breakdown">
+                            <field name="cpo_pcb_weight_breakdown_id" mode="tree">
+                                <tree string="Weight Breakdown" editable="bottom">
+                                    <field name="weight_pcb"/>
+                                    <field name="cpo_freight_fee"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Weight Breakdown Range">
+                            <field name="cpo_pcb_weight_breakdown_range_id" mode="tree">
+                                <tree string="Weight Breakdown Range" editable="bottom">
+                                    <field name="weight_pcb_range_1"/>
+                                    <field name="weight_pcb_range_2"/>
+                                    <field name="cpo_freight_range_fee"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="sale_pcb_rfq.cpo_pcb_freight_action_window">
+            <field name="name">cpo.freight.region.window</field>
+            <field name="res_model">cpo.freight.region</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Freight Price List" id="freight_price_list" parent="cpo_offer_base.cpo_smt_price_list" sequence="8" action="sale_pcb_rfq.cpo_pcb_freight_action_window"/>
+
+    </data>
+</odoo>

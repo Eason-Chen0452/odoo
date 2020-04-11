@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cpo_product_description_tree">
+            <field name="name">CPO Product Description List</field>
+            <field name="model">cpo_product_description</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="title"/>
+                    <field name="description"/>
+                    <field name="cpo_btn_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_product_description_form">
+            <field name="name">CPO Product Description Form</field>
+            <field name="model">cpo_product_description</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div style="width:49%;display:inline-block;margin-right:10px;border-right:1px solid #ddd;">
+                        <group colspan="4">
+                            <group colspan="4">
+                                <!--<group colspan="2">-->
+                                    <!--<field name="title" />-->
+                                <!--</group>-->
+                                <!--<group colspan="2">-->
+                                    <!--<field name="direction" /><span>Please fill in the lowercase "left" or "right"</span>-->
+                                <!--</group>-->
+                                <group colspan="2">
+                                    <field name="description" />
+                                </group>
+                                <group colspan="2">
+                                    <field name="Cover_img" class="text-center"/>
+                                    <p class="text-center">Size: Width &lt;= 742px;Heihht &lt;= 344px;</p>
+                                </group>
+                                <group colspan="2">
+                                    <field name="title" />
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_btn_name" />
+                                </group>
+                            </group>
+                        </group>
+                    </div>
+                    <div style="width: 50%;display: inline-block;vertical-align: top;" class="cpo_content_view_right">
+                        <div class="row" style="margin: 0;">
+                            <notebook>
+                                <page string="News Record">
+                                    <div style="margin: 20px;border: 1px solid #ddd;">
+                                        <div style="width: 60%;float: left;">
+                                            <div style="text-align: center;">
+                                                <field name="Cover_img" widget="image"></field>
+                                            </div>
+                                        </div>
+                                        <div style="width: 40%;float: left;">
+                                            <h3 style="margin: 0;padding: 5px;line-height: 30px;text-align: center;">
+                                                <field name="title"></field>
+                                            </h3>
+                                            <div t-att-class="cpo-description" style="line-height: 18px;text-align: center;font-size:14px;margin: auto;">
+                                                <field name="description"></field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </page>
+                            </notebook>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_product_description_actions">
+            <field name="name">CPO Product Description Actions</field>
+            <field name="res_model">cpo_product_description</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="CPO Product Description List" id="cpo_product_description_menu" parent="website_cpo_index.cpo_product_release_all_menu"
+                action="cpo_product_description_actions"/>
+
+    </data>
+</odoo>

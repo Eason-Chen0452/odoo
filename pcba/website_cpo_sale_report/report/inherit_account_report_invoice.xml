@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <template inherit_id="sale.report_invoice_document_inherit_sale" id="sale_report_invoice_doc_inhert">
+        <xpath expr="//div[@t-if='o.partner_shipping_id and (o.partner_shipping_id != o.partner_id)']" position="inside">
+            <div>Phone:<span t-field="o.partner_shipping_id.phone"/></div>
+        </xpath>
+        <xpath expr="//div[@t-field='o.partner_id']" position="before">
+            <span><strong>Bill To:</strong></span>
+        </xpath>
+    </template>
+        <template id="cpo_inherit_account_report_invoice" inherit_id="account.report_invoice_document">
+            <!--隐藏单价和税金-->
+            <!--<xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/thead/tr/th[4]" position="attributes">-->
+                <!--<attribute name="style">display:none</attribute>-->
+            <!--</xpath>-->
+            <xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/thead/tr/th[6]" position="attributes">
+                <attribute name="style">display:none</attribute>
+            </xpath>
+            <xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/thead/tr/th[3]" position="after">
+                <th class="text-right">Shipping Cost</th>
+            </xpath>
+            <xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/tbody/tr/td[4]" position="attributes">
+                <attribute name="style">display:none</attribute>
+            </xpath>
+            <xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/tbody/tr/td[6]" position="attributes">
+                <attribute name="style">display:none</attribute>
+            </xpath>
+            <!--<xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/tbody/tr[@t-foreach='range(max(5-len(o.invoice_line_ids),0))']/td[4]" position="attributes">-->
+                <!--<attribute name="style">display:none</attribute>-->
+            <!--</xpath>-->
+            <xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/tbody/tr[@t-foreach='range(max(5-len(o.invoice_line_ids),0))']/td[6]" position="attributes">
+                <attribute name="style">display:none</attribute>
+            </xpath>
+
+            <xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/tbody/tr/td[3]" position="after">
+                <td class="text-right">
+                    <span t-field="l.cpo_shipping_cost"/>
+                </td>
+            </xpath>
+            <!--单价=总计/数量-->
+            <xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/tbody/tr/td[4]" position="after">
+                <td class="text-right">
+                    <t t-set="unit_price" t-value="round(l.cpo_product_price_subtotal/l.quantity,4)" />
+                    <span t-esc="unit_price" />
+                </td>
+            </xpath>
+
+
+
+             <xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/tbody/tr[@t-foreach='range(max(5-len(o.invoice_line_ids),0))']/td[4]" position="after">
+                <td></td>
+            </xpath>
+
+            <!--l.quantity-->
+            <!--l.price_subtotal-->
+            <!--<xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/thead/tr/th[6]" position="after">-->
+                <!--<th class="text-right">Bare board</th>-->
+                <!--<th class="text-right">Components</th>-->
+                <!--<th class="text-right">Assembly</th>-->
+                <!--<th class="text-right">Stencil</th>-->
+                <!--<th class="text-right">Management</th>-->
+                <!--<th class="text-right">Shipping</th>-->
+                <!--<th class="text-right">Lead Time(days)</th>-->
+            <!--</xpath>-->
+            <!--<xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/tbody/tr/td[6]" position="after">-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+            <!--</xpath>-->
+            <!--<xpath expr="//t[@t-call='report.external_layout']/div[@class='page']/table[@class='table table-condensed']/tbody/tr[@t-foreach='range(max(5-len(o.invoice_line_ids),0))']/td[6]" position="after">-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+            <!--</xpath>-->
+        </template>
+    </data>
+</odoo>

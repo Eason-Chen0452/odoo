@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--不用检查的-->
+        <record id="bom_dashboard_data_1" model="bom.situation">
+            <field name="name">No need to check Bom</field>
+            <field name="state">no</field>
+            <field name="color">1</field>
+        </record>
+        <!--等待检查-->
+        <record id="bom_dashboard_data_2" model="bom.situation">
+            <field name="name">Waiting for inspection Bom</field>
+            <field name="state">check</field>
+            <field name="color">3</field>
+        </record>
+        <!--完成检查-->
+        <record id="bom_dashboard_data_3" model="bom.situation">
+            <field name="name">Complete inspection Bom</field>
+            <field name="state">complete</field>
+            <field name="color">5</field>
+        </record>
+
+    </data>
+</odoo>

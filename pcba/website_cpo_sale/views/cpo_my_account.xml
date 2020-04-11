@@ -1,0 +1,3061 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- 手机样式 -->
+	<template id="cpo_my_account_mobile">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".side-navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+	</template>
+	<!-- Home -->
+	<template id="cpo_my_account_center" name="Account center">
+		<t t-call="website.layout">
+			<t t-call="website_cpo_sale.cpo_my_account_nav"/>
+		</t>
+    </template>
+	<!-- Address -->
+	<template id="cpo_my_account_address" name="Account Address">
+		<t t-call="website.layout">
+			<t t-call="website_cpo_sale.cpo_my_account_address_content"/>
+		</t>
+    </template>
+
+	<!-- Sidebar Navidation Menus(侧边导航) Begin -->
+	<template id="cpo_sidebar_navidation_menus">
+		<t t-set="public_qty" t-value="quotation_qty.get('qty')"/>
+		<nav class="side-navbar collapse navbar-collapse">
+			<!-- Sidebar Header-->
+			<div class="sidebar-header d-flex align-items-center">
+				<div class="avatar">
+					<img t-if="user.partner_id.image" t-att-src="'data:image/png;base64,%s' %  user.partner_id.image" alt="..."
+						 class="img-fluid rounded-circle" wdith="55" height="55"/>
+					<img t-if="not user.partner_id.image" src="/website_cpo_sale/static/src/images/tx/sellars.jpg" wdith="55" height="55"/>
+				</div>
+				<div class="title">
+					<h1 class="h4" t-att-title="user.name">
+						<t t-esc="user.name"/>
+					</h1>
+					<p>
+						<span class="mr5">ID:</span>
+						<t t-if="personal_id.client_id_code" t-esc="personal_id.client_id_code"/>
+					</p>
+				</div>
+			</div>
+			<!-- Sidebar Navidation Menus-->
+			<span class="heading">Main</span>
+			<ul class="list-unstyled">
+				<li t-att-class="'active' if link_active == 'my_home' else ''">
+					<a href="/my/home"><i class="fa fa-reorder"></i>My Account
+					</a>
+				</li>
+				<li t-att-class="'active' if link_active == 'under_review' else ''">
+					<a href="/my/account/orders?type=under-review">
+						<i class="fa fa-edit"></i>
+						Reviewing<small>( <t t-esc="public_qty.get('ur_qty')"/> )</small>
+					</a>
+				</li>
+				<li t-att-class="'active' if link_active == 'awaiting_payment' else ''">
+					<a href="/my/account/orders?type=payment">
+						<i class="fa fa-credit-card"></i>
+						Payment<small>( <t t-esc="public_qty.get('py_qty')"/> )</small>
+					</a>
+				</li>
+				<li t-att-class="'active' if link_active == 'manufacturing' else ''">
+					<a href="/my/account/orders?type=manufacturing">
+						<i class="fa fa-cog"></i>
+						Manufacturing<small>( <t t-esc="public_qty.get('m_qty')"/> )</small>
+					</a>
+				</li>
+				<!-- 这里有相关的依赖模块返回（没安装不显示） -->
+				<!--<li t-att-class="'active' if link_active == 'eq_active' else ''">-->
+					<!--<a href="/my/engineering-question">-->
+						<!--<i class="fa fa-question-circle-o"></i>-->
+						<!--Engineering Question<small>( <t t-esc="public_qty.get('ask_qty') if public_qty.get('ask_qty') else 0"/> )</small>-->
+					<!--</a>-->
+				<!--</li>-->
+				<li t-att-class="'active' if link_active == 'delivery' else ''">
+					<a href="/my/account/orders?type=delivery">
+						<i class="fa fa-truck"></i>
+						Delivery<small>( <t t-esc="public_qty.get('d_qty')"/> )</small>
+					</a>
+				</li>
+				<li t-att-class="'active' if link_active == 'completed' else ''">
+					<a href="/my/account/orders?type=completed">
+						<i class="fa fa-calendar-check-o"></i>
+						Completed<small>( <t t-esc="public_qty.get('d_qty')"/> )</small>
+					</a>
+				</li>
+				<li t-att-class="'active' if link_active in ['my_account_address', 'shop_address'] else ''">
+					<a href="/my/account/address">
+						<i class="fa fa-map-marker"></i>Billing &amp; Shipping
+					</a>
+				</li>
+				<li t-att-class="'active' if link_active == 'my_coupon' else ''">
+					<a href="/my/coupon">
+						<i class="fa fa-money"></i>My Coupons
+						<small>( <t t-esc="public_qty.get('cp_qty') if public_qty.get('cp_qty') else 0"/> )</small>
+					</a>
+				</li>
+				<li t-att-class="'active' if link_active == 'my_paid' else ''">
+					<a href="/my/paid?type=payment">
+						<i class="fa fa-repeat" aria-hidden="true"></i>Paid &amp; Refunded
+					</a>
+				</li>
+			</ul>
+			<span class="heading">Notice</span>
+			<ul class="list-unstyled" id="notice-ul">
+				<!-- 这里有相关的依赖模块返回（没安装不显示） -->
+				<!--<li t-att-class="'active' if link_active == 'message' else ''">-->
+					<!--<a href="/message/center">-->
+						<!--<i class="fa fa-comments"></i>-->
+						<!--Message Center-->
+						<!--<span t-att-class="'mc-qty cpo-icon-bounce' if public_qty.get('mu_qty') &gt; 0 else 'mc-qty'">-->
+							<!--<t t-esc="public_qty.get('mu_qty')"/>-->
+						<!--</span>-->
+					<!--</a>-->
+				<!--</li>-->
+			</ul>
+		</nav>
+		<t t-call="website_cpo_sale.my_home_order_details_modal"/>
+	</template>
+	<!-- Sidebar Navidation Menus(侧边导航) End -->
+
+	<!-- Account Nav 开始 -->
+	<template id="cpo_my_account_nav" name="Nav">
+		<div class="ac-page">
+			<!-- 侧标手机样式 -->
+			<t t-call="website_cpo_sale.cpo_my_account_mobile"/>
+			<div class="page-content d-flex align-items-stretch">
+				<!-- Nav -->
+				<t t-call="website_cpo_sale.cpo_sidebar_navidation_menus"/>
+				<div class="content-inner" id="cpo_order_state">
+					<!-- Ajax 调用模板 -->
+					<t t-call="website_cpo_sale.account_page_content"/>
+				</div>
+			</div>
+		</div>
+	</template>
+	<!-- Account Nav 结束 -->
+
+	<!-- 各个状态的链接返回 开始 -->
+	<template id="cpo_my_account_order_status" name="Order Status">
+		<t t-call="website.layout">
+			<div class="ac-page">
+				<!-- 侧标手机样式 -->
+				<t t-call="website_cpo_sale.cpo_my_account_mobile"/>
+				<div class="page-content d-flex align-items-stretch">
+					<!-- Nav -->
+					<t t-call="website_cpo_sale.cpo_sidebar_navidation_menus"/>
+					<div class="content-inner" id="cpo_order_state">
+						<!-- Ajax 调用模板 -->
+						<!-- Page Header-->
+						<header class="ac-header">
+							<div class="container-fluid">
+								<a id="toggle-btn" href="#" class="menu-btn active hidden-xs" title="Show(Hide) Menu">
+									<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+								</a>
+								<h2 class="no-margin-bottom">Dashboard</h2>
+							</div>
+							<!-- 客服 -->
+							<t t-call="website_cpo_sale.customer_service_template"/>
+						</header>
+						<!-- 内容返回 -->
+						<div id="all_order_status_return">
+							<t t-call="website_cpo_sale.cpo_all_order_status_return"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</t>
+	</template>
+	<template id="cpo_all_order_status_return">
+		<!-- 为了方便搜索的返回！！！！！！ -->
+		<!-- Dashboard Counts Section-->
+		<section class="dashboard-counts no-padding-bottom">
+			<div class="container-fluid">
+				<!-- 设置数量变量 -->
+				<t t-set="state_qty" t-value="quotation_qty.get('qty')"/>
+				<div class="row bg-white has-shadow item-flex">
+					<div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'under_review' else 'item d-flex align-items-center'">
+						<a class="item-a" href="/my/account/orders?type=under-review">
+							<input type="hidden" name="state" value="under_review"/>
+							<div class="ni-details">
+								<div class="number">
+									<strong>
+										<t t-esc="state_qty.get('ur_qty')"/>
+									</strong>
+								</div>
+								<div class="icon bg-violet">
+									<i class="fa fa-edit" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="title">
+								<span>Reviewing</span>
+							</div>
+						</a>
+					</div>
+					<!-- Item -->
+					<div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'awaiting_payment' else 'item d-flex align-items-center'">
+						<a class="item-a" href="/my/account/orders?type=payment">
+							<input type="hidden" name="state" value="awaiting_payment"/>
+							<div class="ni-details">
+								<div class="number">
+									<strong>
+										<t t-esc="state_qty.get('py_qty')"/>
+									</strong>
+								</div>
+								<div class="icon bg-violet">
+									<i class="fa fa-credit-card" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="title">
+								<span>Payment</span>
+							</div>
+						</a>
+					</div>
+					<!-- Item -->
+					<div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'manufacturing' else 'item d-flex align-items-center'" id="sale_manufac">
+						<a class="item-a" href="/my/account/orders?type=manufacturing">
+							<input type="hidden" name="state" value="manufacturing"/>
+							<div class="ni-details">
+								<div class="number">
+									<strong>
+										<t t-esc="state_qty.get('m_qty')"/>
+									</strong>
+								</div>
+								<div class="icon bg-violet">
+									<i class="fa fa-cog" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="title">
+								<span>Manufacturing</span>
+							</div>
+						</a>
+					</div>
+					<!-- Item -->
+					<!--<div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'engineering-question' else 'item d-flex align-items-center'">-->
+						<!--<a class="item-a" href="/my/engineering-question">-->
+							<!--<input type="hidden" name="state" value="engineering-question"/>-->
+							<!--<div class="ni-details">-->
+								<!--<div class="number">-->
+									<!--<strong>-->
+										<!--<t t-esc="state_qty.get('ask_qty') if state_qty.get('ask_qty') else 0"/>-->
+									<!--</strong>-->
+								<!--</div>-->
+								<!--<div class="icon bg-violet">-->
+									<!--<i class="fa fa-commenting" aria-hidden="true"></i>-->
+								<!--</div>-->
+							<!--</div>-->
+							<!--<div class="title">-->
+								<!--<span>Engineering Question</span>-->
+							<!--</div>-->
+						<!--</a>-->
+					<!--</div>-->
+					<!-- Item -->
+					<div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'delivery' else 'item d-flex align-items-center'">
+						<a class="item-a" href="/my/account/orders?type=delivery">
+							<input type="hidden" name="state" value="delivery"/>
+							<div class="ni-details">
+								<div class="number">
+									<strong>
+										<t t-esc="state_qty.get('d_qty')"/>
+									</strong>
+								</div>
+								<div class="icon bg-violet">
+									<i class="fa fa-truck" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="title">
+								<span>Delivery</span>
+							</div>
+						</a>
+					</div>
+					<div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'completed' else 'item d-flex align-items-center'">
+						<a class="item-a" href="/my/account/orders?type=completed">
+							<input type="hidden" name="state" value="completed"/>
+							<div class="ni-details">
+								<div class="number">
+									<strong>
+										<t t-esc="state_qty.get('c_qty')"/>
+									</strong>
+								</div>
+								<div class="icon bg-violet">
+									<i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="title">
+								<span>Completed</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--</section>-->
+		<section class="tables">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="card">
+							<div class="card-body">
+								<form class="form-inline" id="my_account_search">
+									<input type="text" name="state" t-att-value="process_state"
+										   class="cpo-none"/>
+									<t t-if="process_state == 'awaiting_payment'">
+										<div class="form-group">
+											<label for="order_search" class="sr-only">Invoice</label>
+											<input id="order_search" type="text" name="invoice"
+												   placeholder="Invoice"
+												   class="mr-3 form-control"/>
+										</div>
+									</t>
+									<t t-if="process_state != 'awaiting_payment'">
+										<div class="form-group">
+											<label for="order_search" class="sr-only">Order</label>
+											<input id="order_search" type="text" name="order"
+												   placeholder="Order"
+												   class="mr-3 form-control"/>
+										</div>
+										<div class="form-group">
+											<label for="po_number_search" class="sr-only">Products</label>
+											<input id="po_number_search" type="text" name="po_number"
+												   placeholder="PO Number" class="mr-3 form-control"/>
+										</div>
+									</t>
+									<div class="form-group">
+										<a class="btn btn-primary search">
+											<i class="fa fa-search mr5"></i>Search
+										</a>
+									</div>
+								</form>
+								<t t-if="link_active == 'under_review'" t-set="link_ac" t-value="'under-review'"/>
+								<t t-if="link_active == 'awaiting_payment'" t-set="link_ac" t-value="'payment'"/>
+								<t t-if="link_active != 'under_review' and link_active != 'awaiting_payment'" t-set="link_ac" t-value="link_active"/>
+								<t t-if="search_state">
+									<!--<a class="btn btn-default pull-right mr5 search_back" t-att-href="'/my/account/orders?type=' + link_ac">Back</a>-->
+									<a class="btn btn-default pull-right mr5 search_back" t-att-href="url">Back</a>
+								</t>
+							</div>
+							<div class="card-header d-flex align-items-center">
+								<h3 class="h4">My Orders</h3>
+							</div>
+							<div class="card-body">
+								<t t-call="website_cpo_sale.cpo_status_select"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+	<!-- 各个状态的链接返回 结束 -->
+
+	<!-- 个人中心内容 Begin -->
+	<template id="account_page_content">
+		<!-- Page Header-->
+		<header class="ac-header">
+			<div class="container-fluid">
+				<a id="toggle-btn" href="#" class="menu-btn active hidden-xs" title="Show(Hide) Menu">
+					<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+				</a>
+				<h2 class="no-margin-bottom">Dashboard</h2>
+			</div>
+			<!-- 客服 -->
+			<t t-call="website_cpo_sale.customer_service_template"/>
+		</header>
+		<!-- Dashboard Counts Section-->
+		<section class="dashboard-counts no-padding-bottom">
+			<div class="container-fluid">
+				<!-- 设置数量变量 -->
+				<t t-set="state_qty" t-value="quotation_qty.get('qty')"/>
+				<div class="row bg-white has-shadow item-flex">
+					<div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'under_review' else 'item d-flex align-items-center'">
+						<a class="item-a" href="/my/account/orders?type=under-review">
+							<input type="hidden" name="state" value="under_review"/>
+							<div class="ni-details">
+								<div class="number">
+									<strong>
+										<t t-esc="state_qty.get('ur_qty')"/>
+									</strong>
+								</div>
+								<div class="icon bg-violet">
+									<i class="fa fa-edit" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="title">
+								<span>Reviewing</span>
+							</div>
+						</a>
+					</div>
+					<!-- Item -->
+					<div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'awaiting_payment' else 'item d-flex align-items-center'">
+						<a class="item-a" href="/my/account/orders?type=payment">
+							<input type="hidden" name="state" value="awaiting_payment"/>
+							<div class="ni-details">
+								<div class="number">
+									<strong>
+										<t t-esc="state_qty.get('py_qty')"/>
+									</strong>
+								</div>
+								<div class="icon bg-violet">
+									<i class="fa fa-credit-card" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="title">
+								<span>Payment</span>
+							</div>
+						</a>
+					</div>
+					<!-- Item -->
+					<div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'manufacturing' else 'item d-flex align-items-center'" id="sale_manufac">
+						<a class="item-a" href="/my/account/orders?type=manufacturing">
+							<input type="hidden" name="state" value="manufacturing"/>
+							<div class="ni-details">
+								<div class="number">
+									<strong>
+										<t t-esc="state_qty.get('m_qty')"/>
+									</strong>
+								</div>
+								<div class="icon bg-violet">
+									<i class="fa fa-cog" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="title">
+								<span>Manufacturing</span>
+							</div>
+						</a>
+					</div>
+					<!-- Item -->
+					<!--<div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'engineering-question' else 'item d-flex align-items-center'">-->
+						<!--<a class="item-a" href="/my/engineering-question">-->
+							<!--<input type="hidden" name="state" value="engineering-question"/>-->
+							<!--<div class="ni-details">-->
+								<!--<div class="number">-->
+									<!--<strong>-->
+										<!--<t t-esc="state_qty.get('ask_qty') if state_qty.get('ask_qty') else 0"/>-->
+									<!--</strong>-->
+								<!--</div>-->
+								<!--<div class="icon bg-violet">-->
+									<!--<i class="fa fa-commenting" aria-hidden="true"></i>-->
+								<!--</div>-->
+							<!--</div>-->
+							<!--<div class="title">-->
+								<!--<span>Engineering Question</span>-->
+							<!--</div>-->
+						<!--</a>-->
+					<!--</div>-->
+					<!-- Item -->
+					<div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'delivery' else 'item d-flex align-items-center'">
+						<a class="item-a" href="/my/account/orders?type=delivery">
+							<input type="hidden" name="state" value="delivery"/>
+							<div class="ni-details">
+								<div class="number">
+									<strong>
+										<t t-esc="state_qty.get('d_qty')"/>
+									</strong>
+								</div>
+								<div class="icon bg-violet">
+									<i class="fa fa-truck" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="title">
+								<span>Delivery</span>
+							</div>
+						</a>
+					</div>
+					<div t-att-class="'item d-flex align-items-center ni-active' if process_state == 'completed' else 'item d-flex align-items-center'">
+						<a class="item-a" href="/my/account/orders?type=completed">
+							<input type="hidden" name="state" value="completed"/>
+							<div class="ni-details">
+								<div class="number">
+									<strong>
+										<t t-esc="state_qty.get('c_qty')"/>
+									</strong>
+								</div>
+								<div class="icon bg-violet">
+									<i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="title">
+								<span>Completed</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--</section>-->
+		<!-- Forms Section-->
+		<section class="forms">
+			<div class="container-fluid">
+				<div class="row">
+					<!-- Inline Form-->
+					<div class="col-lg-8">
+						<div class="card">
+							<div class="card-header d-flex align-items-center">
+								<h3 class="h4">My Account</h3>
+							</div>
+							<div class="card-body">
+								<div class="pi-info clearfix">
+									<div class="pi-info-left">
+										<div class="pi-tx">
+											<a class="btn pi-edit-tx" data-toggle="tooltip" title="Modify avatar">
+												<i class="fa fa-camera-retro"></i>
+												<input type="file" name="upload_avatar" id="upload_avatar"/>
+											</a>
+											<img t-if="user.partner_id.image" t-att-src="'data:image/png;base64,%s' %  user.partner_id.image" alt="Avatar" title="Avatar"
+												 class="img-fluid rounded-circle"  wdith="118" height="118"/>
+											<img t-if="not user.partner_id.image" src="/website_cpo_sale/static/src/images/tx/sellars.jpg" wdith="118" height="118"/>
+										</div>
+										<div class="pi-name">
+											<h1 class="h4">
+												Welcome to <b>ChinaPCBOne</b>
+											</h1>
+											<form class="my_account_info" action="/shop/address">
+												<input type="hidden" name="csrf_token"
+													   t-att-value="request.csrf_token()"/>
+												<button type="submit" class="btn edit-btn"><i class="fa fa-edit fa-lg mr5"></i>Modify information</button>
+												<input type="hidden" name="change_info" value="true"/>
+												<input type="hidden" name="partner_id" t-att-value="user.partner_id.id"
+													   readonly="readonly"/>
+												<!--<input type="hidden" name="partner_id" t-att-value="user.partner_id.id" readonly="readonly"/>-->
+											</form>
+											<!--<a href="/my/account/address" class="btn"><i class="fa fa-edit fa-lg"></i>Modify information</a>-->
+										</div>
+										<div class="cpo-tz">
+											<label>Time zone selection:</label>
+											<select class="form-control cpo-timezones">
+												<t t-foreach="timezones" t-as="timezone">
+													<t t-set="tz" t-value="timezone[0]"/>
+													<option t-att-value="tz" t-att="['selected' if user.partner_id.tz == tz else 'data-cpo', '']"><t t-esc="tz"/></option>
+												</t>
+											</select>
+										</div>
+									</div>
+									<div class="pi-info-right">
+										<ul class="pi-info-ul">
+											<li class="pi-info-li">
+												<p class="pi-info-balance text-left">
+													<label for="balance">Balance (USD) </label>
+													<br/>
+													<a class="pi-money">
+														<i class="fa fa-dollar"></i>
+														<input t-if="personal_id.balance" type="text" name="balance" id="balance" t-att-value="personal_id.balance" readonly="readonly"/>
+														<input t-if="not personal_id.balance" type="text" name="balance" id="balance" value="0.00" readonly="readonly"/>
+													</a>
+												</p>
+												<p class="text-right">
+													<label for="discount_balance">Discount Balance </label>
+													<br/>
+													<a class="pi-money">
+														<i class="fa fa-dollar"></i>
+														<input t-if="personal_id.discount_amount" type="text" name="discount_balance" id="discount_balance" t-att-value="personal_id.discount_amount" readonly="readonly"/>
+														<input t-if="not personal_id.discount_amount" type="text" name="discount_balance" id="discount_balance" value="0.0" readonly="readonly"/>
+													</a>
+												</p>
+												<!--<p class="text-right">-->
+													<!--<label for="discount_balance">Recently added</label>-->
+													<!--<br/>-->
+													<!--<a class="pi-money">-->
+														<!--+<i class="fa fa-dollar"></i>-->
+														<!--<input type="text" name="discount_balance" id="discount_balance" value="0.0" readonly="readonly"/>-->
+													<!--</a>-->
+												<!--</p>-->
+											</li>
+											<!--<li class="pi-info-li">-->
+												<!--<p class="text-left">-->
+													<!--<label for="balance">Commission for shared PCB </label>-->
+													<!--<br/>-->
+													<!--<a class="pi-money">-->
+														<!--<i class="fa fa-dollar"></i>-->
+														<!--<input type="text" name="balance" id="balance" value="100.00" readonly="readonly"/>-->
+													<!--</a>-->
+												<!--</p>-->
+												<!--<p class="text-right">-->
+													<!--<label for="discount_balance">Discount Balance </label>-->
+													<!--<br/>-->
+													<!--<a class="pi-money">-->
+														<!--<i class="fa fa-dollar"></i>-->
+														<!--<input type="text" name="discount_balance" id="discount_balance" value="0.0" readonly="readonly"/>-->
+													<!--</a>-->
+												<!--</p>-->
+											<!--</li>-->
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Modal Form-->
+					<div class="col-lg-4">
+						<div class="card">
+							<div class="card-header d-flex align-items-center">
+								<h3 class="h4">My notification</h3>
+							</div>
+							<div class="card-body text-center">
+								<div class="pi-my-offer">
+									<ul class="pi-mo-ul">
+										<li class="pi-mo-li">
+											<a href="/my/coupon">My Coupons ( <small><t t-esc="state_qty.get('cp_qty') if state_qty.get('cp_qty') else 0"/></small> )</a>
+										</li>
+										<li class="pi-mo-li">
+											<a href="/my/coupon">My Beans: ( <small>0</small> )</a>
+										</li>
+										<li class="pi-mo-li">
+											<a href="/message/center">Unread Messages:
+												<span><t t-esc="state_qty.get('mu_qty')"/></span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+	<!-- 个人中心内容 End -->
+
+	<!-- Address Begin -->
+	<template id="cpo_my_account_address_content" name="Account Address">
+		<div class="ac-page">
+			<!-- 侧标手机样式 -->
+			<t t-call="website_cpo_sale.cpo_my_account_mobile"/>
+			<div class="page-content d-flex align-items-stretch">
+				<!-- Nav -->
+				<t t-call="website_cpo_sale.cpo_sidebar_navidation_menus"/>
+				<div class="content-inner">
+					<!-- Page Header-->
+					<header class="ac-header">
+						<div class="container-fluid">
+							<a id="toggle-btn" href="#" class="menu-btn active hidden-xs" title="Show(Hide) Menu">
+								<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+							</a>
+							<h2 class="no-margin-bottom">Dashboard</h2>
+						</div>
+						<!-- 客服 -->
+						<t t-call="website_cpo_sale.customer_service_template"/>
+					</header>
+					<!-- Dashboard Counts Section-->
+					<section class="dashboard-counts no-padding-bottom">
+						<div class="container-fluid">
+							<div class="mcd-all-address item-flex">
+								<div class="item d-flex align-items-center">
+									<form class="my_account_addres" action="/shop/address">
+										<button type="submit"><i class="fa fa-plus-circle mr5" aria-hidden="true"></i>Add address</button>
+										<input type="hidden" name="change_address" value="true" readonly="readonly"/>
+										<!--<input type="hidden" name="submitted" value="1" readonly="readonly"/>-->
+										<!--<input type="hidden" name="partner_id" t-att-value="user.partner_id.id" readonly="readonly"/>-->
+									</form>
+								</div>
+								<!--<div class="item d-flex align-items-center">-->
+									<!--<h3 class="h4">Personal information</h3>-->
+									<!--<form class="my_account_addres" action="/shop/address">-->
+										<!--<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />-->
+										<!--<div class="cd-content clearfix">-->
+											<!--<p>User name: <span><t t-esc="user.partner_id.name"/></span></p>-->
+											<!--<p>Phone: <span><t t-esc="user.partner_id.phone"/></span></p>-->
+											<!--<p>Email: <span><t t-esc="user.partner_id.email"/></span></p>-->
+											<!--<p>Zip code: <span><t t-esc="user.partner_id.zip"/></span></p>-->
+											<!--<p>-->
+												<!--Address: <span><t t-esc="user.partner_id.street"/></span>-->
+											<!--</p>-->
+										<!--</div>-->
+										<!--<div class="cd-btns pull-left">-->
+											<!--<button type="submit" class="btn edit-btn">Edit</button>-->
+											<!--&lt;!&ndash;<a class="btn edit-btn" href="/change/address">Edit</a>&ndash;&gt;-->
+											<!--&lt;!&ndash;<input type="button" class="btn delete-btn" name="delete" value="Delete" t-att-id="user.partner_id.id"/>&ndash;&gt;-->
+											<!--&lt;!&ndash;<a class="btn delete-btn">Delete</a>&ndash;&gt;-->
+										<!--</div>-->
+										<!--<input type="hidden" name="change_address" value="true" />-->
+										<!--<input type="hidden" name="partner_id" t-att-value="user.partner_id.id" readonly="readonly"/>-->
+										<!--&lt;!&ndash;<input type="hidden" name="partner_id" t-att-value="user.partner_id.id" readonly="readonly"/>&ndash;&gt;-->
+									<!--</form>-->
+								<!--</div>-->
+								<div class="item d-flex align-items-center">
+									<h3 class="h4">Billing Address</h3>
+									<form class="my_account_addres" action="/shop/address">
+										<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+										<div class="cd-content clearfix">
+											<p>User name: <span><t t-esc="user.partner_id.name"/></span></p>
+											<p>Phone: <span><t t-esc="user.partner_id.phone"/></span></p>
+											<p>Email: <span><t t-esc="user.partner_id.email"/></span></p>
+											<p>Zip code: <span><t t-esc="user.partner_id.zip"/></span></p>
+											<p>
+												Address: <span><t t-esc="user.partner_id.street"/></span>
+											</p>
+										</div>
+										<div class="cd-btns pull-left">
+											<button type="submit" class="btn edit-btn">Edit</button>
+											<!--<a class="btn edit-btn" href="/change/address">Edit</a>-->
+											<!--<input type="button" class="btn delete-btn" name="delete" value="Delete" t-att-id="user.partner_id.id"/>-->
+											<!--<a class="btn delete-btn">Delete</a>-->
+										</div>
+										<input type="hidden" name="change_address" value="true" />
+										<input type="hidden" name="partner_id" t-att-value="user.partner_id.id" readonly="readonly"/>
+										<!--<input type="hidden" name="partner_id" t-att-value="user.partner_id.id" readonly="readonly"/>-->
+									</form>
+									<t t-foreach="partner_addr" t-as="pa_one">
+										<t t-if="pa_one.type == 'invoice'">
+											<form class="my_account_addres" action="/shop/address">
+												<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+												<input type="hidden" name="id" t-att-value="pa_one.id" readonly="readonly"/>
+												<div class="cd-content clearfix">
+													<p>User name: <span><t t-esc="pa_one.name"/></span></p>
+													<p>Phone: <span><t t-esc="pa_one.phone"/></span></p>
+													<p>Email: <span><t t-esc="pa_one.email"/></span></p>
+													<p>Zip code: <span><t t-esc="pa_one.zip"/></span></p>
+													<p>
+														Address: <span><t t-esc="pa_one.street"/></span>
+													</p>
+												</div>
+												<div class="cd-btns pull-left">
+													<button type="submit" class="btn edit-btn">Edit</button>
+													<t t-if="pa_one.id != user.partner_id.id">
+														<input type="button" class="btn delete-btn" name="delete" value="Delete" t-att-id="pa_one.id"/>
+													</t>
+													<!--<a class="btn delete-btn">Delete</a>-->
+												</div>
+												<input type="hidden" name="change_address" value="true" />
+												<input type="hidden" name="partner_id" t-att-value="pa_one.id" readonly="readonly"/>
+											</form>
+										</t>
+									</t>
+								</div>
+								<div class="item d-flex align-items-center">
+									<h3 class="h4">Shipping Address</h3>
+									<t t-foreach="partner_addr" t-as="pa">
+										<t t-if="pa.type != 'invoice'">
+											<form class="my_account_addres" action="/shop/address">
+												<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+												<input type="hidden" name="id" t-att-value="pa.id" readonly="readonly"/>
+												<div class="cd-content clearfix">
+													<p>User name: <span><t t-esc="pa.name"/></span></p>
+													<p>Phone: <span><t t-esc="pa.phone"/></span></p>
+													<p>Email: <span><t t-esc="pa.email"/></span></p>
+													<p>Zip code: <span><t t-esc="pa.zip"/></span></p>
+													<p>
+														Address: <span><t t-esc="pa.street"/></span>
+													</p>
+												</div>
+												<div class="cd-btns pull-left">
+													<button type="submit" class="btn edit-btn">Edit</button>
+													<t t-if="pa.id != user.partner_id.id">
+														<input type="button" class="btn delete-btn" name="delete" value="Delete" t-att-id="pa.id"/>
+													</t>
+													<!--<a class="btn delete-btn">Delete</a>-->
+												</div>
+												<input type="hidden" name="change_address" value="true" />
+												<input type="hidden" name="partner_id" t-att-value="pa.id" readonly="readonly"/>
+											</form>
+										</t>
+									</t>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</template>
+	<!-- Address End -->
+
+	<!-- Status Select（个人中心状态选择） 开始  -->
+	<template id="cpo_status_select" name="Status Select">
+		<div class="table-responsive">
+			<t t-if="quotation_qty.get('order')" t-set="order_date_list" t-value="quotation_qty.get('order')"/>
+			<t t-if="quotation_qty.get('invoice_qty')" t-set="order_date_list" t-value="quotation_qty.get('invoice_qty')"/>
+			<t t-set="order_data" t-value="order_date_list"/>
+			<t t-if="quotation_qty.get('invoice_qty')">
+				<t t-if="not order_data">
+					<h4 class="text-center">There are currently no orders to pay !</h4>
+				</t>
+				<t t-if="order_data">
+					<table class="table">
+						<thead>
+							<!--<tr class="active">-->
+							<tr>
+								<th>Invoice #</th>
+								<th>Invoice Date</th>
+								<th class='hidden-xs'>Due Date</th>
+								<th></th>
+								<th></th>
+								<th>Amount Due</th>
+							</tr>
+						</thead>
+						<tbody>
+							<t t-foreach="order_data" t-as="invoice">
+								<tr>
+									<td class="cell_overflow" t-att-style="'font-weight: bold;' if search_state == True else ''">
+										<a t-att-href="'/my/invoices/pdf/'+str(invoice.id)"
+										   t-att-title="invoice.number">
+											<t t-esc="invoice.number"/>
+										</a>
+									</td>
+									<td>
+										<span t-field="invoice.date_invoice"/>
+									</td>
+									<td class='hidden-xs'>
+										<span t-field="invoice.date_due"/>
+									</td>
+									<td>
+										<t t-if="invoice.state == 'open'">
+											<span class="label label-info">
+												<i class="fa fa-fw fa-clock-o"></i>
+												<span class="hidden-xs">Waiting for Payment</span>
+											</span>
+										</t>
+										<t t-if="invoice.state == 'paid'">
+											<span class="label label-default">
+												<i class="fa fa-fw fa-check"></i>
+												<span class="hidden-xs">Paid</span>
+											</span>
+										</t>
+										<t t-if="invoice.state == 'cancel'">
+											<span class="label label-default">
+												<i class="fa fa-fw fa-remove"></i>
+												<span class="hidden-xs">Cancelled</span>
+											</span>
+										</t>
+									</td>
+									<td>
+										<a t-if="invoice.state == 'open'"
+										   t-attf-href="/website_payment/pay?reference=#{invoice.number}&amp;amount=#{invoice.residual}&amp;currency_id=#{invoice.currency_id.id}&amp;country_id=#{invoice.partner_id.country_id.id}"
+										   alt="Pay Now" class="btn btn-xs btn-primary">
+											<i class="fa fa-arrow-circle-right"/>
+											<span class='hidden-xs'>Pay Now</span>
+										</a>
+									</td>
+									<td>
+										<span t-field="invoice.residual"
+											  t-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/>
+									</td>
+								</tr>
+							</t>
+						</tbody>
+					</table>
+				</t>
+			</t>
+			<t t-if="not quotation_qty.get('invoice_qty')">
+				<t t-if="not order_data">
+					<h4 class="text-center">You haven't submitted an order ! <a class="btn btn-primary" href="/shop/cart">submit</a> now</h4>
+				</t>
+				<t t-if="order_data">
+					<ul class="cpo-od-ul">
+						<li class="cpo-od-li od-li-title">
+							<div class="od-li-content">
+								<span class="od-li-span od-product">Products</span>
+								<span class="od-li-span od-orders">Order</span>
+								<span class="od-li-span od-qty">Qty</span>
+								<span class="od-li-span od-total">Total</span>
+								<span class="od-li-span od-total">Status</span>
+							</div>
+						</li>
+						<t t-foreach="order_data" t-as="oi">
+							<li class="cpo-od-li">
+								<div class="od-li-content">
+									<span class="od-li-span od-product"
+										  t-att-style="'font-weight: bold;' if search_state == True else ''">
+										<t t-esc="oi.product_name"/>
+									</span>
+									<span class="od-li-span od-orders">
+										<t t-esc="oi.name"/>
+									</span>
+									<span class="od-li-span od-qty">
+										<t t-esc="int(oi.order_line.product_uom_qty)"/>
+									</span>
+									<span class="od-li-span od-total">
+										<i class="fa fa-dollar mr5"></i>
+										<t t-esc="oi.amount_total"/>
+									</span>
+									<span class="od-li-span od-status">
+										<t t-set="cpo_state" t-value="oi.state"/>
+										<t t-call="website_cpo_sale.my_home_order_state_data"/>
+									</span>
+								</div>
+								<div class="od-details">
+									<div class="od-dt-advan">
+										<t t-if="oi.product_type != 'PCBA' and oi.product_type != 'Stencil'">
+											<img src="/website_cpo_sale/static/src/images/tools_img/order_pcb.jpg"/>
+										</t>
+										<t t-if="oi.product_type == 'PCBA' or oi.product_type == 'Stencil'">
+											<img src="/website_cpo_sale/static/src/images/tools_img/order_pcba.jpg"/>
+										</t>
+									</div>
+									<div class="od-dt-content">
+										<p>
+											<span>
+												Add time:
+												<i class="mr5">
+													<span t-field="oi.create_date" t-options='{"widget": "datetime"}'/>
+													<!--<t t-esc="oi.create_date.split(' ')[0]"/>-->
+												</i>
+											</span>
+											<span>
+												<a href="skype:llhq1234567?chat" onclick="return skypeCheck();">
+													<i class="mr5">
+														<img src="/website_cpo_sale/static/src/images/tools_img/cpo-skype.gif"
+															 title="Skype" alt="Skype"/>
+													</i>
+												</a>
+												Service:
+												<i class="mr5">
+													<t t-if="personal_id.seller_id">
+														<t t-esc="personal_id.seller_id.name.name"/>
+													</t>
+													<t t-if="not personal_id.seller_id">BINDY. ZHANG</t>
+												</i>
+											</span>
+											<span t-if="oi.po_number">
+												PO Number:
+												<i class="mr5">
+													<t t-esc="oi.po_number"/>
+												</i>
+											</span>
+											<span t-if="oi.part_no">
+												Part No. :
+												<i class="mr5">
+													<t t-esc="oi.part_no"/>
+												</i>
+											</span>
+											<span t-if="mft_obj">
+												<b>Manufacturing state</b>
+												<i class="mr5">
+													<t t-foreach="mft_obj.keys()" t-as="mft">
+														<t t-if="int(mft) == oi.id">
+															<t t-esc="mft_obj.get(mft)"/>
+														</t>
+													</t>
+												</i>
+											</span>
+										</p>
+										<p>
+											<span>
+												<t t-foreach="attr" t-as="at">
+													<t t-if="at.res_id == oi.id">
+														<t t-foreach="at" t-as="ati">
+															<b class="mr5"><t t-esc="ati.description"/>:
+															</b>
+															<i>
+																<t t-esc="ati.name"/>
+															</i>
+															|
+														</t>
+													</t>
+												</t>
+											</span>
+										</p>
+										<p>
+											<span>
+												<input type="hidden" name="oid" t-att-value="oi.id"/>
+												<a class="btn btn-primary home-order-details">View Detail</a>
+											</span>
+											<t t-if="link_active == 'manufacturing'">
+												<span class="cpo-order-eq">
+													<!--<input type="hidden" name="oid" t-att-value="oi.id"/>-->
+													<!--<a class="btn btn-primary home-order-eq">Engineering Question</a>-->
+													<a t-att-href="'/manufacturing/state?oid=%d' % oi.id" class="btn btn-primary">Manufacturing state</a>
+												</span>
+											</t>
+											<t t-if="link_active == 'eq_active'">
+												<span class="cpo-order-eq">
+													<!--<input type="hidden" name="oid" t-att-value="oi.id"/>-->
+													<!--<a class="btn btn-primary home-order-eq">Engineering Question</a>-->
+													<a t-att-href="'/show/eq-details?oid=%d' % oi.id" class="btn btn-primary">Engineering Question</a>
+													<t t-foreach="ask_obj" t-as="ao">
+														<t t-if="ao[1] == oi.id">
+															<t t-if="ao[0] &gt; 0">
+																<span class="qty cpo-icon-bounce"><t t-esc="state_qty.get('ask_qty')"/></span>
+															</t>
+														</t>
+													</t>
+												</span>
+											</t>
+										</p>
+										<p t-if="oi.cpo_text">
+											<b>Remark :</b> <t t-esc="oi.cpo_text"/>
+										</p>
+									</div>
+								</div>
+							</li>
+						</t>
+					</ul>
+				</t>
+			</t>
+		</div>
+		<t t-if="not search_state">
+			<div class="products_pager">
+				<div id="pro_page">
+					<t t-call="website.pager"/>
+				</div>
+			</div>
+		</t>
+	</template>
+	<!-- Status Select（个人中心状态选择） 结束  -->
+
+	<!-- 继承地址修改（/shop/address）开始 -->
+	<template id="change_shop_address_change" name="Change Address Change" inherit_id="website_sale.address">
+		<xpath expr='//div[@id="wrap"]/*' position="replace">
+			<!--<t t-call="website.layout">-->
+			<div class="ac-page">
+				<!-- 侧标手机样式 -->
+				<t t-call="website_cpo_sale.cpo_my_account_mobile"/>
+				<div class="page-content d-flex align-items-stretch">
+					<!-- Sidebar Navidation Menus -->
+					<t t-call="website_cpo_sale.cpo_sidebar_navidation_menus"/>
+					<div class="content-inner">
+						<!-- Page Header-->
+						<header class="ac-header">
+							<div class="container-fluid">
+								<a id="toggle-btn" href="#" class="menu-btn active hidden-xs" title="Show(Hide) Menu">
+									<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+								</a>
+								<h2 class="no-margin-bottom">Dashboard</h2>
+							</div>
+							<!-- 客服 -->
+							<t t-call="website_cpo_sale.customer_service_template"/>
+						</header>
+						<!-- Dashboard Counts Section-->
+						<section class="forms">
+							<div class="container-fluid">
+								<div class="row">
+									<!-- Basic Form-->
+									<div class="col-lg-8">
+										<div class="card">
+											<div class="card-header d-flex align-items-center">
+												<!--<h3 class="h4">Address Details</h3>-->
+												<t t-if="mode == ('new', 'billing')">
+													<h3 class="h4">Your Address
+														<small>or</small>
+														<t t-set="signup_text">Sign Up</t>
+														<t t-set="login_text">Log In</t>
+														<t t-set='connect'
+														   t-value="request.env['ir.config_parameter'].sudo().get_param('auth_signup.allow_uninvited') == 'True' and ('signup', signup_text) or ('login', login_text)"/>
+														<a t-attf-href='/web/{{connect[0]}}?redirect=/shop/checkout'
+														   class='btn btn-primary' style="margin-top: -11px">
+															<t t-esc='connect[1]'/>
+														</a>
+													</h3>
+												</t>
+												<t t-if="mode == ('edit', 'billing')">
+													<h3 class="h4">Your Address</h3>
+												</t>
+												<t t-if="mode[1] == 'shipping'">
+													<h3 t-if="change_info" class="h4">Personal information</h3>
+													<h3 t-if="not change_info" class="h4">Shipping Address</h3>
+												</t>
+												<t t-if="error" t-foreach="error.get('error_message', [])" t-as="err">
+													<h4 class="text-danger" t-esc="err"/>
+												</t>
+											</div>
+											<div class="card-body oe_website_sale" style="margin-top: 0;">
+												<!--<p>You can change your address here.</p>-->
+												<form name="/shop/checkout" method="post" class="checkout_autoformat">
+													<div t-attf-class="form-group #{error.get('name') and 'has-error' or ''} col-md-12 div_name">
+														<label class="control-label" for="name">
+															<i class="mr5 red">*</i>Name
+														</label>
+														<input type="text" name="name" class="form-control"
+															   t-att-value="'name' in checkout and checkout['name']"/>
+													</div>
+													<div class="clearfix"/>
+													<!--<t t-if="mode[1] == 'billing'">-->
+													<div t-attf-class="form-group #{error.get('email') and 'has-error' or ''} col-md-6"
+														 id="div_email">
+														<label class="control-label" for="email">
+															<i class="mr5 red">*</i>Email
+														</label>
+														<input type="email" name="email" class="form-control"
+															   t-att-value="'email' in checkout and checkout['email']" />
+													</div>
+													<!--</t>-->
+													<div t-attf-class="form-group #{error.get('phone') and 'has-error' or ''} col-md-6"
+														 id="div_phone">
+														<label class="control-label" for="phone">
+															<i class="mr5 red">*</i>Phone
+														</label>
+														<input type="tel" name="phone" class="form-control"
+															   t-att-value="'phone' in checkout and checkout['phone']"/>
+													</div>
+													<div class="clearfix"/>
+													<t t-if="mode == ('new', 'billing')">
+														<div t-attf-class="form-group #{error.get('company_name') and 'has-error' or ''} col-md-6">
+															<label class="control-label font-weight-normal label-optional"
+																   for="company_name">
+																<i class="mr5 red">*</i>Company Name
+															</label>
+															<input type="text" name="company_name" class="form-control"
+																   t-att-value="'company_name' in checkout and checkout['company_name']"/>
+														</div>
+														<div t-attf-class="form-group #{error.get('vat') and 'has-error' or ''} col-md-6 div_vat">
+															<label class="control-label font-weight-normal label-optional"
+																   for="vat">
+																<i class="mr5 red">*</i>TIN / VAT
+															</label>
+															<input type="text" name="vat" class="form-control"
+																   t-att-value="'vat' in checkout and checkout['vat']"/>
+														</div>
+													</t>
+													<div class="clearfix"/>
+													<div t-attf-class="form-group #{error.get('street') and 'has-error' or ''} col-md-12 div_street">
+														<label class="control-label" for="street">
+															<i class="mr5 red">*</i>Street
+															<span class="hidden-xs">and Number</span>
+														</label>
+														<input type="text" name="street" class="form-control"
+															   t-att-value="'street' in checkout and checkout['street']"/>
+													</div>
+													<div t-attf-class="form-group #{error.get('street2') and 'has-error' or ''} col-md-12 div_street2">
+														<label class="control-label label-optional" for="street2">Street
+															2
+														</label>
+														<input type="text" name="street2" class="form-control"
+															   t-att-value="'street2' in checkout and checkout['street2']"/>
+													</div>
+													<div class="clearfix"/>
+													<t t-set='zip_city'
+													   t-value='country and [x for x in country.get_address_fields() if x in ["zip", "city"]] or ["city", "zip"]'/>
+													<t t-if="'zip' in zip_city and zip_city.index('zip') &lt; zip_city.index('city')">
+														<div t-attf-class="form-group #{error.get('zip') and 'has-error' or ''} col-sm-4 div_zip">
+															<label class="control-label label-optional" for="zip">
+																<i class="mr5 red">*</i>Zip Code
+															</label>
+															<input type="text" name="zip" class="form-control"
+																   t-att-value="'zip' in checkout and checkout['zip']"/>
+														</div>
+													</t>
+													<div t-attf-class="form-group #{error.get('city') and 'has-error' or ''} col-sm-8 div_city">
+														<label class="control-label" for="city">
+															<i class="mr5 red">*</i>City
+														</label>
+														<input type="text" name="city" class="form-control"
+															   t-att-value="'city' in checkout and checkout['city']"/>
+													</div>
+													<t t-if="'zip' in zip_city and zip_city.index('zip') &gt; zip_city.index('city')">
+														<div t-attf-class="form-group #{error.get('zip') and 'has-error' or ''} col-sm-4 div_zip">
+															<label class="control-label label-optional" for="zip">
+																<i class="mr5 red">*</i>Zip Code
+															</label>
+															<input type="text" name="zip" class="form-control"
+																   t-att-value="'zip' in checkout and checkout['zip']"/>
+														</div>
+													</t>
+													<div class="clearfix"/>
+													<div t-attf-class="form-group #{error.get('country_id') and 'has-error' or ''} col-md-6 div_country">
+														<label class="control-label" for="country_id">
+															<i class="mr5 red">*</i>Country
+														</label>
+														<select id="country_id" name="country_id" class="form-control">
+															<option value="">Country...</option>
+															<t t-foreach="countries" t-as="c">
+																<option t-att-value="c.id"
+																		t-att-selected="c.id == (country and country.id or -1)">
+																	<t t-esc="c.name"/>
+																</option>
+															</t>
+														</select>
+													</div>
+													<div t-attf-class="form-group #{error.get('state_id') and 'has-error' or ''} col-md-6 div_state"
+														 t-att-style="(not country or not country.state_ids) and 'display: none'">
+														<label class="control-label" for="state_id">
+															<i class="mr5 red">*</i>State / Province
+														</label>
+														<select name="state_id" class="form-control" data-init="1">
+															<option value="">State / Province...</option>
+															<t t-foreach="country and country.state_ids or []" t-as="s">
+																<option t-att-value="s.id"
+																		t-att-selected="s.id == ('state_id' in checkout and country and checkout['state_id'] != '' and int(checkout['state_id']))">
+																	<t t-esc="s.name"/>
+																</option>
+															</t>
+														</select>
+													</div>
+													<div t-if="change_info" t-attf-class="form-group #{error.get('type') and 'has-error' or ''} col-md-6" style="display: none;"
+														 id="div_type">
+														<select name="type" class="form-control" data-init="1">
+															<option value="invoice">Invoice address</option>
+														</select>
+													</div>
+													<div t-if="not change_info" t-attf-class="form-group #{error.get('type') and 'has-error' or ''} col-md-6"
+														 id="div_type">
+														<label class="control-label" for="type">
+															<i class="mr5 red">*</i>Address Type
+														</label>
+														<select name="type" class="form-control" data-init="1">
+															<t t-if="mode[0] == 'new'">
+																<t t-if="addr_type">
+																	<t t-if="checkout and checkout.get('type') == 'invoice'">
+																		<option value="invoice"
+																				t-att="['selected', 'selected']">Invoice
+																			address
+																		</option>
+																		<option value="delivery">Shipping address
+																		</option>
+																	</t>
+																	<t t-if="checkout and checkout.get('type') == 'delivery'">
+																		<option value="delivery"
+																				t-att="['selected', 'selected']">
+																			Shipping
+																			address
+																		</option>
+																		<option value="invoice">Invoice address</option>
+																	</t>
+																	<t t-if="not checkout or not checkout.get('type')">
+																		<option value="delivery">Shipping address
+																		</option>
+																		<option value="invoice">Invoice address</option>
+																	</t>
+																	<t t-if="checkout and not checkout.get('type')">
+																		<option value="delivery">Shipping address</option>
+																		<option value="invoice">Invoice address</option>
+																	</t>
+																</t>
+																<t t-if="not addr_type">
+																	<option value="delivery">Shipping address</option>
+																	<option value="invoice">Invoice address</option>
+																</t>
+															</t>
+															<t t-if="mode[0] == 'edit'">
+																<t t-if="not addr_type">
+																	<t t-if="checkout.type == 'invoice' or checkout.type == 'contact'">
+																		<option value="invoice"
+																				t-att="['selected', 'selected']">Invoice
+																			address
+																		</option>
+																		<option value="delivery">Shipping address
+																		</option>
+																	</t>
+																	<t t-if="checkout.type == 'delivery'">
+																		<option value="delivery"
+																				t-att="['selected', 'selected']">
+																			Shipping
+																			address
+																		</option>
+																		<option value="invoice">Invoice address</option>
+																	</t>
+																	<t t-if="not checkout.type">
+																		<option value="delivery">Shipping address</option>
+																		<option value="invoice">Invoice address</option>
+																	</t>
+																</t>
+																<t t-if="addr_type">
+																	<t t-if="checkout and checkout.get('type') == 'invoice'">
+																		<option value="invoice"
+																				t-att="['selected', 'selected']">Invoice address
+																		</option>
+																		<option value="delivery">Shipping address</option>
+																	</t>
+																	<t t-if="checkout and checkout.get('type') == 'delivery'">
+																		<option value="delivery"
+																				t-att="['selected', 'selected']">
+																			Shipping
+																			address
+																		</option>
+																		<option value="invoice">Invoice address</option>
+																	</t>
+																	<t t-if="not checkout or not checkout.get('type')">
+																		<option value="delivery">Shipping address
+																		</option>
+																		<option value="invoice">Invoice address</option>
+																	</t>
+																</t>
+															</t>
+														</select>
+													</div>
+
+													<input type="hidden" name="csrf_token"
+														   t-att-value="request.csrf_token()"/>
+													<input type="hidden" name="submitted" value="1"/>
+													<input type="hidden" name="change_address"
+														   t-att-value="change_address or false"/>
+													<input type="hidden" name="change_info"
+														   t-att-value="change_info or false"/>
+													<input type="hidden" name="partner_id"
+														   t-att-value="partner_id or '0'"/>
+													<input type="hidden" name="callback" t-att-value="callback"/>
+													<!-- Example -->
+													<input type="hidden" name="field_required"
+														   t-att-value="mode[1] == 'billing' and 'phone,name' or ''"/>
+
+													<div class="clearfix"/>
+													<div style='padding: 0 15px'>
+														<t t-if="change_address">
+															<a href="/my/account/address"
+															   class="btn btn-default mb32">
+																<span class="fa fa-long-arrow-left"/>
+																Back
+															</a>
+														</t>
+														<t t-if="change_info">
+															<a href="/my/home"
+															   class="btn btn-default mb32">
+																<span class="fa fa-long-arrow-left"/>
+																Back
+															</a>
+														</t>
+														<t t-if="not change_address and not change_info">
+															<a t-att-href="mode == ('new', 'billing') and '/shop/cart' or '/shop/checkout'"
+															   class="btn btn-default mb32">
+																<span class="fa fa-long-arrow-left"/>
+																Back
+															</a>
+														</t>
+														<a class="btn btn-default btn-primary pull-right mb32 a-submit a-submit-disable a-submit-loading">
+															<span>Save</span>
+															<span class="fa fa-long-arrow-right"/>
+														</a>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+			<!--</t>-->
+		</xpath>
+	</template>
+	<!-- 继承地址修改（/shop/address）结束 -->
+	<!-- 优惠券开始 -->
+	<template id="cpo_my_account_coupons" name="My Coupons">
+		<t t-call="website.layout">
+			<div class="ac-page">
+				<!-- 侧标手机样式 -->
+				<t t-call="website_cpo_sale.cpo_my_account_mobile"/>
+				<div class="page-content d-flex align-items-stretch">
+					<!-- Nav -->
+					<t t-call="website_cpo_sale.cpo_sidebar_navidation_menus"/>
+					<div class="content-inner">
+						<!-- Page Header-->
+						<header class="ac-header">
+							<div class="container-fluid">
+								<a id="toggle-btn" href="#" class="menu-btn active hidden-xs" title="Show(Hide) Menu">
+									<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+								</a>
+								<h2 class="no-margin-bottom">Dashboard</h2>
+							</div>
+							<!-- 客服 -->
+							<t t-call="website_cpo_sale.customer_service_template"/>
+						</header>
+						<!-- Dashboard Counts Section-->
+						<section class="dashboard-coupons no-padding-bottom">
+							<div class="container-fluid">
+								<!-- 设置数量变量 -->
+								<div class="row bg-white has-shadow item-flex pt-20 pl-20">
+									<t t-if="not rows">
+										<div class="col-lg-8">
+											<div class="card">
+												<div class="card-body">
+													<div class="table-responsive">
+														<h4 class="text-left">
+															No coupons!
+															<a class="btn btn-primary" href="/coupon">Get it now</a>
+														</h4>
+													</div>
+												</div>
+											</div>
+										</div>
+									</t>
+									<t t-if="rows">
+										<t t-foreach="rows" t-as="row">
+											<div class="stamp stamp-box">
+												<div class="par">
+													<p><t t-esc="row.time_money_id.name_title"/></p>
+													<t t-if="row.time_money_id.cpo_card_bool == True">
+														<t t-if="row.time_money_id.cpo_discount_type == '%'">
+															<span>
+																<t t-esc="row.time_money_id.cpo_card_money"/>
+															</span>
+															<sub class="sign">%</sub>
+														</t>
+														<t t-if="row.time_money_id.cpo_discount_type == 'money'">
+															<sub class="sign">$</sub>
+															<span>
+																<t t-esc="row.time_money_id.cpo_card_money"/>
+															</span>
+														</t>
+													</t>
+													<t t-else="">
+														<t t-if="row.time_money_id.cpo_discount_type == '%'">
+															<span>
+																<t t-esc="row.time_money_id.cpo_no_card_money"/>
+															</span>
+															<sub class="sign">%</sub>
+														</t>
+														<t t-else="">
+															<sub class="sign">$</sub>
+															<span>
+																<t t-esc="row.time_money_id.cpo_no_card_money"/>
+															</span>
+														</t>
+													</t>
+													<!--<sub class="sign">$</sub>-->
+													<!--<span>50.00</span>-->
+													<sub>Coupon</sub>
+													<p>For PCB orders only!</p>
+												</div>
+												<div class="copy">
+													Deputy coupon
+													<p>
+														<t t-esc="row.time_money_id.cpo_start_time"></t>
+														<br/>
+														<t t-esc="row.time_money_id.cpo_end_time"></t>
+													</p>
+													<a href="/pcb">Use</a>
+												</div>
+											</div>
+										<!--<div class="item d-flex align-items-center">-->
+											<!--<div class="cp-details">-->
+												<!--<div class="cp-money">-->
+													<!--<div class="number">-->
+														<!--<strong>-->
+															<!--<i class="fa fa-dollar mr5"></i>-->
+															<!--<t t-esc="row.time_money_id.cpo_no_card_money"/>-->
+														<!--</strong>-->
+													<!--</div>-->
+													<!--<div class="icon bg-violet">-->
+														<!--Off <i class="fa fa-dollar" aria-hidden="true"></i>-->
+														<!--<t t-esc="row.time_money_id.cpo_no_card_money"/>-->
+													<!--</div>-->
+												<!--</div>-->
+												<!--<div class="title">-->
+													<!--<p>-->
+														<!--<span>Period of Validity:</span>-->
+														<!--<t t-esc="row.time_money_id.cpo_start_time"/>-->
+														<!--~-->
+														<!--<t t-esc="row.time_money_id.cpo_end_time"/>-->
+													<!--</p>-->
+													<!--<p>-->
+														<!--<span>Conditions of Use: </span>Only PCB board!-->
+													<!--</p>-->
+													<!--<p>-->
+														<!--<span>-->
+															<!--<t t-esc="row.time_money_id.name_title"/>-->
+														<!--</span>-->
+													<!--</p>-->
+													<!--<p class="text-center">-->
+														<!--<a class="btn btn-primary" href="/pcb">To use</a>-->
+													<!--</p>-->
+												<!--</div>-->
+											<!--</div>-->
+										<!--</div>-->
+									</t>
+									</t>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</t>
+	</template>
+	<!-- 优惠券结束 -->
+	<!-- 支付订单、未支付订单和退款 开始 -->
+	<template id="cpo_paid_and_refunded" name="Paid &amp; Refunded">
+		<t t-call="website.layout">
+			<div class="ac-page">
+				<!-- 侧标手机样式 -->
+				<t t-call="website_cpo_sale.cpo_my_account_mobile"/>
+				<div class="page-content d-flex align-items-stretch">
+					<!-- Nav -->
+					<t t-call="website_cpo_sale.cpo_sidebar_navidation_menus"/>
+					<div class="content-inner">
+						<!-- Page Header-->
+						<header class="ac-header">
+							<div class="container-fluid">
+								<a id="toggle-btn" href="#" class="menu-btn active hidden-xs" title="Show(Hide) Menu">
+									<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+								</a>
+								<h2 class="no-margin-bottom">Dashboard</h2>
+							</div>
+							<!-- 客服 -->
+							<t t-call="website_cpo_sale.customer_service_template"/>
+						</header>
+						<!-- Dashboard Counts Section-->
+						<div id="cpo_paid_box">
+							<t t-call="website_cpo_sale.cpo_paid_template_data"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</t>
+	</template>
+	<template id="cpo_paid_template_data">
+		<t t-set="state_qty" t-value="order_data.get('qty')"/>
+		<t t-if="order_data.get('order_obj')" t-set="paid_data" t-value="order_data.get('order_obj')"/>
+		<t t-if="order_data.get('refund_obj')" t-set="paid_data" t-value="order_data.get('refund_obj')"/>
+		<section class="dashboard-paid no-padding-bottom">
+			<div class="container-fluid">
+				<!-- 设置数量变量 -->
+				<div class="row bg-white has-shadow item-flex">
+					<div t-att-class="'item d-flex align-items-center ni-active' if state=='payment' else 'item d-flex align-items-center'">
+						<a class="item-a" href="/my/paid?type=payment">
+							<input type="hidden" name="state" value="payment"/>
+							<div class="ni-details">
+								<div class="number">
+									<strong>
+										<t t-esc="state_qty.get('p_qty')"/>
+									</strong>
+								</div>
+								<div class="icon bg-violet">
+									<i class="fa fa-edit" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="title">
+								<span>Payment</span>
+							</div>
+						</a>
+					</div>
+					<div t-att-class="'item d-flex align-items-center ni-active' if state == 'refund' else 'item d-flex align-items-center'">
+						<a class="item-a" href="/my/paid?type=refund">
+							<input type="hidden" name="state" value="refund"/>
+							<div class="ni-details">
+								<div class="number">
+									<strong>
+										<t t-esc="state_qty.get('rf_qty')"/>
+									</strong>
+								</div>
+								<div class="icon bg-violet">
+									<i class="fa fa-edit" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="title">
+								<span>Refund</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="tables">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="card">
+							<div class="card-body">
+								<form class="form-inline cpo-paid-search" id="">
+									<input type="text" name="state" t-att-value="process_state" class="cpo-none"/>
+									<div class="form-group">
+										<label for="order_search" class="sr-only">Order</label>
+										<input id="order_search" type="text" name="order" placeholder="Order"
+											   class="mr-3 form-control"/>
+									</div>
+									<div class="form-group">
+										<label for="po_number_search" class="sr-only">Products</label>
+										<input id="po_number_search" type="text" name="po_number"
+											   placeholder="PO Number"
+											   class="mr-3 form-control"/>
+									</div>
+									<div class="form-group">
+										<a class="btn btn-primary search">
+											<i class="fa fa-search mr5"></i>Search
+										</a>
+									</div>
+								</form>
+								<t t-set="link_ac" t-value="back_lc"/>
+								<t t-if="search_state">
+									<a class="btn btn-default pull-right mr5 search_back" t-att-href="'/my/paid?type=%s' % (link_ac)">Back</a>
+								</t>
+							</div>
+							<div class="card-header d-flex align-items-center">
+								<h3 class="h4">My Paid Orders</h3>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<t t-if="not paid_data">
+										<h4 class="text-center">There are currently no orders to pay !</h4>
+									</t>
+									<t t-if="not paid_data">
+										<h4 class="text-center">
+											You haven't submitted an order !
+											<a class="btn btn-primary" href="/shop/cart">submit </a> now
+										</h4>
+									</t>
+									<t t-if="order_data.get('order_obj')" t-set="paid_data" t-value="order_data.get('order_obj')"/>
+									<t t-if="order_data.get('refund_obj')" t-set="paid_data" t-value="order_data.get('refund_obj')"/>
+									<t t-if="not order_data.get('refund_obj')">
+										<t t-if="paid_data">
+											<ul class="cpo-od-ul">
+											<li class="cpo-od-li od-li-title">
+												<div class="od-li-content">
+													<span class="od-li-span od-product">Products</span>
+													<span class="od-li-span od-orders">Order</span>
+													<span class="od-li-span od-qty">Qty</span>
+													<span class="od-li-span od-total">Total</span>
+													<span class="od-li-span od-total">Status</span>
+												</div>
+											</li>
+											<t t-foreach="paid_data" t-as="oi">
+												<li class="cpo-od-li">
+													<div class="od-li-content">
+														<span class="od-li-span od-product"
+															  t-att-style="'font-weight: bold;' if search_state == True else ''">
+															<t t-esc="oi.product_name"/>
+														</span>
+														<span class="od-li-span od-orders">
+															<t t-esc="oi.name"/>
+														</span>
+														<span class="od-li-span od-qty">
+															<t t-esc="int(oi.order_line.product_uom_qty)"/>
+														</span>
+														<span class="od-li-span od-total">
+															<i class="fa fa-dollar mr5"></i>
+															<t t-esc="oi.amount_total"/>
+														</span>
+														<span class="od-li-span od-status">
+															<t t-set="cpo_state" t-value="oi.state"/>
+															<t t-call="website_cpo_sale.my_home_order_state_data"/>
+														</span>
+													</div>
+													<div class="od-details">
+														<div class="od-dt-advan">
+															<img src="/website_cpo_sale/static/src/images/process/standard-1.png"/>
+														</div>
+														<div class="od-dt-content">
+															<p>
+																<span>
+																	Add time:
+																	<i class="mr5">
+																		<span t-field="oi.create_date" t-options='{"widget": "datetime"}'/>
+																		<!--<t t-esc="oi.create_date.split(' ')[0]"/>-->
+																	</i>
+																</span>
+																<span>
+																	<i class="mr5">
+																		<img src="/website_cpo_sale/static/src/images/tools_img/cpo-skype.gif"
+																			 title="Skype" alt="Skype"/>
+																	</i>
+																	Service:
+																	<i class="mr5">
+																		<t t-if="personal_id.seller_id">
+																			<t t-esc="personal_id.seller_id.name.name"/>
+																		</t>
+																		<t t-if="not personal_id.seller_id">BINDY.
+																			ZHANG
+																		</t>
+																	</i>
+																</span>
+																<span>
+
+																</span>
+																<span>
+																	PO Number:
+																	<i class="mr5">
+																		<t t-esc="oi.po_number"/>
+																	</i>
+																</span>
+															</p>
+															<p>
+																<span>
+																	<t t-foreach="attr" t-as="at">
+																		<t t-if="at.res_id == oi.id">
+																			<t t-foreach="at" t-as="ati">
+																				<b class="mr5"><t
+																						t-esc="ati.description"/>:
+																				</b>
+																				<i>
+																					<t t-esc="ati.name"/>
+																				</i>
+																				|
+																			</t>
+																		</t>
+																	</t>
+																</span>
+															</p>
+															<div class="clearfix">
+																<t t-if="oi.refund_bool">
+																	<form action="/my/refund">
+																		<input type="hidden" name="order_id" t-att-value="oi.id"/>
+																		<input type="hidden" name="order_name" t-att-value="oi.name"/>
+																		<a type="submit" class="btn btn-primary request-refund">Request a refund</a>
+																	</form>
+																</t>
+															</div>
+														</div>
+													</div>
+												</li>
+											</t>
+										</ul>
+										</t>
+									</t>
+									<t t-if="order_data.get('refund_obj')">
+										<t t-if="paid_data">
+											<ul class="cpo-od-ul">
+											<li class="cpo-od-li od-li-title">
+												<div class="od-li-content">
+													<span class="od-li-span od-product">Products</span>
+													<span class="od-li-span od-orders">Order</span>
+													<span class="od-li-span od-total">Total</span>
+													<span class="od-li-span od-qty">Status</span>
+												</div>
+											</li>
+											<t t-foreach="paid_data" t-as="oi">
+												<li class="cpo-od-li">
+													<div class="od-li-content">
+														<span class="od-li-span od-product"
+															  t-att-style="'font-weight: bold;' if search_state == True else ''">
+															<t t-esc="oi.product_name"/>
+														</span>
+														<span class="od-li-span od-orders">
+															<t t-esc="oi.order_id.name"/>
+														</span>
+														<span class="od-li-span od-total">
+															<i class="fa fa-dollar mr5"></i>
+															<t t-esc="oi.order_amount"/>
+														</span>
+														<span class="od-li-span od-status">
+															<t t-if="oi.state in ['draft', 's_refund']">
+																Merchant refund
+															</t>
+															<t t-if="oi.state == 'c_apply'">
+																Request a refund
+															</t>
+															<t t-if="oi.state == 's_process'">
+																Processing refund
+															</t>
+															<t t-if="oi.state == 'c_fail'">
+																Do Not Agree To Refund
+															</t>
+															<t t-if="oi.state == 'c_success'">
+																Refund successfully
+															</t>
+															<t t-if="oi.state == 'c_cancel'">
+																Cancel refund
+															</t>
+														</span>
+													</div>
+													<div class="od-details">
+														<div class="od-dt-advan">
+															<img src="/website_cpo_sale/static/src/images/process/standard-1.png"/>
+														</div>
+														<div class="od-dt-content">
+															<p>
+																<span>
+																	Add time:
+																	<i class="mr5">
+																		<span t-field="oi.create_date" t-options='{"widget": "datetime"}'/>
+																		<!--<t t-esc="oi.create_date.split(' ')[0]"/>-->
+																	</i>
+																</span>
+																<span>
+																	<i class="mr5">
+																		<img src="/website_cpo_sale/static/src/images/tools_img/cpo-skype.gif"
+																			 title="Skype" alt="Skype"/>
+																	</i>
+																	Service:
+																	<i class="mr5">
+																		<t t-if="personal_id.seller_id">
+																			<t t-esc="personal_id.seller_id.name.name"/>
+																		</t>
+																		<t t-if="not personal_id.seller_id">BINDY.
+																			ZHANG
+																		</t>
+																	</i>
+																</span>
+																<span>
+
+																</span>
+																<span t-if="oi.order_id.po_number">
+																	PO Number:
+																	<i class="mr5">
+																		<t t-esc="oi.order_id.po_number"/>
+																	</i>
+																</span>
+															</p>
+															<div class="cancel_refund clearfix">
+																<t t-if="oi.state == 'c_apply'">
+																	<form>
+																		<input type="hidden" name="refund_id" t-att-value="oi.id"/>
+																		<a class="btn btn-primary cancel-refund">Cancel refund</a>
+																	</form>
+																</t>
+																<form>
+																	<span class="description">Description: </span>
+																	<t t-esc="oi.client_refund"/>
+																</form>
+															</div>
+														</div>
+													</div>
+												</li>
+											</t>
+										</ul>
+										</t>
+									</t>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+	<!-- 支付订单、未支付订单和退款 结束 -->
+
+	<!-- 退款 开始 -->
+	<template id="cpo_my_refunded" name="Refunded">
+		<t t-call="website.layout">
+			<div class="ac-page">
+				<!-- 侧标手机样式 -->
+				<t t-call="website_cpo_sale.cpo_my_account_mobile"/>
+				<div class="page-content d-flex align-items-stretch">
+					<!-- Nav -->
+					<t t-call="website_cpo_sale.cpo_sidebar_navidation_menus"/>
+					<div class="content-inner">
+						<!-- Page Header-->
+						<header class="ac-header">
+							<div class="container-fluid">
+								<a id="toggle-btn" href="#" class="menu-btn active hidden-xs" title="Show(Hide) Menu">
+									<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+								</a>
+								<h2 class="no-margin-bottom">Dashboard</h2>
+							</div>
+							<!-- 客服 -->
+							<t t-call="website_cpo_sale.customer_service_template"/>
+						</header>
+						<!-- Dashboard Counts Section-->
+						<div id="cpo_paid_box">
+							<t t-call="website_cpo_sale.cpo_refund_template_data"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</t>
+	</template>
+	<template id="cpo_refund_template_data">
+		<section class="forms">
+			<div class="container-fluid">
+				<div class="row">
+					<!-- Basic Form-->
+					<div class="col-lg-6">
+						<div class="card">
+							<div class="card-header d-flex align-items-center">
+								<h3 class="h4">Refund</h3>
+							</div>
+							<div class="card-body">
+								<form id="cpo_refund_form_data">
+									<input type="hidden" name="order_id" t-att-value="order_id"/>
+									<div class="form-group">
+										<label class="form-control-label"><i class="mr5 red"></i>User Name: </label>
+										<input type="text" placeholder="User Name" class="form-control" t-att-value="user.name" readonly="readonly"/>
+									</div>
+									<div class="form-group">
+										<label class="form-control-label"><i class="mr5 red"></i>Order: </label>
+										<input type="text" placeholder="Order" class="form-control" name="order_name" t-att-value="order_name" readonly="readonly"/>
+									</div>
+									<div class="form-group">
+										<label class="form-control-label"><i class="mr5 red"></i>Refund instructions: </label>
+										<input type="hidden" name="refund_instr" value=""/>
+										<textarea class="form-control refund_textarea" placeholder="Refund instructions" ></textarea>
+									</div>
+									<div class="form-group">
+										<a class="btn btn-primary">Submit</a>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+	<!-- 退款 结束 -->
+
+	<!-- 消息中心 开始 -->
+	<template id="cpo_my_message_center" name="Message Center">
+		<t t-call="website.layout">
+			<t t-call="website_cpo_sale.cpo_img_zoom"/>
+			<div class="ac-page">
+				<!-- 侧标手机样式 -->
+				<t t-call="website_cpo_sale.cpo_my_account_mobile"/>
+				<div class="page-content d-flex align-items-stretch">
+					<!-- Nav -->
+					<t t-call="website_cpo_sale.cpo_sidebar_navidation_menus"/>
+					<div class="content-inner">
+						<!-- Page Header-->
+						<header class="ac-header">
+							<div class="container-fluid">
+								<a id="toggle-btn" href="#" class="menu-btn active hidden-xs" title="Show(Hide) Menu">
+									<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+								</a>
+								<h2 class="no-margin-bottom">Dashboard</h2>
+							</div>
+							<!-- 客服 -->
+							<t t-call="website_cpo_sale.customer_service_template"/>
+						</header>
+						<!-- Dashboard Counts Section-->
+						<div id="cpo_paid_box">
+							<t t-if="msg_content == 'list'">
+								<t t-call="website_cpo_sale.cpo_message_template_data"/>
+							</t>
+							<t t-if="msg_content == 'details'">
+								<t t-call="website_cpo_sale.cpo_my_message_details"/>
+							</t>
+						</div>
+					</div>
+				</div>
+			</div>
+		</t>
+	</template>
+	<!-- 消息列表 -->
+	<template id="cpo_message_template_data">
+		<section class="forms cpo_message_section">
+			<div class="container-fluid">
+				<div class="row">
+					<!-- Basic Form-->
+					<div class="col-lg-8">
+						<div class="card">
+							<div class="card-header d-flex align-items-center">
+								<div class="sellar-info">
+									<div class="sellar-img">
+										<img t-if="personal_id.seller_id.image"
+						 						t-att-src="'data:image/png;base64,%s' %  personal_id.seller_id.image"/>
+										<img t-if="not personal_id.seller_id.image"
+						 						src="/website_cpo_sale/static/src/images/tx/sellars.jpg"/>
+										<!--<img src="/website_cpo_sale/static/src/images/tx/sellars.jpg"/>-->
+									</div>
+									<div class="sellar-io">
+										<span class="io-name">
+											<t t-if="not personal_id.seller_id">
+												BINDY. ZHANG
+											</t>
+											<t t-if="personal_id.seller_id">
+												<t t-esc="personal_id.seller_id.name.name"/>
+											</t>
+										</span><br/>
+										<span class="io-descr">Sales-rep</span>
+									</div>
+								</div>
+								<div class="sellar-contaus">
+									<a class="btn btn-primary" href="/message/details">Contact Sales-rep</a>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive cpo-message">
+									<table class="cpo_message_tabel">
+										<thead>
+											<tr>
+												<th>From</th>
+												<th>Message</th>
+												<th>Time</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<t t-if="not msg_obj">
+												<tr>
+													<td colspan="4">
+														No news for now!
+													</td>
+												</tr>
+											</t>
+											<t t-foreach="msg_obj" t-as="mo">
+												<tr t-att-class="'od-active' if mo.state in ['read', 'c_consult'] else ''">
+													<a t-att-href="'/message/details?message=%d' % (mo.id)">
+													<td>
+														<t t-if="mo.msg_id.seller_id.name.name">
+															<span t-if="mo.msg_type in ['n_msg', 'o_msg']">
+																<t t-esc="mo.msg_id.seller_id.name.name"/>
+															</span>
+															<span t-if="mo.msg_type in ['c_msg']">
+																<t t-esc="mo.msg_id.seller_id.name.name"/>
+															</span>
+														</t>
+														<t t-if="not mo.msg_id.seller_id.name.name">
+															<span>
+																<t t-esc="personal_id.seller_id.name.name"/>
+															</span>
+														</t>
+													</td>
+													<td>
+														<a t-att-href="'/message/details?message=%d' % (mo.id)">
+															<t t-if="mo.msg_type == 'c_msg'">
+																<i class="fa fa-paper-plane-o fa-lg mr5"></i>
+																<t t-esc="mo.name"/>
+															</t>
+															<t t-if="mo.msg_type in ['n_msg', 'o_msg']">
+																<i class="fa fa-volume-up fa-lg mr5"></i>
+																<t t-esc="mo.name"/>
+															</t>
+														</a>
+													</td>
+													<td>
+														<span t-field="mo.create_date" t-options='{"widget": "datetime"}'/>
+														<!--<t t-esc="mo.create_date"/>-->
+													</td>
+													<td>
+														<t t-if="mo.state in ['read', 'c_consult']">
+															<img src="/website_cpo_sale/static/src/images/process/have_read.png"/>
+														</t>
+														<t t-if="mo.state in ['unread', 's_reply']">
+															<img src="/website_cpo_sale/static/src/images/process/unread.png"/>
+														</t>
+													</td>
+													</a>
+												</tr>
+											</t>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+	<!-- 消息详情 -->
+	<template id="cpo_my_message_details">
+		<section class="forms cpo_message_section dashboard-coupons">
+			<div class="container-fluid">
+				<t t-if="not msg_obj">
+					<t t-call="website_cpo_sale.cpo_message_send_form05"/>
+				</t>
+				<t t-if="msg_obj">
+					<t t-if="msg_obj.msg_type == 'c_msg'">
+						<t t-call="website_cpo_sale.cpo_message_send_form05"/>
+					</t>
+					<div class="row">
+						<!-- Basic Form-->
+						<div class="col-lg-8">
+							<div class="card">
+								<div class="card-header d-flex align-items-center">
+									<h3 class="h4">
+										Message
+									</h3>
+								</div>
+								<div class="card-body">
+									<div class="table-responsive cpo-message">
+										<h3 class="h4">
+											<t t-esc="msg_obj.name"/>
+										</h3>
+										<form id="cpo_message_content_form">
+											<t t-foreach="msg_obj.chat_ids" t-as="chat_id">
+												<t t-if="chat_id.client_msg">
+													<div class="form-group form-msg-right">
+														<div class="message-content">
+															<div class="content-box">
+																<span class="reply-span">
+																	<t t-raw="chat_id.client_msg"/>
+																</span>
+															</div>
+															<!--<span>-->
+																<!--<t t-raw="chat_id.client_msg"/>-->
+															<!--</span>-->
+														</div>
+														<label class="form-control-label">
+															<img t-if="msg_obj.client_id.image" class="img-ava" t-att-src="'data:image/png;base64,%s' %  msg_obj.client_id.image"/>
+															<img t-if="not msg_obj.client_id.image" class="img-ava" src="/website_cpo_sale/static/src/images/tx/sellars.jpg"/>
+															<span>
+																<i class="mr5 red"></i>
+																<t t-raw="msg_obj.client_id.name"/>
+															</span>
+															<br/>
+															<span>
+																<t t-esc="chat_id.create_date.split(' ')[0]"/>
+															</span>
+														</label>
+													</div>
+												</t>
+												<t t-if="chat_id.seller_msg">
+													<!--<t t-if="msg_obj.seller_msg">-->
+														<div class="form-group form-msg-left">
+															<label class="form-control-label">
+																<img t-if="msg_obj.seller_id.image" class="img-ava" t-att-src="'data:image/png;base64,%s' %  msg_obj.seller_id.image"/>
+																<img t-if="not msg_obj.seller_id.image" class="img-ava" src="/website_cpo_sale/static/src/images/tx/sellars.jpg"/>
+																<!--<img t-if="msg_obj.client_id.image" t-att-src="'data:image/png;base64,%s' %  msg_obj.msg_id.client_ids.image"/>-->
+																<!--<img t-if="not msg_obj.client_id.image" class="img-ava" src="/website_cpo_sale/static/src/images/tx/sellars.jpg"/>-->
+																<span>
+																	<t t-if="msg_obj.msg_id.seller_id" t-esc="msg_obj.msg_id.seller_id.name.name"/>
+																	<t t-if="not msg_obj.msg_id.seller_id" t-esc="personal_id.seller_id.name.name"/>
+																</span>
+																<br/>
+																<span>
+																	<t t-esc="chat_id.create_date.split(' ')[0]"/>
+																</span>
+															</label>
+															<div class="message-content">
+																<div t-if="msg_obj.msg_type != 'o_msg'" class="content-box">
+																	<span class="reply-span">
+																		<t t-raw="chat_id.seller_msg"/>
+																	</span>
+																</div>
+																<span t-if="msg_obj.msg_type == 'o_msg'">
+																	<t t-raw="chat_id.seller_msg"/>
+																	<t t-if="chat_id.msg_id.coupon_id">
+																		<t t-set="row" t-value="chat_id.msg_id.coupon_id"/>
+																		<div class="stamp stamp-box">
+																			<div class="par">
+																				<p><t t-esc="row.name_title"/></p>
+																				<t t-if="row.cpo_card_bool == True">
+																					<t t-if="row.cpo_discount_type == '%'">
+																						<span>
+																							<t t-esc="row.cpo_card_money"/>
+																						</span>
+																						<sub class="sign">%</sub>
+																					</t>
+																					<t t-if="row.cpo_discount_type == 'money'">
+																						<sub class="sign">$</sub>
+																						<span>
+																							<t t-esc="row.cpo_card_money"/>
+																						</span>
+																					</t>
+																				</t>
+																				<t t-else="">
+																					<t t-if="row.cpo_discount_type == '%'">
+																						<span>
+																							<t t-esc="row.cpo_no_card_money"/>
+																						</span>
+																						<sub class="sign">%</sub>
+																					</t>
+																					<t t-else="">
+																						<sub class="sign">$</sub>
+																						<span>
+																							<t t-esc="row.cpo_no_card_money"/>
+																						</span>
+																					</t>
+																				</t>
+																				<!--<sub class="sign">$</sub>-->
+																				<!--<span>50.00</span>-->
+																				<sub>Coupon</sub>
+																				<p>For PCB orders only!</p>
+																			</div>
+																			<div class="copy">
+																				Deputy coupon
+																				<p>
+																					<t t-esc="row.cpo_start_time"></t>
+																					<br/>
+																					<t t-esc="row.cpo_end_time"></t>
+																				</p>
+																				<a class="cpo-receive" t-att-id="row.id">Received</a>
+																			</div>
+																		</div>
+																		<!--<t t-set="row" t-value="chat_id.msg_id.coupon_id"/>-->
+																		<!--<div class="row bg-white has-shadow item-flex">-->
+																			<!--<div class="item d-flex align-items-center">-->
+																				<!--<div class="cp-details">-->
+																					<!--<div class="cp-money">-->
+																						<!--<div class="number">-->
+																							<!--<strong>-->
+																								<!--<i class="fa fa-dollar mr5"></i>-->
+																								<!--<t t-esc="row.cpo_no_card_money"/>-->
+																							<!--</strong>-->
+																						<!--</div>-->
+																						<!--<div class="icon bg-violet">-->
+																							<!--Off <i class="fa fa-dollar" aria-hidden="true"></i>-->
+																							<!--<t t-esc="row.cpo_no_card_money"/>-->
+																						<!--</div>-->
+																					<!--</div>-->
+																					<!--<div class="title">-->
+																						<!--<p>-->
+																							<!--<span>Period of Validity:</span>-->
+																							<!--<t t-esc="row.cpo_start_time"/>-->
+																							<!--~-->
+																							<!--<t t-esc="row.cpo_end_time"/>-->
+																						<!--</p>-->
+																						<!--<p>-->
+																							<!--<span>Conditions of Use: </span>Only PCB board!-->
+																						<!--</p>-->
+																						<!--<p>-->
+																							<!--<span>-->
+																								<!--<t t-esc="row.name_title"/>-->
+																							<!--</span>-->
+																						<!--</p>-->
+																						<!--<p class="text-center">-->
+																							<!--<a class="btn btn-primary msg-receive" t-att-id="row.id">Receive</a>-->
+																							<!--<a class="btn btn-primary cpo-none" href="/pcb">To use</a>-->
+																						<!--</p>-->
+																					<!--</div>-->
+																				<!--</div>-->
+																			<!--</div>-->
+																		<!--</div>-->
+																	</t>
+																</span>
+															</div>
+														</div>
+													</t>
+												<!--</t>-->
+											</t>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</t>
+			</div>
+		</section>
+	</template>
+	<!-- 消息框 -->
+	<template id="cpo_message_send_form05">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="card">
+					<div class="card-header d-flex align-items-center">
+						<h3 class="h4">
+							Message
+						</h3>
+					</div>
+					<div class="card-body">
+						<div class="cpo-message">
+							<form id="cpo_message_form">
+								<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+								<input t-if="msg_obj" type="hidden" name="msg_line_id" t-att-value="msg_obj.id"/>
+								<input t-if="not msg_obj" type="hidden" name="msg_line_id" value=""/>
+								<div class="form-group">
+									<label class="form-control-label">
+										<i class="mr5 red"></i>
+										Send to:
+									</label>
+									<div class="ml-10">
+										<span class="mr-15">
+											<t t-if="personal_id.seller_id.name.name" t-esc="personal_id.seller_id.name.name"/>
+											<t t-if="not personal_id.seller_id.name.name">
+												BINDY. ZHANG
+											</t>
+										</span>
+										<span>
+											<i class="fa fa-envelope-o mr5"></i>
+											<t t-if="personal_id.seller_id.email" t-esc="personal_id.seller_id.email"/>
+											<t t-if="not personal_id.seller_id.email">
+												sales@chinapcbone.com
+											</t>
+										</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="form-control-label">
+										<i class="mr5 red"></i>
+										Messages:
+									</label>
+									<input type="hidden" name="message" value=""/>
+									<div class="message_content" contenteditable="true" placeholder="Please enter your reply!"></div>
+								</div>
+								<div class="form-group">
+									<input type="button" class="btn btn-primary" value="Send"
+										   disabled="disabled"/>
+									<a class="btn btn-default eq-reset">Clear</a>
+									<div class="btn btn-default reply_upload">
+										Upload image
+										<input type="file" name="reply_file" id="msg_upload_file"/>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<!-- 消息中心 结束 -->
+
+	<!-- 客服 开始 -->
+	<template id="customer_service_template">
+		<t t-if="personal_id.seller_id.image">
+			<div class="cpo_customer_service">
+				<div class="cs-left">
+					<!--<t t-if="not personal_id.seller_id.image">-->
+					<!--<img src="/website_cpo_sale/static/src/images/tx/livechatinc.jpg"/>-->
+					<!--</t>-->
+					<img t-if="personal_id.seller_id.image"
+						 t-att-src="'data:image/png;base64,%s' %  personal_id.seller_id.image"/>
+				</div>
+				<div class="cs-right">
+					<p class="cs-title">
+						<i class="fa fa-user-circle"></i>
+						<span>
+							<t t-esc="personal_id.seller_id.name.name"/>
+						</span>
+					</p>
+					<p class="cs-id">
+						<i class="fa fa-id-badge"></i>
+						<t t-esc="personal_id.seller_id.web_code"/>
+					</p>
+					<p class="cs-phone">
+						<i class="fa fa-phone-square" aria-hidden="true"></i>
+						<t t-esc="personal_id.seller_id.phone"/>
+					</p>
+					<p class="cs-email">
+						<i class="fa fa-envelope-o"></i>
+						<t t-esc="personal_id.seller_id.email"/>
+					</p>
+				</div>
+			</div>
+		</t>
+		<t t-if="not personal_id.seller_id.image">
+			<div class="cpo_customer_service">
+				<div class="cs-left">
+					<img src="/website_cpo_sale/static/src/images/tx/livechatinc.jpg"/>
+				</div>
+				<div class="cs-right">
+					<p class="cs-title">
+						<i class="fa fa-user-circle"></i>
+						<span>
+							BINDY. ZHANG
+						</span>
+					</p>
+					<p class="cs-id">
+						<i class="fa fa-id-badge"></i>
+						CPO001001
+					</p>
+					<p class="cs-phone">
+						<i class="fa fa-phone-square" aria-hidden="true"></i>
+						+86-755-23063520
+					</p>
+					<p class="cs-email">
+						<i class="fa fa-envelope-o"></i>
+						sales@chinapcbone.com
+					</p>
+				</div>
+			</div>
+		</t>
+
+	</template>
+	<!-- 客服 结束 -->
+
+	<!-- 订单详情弹出框 开始 -->
+	<template id="my_home_order_details_modal">
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="home_order_details_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+			 aria-hidden="true" backdrop="static">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							<i class="fa fa-close"></i>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							Order Details
+						</h4>
+					</div>
+					<div class="modal-body">
+						<!-- 返回内容 -->
+						<!--<t t-call="website_cpo_sale.my_home_order_details"/>-->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Close
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	</template>
+	<template id="my_home_order_details">
+		<t t-if="sale_order.product_type == 'PCBA'">
+			<ul class="order-details-data">
+				<li class="odd-li">
+					<div>
+						<span class="odd-li-k">Ordered Qty :</span>
+						<span class="odd-li-v"><t t-esc="int(sale_order.order_line.product_uom_qty)"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">Width :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.order_line.pcb_width"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">Length :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.order_line.pcb_width"/></span>
+					</div>
+					<div>
+
+					</div>
+				</li>
+				<li class="odd-li">
+					<div>
+						<span class="odd-li-k">SMT parts quantity :</span>
+						<span class="odd-li-v"><t t-esc="int(sale_order.order_line.smt_component_qty)"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">DIP through hole quantity :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.order_line.smt_plug_qty"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">Board thickness :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.order_line.pcb_thickness"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">SMT parts quantity :</span>
+						<span class="odd-li-v">
+							 <t t-if="sale_order.order_line.layer_pcb == 1">
+								Single side SMT
+							</t>
+							<t t-if="sale_order.order_line.layer_pcb == 2">
+								Double side SMT
+							</t>
+						</span>
+					</div>
+				</li>
+			</ul>
+		</t>
+		<t t-if="sale_order.product_type != 'PCBA' and sale_order.product_type != 'Stencil'">
+			<ul class="order-details-data">
+				<li class="odd-li">
+					<div>
+						<span class="odd-li-k">Production Quantity :</span>
+						<span class="odd-li-v"><t t-esc="int(sale_order.order_line.product_uom_qty)"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">Quality Standard :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.quotation_line.cpo_standard.english_name"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">Length :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.quotation_line.cpo_length"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">Width :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.quotation_line.cpo_width"/></span>
+					</div>
+				</li>
+				<li class="odd-li">
+					<div>
+						<t t-set="cpo_vias" t-value="sale_order.quotation_line.via_process.english_name"/>
+						<span class="odd-li-k">Vias :</span>
+						<span class="odd-li-v">
+							<t t-if="cpo_vias">
+								<t t-esc="cpo_vias"/>
+							</t>
+							<t t-if="not cpo_vias">
+								Filled by Resin
+							</t>
+							<!--<t t-esc="sale_order.quotation_line.via_process.english_name"/>-->
+						</span>
+					</div>
+					<div>
+						<span class="odd-li-k">Material :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.quotation_line.base_type.english_name"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">Technology :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.quotation_line.layer_number.layer_number"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">Board Thickness :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.quotation_line.thickness"/></span>
+					</div>
+				</li>
+				<li class="odd-li">
+					<div>
+						<span class="odd-li-k">Outer Finished Copper :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.quotation_line.outer_copper"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">Inner Finished Copper :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.quotation_line.inner_copper"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">Solder Mask Color :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.quotation_line.silkscreen_color.english_name"/></span>
+					</div>
+					<div>
+						<span class="odd-li-k">Silkscreen Color :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.quotation_line.text_color.english_name"/></span>
+					</div>
+				</li>
+				<li class="odd-li">
+					<div>
+						<span class="odd-li-k">Surface Treatment :</span>
+						<span class="odd-li-v"><t t-esc="sale_order.quotation_line.surface.english_name"/></span>
+					</div>
+					<div>
+						<t t-set="cpo_gold_thick" t-value="sale_order.quotation_line.cpo_gold_thick"/>
+						<span class="odd-li-k">Gold finger :</span>
+						<span class="odd-li-v">
+							<t t-if="cpo_gold_thick &gt; 0">
+								Yes
+							</t>
+							<t t-if="cpo_gold_thick &lt;= 0">
+								No
+							</t>
+						</span>
+					</div>
+					<div>
+						<t t-set="fly_probe" t-value="sale_order.quotation_line.fly_probe"/>
+						<span class="odd-li-k">E-TEST :</span>
+						<span class="odd-li-v">
+							<t t-if="fly_probe">
+								Free Flying Probe
+							</t>
+							<t t-if="not fly_probe">
+								E-test fixture
+							</t>
+						</span>
+					</div>
+					<div></div>
+				</li>
+			</ul>
+		</t>
+	</template>
+	<!-- 订单详情弹出框 结束 -->
+
+	<!-- 订单状态 开始 -->
+	<template id="my_home_order_state_data">
+		<t t-if="cpo_state in ['wait_confirm', 'sent', 'sale']">
+			Reviewing
+		</t>
+		<t t-if="cpo_state in ['wait_payment']">
+			Payment
+		</t>
+		<t t-if="cpo_state in ['wait_make']">
+			Waiting for production
+		</t>
+		<t t-if="cpo_state in ['manufacturing']">
+			Manufacturing
+		</t>
+		<t t-if="cpo_state in ['wait_delivery', 'wait_receipt']">
+			Delivery
+		</t>
+		<t t-if="cpo_state in ['complete']">
+			Completed
+		</t>
+	</template>
+	<!-- 订单状态 结束 -->
+
+	<!-- 工程问题（问客） 开始 -->
+	<template id="cpo_engineering_question" name="Engineering Question">
+		<t t-call="website.layout">
+			<div class="ac-page">
+				<!-- 侧标手机样式 -->
+				<t t-call="website_cpo_sale.cpo_my_account_mobile"/>
+				<div class="page-content d-flex align-items-stretch">
+					<!-- Nav -->
+					<t t-call="website_cpo_sale.cpo_sidebar_navidation_menus"/>
+					<div class="content-inner">
+						<!-- Page Header-->
+						<header class="ac-header">
+							<div class="container-fluid">
+								<a id="toggle-btn" href="#" class="menu-btn active hidden-xs" title="Show(Hide) Menu">
+									<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+								</a>
+								<h2 class="no-margin-bottom">Dashboard</h2>
+							</div>
+							<!-- 客服 -->
+							<t t-call="website_cpo_sale.customer_service_template"/>
+						</header>
+						<!-- Dashboard Counts Section-->
+						<div id="cpo_paid_box">
+							<t t-if="eq_state">
+								<t t-call="website_cpo_sale.cpo_eq_reply"/>
+							</t>
+							<t t-if="not eq_state">
+								<t t-call="website_cpo_sale.cpo_all_order_status_return"/>
+							</t>
+						</div>
+					</div>
+				</div>
+			</div>
+			<t t-call="website_cpo_sale.my_home_order_eq_details_modal"/>
+		</t>
+	</template>
+	<template id="cpo_eq_reply" name="">
+		<t t-if="eq_list">
+			<t t-call="website_cpo_sale.cpo_order_eq_list_datails"/>
+		</t>
+		<t t-if="not eq_list">
+			<section class="forms">
+				<div class="container-fluid">
+					<t t-call="website_cpo_sale.cpo_click_eq_id_show_datails"/>
+				</div>
+			</section>
+		</t>
+		<t t-call="website_cpo_sale.cpo_img_zoom"/>
+	</template>
+	<!-- 工程问题（问客） 结束 -->
+
+	<!-- 工程问题（问客）列表 开始 -->
+	<template id="my_home_order_eq_details_modal">
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="home_order_qe_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+			 aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							<i class="fa fa-close"></i>
+						</button>
+						<h4 class="modal-title" id="myModalEQ">
+							Engineering Question List
+						</h4>
+					</div>
+					<div class="modal-body">
+						<!-- 返回内容 -->
+						<!--<t t-call="website_cpo_sale.cpo_order_eq_list_datails"/>-->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Close
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	</template>
+	<template id="cpo_order_eq_list_datails">
+		<section class="forms cpo_eq_datatable">
+			<div class="container-fluid">
+				<div class="row">
+					<!-- Basic Form-->
+					<div class="col-lg-8">
+						<div class="card">
+							<div class="card-header d-flex align-items-center">
+								<h3 class="h4">Engineering suggestions</h3>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<ul class="cpo-od-ul">
+										<li class="cpo-od-li od-li-title">
+											<div class="od-li-content">
+												<span class="od-li-span od-product">Name</span>
+												<span class="od-li-span od-orders">Description</span>
+												<span class="od-li-span od-qty">Time</span>
+												<span class="od-li-span od-total"></span>
+											</div>
+										</li>
+										<!--<t t-if="not ask_obj">-->
+											<!--<li class="eq-list-line">-->
+												<!--<span class="text-center"></span>-->
+											<!--</li>-->
+										<!--</t>-->
+										<t t-foreach="ask_obj" t-as="ask">
+											<li class="cpo-od-li">
+												<div t-att-class="'od-li-content od-li-content2 od-li-content-active' if ask.state in ['replied', 'read', 'complete'] else 'od-li-content od-li-content2'">
+													<span class="od-li-span od-product">
+														<span>
+															<t t-esc="ask.name"/>
+														</span>
+													</span>
+													<span class="od-li-span od-orders od-message">
+														<a t-att-href="'/show/eq-details/%d/%d' % (int(oid), ask.id)">
+															<t t-esc="ask.name_title"/>
+														</a>
+													</span>
+													<span class="od-li-span od-qty">
+														<span t-field="ask.create_date" t-options='{"widget": "datetime"}'/>
+													</span>
+													<span class="od-li-span od-qty">
+														<t t-if="ask.state in ['replied', 'read', 'complete']">
+															<img src="/website_cpo_sale/static/src/images/process/have_read.png"/>
+														</t>
+														<t t-if="ask.state in ['wait_reply']">
+															<img src="/website_cpo_sale/static/src/images/process/unread.png"/>
+														</t>
+													</span>
+												</div>
+											</li>
+										</t>
+									</ul>
+								</div>
+								<!--<table class="cpo_eq_list_tabel">-->
+									<!--<thead>-->
+										<!--<tr>-->
+											<!--<th>Name</th>-->
+											<!--<th>Description</th>-->
+											<!--<th>Time</th>-->
+											<!--<th></th>-->
+										<!--</tr>-->
+									<!--</thead>-->
+									<!--<tbody>-->
+										<!--<t t-foreach="ask_obj" t-as="ask">-->
+											<!--<tr t-att-class="'eq-list-line od-active' if ask.state in ['replied', 'read'] else 'eq-list-line'">-->
+												<!--<td>-->
+													<!--<span class="od-li-span od-product">-->
+														<!--<span>-->
+															<!--<t t-esc="ask.name"/>-->
+														<!--</span>-->
+													<!--</span>-->
+												<!--</td>-->
+												<!--<td>-->
+													<!--<span class="od-li-span od-orders od-message">-->
+														<!--<a t-att-href="'/show/eq-details/%d/%d' % (int(oid), ask.id)">-->
+															<!--<t t-esc="ask.name_title"/>-->
+														<!--</a>-->
+													<!--</span>-->
+												<!--</td>-->
+												<!--<td>-->
+													<!--<span class="od-li-span od-qty">-->
+														<!--<span t-field="ask.create_date" t-options='{"widget": "datetime"}'/>-->
+														<!--&lt;!&ndash;<t t-esc="ask.create_date"/>&ndash;&gt;-->
+													<!--</span>-->
+												<!--</td>-->
+												<!--<td>-->
+													<!--<span class="od-li-span od-qty">-->
+														<!--<t t-if="ask.state in ['replied', 'read']">-->
+															<!--<img src="/website_cpo_sale/static/src/images/process/have_read.png"/>-->
+														<!--</t>-->
+														<!--<t t-if="ask.state in ['wait_reply']">-->
+															<!--<img src="/website_cpo_sale/static/src/images/process/unread.png"/>-->
+														<!--</t>-->
+													<!--</span>-->
+												<!--</td>-->
+											<!--</tr>-->
+										<!--</t>-->
+									<!--</tbody>-->
+								<!--</table>-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--<t t-call="website_cpo_sale.cpo_click_eq_id_show_datails"/>-->
+			</div>
+		</section>
+	</template>
+	<template id="cpo_click_eq_id_show_datails">
+		<t t-if="ask_obj_id">
+			<div class="row">
+				<!-- Basic Form-->
+				<div class="col-lg-10">
+					<div class="card">
+						<div class="card-header d-flex align-items-center">
+							<h4 class="h4-route">
+								Current position:
+								<a t-att-href="'/show/eq-details?oid=%d' % oid">/engineering suggestions</a>
+								/<select class="select-route-active">
+									<t t-foreach="ask_obj" t-as="ask_o">
+								    	<option t-att="['selected' if ask_o.id == ask_obj_id.id else 'data-cpo', '']" t-att-value="ask_o.id">
+											<t t-esc="ask_o.name"/>
+										</option>
+									</t>
+								</select>
+								<input type="hidden" name="route_oid" t-att-value="oid"/>
+								<!--<a class="a-route-active" t-att-href="'/show/eq-details/%d/%d' % (oid, ask_obj_id.id)">/<t t-esc="ask_obj_id.name"/></a>-->
+							</h4>
+						</div>
+						<div class="card-header d-flex align-items-center">
+							<h3 class="h4">
+								<t t-esc="ask_obj_id.name_title"/>
+							</h3>
+						</div>
+						<div class="card-body">
+							<form id="cpo_eq_form_data">
+								<input type="hidden" name="ask_id" t-att-value="ask_obj_id.id"/>
+								<input type="hidden" name="oid" t-att-value="oid"/>
+								<div class="form-group eq-form-group">
+									<label class="form-control-label"><i class="mr5 red">*</i>User Name:</label>
+									<span>
+										<t t-esc="user.name"/>
+									</span>
+									<!--<input type="text" placeholder="User Name" class="form-control"-->
+										   <!--t-att-value="user.name" readonly="readonly"/>-->
+								</div>
+								<div class="form-group eq-form-group">
+									<label class="form-control-label"><i class="mr5 red">*</i>Order:</label>
+									<span>
+										<t t-esc="ask_obj_id.order_id.name"/>
+									</span>
+									<!--<input type="text" placeholder="Order" class="form-control" name="order_name"-->
+										   <!--t-att-value="ask_obj_id.order_id.name" readonly="readonly"/>-->
+								</div>
+								<div class="form-group eq-form-group">
+									<label class="form-control-label"><i class="mr5 red">*</i>Time:</label>
+									<span t-field="ask_obj_id.create_date" t-options='{"widget": "datetime"}'/>
+									<!--<span>-->
+										<!--<t t-esc="ask_obj_id.create_date"/>-->
+									<!--</span>-->
+									<!--<input type="text" placeholder="Order" class="form-control" name="order_date"-->
+										   <!--t-att-value="ask_obj_id.create_date" readonly="readonly"/>-->
+								</div>
+								<div class="form-group">
+									<label class="form-control-label"><i class="mr5 red">*</i>Reply content:</label>
+									<input type="hidden" name="user_reply_content" value=""/>
+									<!--<t t-if="not ask_obj.ask_reply">-->
+									<div class="user_reply_content" contenteditable="true" placeholder="Please enter your reply!"></div>
+									<!--<textarea class="form-control user_reply_content"-->
+											  <!--placeholder="Please enter your reply!"-->
+											  <!--required="required"></textarea>-->
+									<!--</t>-->
+								</div>
+								<!--<div class="form-group">-->
+									<!--<label class="form-control-label">Upload files:</label>-->
+									<!--<br/>-->
+									<!--<i class="red">-->
+										<!--<b>The file size cannot exceed 3M! File format requirements: png/jpg/jpeg !</b>-->
+									<!--</i>-->
+									<!--<div class="reply_upload">-->
+										<!--Select the file-->
+										<!--<input type="file" name="reply_file" id="reply_upload_file"/>-->
+									<!--</div>-->
+									<!--<div class="reply_img">-->
+
+									<!--</div>-->
+								<!--</div>-->
+								<div class="form-group">
+									<input type="button" class="btn btn-primary" disabled="disabled" value="Reply"/>
+									<a class="btn btn-default eq-reset">Clear</a>
+									<div class="btn btn-default reply_upload">
+										Upload image
+										<input type="file" name="reply_file" class="upload_file" id="reply_upload_file"/>
+									</div>
+									<div class="btn btn-default reply_upload">
+										Upload file
+										<input type="file" name="reply_file" class="upload_file" id="reply_upload_file2"/>
+									</div>
+								</div>
+								<!--<div class="form-group">-->
+									<!--<label class="form-control-label"><i class="mr5 red">*</i>Engineer advice:-->
+									<!--</label>-->
+									<!--<br/>-->
+									<!--<i class="red">-->
+										<!--<b>Be sure to read the following information carefully!</b>-->
+									<!--</i>-->
+									<!--<div class="sugges_content">-->
+										<!--<t t-raw="ask_obj_id.ask_reason"/>-->
+									<!--</div>-->
+								<!--</div>-->
+								<div class="form-group">
+									<label class="form-control-label">
+										<i class="mr5 red">*</i>Content:
+									</label>
+									<t t-if="ask_obj_id.line_ids">
+										<div class="reply_content">
+											<t t-foreach="ask_obj_id.line_ids" t-as="ask_line">
+												<t t-if="ask_line.reason">
+													<div class="form-group form-msg-left">
+														<label class="form-control-label">
+															<i class="mr5 red"></i>
+															Engineer
+															<br/>
+															<span t-field="ask_line.create_date" t-options='{"widget": "datetime"}'/>
+															<!--<span>-->
+																<!--<t t-esc="ask_line.create_date"/>-->
+															<!--</span>-->
+														</label>
+														<div class="reply-content">
+															<div class="content-box">
+																<span class="reply-span">
+																	<t t-raw="ask_line.reason"/>
+																</span>
+															</div>
+														</div>
+													</div>
+												</t>
+												<t t-if="ask_line.reply">
+													<div class="form-group form-msg-right">
+														<div class="reply-content">
+															<div class="content-box">
+																<span class="reply-span">
+																	<t t-raw="ask_line.reply"/>
+																</span>
+															</div>
+														</div>
+														<label class="form-control-label">
+															<i class="mr5 red"></i>
+															Me
+															<br/>
+															<span t-field="ask_line.create_date" t-options='{"widget": "datetime"}'/>
+															<!--<span>-->
+																<!--<t t-esc="ask_line.create_date"/>-->
+															<!--</span>-->
+														</label>
+													</div>
+												</t>
+											</t>
+											<!--<div class="user-ask-reply">-->
+												<!--<t t-raw="ask_obj_id.ask_reply"/>-->
+											<!--</div>-->
+										</div>
+									</t>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!--<script>-->
+					<!--window.onload = function(){-->
+						<!--$('#cpo_eq_form_data .reply_content .content-box').each(function(){-->
+							<!--if($(this).children().height() > 120){-->
+								<!--$(this).parent().append('<a class="btn reply-dt">show details</a>');-->
+							<!--}-->
+						<!--});-->
+					<!--}-->
+				<!--</script>-->
+			</div>
+		</t>
+	</template>
+	<!-- 工程问题（问客）列表 结束 -->
+
+	<!-- 生产制造状态 开始 -->
+	<template id="cpo_account_manufacturing_state" name="Manufacturing state">
+		<t t-call="website.layout">
+			<div class="ac-page">
+				<!-- 侧标手机样式 -->
+				<t t-call="website_cpo_sale.cpo_my_account_mobile"/>
+				<div class="page-content d-flex align-items-stretch">
+					<!-- Nav -->
+					<t t-call="website_cpo_sale.cpo_sidebar_navidation_menus"/>
+					<div class="content-inner">
+						<!-- Page Header-->
+						<header class="ac-header">
+							<div class="container-fluid">
+								<a id="toggle-btn" href="#" class="menu-btn active hidden-xs" title="Show(Hide) Menu">
+									<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+								</a>
+								<h2 class="no-margin-bottom">Dashboard</h2>
+							</div>
+							<!-- 客服 -->
+							<t t-call="website_cpo_sale.customer_service_template"/>
+						</header>
+						<!-- Dashboard Counts Section-->
+						<div id="cpo_paid_box">
+							<t t-call="website_cpo_sale.cpo_manufacturing_status_list"/>
+							<!--<t t-if="eq_state">-->
+								<!--<t t-call="website_cpo_sale.cpo_eq_reply"/>-->
+							<!--</t>-->
+							<!--<t t-if="not eq_state">-->
+								<!--<t t-call="website_cpo_sale.cpo_all_order_status_return"/>-->
+							<!--</t>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</t>
+	</template>
+	<template id="cpo_manufacturing_status_list">
+		<section class="forms cpo_message_section">
+			<div class="container-fluid">
+				<div class="row">
+					<!-- Basic Form-->
+					<div class="col-lg-8">
+						<div class="card">
+							<div class="card-header d-flex align-items-center">
+								<h4 class="h4-route">
+									Current position:
+									<a href="/my/account/orders?type=manufacturing">/Manufacturing</a>
+									/
+									<select class="select-route-mft-active">
+										<t t-foreach="quotation_qty.get('order')" t-as="ask_o">
+											<option t-att="['selected' if ask_o.id == oid else 'data-cpo', '']"
+													t-att-value="ask_o.id">
+												<t t-esc="ask_o.name"/>
+											</option>
+										</t>
+									</select>
+									<input type="hidden" name="route_oid" t-att-value="oid"/>
+									<!--<a class="a-route-active" t-att-href="'/show/eq-details/%d/%d' % (oid, ask_obj_id.id)">/<t t-esc="ask_obj_id.name"/></a>-->
+								</h4>
+							</div>
+							<div class="card-header d-flex align-items-center">
+								<h3 class="h4">
+									Manufacturing state
+								</h3>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive cpo-message">
+									<ul class="cpo-od-ul">
+										<li class="cpo-od-li od-li-title">
+											<div class="od-li-content">
+												<span class="od-li-span od-product">Status</span>
+												<span class="od-li-span od-orders"></span>
+												<span class="od-li-span od-qty">Time</span>
+												<span class="od-li-span od-qty"></span>
+											</div>
+										</li>
+										<t t-if="not mft_obj">
+											<li class="cpo-od-li">
+												<div class="od-li-content">
+													<span class="od-li-span od-product">
+														<span>No Information</span>
+													</span>
+													<span class="od-li-span od-orders od-message">
+													</span>
+													<span class="od-li-span od-qty">
+														<t t-esc="datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+													</span>
+													<span class="od-li-span od-qty">
+													</span>
+												</div>
+											</li>
+										</t>
+										<t t-foreach="mft_obj" t-as="mo">
+											<li class="cpo-od-li">
+												<div class="od-li-content">
+													<span class="od-li-span od-product">
+														<span><t t-esc="mo.name"/></span>
+													</span>
+													<span class="od-li-span od-orders od-message">
+													</span>
+													<span class="od-li-span od-qty">
+														<span t-field="mo.make_time" t-options='{"widget": "datetime"}'/>
+														<!--<t t-esc="mo.make_time"/>-->
+													</span>
+													<span class="od-li-span od-qty">
+													</span>
+												</div>
+											</li>
+										</t>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+	<!-- 生产制造状态 结束 -->
+
+	<!-- 图片放大展示 开始 -->
+	<template id="cpo_img_zoom" name="Img zoom">
+		<div id="outerdiv" class="outerdiv_style">
+			<div id="innerdiv" style="position:absolute;">
+				<img id="bigimg" style="border:5px solid #fff;" src=""/>
+			</div>
+		</div>
+	</template>
+	<!-- 图片放大展示 结束 -->
+	<template>
+		<div class="banner-left">
+			<div class="ad-process">
+				<div class="ad-left">
+					<img class="ad-img" scr="/website_cpo_sale/static/src/images/banner/banner-paypal.png"/>
+					<div class="ad-content">
+						<h1>Stop overpaying</h1>
+						<div class="ad-money">
+							<span class="m-title">for</span>
+							<span class="m-digis">Multi-layers !</span>
+						</div>
+					</div>
+				</div>
+				<div class="ad-right">
+					<h4>Order SMT + Components, Get PCB Free</h4>
+					<p>More than 50 countries' customer use ChinaPCBOne ServicesQuick Response &amp; Professional
+						Services
+					</p>
+				</div>
+			</div>
+			<div class="ad-coupon">
+				<div class="cp-box">
+					<div class="cp-top">
+						<span class="cp-td">$</span>
+						<span class="cp-tm">53.00+</span>
+					</div>
+					<img src="/website_cpo_sale/static/src/images/banner/cp-box-1.png"/>
+					<p class="cp-tt">2 Layers Area ≤ 0.2 m²
+						<br/>
+						FR4 1.6mm 1 OZ
+					</p>
+				</div>
+				<div class="cp-box">
+					<div class="cp-top">
+						<span class="cp-td">$</span>
+						<span class="cp-tm">250.0+</span>
+					</div>
+					<img src="/website_cpo_sale/static/src/images/banner/cp-box-2.png"/>
+					<p class="cp-tt">Order SMT Components
+						<br/>
+						Get PCB Free
+					</p>
+				</div>
+			</div>
+		</div>
+	</template>
+
+
+</odoo>

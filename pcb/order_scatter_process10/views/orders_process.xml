@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Orders Synced Process Tree-->
+        <record id="synced_tree" model="ir.ui.view">
+            <field name="name">Orders Synced Process</field>
+            <field name="model">orders.synced.process</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="create_date"/>
+                    <field name="state"/>
+                    <field name="order_id"/>
+                </tree>
+            </field>
+        </record>
+        <!--Orders Synced Process Form-->
+        <record id="synced_form" model="ir.ui.view">
+            <field name="name">Orders Synced Process</field>
+            <field name="model">orders.synced.process</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <label string="Sync Number"/>
+                            <field name="name" force_save="1" class="oe_inline"/>
+                        </h1>
+                        <group string="Important Information" colspan="4" col="4">
+                            <field name="product_state"/>
+                            <field name="seller_code"/>
+                            <field name="state"/>
+                            <field name="order_id"/>
+                            <field name="file_id" force_save="1" widget="many2many_tags"/>
+                            <field name="quote_line_id" force_save="1"/>
+                            <field name="order_state"/>
+                            <field name="order_date"/>
+                            <field name="order_create_time"/>
+                        </group>
+                        <group string="PCB Process Parameter Information" colspan="4" col="4">
+                            <label for="uom_qty"/>
+                            <div>
+                                <field name="uom_qty" class="oe_inline"/> SET
+                                <field name="pcs_number" class="oe_inline"/> PCS
+                                <field name="spell" class="oe_inline"/> Item
+                            </div>
+                            <label for="cpo_length" string="Size/MM"/>
+                            <div>
+                                <field name="cpo_length" class="oe_inline"/> X
+                                <field name="cpo_width" class="oe_inline"/>
+                            </div>
+                            <label for="inner" string="Copper Thickness"/>
+                            <div>
+                                Inner Copper
+                                <field name="inner"/>
+                                Outer Copper
+                                <field name="outer"/>
+                            </div>
+                            <label for="pcs_per_set" string="PCS Per Set"/>
+                            <div>
+                                1 X <field name="pcs_per_set" class="oe_inline"/>
+                                <field name="manner_uos" class="oe_inline"/>
+                            </div>
+                            <label string="Core And PP Number"/>
+                            <div>
+                                Core Number
+                                <field name="core" class="oe_inline"/>
+                                PP Number
+                                <field name="pp" class="oe_inline"/>
+                            </div>
+                            <label string="Thickness And Number"/>
+                            <div>
+                                <field name="core_thick"/> mil
+                                <field name="rogers_number"/> Sheet Number
+                            </div>
+                            <label string="Gold Thick Nickel Thickness And Coated Area"/>
+                            <div>
+                                Sink Gold Thick
+                                <field name="sink_gold" class="oe_inline" style="max-width:50px;"/> U''
+                                Nickel Thick
+                                <field name="nickel_thick" class="oe_inline" style="max-width:55px;"/> U''
+                                Coated Area
+                                <field name="gold_size" class="oe_inline" style="max-width:50px;"/> %%
+                            </div>
+                            <field name="ipc_id"/>
+                            <field name="volume_type"/>
+                            <field name="thick"/>
+                            <field name="base_id"/>
+                            <field name="layer_id"/>
+                            <field name="surface_id"/>
+                            <field name="via_id"/>
+                            <field name="mask_id"/>
+                            <field name="text_id"/>
+                            <field name="material_ids" widget="many2many_tags"/>
+                            <field name="process_ids" widget="many2many_tags"/>
+                            <field name="hole_space"/>
+                            <field name="hole_copper"/>
+                            <field name="test_point"/>
+                            <field name="total_hole"/>
+                        </group>
+                        <group col="6" colspan="6">
+                            <label string="Test Stand"/>
+                            <div>
+                                <field name="test_stand" class="oe_inline"/>
+                                <field name="stand_source" attrs="{'invisible':[('test_stand', '=', False)]}" class="oe_inline"/>
+                            </div>
+                            <field name="fly_probe"/>
+                            <field name="cnc"/>
+                            <field name="min_width"/>
+                            <field name="min_space"/>
+                            <field name="min_hole"/>
+                            <label string="Gold Finger Length And Width"/>
+                            <div>
+                                <field name="gold_height" class="oe_inline"/> X
+                                <field name="gold_width" class="oe_inline"/>
+                            </div>
+                            <field name="gold_thick"/>
+                            <field name="gold_root"/>
+                        </group>
+                        <field name="remark"/>
+                        <notebook>
+                            <page string="Production Process Information">
+                                <field name="make_ids" mode="tree">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="flow_time"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--Orders Synced Process Win-->
+        <record id="synced_actions" model="ir.actions.act_window">
+            <field name="name">Orders Synced Process</field>
+            <field name="res_model">orders.synced.process</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--继承销售 增加一个按钮-->
+        <record id="synced_order_form_view" model="ir.ui.view">
+            <field name="name">Synced Order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='Check_PCB_views']" position="after">
+                    <button name="SyncedOrder" type="object" string="Synced Order" states="manufacturing" class="btn-primary"
+                            groups="sales_team.group_sale_manager" attrs="{'invisible': ['|', ('product_type', 'in', ('PCBA', 'Stencil'))]}"/>
+                </xpath>
+                <xpath expr="//field[@name='validity_date']" position="before">
+                    <field name="synced_bool" invisible="1"/>
+                    <label for="synced_bool" attrs="{'invisible': [('synced_bool', '=', False)]}"/>
+                    <div attrs="{'invisible': [('synced_bool', '=', False)]}">
+                        <span attrs="{'invisible': [('synced_str', '!=', False)]}">
+                            Sync information will be updated later
+                        </span>
+                        <field name="synced_str" class="oe_inline" attrs="{'invisible': [('synced_str', '=', False)]}"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <menuitem name="Orders Synced Process" id="menu_order_synced" sequence="100" parent="sales_team.menu_sale_config" action="synced_actions"/>
+
+    </data>
+</odoo>

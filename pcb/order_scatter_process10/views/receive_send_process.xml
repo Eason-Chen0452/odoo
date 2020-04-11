@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Receive Tree-->
+        <record id="send_tree" model="ir.ui.view">
+            <field name="name">Send Process Server</field>
+            <field name="model">send.process.server</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="send_host"/>
+                    <field name="send_port"/>
+                </tree>
+            </field>
+        </record>
+        <!--Receive Form-->
+        <record id="send_form" model="ir.ui.view">
+            <field name="name">Send Process Server</field>
+            <field name="model">send.process.server</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="CheckConnection" type="object" string="Test Connection" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group colspan="4" col="4">
+                            <field name="name"/>
+                            <field name="send_host" required="True"/>
+                            <field name="send_port" required="True"/>
+                            <field name="send_login" required="True"/>
+                            <field name="send_pwd" required="True" password="True"/>
+                            <field name="send_db" required="True"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--Receive Window-->
+        <record id="send_actions" model="ir.actions.act_window">
+            <field name="name">Send Process Server</field>
+            <field name="res_model">send.process.server</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="send_list_1" name="Send Process Server" action="send_actions" parent="base.menu_custom" sequence="1"/>
+
+    </data>
+</odoo>

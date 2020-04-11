@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="simple_version_wizard_form">
+            <field name="name">Simple version form</field>
+            <field name="model">data_statistics.simple_version</field>
+            <field name="arch" type="xml">
+                <form string="form视图显示名">
+					<group col="4">
+						<group colspan="2">
+							<field name="quote_data"/>
+						</group>
+						<group colspan="2">
+							<field name="source_data"/>
+						</group>
+						<group colspan="2">
+							<field name="access_data"/>
+						</group>
+					</group>
+                     <footer>
+                        <button name="get_simple_data_statistics" type="object" string="Confirm" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+		<!-- 设置action打开视图-->
+		<record model="ir.actions.act_window" id="simple_version_actions">
+			<field name="name">Simple version</field>
+			<field name="res_model">data_statistics.simple_version</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<!--<menuitem name="Data statistics menu" id="data_statistics_menu" parent="personal_center.personal_root" sequence="11"/>-->
+        <menuitem name="Simple version data statistics" id="simple_version_act_menu" parent="data_statistics.data_statistics_menu"
+                action="simple_version_actions"/>
+
+    </data>
+</odoo>

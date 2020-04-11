@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="cpo_country_list_temp">
+            <!--<select>-->
+                <!--&lt;!&ndash;<option>123</option>&ndash;&gt;-->
+                <!--<t t-foreach="objects" t-as="object">-->
+                    <!--<option t-att-value="object['code']">-->
+                        <!--<span t-esc="object['name']"/>-->
+                    <!--</option>-->
+                <!--</t>-->
+            <!--</select>-->
+            <!--<select class="country_select">-->
+            <option value="">Please select a region or country !</option>
+            <t t-foreach="rows_used" t-as="used_row">
+                <option t-att-value="used_row['code']">
+                        <t t-esc="used_row['name']"/>
+                </option>
+            </t>
+            <t t-foreach="objects" t-as="object">
+                <option t-att-value="object['code']">
+                    <t t-esc="object['name']"/>
+                </option>
+            </t>
+            <!--</select>-->
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_send_server,send.process.server,model_send_process_server,base.user_root,1,1,1,1
+access_orders_synced_process,orders.synced.process,model_orders_synced_process,sales_team.group_sale_salesman,1,1,1,1
+access_make_flow,make.flow,model_make_flow,sales_team.group_sale_salesman,1,1,1,1

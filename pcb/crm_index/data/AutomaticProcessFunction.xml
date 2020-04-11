@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ClientSessionRecord" model="ir.cron" forcecreate="True">
+            <field name="name">Client Session Record</field>
+            <field name="model">session.record</field>
+            <field name="doall">False</field>
+            <field name="active">False</field>
+            <field name="interval_number">8</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_session_record"/>
+            <field name="state">code</field>
+            <field name="code">model.AutomaticProcessSession()</field>
+            <field name="priority">0</field>
+            <field name="website_published">False</field>
+        </record>
+
+        <!--自动处理函数-->
+        <record id="WebsiteTrialPriceRecord" model="ir.cron" forcecreate="True">
+            <field name="name">Website Trial Price Record</field>
+            <field name="model">trial_price.record</field>
+            <field name="doall">False</field>
+            <field name="active">False</field>
+            <field name="interval_number">8</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_trial_price_record"/>
+            <field name="state">code</field>
+            <field name="code">model.AutomaticProcessTrialPrice()</field>
+            <field name="priority">0</field>
+            <field name="website_published">False</field>
+        </record>
+
+
+
+    </data>
+</odoo>

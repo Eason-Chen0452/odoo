@@ -1,0 +1,229 @@
+/*
+* ==========================================================
+*     LOGIN PAGE
+* ==========================================================
+*/
+.login-page {
+  position: relative;
+}
+
+.login-page::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1!important;
+  background-size: cover;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.login-page .container {
+  /*min-height: 100vh;*/
+  z-index: 9;
+  padding: 20px;
+  position: relative;
+}
+
+.login-page .form-holder {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.login-page .form-holder .info, .login-page .form-holder .form {
+  min-height: 70vh;
+  padding: 25px;
+  height: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+.login-page .form-holder .cpo_reset_password_form{
+    min-height: 35vh;
+}
+
+.login-page .form-holder div[class*='col-'] {
+  padding: 0;
+}
+
+.login-page .form-holder .info {
+  background: rgba(74, 147, 253, 0.9);
+  color: #fff;
+}
+
+.login-page .form-holder .info h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.login-page .form-holder .info p {
+  font-weight: 300;
+}
+
+.login-page .form-holder .form .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.login-page .form-holder .form .content {
+  width: 100%;
+}
+
+.login-page .form-holder .form form {
+  width: 100%;
+  max-width: 400px;
+}
+.login-page .form-holder .form form p.t-tips{
+    color: #aaaaaa;
+}
+.login-page .form-holder .form form p.t-tips span{
+    display: inline-block;
+}
+
+.login-page .form-holder .form #login, .login-page .form-holder .form #register {
+  /*margin-bottom: 20px;*/
+    background-color: #ffffff!important;
+}
+
+.login-page .form-holder .form a.forgot-pass, .login-page .form-holder .form a.signup {
+  font-size: 1em;
+  color: #85b4f2;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.login-page .form-holder .form small {
+  color: #aaa;
+}
+
+.login-page .form-holder .form .terms-conditions label {
+  cursor: pointer;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.login-page .copyrights {
+  width: 100%;
+  z-index: 9999;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+}
+
+.login-page input.input-material {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.login-page input.input-material.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.login-page input.input-material:focus {
+    outline-style: none;
+    border-bottom: 1px solid #4a93fd;
+}
+
+.login-page input.input-material ~ label {
+  color: #aaa;
+  position: absolute;
+  top: 14px;
+  left: 0;
+  cursor: text;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-weight: 300;
+}
+
+.login-page input.input-material ~ label.active {
+  font-size: 14px;
+  top: -15px;
+  color: #4a93fd;
+}
+
+.login-page input.input-material.is-invalid ~ label {
+  color: #dc3545;
+}
+.login-page input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px transparent  inset !important;
+    background-color:transparent;
+    background-image: none;
+    transition: background-color 50000s ease-in-out 0s;
+}
+
+@media (max-width: 991px) {
+  .login-page .info, .login-page .form {
+    min-height: auto !important;
+  }
+  .login-page .info {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+  }
+}
+.cpo-none{
+  display: none!important;
+}
+.cpo-block{
+  display: block!important;
+}
+/*// 加载图标动画*/
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        -webkit-stroke-dasharray: 1, 200;
+        -webkit-stroke-dashoffset: 0;
+        -ms-stroke-dasharray: 1, 200;
+        -ms-stroke-dashoffset: 0;
+    }50% {
+        stroke-dasharray: 130, 200;
+        stroke-dashoffset: -50;
+        -webkit-stroke-dasharray: 130, 200;
+        -webkit-stroke-dashoffset: -50;
+        -ms-stroke-dasharray: 130, 200;
+        -ms-stroke-dashoffset: -50;
+    }100% {
+        stroke-dasharray: 130, 200;
+        stroke-dashoffset: -188;
+        -webkit-stroke-dasharray: 130, 200;
+        -webkit-stroke-dashoffset: -188;
+        -ms-stroke-dasharray: 130, 200;
+        -ms-stroke-dashoffset: -188;
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+    }
+}
+/*加载图标*/
+.svg_loading{
+  position: fixed;height: 100%;width: 100%;z-index: 999999;top: 0;left: 0;background-color: rgba(95, 95, 95, 0.8);
+  display: none;
+}
+.svg_loading .svg_loading_content{
+  position: absolute;left: 50%;top: 50%;margin: -50px 0 0 -50px;
+}
+.svg_loading .load{
+    width: 100px;height: 100px;animation: rotate 2s linear infinite;
+  }
+.svg_loading .loading{
+    stroke: rgb(53, 157, 218);stroke-width: 5;fill: none;animation: dash 1.5s linear infinite;
+}
+a.btn-primary{
+  color: #ffffff;background-color: #4a93fd;border-color: #4a93fd;
+}

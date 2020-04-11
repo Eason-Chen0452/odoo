@@ -1,0 +1,821 @@
+@charset "UTF-8";
+
+.row_padding_value{
+    padding-left:0;
+    padding-right:0;
+}
+#pcb_title{
+    margin-bottom: 40px;
+}
+
+#cpo_pcb_quotation .form-group .form-control{
+    box-shadow: none;
+    position: relative;
+    text-decoration: none;
+    line-height: 20px;
+}
+
+.cpo_pcb_qty_total .cpo_pcb_qty_parent{
+    width: 20%;
+    display: inline-block;
+    padding-right: 0;
+    padding-left: 0;
+}
+.cpo_pcb_qty_total .cpo_pcb_qty{
+    width: 100%;
+    text-align: center;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    display: inline-block;
+    height: 20px;
+    padding: 0 5px;
+}
+.cpo_pcb_qty_total .cpo_pcb_qty_unit{
+    display: inline-block;
+    width: 14%;
+    text-align: center;
+    box-shadow: none;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+#cpo_pcb_quotation .cpo_pcb_specification{
+    display: none;
+}
+.cpo_pcb_specification .cpo_pcb_panel{
+    border: none;
+}
+
+.cpo_pcb_panel_size .cpo_pcb_area .pcb_panel_pcs{
+    width: 76%;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+.cpo_pcb_panel_size .cpo_pcb_area .unit_sku{
+    width: 47%;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+.cpo_pcb_panel_size .cpo_pcb_area span{
+    font-size: 16px;
+    font-weight: bold;
+}
+.cpo_pcb_panel_size .cpo_pcb_area .cpo_pcb_pcs_parent{
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    padding-left: 0;
+    padding-right: 0;
+}
+.cpo_pcb_panel_size .cpo_pcb_area .cpo_pcb_parent{
+    position: relative;
+    display: inline-block;
+    width: 25%;
+}
+.cpo_pcb_panel_size .cpo_pcb_area .cpo_pcb_pcs_parent{
+    width: 18%;
+}
+.cpo_pcb_panel_size .cpo_pcb_area .pcb_unit_sku{
+    border-left: none;
+    border-top: none;
+    border-right:none;
+    padding-left: 0;
+    padding-right: 0;
+}
+.cpo_pcb_panel_size .cpo_pcb_area .cpo_pcb_parent .cpo_pcb_unit{
+    position: absolute;
+    right: 4px;
+    top: 7px;
+    font-style: normal;
+    color: #407dbd;
+}
+.cpo_pcb_layer_number .cpo_pcb_layer_parent{
+    display: inline-block;
+    width: 20%;
+    padding: 6px 0;
+}
+.cpo_pcb_layer_number .cpo_pcb_layer{
+    text-align: center;
+    width: 100%;
+    outline-style: none;
+    border: none;
+    padding: 0 5px;
+    display: inline-block;
+}
+.pcb_order .cpo_pcb_order{
+    width: 30%;
+    text-align: center;
+    margin-right: 5px;
+    margin-top: 5px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
+}
+.pcb_order .cpo_pcb_raw{
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+}
+.pcb_order .cpo_pcb_order_other{
+    width: 100%;
+    text-align: center;
+    outline: none;
+    border: none;
+    font-size: 12px;
+    position: absolute;
+    left: 0;
+    top: 6px;
+}
+#cpo_pcb_quotation .pcb_raw_material_select{
+    display: none;
+}
+.cpo_pcb_combine_number .cpo_pcb_combine{
+    width: 14%;
+    text-align: center;
+    margin-right: 5px;
+    outline-style: none;
+    border: 1px solid #ccc;
+}
+#cpo_pcb_quotation #order_change_val{
+    font-size: 12px;
+    position: relative;
+}
+.pcb_thickness .cpo_pcb_thickness input{
+    width: 58%;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+.pcb_thickness .cpo_pcb_thickness .cpo_pcb_unit{
+    position: absolute;
+    right: 4px;
+    top: 6px;
+    font-style: normal;
+    color: #407dbd;
+}
+#cpo_pcb_quotation .cpo_pcb_thickness{
+    width: 20%;
+    text-align: center;
+    margin-right: 5px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.pcb_silkscreen_color .cpo_pcb_silkscreen{
+    width: 20%;
+    text-align: center;
+    margin-right: 5px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 6px 0;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.pcb_surface .cpo_pcb_surface{
+    width: 32%;
+    text-align: center;
+    margin-right: 5px;
+    margin-top: 5px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 6px 0;
+}
+.pcb_surface .pcb_surface_three{
+    text-align: left;
+    padding-right: 0;
+    padding-left: 2px;
+}
+.pcb_surface .pcb_surface_three .pcb_immersion_gold{
+    width: 32%;
+    height: 32px;
+    padding-right: 0;
+    padding-left: 0;
+    float: right;
+    margin-top: -6px;
+    border: none;
+    border-left: 1px solid #ccc;
+}
+.pcb_surface .cpo_pcb_surface_more{
+    width: 32%;
+    text-align: center;
+    margin-right: 5px;
+    margin-top: 5px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 6px 0;
+}
+.pcb_surface .cpo_pcb_surface_more .pcb_immersion_gold{
+    width: 32%;
+    height: 32px;
+    padding-right: 0;
+    padding-left: 0;
+    float: right;
+    margin-top: -6px;
+    border: none;
+    border-left: 1px solid #ccc;
+}
+
+
+.pcb_hole .cpo_pcb_hole{
+    width: 30%;
+    text-align: center;
+    margin-right: 5px;
+    margin-top: 5px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.pcb_stencil .cpo_pcb_stencil{
+    width: 25%;
+    text-align: center;
+    margin-right: 5px;
+    margin-top: 5px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.pcb_text_color .cpo_pcb_text{
+    width: 14%;
+    text-align: center;
+    margin-right: 5px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+#cpo_pcb_stencil_fee{
+    display: none;
+}
+.cpo_pcb_copper_weight .cpo_pcb_cppper{
+    width: 46%;
+    text-align: center;
+    margin-right: 5px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    padding-left: 6px;
+    padding-right: 0;
+    cursor: pointer;
+}
+.cpo_pcb_copper_weight .cpo_pcb_cppper .pcb_outer_copper{
+    width: 30%;
+    margin-top: -6px;
+    height: 32px;
+    border: none;
+    padding-left: 16px;
+    padding-right: 0;
+    border-left: 1px solid #ccc;;
+}
+.cpo_pcb_copper_weight .cpo_pcb_cppper .pcb_inner_copper{
+    width: 30%;
+    margin-top: -6px;
+    height: 32px;
+    border: none;
+    padding-left: 16px;
+    padding-right: 0;
+    border-left: 1px solid #ccc;;
+}
+.cpo_pcb_copper_weight .cpo_pcb_cppper .inner_copper_value{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 44px;
+    width: 15%;
+    padding: 6px 0;
+    outline: none;
+    border: none;
+    text-align: center;
+}
+.cpo_pcb_copper_weight .cpo_pcb_cppper .outer_copper_value{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 44px;
+    width: 15%;
+    padding: 6px 0;
+    outline: none;
+    border: none;
+    text-align: center;
+}
+#pcb_copper_in_out .pcb_copper_unit{
+    padding-right: 5px;
+}
+
+.pcb_flying_probe .cpo_pcb_flying{
+    width: 35%;
+    text-align: center;
+    margin-right: 5px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+/* 金手指新版样式 */
+#cpo_pcb_quotation .pcb_surface_treatment{
+    width: 32%;
+    text-align: center;
+    margin-right: 5px;
+    margin-top: 5px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 0 0;
+
+}
+#cpo_pcb_quotation .cpo_pcb_input_click{
+    width: 100%;
+    outline: none;
+    margin: 0;
+    border: 0;
+    border-radius: 5px;
+    padding: 6px 0;
+    text-align: center;
+}
+
+#cpo_pcb_quotation .pcb_gold_finger{
+    display: none;
+}
+#cpo_pcb_quotation .pcb_gold_finger .pcb_gold_finger{
+    color: #ff1010;
+    margin: -15px 0 10px 0;
+}
+#cpo_pcb_quotation .pcb_gold_finger .table{
+    margin-bottom: 0;
+}
+#cpo_pcb_quotation .pcb_gold_finger .table td{
+    padding: 4px;
+}
+#cpo_pcb_quotation .pcb_gold_finger .cpo_border_right{
+    border-right: 1px solid #ddd;
+}
+#cpo_pcb_quotation .pcb_gold_finger .gold_thickness,
+#cpo_pcb_quotation .pcb_gold_finger .gold_finger_size{
+    width: 46%;
+}
+#cpo_pcb_quotation .pcb_gold_finger .gold_thickness_unit{
+    margin-left: 5px;
+}
+#cpo_pcb_quotation .pcb_gold_finger .cpo_pcb_fold_finger{
+    text-align: center;
+    outline: none;
+}
+#cpo_pcb_quotation .pcb_gold_finger .numbers_gold_size_width,
+#cpo_pcb_quotation .pcb_gold_finger .numbers_gold_size_height{
+    width: 20%;
+}
+#cpo_pcb_quotation .pcb_gold_finger .pcb_gold_size{
+
+}
+#cpo_pcb_quotation .pcb_immersion_gold_select{
+    display: none;
+}
+#pcb_immersion_gold_table select{
+    width: 40%;
+    text-align: left;
+    padding-left: 8%;
+}
+#pcb_immersion_gold_table input{
+    width: 40%;
+    text-align: left;
+    padding-left: 11%;
+}
+.pcc_test_hint{
+    color: #ff1010;
+    margin-top: -15px;
+}
+#cpo_pcb_quotation .pcb_test_hint_cont .pcc_test_hint{
+    color: #ff1010;
+    margin-top: -15px;
+}
+.pcb_special_requirements .cpo_btn_requirement{
+    text-align: center;
+}
+.pcb_special_requirements .cpo_btn_requirement .btn{
+    margin: auto auto;
+}
+.pcb_special_requirements .cpo_btn_requirement .btn .cpo_requirement_icon{
+    margin-right: 8px;
+}
+.pcb_special_requirements .cpo_btn_requirement .pcb_special_plus{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background-image: url("../images/plus.png");
+    background-size: 18px 18px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.pcb_special_requirements .cpo_btn_requirement .pcb_special_subtract{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background-image: url("../images/subtract.png");
+    background-size: 18px 18px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+
+/* Active */
+#cpo_pcb_quotation .pcb_active{
+    border: 1px solid #0E76A8;
+}
+
+#cpo_pcb_quotation .pcb_active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url(../images/cpo_pcb.png) no-repeat;
+    /*background-position: -116px -93px;*/
+    width: 14px;
+    height: 14px;
+    background-size: 14px 14px;
+}
+#pcb_col_md_8{
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 136%;
+    padding: 60px 100px;
+    left: 50%;
+    top: 0;
+    margin-left: -45%;
+    background-color: #FFFFFF;
+    z-index: 5;
+}
+#pcb_col_md_8 .table .pcb_hole_density{
+    width: 35%;
+    display: inline-block;
+ }
+#pcb_col_md_8 .table tr td{
+    padding: 0px 5px 0 0;
+    line-height: 35px;
+}
+#pcb_col_md_8 .table .form-control{
+    border-top: none;
+    border-bottom: none;
+    text-align: center;
+}
+#pcb_col_md_8 .table .special_input_width{
+    width: 40%;
+    display: inline-block;
+}
+#pcb_col_md_8 .pcb_put_away_box{
+    text-align: center;
+}
+#pcb_col_md_8 #pcb_put_away{
+    margin: auto auto;
+}
+
+/* 中间布局 */
+
+#pcb_col_md_1{
+    padding-left: 0;
+}
+#cpo_pcb_btn{
+    margin: 300% 0 0 -20px;
+}
+/* 右边布局 */
+#pcb_select_result{
+
+}
+#pcb_select_result tr td input{
+    outline: none;
+    border: none;
+    width: 100%;
+}
+#pcb_select_result tr td{
+    padding: 10px 0;
+}
+/*#pcb_select_result tr td .pcb_delivery_period*/
+#pcb_select_result tr td .pcb_size_width,
+#pcb_select_result tr td .pcb_size_length,
+#pcb_select_result tr td .pcb_area {
+    width: 40%;
+}
+#cpo_pcb_calculate{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 30px;
+    border: 0px solid #337ab7;
+    outline: none;
+    background-image: url("../images/anniu.png");
+    background-size: 80px 80px;
+}
+#cpo_pcb_calculate i{
+    display: block;
+    margin: auto auto;
+}
+#pcb_select_result .pcb_surface_treatment{
+    position: relative;
+}
+#pcb_select_result .pcb_surface{
+    position: absolute;
+    left: 0;
+    width: 160%;
+}
+
+/* click button */
+#pcb_details_btn{
+    display: none;
+    width: 44%;
+    margin: auto auto;
+}
+
+#pcb_fee_table{
+    border-top: 1px solid #cccccc;
+    margin-top: 10px;
+    position: relative;
+}
+#pcb_price_calculate .pcb_fee_total{
+    outline: none;
+    border: none;
+    max-width: 60%;
+    padding-left: 10px;
+}
+#pcb_price_calculate td{
+    min-width: 130px;
+}
+#pcb_price_calculate{
+    position: relative;
+}
+#pcb_price_calculate .pcb_all_fee_details {
+    width: 100%;
+    display: none;
+    background-color: #ddd;
+    width: 100%;
+    position: absolute;
+    /*top: -342px;*/
+    bottom: 100%;
+    left: 0;
+}
+#pcb_price_calculate .pcb_all_fee_details input{
+    background-color: #ddd;
+}
+#pcb_board_all_fee{
+    position: relative;
+}
+#pcb_seet_up_process{
+    position: relative;
+}
+#pcb_set_process_fee{
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    display: none;
+    width: 100%;
+    background-color: #ddd;
+}
+#pcb_set_process_fee input{
+    background-color: #ddd;
+}
+#pcb_price_calculate .pcb_fee_line{
+    line-height: 30px;
+    border-bottom: 1px solid #CCCCCC;
+}
+#pcb_price_calculate .pcb_fee_line input{
+    line-height: 26px;
+}
+#pcb_price_calculate .pcb_calculate_title{
+    display: inline-block;
+    min-width: 39%;
+}
+#pcb_price_calculate .pcb_calculate_cont{
+    display: inline-block;
+    margin-bottom: 0;
+    max-width: 40%;
+}
+.pcb_test_fee_active{
+    display: none;
+    position: relative;
+}
+#pcb_test_fee .pcb_construction_cost{
+    /*position: absolute;*/
+    top: 100%;
+    left: 0;
+}
+#pcb_test_fee .pcb_construction_cost{
+    line-height: 15px;
+    margin-top: 5px;
+    color: #ff1010;
+    display: none;
+}
+#pcb_price_calculate .pcb_important_note{
+    color: #337ab7;
+    margin-left:5px;
+}
+#pcb_fee_table .cpo_pcb_process_fee{
+    display: none;
+}
+#pcb_fee_table .cpo_pcb_film_fee{
+    display: none;
+}
+
+#pcb_order_load_content{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250,250,250,0.5);
+    /*opacity: 0.4;*/
+    z-index: 999999999999;
+}
+#pcb_order_load_content .load_img_parent{
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    margin-top: -64px;
+    margin-left: -64px;
+}
+
+
+/* PCB Details */
+
+#pcb_quo table tr td:nth-child(even){
+    text-align: center;
+}
+#cpo_pcb_detail_peice tr td i{
+    font-style: normal;
+    font-weight: bold;
+}
+#cpo_pcb_detail_peice .pcb_span_base_style{
+    padding: 0 5px;
+    width: 130px;
+    display: inline-block;
+    text-align: left;
+}
+#cpo_pcb_expedited_select .pcb_span_base_style{
+    padding: 0 5px;
+    width: 130px;
+    display: inline-block;
+    text-align: left;
+}
+#cpo_pcb_detail_peice .cpo_pcb_select_td_parent{
+    display: none;
+}
+#cpo_pcb_detail_peice .cpo_pcb_select_a,
+#cpo_pcb_expedited_select .cpo_pcb_select_a{
+    text-align: center;
+}
+#cpo_pcb_detail_peice .cpo_pcb_select_delivery_period,
+#cpo_pcb_expedited_select .cpo_pcb_select_delivery_period{
+    width: 20px!important;
+    height: 20px;
+    /*border: 1px solid #337ab7;*/
+    cursor: pointer;
+    position: relative;
+    background: url(../images/did_select.png) no-repeat;
+    background-size: 20px 20px;
+    border: aliceblue;
+}
+#cpo_pcb_detail_peice a.pcb_active:after,
+#cpo_pcb_expedited_select a.pcb_active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url(../images/select_02.png) no-repeat;
+    width: 19px;
+    height: 19px;
+    background-size: 20px 20px;
+}
+#cpo_pcb_expedited_select tr td i{
+    font-style: normal;
+    font-weight: bold;
+}
+#cpo_pcb_expedited_select .pcb_span_base_style{
+    padding: 0 5px;
+    width: 130px;
+    display: inline-block;
+    text-align: left;
+}
+#pcb_quo .table .pcb_urgent{
+    width: 40%;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#pcb_quo .pcb_active{
+    border: 1px solid #0E76A8;
+}
+
+/*#pcb_quo .pcb_active:after {*/
+    /*content: "";*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*right: 0;*/
+    /*width: 14px;*/
+    /*height: 14px;*/
+    /*background-size: 14px 14px;*/
+/*}*/
+#cpo_pcb_expedited_btn{
+    margin-top: 50px;
+}
+#pcb_select_expedited_days{
+    position: relative;
+}
+#cpo_pcb_expedited_select{
+    display: none;
+    position: absolute;
+    right: -102%;
+    top: 0;
+}
+#cpo_pcb_expedited_btn .cpo_pcb_quick_title{
+    font-size: 18px;
+    font-weight: 600;
+}
+#pcb_myModal .pcb_confirm_style_urgent{
+    height: 20px;
+}
+#pcb_myModal .pcb_confirm_style_urgent input{
+    text-align: left;
+    width: 35%;
+    padding-right: 15px;
+    border: none;
+    outline: none;
+}
+#pcb_myModal .pcb_confirm_style_urgent span{
+    margin-right: 10px;
+}
+#pcb_myModal .pcb_confirm_radio .radio{
+    padding-left: 20px;
+}
+#pcb_myModal .pcb_confirm_radio .pcb_radio_label{
+    margin-right: 15px;
+}
+#pcb_myModal .pcb_confirm_radio .pcb_urgent_day{
+    padding: 6px 12px;
+    margin-right: 10px;
+    width: 12%;
+    text-align: center;
+    display: inline-block;
+    line-height: 26px;
+    padding: 4px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 5px;
+}
+#pcb_myModal .cpo_pcb_modal_line{
+    display: inline-block;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 55%;
+}
+#pcb_myModal .cpo_pcb_modal_title{
+    width: 40%;
+}
+#pcb_myModal .pcb_active{
+    border: 1px solid #0E76A8;
+}
+
+#pcb_myModal .pcb_active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url(../images/cpo_pcb.png) no-repeat;
+    /*background-position: -116px -93px;*/
+    width: 14px;
+    height: 14px;
+    background-size: 14px 14px;
+}
+.cpo_js_quantity{
+    outline: none;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    /*text-align: right;*/
+    background-color: #FFFFFF!important;
+}
+#cart_products .form-control{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 50px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 20px;
+    height: 20px;
+}
+

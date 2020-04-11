@@ -1,0 +1,1306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--主表-->
+        <record id="pp_main_data_1" model="package.price.main">
+            <field name="name">通用打包价格</field>
+            <field name="bale_partner_id"/>
+            <field name="bale_currency_id"/>
+            <field name="bale_start">2019-07-01</field>
+            <field name="bale_end">2022-12-31</field>
+            <field name="bale_general_bool">True</field>
+            <field name="memo">此为通用001打包价格</field>
+            <field name='active'>True</field>
+            <field name="bale_area_id"/>
+        </record>
+        <!--面积 0.2-->
+        <record id="pp_area_data_1" model="pp.area">
+            <field name="main_id" ref='cpo_it_pcb.pp_main_data_1'/>
+            <field name="area_min">0</field>
+            <field name="area_max">0.2</field>
+            <field name="area_size">400</field>
+            <field name="area_quantity">50</field>
+            <field name="text_id"/>
+            <field name="solder_id"/>
+            <field name="spacing_id"/>
+            <field name="aperture_id"/>
+            <field name="layer_id"/>
+        </record>
+        <!--文字颜色-->
+        <record id="pp_text_color_1" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="ink_color_id" ref="cam.color_white_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_text_color_2" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="ink_color_id" ref="cam.color_black_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_text_color_3" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="ink_color_id" ref="cam.color_blue_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_text_color_4" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="ink_color_id" ref="cam.color_yellow_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_text_color_5" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="ink_color_id" ref="cam.color_red_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--阻焊颜色-->
+        <record id="pp_solder_color_1" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="ink_color_id" ref="cam.color_red_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_solder_color_2" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="ink_color_id" ref="cam.color_yellow_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_solder_color_3" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="ink_color_id" ref="cam.color_blue_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_solder_color_4" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="ink_color_id" ref="cam.color_black_normal"/>
+            <field name="price">10</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <record id="pp_solder_color_5" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="ink_color_id" ref="cam.color_green_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_solder_color_6" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="ink_color_id" ref="cam.color_white_normal"/>
+            <field name="price">10</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--线宽线距-->
+        <record id="pp_line_width_1" model="pp.line.width.spacing">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="lws_min">4</field>
+            <field name="lws_max">10</field>
+            <field name="price">0</field>
+        </record>
+        <!--孔径-->
+        <record id="pp_aperture_1" model="pp.aperture">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="aperture_min">10</field>
+            <field name="aperture_max">20</field>
+            <field name="price">0</field>
+        </record>
+        <!--表面处理-->
+        <record id="pp_surface_1" model="pp.surface.treatment">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="surface_id" ref="cam.surface_hasl_lf"/>
+            <field name="thick_gold">0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_surface_2" model="pp.surface.treatment">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="surface_id" ref="cam.surface_osp"/>
+            <field name="thick_gold">0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_surface_3" model="pp.surface.treatment">
+            <field name="area_id" ref="pp_area_data_1"/>
+            <field name="surface_id" ref="cam.surface_enig"/>
+            <field name="thick_gold">2</field>
+            <field name="price">30</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--层数 单-->
+        <record id="pp_layer_data_1" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_1'/>
+            <field name="layer_number_id" ref="cam.layer_number_01"/>
+            <field name="delivery">5</field>
+            <field name="density">5</field>
+            <field name="inner_line">5.25</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_1" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_1"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">53</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_2" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_1"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">53</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_3" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_1"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">53</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_1" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_1"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_1" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_1"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_1" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_1"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--层数 双-->
+        <record id="pp_layer_data_2" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_1'/>
+            <field name="layer_number_id" ref="cam.layer_number_02"/>
+            <field name="delivery">5</field>
+            <field name="density">5</field>
+            <field name="inner_line">5.5</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_4" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_2"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">53</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_5" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_2"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">53</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_6" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_2"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">53</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_2" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_2"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_2" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_2"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_2" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_2"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+
+        <!--层数 四-->
+        <record id="pp_layer_data_3" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_1'/>
+            <field name="layer_number_id" ref="cam.layer_number_04"/>
+            <field name="delivery">6</field>
+            <field name="density">5</field>
+            <field name="inner_line">6</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_7" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_3"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">106</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_8" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_3"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">106</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_9" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_3"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">106</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_3" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_3"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_3" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_3"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_3" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_3"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--内铜厚-->
+        <record id="pp_inner_copper_3" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_3"/>
+            <field name="inner">0.5</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_inner_copper_3" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_3"/>
+            <field name="inner">1</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="2_pp_inner_copper_3" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_3"/>
+            <field name="inner">2</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--层数 六-->
+        <record id="pp_layer_data_4" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_1'/>
+            <field name="layer_number_id" ref="cam.layer_number_06"/>
+            <field name="delivery">7</field>
+            <field name="density">10</field>
+            <field name="inner_line">6.5</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_10" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_4"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">176</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_11" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_4"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">176</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_12" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_4"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">176</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_4" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_4"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_4" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_4"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_4" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_4"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--内铜厚-->
+        <record id="pp_inner_copper_4" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_4"/>
+            <field name="inner">0.5</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_inner_copper_4" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_4"/>
+            <field name="inner">1</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="2_pp_inner_copper_4" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_4"/>
+            <field name="inner">2</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--层数 八-->
+        <record id="pp_layer_data_5" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_1'/>
+            <field name="layer_number_id" ref="cam.layer_number_08"/>
+            <field name="delivery">8</field>
+            <field name="density">10</field>
+            <field name="inner_line">7</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_13" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_5"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">265</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_14" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_5"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">265</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_15" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_5"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">265</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_5" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_5"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_5" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_5"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_5" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_5"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--内铜厚-->
+        <record id="pp_inner_copper_5" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_5"/>
+            <field name="inner">0.5</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_inner_copper_5" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_5"/>
+            <field name="inner">1</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="2_pp_inner_copper_5" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_5"/>
+            <field name="inner">2</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--面积 0.5-->
+        <record id="pp_area_data_2" model="pp.area">
+            <field name="main_id" ref='cpo_it_pcb.pp_main_data_1'/>
+            <field name="area_min">0.2</field>
+            <field name="area_max">0.5</field>
+            <field name="area_size">400</field>
+            <field name="area_quantity">100</field>
+            <field name="text_id"/>
+            <field name="solder_id"/>
+            <field name="spacing_id"/>
+            <field name="aperture_id"/>
+            <field name="layer_id"/>
+        </record>
+        <!--文字颜色-->
+        <record id="pp_text_color_1a" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="ink_color_id" ref="cam.color_white_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_text_color_2a" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="ink_color_id" ref="cam.color_black_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_text_color_3a" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="ink_color_id" ref="cam.color_blue_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_text_color_4a" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="ink_color_id" ref="cam.color_yellow_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_text_color_5a" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="ink_color_id" ref="cam.color_red_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--阻焊颜色-->
+        <record id="pp_solder_color_1a" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="ink_color_id" ref="cam.color_red_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_solder_color_2a" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="ink_color_id" ref="cam.color_yellow_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_solder_color_3a" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="ink_color_id" ref="cam.color_blue_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_solder_color_4a" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="ink_color_id" ref="cam.color_black_normal"/>
+            <field name="price">10</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <record id="pp_solder_color_5a" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="ink_color_id" ref="cam.color_green_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_solder_color_6a" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="ink_color_id" ref="cam.color_white_normal"/>
+            <field name="price">10</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--线宽线距-->
+        <record id="pp_line_width_1a" model="pp.line.width.spacing">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="lws_min">4</field>
+            <field name="lws_max">10</field>
+            <field name="price">0</field>
+        </record>
+        <!--孔径-->
+        <record id="pp_aperture_1a" model="pp.aperture">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="aperture_min">10</field>
+            <field name="aperture_max">20</field>
+            <field name="price">0</field>
+        </record>
+        <!--表面处理-->
+        <record id="pp_surface_1a" model="pp.surface.treatment">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="surface_id" ref="cam.surface_hasl_lf"/>
+            <field name="thick_gold">0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_surface_2a" model="pp.surface.treatment">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="surface_id" ref="cam.surface_osp"/>
+            <field name="thick_gold">0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_surface_3a" model="pp.surface.treatment">
+            <field name="area_id" ref="pp_area_data_2"/>
+            <field name="surface_id" ref="cam.surface_enig"/>
+            <field name="thick_gold">2</field>
+            <field name="price">30</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--层数 单-->
+        <record id="pp_layer_data_1a" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_2'/>
+            <field name="layer_number_id" ref="cam.layer_number_01"/>
+            <field name="delivery">5</field>
+            <field name="density">5</field>
+            <field name="inner_line">5.25</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_1a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_1a"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">88</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_2a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_1a"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">97</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_3a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_1a"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">97</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_1a" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_1a"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_1a" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_1a"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_1a" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_1a"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--层数 双-->
+        <record id="pp_layer_data_2a" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_2'/>
+            <field name="layer_number_id" ref="cam.layer_number_02"/>
+            <field name="delivery">5</field>
+            <field name="density">5</field>
+            <field name="inner_line">5.5</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_4a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_2a"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">88</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_5a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_2a"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">97</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_6a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_2a"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">97</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_2a" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_2a"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_2a" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_2a"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_2a" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_2a"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--层数 四-->
+        <record id="pp_layer_data_3a" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_2'/>
+            <field name="layer_number_id" ref="cam.layer_number_04"/>
+            <field name="delivery">6</field>
+            <field name="density">5</field>
+            <field name="inner_line">6</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_7a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_3a"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">176</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_8a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_3a"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">185</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_9a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_3a"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">185</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_3a" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_3a"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_3a" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_3a"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_3a" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_3a"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--内铜厚-->
+        <record id="pp_inner_copper_3a" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_3a"/>
+            <field name="inner">0.5</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_inner_copper_3a" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_3a"/>
+            <field name="inner">1</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="2_pp_inner_copper_3a" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_3a"/>
+            <field name="inner">2</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--层数 六-->
+        <record id="pp_layer_data_4a" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_2'/>
+            <field name="layer_number_id" ref="cam.layer_number_06"/>
+            <field name="delivery">7</field>
+            <field name="density">10</field>
+            <field name="inner_line">6.5</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_10a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_4a"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">265</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_11a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_4a"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">282</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_12a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_4a"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">282</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_4a" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_4a"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_4a" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_4a"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_4a" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_4a"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--内铜厚-->
+        <record id="pp_inner_copper_4a" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_4a"/>
+            <field name="inner">0.5</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_inner_copper_4a" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_4a"/>
+            <field name="inner">1</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="2_pp_inner_copper_4a" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_4a"/>
+            <field name="inner">2</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--层数 八-->
+        <record id="pp_layer_data_5a" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_2'/>
+            <field name="layer_number_id" ref="cam.layer_number_08"/>
+            <field name="delivery">8</field>
+            <field name="density">10</field>
+            <field name="inner_line">7</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_13a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_5a"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">388</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_14a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_5a"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">406</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_15a" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_5a"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">406</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_5a" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_5a"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_5a" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_5a"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_5a" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_5a"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--内铜厚-->
+        <record id="pp_inner_copper_5a" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_5a"/>
+            <field name="inner">0.5</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_inner_copper_5a" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_5a"/>
+            <field name="inner">1</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="2_pp_inner_copper_5a" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_5a"/>
+            <field name="inner">2</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--面积 1-->
+        <record id="pp_area_data_3" model="pp.area">
+            <field name="main_id" ref='cpo_it_pcb.pp_main_data_1'/>
+            <field name="area_min">0.5</field>
+            <field name="area_max">1</field>
+            <field name="area_size">400</field>
+            <field name="area_quantity">200</field>
+            <field name="text_id"/>
+            <field name="solder_id"/>
+            <field name="spacing_id"/>
+            <field name="aperture_id"/>
+            <field name="layer_id"/>
+        </record>
+        <!--文字颜色-->
+        <record id="pp_text_color_1b" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="ink_color_id" ref="cam.color_white_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_text_color_2b" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="ink_color_id" ref="cam.color_black_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_text_color_3b" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="ink_color_id" ref="cam.color_blue_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_text_color_4b" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="ink_color_id" ref="cam.color_yellow_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_text_color_5b" model="pp.text.color">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="ink_color_id" ref="cam.color_red_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--阻焊颜色-->
+        <record id="pp_solder_color_1b" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="ink_color_id" ref="cam.color_red_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_solder_color_2b" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="ink_color_id" ref="cam.color_yellow_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_solder_color_3b" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="ink_color_id" ref="cam.color_blue_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_solder_color_4b" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="ink_color_id" ref="cam.color_black_normal"/>
+            <field name="price">10</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <record id="pp_solder_color_5b" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="ink_color_id" ref="cam.color_green_normal"/>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_solder_color_6b" model="pp.solder.mask.color">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="ink_color_id" ref="cam.color_white_normal"/>
+            <field name="price">10</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--线宽线距-->
+        <record id="pp_line_width_1b" model="pp.line.width.spacing">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="lws_min">4</field>
+            <field name="lws_max">10</field>
+            <field name="price">0</field>
+        </record>
+        <!--孔径-->
+        <record id="pp_aperture_1b" model="pp.aperture">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="aperture_min">10</field>
+            <field name="aperture_max">20</field>
+            <field name="price">0</field>
+        </record>
+        <!--表面处理-->
+        <record id="pp_surface_1b" model="pp.surface.treatment">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="surface_id" ref="cam.surface_hasl_lf"/>
+            <field name="thick_gold">0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_surface_2b" model="pp.surface.treatment">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="surface_id" ref="cam.surface_osp"/>
+            <field name="thick_gold">0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="pp_surface_3b" model="pp.surface.treatment">
+            <field name="area_id" ref="pp_area_data_3"/>
+            <field name="surface_id" ref="cam.surface_enig"/>
+            <field name="thick_gold">2</field>
+            <field name="price">30</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--层数 单-->
+        <record id="pp_layer_data_1ab" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_3'/>
+            <field name="layer_number_id" ref="cam.layer_number_01"/>
+            <field name="delivery">6</field>
+            <field name="density">5</field>
+            <field name="inner_line">5.25</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_1b" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_1ab"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">132</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_2b" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_1ab"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">141</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_3b" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_1ab"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">141</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_1b" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_1ab"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_1b" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_1ab"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_1b" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_1ab"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--层数 双-->
+        <record id="pp_layer_data_2ab" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_3'/>
+            <field name="layer_number_id" ref="cam.layer_number_02"/>
+            <field name="delivery">6</field>
+            <field name="density">5</field>
+            <field name="inner_line">5.5</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_4ab" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_2ab"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">132</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_5ab" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_2ab"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">141</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_6ab" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_2ab"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">141</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_2ab" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_2ab"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_2ab" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_2ab"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_2ab" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_2ab"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--层数 四-->
+        <record id="pp_layer_data_3ab" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_3'/>
+            <field name="layer_number_id" ref="cam.layer_number_04"/>
+            <field name="delivery">7</field>
+            <field name="density">5</field>
+            <field name="inner_line">6</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_7ab" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_3ab"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">229</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_8ab" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_3ab"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">238</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_9ab" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_3ab"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">238</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_3ab" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_3ab"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_3ab" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_3ab"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_3ab" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_3ab"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--内铜厚-->
+        <record id="pp_inner_copper_3ab" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_3ab"/>
+            <field name="inner">0.5</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_inner_copper_3ab" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_3ab"/>
+            <field name="inner">1</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="2_pp_inner_copper_3ab" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_3ab"/>
+            <field name="inner">2</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--层数 六-->
+        <record id="pp_layer_data_4ab" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_3'/>
+            <field name="layer_number_id" ref="cam.layer_number_06"/>
+            <field name="delivery">8</field>
+            <field name="density">10</field>
+            <field name="inner_line">6.5</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_10ab" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_4ab"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">406</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_11ab" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_4ab"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">424</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_12ab" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_4ab"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">424</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_4ab" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_4ab"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_4ab" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_4ab"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_4ab" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_4ab"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--内铜厚-->
+        <record id="pp_inner_copper_4ab" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_4ab"/>
+            <field name="inner">0.5</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_inner_copper_4ab" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_4ab"/>
+            <field name="inner">1</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="2_pp_inner_copper_4ab" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_4ab"/>
+            <field name="inner">2</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--层数 八-->
+        <record id="pp_layer_data_5ab" model="pp.layer.number">
+            <field name="area_id" ref='cpo_it_pcb.pp_area_data_3'/>
+            <field name="layer_number_id" ref="cam.layer_number_08"/>
+            <field name="delivery">9</field>
+            <field name="density">10</field>
+            <field name="inner_line">7</field>
+            <field name="substrate_id"/>
+            <field name="thickness_id"/>
+            <field name="outer_copper_id"/>
+            <field name="inner_copper_id"/>
+        </record>
+        <!--基材 135-->
+        <record id="pp_substrate_13ab" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_5ab"/>
+            <field name="base_type" ref="cam.base_type_fr4tg135"/>
+            <field name="price">565</field>
+        </record>
+        <!--基材 150-->
+        <record id="pp_substrate_14ab" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_5ab"/>
+            <field name="base_type" ref="cam.base_type_fr4"/>
+            <field name="price">582</field>
+        </record>
+        <!--基材 170-->
+        <record id="pp_substrate_15ab" model="pp.substrate">
+            <field name="ln_id" ref="pp_layer_data_5ab"/>
+            <field name="base_type" ref="cam.base_type_fr4tg170"/>
+            <field name="price">582</field>
+        </record>
+        <!--板厚-->
+        <record id="pp_thickness_5ab" model="pp.thickness">
+            <field name="ln_id" ref="pp_layer_data_5ab"/>
+            <field name="min_thick">1.0</field>
+            <field name="max_thick">1.6</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <!--外铜厚-->
+        <record id="pp_outer_copper_5ab" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_5ab"/>
+            <field name="outer">1.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_outer_copper_5ab" model="pp.outer.copper">
+            <field name="ln_id" ref="pp_layer_data_5ab"/>
+            <field name="outer">2.0</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+        <!--内铜厚-->
+        <record id="pp_inner_copper_5ab" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_5ab"/>
+            <field name="inner">0.5</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="1_pp_inner_copper_5ab" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_5ab"/>
+            <field name="inner">1</field>
+            <field name="price">0</field>
+            <field name="add_delivery">0</field>
+        </record>
+        <record id="2_pp_inner_copper_5ab" model="pp.inner.copper">
+            <field name="ln_id" ref="pp_layer_data_5ab"/>
+            <field name="inner">2</field>
+            <field name="price">0</field>
+            <field name="add_delivery">1</field>
+        </record>
+
+    </data>
+</odoo>

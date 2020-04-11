@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--调整价格项目 - 在PCB价格表里 form视图-->
+        <record id="view_sale_quotation_price_item_form" model="ir.ui.view">
+            <field name="name">sale.quotation.price.itemform</field>
+            <field name="model">sale.quotation.price.item</field>
+            <field name="arch" type="xml">
+                <form string="Set Price Item">
+                    <group>
+                        <group>
+                            <field name="name" select="1"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notices">
+                            <field name='note' nolabel="1"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--调整价格项目 - 在PCB价格表里 tree视图-->
+        <record id="view_sale_quotation_price_item_tree" model="ir.ui.view">
+            <field name="name">sale.quotation.price.item.tree</field>
+            <field name="model">sale.quotation.price.item</field>
+            <field name="arch" type="xml">
+                <tree string="Set Price Item">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="active"/>
+                    <field name="note"/>
+                </tree>
+            </field>
+        </record>
+        <!--调整价格项目 - 在PCB价格表里 window-->
+        <record id="sale_quotation_price_item_act" model="ir.actions.act_window">
+        <field name="name">Set Price Item</field>
+        <field name="res_model">sale.quotation.price.item</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            Click to  define new Price Item.
+            </p><p>
+            Set Price Items,you can create it at here.
+            </p>
+        </field>
+        </record>
+        <!--栏目 调整价格表项目-->
+        <!--<menuitem name="Set Price Item" action="sale_quotation_price_item_act" id="menu_sale_quotation_price_item" parent="cpo_it_pcb.menu_pcb_quotation_pricelist_main" sequence="209"/>-->
+
+        <!--quotation 中 日历表-->
+        <record id="view_sale_quotation_calendar" model="ir.ui.view">
+            <field name="name">sale.quotation.calendar</field>
+            <field name="model">sale.quotation</field>
+            <field name="arch" type="xml">
+                <calendar string="Sales Quotation" color="state" date_start="date_order">
+                <field name="partner_id"/>
+                <!--<field name="lead_id"/>-->
+                <field name="amount_total"/>
+                </calendar>
+            </field>
+        </record>
+        <!--quotation 中 图形图-->
+        <record model="ir.ui.view" id="view_sale_quotation_graph">
+            <field name="name">sale.quotation.graph</field>
+            <field name="model">sale.quotation</field>
+            <field name="arch" type="xml">
+                <graph string="Sales Quotations" type="bar">
+                    <field name="partner_id"/>
+                    <!--<field name="lead_id"/>-->
+                    <field name="amount_total" operator="+"/>
+                </graph>
+            </field>
+        </record>
+
+        <!--quotation tree视图-->
+        <record id="view_quotation_pcb_tree" model="ir.ui.view">
+            <field name="name">sale.quotation.tree</field>
+            <field name="model">sale.quotation</field>
+            <field name="priority">4</field>
+            <field name="arch" type="xml">
+                <tree string="Quotation" fonts="bold:message_unread==True" colors="grey:state=='cancel';blue:state in ('waiting_date','manual');red:state in ('invoice_except','shipping_except')">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name" string="Quotation Number"/>
+                    <field name="date_order"/>
+                    <field name="partner_id" invisible="context.get('partner', False)" context="{'show_code': 1}" options='{"always_reload": True}'/>
+                    <!--<field name="lead_id" invisible="context.get('lead', False)"/>-->
+                    <field name="payment_term"/>
+                    <field name="amount_untaxed"/>
+                    <field name="amount_tax"/>
+                    <field name="amount_total"/>
+                    <field name="currency_id"/>
+                    <field name="user_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <!--quotation form视图-->
+        <record id="view_sale_quotation_form" model="ir.ui.view">
+            <field name="name">sale.quotation.form</field>
+            <field name="model">sale.quotation</field>
+            <field name="arch" type="xml">
+                <form string="Sales Order">
+                    <header>
+                        <button name="action_quotation_send" string="Send by Email" type="object" states="draft" class="oe_highlight" groups="base.group_user"/>
+                        <button name="action_quotation_send" string="Send by Email" type="object" states="sent" groups="base.group_user"/>
+                        <button name="print_quotation" string="Print" type="object" states="draft" class="oe_highlight" groups="base.group_user"/>
+                        <button name="print_quotation" string="Print" type="object" states="sent" groups="base.group_user"/>
+                        <button name="action_done" states="draft" string="Confirm Sale" type="object" groups="base.group_user"/>
+                        <button name="action_done" states="sent" string="Confirm Sale" class="oe_highlight" type="object" groups="base.group_user"/>
+                        <!--<button name="(action_pcb_confirm_product_no)d" string="Confirm Sale" type="action" states="draft,sent" class="oe_highlight" groups="base.group_user" invisible="context.get('partner', False)"/>-->
+                        <!--<button name="(action_sale_leadtosale_order_partner)d" states="draft,sent" string="Confirm Sale" type="action" invisible="context.get('lead', False)"/>-->
+
+                        <button name="copy_quotation" states="cancel" string="New Copy of Quotation" type="object"/>
+                        <!--<button name="cancel" states="draft,sent" string="Cancel Quotation" groups="base.group_user"/>-->
+                        <button name="btn_cancel" states="draft,sent" type ="object" string="Cancel Quotation" groups="base.group_user"/>
+                        <button name="action_cancel" states="manual,progress" string="Cancel Order" type="object" groups="base.group_user"/>
+                        <!--测试-->
+                        <!--<button name="cpo_to_create_pcb_quotation" type="object" string="tset"/>-->
+                        <field name="state" widget="statusbar" statusbar_visible="draft,sent,invoiced,done" statusbar_colors='{"invoice_except":"red","waiting_date":"blue"}'/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <label string="Quotation "/>
+                            <field name="name" class="oe_inline" readonly="1" force_save="1"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="partner_id" invisible="context.get('partner', False)" domain="[('customer','=',True), ('is_company', '=',True)]" context="{'search_default_customer':1, 'show_address': 1, 'show_code': 1}" options="{'no_open':True}" attrs="{'readonly':[('state','!=','draft')]}" force_save="1"/>
+                                <!-- on_change="onchange_partner_id(partner_id, context)"-->
+                                <!--<field name="lead_id" invisible="context.get('lead', False)" attrs="{'readonly':[('state','!=','draft')]}" force_save="1"/>-->
+                                <field name="partner_invoice_id" groups="sale.group_delivery_invoice_address" domain="[('parent_id','=',partner_id)]" context="{'child_show_code_and_name':True}" attrs="{'readonly':[('state','!=','draft')]}" force_save="1" options="{'no_open':True}"/>
+                                <field name="partner_shipping_id" groups="sale.group_delivery_invoice_address" domain="[('parent_id','=',partner_id)]" context="{'child_show_code_and_name':'True'}" attrs="{'readonly':[('state','!=','draft')]}" force_save="1" options="{'no_open':True}"/>
+                                <field name="spare_qty" invisible="1" />
+                            </group>
+                            <group>
+                                <field name="date_order" attrs="{'readonly':[('state','!=','draft')]}" force_save="1"/>
+                                <field name="shop_id" widget="selection" groups="stock.group_locations" invisible="1"/>
+                                <field name="client_order_ref" attrs="{'readonly':[('state','!=','draft')]}" force_save="1"/>
+                                <field name="currency_id" attrs="{'readonly':[('state','!=','draft')]}" force_save="1" options="{'no_open':True}"/>
+                                <field name="spare_bad" invisible="1" attrs="{'readonly':[('state','!=','draft')]}" force_save="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Quotation Lines">
+                            <field name="quotation_line" context="{'partner':context.get('partner'),'lead':context.get('lead'), 'default_spare_qty': spare_qty, 'default_spare_bad': spare_bad}" options='{"always_reload": True}' attrs="{'readonly':[('state','!=','draft')]}" force_save="1"/>
+                                <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                    <field name="amount_untaxed" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                    <field name="amount_tax" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                    <div class="oe_subtotal_footer_separator oe_inline">
+                                        <label for="amount_total" />
+                                        <button name="button_dummy"
+                                        states="draft,sent" string="(update)" type="object" class="oe_edit_only oe_link"/>
+                                    </div>
+                                    <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                </group>
+                                <div class="oe_clear"/>
+                                <field name="note" class="oe_inline" placeholder="Terms and conditions..." attrs="{'readonly':[('state','!=','draft')]}" force_save="1"/>
+                            </page>
+                            <page string="Other Information" groups="base.group_user">
+                                <group>
+                                    <group name="sales_person" groups="base.group_user">
+                                        <field name="user_id" attrs="{'readonly':[('state','!=','draft')]}" force_save="1" options="{'no_open':True}"/>
+                                        <field name="merchandiser_id" attrs="{'readonly':[('state','!=','draft')]}" force_save="1" options="{'no_open':True}" invisible="1"/>
+                                        <!--<field name="section_id" widget="selection" attrs="{'readonly':[('state','!=','draft')]}" force_save="1" options="{'no_open':True}"/>-->
+                                        <field groups="base.group_no_one" name="origin" attrs="{'readonly':[('state','!=','draft')]}" force_save="1"/>
+                                    </group>
+                                    <group name="sale_pay">
+                                        <field name="payment_term" widget="selection" attrs="{'readonly':[('state','!=','draft')]}" force_save="1" options="{'no_open':True}"/>
+                                        <field name="fiscal_position" widget="selection" attrs="{'readonly':[('state','!=','draft')]}" force_save="1" options="{'no_open':True}"/>
+                                        <!--<field name="company_id" widget="selection" groups="base.group_multi_company"/>-->
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--quotation search视图-->
+        <record id="view_sale_quotation_partner_filter" model="ir.ui.view">
+            <field name="name">sale.quotation.partner.select</field>
+            <field name="model">sale.quotation</field>
+            <field name="arch" type="xml">
+                <search string="Search PCB Quotation">
+                    <field name="name" filter_domain="[('name','ilike',self)]"/>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                    <field name="merchandiser_id"/>
+                    <field name="date_order"/>
+                    <field name="date_confirm"/>
+                    <filter string="My PCB Quotation" icon="terp-personal+" domain="[('user_id','=',uid)]"/>
+                    <separator/>
+                    <filter string="Draft PCB Quotation" name="draft" domain="[('state','=','draft')]" help="Draft PCB Quotation"/>
+                    <filter string="Sent PCB Quotation" name="sent" domain="[('state','=','sent')]" help="Sent PCB Quotation"/>
+                    <filter string="Cancelled PCB Quotation" name="sent" domain="[('state','=','cancel')]" help="Cancelled PCB Quotation"/>
+                    <filter string="Comfirm PCB Quotation" name="done" domain="[('state','=','done')]" help="Comfirm PCB Quotation"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Salesperson" context="{'group_by' : 'user_id'}" />
+                        <!-- domain="[('lead_id', '=', False)]" 都是一样-->
+                        <filter string="Merchandiser" context="{'group_by' : 'merchandiser_id'}" />
+                        <filter string="Customer" context="{'group_by': 'partner_id'}"/>
+                        <filter string="Status" context="{'group_by': 'state'}"/>
+                        <filter string="Order Date" context="{'group_by': 'date_order'}"/>
+                        <filter string="Confirmation Date" context="{'group_by': 'date_confirm'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <!--quotation window-->
+        <record id="action_quotations_pcb_cpo" model="ir.actions.act_window">
+                <field name="name">PCB Quotation CPO</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">sale.quotation</field>
+                <field name="view_type">form</field>
+                <field name="view_id" ref="view_quotation_pcb_tree"/>
+                <field name="view_mode">tree,form,calendar,graph</field>
+                <!--<field name="domain">[('lead_id', '=', False)]</field>-->
+                <field name="domain">[]</field>
+                <field name="context">{'lead':True,'show_code':True,'partner':False}</field>
+                <field name="search_view_id" ref="view_sale_quotation_partner_filter"/>
+                <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Click to create a quotation, the first step of a new sale.
+                </p><p>
+                OpenERP will help you handle efficiently the complete sale flow:
+                from the quotation to the sales order, the
+                delivery, the invoicing and the payment collection.
+                </p><p>
+                The social feature helps you organize discussions on each sales
+                order, and allow your customers to keep track of the evolution
+                of the sales order.
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_pcb_quotation_tree_view_11">
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_quotation_pcb_tree"/>
+            <field name="act_window_id" ref="action_quotations_pcb_cpo"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_pcb_quotation_form_view_11">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sale_quotation_form"/>
+            <field name="act_window_id" ref="action_quotations_pcb_cpo"/>
+        </record>
+
+        <menuitem id="menu_cpo_it_sale_quotations_pcb" name="PCB Quotation" action="action_quotations_pcb_cpo" parent="sales_team.menu_sales" sequence="7"/>
+
+        <record id="view_sale_quotation_lead_filter" model="ir.ui.view">
+            <field name="name">sale.quotation.lead.select</field>
+            <field name="model">sale.quotation</field>
+            <field name="arch" type="xml">
+                <search string="Search PCB Quotation">
+                    <field name="name" filter_domain="[('name','ilike',self)]"/>
+                    <!--<field name="lead_id"/>-->
+                    <field name="user_id"/>
+                    <field name="merchandiser_id"/>
+                    <field name="date_order"/>
+                    <field name="date_confirm"/>
+                    <filter string="My PCB Quotation" icon="terp-personal+" domain="[('user_id','=',uid)]"/>
+                    <separator/>
+                    <filter string="Draft PCB Quotation" name="draft" domain="[('state','=','draft')]" help="Draft PCB Quotation"/>
+                    <filter string="Sent PCB Quotation" name="sent" domain="[('state','=','sent')]" help="Sent PCB Quotation"/>
+                    <filter string="Cancelled PCB Quotation" name="sent" domain="[('state','=','cancel')]" help="Cancelled PCB Quotation"/>
+                    <filter string="Comfirm PCB Quotation" name="done" domain="[('state','=','done')]" help="Comfirm PCB Quotation"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Salesperson" context="{'group_by' : 'user_id'}" />
+                        <!--domain="[('lead_id', '!=', False)]" 都是一样的-->
+                        <filter string="Merchandiser" context="{'group_by':'merchandiser_id'}"/>
+                        <filter string="Customer" /><!--context="{'group_by': 'lead_id'}"-->
+                        <filter string="Status" context="{'group_by': 'state'}"/>
+                        <filter string="Order Date" context="{'group_by': 'date_order'}"/>
+                        <filter string="Confirmation Date" context="{'group_by': 'date_confirm'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_quotations_pcb_lead" model="ir.actions.act_window">
+            <field name="name">Quotations For Lead</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.quotation</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_quotation_pcb_tree"/>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <!--<field name="domain">[('lead_id', '!=', False)]</field>-->
+            <field name="domain">[]</field>
+            <field name="context">{'partner':True,'show_code':True,'lead':False}</field>
+            <field name="search_view_id" ref="view_sale_quotation_lead_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Click to create a Lead quotation, the first step of a new sale.
+                </p><p>
+                OpenERP will help you handle efficiently the complete sale flow:
+                from the  Lead quotation to the sales order, the
+                delivery, the invoicing and the payment collection.
+                </p><p>
+                The social feature helps you organize discussions on each Lead
+                order, and allow your customers to keep track of the evolution
+                of the sales order.
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_pcb_lead_quotation_tree_view_11">
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_quotation_pcb_tree"/>
+            <field name="act_window_id" ref="action_quotations_pcb_lead"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_pcb_lead_quotation_form_view_11">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sale_quotation_form"/>
+            <field name="act_window_id" ref="action_quotations_pcb_lead"/>
+        </record>
+
+        <menuitem name="Sale Quotation Lead" id="menu_sale_quotations_lead" action="action_quotations_pcb_lead" parent="sales_team.menu_sales" sequence="3"/>
+    </data>
+</odoo>

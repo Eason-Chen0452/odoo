@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!--发货的邮件模板-->
+        <record id="ship_email_template" model="mail.template">
+            <field name="name">Shipping Email Template</field>
+            <field name="email_from"><![CDATA["${object.company_id.name|safe}" <${(object.company_id.email or user.email)|safe}>]]></field>
+            <field name="subject">${object.company_id.name} Order (Ref ${object.name or 'n/a' }) Shipping Notification</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+                % set access_action = object.with_context(force_website=True).get_access_action()
+                % set is_online = access_action and access_action['type'] == 'ir.actions.act_url'
+                % set doc_name = 'View Progress'
+                % set access_name = is_online and object.template_id and doc_name == 'quotation' and 'Accept and pay %s online' % doc_name or '%s' % doc_name
+                % set access_url = is_online and '/my/home' or ''
+
+                <p>Dear ${object.partner_id.name}
+                % if object.partner_id.parent_id:
+                    (<i>${object.partner_id.parent_id.name}</i>)
+                % endif
+                ,</p>
+                <p>
+                    Your order <b>${object.name}</b> has been shipped ,the <b>${object.cpo_courier}</b> trucking no is : <b>${object.cpo_courier_number}</b>.
+                </p>
+                <p>
+                    Meanwhile, pls check the product report as attachment .
+                </p>
+
+                % if is_online and not ctx.get('proforma'):
+                    <br/><br/>
+                    <center>
+                        <a href="${access_url}" style="background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;" class="o_default_snippet_text">${access_name}</a>
+                        <br/><br/><br/>
+                    </center>
+                    <br/>
+                % endif
+
+                <p>You can reply to this email if you have any questions.</p>
+                <p>Thank you,</p>
+
+                <p style="color:#888888;">
+                % if object.user_id and object.user_id.signature:
+                    ${object.user_id.signature | safe}
+                % endif
+                </p>
+                ]]>
+            </field>
+        </record>
+        <!--加收费用使用的邮件模板-->
+        <record id="markup_email_template" model="mail.template">
+            <field name="name">Order Need To Increase Costs</field>
+            <field name="email_from"><![CDATA["${object.company_id.name|safe}" <${(object.company_id.email or user.email)|safe}>]]></field>
+            <field name="subject">${object.company_id.name} Order (Ref ${object.markup_order_id.name or 'n/a' }) Need To Increase Costs</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+                % set access_action = object.with_context(force_website=True).get_access_action()
+                % set is_online = access_action and access_action['type'] == 'ir.actions.act_url'
+                % set doc_name = 'Agree'
+                % set access_name = is_online and object.template_id and doc_name == 'quotation' and 'Accept and pay %s online' % doc_name or '%s' % doc_name
+                % set access_url = object.get_additional_url()
+                % set number = object.get_number()
+
+                <p>Dear ${object.partner_id.name}
+                % if object.partner_id.parent_id:
+                    (<i>${object.partner_id.parent_id.name}</i>)
+                % endif
+                ,</p>
+                <p>
+                    Your order <b>${object.markup_order_id.name}</b> need to increase fees for the following reasons:
+                </p>
+                <div>
+                    % for x in object.order_line:
+                        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NO.${number.get(x.id)}: ${x.name}</b></p>
+                    % endfor
+                    <h2><center>Total: ${object.currency_id.symbol} ${object.amount_total}</center></h2>
+                </div>
+                % if is_online and not ctx.get('proforma'):
+                    <center>
+                        <p><b>If you agree, click the "Agree" button; you will be redirected to the ICloudFactory Customer Center</b></p>
+                        <p><b>Ignore this message if you disagree</b></p>
+                    </center>
+                    <br/>
+                    <center>
+                        <a href="${access_url}" style="background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;" class="o_default_snippet_text">${access_name}</a>
+                        <br/><br/><br/>
+                    </center>
+                    <br/>
+                % endif
+
+                <p>You can reply to this email if you have any questions.</p>
+                <p>Thank you,</p>
+
+                <p style="color:#888888;">
+                % if object.user_id and object.user_id.signature:
+                    ${object.user_id.signature | safe}
+                % endif
+                </p>
+                ]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

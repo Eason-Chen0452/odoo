@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--bom仪表盘-->
+        <record id="rfq_inherit_bom.bom_dashboard" model="ir.ui.view">
+            <field name="name">Dashboard</field>
+            <field name="model">bom.situation</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey o_kanban_dashboard o_hr_kanban o_kanban_small_column" create="false">
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="color"/>
+                    <field name="button_name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div>
+                                <div t-attf-class="o_kanban_card_header #{kanban_color(record.color.raw_value)}">
+                                    <div class="o_kanban_card_header_title">
+                                        <div class="o_primary text-center" style="font-size:20px; font-weight:bold">
+                                            <field name="name"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='container o_kanban_card_content o_visible text-center' style="margin-top:15px; margin-bottom:15px;">
+                                    <button name="action_button_name" class="btn btn-primary" type="object">
+                                        <field name="button_name"/>
+                                    </button>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <!--bom仪表盘 window-->
+        <record id="rfq_inherit_bom.bom_dashboard_window" model="ir.actions.act_window">
+            <field name="name">Dashboard</field>
+            <field name="res_model">bom.situation</field>
+            <field name="view_mode">kanban</field>
+        </record>
+        <!--bom更改视图 tree-->
+        <record id="rfq_inherit_bom.inherit_view_cpo_offer_bom_tree" model="ir.ui.view">
+            <field name="name">inherit_view_cpo_offer_bom_tree</field>
+            <field name="model">cpo_offer_bom.bom</field>
+            <field name="inherit_id" ref="cpo_offer_base.cpo_offer_bom_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='state']" position="replace">
+                    <field name="partner_id"/>
+                    <field name="cpo_colour" force_save="1"/>
+                    <field name="state"/>
+                    <field name="cpo_check_bom" invisible="1" force_save="1"/>
+                </xpath>
+            </field>
+        </record>
+        <!--bom更改视图 form-->
+        <record id="rfq_inherit_bom.inherit_view_cpo_offer_bom_form" model="ir.ui.view">
+            <field name="name">inherit_view_cpo_offer_bom_form</field>
+            <field name="model">cpo_offer_bom.bom</field>
+            <field name="inherit_id" ref="cpo_offer_base.cpo_offer_bom_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/header/field[@name='state']">
+                    <field name="state" widget="statusbar"/>
+                </xpath>
+                <xpath expr="//form/notebook/page/field[@name='bom_fields_line']" position="replace">
+                    <field name="bom_fields_line" attrs="{'readonly':[('state', '!=', 'draft')]}">
+                        <tree editable="bottom">
+                            <field name="cpo_title" readonly="1"/>
+                            <field name="src_title" readonly="1"/>
+                        </tree>
+                    </field>
+                </xpath>
+            </field>
+        </record>
+        <!--bom更改视图 tree_readonly-->
+        <record id="rfq_inherit_bom.inherit_view_cpo_offer_bom_tree_readonly" model="ir.ui.view">
+            <field name="name">inherit_view_cpo_offer_bom_tree_readonly</field>
+            <field name="model">cpo_offer_bom.bom</field>
+            <field name="inherit_id" ref="cpo_offer_base.cpo_offer_bom_tree_readonly"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='state']" position="replace">
+                    <field name="partner_id"/>
+                    <field name="cpo_colour" force_save="1"/>
+                    <field name="state"/>
+                    <field name="cpo_check_bom" invisible="1" force_save="1"/>
+                </xpath>
+            </field>
+        </record>
+        <!--bom更改视图 form_readonly-->
+        <record id="rfq_inherit_bom.inherit_view_cpo_offer_bom_form_readonly" model="ir.ui.view">
+            <field name="name">inherit_view_cpo_offer_bom_form_readonly</field>
+            <field name="model">cpo_offer_bom.bom</field>
+            <field name="inherit_id" ref="cpo_offer_base.cpo_offer_bom_form_readonly"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/header/field[@name='state']">
+                    <field name="state" widget="statusbar"/>
+                </xpath>
+            </field>
+        </record>
+        <!--bom_line更改视图 tree-->
+        <record id="rfq_inherit_bom.inherit_view_cpo_offer_bom_line_tree" model="ir.ui.view">
+            <field name="name">inherit_view_cpo_offer_bom_line_tree</field>
+            <field name="model">cpo_offer_bom.bom_line</field>
+            <field name="inherit_id" ref="cpo_offer_base.cpo_offer_bom_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='state']" position="replace">
+                    <field name="state" invisible="1"/>
+                </xpath>
+                <xpath expr="//tree/field[@name='price']" position="after">
+                    <field name="cny_price" readonly="0"/>
+                </xpath>
+            </field>
+        </record>
+        <!--bom 不检查-->
+        <record id="rfq_inherit_bom.offer_bom_no_check_action_window" model="ir.actions.act_window">
+            <field name="name">No need to check</field>
+            <field name="res_model">cpo_offer_bom.bom</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('cpo_check_bom', '=', 'no_check')]</field>
+            <field name="help" type="html">
+                <h3>
+                    There are currently no <i> BOM files</i>.
+                </h3>
+            </field>
+        </record>
+        <!--bom 检查-->
+        <record id="rfq_inherit_bom.offer_bom_check_action_window" model="ir.actions.act_window">
+            <field name="name">Waiting for inspection</field>
+            <field name="res_model">cpo_offer_bom.bom</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">['|', ('cpo_check_bom', '=', 'ok_check'), ('state', '=', 'check')]</field>
+            <field name="help" type="html">
+                <h3>
+                    There is currently no check for <i> BOM files</i>.
+                </h3>
+            </field>
+        </record>
+        <!--bom 完成检查-->
+        <record id="rfq_inherit_bom.offer_bom_checked_action_window" model="ir.actions.act_window">
+            <field name="name">Complete inspection</field>
+            <field name="res_model">cpo_offer_bom.bom</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('cpo_check_bom', '=', 'checked')]</field>
+            <field name="help" type="html">
+                <h3>
+                    No inspections have been completed yet <i> BOM files</i>.
+                </h3>
+            </field>
+        </record>
+        <!--第二级-->
+        <menuitem name="Dashboard" id="bom_dashboard_menu" parent="cpo_offer_base.cpo_bom_root_menu" sequence="12" action="rfq_inherit_bom.bom_dashboard_window"/>
+        <menuitem name="Bom Manage" id="cpo_offer_base.cpo_offer_bom_manage_menu" parent="cpo_offer_base.cpo_bom_root_menu" sequence="13"/>
+        <!--第三级-->
+        <menuitem name="No need to check" id="rfq_inherit_bom.cpo_offer_bom_no_check" parent="cpo_offer_base.cpo_offer_bom_manage_menu"
+                  action="rfq_inherit_bom.offer_bom_no_check_action_window" groups="cpo_offer_base.cpo_bom_admin" sequence="14"/>
+        <menuitem name="Waiting for inspection" id="rfq_inherit_bom.cpo_offer_bom_ok_check" parent="cpo_offer_base.cpo_offer_bom_manage_menu"
+                  action="rfq_inherit_bom.offer_bom_check_action_window" groups="cpo_offer_base.cpo_bom_admin" sequence="15"/>
+        <menuitem name="Complete inspection" id="rfq_inherit_bom.cpo_offer_bom_checked" parent="cpo_offer_base.cpo_offer_bom_manage_menu"
+                  action="rfq_inherit_bom.offer_bom_checked_action_window" groups="cpo_offer_base.cpo_bom_admin" sequence="16"/>
+    </data>
+</odoo>

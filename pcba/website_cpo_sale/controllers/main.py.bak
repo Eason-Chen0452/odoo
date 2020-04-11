@@ -1,0 +1,929 @@
+# -*- coding: utf-8 -*-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+import json
+import logging
+import cStringIO
+import xlrd,base64
+from werkzeug.exceptions import Forbidden
+
+from odoo import http, tools, _
+from odoo.http import request
+from odoo.addons.base.ir.ir_qweb.fields import nl2br
+from odoo.addons.website.models.website import slug
+from odoo.addons.website.controllers.main import QueryURL
+from odoo.exceptions import ValidationError
+from odoo.addons.website_form.controllers.main import WebsiteForm
+from odoo.addons.website_sale.controllers.main import WebsiteSale
+import re
+from  decimal import Decimal
+from  decimal import getcontext
+from ..models.sale_order import ELECTRON_FILE_TYPE
+from odoo.addons.cpo_offer_base.models.cpo_offer_bom import get_digi_data
+from odoo.addons.website_portal.controllers.main import website_account, get_records_pager
+
+_logger = logging.getLogger(__name__)
+
+
+class website_account(website_account):
+    def _prepare_portal_layout_values(self):
+        values = super(website_account, self)._prepare_portal_layout_values()
+        partner = request.env.user.partner_id
+
+        SaleOrder = request.env['sale.order']
+        Invoice = request.env['account.invoice']
+        quotation_count = SaleOrder.search_count([
+            ('message_partner_ids', 'child_of', [partner.commercial_partner_id.id]),
+            ('state', 'in', ['sent', 'cancel'])
+        ])
+        order_count = SaleOrder.search_count([
+            ('message_partner_ids', 'child_of', [partner.commercial_partner_id.id]),
+            ('state', 'in', ['sale', 'done'])
+        ])
+        invoice_count = Invoice.search_count([
+            ('type', 'in', ['out_invoice', 'out_refund']),
+            ('message_partner_ids', 'child_of', [partner.commercial_partner_id.id]),
+            ('state', 'in', ['open', 'paid', 'cancel'])
+        ])
+
+        values.update({
+            'quotation_count': quotation_count,
+            'order_count': order_count,
+            'invoice_count': invoice_count,
+        })
+        return values
+
+    # /my/express
+    @http.route(['/my/express', '/my/express/page/<int:page>'], type='http', auth="user", website=True)
+    def portal_my_express(self, page=1, date_begin=None, date_end=None, sortby=None, **kw):
+        values = self._prepare_portal_layout_values()
+        partner = request.env.user.partner_id
+        SaleOrder = request.env['sale.order']
+
+        domain = [
+            ('message_partner_ids', 'child_of', [partner.commercial_partner_id.id]),
+            #('state', 'in', ['sent', 'cancel'])
+        ]
+
+        searchbar_sortings = {
+            'date': {'label': _('Order Date'), 'order': 'date_order desc'},
+            'name': {'label': _('Reference'), 'order': 'name'},
+        }
+
+        # default sortby order
+        if not sortby:
+            sortby = 'date'
+        sort_order = searchbar_sortings[sortby]['order']
+
+        archive_groups = self._get_archive_groups('sale.order', domain)
+        if date_begin and date_end:
+            domain += [('create_date', '>', date_begin), ('create_date', '<=', date_end)]
+
+        # count for pager
+        quotation_count = SaleOrder.search_count(domain)
+        # make pager
+        pager = request.website.pager(
+            url="/my/express",
+            url_args={'date_begin': date_begin, 'date_end': date_end, 'sortby': sortby},
+            total=quotation_count,
+            page=page,
+            step=self._items_per_page
+        )
+        # search the count to display, according to the pager data
+        quotations = SaleOrder.search(domain, order=sort_order, limit=self._items_per_page, offset=pager['offset'])
+        request.session['my_quotes_history'] = quotations.ids[:100]
+
+        values.update({
+            'date': date_begin,
+            'quotations': quotations.sudo(),
+            'page_name': 'express',
+            'pager': pager,
+            'archive_groups': archive_groups,
+            'default_url': '/my/express',
+            'searchbar_sortings': searchbar_sortings,
+            'sortby': sortby,
+        })
+        return request.render("website_cpo_sale.portal_my_express", values)
+
+class cpo_electron_WebsiteSale(http.Controller):
+
+    @http.route(['/pcb'], type='http', auth="public", website=True)
+    def old_pcb(self, page=0, category=None, search='', ppg=False, ufile=None, **post):
+        return request.redirect("/pcba")
+
+
+
+    @http.route([
+        '/pcba',
+        '/pcba/page/<int:page>',
+        '/pcba/category/<model("product.public.category"):category>',
+        '/pcba/category/<model("product.public.category"):category>/page/<int:page>'
+    ], type='http', auth="public", website=True)
+    def shop(self, page=0, category=None, search='', ppg=False, ufile=None, **post):
+        ufiles = request.httprequest.files.getlist('upload')
+        rows=[]
+        for file in ufiles:
+            data = file.read()
+            excel = xlrd.open_workbook(file_contents=data)
+            sh = excel.sheet_by_index(0)
+            rows = []
+            for rx in range(0,sh.nrows):
+                cols = []
+                for ry in range(0,sh.ncols):
+                    cols.append(sh.cell(rx,ry).value)
+                rows.append(cols)
+        #category_id = request.env.ref("electron.product_category_pcba")
+        #product_id = request.env['product.product'].search([('categ_id', '=', category_id.id)])
+        product_tmp_id = request.env.ref("website_cpo_sale.cpo_product_template_pcba_electron").product_tmpl_id
+        if not product_tmp_id.website_published:
+            product_tmp_id.write({'website_published':True})
+        values = {
+            'product_id': product_tmp_id,
+            'txt': rows
+        }
+        return request.render("website_cpo_sale.products", values)
+
+    #SMT计算
+    @http.route([
+        '/get_pcba_price',
+    ], type='json', auth="public", website=True)
+    def pcba_price(self, **post):
+        pcba_make_fee_no_bom = {
+            #'pcb_plate_fee': 0.0,
+            'process_price': 0.0,
+            'smt_make_fee': 0.0,
+            'total': 0.0,
+        }
+        ele_tatol = 0
+        ele_price = 0
+        qty = 0
+        pcb_length = 0
+        pcb_width = 0
+        bom_number = 0
+        layer_pcb = 0
+        smt_price = request.env['cpo_smt_price.smt']
+        try:
+            qty = get_digi_data(post.get('ele_shuliang'))
+            post['ele_shuliang'] = str(qty)
+            pcb_length = get_digi_data(post.get('ele_pcb_length'), float)
+            post['ele_pcb_length'] = str(pcb_length)
+            pcb_width = get_digi_data(post.get('ele_pcb_breadth'), float)
+            post['ele_pcb_breadth'] = str(pcb_width)
+            # bom_number = int(post.get('ele_bom_sl'))
+            layer_pcb = get_digi_data(post.get('ele_mian_one'))
+            post['ele_mian_one'] = str(layer_pcb)
+            pin_number = get_digi_data(post.get('ele_wel_com'))
+            post['ele_wel_com'] = str(pin_number)
+            # backend_weld_number = int(post.get('ele_bw_num'))
+            smt_number = get_digi_data(post.get('ele_smt_num'))
+            post['ele_smt_num'] = str(smt_number)
+            if qty and layer_pcb and pin_number and pcb_length and pcb_width:
+                pcba_make_fee_no_bom = smt_price.get_pcba_make_fee_no_bom(
+                    layer_pcb = layer_pcb,
+                    pcs_number = qty,
+                    smt_component_qty = smt_number,
+                    pin_qty = pin_number,
+                    # backhand_weld_qty = backend_weld_number,
+                    pcb_length = pcb_length,
+                    pcb_width = pcb_width
+                )
+        except Exception,e:
+            pass
+        ele_price = pcba_make_fee_no_bom.get('process_price')
+        smt_make_fee = pcba_make_fee_no_bom.get('smt_make_fee')
+        ele_tatol = pcba_make_fee_no_bom.get('total')
+        #ele_tatol = ele_price + smt_make_fee
+        #all_price = self.get_pcba_price()
+        #if post['ele_wel_com'] == '' or post['ele_bom_sl'] == '':
+        #    ele_tatol_val = 0
+        #else:
+        #    ele_tatol_val = all_price[1]*float(post['ele_ic_num']) + all_price[2]*float(post['ele_wel_com'])
+        #    ele_price_val = (all_price[1]*float(post['ele_ic_num']) + all_price[2]*float(post['ele_wel_com']))
+        #    ele_tatol_val = ele_tatol_val*float(post['ele_shuliang'])
+
+        #post['ele_tatol'] = Decimal(ele_tatol_val).quantize(Decimal('0.00'))
+        #post['ele_price'] = Decimal(ele_price_val).quantize(Decimal('0.00'))
+        #post['ele_price'] = ele_tatol
+        post['process_price'] = ele_price
+        post['smt_make_fee'] = smt_make_fee
+        post['ele_tatol'] = ele_tatol
+
+        return post
+    #单价
+    # def get_pcba_price(self):
+    #     #pcb
+    #     pcb_fee = float(20)
+    #     #ic
+    #     ic_fee = float(16/2*0.015)
+    #     #back_welding
+    #     back_fee = float(0.12)
+    #     #smt_numt
+    #     smt_fee = float(0.016*1000)
+    #     #bom_num
+    #     bom_fee = float(1000)
+    #
+    #     return pcb_fee,ic_fee,back_fee,smt_fee,bom_fee
+
+    @http.route([
+        '/get_electron_type',
+    ], type='json', auth="public", website=True)
+    def get_electron_type(self, **post):
+        return ELECTRON_FILE_TYPE
+
+    @http.route([
+        '/pcba/ele/check_attach_file',
+    ], type='http', auth="public", website=True)
+    def shop_check_attach_file(self, return_url=None, atta_id=None, **post):
+        if not atta_id:
+            return False
+        atta_row = request.env['ir.attachment'].sudo().search([('id','=',int(atta_id))])
+        data = atta_row.datas
+        rows=[]
+        sh_header = [""]
+        if data:
+            try:
+                excel = xlrd.open_workbook(file_contents=base64.b64decode(data))
+                sh = excel.sheet_by_index(0)
+                for ry in range(0,sh.ncols):
+                    if sh.cell(0,ry).value:
+                        sh_header.append(sh.cell(0,ry).value)
+                for rx in range(0,sh.nrows):
+                    cols = []
+                    for ry in range(0,sh.ncols):
+                        cols.append(sh.cell(rx,ry).value)
+
+                    rows.append(cols)
+            except Exception,e:
+                pass
+        values = {
+            'atta_id': atta_id,
+            'txt': rows,
+            'return_url': return_url,
+            'sh_header': sh_header,
+        }
+        return request.render("website_cpo_sale.cpo_check_excel_file", values)
+
+    # Check the order BOM
+    @http.route([
+        '/pcb_electron/cpo_pcba_data_check',
+    ], type='json', auth="public", website=True)
+    def cpo_pcba_data_check(self, **post):
+        sale_pool = request.env['sale.order'].sudo()
+        for order_id in post['order_ids']:
+            sale_obj = sale_pool.search([('id', '=', int(order_id))])
+            if sale_obj.check_state == 'check_off':
+                post['check_state'] = sale_obj.check_state
+                post['check_order_id'] = int(sale_obj.id) - 1
+                break
+            else:
+                post['check_state'] = sale_obj.check_state
+        return post
+
+    #get order number
+    @http.route([
+        '/pcb_user_expressage',
+    ], type='json', auth="public", website=True)
+    def pcb_user_expressage(self, **post):
+        # express_page = request.website_cpo_sale.portal_my_express()
+        if not post:
+            pass
+        else:
+            express_number = post['express_number']
+            express_provider = post['express_company']
+            sale_express = request.env['sale_order.express_waybill'].sudo()
+            sale_pool = request.env['sale.order'].sudo()
+            sale_obj = sale_pool.search([('name', '=', post['order_number'])])
+            # if express_number:
+            try:
+                sale_express.create({
+                    'express_number': express_number,
+                    'express_provider': express_provider,
+                    'order_number': sale_obj.id
+                })
+            except Exception, e:
+                post.update({'error':e})
+                pass
+            # if express_provider:
+            #     sale_express.create({'express_provider': express_provider})
+            # sale_express.create({'order_number': sale_obj.id})
+
+        return post
+
+    #Delete express
+    @http.route([
+        '/user_delete_express',
+    ], type='json', auth="public", website=True)
+    def user_delete_express(self, **post):
+        sale_express = request.env['sale_order.express_waybill'].sudo()
+        sale_obj = sale_express.search([('express_number', '=', post['express_no'])])
+        sale_obj.unlink()
+        return post
+
+    #cpo check
+    @http.route([
+        '/shop/cart/cpo_checked',
+    ], type='json', auth='public', website=True)
+    def shop_cart_cpo_checked(self, **post):
+        # post['checked'] = 'check_true'
+        sale_check = request.env['sale.order.line'].sudo()
+        sale_check_obj = sale_check.search([('id','=',post['cpo_lineID'])])
+        sale_check_obj.write({'cpo_checked': post['checked']})
+
+        return post
+
+
+    @http.route([
+        '/pcb_electron/update_ele_supply',
+    ], type='json', auth="public", website=True)
+    def update_ele_supply(self, ref=None, field_ref=None, checked=None, atta_id=None, express_provider=None, express_number=None, **post):
+        vals = {}
+        checked = 'check_on'
+        fields_pool = request.env['cpo_bom_fields.line'].sudo()
+        atta_pool = request.env['ir.attachment'].sudo()
+        atta_obj = atta_pool.search([('id', '=', get_digi_data(atta_id))])
+        bom_supply = request.env['cpo_bom_supply.list'].sudo()
+        sale_pool = request.env['sale.order'].sudo()
+        sale_expres = request.env['sale_order.express_waybill'].sudo()
+        sale_obj = sale_pool.search([('id', '=', atta_obj.res_id)])
+
+        #update express information
+        if express_provider and express_number:
+            sale_expres.create({
+                'express_number': express_number,
+                'express_provider': express_provider,
+                'order_number': sale_obj.id
+            })
+
+        sale_obj.write({'check_state': checked})
+        #update supply ref
+        #if not ref:
+        bom_supply.del_old_data(order_id=sale_obj.id)
+        for row in ref:
+            row.update({'order_id': sale_obj.id})
+            bom_supply.to_create_ref(row)
+
+        #update bom fields ref
+        #if not field_ref:
+        fields_pool.del_old_data(order_id=sale_obj.id)
+        for row in field_ref:
+            row.update({'order_id': sale_obj.id})
+            fields_pool.to_create_fields_ref(row)
+        return ELECTRON_FILE_TYPE
+
+    @http.route([
+        '/pcb_electron/check_upload_file',
+    ], type='json', auth="public", website=True)
+    def shop_product_check_upload(self, datas=None, name=None, tag_ids=None, **post):
+        rows=[]
+        excel = xlrd.open_workbook(file_contents=base64.b64decode(datas))
+        sh = excel.sheet_by_index(0)
+        for rx in range(0,sh.nrows):
+            cols = []
+            for ry in range(0,sh.ncols):
+                cols.append(sh.cell(rx,ry).value)
+            rows.append(cols)
+        values = {
+            'txt': rows
+        }
+        return rows#request.render("website_cpo_sale.cpo_check_excel_file", values)
+
+    @http.route([
+        '/pcb_electron/upload_file',
+    ], type='json', auth="public", website=True)
+    def shop_product_upload(self, datas=None, name=None, tag_ids=None, **post):
+        error = ''
+        tag_val = tag_ids
+        #for row in ELECTRON_FILE_TYPE:
+        #    if row.get('id') == tag_ids:
+        #        tag_val = row.get('text')
+        #        break
+        atta_pool = request.env['ir.attachment']
+        order_id = int(post.get('order_id'))
+        ufiles = request.httprequest.files.getlist('upload')
+        sale_order = request.env['sale.order'].sudo().search([('id', '=', order_id)])
+        atta_pool.sudo().search([('description','=',tag_val),('res_id', '=', order_id),('res_model', '=', 'sale.order')]).unlink()
+        has_atta = atta_pool.search([('datas','=',datas),('name','=',name),('res_id', '=', order_id),('res_model', '=', 'sale.order')])
+        if has_atta:
+            if has_atta.description != tag_val:
+                has_atta.description = tag_val
+            else:
+                error = 'already has atta file'
+        else:
+            att_id = self.create_atta_for_saleorder(order_id=sale_order.id, name=name, tag_val=tag_val, datas=datas)
+        res = {
+            'url':'/shop/cart',
+            'error':error
+        }
+        return res
+
+    def create_atta_for_saleorder(self, order_id, name, tag_val, datas):
+        vals = {
+            'name':name,
+            'description':tag_val,
+            'res_model':'sale.order',
+            'type': 'binary',
+            'public': True,
+            'datas':datas,
+            'res_id':order_id,
+            'datas_fname':name,
+        }
+        return request.env['ir.attachment'].sudo().create(vals)
+
+
+class WebsiteSaleElectron(WebsiteSale):
+
+    @http.route(['/shop'], type='http', auth="public", website=True)
+    def shop(self, page=0, category=None, search='', ppg=False, **post):
+        return request.redirect("/pcba")
+
+    @http.route(['/shop/product/<model("product.template"):product>'], type='http', auth="public", website=True)
+    def product(self, product, category='', search='', **kwargs):
+        #values = self.old_product(product=product, category=category, search=search, kwargs=kwargs)
+        values = self.old_product(product, category, search, kwargs=kwargs)
+        #values.update({'abc':'AA'})
+        values['pcb_quantity'] = kwargs.get('shuliang')
+        # values['pcb_bom'] = kwargs.get('bom_type')
+        values['pcb_sided'] = kwargs.get('mian_one')
+        values['pcb_smt'] = kwargs.get('smt_num')
+        # values['pcb_ic'] = kwargs.get('ic_num')
+        # values['pcb_bw'] = kwargs.get('bw_num')
+        values['pcb_awh'] = kwargs.get('wel_com')
+        values['pcb_smt_tatol'] = kwargs.get('rental')
+        values['cpo_bom_supply'] = kwargs.get('pcb_pro')
+        values['cpo_pcb_supply'] = kwargs.get('ms_supply')
+        values['pcb_length'] = kwargs.get('pcb_length')
+        values['pcb_breadth'] = kwargs.get('pcb_breadth')
+        values['pcb_thickness'] = kwargs.get('pcb_thickness')
+        values['pcb_copper'] = kwargs.get('pcb_copper')
+
+        return request.render("website_sale.product", values)
+
+    def old_product(self, product, category="", search="", kwargs=None):
+        product_context = dict(request.env.context,
+                               active_id=product.id,
+                               partner=request.env.user.partner_id)
+        ProductCategory = request.env['product.public.category']
+        Rating = request.env['rating.rating']
+
+        if category:
+            category = ProductCategory.browse(int(category)).exists()
+
+        attrib_list = request.httprequest.args.getlist('attrib')
+        attrib_values = [map(int, v.split("-")) for v in attrib_list if v]
+        attrib_set = set([v[1] for v in attrib_values])
+
+        keep = QueryURL('/shop', category=category and category.id, search=search, attrib=attrib_list)
+
+        categs = ProductCategory.search([('parent_id', '=', False)])
+
+        pricelist = request.website.get_current_pricelist()
+
+        from_currency = request.env.user.company_id.currency_id
+        to_currency = pricelist.currency_id
+        compute_currency = lambda price: from_currency.compute(price, to_currency)
+
+        # get the rating attached to a mail.message, and the rating stats of the product
+        ratings = Rating.search([('message_id', 'in', product.website_message_ids.ids)])
+        rating_message_values = dict([(record.message_id.id, record.rating) for record in ratings])
+        rating_product = product.rating_get_stats([('website_published', '=', True)])
+
+        if not product_context.get('pricelist'):
+            product_context['pricelist'] = pricelist.id
+            product = product.with_context(product_context)
+
+        values = {
+            'search': search,
+            'category': category,
+            'pricelist': pricelist,
+            'attrib_values': attrib_values,
+            'compute_currency': compute_currency,
+            'attrib_set': attrib_set,
+            'keep': keep,
+            'categories': categs,
+            'main_object': product,
+            'product': product,
+            'get_attribute_value_ids': self.get_attribute_value_ids,
+            'rating_message_values': rating_message_values,
+            'rating_product': rating_product,
+        }
+        return values
+
+    @http.route(['/shop/cart/update'], type='http', auth="public", methods=['POST'], website=True, csrf=False)
+    def cart_update(self, product_id, add_qty=1, set_qty=0, **kw):
+        smt_price = kw.get('smt_price',0)
+        sale_obj = request.website.sale_get_order(force_create=1, create_order=1)
+        #aa =  self.product(values)
+        pcb_quantity = kw.get('pcb_quantity', 0)
+        # pcb_bom = kw.get('pcb_bom', 0)
+        pcb_smt = kw.get('pcb_smt', 0)
+        # pcb_ic = kw.get('pcb_ic', 0)
+        pcb_awh = kw.get('pcb_awh', 0)
+        # pcb_bw = kw.get('pcb_bw', 0)
+        pcb_sided = kw.get('pcb_sided', 0)
+        pcb_length = kw.get('pcb_length', 0)
+        pcb_breadth = kw.get('pcb_breadth', 0)
+        text_val = kw.get('text_val', 0)
+        cpo_bom_supply = kw.get('cpo_bom_supply')
+        cpo_pcb_supply = kw.get('cpo_pcb_supply')
+        pcb_thickness = kw.get('pcb_thickness')
+        pcb_copper = kw.get('pcb_copper')
+
+        sale_obj._cart_update(
+            product_id=int(product_id),
+            add_qty = 0,
+            set_qty = pcb_quantity,
+            set_sided = pcb_sided,
+            set_smt = pcb_smt,
+            # set_ic = pcb_ic,
+            # set_bw = pcb_bw,
+            set_pcb_awh = pcb_awh,
+            set_length = pcb_length,
+            set_breadth = pcb_breadth,
+            set_text = text_val,
+            cpo_bom_supply = cpo_bom_supply,
+            cpo_pcb_supply = cpo_pcb_supply,
+            set_pcb_thickness = pcb_thickness,
+            set_pcb_copper = pcb_copper,
+            attributes=self._filter_attributes(**kw),
+        )
+        return request.redirect("/shop/cart")
+
+    @http.route(['/shop/cart/update_json'], type='json', auth="public", methods=['POST'], website=True, csrf=False)
+    def cart_update_json(self, product_id, line_id=None, add_qty=None, set_qty=None, display=True):
+        #order = request.website.sale_get_order(force_create=1)
+        order = request.env['sale.order.line'].sudo().search([('id', '=', line_id)]).order_id
+        #if order.state != 'draft':
+        #    request.website.sale_reset()
+        #    return {}
+        value = order._cart_update(product_id=product_id, line_id=line_id, add_qty=add_qty, set_qty=set_qty)
+        #if not order.cart_quantity:
+            #request.website.sale_reset()
+            #return {}
+        if not display:
+            return None
+
+        #order = request.website.sale_get_order()
+        value['cart_quantity'] = order.cart_quantity
+        from_currency = order.company_id.currency_id
+        to_currency = order.pricelist_id.currency_id
+        order_ids = request.website.sale_get_order_ids()
+        value['website_sale.cart_lines'] = request.env['ir.ui.view'].render_template("website_sale.cart_lines", {
+            'website_sale_order': order,
+            'website_sale_order_ids': order_ids,
+            'compute_currency': lambda price: from_currency.compute(price, to_currency),
+            'suggested_products': order._cart_accessories()
+        })
+        value['website_sale.total'] = request.env['ir.ui.view'].render_template("website_sale.total", {
+            'order_ids_untaxed':sum(order_ids.mapped("amount_untaxed")) if order_ids else 0,
+            'order_ids_tax':sum(order_ids.mapped("amount_tax")) if order_ids else 0,
+            'order_ids_total':sum(order_ids.mapped("amount_total")) if order_ids else 0,
+        })
+        if not order.order_line:
+            order.sudo().unlink()
+        return value
+
+    def check_order_ids_partner(self):
+        order_ids = request.website.sale_get_order_ids()
+        partner_id = request.env.user.partner_id
+        public_user = request.env.ref("base.public_user").sudo()
+        if partner_id.id == public_user.partner_id.id:
+            return False
+        for order in order_ids:
+            if order.partner_id.id != partner_id.id or order.partner_invoice_id.id != partner_id.id or order.partner_shipping_id.id != partner_id.id:
+                order.partner_id = partner_id.id
+                order.partner_invoice_id = partner_id.id
+                order.partner_shipping_id = partner_id.id
+        return True
+
+
+    @http.route(['/shop/cart'], type='http', auth="public", website=True)
+    def cart(self, **post):
+        order = request.website.sale_get_order()
+        order_ids = request.website.sale_get_order_ids()
+        self.check_order_ids_partner()
+        if order:
+            from_currency = order.company_id.currency_id
+            to_currency = order.pricelist_id.currency_id
+            compute_currency = lambda price: from_currency.compute(price, to_currency)
+        else:
+            compute_currency = lambda price: price
+
+        values = {
+            'website_sale_order_ids': order_ids,
+            #'website_sale_order': order,
+            'compute_currency': compute_currency,
+            'suggested_products': [],
+        }
+        if order:
+            _order = order
+            if not request.env.context.get('pricelist'):
+                _order = order.with_context(pricelist=order.pricelist_id.id)
+            values['suggested_products'] = _order._cart_accessories()
+
+        website_sale_order_ids = values.get('website_sale_order_ids')
+        if website_sale_order_ids:
+            values.update({
+                'order_ids_untaxed':sum(website_sale_order_ids.mapped("amount_untaxed")),
+                'order_ids_tax':sum(website_sale_order_ids.mapped("amount_tax")),
+                'order_ids_total':sum(website_sale_order_ids.mapped("amount_total")),
+            })
+        if post.get('type') == 'popover':
+            # force no-cache so IE11 doesn't cache this XHR
+            return request.render("website_sale.cart_popover", values, headers={'Cache-Control': 'no-cache'})
+
+        return request.render("website_sale.cart", values)
+
+    @http.route(['/shop/checkout'], type='http', auth="public", website=True)
+    def checkout(self, **post):
+        if not request.session.get('uid'):
+            request.session['redirect'] = '/shop/checkout'
+            return request.redirect("/web/signup")
+        order_ids_list = []
+        order_ids = post.get('order_ids')
+        if order_ids:
+            for x in order_ids.split(","):
+                assert int(x),'order_ids format is error.'
+                order_ids_list.append(int(x))
+        if not order_ids_list:
+            return request.redirect("/shop/cart")
+        else:
+            request.session['checkout_order_ids'] = order_ids_list
+        vals = []
+        #for order in order_ids_list:
+        order = request.website.sale_get_order()
+
+        redirection = self.checkout_redirection(order)
+        if redirection:
+            return redirection
+
+        if order.partner_id.id == request.website.user_id.sudo().partner_id.id:
+            return request.redirect('/shop/address')
+
+        for f in self._get_mandatory_billing_fields():
+            if not order.partner_id[f]:
+                return request.redirect('/shop/address?partner_id=%d' % order.partner_id.id)
+
+        values = self.checkout_values(**post)
+
+        values.update({'website_sale_order': order})
+        vals.append(values)
+
+        # Avoid useless rendering if called in ajax
+        if post.get('xhr'):
+            return 'ok'
+        return request.render("website_sale.checkout", values)
+
+    def checkout_values(self, **kw):
+        #order = request.website.sale_get_order(force_create=1)
+        order_ids = request.website.sale_get_order_ids()
+        for order in order_ids:
+            shippings = []
+            if order.partner_id != request.website.user_id.sudo().partner_id:
+                Partner = order.partner_id.with_context(show_address=1).sudo()
+                shippings = Partner.search([
+                    ("id", "child_of", order.partner_id.commercial_partner_id.ids),
+                    '|', ("type", "in", ["delivery", "other"]), ("id", "=", order.partner_id.commercial_partner_id.id)
+                ], order='id desc')
+                if shippings:
+                    if kw.get('partner_id') or 'use_billing' in kw:
+                        if 'use_billing' in kw:
+                            partner_id = order.partner_id.id
+                        else:
+                            partner_id = int(kw.get('partner_id'))
+                        if partner_id in shippings.mapped('id'):
+                            order.partner_shipping_id = partner_id
+                    elif not order.partner_shipping_id:
+                        last_order = request.env['sale.order'].sudo().search([("partner_id", "=", order.partner_id.id)], order='id desc', limit=1)
+                        order.partner_shipping_id.id = last_order and last_order.id
+
+        values = {
+            'order_ids': order_ids,
+            'order': order,
+            'shippings': shippings,
+            'only_services': order and order.only_services or False
+        }
+        return values
+
+    @http.route(['/shop/confirm_order'], type='http', auth="public", website=True)
+    def confirm_order(self, **post):
+        order = request.website.sale_get_order()
+        order_ids = request.website.sale_get_order_ids()
+        for order in order_ids:
+
+            redirection = self.checkout_redirection(order)
+            if redirection:
+                return redirection
+
+
+            order.onchange_partner_shipping_id()
+            order.order_line._compute_tax_id()
+            request.session['sale_last_order_id'] = order.id
+            request.website.sale_get_order(update_pricelist=True)
+        extra_step = request.env.ref('website_sale.extra_info_option')
+        if extra_step.active:
+            return request.redirect("/shop/extra_info")
+
+        return request.redirect("/shop/payment")
+
+    # ------------------------------------------------------
+    # Payment
+    # ------------------------------------------------------
+
+    @http.route(['/shop/payment'], type='http', auth="public", website=True)
+    def payment(self, **post):
+        """ Payment step. This page proposes several payment means based on available
+        payment.acquirer. State at this point :
+
+         - a draft sales order with lines; otherwise, clean context / session and
+           back to the shop
+         - no transaction in context / session, or only a draft one, if the customer
+           did go to a payment.acquirer website but closed the tab without
+           paying / canceling
+        """
+        SaleOrder = request.env['sale.order']
+
+        order = request.website.sale_get_order()
+        order_ids = request.website.sale_get_checkout_order_ids()
+        vals = []
+        #for row in order_ids:
+
+        redirection = self.checkout_redirection(order)
+        if redirection and 1==2:
+            return redirection
+
+        shipping_partner_id = False
+        if order:
+            if order.partner_shipping_id.id:
+                shipping_partner_id = order.partner_shipping_id.id
+            else:
+                shipping_partner_id = order.partner_invoice_id.id
+
+        if not order and order_ids:
+            order = order_ids[0]
+        values = {
+            'website_sale_order': order,
+            'order_ids': order_ids,
+            'order_ids_untaxed': sum(order_ids.mapped("amount_untaxed")) if order_ids else 0,
+            'order_ids_tax': sum(order_ids.mapped("amount_tax")) if order_ids else 0,
+            'order_ids_total': sum(order_ids.mapped("amount_total")) if order_ids else 0,
+            'can_pay': False if order_ids and order_ids.filtered(lambda x:x.state!='sale') else True,
+        }
+        values['errors'] = SaleOrder._get_errors(order)
+        values.update(SaleOrder._get_website_data(order))
+        if not values['errors']:
+            acquirers = request.env['payment.acquirer'].search(
+                [('website_published', '=', True), ('company_id', '=', order.company_id.id)]
+            )
+            values['acquirers'] = []
+            for acquirer in acquirers:
+                acquirer_button = acquirer.with_context(submit_class='btn btn-primary', submit_txt=_('Pay Now')).sudo().render(
+                    '/',
+                    order.amount_total,
+                    order.pricelist_id.currency_id.id,
+                    values={
+                        'return_url': '/shop/payment/validate',
+                        'partner_id': shipping_partner_id,
+                        'billing_partner_id': order.partner_invoice_id.id,
+                    }
+                )
+                acquirer.button = acquirer_button
+                values['acquirers'].append(acquirer)
+
+            values['tokens'] = request.env['payment.token'].search([('partner_id', '=', order.partner_id.id), ('acquirer_id', 'in', acquirers.ids)])
+            #vals.append(values)
+
+        return request.render("website_sale.payment", values)
+
+    @http.route('/shop/payment/validate', type='http', auth="public", website=True)
+    def payment_validate(self, transaction_id=None, sale_order_id=None, **post):
+        """ Method that should be called by the server when receiving an update
+        for a transaction. State at this point :
+
+         - UDPATE ME
+        """
+        if transaction_id is None:
+            tx = request.website.sale_get_transaction()
+        else:
+            tx = request.env['payment.transaction'].browse(transaction_id)
+
+        order_ids = request.website.sale_get_checkout_order_ids()
+        #if sale_order_id is None:
+        #    order = request.website.sale_get_order()
+        #else:
+        #    order = request.env['sale.order'].sudo().browse(sale_order_id)
+        #    assert order.id == request.session.get('sale_last_order_id')
+
+        for order in order_ids:
+            if not order or (order.amount_total and not tx):
+                return request.redirect('/shop')
+
+            if (not order.amount_total and not tx) or tx.state in ['pending', 'done', 'authorized']:
+                if (not order.amount_total and not tx):
+                    # Orders are confirmed by payment transactions, but there is none for free orders,
+                    # (e.g. free events), so confirm immediately
+                    order.with_context(send_email=True).action_confirm()
+            elif tx and tx.state == 'cancel':
+                # cancel the quotation
+                order.action_cancel()
+
+        # clean context and session, then redirect to the confirmation page
+        request.website.sale_reset()
+        if tx and tx.state == 'draft':
+            return request.redirect('/shop')
+
+        return request.redirect('/shop/confirmation')
+
+    @http.route(['/shop/payment/transaction/<int:acquirer_id>'], type='json', auth="public", website=True)
+    def payment_transaction(self, acquirer_id, tx_type='form', token=None, **kwargs):
+        """ Json method that creates a payment.transaction, used to create a
+        transaction when the user clicks on 'pay now' button. After having
+        created the transaction, the event continues and the user is redirected
+        to the acquirer website.
+
+        :param int acquirer_id: id of a payment.acquirer record. If not set the
+                                user is redirected to the checkout page
+        """
+        Transaction = request.env['payment.transaction'].sudo()
+
+        # In case the route is called directly from the JS (as done in Stripe payment method)
+        so_id = kwargs.get('so_id')
+        so_token = kwargs.get('so_token')
+        if so_id and so_token:
+            order = request.env['sale.order'].sudo().search([('id', '=', so_id), ('access_token', '=', so_token)])
+        elif so_id:
+            order = request.env['sale.order'].search([('id', '=', so_id)])
+        else:
+            order = request.website.sale_get_order()
+            order_ids = request.website.sale_get_checkout_order_ids()
+            request.session['sale_last_order_ids'] = request.session.get('checkout_order_ids')
+        #if not order or not order.order_line or acquirer_id is None:
+        if not order_ids or acquirer_id is None:
+            return request.redirect("/shop/checkout")
+
+        for order in order_ids:
+            assert order.partner_id.id != request.website.partner_id.id
+
+        # find an already existing transaction
+        tx = request.website.sale_get_transaction()
+        if tx:
+            if tx.sale_order_id.id != order.id or tx.state in ['error', 'cancel'] or tx.acquirer_id.id != acquirer_id:
+                tx = False
+            elif token and tx.payment_token_id and token != tx.payment_token_id.id:
+                # new or distinct token
+                tx = False
+            elif tx.state == 'draft':  # button cliked but no more info -> rewrite on tx or create a new one ?
+                tx.write(dict(Transaction.on_change_partner_id(order.partner_id.id).get('value', {}), amount=order.amount_total, type=tx_type))
+        if not tx:
+            tx_values = {
+                'acquirer_id': acquirer_id,
+                'type': tx_type,
+                #'amount': order.amount_total,
+                'amount': sum(order_ids.mapped("amount_total")),
+                'currency_id': order.pricelist_id.currency_id.id,
+                'partner_id': order.partner_id.id,
+                'partner_country_id': order.partner_id.country_id.id,
+                'reference': Transaction.get_next_reference(order.name),
+                'sale_order_id': order.id,
+                #'sale_order_ids': order_ids.mapped("id"),
+            }
+            if token and request.env['payment.token'].sudo().browse(int(token)).partner_id == order.partner_id:
+                tx_values['payment_token_id'] = token
+
+            tx = Transaction.create(tx_values)
+            request.session['sale_transaction_id'] = tx.id
+
+        # update quotation
+        order_ids.write({
+            'payment_acquirer_id': acquirer_id,
+            'payment_tx_id': request.session['sale_transaction_id']
+        })
+        if token:
+            return request.env.ref('website_sale.payment_token_form').render(dict(tx=tx), engine='ir.qweb')
+
+        return tx.acquirer_id.with_context(submit_class='btn btn-primary', submit_txt=_('Pay Now')).sudo().render(
+            tx.reference,
+            #order.amount_total,
+            sum(order_ids.mapped("amount_total")),
+            order.pricelist_id.currency_id.id,
+            values={
+                'return_url': '/shop/payment/validate',
+                'partner_id': order.partner_shipping_id.id or order.partner_invoice_id.id,
+                'billing_partner_id': order.partner_invoice_id.id,
+            },
+        )
+
+    @http.route(['/shop/confirmation'], type='http', auth="public", website=True)
+    def payment_confirmation(self, **post):
+        """ End of checkout process controller. Confirmation is basically seing
+        the status of a sale.order. State at this point :
+
+         - should not have any context / session info: clean them
+         - take a sale.order id, because we request a sale.order and are not
+           session dependant anymore
+        """
+        sale_order_id = request.session.get('sale_last_order_id')
+        if sale_order_id:
+            order = request.env['sale.order'].sudo().browse(sale_order_id)
+            order_ids = request.env['sale.order'].sudo().browse(request.session.get('sale_last_order_ids'))
+            return request.render("website_sale.confirmation", {'order': order, 'order_ids':order_ids, 'total': sum(order_ids.mapped("amount_total"))})
+        else:
+            return request.redirect('/shop')

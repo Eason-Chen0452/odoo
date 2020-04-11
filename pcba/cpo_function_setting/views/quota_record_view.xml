@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="cpo_quota_record_setting_tree">
+            <field name="name">Storage Interval Setting Tree</field>
+            <field name="model">cpo_function_setting.quota_record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="enable"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_quota_record_setting_form">
+            <field name="name">Storage Interval Setting Form</field>
+            <field name="model">cpo_function_setting.quota_record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                         <button name="do_active" states="draft" type="object" string="Activating" class="btn btn-primary o_wow"/>
+                         <button name="do_change" states="active" type="object" string="Change" confirm="Are you sure you want to choose a change ?" class="btn btn-primary o_wow"/>
+                         <button name="do_complete" states="change" type="object" string="Complete" class="btn btn-primary"/>
+                         <button name="do_obsolete" states="active" type="object" string="Obsolete" confirm="Are you sure you want to choose to void ?" class="btn btn-primary o_wow"/>
+                         <button name="do_recovery" states="obsolete" type="object" string="Recovery" confirm="Are you sure you want to recover ?" class="btn btn-primary o_wow"/>
+                         <field name="state" widget="statusbar" statusbar_visible="draft,active,obsolete"/>
+                     </header>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="name" attrs="{'readonly': [('state', 'in', ('active', 'obsolete'))]}"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="interval" attrs="{'readonly': [('state', 'in', ('active', 'obsolete'))]}"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="enable" attrs="{'readonly': [('state', 'in', ('active', 'obsolete'))]}"/>
+                            </group>
+                            <group colspan="4">
+                                  <field name="description" attrs="{'readonly': [('state', 'in', ('active', 'obsolete'))]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_quota_record_setting_actions">
+            <field name="name">Storage Interval Setting Actions</field>
+            <field name="res_model">cpo_function_setting.quota_record</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- 报价记录存储时间设置 -->
+        <menuitem name="Quotation record storage period" id="cpo_quota_record_setting_menu" parent="website_cpo_index.fron_page_cycle_setting_menu"
+                action="cpo_quota_record_setting_actions"/>
+
+    </data>
+</odoo>

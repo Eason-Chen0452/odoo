@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--现金券 tree-->
+        <record model="ir.ui.view" id="cash_coupons_tree">
+            <field name="name">Cash Coupons Tree</field>
+            <field name="model">cash.coupons</field>
+            <field name="arch" type="xml">
+                <tree string="Cash Coupons">
+                    <field name="name"/>
+                    <field name="issue_number"/>
+                    <field name="issue_amount"/>
+                    <field name="period"/>
+                    <field name="all_bool"/>
+                    <field name="product_type"/>
+                    <field name="state"/>
+                    <field name="active" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <!--现金券 form-->
+        <record model="ir.ui.view" id="cash_coupons_form">
+            <field name="name">Cash Coupons Form</field>
+            <field name="model">cash.coupons</field>
+            <field name="arch" type="xml">
+                <form string="Cash Coupons">
+                    <header>
+                        <button name="ButtonEffect" string="Activity takes effect" type="object" states="draft" class="oe_highlight" groups="cpo_preferential.group_preferential_administrator"/>
+                        <button name="ButtonReset" string="Activity expired" type="object" states="force_no_started" class="oe_highlight" groups="cpo_preferential.group_preferential_administrator"/>
+                        <button name="ButtonBegins" string="Activation start" type="object" states="force_no_started" class="oe_highlight" groups="cpo_preferential.group_preferential_administrator"/>
+                        <button name="ButtonInvalid" string="Activity over" type="object" states="started_and_started" class="oe_highlight" confirm="Please confirm whether to force the end or early termination of the offer" groups="cpo_preferential.group_preferential_administrator"/>
+                        <button name="ButtonCancel" string="Forced cancellation" type="object" states="force_no_started,started_and_started" confirm="Once canceled, the current offer is completely void, please consider clearly" groups="cpo_preferential.group_preferential_administrator"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,force_no_started,started_and_started,invalid_over"/>
+                    </header>
+                    <sheet>
+                        <group string="Cash Voucher Name">
+                            <field name="name" nolabel="1" style="font-size:30px; font-weight:bold;"/>
+                        </group>
+                        <group colspan='4' col='4' string="Issuance Quantity And Amount">
+                            <field name="issue_number"/>
+                            <field name="issue_amount"/>
+                        </group>
+                        <group colspan="4" col="4" string="Usage Rules">
+                            <field name="all_bool"/>
+                            <field name="designation_bool"/>
+                            <field name="package_bool"/>
+                            <field name="product_type" attrs="{'invisible':[('designation_bool', '=', False)],'required':[('designation_bool', '=', True)]}"/>
+                        </group>
+                        <group colspan="4" col="4" string="Cash Coupon Time Period">
+                            <field name="start"/>
+                            <field name="end"/>
+                        </group>
+                        <notebook>
+                            <page string="Cash Coupons Detail">
+                                <field name="cash_line_ids" mode="tree">
+                                    <tree>
+                                        <field name="number"/>
+                                        <field name="sale_id"/>
+                                        <field name="partner_id"/>
+                                        <field name="receive_bool"/>
+                                        <field name="use_bool"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--现金券Windows-->
+        <record model="ir.actions.act_window" id="cash_coupons_window">
+            <field name="name">Cash Coupons</field>
+            <field name="res_model">cash.coupons</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--现金券明细 tree-->
+        <record model="ir.ui.view" id="cash_coupons_line_tree">
+            <field name="name">Cash Coupons Line Tree</field>
+            <field name="model">cash.coupons.line</field>
+            <field name="arch" type="xml">
+                <tree string="Cash Coupons Detail">
+                    <field name="number" force_save="1"/>
+                    <field name="cash_id"/>
+                    <field name="sale_id"/>
+                    <field name="partner_id"/>
+                    <field name="receive_bool"/>
+                    <field name="use_bool"/>
+                </tree>
+            </field>
+        </record>
+        <!--现金券明细 form-->
+        <record model="ir.ui.view" id="cash_coupons_line_form">
+            <field name="name">Cash Coupons Form</field>
+            <field name="model">cash.coupons.line</field>
+            <field name="arch" type="xml">
+                <form string="Cash Coupons Detail">
+                    <sheet>
+                        <group colspan="4" col="4">
+                            <field name="sale_id"/>
+                            <field name="partner_id"/>
+                            <field name="receive_bool"/>
+                            <field name="use_bool"/>
+                        </group>
+                        <group colspan="4" col="4">
+                            <label for="start" string="Cash Coupon Time Period"/>
+                            <div>
+                                <field name="start" class="oe_inline"/> -
+                                <field name="end" class="oe_inline"/>
+                            </div>
+                            <field name="issue_amount"/>
+                        </group>
+                        <group colspan="4" col="4" string="Usage Rules">
+                            <field name="all_bool"/>
+                            <field name="designation_bool"/>
+                            <field name="product_type"/>
+                            <field name="package_bool"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--现金券明细 Windows-->
+        <record model="ir.actions.act_window" id="cash_coupons_line_window">
+            <field name="name">Cash Coupons</field>
+            <field name="res_model">cash.coupons.line</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Cash Coupons" id="cash_menu_1" parent="offer_settings_menu_root"/>
+        <menuitem name="Cash Coupons" id="cash_menu_1_list" parent="cash_menu_1" action="cash_coupons_window"/>
+        <!--<menuitem name="Cash Coupons Detail" id="cash_menu_2_list" parent="cash_menu_1" action="cash_coupons_line_window"/>-->
+    </data>
+</odoo>

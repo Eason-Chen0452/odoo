@@ -1,0 +1,525 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* crm_msa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-05 06:43+0000\n"
+"PO-Revision-Date: 2019-11-05 06:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_msa
+#: model:mail.template,body_html:crm_msa.sales_promotion_mail_template
+msgid "\n"
+"                ${object.get_redirect_url(object.mail_content)|safe}\n"
+"            "
+msgstr "<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                ${object.get_redirect_url(object.mail_content)|safe}\n"
+"            </p>"
+
+#. module: crm_msa
+#: model:mail.template,subject:crm_msa.sales_promotion_mail_template
+msgid "${object.name|safe}"
+msgstr "${object.name|safe}"
+
+#. module: crm_msa
+#: model:ir.ui.view,arch_db:crm_msa.market_email_analysis_form
+msgid "Basic Information"
+msgstr "基本信息"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_order_bool
+msgid "Billing Under Icloudfactory"
+msgstr "在iCloudFactory下过单"
+
+#. module: crm_msa
+#: selection:mass_sales.mail.line,state:0
+msgid "Bounce"
+msgstr "被退回"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_channel_id
+msgid "Channel"
+msgstr "频道"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_click_ids
+#: model:ir.ui.view,arch_db:crm_msa.market_email_analysis_form
+msgid "Click Link"
+msgstr "点击的链接"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_click_link_click_time
+msgid "Click Link Time"
+msgstr "点击链接的时间"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_click_link_click_name
+msgid "Click Name"
+msgstr "链接名称"
+
+#. module: crm_msa
+#: model:ir.ui.view,arch_db:crm_msa.market_email_analysis_form
+msgid "Content Of Email"
+msgstr "邮件内容"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_country_ids
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_country
+#: model:ir.ui.view,arch_db:crm_msa.mass_sales_mail_form
+msgid "Country"
+msgstr "国家"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_custom_message_text_create_uid
+#: model:ir.model.fields,field_description:crm_msa.field_mail_click_link_create_uid
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_create_uid
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_create_uid
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_custom_message_text_create_date
+#: model:ir.model.fields,field_description:crm_msa.field_mail_click_link_create_date
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_create_date
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_create_date
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: crm_msa
+#: model:ir.model,name:crm_msa.model_custom_message_text
+#: model:ir.model.fields,field_description:crm_msa.field_custom_message_text_message_text
+msgid "Custom Message Text"
+msgstr "自定义模板文本"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_custom_message_text_name
+msgid "Custom Message Text Name"
+msgstr "自定义模板文本名称"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_click_link_center_id
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_center_id
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_personal_ids
+#: model:ir.ui.view,arch_db:crm_msa.mass_sales_mail_form
+msgid "Customer"
+msgstr "客户"
+
+#. module: crm_msa
+#: model:ir.actions.server,name:crm_msa.CustomerEmailStateCron_ir_actions_server
+#: model:ir.cron,cron_name:crm_msa.CustomerEmailStateCron
+#: model:ir.cron,name:crm_msa.CustomerEmailStateCron
+msgid "Customer Email State"
+msgstr "客户邮件状态"
+
+#. module: crm_msa
+#: model:ir.model,name:crm_msa.model_mass_sales_mail_line
+#: model:ir.model.fields,field_description:crm_msa.field_mail_click_link_line_id
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_mail_line
+msgid "Customer Personal Mail"
+msgstr "客户个人邮件"
+
+#. module: crm_msa
+#: model:ir.actions.server,name:crm_msa.DeleteMailMessageCron_ir_actions_server
+#: model:ir.cron,cron_name:crm_msa.DeleteMailMessageCron
+#: model:ir.cron,name:crm_msa.DeleteMailMessageCron
+msgid "Delete Mail Message"
+msgstr "清除邮件Message"
+
+#. module: crm_msa
+#: model:ir.actions.server,name:crm_msa.DeleteProcessedEmailCron_ir_actions_server
+#: model:ir.cron,cron_name:crm_msa.DeleteProcessedEmailCron
+#: model:ir.cron,name:crm_msa.DeleteProcessedEmailCron
+msgid "Delete Processed Email"
+msgstr "清除处理过的邮件"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_receive_bool
+msgid "Did you receive"
+msgstr "是否收到邮件"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_custom_message_text_display_name
+#: model:ir.model.fields,field_description:crm_msa.field_mail_click_link_display_name
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_display_name
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_display_name
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: crm_msa
+#: selection:mass_sales.mail,state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: crm_msa
+#: model:ir.actions.server,name:crm_msa.return_processing_ir_actions_server
+#: model:ir.cron,cron_name:crm_msa.return_processing
+#: model:ir.cron,name:crm_msa.return_processing
+msgid "Email Return Process"
+msgstr "邮件退回处理"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_state
+msgid "Email Status"
+msgstr "Email状态"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_click_link_mail_id
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_mail_id
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_name
+#: model:ir.ui.view,arch_db:crm_msa.mass_sales_mail_form
+msgid "Email Subject"
+msgstr "邮件主题"
+
+#. module: crm_msa
+#: model:ir.model,name:crm_msa.model_mail_thread
+msgid "Email Thread"
+msgstr "电子邮件线程"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_email_type
+msgid "Email Type"
+msgstr "邮件类型"
+
+#. module: crm_msa
+#: selection:mass_sales.mail.line,state:0
+msgid "Exception"
+msgstr "异常"
+
+#. module: crm_msa
+#: model:ir.ui.view,arch_db:crm_msa.market_email_analysis_form
+msgid "Feedback Information"
+msgstr "邮件反馈信息"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_order_end
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_order_start
+#: model:ir.ui.view,arch_db:crm_msa.mass_sales_mail_form
+msgid "Filter Customers By Ordering Time Period"
+msgstr "通过下单时间进行筛选客户"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_login_end
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_login_start
+#: model:ir.ui.view,arch_db:crm_msa.mass_sales_mail_form
+msgid "Filter Customers By Registering Time Period"
+msgstr "通过注册时间进行筛选客户"
+
+#. module: crm_msa
+#: model:ir.ui.view,arch_db:crm_msa.mass_sales_mail_form
+msgid "Filter End Time"
+msgstr "筛选结束时间"
+
+#. module: crm_msa
+#: model:ir.ui.view,arch_db:crm_msa.mass_sales_mail_form
+msgid "Filter Start Time"
+msgstr "筛选开始时间"
+
+#. module: crm_msa
+#: model:ir.ui.view,arch_db:crm_msa.mass_sales_mail_form
+msgid "Filter Whether Customers Who have Placed Orders"
+msgstr "筛选是否下过单的客户"
+
+#. module: crm_msa
+#: selection:mass_sales.mail,state:0
+msgid "Has Been Sent"
+msgstr "已发送"
+
+#. module: crm_msa
+#: model:custom.message_text,name:crm_msa.custom_text_2
+msgid "Holiday / Company Event Template"
+msgstr "节假日/公司活动模板"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_custom_message_text_id
+#: model:ir.model.fields,field_description:crm_msa.field_mail_click_link_id
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_id
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_id
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_custom_message_text___last_update
+#: model:ir.model.fields,field_description:crm_msa.field_mail_click_link___last_update
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing___last_update
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail___last_update
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_custom_message_text_write_uid
+#: model:ir.model.fields,field_description:crm_msa.field_mail_click_link_write_uid
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_write_uid
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_write_uid
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_custom_message_text_write_date
+#: model:ir.model.fields,field_description:crm_msa.field_mail_click_link_write_date
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_write_date
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_write_date
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: crm_msa
+#: model:ir.model,name:crm_msa.model_mail_click_link
+#: model:ir.ui.view,arch_db:crm_msa.market_email_analysis_form
+msgid "Mail Click Link"
+msgstr "邮件中的链接"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_mail_content
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_mail_content
+msgid "Mail Content"
+msgstr "邮件内容"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_send_time
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_send_time
+msgid "Mail Delivery Time"
+msgstr "邮件发送时间"
+
+#. module: crm_msa
+#: model:ir.ui.view,arch_db:crm_msa.market_email_analysis_form
+msgid "Mail Information"
+msgstr "邮件信息"
+
+#. module: crm_msa
+#: model:ir.actions.act_window,name:crm_msa.mail_return_processing_window
+#: model:ir.model,name:crm_msa.model_mail_return_processing
+#: model:ir.ui.menu,name:crm_msa.promotional_team_3
+msgid "Mail Return Processing"
+msgstr "邮件退回处理"
+
+#. module: crm_msa
+#: selection:mail.return_processing,name:0
+msgid "Mailbox Does Not Exist"
+msgstr "邮箱不存在"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_mark_bool
+msgid "Mark"
+msgstr "标记"
+
+#. module: crm_msa
+#: selection:mass_sales.mail,email_type:0
+msgid "Marketing"
+msgstr "营销"
+
+#. module: crm_msa
+#: model:ir.ui.menu,name:crm_msa.msa_menu_1
+msgid "Marketing Analysis"
+msgstr "营销分析"
+
+#. module: crm_msa
+#: model:ir.actions.act_window,name:crm_msa.market_email_analysis_window
+#: model:ir.ui.menu,name:crm_msa.promotional_team_2
+msgid "Marketing Email Analysis"
+msgstr "营销邮件分析"
+
+#. module: crm_msa
+#: model:ir.actions.act_window,name:crm_msa.mass_sales_mail_window
+#: model:ir.model,name:crm_msa.model_mass_sales_mail
+#: model:ir.ui.menu,name:crm_msa.promotional_team_1
+msgid "Marketing Mail"
+msgstr "营销邮件"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_no_order_bool
+msgid "No Billing Under Icloudfactory"
+msgstr "在iCloudFactory没有下过单"
+
+#. module: crm_msa
+#: model:custom.message_text,name:crm_msa.custom_text_1
+msgid "Official Introduction Template"
+msgstr "官方介绍模板"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_open_scale
+msgid "Open Marketing Emails"
+msgstr "客户打开营销邮件的比率"
+
+#. module: crm_msa
+#: code:addons/crm_msa/models/mass_sales_mail.py:111
+#: code:addons/crm_msa/models/mass_sales_mail.py:123
+#, python-format
+msgid "Please set the start and end time correctly!"
+msgstr "请正确设置开始时间和结束时间!"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_process_bool
+msgid "Process"
+msgstr "处理"
+
+#. module: crm_msa
+#: selection:mail.return_processing,state:0
+msgid "Processed"
+msgstr "已处理"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_receive_scale
+msgid "Proportion Of Receiving Marketing Emails"
+msgstr "客户收到营销邮件的比率"
+
+#. module: crm_msa
+#: selection:mass_sales.mail.line,state:0
+msgid "Ready"
+msgstr "已汇出"
+
+#. module: crm_msa
+#: selection:mass_sales.mail,email_type:0
+msgid "Registered"
+msgstr "注册"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_body
+msgid "Return Content"
+msgstr "退回内容"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_email_from
+msgid "Return Email From"
+msgstr "发送者邮箱"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_email_to
+msgid "Return Email TO"
+msgstr "收件者邮箱"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_message_id
+msgid "Return Message"
+msgstr "退回的识别号"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_message_type
+msgid "Return Message Type"
+msgstr "退回的类型"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_name
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_reason
+#: model:ir.ui.view,arch_db:crm_msa.market_email_analysis_form
+msgid "Return Reason"
+msgstr "退回的原因"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_subject
+msgid "Return Subject"
+msgstr "退回的主题"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_date_time
+msgid "Return Time"
+msgstr "退回的时间"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_select_all_bool
+msgid "Select All Customer"
+msgstr "选择所有客户"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_select_template
+msgid "Select Mail Template"
+msgstr "选择邮件模板"
+
+#. module: crm_msa
+#: model:ir.ui.view,arch_db:crm_msa.mass_sales_mail_form
+msgid "Select The Channel To Send"
+msgstr "选择发送的频道"
+
+#. module: crm_msa
+#: model:ir.actions.server,name:crm_msa.SendMarketingEmailCron_ir_actions_server
+#: model:ir.cron,cron_name:crm_msa.SendMarketingEmailCron
+#: model:ir.cron,name:crm_msa.SendMarketingEmailCron
+msgid "Send Marketing Email"
+msgstr "发送营销邮件"
+
+#. module: crm_msa
+#: model:ir.ui.view,arch_db:crm_msa.mass_sales_mail_form
+msgid "SendEmail"
+msgstr "发送邮件"
+
+#. module: crm_msa
+#: selection:mass_sales.mail,state:0
+msgid "Sending"
+msgstr "正在发送"
+
+#. module: crm_msa
+#: selection:mass_sales.mail.line,state:0
+msgid "Sent"
+msgstr "已送达"
+
+#. module: crm_msa
+#: code:addons/crm_msa/models/mass_sales_mail.py:122
+#, python-format
+msgid "Setting Filter Customers By Ordering Time Period Error!!"
+msgstr "下单时间段筛选客户设置错误!!"
+
+#. module: crm_msa
+#: code:addons/crm_msa/models/mass_sales_mail.py:110
+#, python-format
+msgid "Setting Filter Customers By Registering Time Period Error!!"
+msgstr "注册时间段筛选客户设置错误!!"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mail_return_processing_state
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_state
+msgid "Status"
+msgstr "状态"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_open_mail
+msgid "The Total Number Of Open Marketing Messages"
+msgstr "客户打开邮件的总人数"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_receive_mail
+msgid "The Total Number Of People Who Received Marketing Emails"
+msgstr "客户收到邮件的总人数"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_people_mail
+msgid "The Total Number Of People Who Send Marketing Emails"
+msgstr "发送给客户的总人数"
+
+#. module: crm_msa
+#: selection:mail.return_processing,state:0
+msgid "Unprocessed"
+msgstr "未处理"
+
+#. module: crm_msa
+#: model:ir.ui.view,arch_db:crm_msa.mass_sales_mail_form
+msgid "View Mail Performance"
+msgstr "查看邮件效果"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_test_email
+msgid "View Performance"
+msgstr "查看效果"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_line_read_bool
+msgid "Whether To Click On The Link In The Email"
+msgstr "点击营销邮件中的链接"
+
+#. module: crm_msa
+#: model:ir.model.fields,field_description:crm_msa.field_mass_sales_mail_filter_bool
+msgid "Whether To Filter"
+msgstr "是否筛选"
+

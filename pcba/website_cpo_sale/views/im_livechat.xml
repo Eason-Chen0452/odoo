@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="website_cpo_sale.imchat_box" name="Imchat Box">
+        <div class="cpo_im_box_p">
+            <!--<div class="cpo_conversation_icon" >-->
+                <!--<img class="img img-responsive" src="/website_cpo_sale/static/src/images/duihua1.png"/>-->
+            <!--</div>-->
+            <div class="cpo_conversation_content" style="display: none;">
+                <h2 class="conversation_title">Need Help?</h2>
+                <p>
+                    <!--<span class='fa fa-question-circle cpo_im_box_ico'/>-->
+                    <t t-esc="button_text"/>
+                </p>
+            </div>
+        </div>
+        <!--<a class="btn" id="cpo_shrink_magnify">-->
+            <!--<i class="fa fa-arrow-right fa-lg"></i>-->
+        <!--</a>-->
+
+        <!--<div id="cpo_customer_service">-->
+            <!--<img class="img img-responsive" src="/website_cpo_sale/static/src/images/customer.png"/>-->
+        <!--</div>-->
+    </template>
+
+</odoo>

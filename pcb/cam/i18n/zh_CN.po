@@ -1,0 +1,2617 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* cam
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-20 09:07+0000\n"
+"PO-Revision-Date: 2019-09-20 09:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cam
+#: model:cam.gold.finger,name:cam.cam_gold_finger_10u
+msgid "10.0μ\""
+msgstr "10.0μ\""
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_5branch
+msgid "100branch"
+msgstr "100支"
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_6branch
+msgid "120branch"
+msgstr "120支"
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_7branch
+msgid "140branch"
+msgstr "140支"
+
+#. module: cam
+#: model:cam.gold.finger,name:cam.cam_gold_finger_15u
+msgid "15.0μ\""
+msgstr "15.0μ\""
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_8branch
+msgid "160branch"
+msgstr "160支"
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_9branch
+msgid "180branch"
+msgstr "180支"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_rogers_setting_thick_1
+msgid "1OZ Finished Thickness/mm"
+msgstr "1OZ完成板厚/mm"
+
+#. module: cam
+#: model:cam.gold.finger,name:cam.cam_gold_finger_20u
+msgid "20.0μ\""
+msgstr "20.0μ\""
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_10branch
+msgid "200branch"
+msgstr "200支"
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_1branch
+msgid "20branch"
+msgstr "20支"
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_11branch
+msgid "220branch"
+msgstr "220支"
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_12branch
+msgid "240branch"
+msgstr "240支"
+
+#. module: cam
+#: model:cam.gold.finger,name:cam.cam_gold_finger_25u
+msgid "25.0μ\""
+msgstr "25.0μ\""
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_13branch
+msgid "260branch"
+msgstr "260支"
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_14branch
+msgid "280branch"
+msgstr "280支"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_rogers_setting_thick_2
+msgid "2OZ Finished Thickness/mm"
+msgstr "2OZ完成板厚/mm"
+
+#. module: cam
+#: model:cam.gold.finger,name:cam.cam_gold_finger_3u
+msgid "3.0μ\""
+msgstr "3.0μ\""
+
+#. module: cam
+#: model:cam.gold.finger,name:cam.cam_gold_finger_30u
+msgid "30.0μ\""
+msgstr "30.0μ\""
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_15branch
+msgid "300branch"
+msgstr "300支"
+
+#. module: cam
+#: model:cam.gold.finger,name:cam.cam_gold_finger_35u
+msgid "35.0μ\""
+msgstr "35.0μ\""
+
+#. module: cam
+#: model:cam.laser.steel.mesh.size,name:cam.steel_mesh_size_1
+msgid "370.0*470.0/190.0*290.0"
+msgstr "370.0*470.0/190.0*290.0"
+
+#. module: cam
+#: model:cam.gold.finger,name:cam.cam_gold_finger_40u
+msgid "40.0μ\""
+msgstr "40.0μ\""
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_2branch
+msgid "40branch"
+msgstr "40支"
+
+#. module: cam
+#: model:cam.laser.steel.mesh.size,name:cam.steel_mesh_size_2
+msgid "420.0*520.0/240.0*340.0"
+msgstr "420.0*520.0/240.0*340.0"
+
+#. module: cam
+#: model:cam.gold.finger,name:cam.cam_gold_finger_45u
+msgid "45.0μ\""
+msgstr "45.0μ\""
+
+#. module: cam
+#: model:cam.laser.steel.mesh.size,name:cam.steel_mesh_size_3
+msgid "450.0*550.0/270.0*370.0"
+msgstr "450.0*550.0/270.0*370.0"
+
+#. module: cam
+#: model:cam.gold.finger,name:cam.cam_gold_finger_5u
+msgid "5.0μ\""
+msgstr "5.0μ\""
+
+#. module: cam
+#: model:cam.gold.finger,name:cam.cam_gold_finger_50u
+msgid "50.0μ\""
+msgstr "50.0μ\""
+
+#. module: cam
+#: model:cam.laser.steel.mesh.size,name:cam.steel_mesh_size_5
+msgid "550.0*650.0/350.0*450.0"
+msgstr "550.0*650.0/350.0*450.0"
+
+#. module: cam
+#: model:cam.laser.steel.mesh.size,name:cam.steel_mesh_size_4
+msgid "580.0*580.0/380.0*450.0"
+msgstr "580.0*580.0/380.0*450.0"
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_3branch
+msgid "60branch"
+msgstr "60支"
+
+#. module: cam
+#: model:cam.laser.steel.mesh.size,name:cam.steel_mesh_size_6
+msgid "736.0*736.0/500.0*500.0"
+msgstr "736.0*736.0/500.0*500.0"
+
+#. module: cam
+#: model:cam.root.number,name:cam.cam_root_number_4branch
+msgid "80branch"
+msgstr "80支"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/tour.js:83
+#, python-format
+msgid "<b>Invite salespeople or managers</b> via email.<br/><i>Enter one email per line.</i>"
+msgstr "<b>邀请销售人员或经理</b> 通过电子邮件。<br/><i>每行输入一封电子邮件。</i>"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/tour.js:64
+#, python-format
+msgid "<p><b>Confirm the order</b> if the customer purchases.</p>"
+msgstr "<p><b>确认订单</b> 如果客户购买。</p>"
+
+#. module: cam
+#: model:ir.model,name:cam.model_cam_acceptance_criteria
+#: model:ir.ui.view,arch_db:cam.cam_acceptance_criteria_form
+#: model:ir.ui.view,arch_db:cam.cam_acceptance_criteria_tree
+msgid "Acceptance Criteria"
+msgstr "验收标准"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_acceptance_criteria_action_window
+#: model:ir.ui.menu,name:cam.menu_cam_acceptance_criteria
+msgid "Acceptance Criteria Window"
+msgstr "验收标准"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_acceptance_criteria_active
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_active
+#: model:ir.model.fields,field_description:cam.field_cam_gold_finger_active
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_active
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_active
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_active
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_active
+#: model:ir.model.fields,field_description:cam.field_cam_root_number_active
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_active
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_active
+#: model:ir.model.fields,field_description:cam.field_cam_steel_mesh_thickness_active
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_active
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_active
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_active
+msgid "Active"
+msgstr "有效"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_aperture_ratio
+msgid "Aperture Ratio"
+msgstr "孔径比"
+
+#. module: cam
+#: model:cam.material.brand,name:cam.mb_arlon
+msgid "Arlon"
+msgstr "地名"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.cam_layer_number_size_form_view
+#: model:ir.ui.view,arch_db:cam.cam_layer_number_size_tree_view
+msgid "Auto Create"
+msgstr "自动创建"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_auto_create_copper_base
+msgid "Auto Create Copper base Price List"
+msgstr "自动创建基材价格清单"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_auto_create
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_auto_create
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_auto_create
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_auto_create
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_auto_create
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_auto_create
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_auto_create
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_auto_create
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_auto_create
+msgid "Auto Create Price List"
+msgstr "自动创建价格表"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.color_black_normal
+msgid "Black"
+msgstr "黑色"
+
+#. module: cam
+#: model:cam.special.process,name:cam.sf_blind_via
+msgid "Blind Via"
+msgstr "盲孔"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.color_blue_normal
+msgid "Blue"
+msgstr "蓝色"
+
+#. module: cam
+#: selection:cam.ink.color,color_property:0
+msgid "Bright Ink"
+msgstr "光亮油墨"
+
+#. module: cam
+#: model:cam.special.process,name:cam.sf_buried_blind_via
+msgid "Buried and Blind Via"
+msgstr "埋盲孔"
+
+#. module: cam
+#: model:res.groups,name:cam.group_cam_admin
+msgid "CAM Administrator"
+msgstr "CAM管理员"
+
+#. module: cam
+#: model:res.groups,name:cam.group_cam_assistant
+msgid "CAM Assistant"
+msgstr "CAM助理"
+
+#. module: cam
+#: model:res.groups,name:cam.group_cam_engineer
+msgid "CAM Engineer"
+msgstr "CAM工程师"
+
+#. module: cam
+#: model:res.groups,name:cam.group_cam_manager
+msgid "CAM Manager"
+msgstr "CAM工程经理"
+
+#. module: cam
+#: model:mail.message.subtype,description:cam.mt_engineering_check_cancel
+#: model:mail.message.subtype,name:cam.mt_engineering_check_cancel
+msgid "CAM Pro-Check Canceled"
+msgstr "工程资料取消"
+
+#. module: cam
+#: model:mail.message.subtype,name:cam.mt_engineering_check_create
+msgid "CAM Pro-Check Created"
+msgstr "工程预审资料建立"
+
+#. module: cam
+#: model:mail.message.subtype,description:cam.mt_engineering_check_finish
+#: model:mail.message.subtype,name:cam.mt_engineering_check_finish
+msgid "CAM Pro-Check Finished"
+msgstr "工程预审完成"
+
+#. module: cam
+#: model:mail.message.subtype,description:cam.mt_engineering_check_create
+msgid "CAM Pro-Check created"
+msgstr "工程预审资料建立"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_rogers_setting_window
+#: model:ir.model,name:cam.model_cam_rogers_setting
+#: model:ir.ui.menu,name:cam.menu_cam_rogers_setting
+msgid "CAM Rogers Setting"
+msgstr "罗杰斯芯板设置"
+
+#. module: cam
+#: model:res.groups,comment:cam.group_cam_admin
+msgid "Cam Administrator."
+msgstr "工程管理员."
+
+#. module: cam
+#: model:ir.ui.menu,name:cam.menu_cam_configs
+msgid "Cam Configuration"
+msgstr "工程参数配置"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_ink_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_layer_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_special_material_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_special_process_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_surface_process_size_price
+msgid "Cancel"
+msgstr "取消"
+
+#. module: cam
+#: model:cam.special.material,name:cam.sm_carbon_ink
+msgid "Carbon Ink"
+msgstr "碳油"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_max_delay_change_hours
+msgid "Change Max Delay Hours"
+msgstr "正常交期变更数"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_min_delay_change_hours
+msgid "Change Min Delay Hours"
+msgstr "最快交期变更数"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_quick_change_fee
+msgid "Change Quick Fee"
+msgstr "加急费变更数"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_quick_change_time
+msgid "Change Quick Time"
+msgstr "加急时间变更"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_cam_base_type_form
+msgid "Child Of Copper Base type"
+msgstr "基材类型的子类"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_child_ids
+msgid "Child Types"
+msgstr "子类型"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/tour.js:39
+#, python-format
+msgid "Click here to add some lines to your quotations."
+msgstr "点击此处为报价添加一些行。"
+
+#. module: cam
+#: model:ir.actions.act_window,help:cam.cam_ink_color_act
+msgid "Click to  define new Ink Color."
+msgstr "单击以定义新的墨水颜色"
+
+#. module: cam
+#: model:ir.actions.act_window,help:cam.cam_volume_level_act
+msgid "Click to  define volume level."
+msgstr "单击以定义数量级别。"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_code
+msgid "Code"
+msgstr "代号"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_color_property
+msgid "Color Property"
+msgstr "颜色种类"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_company_id
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_company_id
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_company_id
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_company_id
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_company_id
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_company_id
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_company_id
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_company_id
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_company_id
+msgid "Company"
+msgstr "公司"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line_ids
+#: model:ir.ui.view,arch_db:cam.view_cam_ink_color_form
+msgid "Compute Ink Price"
+msgstr "计算油墨费用"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_line_ids
+#: model:ir.ui.view,arch_db:cam.view_cam_special_material_form
+#: model:ir.ui.view,arch_db:cam.view_cam_special_process_form
+msgid "Compute Special Material Price"
+msgstr "计算特殊材料费"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_line_ids
+msgid "Compute Special Process Price"
+msgstr "计算特殊工艺费"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_line_ids
+#: model:ir.ui.view,arch_db:cam.view_cam_surface_process_form
+msgid "Compute Surface Process Price"
+msgstr "计算表面工艺费"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/tour.js:79
+#, python-format
+msgid "Configuration options are available in the Settings app."
+msgstr "“设置”应用程序中提供了配置选项。"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_board
+msgid "Copper Base Brand"
+msgstr "覆铜板"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_base_type
+msgid "Copper Base Tye"
+msgstr "基材类型"
+
+#. module: cam
+#: sql_constraint:cam.layer.number.size.type:0
+msgid "Copper Base Tye must be unique in every board size for every layer number!"
+msgstr "基材类型在每个线路板层数下不同面积中必需保持唯一性!"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_base_type_act
+#: model:ir.ui.menu,name:cam.menu_cam_base_type_act
+#: model:ir.ui.view,arch_db:cam.view_cam_base_type_form
+#: model:ir.ui.view,arch_db:cam.view_cam_base_type_tree
+msgid "Copper Base Type"
+msgstr "基材类型"
+
+#. module: cam
+#: model:ir.model,name:cam.model_cam_base_type
+msgid "Copper base Type"
+msgstr "基材类型"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_rogers_setting_core_thick
+msgid "Core Thickness/mil"
+msgstr "芯板厚度/mil"
+
+#. module: cam
+#: model:cam.special.material,name:cam.sm_counter_sink_drill
+msgid "Counter Sink Drill"
+msgstr "沉头钻头"
+
+#. module: cam
+#: model:cam.special.process,name:cam.sf_counter_sink_holes
+msgid "Counter Sink Holes"
+msgstr "沉头孔"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_ink_size_price
+msgid "Create Ink Color Size"
+msgstr "创建油墨各面积费用例表"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_layer_size_price
+msgid "Create Layer Size"
+msgstr "创建不同批量价格清单"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.act_create_layer_size_price
+msgid "Create Layer Size By Other Layer Number"
+msgstr "通过其它层数创建不同面积线路板价格清单"
+
+#. module: cam
+#: model:ir.model,name:cam.model_create_layer_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_layer_size_price
+msgid "Create PCB Price of Size for Every Layer"
+msgstr "通过样板层创建不同面积价格清单"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.act_create_ink_size_price
+#: model:ir.model,name:cam.model_create_ink_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_ink_size_price
+msgid "Create Size Fee of Ink Color"
+msgstr "创建油墨各面积费用例表"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.act_create_special_material_size_price
+#: model:ir.model,name:cam.model_create_special_material_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_special_material_size_price
+msgid "Create Size Fee of Special Material"
+msgstr "创建特殊材料各面积费用例表"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.act_create_special_process_size_price
+#: model:ir.model,name:cam.model_create_special_process_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_special_process_size_price
+msgid "Create Size Fee of Special Process"
+msgstr "创建特殊工艺各面积费用例表"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.act_create_surface_process_size_price
+#: model:ir.model,name:cam.model_create_surface_process_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_surface_process_size_price
+msgid "Create Size Fee of Surface Process"
+msgstr "创建表面工艺各面积费用例表"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_special_material_size_price
+msgid "Create Special Material Size"
+msgstr "创建特殊材料各面积费用例表"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_special_process_size_price
+msgid "Create Special Process Size"
+msgstr "创建特殊工艺各面积费用例表"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_surface_process_size_price
+msgid "Create Surface Process Size"
+msgstr "创建表面工艺各面积费用例表"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_acceptance_criteria_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_gold_finger_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_rogers_setting_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_root_number_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_line_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_line_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_steel_mesh_thickness_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_line_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_create_uid
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_create_uid
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_create_uid
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_create_uid
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_create_uid
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_create_uid
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_acceptance_criteria_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_gold_finger_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_rogers_setting_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_root_number_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_line_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_line_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_steel_mesh_thickness_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_line_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_create_date
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_create_date
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_create_date
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_create_date
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_create_date
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_create_date
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_def_silk_screen
+msgid "Default Silk Screen"
+msgstr "默认阻焊油墨"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_def_surface
+msgid "Default Surface"
+msgstr "默认表面处理"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_def_text
+msgid "Default Text Color"
+msgstr "默认文字油墨"
+
+#. module: cam
+#: model:cam.special.process,name:cam.sf_depth_control_holes
+msgid "Depth Control Holes"
+msgstr "控深孔"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_acceptance_criteria_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_gold_finger_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_rogers_setting_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_root_number_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_line_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_line_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_steel_mesh_thickness_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_line_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_display_name
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_display_name
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_display_name
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_display_name
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_display_name
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_display_name
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.ink5
+msgid "Dumb Blue"
+msgstr "哑蓝"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.inkMatte
+msgid "Dumb black"
+msgstr "哑黑"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.inkDumb
+msgid "Dumb green"
+msgstr "哑绿"
+
+#. module: cam
+#: model:cam.surface.process,name:cam.surface_enig
+msgid "ENIG"
+msgstr "沉金"
+
+#. module: cam
+#: model:cam.surface.process,name:cam.process3_gold_Electroless
+msgid "ENIG+Electroless nickel gold"
+msgstr "沉金和电金"
+
+#. module: cam
+#: model:cam.surface.process,name:cam.process2_gold_OSP
+msgid "ENIG+OSP"
+msgstr "沉金和OSP"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_etest_fee
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_etest_fee
+msgid "ETest Fee"
+msgstr "测试费"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_etest_fee_type
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_etest_fee_type
+msgid "ETest Fee Type"
+msgstr "测试费类型"
+
+#. module: cam
+#: model:cam.special.process,name:cam.sf_edge_plating
+msgid "Edge Plating"
+msgstr "板边电镀"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.cam_laser_steel_mesh_size_form
+msgid "Effective area/MM"
+msgstr "有效面积/MM"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_effective_size_1
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_effective_size_2
+msgid "Effective size/MM"
+msgstr "有效面积/MM"
+
+#. module: cam
+#: model:cam.layer.number,name:cam.layer_number_08
+#: model:product.product,name:cam.product_product_pcb_8
+#: model:product.template,name:cam.product_product_pcb_8_product_template
+msgid "Eight Layers PCB"
+msgstr "八层板"
+
+#. module: cam
+#: model:cam.layer.number,name:cam.layer_number_18
+#: model:product.product,name:cam.product_product_pcb_18
+#: model:product.template,name:cam.product_product_pcb_18_product_template
+msgid "Eighteen Layers PCB"
+msgstr "十八层板"
+
+#. module: cam
+#: model:cam.surface.process,name:cam.process1_Electroless
+msgid "Electroless nickel gold"
+msgstr "电金"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_engineering_fee
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_engineering_fee
+msgid "Engineering Fee"
+msgstr "工程费"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_layer_size_price
+msgid "Engineering Fee Change Plan"
+msgstr "工程费变更计划"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_engineering_fee_type
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_engineering_fee_type
+msgid "Engineering Fee Type"
+msgstr "工程费类型"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_engineering_limit_size
+msgid "Engineering Limit Size"
+msgstr "工程标准面积菲林费变更计划"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_acceptance_criteria_english_name
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_english_name
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_english_name
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_english_name
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_english_name
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_english_name
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_english_name
+msgid "English name"
+msgstr "网页使用名菲林费变更计划"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_layer_size_price
+msgid "Etest Fee Change Plan"
+msgstr "测试费变更计划菲林费变更计划"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_etest_limit_size
+msgid "Etest Limit Size"
+msgstr "测试标准面积菲林费变更计划"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_film_fee
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_film_fee
+msgid "Film Fee"
+msgstr "菲林费菲林费变更计划"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_layer_size_price
+msgid "Film Fee Change Plan"
+msgstr "菲林费变更计划"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_film_fee_type
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_film_fee_type
+msgid "Film Fee Type"
+msgstr "菲林费类别"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_film_limit_size
+msgid "Film Limit Size"
+msgstr "菲林标准面积"
+
+#. module: cam
+#: model:cam.layer.number,name:cam.layer_number_04
+#: model:product.product,name:cam.product_product_pcb_4
+#: model:product.template,name:cam.product_product_pcb_4_product_template
+msgid "Four Layers PCB"
+msgstr "四层板"
+
+#. module: cam
+#: model:cam.layer.number,name:cam.layer_number_14
+#: model:product.product,name:cam.product_product_pcb_14
+#: model:product.template,name:cam.product_product_pcb_14_product_template
+msgid "Fourteen Layers PCB"
+msgstr "十四层板"
+
+#. module: cam
+#: model:ir.model.fields,help:cam.field_cam_layer_number_layer_number
+msgid "Give the layer_number How is it layer number"
+msgstr "指定当前创建线路板层数的具体数字"
+
+#. module: cam
+#: model:ir.model,name:cam.model_cam_gold_finger
+msgid "Gold Finger"
+msgstr "金手指"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.cam_gold_finger_form
+#: model:ir.ui.view,arch_db:cam.cam_gold_finger_tree
+msgid "Gold finger"
+msgstr "金手指"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_gold_finger_action_window
+#: model:ir.ui.menu,name:cam.menu_cam_gold_finger
+msgid "Gold finger Window"
+msgstr "金手指"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.inkhuise
+msgid "Gray"
+msgstr "灰色"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.color_green_normal
+msgid "Green"
+msgstr "绿色"
+
+#. module: cam
+#: model:cam.surface.process,name:cam.surface_hasl_l
+msgid "HASL-Lead"
+msgstr "有铅喷锡"
+
+#. module: cam
+#: model:cam.surface.process,name:cam.surface_hasl_lf
+msgid "HASL-Lead Free"
+msgstr "无铅喷锡"
+
+#. module: cam
+#: model:cam.special.process,name:cam.sf_half_plating_holes
+msgid "Half Plating Holes"
+msgstr "半孔"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.cam_layer_number_size_form_view
+#: model:ir.ui.view,arch_db:cam.cam_layer_number_size_type_form_view
+msgid "Hours"
+msgstr "小时"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_acceptance_criteria_id
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_id
+#: model:ir.model.fields,field_description:cam.field_cam_gold_finger_id
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_id
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line_id
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_id
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_id
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_id
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_id
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_id
+#: model:ir.model.fields,field_description:cam.field_cam_rogers_setting_id
+#: model:ir.model.fields,field_description:cam.field_cam_root_number_id
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_id
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_line_id
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_id
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_line_id
+#: model:ir.model.fields,field_description:cam.field_cam_steel_mesh_thickness_id
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_id
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_line_id
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_id
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_id
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_id
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_id
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_id
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_id
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_id
+msgid "ID"
+msgstr "ID"
+
+#. module: cam
+#: model:cam.material.brand,name:cam.mb_ilm
+msgid "ILM"
+msgstr "国纪"
+
+#. module: cam
+#: model:cam.acceptance.criteria,english_name:cam.Acceptance_Criteria_II
+#: model:cam.acceptance.criteria,name:cam.Acceptance_Criteria_II
+msgid "IPC Class II"
+msgstr "验收标准II"
+
+#. module: cam
+#: model:cam.acceptance.criteria,english_name:cam.Acceptance_Criteria_III
+#: model:cam.acceptance.criteria,name:cam.Acceptance_Criteria_III
+msgid "IPC Class III"
+msgstr "验收标准III"
+
+#. module: cam
+#: model:cam.material.brand,name:cam.mb_iteq
+msgid "ITEQ"
+msgstr "联茂"
+
+#. module: cam
+#: model:cam.surface.process,name:cam.surface_silver
+msgid "Immersion Silver"
+msgstr "沉银"
+
+#. module: cam
+#: model:cam.surface.process,name:cam.surface_tin
+msgid "Immersion Tin"
+msgstr "沉锡"
+
+#. module: cam
+#: model:cam.special.process,name:cam.Impedance_and_impedance_strip
+msgid "Impedance and impedance strip"
+msgstr "阻抗+阻抗条"
+
+#. module: cam
+#: model:cam.special.process,name:cam.sf_impendance_control
+msgid "Impendance Control"
+msgstr "阻抗"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_include_base_price
+msgid "Include In Base Price"
+msgstr "包括于基准价格"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_ink
+msgid "Ink Brand"
+msgstr "油墨"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_ink_color_act
+#: model:ir.model,name:cam.model_cam_ink_color
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line_ink_color_id
+#: model:ir.ui.menu,name:cam.menu_cam_ink_color_act
+#: model:ir.ui.view,arch_db:cam.view_cam_ink_color_form
+#: model:ir.ui.view,arch_db:cam.view_cam_ink_color_tree
+msgid "Ink Color"
+msgstr "油墨颜色"
+
+#. module: cam
+#: model:ir.model,name:cam.model_cam_ink_color_line
+msgid "Ink Color Line"
+msgstr "油墨颜色行"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line_ink_type
+msgid "Ink Type"
+msgstr "油墨类型"
+
+#. module: cam
+#: sql_constraint:cam.ink.color.line:0
+msgid "Ink type and max size must be unique for every ink!"
+msgstr "在每种油墨中油墨类型和最大面积必须保持其唯一性!"
+
+#. module: cam
+#: model:cam.material.brand,name:cam.mb_isola
+msgid "Isola"
+msgstr "Isola"
+
+#. module: cam
+#: selection:cam.base.type,price_type:0
+#: selection:cam.ink.color,price_type:0
+#: selection:cam.ink.color.line,price_type:0
+#: selection:cam.layer.number.size,engineering_fee_type:0
+#: selection:cam.layer.number.size,etest_fee_type:0
+#: selection:cam.layer.number.size,film_fee_type:0
+#: selection:cam.layer.number.size,material_fee_type:0
+#: selection:cam.layer.number.size.type,engineering_fee_type:0
+#: selection:cam.layer.number.size.type,etest_fee_type:0
+#: selection:cam.layer.number.size.type,film_fee_type:0
+#: selection:cam.layer.number.size.type,material_fee_type:0
+#: selection:cam.material.brand,price_type:0
+#: selection:cam.special.material,price_type:0
+#: selection:cam.special.material.line,price_type:0
+#: selection:cam.special.process,price_type:0
+#: selection:cam.special.process.line,price_type:0
+#: selection:cam.surface.process,price_type:0
+#: selection:cam.surface.process.line,price_type:0
+#: selection:cam.via.process,price_type:0
+#: selection:cam.volume.level,price_type:0
+#: selection:create.ink.size.price,silk_screen_max_fee_type:0
+#: selection:create.ink.size.price,silk_screen_min_fee_type:0
+#: selection:create.ink.size.price,text_max_fee_type:0
+#: selection:create.ink.size.price,text_min_fee_type:0
+#: selection:create.layer.size.price,engineering_max_fee_type:0
+#: selection:create.layer.size.price,engineering_min_fee_type:0
+#: selection:create.layer.size.price,etest_max_fee_type:0
+#: selection:create.layer.size.price,etest_min_fee_type:0
+#: selection:create.layer.size.price,film_max_fee_type:0
+#: selection:create.layer.size.price,film_min_fee_type:0
+#: selection:create.layer.size.price,material_max_fee_type:0
+#: selection:create.layer.size.price,material_min_fee_type:0
+#: selection:create.special.material.size.price,max_fee_type:0
+#: selection:create.special.material.size.price,min_fee_type:0
+#: selection:create.special.process.size.price,max_fee_type:0
+#: selection:create.special.process.size.price,min_fee_type:0
+#: selection:create.surface.process.size.price,max_fee_type:0
+#: selection:create.surface.process.size.price,min_fee_type:0
+msgid "Item"
+msgstr "款"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_name
+msgid "Key"
+msgstr "键"
+
+#. module: cam
+#: selection:cam.layer.number.size,volume_type:0
+#: model:cam.volume.level,description:cam.cam_volume_level_large
+msgid "Large Volume"
+msgstr "大批量"
+
+#. module: cam
+#: selection:cam.layer.number.size,volume_type:0
+#: model:cam.volume.level,description:cam.cam_volume_level_type_larger
+msgid "Larger Volume"
+msgstr "超大批量"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_laser_steel_mesh_size_window
+#: model:ir.model,name:cam.model_cam_laser_steel_mesh_size
+#: model:ir.ui.menu,name:cam.menu_cam_steel_mesh_size
+#: model:ir.ui.view,arch_db:cam.cam_laser_steel_mesh_size_form
+#: model:ir.ui.view,arch_db:cam.cam_laser_steel_mesh_size_tree
+msgid "Laser steel mesh size"
+msgstr "激光钢网尺寸"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_acceptance_criteria___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_base_type___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_gold_finger___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_rogers_setting___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_root_number___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_special_material___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_line___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_special_process___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_line___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_steel_mesh_thickness___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_line___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_via_process___last_update
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level___last_update
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price___last_update
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price___last_update
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price___last_update
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price___last_update
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_acceptance_criteria_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_gold_finger_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_rogers_setting_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_root_number_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_line_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_line_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_steel_mesh_thickness_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_line_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_write_uid
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_write_uid
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_write_uid
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_write_uid
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_write_uid
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_write_uid
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_acceptance_criteria_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_gold_finger_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_rogers_setting_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_root_number_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_line_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_line_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_steel_mesh_thickness_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_line_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_write_date
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_write_date
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_write_date
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_write_date
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_write_date
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_write_date
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_layer_number
+#: model:ir.model.fields,field_description:cam.field_product_product_layer_number
+msgid "Layer Number"
+msgstr "层数"
+
+#. module: cam
+#: sql_constraint:cam.layer.number.size:0
+msgid "Layer size must be unique for every layer number!"
+msgstr "每个线路板层数中的最大面积必须保持其唯一性!"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/tour.js:24
+#, python-format
+msgid "Let's create a new quotation.<br/><i>Note that colored buttons usually points to the next logical actions in any screen.</i>"
+msgstr "让我们创建一个新的引文。<br/><i>请注意，彩色按钮通常指向任何屏幕中的下一个逻辑操作。</i>"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/tour.js:18
+#, python-format
+msgid "Let's have a look at the quotations of this sales team."
+msgstr "我们来看看这个销售团队的报价。"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_acceptance_criteria_cpo_level
+msgid "Level"
+msgstr "等级"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.inkqianlv
+msgid "Light green"
+msgstr "浅绿"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_limit_size
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_limit_size
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_limit_size
+msgid "Limit Size"
+msgstr "标准面积"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_material_limit_size
+msgid "Mateiral Limit Size"
+msgstr "材料标准面积"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_rogers_setting_material
+msgid "Material"
+msgstr "材料"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_material_brand_act
+#: model:ir.model,name:cam.model_cam_material_brand
+#: model:ir.ui.menu,name:cam.menu_cam_material_brand_act
+#: model:ir.ui.view,arch_db:cam.view_cam_material_brand_form
+#: model:ir.ui.view,arch_db:cam.view_cam_material_brand_tree
+msgid "Material Brand"
+msgstr "材料品牌"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_layer_size_price
+msgid "Material Fee Change Plan"
+msgstr "材料费变更计划"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_material_fee_type
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_material_fee_type
+msgid "Material Fee Type"
+msgstr "材料费类型"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_material_fee
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_material_fee
+msgid "Material Unit Price"
+msgstr "板材单价"
+
+#. module: cam
+#: selection:cam.ink.color,color_property:0
+msgid "Matte Ink"
+msgstr "哑色油墨"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_max_delay_hours
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_max_delay_hours
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_max_delay_hours
+msgid "Max Delay Hours"
+msgstr "正常交期(H)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_max_delay_change_class
+msgid "Max Delay Hours Change Class"
+msgstr "正常交期变更属性"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_max_delay_hours_compute
+msgid "Max Delay Hours Compute"
+msgstr "正常交期计算方式"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_max_inner_copper
+msgid "Max Inner Copper"
+msgstr "最大内层铜厚"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_max_outer_copper
+msgid "Max Outer Copper"
+msgstr "最大外层铜厚"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line_max_size
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_max_size
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_line_max_size
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_line_max_size
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_line_max_size
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_max_size
+msgid "Max Size"
+msgstr "最大面积"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_etest_max_fee
+msgid "Max Size ETest Fee"
+msgstr "测试费(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_etest_max_fee_class
+msgid "Max Size ETest Fee Class"
+msgstr "测试费属性(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_etest_max_fee_type
+msgid "Max Size ETest Fee Type"
+msgstr "测试费类型(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_engineering_max_fee
+msgid "Max Size Engineering Fee"
+msgstr "工程费(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_engineering_max_fee_class
+msgid "Max Size Engineering Fee Class"
+msgstr "工程费属性(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_engineering_max_fee_compute
+msgid "Max Size Engineering Fee Compute"
+msgstr "工程费计算方式(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_engineering_max_fee_type
+msgid "Max Size Engineering Fee Type"
+msgstr "工程费类型(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_etest_max_fee_compute
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_film_max_fee_compute
+msgid "Max Size Etest Fee Compute"
+msgstr "测试费计算方式(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_max_fee
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_max_fee
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_max_fee
+msgid "Max Size Fee"
+msgstr "费用(最大面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_silk_screen_max_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_text_max_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_engineering_max_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_etest_max_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_film_max_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_material_max_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_max_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_max_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_max_change_fee
+msgid "Max Size Fee Change Rate"
+msgstr "费用变更率(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_max_fee_class
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_max_fee_class
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_max_fee_class
+msgid "Max Size Fee Class"
+msgstr "费用类别(最大面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_max_fee_compute
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_max_fee_compute
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_max_fee_compute
+msgid "Max Size Fee Compute"
+msgstr "费用计算(最大面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_max_fee_type
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_max_fee_type
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_max_fee_type
+msgid "Max Size Fee Type"
+msgstr "费用类型(最大面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_film_max_fee
+msgid "Max Size Film Fee"
+msgstr "菲林费用(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_film_max_fee_class
+msgid "Max Size Film Fee Class"
+msgstr "菲林费属性(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_film_max_fee_type
+msgid "Max Size Film Fee Type"
+msgstr "菲林费类型(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_material_max_fee_class
+msgid "Max Size Material Fee Class"
+msgstr "材料费属性(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_material_max_fee_compute
+msgid "Max Size Material Fee Compute"
+msgstr "材料费计算方式(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_material_max_fee_type
+msgid "Max Size Material Fee Type"
+msgstr "材料费类型(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_material_max_fee
+msgid "Max Size Material Unit Price"
+msgstr "材料费(大于标准面积)"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.cam_layer_number_size_tree_view
+msgid "Max Size(㎡)"
+msgstr "最大面积(㎡)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_max_thickness
+msgid "Max Thickness"
+msgstr "最大板厚"
+
+#. module: cam
+#: selection:cam.layer.number.size,volume_type:0
+#: model:cam.volume.level,description:cam.cam_volume_level_medium
+msgid "Medium Volume"
+msgstr "中批量"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_acceptance_criteria_memo
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_memo
+#: model:ir.model.fields,field_description:cam.field_cam_gold_finger_memo
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_memo
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_memo
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_memo
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_memo
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_memo
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_memo
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_memo
+#: model:ir.ui.view,arch_db:cam.cam_acceptance_criteria_form
+#: model:ir.ui.view,arch_db:cam.cam_gold_finger_form
+#: model:ir.ui.view,arch_db:cam.view_cam_base_type_form
+#: model:ir.ui.view,arch_db:cam.view_cam_ink_color_form
+#: model:ir.ui.view,arch_db:cam.view_cam_layer_number_form
+#: model:ir.ui.view,arch_db:cam.view_cam_material_brand_form
+#: model:ir.ui.view,arch_db:cam.view_cam_special_material_form
+#: model:ir.ui.view,arch_db:cam.view_cam_special_process_form
+#: model:ir.ui.view,arch_db:cam.view_cam_surface_process_form
+#: model:ir.ui.view,arch_db:cam.view_cam_via_process_form
+msgid "Memo"
+msgstr "备忘录"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_min_delay_hours
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_min_delay_hours
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_min_delay_hours
+msgid "Min Delay Hours"
+msgstr "最快交期(H)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_min_delay_change_class
+msgid "Min Delay Hours Change Class"
+msgstr "最快交期价格属性"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_min_delay_hours_compute
+msgid "Min Delay Hours Compute"
+msgstr "最快交期计算方式"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_min_inner_copper
+msgid "Min Inner Copper"
+msgstr "最小内层铜厚"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_min_outer_copper
+msgid "Min Outer Copper"
+msgstr "最小外层铜厚"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_min_size
+msgid "Min Size"
+msgstr "最小面积"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_etest_min_fee
+msgid "Min Size ETest Fee"
+msgstr "测试费(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_etest_min_fee_class
+msgid "Min Size ETest Fee Class"
+msgstr "测试费属性(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_etest_min_fee_type
+msgid "Min Size ETest Fee Type"
+msgstr "测试费类型(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_engineering_min_fee
+msgid "Min Size Engineering Fee"
+msgstr "工程费(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_engineering_min_fee_class
+msgid "Min Size Engineering Fee Class"
+msgstr "工程费属性(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_engineering_min_fee_compute
+msgid "Min Size Engineering Fee Compute"
+msgstr "工程费计算方式(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_engineering_min_fee_type
+msgid "Min Size Engineering Fee Type"
+msgstr "工程费类型(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_etest_min_fee_compute
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_film_min_fee_compute
+msgid "Min Size Etest Fee Compute"
+msgstr "电测费计算方式(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_min_fee
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_min_fee
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_min_fee
+msgid "Min Size Fee"
+msgstr "费用(最小面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_silk_screen_min_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_text_min_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_engineering_min_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_etest_min_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_film_min_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_material_min_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_min_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_min_change_fee
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_min_change_fee
+msgid "Min Size Fee Change Rate"
+msgstr "费用变更率(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_min_fee_class
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_min_fee_class
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_min_fee_class
+msgid "Min Size Fee Class"
+msgstr "费用类别(最小面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_min_fee_compute
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_min_fee_compute
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_min_fee_compute
+msgid "Min Size Fee Compute"
+msgstr "费用计算(最小面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_min_fee_type
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_min_fee_type
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_min_fee_type
+msgid "Min Size Fee Type"
+msgstr "费用类型(最小面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_film_min_fee
+msgid "Min Size Film Fee"
+msgstr "菲林费用(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_film_min_fee_class
+msgid "Min Size Film Fee Class"
+msgstr "菲林费属性(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_film_min_fee_type
+msgid "Min Size Film Fee Type"
+msgstr "菲林费类型(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_material_min_fee
+msgid "Min Size Material Fee"
+msgstr "材料费(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_material_min_fee_class
+msgid "Min Size Material Fee Class"
+msgstr "材料费属性(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_material_min_fee_compute
+msgid "Min Size Material Fee Compute"
+msgstr "材料费计算方式(小于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_material_min_fee_type
+msgid "Min Size Material Fee Type"
+msgstr "材料费类型(大于标准面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_min_thickness
+msgid "Min Thickness"
+msgstr "最小板厚"
+
+#. module: cam
+#: model:cam.material.brand,name:cam.mb_nanya
+msgid "NANYA"
+msgstr "NANYA"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_name
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_name
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_name
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_name
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_name
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_name
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_name
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_name
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_description
+msgid "Name"
+msgstr "名称"
+
+#. module: cam
+#: model:cam.material.brand,name:cam.mb_nelco
+msgid "Nelco"
+msgstr "Nelco"
+
+#. module: cam
+#: model:cam.surface.process,name:cam.process_Nickel
+msgid "Nickel palladium gold"
+msgstr "镍钯金"
+
+#. module: cam
+#: code:addons/cam/wizard/create_layer_size_price.py:117
+#, python-format
+msgid "No Layer Number can be use to copy to current layer number."
+msgstr "无图层编号可用于复制到当前图层编号。"
+
+#. module: cam
+#: code:addons/cam/wizard/create_special_process_size_price.py:65
+#, python-format
+msgid "No Special Process can be use to copy to current Special Process."
+msgstr "无需特殊处理即可复制到当前的特殊流程。"
+
+#. module: cam
+#: code:addons/cam/wizard/create_special_material_size_price.py:61
+#: code:addons/cam/wizard/create_surface_process_size_price.py:60
+#, python-format
+msgid "No Surface Process can be use to copy to current Ink Color."
+msgstr "无表面处理可用于复制到当前墨水颜色。"
+
+#. module: cam
+#: selection:cam.ink.color,color_property:0
+msgid "Normal Ink"
+msgstr "通用油墨"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_note
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_note
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_note
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_note
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_note
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_note
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_note
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_note
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_note
+msgid "Note"
+msgstr "备注"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_cam_base_type_form
+#: model:ir.ui.view,arch_db:cam.view_cam_ink_color_form
+#: model:ir.ui.view,arch_db:cam.view_cam_layer_number_form
+#: model:ir.ui.view,arch_db:cam.view_cam_material_brand_form
+#: model:ir.ui.view,arch_db:cam.view_cam_special_material_form
+#: model:ir.ui.view,arch_db:cam.view_cam_special_process_form
+#: model:ir.ui.view,arch_db:cam.view_cam_surface_process_form
+#: model:ir.ui.view,arch_db:cam.view_cam_via_process_form
+#: model:ir.ui.view,arch_db:cam.view_cam_volume_level_form
+msgid "Notices"
+msgstr "提示信息"
+
+#. module: cam
+#: model:cam.surface.process,name:cam.surface_osp
+msgid "OSP"
+msgstr "OSP"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/tour.js:59
+#, python-format
+msgid "Once your quotation is ready, you can save, print or send it by email."
+msgstr "报价准备好后，您可以通过电子邮件保存，打印或发送."
+
+#. module: cam
+#: model:cam.layer.number,name:cam.layer_number_01
+#: model:product.product,name:cam.product_product_pcb_1
+#: model:product.template,name:cam.product_product_pcb_1_product_template
+msgid "One Layer PCB"
+msgstr "单面板"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/sale.js:26
+#, python-format
+msgid "Only Integer Value should be valid."
+msgstr "只有整数值才有效。."
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/tour.js:13
+#, python-format
+msgid "Organize your sales activities with the <b>Sales app</b>."
+msgstr "Organize your sales activities with the <b>Sales app</b>."
+
+#. module: cam
+#: model:product.category,name:cam.product_category_pcb
+msgid "PCB"
+msgstr "PCB"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_layer_number_act
+#: model:ir.model,name:cam.model_cam_layer_number
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_layer_id
+#: model:ir.ui.menu,name:cam.menu_cam_layer_number_act
+#: model:ir.ui.view,arch_db:cam.view_cam_layer_number_form
+#: model:ir.ui.view,arch_db:cam.view_cam_layer_number_tree
+msgid "PCB Layer Number"
+msgstr "层数"
+
+#. module: cam
+#: model:ir.model,name:cam.model_cam_layer_number_size
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_ids
+#: model:ir.ui.view,arch_db:cam.view_cam_layer_number_form
+msgid "PCB Layer Size Price"
+msgstr "各种层数不同批量价格表"
+
+#. module: cam
+#: selection:cam.base.type,price_type:0
+#: selection:cam.ink.color,price_type:0
+#: selection:cam.ink.color.line,price_type:0
+#: selection:cam.layer.number.size,engineering_fee_type:0
+#: selection:cam.layer.number.size,etest_fee_type:0
+#: selection:cam.layer.number.size,film_fee_type:0
+#: selection:cam.layer.number.size,material_fee_type:0
+#: selection:cam.layer.number.size.type,engineering_fee_type:0
+#: selection:cam.layer.number.size.type,etest_fee_type:0
+#: selection:cam.layer.number.size.type,film_fee_type:0
+#: selection:cam.layer.number.size.type,material_fee_type:0
+#: selection:cam.material.brand,price_type:0
+#: selection:cam.special.material,price_type:0
+#: selection:cam.special.material.line,price_type:0
+#: selection:cam.special.process,price_type:0
+#: selection:cam.special.process.line,price_type:0
+#: selection:cam.surface.process,price_type:0
+#: selection:cam.surface.process.line,price_type:0
+#: selection:cam.via.process,price_type:0
+#: selection:cam.volume.level,price_type:0
+#: selection:create.ink.size.price,silk_screen_max_fee_type:0
+#: selection:create.ink.size.price,silk_screen_min_fee_type:0
+#: selection:create.ink.size.price,text_max_fee_type:0
+#: selection:create.ink.size.price,text_min_fee_type:0
+#: selection:create.layer.size.price,engineering_max_fee_type:0
+#: selection:create.layer.size.price,engineering_min_fee_type:0
+#: selection:create.layer.size.price,etest_max_fee_type:0
+#: selection:create.layer.size.price,etest_min_fee_type:0
+#: selection:create.layer.size.price,film_max_fee_type:0
+#: selection:create.layer.size.price,film_min_fee_type:0
+#: selection:create.layer.size.price,material_max_fee_type:0
+#: selection:create.layer.size.price,material_min_fee_type:0
+#: selection:create.special.material.size.price,max_fee_type:0
+#: selection:create.special.material.size.price,min_fee_type:0
+#: selection:create.special.process.size.price,max_fee_type:0
+#: selection:create.special.process.size.price,min_fee_type:0
+#: selection:create.surface.process.size.price,max_fee_type:0
+#: selection:create.surface.process.size.price,min_fee_type:0
+#: model:product.uom,name:cam.product_uom_pcs
+msgid "PCS"
+msgstr "PCS"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_pp
+msgid "PP Brand"
+msgstr "PP"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_parent_id
+msgid "Parent Types"
+msgstr "父类型"
+
+#. module: cam
+#: model:cam.special.material,name:cam.sm_peelable_mask
+msgid "Peelable Mask"
+msgstr "蓝胶"
+
+#. module: cam
+#: model:cam.via.process,name:cam.va_plugged_vias
+msgid "Plugged Vias"
+msgstr "塞孔"
+
+#. module: cam
+#: model:cam.special.process,name:cam.Press_fit_hole
+msgid "Press-fit"
+msgstr "压接孔"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_price
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line_price
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_price
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_price
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_line_price
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_price
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_line_price
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_price
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_line_price
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_price
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_price
+msgid "Price"
+msgstr "价格"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_price_class
+msgid "Price Class"
+msgstr "价格属性"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_layer_size_id
+#: model:ir.ui.view,arch_db:cam.cam_layer_number_size_form_view
+#: model:ir.ui.view,arch_db:cam.cam_layer_number_size_tree_view
+msgid "Price List of Board Size"
+msgstr "各面积板材价格表"
+
+#. module: cam
+#: model:ir.model,name:cam.model_cam_layer_number_size_type
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_item_ids
+#: model:ir.ui.view,arch_db:cam.cam_layer_number_size_form_view
+#: model:ir.ui.view,arch_db:cam.cam_layer_number_size_type_form_view
+#: model:ir.ui.view,arch_db:cam.cam_layer_number_size_type_view
+msgid "Price List of Copper Base"
+msgstr "基材价格表"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_price_type
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_line_price_type
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_price_type
+#: model:ir.model.fields,field_description:cam.field_cam_material_brand_price_type
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_line_price_type
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_price_type
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_line_price_type
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_price_type
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_line_price_type
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_price_type
+#: model:ir.model.fields,field_description:cam.field_cam_via_process_price_type
+#: model:ir.model.fields,field_description:cam.field_cam_volume_level_price_type
+msgid "Price Type"
+msgstr "价格类型"
+
+#. module: cam
+#: model:ir.model,name:cam.model_product_product
+msgid "Product"
+msgstr "产品"
+
+#. module: cam
+#: model:ir.ui.menu,name:cam.menu_cam_root
+msgid "Product Data Setting"
+msgstr "产品资料设置"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_product_ids
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_product_ids
+msgid "Product IDS"
+msgstr "产品标识"
+
+#. module: cam
+#: model:ir.model,name:cam.model_product_template
+msgid "Product Template"
+msgstr "产品模板"
+
+#. module: cam
+#: selection:cam.layer.number.size,volume_type:0
+#: model:cam.volume.level,description:cam.cam_volume_level_prototype
+msgid "Prototype"
+msgstr "样板"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.inkPurple
+msgid "Purple"
+msgstr "紫色"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_quick_fee_change_class
+msgid "Quick Fee Change Class"
+msgstr "加急费变更属性"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_quick_fee_compute
+msgid "Quick Fee Compute"
+msgstr "测试费计算方式"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_quick_fee
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_quick_fee
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_quick_fee
+msgid "Quick Fee(%)"
+msgstr "加急费用(%)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_quick_time_change_class
+msgid "Quick Time Change Class"
+msgstr "加急时间变更属性"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_quick_time_compute
+msgid "Quick Time Compute"
+msgstr "加急时间计算方式"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_quick_time
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_type_quick_time
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_quick_time
+msgid "Quick Time(H)"
+msgstr "加急时间(H)"
+
+#. module: cam
+#: model:cam.material.brand,name:cam.mb_rogers
+msgid "ROGERS"
+msgstr "ROGERS"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_rohs
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_rohs
+msgid "ROHS"
+msgstr "ROHS"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.color_red_normal
+msgid "Red"
+msgstr "红色"
+
+#. module: cam
+#: model:ir.model,name:cam.model_cam_root_number
+#: model:ir.model.fields,field_description:cam.field_cam_gold_finger_cam_root_number_id
+msgid "Root Number"
+msgstr "根数"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_root_number_action_window
+#: model:ir.ui.menu,name:cam.menu_cam_root_number
+msgid "Root Number Window"
+msgstr "根数"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_root_number_cpo_root_number
+#: model:ir.ui.view,arch_db:cam.cam_gold_finger_form
+#: model:ir.ui.view,arch_db:cam.cam_root_number_form
+#: model:ir.ui.view,arch_db:cam.cam_root_number_tree
+msgid "Root number"
+msgstr "根数"
+
+#. module: cam
+#: selection:cam.base.type,price_type:0
+#: selection:cam.ink.color,price_type:0
+#: selection:cam.ink.color.line,price_type:0
+#: selection:cam.layer.number.size,engineering_fee_type:0
+#: selection:cam.layer.number.size,etest_fee_type:0
+#: selection:cam.layer.number.size,film_fee_type:0
+#: selection:cam.layer.number.size,material_fee_type:0
+#: selection:cam.layer.number.size.type,engineering_fee_type:0
+#: selection:cam.layer.number.size.type,etest_fee_type:0
+#: selection:cam.layer.number.size.type,film_fee_type:0
+#: selection:cam.layer.number.size.type,material_fee_type:0
+#: selection:cam.material.brand,price_type:0
+#: selection:cam.special.material,price_type:0
+#: selection:cam.special.material.line,price_type:0
+#: selection:cam.special.process,price_type:0
+#: selection:cam.special.process.line,price_type:0
+#: selection:cam.surface.process,price_type:0
+#: selection:cam.surface.process.line,price_type:0
+#: selection:cam.via.process,price_type:0
+#: selection:cam.volume.level,price_type:0
+#: selection:create.ink.size.price,silk_screen_max_fee_type:0
+#: selection:create.ink.size.price,silk_screen_min_fee_type:0
+#: selection:create.ink.size.price,text_max_fee_type:0
+#: selection:create.ink.size.price,text_min_fee_type:0
+#: selection:create.layer.size.price,engineering_max_fee_type:0
+#: selection:create.layer.size.price,engineering_min_fee_type:0
+#: selection:create.layer.size.price,etest_max_fee_type:0
+#: selection:create.layer.size.price,etest_min_fee_type:0
+#: selection:create.layer.size.price,film_max_fee_type:0
+#: selection:create.layer.size.price,film_min_fee_type:0
+#: selection:create.layer.size.price,material_max_fee_type:0
+#: selection:create.layer.size.price,material_min_fee_type:0
+#: selection:create.special.material.size.price,max_fee_type:0
+#: selection:create.special.material.size.price,min_fee_type:0
+#: selection:create.special.process.size.price,max_fee_type:0
+#: selection:create.special.process.size.price,min_fee_type:0
+#: selection:create.surface.process.size.price,max_fee_type:0
+#: selection:create.surface.process.size.price,min_fee_type:0
+#: model:product.uom,name:cam.product_uom_set
+msgid "SET"
+msgstr "SET"
+
+#. module: cam
+#: model:cam.material.brand,name:cam.mb_shengyi
+msgid "SHENG YI"
+msgstr "生益"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/tour.js:44
+#, python-format
+msgid "Select a product, or create a new one on the fly. The product will define the default sale price (that you can change), taxes and description automatically."
+msgstr "选择产品，或即时创建新产品。 产品将自动定义默认销售价格（您可以更改），税金和说明。"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/sale.js:19
+#, python-format
+msgid "Set an invoicing target: "
+msgstr "设置发票目标："
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_silk_screen_limit_size
+msgid "Silk Screen Limit Size"
+msgstr "阻焊标准面积"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_silk_screen_max_fee
+msgid "Silk Screen Max Size Fee"
+msgstr "阻焊费用(最大面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_silk_screen_max_fee_class
+msgid "Silk Screen Max Size Fee Class"
+msgstr "阻焊费用类别(最大面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_silk_screen_max_fee_compute
+msgid "Silk Screen Max Size Fee Compute"
+msgstr "阻焊费用计算(最大面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_silk_screen_max_fee_type
+msgid "Silk Screen Max Size Fee Type"
+msgstr "阻焊费用类型(最大面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_silk_screen_min_fee
+msgid "Silk Screen Min Size Fee"
+msgstr "阻焊颜色费用(最小面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_silk_screen_min_fee_class
+msgid "Silk Screen Min Size Fee Class"
+msgstr "阻焊费用类型(最小面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_silk_screen_min_fee_compute
+msgid "Silk Screen Min Size Fee Compute"
+msgstr "阻焊费用计算(最小面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_silk_screen_min_fee_type
+msgid "Silk Screen Min Size Fee Type"
+msgstr "阻焊费用类型(最小面积)"
+
+#. module: cam
+#: selection:cam.ink.color.line,ink_type:0
+msgid "Silk screen Ink"
+msgstr "丝印油墨"
+
+#. module: cam
+#: model:ir.actions.act_window,help:cam.cam_ink_color_act
+msgid "Silkscreen ink color or Text ink color,you can create it at here."
+msgstr "丝网油墨颜色或文字油墨颜色，您可以在这里创建。"
+
+#. module: cam
+#: model:cam.layer.number,name:cam.layer_number_06
+#: model:product.product,name:cam.product_product_pcb_6
+#: model:product.template,name:cam.product_product_pcb_6_product_template
+msgid "Six Layers PCB"
+msgstr "六层板"
+
+#. module: cam
+#: model:cam.layer.number,name:cam.layer_number_16
+#: model:product.product,name:cam.product_product_pcb_16
+#: model:product.template,name:cam.product_product_pcb_16_product_template
+msgid "Sixteen Layers PCB"
+msgstr "十六层板"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.cam_laser_steel_mesh_size_form
+msgid "Size and effective area"
+msgstr "尺寸和有效面积"
+
+#. module: cam
+#: selection:cam.base.type,price_type:0
+#: selection:cam.ink.color,price_type:0
+#: selection:cam.ink.color.line,price_type:0
+#: selection:cam.layer.number.size,engineering_fee_type:0
+#: selection:cam.layer.number.size,etest_fee_type:0
+#: selection:cam.layer.number.size,film_fee_type:0
+#: selection:cam.layer.number.size,material_fee_type:0
+#: selection:cam.layer.number.size.type,engineering_fee_type:0
+#: selection:cam.layer.number.size.type,etest_fee_type:0
+#: selection:cam.layer.number.size.type,film_fee_type:0
+#: selection:cam.layer.number.size.type,material_fee_type:0
+#: selection:cam.material.brand,price_type:0
+#: selection:cam.special.material,price_type:0
+#: selection:cam.special.material.line,price_type:0
+#: selection:cam.special.process,price_type:0
+#: selection:cam.special.process.line,price_type:0
+#: selection:cam.surface.process,price_type:0
+#: selection:cam.surface.process.line,price_type:0
+#: selection:cam.via.process,price_type:0
+#: selection:cam.volume.level,price_type:0
+#: selection:create.ink.size.price,silk_screen_max_fee_type:0
+#: selection:create.ink.size.price,silk_screen_min_fee_type:0
+#: selection:create.ink.size.price,text_max_fee_type:0
+#: selection:create.ink.size.price,text_min_fee_type:0
+#: selection:create.layer.size.price,engineering_max_fee_type:0
+#: selection:create.layer.size.price,engineering_min_fee_type:0
+#: selection:create.layer.size.price,etest_max_fee_type:0
+#: selection:create.layer.size.price,etest_min_fee_type:0
+#: selection:create.layer.size.price,film_max_fee_type:0
+#: selection:create.layer.size.price,film_min_fee_type:0
+#: selection:create.layer.size.price,material_max_fee_type:0
+#: selection:create.layer.size.price,material_min_fee_type:0
+#: selection:create.special.material.size.price,max_fee_type:0
+#: selection:create.special.material.size.price,min_fee_type:0
+#: selection:create.special.process.size.price,max_fee_type:0
+#: selection:create.special.process.size.price,min_fee_type:0
+#: selection:create.surface.process.size.price,max_fee_type:0
+#: selection:create.surface.process.size.price,min_fee_type:0
+msgid "Size(cm²)"
+msgstr "面积(cm²)"
+
+#. module: cam
+#: selection:cam.base.type,price_type:0
+#: selection:cam.ink.color,price_type:0
+#: selection:cam.ink.color.line,price_type:0
+#: selection:cam.layer.number.size,engineering_fee_type:0
+#: selection:cam.layer.number.size,etest_fee_type:0
+#: selection:cam.layer.number.size,film_fee_type:0
+#: selection:cam.layer.number.size,material_fee_type:0
+#: selection:cam.layer.number.size.type,engineering_fee_type:0
+#: selection:cam.layer.number.size.type,etest_fee_type:0
+#: selection:cam.layer.number.size.type,film_fee_type:0
+#: selection:cam.layer.number.size.type,material_fee_type:0
+#: selection:cam.material.brand,price_type:0
+#: selection:cam.special.material,price_type:0
+#: selection:cam.special.material.line,price_type:0
+#: selection:cam.special.process,price_type:0
+#: selection:cam.special.process.line,price_type:0
+#: selection:cam.surface.process,price_type:0
+#: selection:cam.surface.process.line,price_type:0
+#: selection:cam.via.process,price_type:0
+#: selection:cam.volume.level,price_type:0
+#: selection:create.ink.size.price,silk_screen_max_fee_type:0
+#: selection:create.ink.size.price,silk_screen_min_fee_type:0
+#: selection:create.ink.size.price,text_max_fee_type:0
+#: selection:create.ink.size.price,text_min_fee_type:0
+#: selection:create.layer.size.price,engineering_max_fee_type:0
+#: selection:create.layer.size.price,engineering_min_fee_type:0
+#: selection:create.layer.size.price,etest_max_fee_type:0
+#: selection:create.layer.size.price,etest_min_fee_type:0
+#: selection:create.layer.size.price,film_max_fee_type:0
+#: selection:create.layer.size.price,film_min_fee_type:0
+#: selection:create.layer.size.price,material_max_fee_type:0
+#: selection:create.layer.size.price,material_min_fee_type:0
+#: selection:create.special.material.size.price,max_fee_type:0
+#: selection:create.special.material.size.price,min_fee_type:0
+#: selection:create.special.process.size.price,max_fee_type:0
+#: selection:create.special.process.size.price,min_fee_type:0
+#: selection:create.surface.process.size.price,max_fee_type:0
+#: selection:create.surface.process.size.price,min_fee_type:0
+msgid "Size(㎡)"
+msgstr "面积(㎡)"
+
+#. module: cam
+#: selection:cam.layer.number.size,volume_type:0
+#: model:cam.volume.level,description:cam.cam_volume_level_small
+msgid "Small Volume"
+msgstr "小批量"
+
+#. module: cam
+#: model:cam.via.process,name:cam.va_solder_mask_opening
+msgid "Solder Mask Openning"
+msgstr "开窗"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_source_ink_color_id
+msgid "Source Ink Color"
+msgstr "源油墨颜色"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_source_layer_id
+msgid "Source PCB Layer Number"
+msgstr "源层数"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_source_special_material_id
+msgid "Source Special Material"
+msgstr "源特殊材料"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_source_special_process_id
+msgid "Source Special Process"
+msgstr "源特殊工艺"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_source_surface_process_id
+msgid "Source Surface Process"
+msgstr "源表面工艺"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_special_material_act
+#: model:ir.model,name:cam.model_cam_special_material
+#: model:ir.model.fields,field_description:cam.field_cam_special_material_line_special_material_id
+#: model:ir.ui.menu,name:cam.menu_cam_special_material_act
+#: model:ir.ui.view,arch_db:cam.view_cam_special_material_tree
+msgid "Special Material"
+msgstr "特殊材料"
+
+#. module: cam
+#: model:ir.model,name:cam.model_cam_special_material_line
+msgid "Special Material Line"
+msgstr "特殊材料行"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_special_process_act
+#: model:ir.model,name:cam.model_cam_special_process
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_line_special_process_id
+#: model:ir.ui.menu,name:cam.menu_cam_special_process_act
+#: model:ir.ui.view,arch_db:cam.view_cam_special_material_form
+#: model:ir.ui.view,arch_db:cam.view_cam_special_process_form
+#: model:ir.ui.view,arch_db:cam.view_cam_special_process_tree
+msgid "Special Process"
+msgstr "特殊工艺"
+
+#. module: cam
+#: model:ir.model,name:cam.model_cam_special_process_line
+msgid "Special Process Line"
+msgstr "特殊工艺行"
+
+#. module: cam
+#: sql_constraint:cam.special.material.line:0
+msgid "Special material and max size must be unique for every special material!"
+msgstr "在每种特殊材料中必须保持最大面积唯一性!"
+
+#. module: cam
+#: sql_constraint:cam.special.process.line:0
+msgid "Special process and max size must be unique for every special process!"
+msgstr "每个特殊工艺中的最大面积必须保持其唯一性!"
+
+#. module: cam
+#: model:ir.ui.menu,name:cam.menu_cam_steel_mesh_2
+msgid "Steel mesh size thickness"
+msgstr "钢网尺寸厚度"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_stencil_size_1
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_stencil_size_2
+msgid "Steel mesh size/MM"
+msgstr "钢网尺寸/MM"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.cam_laser_steel_mesh_size_form
+msgid "Steel mesh specification/MM"
+msgstr "钢网规格/MM"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_steel_mesh_thickness_window
+#: model:ir.model,name:cam.model_cam_steel_mesh_thickness
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_steel_mesh_thickness_id
+#: model:ir.ui.menu,name:cam.menu_cam_steel_mesh_thickness
+#: model:ir.ui.view,arch_db:cam.cam_steel_mesh_thickness_tree
+msgid "Steel mesh thickness"
+msgstr "钢网厚度"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.cam_laser_steel_mesh_size_form
+msgid "Steel mesh thickness selection/MM"
+msgstr "钢网厚度选择/MM"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_steel_mesh_thickness_name
+msgid "Steel mesh thickness/MM"
+msgstr "钢网厚度/MM"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_product_product_stencil_id
+#: model:product.category,name:cam.product_category_Stencil
+#: model:product.product,name:cam.cpo_product_template_Stencil
+#: model:product.template,name:cam.cpo_product_template_Stencil_product_template
+msgid "Stencil"
+msgstr "Stencil"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_surface_process_act
+#: model:ir.model,name:cam.model_cam_surface_process
+#: model:ir.model.fields,field_description:cam.field_cam_surface_process_line_surface_process_id
+#: model:ir.ui.menu,name:cam.menu_cam_surface_process_act
+#: model:ir.ui.view,arch_db:cam.view_cam_surface_process_form
+#: model:ir.ui.view,arch_db:cam.view_cam_surface_process_tree
+msgid "Surface Process"
+msgstr "表面工艺"
+
+#. module: cam
+#: model:ir.model,name:cam.model_cam_surface_process_line
+msgid "Surface Process Line"
+msgstr "表面工艺行"
+
+#. module: cam
+#: sql_constraint:cam.surface.process.line:0
+msgid "Surface process and max size must be unique for every surface process!"
+msgstr "在每种表面工艺中最大面积必须保持其唯一性!"
+
+#. module: cam
+#: model:cam.material.brand,name:cam.mb_taiyo
+msgid "TAIYO"
+msgstr "太阳"
+
+#. module: cam
+#: model:cam.material.brand,name:cam.mb_taconic
+msgid "Taconic"
+msgstr "Taconic"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_ink_color_id
+msgid "Target Ink Color"
+msgstr "目标阻焊"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_ink_size_price
+msgid "Target Ink Color:"
+msgstr "目标油墨颜色:"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_layer_size_price_layer_id
+msgid "Target PCB Layer Number"
+msgstr "目标层数"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_layer_size_price
+msgid "Target PCB Layer Number:"
+msgstr "目标层数:"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_material_size_price_special_material_id
+msgid "Target Special Material"
+msgstr "目标特殊材料"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_special_material_size_price
+msgid "Target Special Material:"
+msgstr "目标特殊材料:"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_special_process_size_price_special_process_id
+msgid "Target Special Process"
+msgstr "目标特殊工艺"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_special_process_size_price
+msgid "Target Special Process:"
+msgstr "目标特殊工艺:"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_surface_process_size_price_surface_process_id
+msgid "Target Surface Process"
+msgstr "目标表面工艺"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_surface_process_size_price
+msgid "Target Surface Process:"
+msgstr "目标表面工艺:"
+
+#. module: cam
+#: model:cam.layer.number,name:cam.layer_number_10
+#: model:product.product,name:cam.product_product_pcb_10
+#: model:product.template,name:cam.product_product_pcb_10_product_template
+msgid "Ten Layers PCB"
+msgstr "十层板"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_text_limit_size
+msgid "Text Color Limit Size"
+msgstr "文字标准面积"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_text_max_fee
+msgid "Text Color Max Size Fee"
+msgstr "文字费用(最大面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_text_max_fee_class
+msgid "Text Color Max Size Fee Class"
+msgstr "文字费用类别(最大面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_text_max_fee_compute
+msgid "Text Color Max Size Fee Compute"
+msgstr "文字费用计算(最大面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_text_max_fee_type
+msgid "Text Color Max Size Fee Type"
+msgstr "文字费用类型(最大面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_text_min_fee
+msgid "Text Color Min Size Fee"
+msgstr "文字费用(最小面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_text_min_fee_class
+msgid "Text Color Min Size Fee Class"
+msgstr "文字费用类别(最小面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_text_min_fee_compute
+msgid "Text Color Min Size Fee Compute"
+msgstr "文字费用计算(最小面积)"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_create_ink_size_price_text_min_fee_type
+msgid "Text Color Min Size Fee Type"
+msgstr "文字费用类型(小最面积)"
+
+#. module: cam
+#: selection:cam.ink.color.line,ink_type:0
+msgid "Text Ink"
+msgstr "文字油墨"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_base_type_tg_value
+msgid "Tg Value"
+msgstr "Tg值"
+
+#. module: cam
+#: model:ir.model.fields,help:cam.field_cam_layer_number_size_max_delay_hours
+#: model:ir.model.fields,help:cam.field_cam_layer_number_size_type_max_delay_hours
+#: model:ir.model.fields,help:cam.field_create_layer_size_price_max_delay_hours
+msgid "This is the max delay in days between the sales order confirmation and the  reception of goods for this PCB and for the customer. It is used by the scheduler to order requests based on reordering delays."
+msgstr "正常交期是指客户确认订单到客户收到线路板的工厂正常生产和投递时间(也就是不加急的情况下)。工厂生产安排也根据此日期来进行生产安排。"
+
+#. module: cam
+#: model:ir.model.fields,help:cam.field_cam_layer_number_size_min_delay_hours
+#: model:ir.model.fields,help:cam.field_cam_layer_number_size_type_min_delay_hours
+#: model:ir.model.fields,help:cam.field_create_layer_size_price_min_delay_hours
+msgid "This is the min delay in days between the sales order confirmation and the  reception of goods for this PCB and for the customer. It is used by the scheduler to order requests based on reordering delays."
+msgstr "最快交期是指客户确认订单与客户收到线路板的最快时间。最快交付日期通过被用于系统安排生产的依据。"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_special_process_cpo_boolean
+msgid "This process is relatively complicated"
+msgstr "这个过程相对复杂"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_silk_screen
+msgid "To Silk screen"
+msgstr "阻焊油墨"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_ink_color_text
+msgid "To Text"
+msgstr "文字油墨"
+
+#. module: cam
+#: selection:cam.ink.color,color_property:0
+msgid "Transparent Ink"
+msgstr "透明油墨"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.inkTranslucent
+msgid "Transparent oil"
+msgstr "透明油"
+
+#. module: cam
+#: model:cam.layer.number,name:cam.layer_number_12
+#: model:product.product,name:cam.product_product_pcb_12
+#: model:product.template,name:cam.product_product_pcb_12_product_template
+msgid "Twelve Layers PCB"
+msgstr "十二层板"
+
+#. module: cam
+#: model:cam.layer.number,name:cam.layer_number_20
+#: model:product.product,name:cam.product_product_pcb_20
+#: model:product.template,name:cam.product_product_pcb_20_product_template
+msgid "Twenty Layers PCB"
+msgstr "二十层板"
+
+#. module: cam
+#: model:cam.layer.number,name:cam.layer_number_02
+#: model:product.product,name:cam.product_product_pcb_2
+#: model:product.template,name:cam.product_product_pcb_2_product_template
+msgid "Two Layers PCB"
+msgstr "双面板"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/tour.js:69
+#, python-format
+msgid "Use the breadcrumbs to <b>go back to preceeding screens</b>."
+msgstr "Use the breadcrumbs to <b>go back to preceeding screens</b>."
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/tour.js:73
+#, python-format
+msgid "Use this menu to access quotations, sales orders and customers."
+msgstr "使用此菜单可访问报价单，销售订单和客户。"
+
+#. module: cam
+#: model:cam.special.process,name:cam.sf_via_in_pad
+msgid "Via In PAD"
+msgstr "盘中孔"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_via_process_act
+#: model:ir.model,name:cam.model_cam_via_process
+#: model:ir.ui.menu,name:cam.menu_cam_via_process_act
+#: model:ir.ui.view,arch_db:cam.view_cam_via_process_form
+#: model:ir.ui.view,arch_db:cam.view_cam_via_process_tree
+msgid "Via Process"
+msgstr "过孔工艺"
+
+#. module: cam
+#: model:cam.via.process,name:cam.va_vias_covered_solder_mask
+msgid "Vias Covered by Solder Mask"
+msgstr "覆盖"
+
+#. module: cam
+#: model:ir.actions.act_window,name:cam.cam_volume_level_act
+#: model:ir.model,name:cam.model_cam_volume_level
+#: model:ir.ui.menu,name:cam.menu_cam_volume_level_act
+#: model:ir.ui.view,arch_db:cam.view_cam_volume_level_form
+#: model:ir.ui.view,arch_db:cam.view_cam_volume_level_tree
+msgid "Volume Level"
+msgstr "批量级别"
+
+#. module: cam
+#: sql_constraint:cam.volume.level:0
+msgid "Volume Level and pcb size must be unique in volume level config file"
+msgstr "批量等级与线路板面积必须保持唯一性!"
+
+#. module: cam
+#: sql_constraint:cam.volume.level:0
+msgid "Volume Level key must be unique"
+msgstr "批量级别Key必须确保其唯一性!"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_layer_number_size_volume_type
+msgid "Volume Type"
+msgstr "批量类型"
+
+#. module: cam
+#: code:addons/cam/wizard/create_special_process_size_price.py:65
+#, python-format
+msgid "Warning!"
+msgstr "Warning!"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.color_white_normal
+msgid "White"
+msgstr "白色"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/tour.js:29
+#, python-format
+msgid "Write the name of your customer to create one on the fly, or select an existing one."
+msgstr "写下您的客户名称以即时创建一个，或选择一个现有的名称。"
+
+#. module: cam
+#. openerp-web
+#: code:addons/cam/static/src/js/sale.js:26
+#, python-format
+msgid "Wrong value entered!"
+msgstr "输入了错误的值！"
+
+#. module: cam
+#: model:cam.ink.color,name:cam.color_yellow_normal
+msgid "Yellow"
+msgstr "黄色"
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_gold_finger_cpo_gole_thickness
+msgid "gole thickness/μ\""
+msgstr "金厚/μ\""
+
+#. module: cam
+#: model:ir.model.fields,field_description:cam.field_cam_acceptance_criteria_name
+#: model:ir.model.fields,field_description:cam.field_cam_gold_finger_name
+#: model:ir.model.fields,field_description:cam.field_cam_laser_steel_mesh_size_name
+#: model:ir.model.fields,field_description:cam.field_cam_root_number_name
+msgid "name"
+msgstr "名称"
+
+#. module: cam
+#: model:ir.ui.view,arch_db:cam.view_create_ink_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_layer_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_special_material_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_special_process_size_price
+#: model:ir.ui.view,arch_db:cam.view_create_surface_process_size_price
+msgid "or"
+msgstr "或"
+
+#. module: cam
+#: model:res.groups,comment:cam.group_cam_assistant
+msgid "the user will have access to his own CAM infomation in the CAM application."
+msgstr "此类用户将只能接近他自己创建的工程预审申请单。"
+
+#. module: cam
+#: model:res.groups,comment:cam.group_cam_engineer
+msgid "the user will have access to his own data in the sales application."
+msgstr "在销售应用，用户只能访问自己的数据"
+
+#. module: cam
+#: model:res.groups,comment:cam.group_cam_manager
+msgid "the user will have an access to the sales configuration as well as statistic reports."
+msgstr "用户将有权限访问销售配置及统计报表。"
+
+#. module: cam
+#: model:ir.actions.act_window,help:cam.cam_volume_level_act
+msgid "volume level,you can create it at here."
+msgstr "级别，您可以在此处创建它。"
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--BOM管理员-->
+    <record id="cpo_sitemap_filter" model="res.groups">
+        <field name="name">CPO Sitemap filter</field>
+    </record>
+
+</odoo>

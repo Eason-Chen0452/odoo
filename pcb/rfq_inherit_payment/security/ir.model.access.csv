@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rfq_inherit_payment_rfq_inherit_payment,rfq_inherit_payment.rfq_inherit_payment,model_rfq_inherit_payment_rfq_inherit_payment,,1,0,0,0

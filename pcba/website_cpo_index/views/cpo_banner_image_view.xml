@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="cpo_banner_image_tree">
+            <field name="name">Banner Image Tree</field>
+            <field name="model">cpo_banner_image</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="cpo_banner_title"/>
+                    <field name="cpo_banner_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_banner_image_form">
+            <field name="name">Banner Image Form</field>
+            <field name="model">cpo_banner_image</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group colspan="4">
+                            <group col="2">
+                                <field name="cpo_banner_title"/>
+                            </group>
+                            <group col="2">
+                                <field name="cpo_banner_date"/>
+                            </group>
+                            <group colspan="4">
+                                <field name="cpo_image_type" filename="cpo_banner_title"/>
+                            </group>
+                            <group colspan="4">
+                                <!--<field name="cpo_banner_img" widget="image"/>-->
+                                <field name="cpo_banner_img" />
+                            </group>
+                            <group colspan="4">
+                                <field name="cpo_main_color"/>
+                            </group>
+                            <group colspan="4">
+                                <field name="cpo_banner_description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_banner_image_action">
+            <field name="name">Banner Image Action</field>
+            <field name="res_model">cpo_banner_image</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="CPO Banner Image" id="cpo_banner_image_menu" parent="website_cpo_index.cpo_product_release_all_menu"
+            action="cpo_banner_image_action"/>
+    </data>
+</odoo>

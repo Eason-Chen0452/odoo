@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="inherit_product_view_form" model="ir.ui.view">
+         <field name="name">Product form</field>
+         <field name="model">product.product</field>
+         <field name="inherit_id" ref="electron.electron_resistance_form"/>
+         <field name="arch" type="xml">
+             <xpath expr="//field[@name='power']" position="before">
+                 
+            </xpath>
+         </field>
+        </record>
+    </data>
+</odoo>

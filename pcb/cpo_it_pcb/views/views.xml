@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--测试架 价格tree视图-->
+        <record id="pcb_quotation_pricelist_tooling_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.tooling.tree</field>
+            <field name="model">pcb.quotation.pricelist.tooling</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Test Tooling" editable="bottom">
+                    <field name="min_test_points"/>
+                    <field name="max_test_points"/>
+                    <field name="price_type"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+        <!--飞针测试 价格tree视图-->
+        <!--<record id="pcb_quotation_pricelist_etest_tree_view" model="ir.ui.view">-->
+            <!--<field name="name">pcb.quotation.pricelist.etest.tree</field>-->
+            <!--<field name="model">pcb.quotation.pricelist.etest</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<tree string="Price List of Test" editable="bottom">-->
+                    <!--<field name="min_test_points"/>-->
+                    <!--<field name="max_test_points"/>-->
+                    <!--<field name="price_type"/>-->
+                    <!--<field name="price"/>-->
+                <!--</tree>-->
+            <!--</field>-->
+        <!--</record>-->
+        <!--基材价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_size_type_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.size.type.tree</field>
+            <field name="model">pcb.quotation.pricelist.size.type</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Copper Base" editable="bottom">
+                    <field name="base_type"/>
+                    <field name="material_fee_type" invisible="1"/>
+                    <field name="material_fee" invisible="1"/>
+                    <field name="engineering_fee_type"/>
+                    <field name="engineering_fee"/>
+                    <field name="etest_fee_type"/>
+                    <field name="etest_fee"/>
+                    <field name="film_fee_type" invisible="1"/>
+                    <field name="film_fee" invisible="1"/>
+                    <field name="min_delay_hours"/>
+                    <field name="max_delay_hours"/>
+                    <field name="quick_time"/>
+                    <field name="quick_fee"/>
+                </tree>
+            </field>
+        </record>
+        <!--基材价格表 form视图-->
+        <record id="pcb_quotation_pricelist_size_type_form_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.size.type.form</field>
+            <field name="model">pcb.quotation.pricelist.size.type</field>
+            <field name="arch" type="xml">
+                <form string="Price List of Copper Base" version="7.0">
+                    <group>
+                        <group>
+                            <label for="material_fee" invisible="1"/>
+                            <div name="material_fee" invisible="1">
+                                <field name="material_fee_type" class="oe_inline" invisible="1"/>
+                                <field name="material_fee" class="oe_inline" invisible="1"/>
+                            </div>
+                            <label for="etest_fee"/>
+                            <div name="etest_fee">
+                                <field name="etest_fee_type" class="oe_inline"/>
+                                <field name="etest_fee" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group name='group_engineering_fee'>
+                            <label for="engineering_fee"/>
+                            <div name="engineering_fee">
+                                <field name="engineering_fee_type" class="oe_inline"/>
+                                <field name="engineering_fee" class="oe_inline"/>
+                            </div>
+                            <label for="film_fee" invisible="1"/>
+                            <div name="film_fee" invisible="1">
+                                <field name="film_fee_type" class="oe_inline" invisible="1"/>
+                                <field name="film_fee" class="oe_inline" invisible="1"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                             <label for="min_delay_hours"/>
+                             <div name="min_delay_hours">
+                                 <field name="min_delay_hours" class="oe_inline"/> Hours
+                             </div>
+                             <label for="quick_time"/>
+                             <div name="quick_time">
+                                 <field name="quick_time" class="oe_inline"/> Hours
+                             </div>
+                        </group>
+                        <group>
+                             <label for="max_delay_hours"/>
+                             <div name="max_delay_hours">
+                                 <field name="max_delay_hours" class="oe_inline"/> Hours
+                             </div>
+                             <label for="quick_fee"/>
+                             <div name="quick_fee">
+                                 <field name="quick_fee" class="oe_inline"/>%%
+                             </div>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!--各面积板材价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_layer_size_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.layer.size.tree</field>
+            <field name="model">pcb.quotation.pricelist.layer.size</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Board Size">
+                    <field name="sequence"/>
+                    <field name="max_size"  string="Max Size(㎡)"/>
+                    <field name="volume_type" invisible="1"/>
+                    <field name="material_fee_type" invisible="1"/>
+                    <field name="material_fee" invisible="1"/>
+                    <field name="engineering_fee_type" invisible="1"/>
+                    <field name="engineering_fee" invisible="1"/>
+                    <field name="etest_fee_type" invisible="1"/>
+                    <field name="etest_fee" invisible="1"/>
+                    <field name="film_fee_type" invisible="1"/>
+                    <field name="film_fee" invisible="1"/>
+                    <field name="min_delay_hours" invisible="1"/>
+                    <field name="max_delay_hours" invisible="1"/>
+                    <field name="quick_time" invisible="1"/>
+                    <field name="quick_fee" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <!--各面积板材价格表 form视图-->
+        <record id="pcb_quotation_pricelist_Layer_size_form_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.layer.size.form</field>
+            <field name="model">pcb.quotation.pricelist.layer.size</field>
+            <field name="arch" type="xml">
+                <form string="Price List of Board Size" version="7.0">
+                    <group colspan="3" col="3">
+                        <field name="sequence"/>
+                    </group>
+                    <group>
+                        <group>
+                            <label for="volume_type"/>
+                            <div name="volume_type">
+                                <field name="volume_type" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <label for="max_size"/>
+                            <div name="max_size">
+                                <field name="max_size" class="oe_inline"/> ㎡
+                            </div>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <label for="material_fee" invisible="1"/>
+                            <div name="material_fee" invisible="1">
+                                <field name="material_fee_type" class="oe_inline" invisible="1"/>
+                                <field name="material_fee" class="oe_inline" invisible="1"/>
+                            </div>
+                            <label for="etest_fee"/>
+                            <div name="etest_fee">
+                                <field name="etest_fee_type" class="oe_inline"/>
+                                <field name="etest_fee" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group name="group_engineering_fee">
+                            <label for="engineering_fee"/>
+                            <div name="engineering_fee">
+                                <field name="engineering_fee_type" class="oe_inline"/>
+                                <field name="engineering_fee" class="oe_inline"/>
+                            </div>
+                            <label for="film_fee" invisible="1"/>
+                            <div name="film_fee" invisible="1">
+                                <field name="film_fee_type" class="oe_inline" invisible="1"/>
+                                <field name="film_fee" class="oe_inline" invisible="1"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                             <label for="min_delay_hours"/>
+                             <div name="min_delay_hours">
+                                 <field name="min_delay_hours" class="oe_inline"/> Hours
+                             </div>
+                             <label for="quick_time"/>
+                             <div name="quick_time">
+                                 <field name="quick_time" class="oe_inline"/> Hours
+                             </div>
+                        </group>
+                        <group>
+                             <label for="max_delay_hours"/>
+                             <div name="max_delay_hours">
+                                 <field name="max_delay_hours" class="oe_inline"/> Hours
+                             </div>
+                             <label for="quick_fee"/>
+                             <div name="quick_fee">
+                                 <field name="quick_fee" class="oe_inline"/>%%
+                             </div>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Price List of Copper Base">
+                            <field name="type_item_ids"
+                                context="{'default_material_fee_type':material_fee_type, 'default_material_fee': material_fee,
+                                          'default_engineering_fee_type':engineering_fee_type, 'default_engineering_fee': engineering_fee,
+                                          'default_etest_fee_type':etest_fee_type, 'default_etest_fee': etest_fee,
+                                          'default_film_fee_type':film_fee_type, 'default_film_fee': film_fee,
+                                          'default_min_delay_hours': min_delay_hours, 'default_max_delay_hours': max_delay_hours,
+                                          'default_quick_time': quick_time, 'default_quick_fee': quick_fee}"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--各板厚价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_layer_thickness_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.layer.thickness.tree</field>
+            <field name="model">pcb.quotation.pricelist.layer.thickness</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Copper Base" editable="bottom">
+                    <field name="min_thickness"/>
+                    <field name="max_thickness"/>
+                    <field name="add_fee_type"/>
+                    <field name="add_fee"/>
+                </tree>
+            </field>
+        </record>
+        <!--外铜厚价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_layer_outer_copper_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.layer.outer.copper.tree</field>
+            <field name="model">pcb.quotation.pricelist.layer.outer.copper</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Copper Base" editable="bottom">
+                    <field name="min_outer_copper"/>
+                    <field name="max_outer_copper"/>
+                    <field name="add_fee_type"/>
+                    <field name="add_fee"/>
+                </tree>
+            </field>
+        </record>
+        <!--内铜厚价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_layer_inner_copper_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.layer.inner.copper.tree</field>
+            <field name="model">pcb.quotation.pricelist.layer.inner.copper</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Copper Base" editable="bottom">
+                    <field name="min_inner_copper"/>
+                    <field name="max_inner_copper"/>
+                    <field name="add_fee_type"/>
+                    <field name="add_fee"/>
+                </tree>
+            </field>
+        </record>
+        <!--菲林价格表 tree视图-->
+        <!--<record id="pcb_quotation_pricelist_film_tree_view" model="ir.ui.view">-->
+            <!--<field name="name">pcb.quotation.pricelist.film.tree</field>-->
+            <!--<field name="model">pcb.quotation.pricelist.film</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<tree string="Price List of Film" editable="bottom">-->
+                    <!--<field name="min_size"  string="Min Size(㎡)"/>-->
+                    <!--<field name="max_size"  string="Max Size(㎡)"/>-->
+                    <!--<field name="film_fee_type"/>-->
+                    <!--<field name="film_fee"/>-->
+                <!--</tree>-->
+            <!--</field>-->
+        <!--</record>-->
+        <!--板材及层数价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_layer_item_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.layer.item.tree</field>
+            <field name="model">pcb.quotation.pricelist.layer.item</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Board Material">
+                    <field name="layer_number"/>
+                    <field name="min_size"  string="Min Size(㎡)"/>
+                    <field name="max_size"  string="Max Size(㎡)"/>
+                    <field name="min_thickness"  string="Min Thickness(mm)"/>
+                    <field name="max_thickness"  string="Max Thickness(mm)"/>
+                    <field name="combine_number"/>
+                    <field name="combine_fee"/>
+                    <field name="combine_fee_number"/>
+                </tree>
+            </field>
+        </record>
+        <!--板材及层数价格表 form视图-->
+        <record id="pcb_quotation_pricelist_layer_item_form_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.layer.item.form</field>
+            <field name="model">pcb.quotation.pricelist.layer.item</field>
+            <field name="arch" type="xml">
+                <form string="Price List of Board Material" version="7.0">
+                    <group>
+                        <group col="4" colspan="4" name="layer_number">
+                            <label for='layer_number'/>
+                            <div name='layer_number'>
+                                <field name="layer_number"/>
+                            </div>
+                        </group>
+                        <group col="4" colspan="4">
+                            <label for="min_size"/>
+                            <div name="min_size">
+                                <field name="min_size" class="oe_inline"/> ㎡
+                            </div>
+                            <label for="max_size"/>
+                            <div name="max_size">
+                                <field name="max_size" class="oe_inline"/> ㎡
+                            </div>
+                        </group>
+                        <group col="4" colspan="4">
+                            <field name="combine_number"/>
+                            <label for="combine_fee"/>
+                            <div name="combine_fee">
+                                <field name="combine_fee" class="oe_inline"/> Per
+                                <field name="combine_fee_number" class="oe_inline"/> Item
+                            </div>
+                        </group>
+                        <group col="4" colspan="4" name="min_thickness">
+                            <label for="min_thickness"/>
+                            <div name="min_thickness">
+                                <field name="min_thickness" class="oe_inline"/> mm
+                            </div>
+                            <label for="max_thickness"/>
+                            <div name="max_thickness">
+                                <field name="max_thickness" class="oe_inline"/> mm
+                            </div>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Price List of Board Size">
+                            <field name="item_size_ids"/>
+                        </page>
+                        <page string="Price List of Board Thickness">
+                            <field name="item_thickness_ids"/>
+                        </page>
+                        <page string="Price List of Outer Copper">
+                            <field name="item_outer_copper_ids"/>
+                        </page>
+                        <page string="Price List of Inner Copper">
+                            <field name="item_inner_copper_ids"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--阻焊颜色价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_silkscreen_color_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.silkscreen.color.tree</field>
+            <field name="model">pcb.quotation.pricelist.silkscreen.color</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Silkscreen Color"  editable="bottom">
+                    <field name="silkscreen_color"/>
+                    <field name="max_size"  string="Max Size(㎡)"/>
+                    <field name="price_type"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+        <!--阻焊颜色价格表 form视图-->
+        <record id="pcb_quotation_pricelist_silkscreen_color_form_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.silkscreen.color.form</field>
+            <field name="model">pcb.quotation.pricelist.silkscreen.color</field>
+            <field name="arch" type="xml">
+                <form string="Price List of Silkscreen Color" version="7.0">
+                    <group>
+                        <group>
+                            <field name="silkscreen_color"/>
+                            <field name="max_size"/>
+                        </group>
+                        <group>
+                            <field name="price_type"/>
+                            <field name="price"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!--文字颜色价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_text_color_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.text.color.tree</field>
+            <field name="model">pcb.quotation.pricelist.text.color</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Text Color"  editable="bottom">
+                    <field name="text_color"/>
+                    <field name="max_size" string="Max Size(㎡)"/>
+                    <field name="price_type"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+        <!--文字颜色价格表 form视图-->
+        <record id="pcb_quotation_pricelist_text_color_form_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.text.color.form</field>
+            <field name="model">pcb.quotation.pricelist.text.color</field>
+            <field name="arch" type="xml">
+                <form string="Price List of Text Color" version="7.0">
+                    <group>
+                        <group>
+                            <field name="text_color"/>
+                            <field name="max_size"/>
+                        </group>
+                        <group>
+                            <field name="price_type"/>
+                            <field name="price"/>
+                        </group>
+
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!--表面工艺价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_surface_process_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.surface.process.tree</field>
+            <field name="model">pcb.quotation.pricelist.surface.process</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Surface Process"  editable="bottom">
+                    <field name="surface"/>
+                    <field name="max_size"  string="Max Size(㎡)" invisible="1"/>
+                    <field name="price_type"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+        <!--表面工艺价格表 form视图-->
+        <record id="pcb_quotation_pricelist_surface_process_form_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.surface.process.form</field>
+            <field name="model">pcb.quotation.pricelist.surface.process</field>
+            <field name="arch" type="xml">
+                <form string="Price List of Surface Process" version="7.0">
+                    <group>
+                        <group>
+                            <field name="surface"/>
+                            <field name="max_size" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="price_type"/>
+                            <field name="price"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!--特殊材料价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_special_material_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.special.material.tree</field>
+            <field name="model">pcb.quotation.pricelist.special.material</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Special Material"  editable="bottom">
+                    <field name="smaterial"/>
+                    <field name="max_size"  string="Max Size(㎡)"/>
+                    <field name="price_type"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+        <!--特殊材料价格表 form视图-->
+        <record id="pcb_quotation_pricelist_special_material_form_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.special.material.form</field>
+            <field name="model">pcb.quotation.pricelist.special.material</field>
+            <field name="arch" type="xml">
+                <form string="Price List of Special Material" version="7.0">
+                    <group>
+                        <group>
+                            <field name="smaterial"/>
+                            <field name="max_size"/>
+                        </group>
+                        <group>
+                            <field name="price_type"/>
+                            <field name="price"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!--特殊工艺价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_special_process_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.special.process.tree</field>
+            <field name="model">pcb.quotation.pricelist.special.process</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Special Process"  editable="bottom">
+                    <field name="sprocess"/>
+                    <field name="max_size"  string="Max Size(㎡)"/>
+                    <field name="price_type"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+        <!--特殊工艺价格表 form视图-->
+        <record id="pcb_quotation_pricelist_special_process_form_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.special.process.form</field>
+            <field name="model">pcb.quotation.pricelist.special.process</field>
+            <field name="arch" type="xml">
+                <form string="Price List of Special Process" version="7.0">
+                    <group>
+                        <group>
+                            <field name="sprocess"/>
+                            <field name="max_size"/>
+                        </group>
+                        <group>
+                            <field name="price_type"/>
+                            <field name="price"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!--其他费用中孔径价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_other_hole_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.other.hole.tree</field>
+            <field name="model">pcb.quotation.pricelist.other.hole</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Hole Density" editable="bottom">
+                    <field name="min_hole" string="Min Hole(mil)"/>
+                    <field name="max_hole" string="Max Hole(mil)"/>
+                    <field name="price_type"/>
+                    <field name="price"/>
+                    <field name="price_class"/>
+                </tree>
+            </field>
+        </record>
+        <!--其他费用中线宽线距价格表 tree视图-->
+        <record id="pcb_quotation_pricelist_other_line_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.other.line.tree</field>
+            <field name="model">pcb.quotation.pricelist.other.line</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Line cpo_width and Distance" editable="bottom">
+                    <field name="min_line_cpo_width" string="Min Line cpo_Width(mil)"/>
+                    <field name="max_line_cpo_width" string="Max Line cpo_Width(mil)"/>
+                    <field name="price_type"/>
+                    <field name="price"/>
+                    <field name="price_class"/>
+                </tree>
+            </field>
+        </record>
+        <!--其他费用 tree视图-->
+        <record id="pcb_quotation_pricelist_other_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.other.tree</field>
+            <field name="model">pcb.quotation.pricelist.other</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Other Fee">
+                    <field name="min_size" string="Min Size(㎡)"/>
+                    <field name="max_size" string="Max Size(㎡)"/>
+                </tree>
+            </field>
+        </record>
+        <!--其他费用 form视图-->
+        <record id="pcb_quotation_pricelist_other_form_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.other.form</field>
+            <field name="model">pcb.quotation.pricelist.other</field>
+            <field name="arch" type="xml">
+                <form string="Price List of Other Fee" version="7.0">
+                    <group>
+                        <group>
+                            <field name="min_size"/>
+                        </group>
+                        <group>
+                            <field name="max_size"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Line cpo_Width">
+                            <field name="other_line_ids" nolabel="1"/>
+                        </page>
+                        <page string="Line Hole Density" name="Line Hole Density">
+                            <field name="other_hole_ids" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--价格表版本 tree视图-->
+        <record id="pcb_quotation_pricelist_version_tree_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.version.tree</field>
+            <field name="model">pcb.quotation.pricelist.version</field>
+            <field name="arch" type="xml">
+                <tree string="Price List Versions">
+                    <field name="name"/>
+                    <field name="currency_id"/>
+                    <field name="tax"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="memo"/>
+                    <field name="active"/>
+                    <!--<button string="copy" name="copy" type="object" icon="stock_copy" class="oe_highlight"/>-->
+                </tree>
+            </field>
+        </record>
+        <!--价格表版本 form视图-->
+        <record id="pcb_quotation_pricelist_version_form_view" model="ir.ui.view">
+            <field name="name">pcb.quotation.pricelist.version.form</field>
+            <field name="model">pcb.quotation.pricelist.version</field>
+            <field name="arch" type="xml">
+                <form string="Price List Versions" version="7.0">
+                    <group>
+                        <group col="4" colspan="4">
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="currency_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="date_start"/>
+                                <field name="tax"/>
+                            </group>
+                            <group>
+                                <field name="date_end"/>
+                                <field name="tax_id" attrs="{'required':[('tax','=',True)], 'invisible': [('tax', '=', False)]}" force_save="1"/>
+                                <!--<field name="tax_id" attrs="{'required':[('tax','=',True)], 'invisible': [('tax', '=', False)]}"
+                                    domain="[('parent_id','=',False),('type_tax_use','&lt;&gt;','purchase')]"/>-->
+                                <field name="active"/>
+                            </group>
+                        </group>
+                    </group>
+                    <group>
+                        <field colspan="4" name="company_id" groups="base.group_multi_company" widget="selection"/>
+                    </group>
+                    <notebook>
+                        <page string="Board Material">
+                            <field name="items_id" nolabel="1"/>
+                        </page>
+                        <page string="Text Color">
+                            <field name="textcolor_ids" nolabel="1"/>
+                        </page>
+                        <page string="Silkscreen Color">
+                            <field name="silkscreencolor_ids" nolabel="1"/>
+                        </page>
+                        <page string="Surface Process">
+                            <field name="surfaceprocess_ids" nolabel="1"/>
+                        </page>
+                        <page string="Special Material">
+                            <field name="smaterial_ids" nolabel="1"/>
+                        </page>
+                        <page string="Special Sprocess">
+                            <field name="sprocess_ids" nolabel="1"/>
+                        </page>
+                        <page string="Test Tooling">
+                            <field name="tooling_ids" nolabel="1"/>
+                        </page>
+                        <!--<page string="ETest">-->
+                            <!--<field name="etest_ids" nolabel="1"/>-->
+                        <!--</page>-->
+                        <!--<page string="Film">-->
+                            <!--<field name="film_ids" nolabel="1"/>-->
+                        <!--</page>-->
+                        <page string="Other Fee" name="Other Fee">
+                            <field name="other_ids" nolabel="1"/>
+                        </page>
+                        <page string="Memo">
+                            <field name="memo" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,140 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* cpo_function_setting
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-29 09:02+0000\n"
+"PO-Revision-Date: 2019-10-29 09:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cpo_function_setting
+#: selection:cpo_function_setting.quota_record,state:0
+#: model:ir.ui.view,arch_db:cpo_function_setting.cpo_quota_record_setting_form
+msgid "Activating"
+msgstr "激活"
+
+#. module: cpo_function_setting
+#: model:ir.ui.view,arch_db:cpo_function_setting.cpo_quota_record_setting_form
+msgid "Are you sure you want to choose a change ?"
+msgstr "您确定要选择更改吗？"
+
+#. module: cpo_function_setting
+#: model:ir.ui.view,arch_db:cpo_function_setting.cpo_quota_record_setting_form
+msgid "Are you sure you want to choose to void ?"
+msgstr "您确定要选择作废吗？"
+
+#. module: cpo_function_setting
+#: model:ir.ui.view,arch_db:cpo_function_setting.cpo_quota_record_setting_form
+msgid "Are you sure you want to recover ?"
+msgstr "您确定要恢复吗？"
+
+#. module: cpo_function_setting
+#: selection:cpo_function_setting.quota_record,state:0
+#: model:ir.ui.view,arch_db:cpo_function_setting.cpo_quota_record_setting_form
+msgid "Change"
+msgstr "更改"
+
+#. module: cpo_function_setting
+#: model:ir.ui.view,arch_db:cpo_function_setting.cpo_quota_record_setting_form
+msgid "Complete"
+msgstr "完成"
+
+#. module: cpo_function_setting
+#: model:ir.model.fields,field_description:cpo_function_setting.field_cpo_function_setting_quota_record_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: cpo_function_setting
+#: model:ir.model.fields,field_description:cpo_function_setting.field_cpo_function_setting_quota_record_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: cpo_function_setting
+#: model:ir.model.fields,field_description:cpo_function_setting.field_cpo_function_setting_quota_record_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: cpo_function_setting
+#: selection:cpo_function_setting.quota_record,state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: cpo_function_setting
+#: model:ir.model.fields,field_description:cpo_function_setting.field_cpo_function_setting_quota_record_id
+msgid "ID"
+msgstr "ID"
+
+#. module: cpo_function_setting
+#: model:ir.model.fields,field_description:cpo_function_setting.field_cpo_function_setting_quota_record___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: cpo_function_setting
+#: model:ir.model.fields,field_description:cpo_function_setting.field_cpo_function_setting_quota_record_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: cpo_function_setting
+#: model:ir.model.fields,field_description:cpo_function_setting.field_cpo_function_setting_quota_record_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: cpo_function_setting
+#: selection:cpo_function_setting.quota_record,state:0
+#: model:ir.ui.view,arch_db:cpo_function_setting.cpo_quota_record_setting_form
+msgid "Obsolete"
+msgstr "作废"
+
+#. module: cpo_function_setting
+#: model:ir.ui.menu,name:cpo_function_setting.cpo_quota_record_setting_menu
+msgid "Quotation record storage period"
+msgstr "报价记录存储周期"
+
+#. module: cpo_function_setting
+#: model:ir.ui.view,arch_db:cpo_function_setting.cpo_quota_record_setting_form
+msgid "Recovery"
+msgstr "恢复"
+
+#. module: cpo_function_setting
+#: model:ir.model.fields,field_description:cpo_function_setting.field_cpo_function_setting_quota_record_enable
+msgid "Setting Enable"
+msgstr "设置启用"
+
+#. module: cpo_function_setting
+#: model:ir.model.fields,field_description:cpo_function_setting.field_cpo_function_setting_quota_record_description
+msgid "Setting description"
+msgstr "设置描述"
+
+#. module: cpo_function_setting
+#: model:ir.model.fields,field_description:cpo_function_setting.field_cpo_function_setting_quota_record_interval
+msgid "Setting interval"
+msgstr "设置周期"
+
+#. module: cpo_function_setting
+#: model:ir.model.fields,field_description:cpo_function_setting.field_cpo_function_setting_quota_record_name
+msgid "Setting name"
+msgstr "设置名称"
+
+#. module: cpo_function_setting
+#: model:ir.model.fields,field_description:cpo_function_setting.field_cpo_function_setting_quota_record_state
+msgid "Status"
+msgstr "状态"
+
+#. module: cpo_function_setting
+#: model:ir.actions.act_window,name:cpo_function_setting.cpo_quota_record_setting_actions
+msgid "Storage Interval Setting Actions"
+msgstr "存储周期设置"
+
+#. module: cpo_function_setting
+#: model:ir.model,name:cpo_function_setting.model_cpo_function_setting_quota_record
+msgid "cpo_function_setting.quota_record"
+msgstr "存储周期设置"
+

@@ -1,0 +1,159 @@
+<odoo>
+  <data noupdate="1">
+      <!-- Requests Links -->
+        <record id="one_pcb_50" model="cpo_smt_price.smt">
+            <field name="qty">50</field>
+            <field name="layer_pcb">1</field>
+            <field name="price">1000</field>
+            <field name="type_selection">smt_make</field>
+        </record>
+        
+        <record id="one_pcb_100" model="cpo_smt_price.smt">
+            <field name="qty">100</field>
+            <field name="layer_pcb">1</field>
+            <field name="price">1200</field>
+            <field name="type_selection">smt_make</field>
+        </record>
+        
+        <record id="one_pcb_200" model="cpo_smt_price.smt">
+            <field name="qty">200</field>
+            <field name="layer_pcb">1</field>
+            <field name="price">2000</field>
+            <field name="type_selection">smt_make</field>
+        </record>
+        
+        <record id="one_pcb_300" model="cpo_smt_price.smt">
+            <field name="qty">300</field>
+            <field name="layer_pcb">1</field>
+            <field name="price">2500</field>
+            <field name="type_selection">smt_make</field>
+        </record>
+        
+        <record id="one_pcb_10000" model="cpo_smt_price.smt">
+            <field name="qty">400</field>
+            <field name="layer_pcb">1</field>
+            <field name="price">4000</field>
+            <field name="type_selection">smt_make</field>
+        </record>
+        
+        <!--two-->
+        <record id="two_pcb_50" model="cpo_smt_price.smt">
+            <field name="qty">50</field>
+            <field name="layer_pcb">2</field>
+            <field name="price">1000</field>
+            <field name="type_selection">smt_make</field>
+        </record>
+        
+        <record id="two_pcb_100" model="cpo_smt_price.smt">
+            <field name="qty">100</field>
+            <field name="layer_pcb">2</field>
+            <field name="price">1500</field>
+            <field name="type_selection">smt_make</field>
+        </record>
+        
+        <record id="two_pcb_200" model="cpo_smt_price.smt">
+            <field name="qty">200</field>
+            <field name="layer_pcb">2</field>
+            <field name="price">2000</field>
+            <field name="type_selection">smt_make</field>
+        </record>
+        
+        <record id="two_pcb_300" model="cpo_smt_price.smt">
+            <field name="qty">300</field>
+            <field name="layer_pcb">2</field>
+            <field name="price">2500</field>
+            <field name="type_selection">smt_make</field>
+        </record>
+        
+        <record id="two_pcb_10000" model="cpo_smt_price.smt">
+            <field name="qty">400</field>
+            <field name="layer_pcb">2</field>
+            <field name="price">4000</field>
+            <field name="type_selection">smt_make</field>
+        </record>
+        
+        <!--插件-->
+        <record id="smt_price_pin" model="cpo_smt_price.smt">
+            <field name="qty">20</field>
+            <field name="price">800</field>
+            <field name="type_selection">plug_in</field>
+        </record>
+        
+        <!--后焊-->
+        <record id="smt_price_backhand_welding" model="cpo_smt_price.smt">
+            <field name="qty">5</field>
+            <field name="price">200</field>
+            <field name="type_selection">backhand_welding</field>
+        </record>
+        
+        <!--钢网-->
+        <record id="smt_price_stencil" model="cpo_smt_price.smt">
+            <field name="pcb_length">37</field>
+            <field name="pcb_width">47</field>
+            <field name="price">300</field>
+            <field name="type_selection">stencil</field>
+        </record>
+        
+        <record id="smt_price_stencil_2" model="cpo_smt_price.smt">
+            <field name="pcb_length">47</field>
+            <field name="pcb_width">57</field>
+            <field name="price">500</field>
+            <field name="type_selection">stencil</field>
+        </record>
+        
+        <!--过炉治具-->
+        <!--<record id="smt_price_furnace_tool" model="cpo_smt_price.smt">-->
+            <!--<field name="price">150</field>-->
+            <!--<field name="type_selection">furnace_tool</field>-->
+        <!--</record>-->
+        
+        <!--拼板治具-->
+        <!--<record id="smt_price_paste_tool" model="cpo_smt_price.smt">-->
+            <!--<field name="price">0</field>-->
+            <!--<field name="type_selection">paste_tool</field>-->
+        <!--</record>-->
+        
+        <!--压板治具-->
+        <!--<record id="smt_price_binder_plate_tool" model="cpo_smt_price.smt">-->
+            <!--<field name="price">180</field>-->
+            <!--<field name="type_selection">binder_plate_tool</field>-->
+        <!--</record>-->
+        
+        <!--测试治具-->
+        <record id="smt_price_test_tool" model="cpo_smt_price.smt">
+            <field name="price">600</field>
+            <field name="type_selection">test_tool</field>
+        </record>
+        
+        <!--夹板治具-->
+        <record id="smt_price_jig_tool" model="cpo_smt_price.smt">
+            <field name="price">900</field>
+            <field name="type_selection">jig_tool</field>
+        </record>
+
+        <!--物料管理费-->
+        <record id="smt_price_bom_service_tool_50" model="cpo_smt_price.smt">
+            <field name="qty">50</field>
+            <field name="price">0.3</field>
+            <field name="type_selection">bom_service</field>
+        </record>
+        <record id="smt_price_bom_service_tool_999" model="cpo_smt_price.smt">
+            <field name="qty">99999999</field>
+            <field name="price">0.2</field>
+            <field name="type_selection">bom_service</field>
+        </record>
+
+        <!--加收加工费-->
+        <record id="smt_price_add_smt_make" model="cpo_smt_price.smt">
+            <field name="price">0.5</field>
+            <field name="type_selection">add_smt_make</field>
+        </record>
+
+        <!--首单折扣-->
+        <record id="smt_price_sale_order_discount" model="cpo_smt_price.smt">
+            <field name="price">0.1</field>
+            <field name="type_selection">discount</field>
+        </record>
+
+  </data>
+</odoo>

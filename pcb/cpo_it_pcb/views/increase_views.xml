@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--层数里面 版费增加 基准价 等字段-->
+        <record id="inherid_pcb_quotation_pricelist_layer_size_tree" model="ir.ui.view">
+            <field name="name">inherid_pcb_quotation_pricelist_layer_size_tree</field>
+            <field name="model">pcb.quotation.pricelist.layer.size</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_layer_size_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='max_size']" position="after">
+                    <field name="cpo_benchmark_fee_type"/>
+                    <field name="cpo_benchmark_fee"/>
+                </xpath>
+            </field>
+        </record>
+        <!--层数里面 版费增加 基准价 等字段-->
+        <record id="inherid_pcb_quotation_pricelist_layer_size_form" model="ir.ui.view">
+            <field name="name">inherid_pcb_quotation_pricelist_layer_size_form</field>
+            <field name="model">pcb.quotation.pricelist.layer.size</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_Layer_size_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/field[@name='sequence']" position="after">
+                    <field name="cpo_benchmark_fee_type"/>
+                    <field name="cpo_benchmark_fee"/>
+                </xpath>
+                <xpath expr="//form/group/group[@name='group_engineering_fee']" position="after">
+                    <group>
+                        <label for="engineering_fee_exceeding"/>
+                        <div name="engineering_fee_exceeding">
+                            <field name="engineering_fee_exceeding_type" class="oe_inline"/>cm²
+                            <field name="engineering_fee_exceeding" class="oe_inline"/>
+                        </div>
+                    </group>
+                    <group>
+                        <label for="cpo_film_upper_limit_fee"/>
+                        <div name="cpo_film_upper_limit_fee">
+                            <field name="cpo_film_upper_limit_fee"/>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <!--层数里面版费的基材 增加 基准价等字段-->
+        <record id="inherid_pcb_quotation_pricelist_size_type_tree" model="ir.ui.view">
+            <field name="name">inherid_pcb_quotation_pricelist_size_type_tree</field>
+            <field name="model">pcb.quotation.pricelist.size.type</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_size_type_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='engineering_fee']" position="after">
+                    <field name="engineering_fee_exceeding_type"/>
+                    <field name="engineering_fee_exceeding"/>
+                    <field name="cpo_benchmark_fee_type"/>
+                    <field name="cpo_benchmark_fee"/>
+                    <field name="cpo_film_upper_limit_fee"/>
+                </xpath>
+            </field>
+        </record>
+        <!--层数里面版费的基材 增加 基准价等字段-->
+        <record id="inherid_pcb_quotation_pricelist_size_type_form" model="ir.ui.view">
+            <field name="name">inherid_pcb_quotation_pricelist_size_type_form</field>
+            <field name="model">pcb.quotation.pricelist.size.type</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_size_type_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group[@name='group_engineering_fee']" position="after">
+                    <group>
+                        <label for="engineering_fee_exceeding"/>
+                        <div name="engineering_fee_exceeding">
+                            <field name="engineering_fee_exceeding_type" class="oe_inline"/>cm²
+                            <field name="engineering_fee_exceeding" class="oe_inline"/>
+                        </div>
+                    </group>
+                    <group>
+                        <label for="cpo_benchmark_fee"/>
+                        <div name="cpo_benchmark_fee">
+                            <field name="cpo_benchmark_fee_type"/>
+                            <field name="cpo_benchmark_fee"/>
+                        </div>
+                    </group>
+                    <group>
+                        <label for="cpo_film_upper_limit_fee"/>
+                        <div name="cpo_film_upper_limit_fee">
+                            <field name="cpo_film_upper_limit_fee"/>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <!--表面工艺增加的字段-->
+        <record id="inherid_pcb_quotation_pricelist_surface_process_tree_view" model="ir.ui.view">
+            <field name="name">inherid.pcb.quotation.pricelist.surface.process.tree</field>
+            <field name="model">pcb.quotation.pricelist.surface.process</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_surface_process_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='surface']"  position="after">
+                    <field name="thick_gold"  string='Thick gold(μ")'/>
+                </xpath>
+                <xpath expr="//tree/field[@name='price']" position="after">
+                    <field name="delivery_time_1"/>
+                    <field name="delivery_time_2"/>
+                    <field name="extra_markup"/>
+                </xpath>
+            </field>
+        </record>
+        <!--表面工艺增加的字段-->
+        <record id="inherid_pcb_quotation_pricelist_surface_process_form_view" model="ir.ui.view">
+            <field name="name">inherid.pcb.quotation.pricelist.surface.process.form</field>
+            <field name="model">pcb.quotation.pricelist.surface.process</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_surface_process_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group/field[@name='surface']" position="after">
+                    <field name="thick_gold"/>
+                </xpath>
+            </field>
+        </record>
+        <!--特殊材料增加的字段-->
+        <record id="inherid_pcb_quotation_pricelist_special_material_tree_view" model="ir.ui.view">
+            <field name="name">inherid.pcb.quotation.pricelist.special.material.tree</field>
+            <field name="model">pcb.quotation.pricelist.special.material</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_special_material_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='smaterial']"  position="after">
+                    <field name="min_size"  string="Min Size(㎡)"/>
+                </xpath>
+                <xpath expr="//tree/field[@name='price']" position="after">
+                    <field name="delivery_time"/>
+                </xpath>
+            </field>
+        </record>
+        <!--特殊材料增加的字段-->
+        <record id="inherid_pcb_quotation_pricelist_special_material_form_view" model="ir.ui.view">
+            <field name="name">inherid.pcb.quotation.pricelist.special.material.form</field>
+            <field name="model">pcb.quotation.pricelist.special.material</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_special_material_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group/field[@name='smaterial']" position="after">
+                    <field name="min_size"/>
+                </xpath>
+            </field>
+        </record>
+        <!--特殊工艺增加的字段-->
+        <record id="inherid_pcb_quotation_pricelist_special_process_tree_view" model="ir.ui.view">
+            <field name="name">inherid.pcb.quotation.pricelist.special.process.tree</field>
+            <field name="model">pcb.quotation.pricelist.special.process</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_special_process_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='sprocess']"  position="after">
+                    <field name="min_size"  string="Min Size(㎡)"/>
+                </xpath>
+                <xpath expr="//tree/field[@name='price']"  position="after">
+                    <field name="percentage"/>
+                    <field name="delivery_time"/>
+                </xpath>
+            </field>
+        </record>
+        <!--特殊工艺增加的字段-->
+        <record id="inherid_pcb_quotation_pricelist_special_process_form_view" model="ir.ui.view">
+            <field name="name">inherid.pcb.quotation.pricelist.special.process.form</field>
+            <field name="model">pcb.quotation.pricelist.special.process</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_special_process_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group/field[@name='sprocess']" position="after">
+                    <field name="min_size"/>
+                </xpath>
+                <xpath expr="//form/group/group/field[@name='price']"  position="after">
+                    <field name="percentage"/>
+                    <field name="delivery_time"/>
+                </xpath>
+            </field>
+        </record>
+        <!--层数增加的规则字段-->
+        <record id="inherid_pcb_quotation_pricelist_layer_item_form_view" model="ir.ui.view">
+            <field name="name">inherid.pcb.quotation.pricelist.layer.item.form</field>
+            <field name="model">pcb.quotation.pricelist.layer.item</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_layer_item_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group[@name='min_thickness']" position="after">
+                    <group col="4" colspan="4">
+                        <label for="inner_hole_line"/>
+                        <div name="inner_hole_line">
+                            <field name="inner_hole_line" class="oe_inline"/> mil
+                        </div>
+                        <label for="inner_hole_line_fee"/>
+                        <div name="inner_hole_line_fee">
+                            <field name="inner_hole_line_fee" class="oe_inline"/>
+                        </div>
+                    </group>
+                    <group col="4" colspan="4">
+                        <label for="pore_density"/>
+                        <div name="pore_density">
+                            <field name="pore_density" class="oe_inline"/> 万孔/㎡
+                        </div>
+                        <label for="pore_density_fee"/>
+                        <div name="pore_density_fee">
+                            <field name="pore_density_fee" class="oe_inline"/>
+                        </div>
+                    </group>
+                    <group col="4" colspan="4">
+                        <label for="core_fee"/>
+                        <div name="core_fee">
+                            <field name="core_fee" class="oe_inline"/>
+                        </div>
+                        <label for="pp_fee"/>
+                        <div name="pp_fee">
+                            <field name="pp_fee" class="oe_inline"/>
+                        </div>
+                    </group>
+                </xpath>
+                <xpath expr="//form/group/group[@name='layer_number']" position="replace">
+                    <group col="4" colspan="4">
+                        <label for='layer_number'/>
+                        <div name='layer_number'>
+                            <field name="layer_number"/>
+                        </div>
+                        <label for="moq_pcs_fee"/>
+                        <div name="moq_pcs_fee">
+                            <field name="moq_pcs_fee" class="oe_inline"/> /PCS
+                        </div>
+                    </group>
+                </xpath>
+                <xpath expr="//form/notebook/page" position="after">
+                    <page string="Rogers Material">
+                        <field name="item_rogers_ids" model="tree">
+                            <tree string="Rogers Material" editable="bottom">
+                                <field name="layer_item_id" invisible="1"/>
+                                <field name="base_type"/>
+                                <field name="core_thick"/>
+                                <field name="price"/>
+                                <field name="project_fee"/>
+                                <field name="delivery"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <!--附表金手指 钢网字段增加 独立一栏-->
+        <record id="inherid_pcb_quotation_pricelist_version_form_view" model="ir.ui.view">
+            <field name="name">inherid_pcb_quotation_pricelist_version_form_view</field>
+            <field name="model">pcb.quotation.pricelist.version</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_version_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/notebook/page[@name='Other Fee']" position="before">
+                    <page string="Gold Finger Fee">
+                        <field name="gold_finger_id" nolabel="1"/>
+                    </page>
+                    <page string="Steel mesh">
+                        <field name="with_frame_ids" nolabel="1"/>
+                    </page>
+                    <page string="Soft Hard">
+                        <field name="soft_hard_id" model="tree, form">
+                            <tree string="Soft Hard" editable="bottom">
+                                <field name="price_version_id" invisible="1"/>
+                                <field name="total_layers"/>
+                                <field name="soft_inner"/>
+                                <field name="soft_outer"/>
+                                <field name="soft_board"/>
+                                <field name="soft_board2"/>
+                                <field name="soft_board3"/>
+                                <field name="delivery"/>
+                                <field name="delivery2"/>
+                                <field name="delivery3"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <!--新增加金手指规则-->
+        <record id="pcb_quotation_pricelist_gold_finger_tree" model="ir.ui.view">
+            <field name="name">pcb_quotation_pricelist_gold_finger_tree</field>
+            <field name="model">pcb.quotation.pricelist.gold.finger</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Gold Finger">
+                    <field name="name" force_save="1"/>
+                    <field name="cpo_gold_finger_thickness"/>
+                    <field name="cpo_gold_finger_fee"/>
+                    <field name="cpo_moq"/>
+                    <field name="cpo_min_fee"/>
+                    <field name="cpo_max_fee"/>
+                </tree>
+            </field>
+        </record>
+        <!--新增加金手指规则-->
+        <record id="pcb_quotation_pricelist_gold_finger_from" model="ir.ui.view">
+            <field name="name">pcb_quotation_pricelist_gold_finger_from</field>
+            <field name="model">pcb.quotation.pricelist.gold.finger</field>
+            <field name="arch" type="xml">
+                <form string="Price List of Gold Finger">
+                    <group>
+                        <field name="name" invisible="1"/>
+                        <group col="2">
+                            <field name="cpo_gold_finger_thickness"/>
+                        </group>
+                        <group col="2">
+                            <field name="cpo_gold_finger_fee"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group col="2">
+                            <field name="cpo_moq"/>
+                        </group>
+                        <group col="2">
+                            <field name="cpo_min_fee"/>
+                            <field name="cpo_max_fee"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group col="2">
+                            <field name="cpo_cost_fee"/>
+                        </group>
+                        <group col="2">
+                            <field name="cpo_profit_ratio"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group col="2">
+                            <field name="delivery_time_1"/>
+                        </group>
+                        <group col="2">
+                            <field name="delivery_time_2"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Gold Finger Fee">
+                            <field name="cpo_gold_finger_number_id"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--新增加金手指根数规则-->
+        <record id="pcb_quotation_pricelist_gold_finger_number_tree" model="ir.ui.view">
+            <field name="name">pcb_quotation_pricelist_gold_finger_number_tree</field>
+            <field name="model">pcb.quotation.pricelist.gold.finger.number</field>
+            <field name="arch" type="xml">
+                <tree string="Price List of Gold Finger Number" editable="bottom">
+                    <field name="cpo_gold_finger_number"/>
+                    <field name="cpo_gold_finger_fee"/>
+                </tree>
+            </field>
+        </record>
+        <!--其他表中的规则 增加 孔铜 验收标准字段-->
+        <record id="inherid_pcb_quotation_pricelist_other_form_view" model="ir.ui.view">
+            <field name="name">inherid.pcb.quotation.pricelist.other.form</field>
+            <field name="model">pcb.quotation.pricelist.other</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_other_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/notebook/page[@name='Line Hole Density']" position="after">
+                    <page string="Hole Copper Thickness">
+                        <field name="other_hole_copper_ids" nolabel="1"/>
+                    </page>
+                    <page string="Acceptance Criteria">
+                        <field name="other_acceptance_criteria_ids" nolabel="1"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <!--钢网 PCB-->
+        <record id="pcb_quotation_pricelist_other_steel_mesh_tree" model="ir.ui.view">
+            <field name="name">pcb_quotation_pricelist_other_steel_mesh_tree</field>
+            <field name="model">pcb.quotation.pricelist.other.steel.mesh</field>
+            <field name="arch" type="xml">
+                <tree string="Steel Mesh" editable="bottom">
+                    <field name="type_steel_mesh"/>
+                    <field name="cpo_frame_fee"/>
+                    <field name="cpo_frame_kg"/>
+                </tree>
+            </field>
+        </record>
+        <!--新增加孔铜厚度-->
+        <record id="pcb_quotation_pricelist_other_hole_copper_tree" model="ir.ui.view">
+            <field name="name">pcb_quotation_pricelist_other_hole_copper_tree</field>
+            <field name="model">pcb.quotation.pricelist.other.hole.copper</field>
+            <field name="arch" type="xml">
+                <tree string="Hole Copper Thickness" editable="bottom">
+                    <field name="hole_copper_thick"/>
+                    <field name="hole_copper_thick1"/>
+                    <field name="hole_copper_type"/>
+                    <field name="hole_copper_fee"/>
+                </tree>
+            </field>
+        </record>
+        <!--验收标准-->
+        <record id="pcb_quotation_pricelist_acceptance_criteria_tree" model="ir.ui.view">
+            <field name="name">pcb_quotation_pricelist_acceptance_criteria_tree</field>
+            <field name="model">pcb.quotation.pricelist.acceptance.criteria</field>
+            <field name="arch" type="xml">
+                <tree string="Acceptance Criteria" editable="bottom">
+                    <field name="acceptance_criteria_id"/>
+                    <field name="price"/>
+                    <field name="price_class"/>
+                    <field name="acceptance_criteria_type"/>
+                </tree>
+            </field>
+        </record>
+        <!--板厚增加交期-->
+        <record id="inherid_pcb_quotation_pricelist_layer_thickness_tree_view" model="ir.ui.view">
+            <field name="name">inherid.pcb.quotation.pricelist.layer.thickness.tree</field>
+            <field name="model">pcb.quotation.pricelist.layer.thickness</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_layer_thickness_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='add_fee']" position="after">
+                    <field name="delivery_time_1"/>
+                    <field name="delivery_time_2"/>
+                </xpath>
+            </field>
+        </record>
+        <!--外铜厚交期增加-->
+        <record id="inherid_pcb_quotation_pricelist_layer_outer_copper_tree_view" model="ir.ui.view">
+            <field name="name">inherid.pcb.quotation.pricelist.layer.outer.copper.tree</field>
+            <field name="model">pcb.quotation.pricelist.layer.outer.copper</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_layer_outer_copper_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='add_fee']" position="after">
+                    <field name="delivery_time_1"/>
+                    <field name="delivery_time_2"/>
+                    <field name="project_fee"/>
+                </xpath>
+            </field>
+        </record>
+        <!--内铜厚交期增加-->
+        <record id="inherid_pcb_quotation_pricelist_layer_inner_copper_tree_view" model="ir.ui.view">
+            <field name="name">inherid.pcb.quotation.pricelist.layer.inner.copper.tree</field>
+            <field name="model">pcb.quotation.pricelist.layer.inner.copper</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_layer_inner_copper_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='add_fee']" position="after">
+                    <field name="delivery_time_1"/>
+                    <field name="delivery_time_2"/>
+                </xpath>
+            </field>
+        </record>
+        <!--阻焊增加字段-->
+        <record id="inherid_pcb_quotation_pricelist_silkscreen_color_tree_view" model="ir.ui.view">
+            <field name="name">inherid.pcb.quotation.pricelist.silkscreen.color.tree</field>
+            <field name="model">pcb.quotation.pricelist.silkscreen.color</field>
+            <field name="inherit_id" ref="cpo_it_pcb.pcb_quotation_pricelist_silkscreen_color_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='price']" position="after">
+                    <field name="delivery_time_1"/>
+                    <field name="delivery_time_2"/>
+                </xpath>
+            </field>
+        </record>
+        <!--钢网 独立报价的 tree-->
+        <record id="laser_steel_mesh_price_tree" model="ir.ui.view">
+            <field name="name">laser_steel_mesh_price_tree</field>
+            <field name="model">laser.steel.mesh.price</field>
+            <field name="arch" type="xml">
+                <tree string="Laser steel mesh price">
+                    <field name="steel_size_id"/>
+                    <field name="name"/>
+                    <field name="cpo_delivery"/>
+                    <field name="cpo_price"/>
+                    <field name="cpo_weight"/>
+                </tree>
+            </field>
+        </record>
+        <!--钢网 独立报价的 form-->
+        <record id="laser_steel_mesh_price_form" model="ir.ui.view">
+            <field name="name">laser_steel_mesh_price_form</field>
+            <field name="model">laser.steel.mesh.price</field>
+            <field name="arch" type="xml">
+                <form string="Laser steel mesh price">
+                    <sheet>
+                        <field name="name" style="font-size:35px; font-weight:bold" force_save="1"/>
+                        <group colspan="4" col="4" string="Size and thickness">
+                            <field name="steel_size_id"/>
+                            <field name="steel_thickness_id" widget="many2many_tags"/>
+                        </group>
+                        <group colspan="4" col="4" string="Quantity and delivery">
+                            <label for="quantity_1" string="Quantity range"/>
+                            <div>
+                                <field name="quantity_1" style="max-width:75px;"/> -
+                                <field name="quantity_2" style="max-width:75px;"/>
+                            </div>
+                            <label for="cpo_delivery" string="Delivery time / H"/>
+                            <div>
+                                <field name="cpo_delivery"/>
+                            </div>
+                        </group>
+                        <group string="Price and weight" colspan="4" col="4">
+                            <field name="cpo_price"/>
+                            <field name="cpo_weight"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--钢网 独立报价的 window-->
+        <record model="ir.actions.act_window" id="laser_steel_mesh_price_window">
+            <field name="name">Laser Steel Mesh Price</field>
+            <field name="res_model">laser.steel.mesh.price</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--钢网 menu-->
+        <menuitem id="menu_laser_price" parent="cpo_it_pcb.menu_pcb_quotation_pricelist_main" sequence="4" name="Laser Steel Mesh Price" action="laser_steel_mesh_price_window"/>
+    </data>
+</odoo>

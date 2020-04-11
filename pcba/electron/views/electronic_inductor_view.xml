@@ -1,0 +1,85 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+  
+    <record model="ir.ui.view" id="content_inductor_list">
+      <field name="name">content_inductor list</field>
+      <field name="model">electron.content_inductor</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="p_type"/>
+            <field name="pcb_number"/>
+            <field name="dash_number"/>
+            <field name="mini_quantity"/>
+            <field name="QOH"/>
+            <field name="price"/>
+            <field name="description"/>
+            <field name="series"/>
+            <field name="manufacture"/>
+        </tree>
+      </field>
+    </record>
+    
+     <record model="ir.ui.view" id="electron_adjustable_condenser_form">
+      <field name="name">content_inductor form</field>
+      <field name="model">electron.content_inductor</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group col="4">
+                    <group col="2" colspan="4">
+                        <field name="p_type"/>
+                        <field name="url_sources"/>
+                        <field name="cpo_image"/>
+                        <field name="name"/>
+                        <field name="pcb_number"/>
+                        <field name="dash_number"/>
+                        <field name="mini_quantity"/>
+                        <field name="QOH"/>
+                        <field name="price"/>
+                        <field name="description"/>
+                        <field name="series"/>
+                        <field name="manufacture"/>
+                        <field name="size"/>
+                        <field name="encapsulation"/>
+                        <field name="inst_type"/>
+                        <field name="parts_state"/>
+                        
+                        <field name="inductance"/>
+                        <field name="tolerance"/>
+                        <field name="Q_value"/>
+                        <field name="voltage_rating"/>
+                        <field name="dielectrics"/>
+                        <field name="temperature"/>
+                        <field name="tolerance"/>
+                        <field name="character"/>
+                        <field name="packaging"/>
+                        <field name="height"/>
+                    </group>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+  
+  
+    <!-- actions opening views on models -->
+  
+    <record model="ir.actions.act_window" id="content_inductor_action_window">
+      <field name="name">content_inductor window</field>
+      <field name="res_model">electron.content_inductor</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  
+
+    <!-- actions -->
+
+    <menuitem name="content_inductor_List" id="content_inductor_menu_1_list" parent="electron.passive_element_menu_1"
+              action="content_inductor_action_window"/>
+
+ 
+  </data>
+</odoo>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="sales_team.team_sales_department" model="crm.team">
+            <field name="name">Sales Processing</field>
+        </record>
+
+        <record id="sales_team.salesteam_website_sales" model="crm.team">
+            <field name="name">Web Page Inquiry</field>
+        </record>
+    </data>
+</odoo>

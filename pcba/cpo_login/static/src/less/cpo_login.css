@@ -1,0 +1,154 @@
+/*
+* ==========================================================
+*     LOGIN PAGE
+* ==========================================================
+*/
+.login-page {
+  position: relative;
+}
+.login-page .container {
+  /*min-height: 100vh;*/
+  z-index: 9;
+  padding: 20px;
+  position: relative;
+}
+.login-page .container .form-holder {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+.login-page .container .form-holder .info,
+.login-page .container .form-holder .form {
+  min-height: 70vh;
+  padding: 40px;
+  height: 100%;
+  margin: 0;
+}
+.login-page::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1;
+  /*background: url(../images/tools_img/0001.jpg);*/
+  background-size: cover;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.login-page .form-holder .cpo_reset_password_form {
+  min-height: 35vh;
+}
+.login-page .form-holder div[class*='col-'] {
+  padding: 0;
+}
+.login-page .form-holder .info {
+  background: rgba(74, 147, 253, 0.9);
+  color: #fff;
+}
+.login-page .form-holder .info h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+}
+.login-page .form-holder .info p {
+  font-weight: 300;
+}
+.login-page .form-holder .form .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+.login-page .form-holder .form .content {
+  width: 100%;
+}
+.login-page .form-holder .form form {
+  width: 100%;
+  max-width: 400px;
+}
+.login-page .form-holder .form form p.t-tips {
+  color: #aaaaaa;
+}
+.login-page .form-holder .form form p.t-tips span {
+  display: inline-block;
+}
+.login-page .form-holder .form #login,
+.login-page .form-holder .form #register {
+  /*margin-bottom: 20px;*/
+  background-color: #ffffff !important;
+}
+.login-page .form-holder .form a.forgot-pass,
+.login-page .form-holder .form a.signup {
+  font-size: 1em;
+  color: #85b4f2;
+  display: inline-block;
+  margin-top: 5px;
+}
+.login-page .form-holder .form small {
+  color: #aaa;
+}
+.login-page .form-holder .form .terms-conditions label {
+  cursor: pointer;
+  color: #aaa;
+  font-size: 14px;
+}
+.login-page .copyrights {
+  width: 100%;
+  z-index: 9999;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+}
+.login-page input.input-material {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+.login-page input.input-material.is-invalid {
+  border-color: #dc3545 !important;
+}
+.login-page input.input-material:focus {
+  outline-style: none;
+  border-bottom: 1px solid #4a93fd;
+}
+.login-page input.input-material ~ label {
+  color: #aaa;
+  position: absolute;
+  top: 14px;
+  left: 0;
+  cursor: text;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-weight: 300;
+}
+.login-page input.input-material ~ label.active {
+  font-size: 14px;
+  top: -15px;
+  color: #4a93fd;
+}
+.login-page input.input-material.is-invalid ~ label {
+  color: #dc3545;
+}
+.login-page input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px transparent  inset !important;
+  background-color: transparent;
+  background-image: none;
+  transition: background-color 50000s ease-in-out 0s;
+}
+@media (max-width: 991px) {
+  .login-page .info,
+  .login-page .form {
+    min-height: auto !important;
+  }
+  .login-page .info {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+  }
+}
+/*# sourceMappingURL=cpo_login.css.map */

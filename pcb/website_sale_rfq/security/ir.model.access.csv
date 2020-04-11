@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_sales_refund_salesman,sales.refund.salesman,model_sales_refund,sales_team.group_sale_salesman,1,1,1,0
+access_sales_refund_manager,sales.refund.manager,model_sales_refund,sales_team.group_sale_manager,1,1,1,1
+
+access_ask_guest_salesman,ask.guest.salesman,model_ask_guest,sales_team.group_sale_salesman,1,1,1,0
+access_ask_guest_manager,ask.guest.manager,model_ask_guest,sales_team.group_sale_manager,1,1,1,1
+access_ask_guest_line_salesman,ask.guest.line.salesman,model_ask_guest_line,sales_team.group_sale_salesman,1,1,1,0
+access_ask_guest_line_manager,ask.guest.line.manager,model_ask_guest_line,sales_team.group_sale_manager,1,1,1,1
+
+
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="cpo_new_list_tree">
+            <field name="name">CPO New List Tree</field>
+            <field name="model">cpo_news_list</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="cpo_new_title"/>
+                    <field name="cpo_new_date"/>
+                    <field name="cpo_new_editor"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_new_list_form">
+            <field name="name">CPO New List Form</field>
+            <field name="model">cpo_news_list</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div style="width:49%;display:inline-block;margin-right:10px;border-right:1px solid #ddd;">
+                        <group colspan="4">
+                            <group colspan="4">
+                                <group colspan="2">
+                                    <field name="cpo_new_title" />
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_new_date" />
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_new_editor" />
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_new_content" widget="html" options="{'style-inline': true}"/>
+                                </group>
+                            </group>
+                        </group>
+                    </div>
+                    <div style="width: 50%;display: inline-block;vertical-align: top;" class="cpo_content_view_right">
+                        <div class="row" style="margin: 0;">
+                            <notebook>
+                                <page string="News Record">
+                                    <div style="margin: 20px;border: 1px solid #ddd;">
+                                        <h3 style="margin: 0;padding: 10px;line-height: 30px;text-align: center;">
+                                            <field name="cpo_new_title"></field>
+                                        </h3>
+                                        <div style="line-height: 20px;text-align: center;">
+                                            <field name="cpo_new_date"></field>
+                                        </div>
+                                        <div style="line-height: 20px;text-align: center;">
+                                            <field name="cpo_new_editor"></field>
+                                        </div>
+                                        <div style="">
+                                            <p style="text-indent:2em;">
+                                                <field name="cpo_new_content"></field>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </page>
+                            </notebook>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_new_list_actions">
+            <field name="name">CPO New List Actions</field>
+            <field name="res_model">cpo_news_list</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="CPO New List" id="cpo_new_list_menu" parent="website_cpo_index.cpo_product_release_all_menu"
+                action="cpo_new_list_actions"/>
+
+    </data>
+</odoo>

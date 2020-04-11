@@ -1,0 +1,321 @@
+
+
+#table_pcb_quotation_01 {
+    font-size: 14px;
+    width: 100%;
+    cellspacing:0;
+    cellpadding:0;
+    border-collapse:collapse;
+    font-family: WenQuanYi Micro Hei;
+}
+#table_pcb_quotation_01>tbody>tr>td{
+    width:150px;
+    height:36px;
+    border:solid 1px #000;
+    padding-left: 4px;
+    padding-top: 10px;
+}
+#table_pcb_quotation_01 .td_pcb_quotation_table{
+    padding-top: 10px;
+    padding-left: 4px;
+    height:86px;
+    border:solid 1px #000;
+}
+#table_pcb_quotation_01 .td_pcb_quotation_table td{
+    border:solid 1px #fff;
+    height:16px;
+    padding-left: 4px;
+    padding-top: 4px;
+}
+
+#td_text_center{
+    text-align:center;
+}
+
+#table_pcb_quotation_01 #border_top_none{
+    height:182px;
+    padding-top: 1px;
+    padding-bottom: 6px;
+}
+#table_foot>tbody>tr>td{
+    width:140px;
+    height:20px;
+    border:solid 1px #fff;
+    padding:5px;
+}
+.font_weight{
+    font-weight:900;
+    border: none;
+}
+/* new add style */
+#table_pcb_quotation_01 .cpo_table_line td{
+    text-align: center;
+}
+#table_pcb_quotation_01 .cpo_cpecificarion_line td{
+    text-align: center;
+}
+#table_pcb_quotation_01 .cpo_cpecificarion_line{
+    background-color:rgb(192,192,192);
+}
+#table_pcb_quotation_01 span.cpo_remark{ font-weight: 600;padding-right: 10px; }
+#table_pcb_quotation_01 p.modify_remark{ text-align: left; }
+#table_pcb_quotation_01 span.modify_tt{ display: inline-block;vertical-align: middle;height: 30px; }
+
+#table_pcb_quotation_01 .font_left{
+    text-align:left;
+}
+#table_pcb_quotation_01 .cpo_order_all_fee{
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    vertical-align: middle;
+}
+#table_pcb_quotation_01 .cpo_order_all_fee td{
+    border: none;
+    padding-top: 18px;
+    text-align: center;
+}
+.border_left_right_none td{
+    padding-bottom: 18px;
+}
+.font_underline{
+    text-decoration: underline;
+}
+#table_foot .border_bottom_solid{
+    border-bottom:solid 1px #000;
+}
+.color_red{
+    color:red;
+}
+.color_green{
+    color:rgb(0,128,0);
+}
+.border_left_right_none{ padding-bottom: 18px; }
+.border_left_right_none #border_right_1px{
+    padding-top: 0px;
+}
+#table_pcb_quotation_01 #td_padding_top{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+#border_top_none tr:first-child td{
+    line-height:20px;
+}
+#div_lead_Time{
+    position:relative;
+    top:-5px;
+}
+/* table top */
+#div_top{
+    width: 100%;
+    position: relative;
+    height: 120px;
+    margin-right: 5px;
+    padding-right: 5px;
+    margin-bottom: 4px;
+
+}
+#div_top .cpo_top_right{
+    margin-right: 5px;
+}
+#table_pcb_quotation_01 .cpo_table_head_company{
+    border: 1px solid #000000;
+    border-bottom: none;
+}
+#div_top .cpo_company_chiness_name{
+    font-weight: bold;
+    font-size: 26px;
+}
+.stencil_size{ padding: 0 2px; }
+#div_top .cpo_company_english_name{
+    font-weight: bold;
+    font-size: 26px;
+}
+#div_top .h_margin_none{
+    margin-top: 2px;
+    padding: 0px;
+    text-align: right;
+}
+#div_top .h_margin_none span{
+    display: inline-block;
+    text-align: left;
+    width: 240px;
+}
+#div_top span{
+    text-align: right;
+}
+#inline_block_1{
+    display: inline-block;
+    width: 160px;
+}
+#inline_block_2{
+    display: inline-block;
+    width: 60px;
+}
+#pcb_img{
+    position:absolute;
+    left:24px;
+    top:5px;
+    width:220px;
+}
+
+/* change style */
+#table_pcb_quotation_01 .cpo_thead_head{
+    border: 1px solid #000000;
+    border-bottom: none;
+}
+.ul_content{ overflow: hidden; }
+#table_pcb_quotation_01 .cpo_ul_info{
+    float: left;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+#table_pcb_quotation_01 .cpo_ul_person{
+    float: right;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+#table_pcb_quotation_01 .cpo_order_customer_ul li{
+    list-style: none;
+    height: 20px;
+    line-height: 20px;
+}
+#table_pcb_quotation_01 .cpo_order_customer_ul li .cpo_customer_title{
+    display: inline-block;
+    float: left;
+    width: 30%;
+    font-weight: bold;
+    margin-left: 5px;
+    text-align: left;
+}
+#table_pcb_quotation_01 .cpo_order_customer_ul li .cpo_customer_content{
+    display: inline-block;
+    width: 68%;
+    float: left;
+    border-bottom: 1px solid #000000;
+    text-align: left;
+    padding-left: 5px;
+    margin-bottom: 8px;
+    height: 20px;
+    line-height: 20px;
+}
+
+#table_pcb_quotation_01 .cpo_customer_address li{ list-style: none;height: 30px;display: block; }
+#table_pcb_quotation_01 .cpo_customer_address li .cpo_customer_title{
+    display: inline-block;
+    float: left;
+    width: 15%;
+    font-weight: bold;
+    margin-left: 5px;
+    text-align: left;
+}
+#table_pcb_quotation_01 .cpo_customer_address li .cpo_customer_content{
+    display: inline-block;
+    width: 83%;
+    float: left;
+    border-bottom: 1px solid #000000;
+    text-align: left;
+    padding-left: 5px;
+    margin-bottom: 8px;
+    height: 20px;
+    line-height: 20px;
+}
+#cpo_order_name{
+    position: relative;
+    padding: 10px 8px;
+}
+#cpo_order_name .cpo_order_name_title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+}
+#cpo_pcb_report{
+    border: 2px solid #000000;
+}
+#cpo_pcb_report .cpo_report_title{
+    border-bottom: 1px solid #000000;
+    text-align: center;
+    padding: 14px 8px;
+    font-size: 30px;
+
+}
+#order_quotation_and_date{
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    height: 40px;
+    width: 240px;
+    margin-bottom: 10px;
+    margin-right: 4px;
+}
+#order_quotation_and_date .cpo_order_manager{
+    float: left;
+    margin: 5px 0;
+}
+#order_quotation_and_date .cpo_order_manager_line{
+    width: 50px;
+    font-weight: bold;
+}
+.cpo_ac_disc{ padding: 0;text-align: left;border: none; }
+.cpo_ac_disc span{ margin-right: 10px; }
+#table_pcb_quotation_01 .cpo_ac_title{ text-align: left; }
+/*#table_pcb_quotation_01 .cpo_additional_comments{*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+/*}*/
+/*#table_pcb_quotation_01 .cpo_additional_comments li{*/
+    /*font-size: 16px;*/
+    /*border-bottom: 1px solid #000000;*/
+    /*line-height: 24px;*/
+    /*padding: 4px 2px;*/
+    /*list-style: none;*/
+    /*text-align: left;*/
+/*}*/
+/*#table_pcb_quotation_01 .cpo_additional_comments li span{*/
+    /*padding: 0 4px;*/
+    /*display: inline-block;*/
+/*}*/
+#cpo_order_logo{
+    border: none;
+    width: 100%;
+    height: 140px;
+    margin: 10px 0;
+}
+#cpo_logo{
+    float: right;
+    margin-right:50px;
+    margin-top:5px;
+    width:240px;
+    height: 85px;
+}
+#cpo_logo img{
+    width: 240px;
+    height: 80px;
+}
+#cpo_logo .cpo_thanks{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 4px 4px;
+    text-align: center;
+}
+
+.clearfix:after{
+  content: "020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  }
+
+.clearfix {
+  /* 触发 hasLayout */
+  zoom: 1;
+  }
+.modify-change{ text-align: center; }
+.modify-change td{ border: none; }
+.invoice-logo { float: left;width: 196px;height: 60px; }
+.invoice-company-name{ width: 100%;margin: 10px 0 0 0; }
+.cpo-imt-20{ margin-top: 20px; }
+.process_fee{ padding-left: 20px; }

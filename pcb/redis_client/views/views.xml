@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="redis_client_list">
+            <field name="name">Redis Client</field>
+            <field name="model">redis.client</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="host"/>
+                    <field name="port"/>
+                    <field name="db"/>
+                    <button name="test_redis" string="test" type="object"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="redis_action_window">
+            <field name="name">Redis Client</field>
+            <field name="res_model">redis.client</field>
+            <field name="view_mode">tree</field>
+        </record>
+        <!-- Top menu item -->
+        <menuitem name="Redis Client" id="redis_menu_root"/>
+        <!-- menu categories -->
+        <menuitem name="Menu 1" id="redis_menu_1" parent="redis_menu_root" action="redis_action_window"/>
+    </data>
+</odoo>

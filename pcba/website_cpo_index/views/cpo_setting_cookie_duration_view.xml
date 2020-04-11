@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- PCB Tree -->
+        <record model="ir.ui.view" id="cpo_cookie_duration_tree">
+            <field name="name">Setting Cookie Tree</field>
+            <field name="model">cpo_cookie_duration</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="user_id"/>
+                    <field name="user_name"/>
+                    <field name="cookie_time"/>
+                    <field name="cpo_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_cookie_duration_form">
+            <field name="name">Setting Cookie Form</field>
+            <field name="model">cpo_cookie_duration</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                         <button name="do_draft" states="invalid" type="object" string="Draft" />
+                         <button name="do_release" states="draft" type="object" string="Release" />
+                         <button name="do_maintain" states="release" type="object" string="Maintenance update" confirm="Are you sure to choose to change?"/>
+                         <button name="do_complete_maintain" states="maintain" type="object" string="Complete maintenance update" />
+                         <button name="do_invalid" states="draft,release,maintain,complete_maintain" type="object" string="Become invalid" />
+                         <field name="state" widget="statusbar" statusbar_visible="draft,release,maintain,invalid"/>
+                     </header>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="user_id" />
+                            </group>
+                            <group colspan="2">
+                                <field name="user_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cookie_time" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_time" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_cookie_duration_actions">
+            <field name="name">Setting Cookie Actions</field>
+            <field name="res_model">cpo_cookie_duration</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem sequence="2" name="Front page cycle setting" id="fron_page_cycle_setting_menu" parent="website_cpo_index.cpo_web_root_menu" />
+
+        <menuitem name="Website Service Protocol Setting" id="cpo_cookie_duration_menu" parent="website_cpo_index.fron_page_cycle_setting_menu"
+                action="cpo_cookie_duration_actions"/>
+
+    </data>
+</odoo>

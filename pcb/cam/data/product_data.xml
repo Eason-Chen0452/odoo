@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="product_category_Stencil" model="product.category">
+            <field name="parent_id" ref="product.product_category_1"/>
+            <field name="name">Stencil</field>
+        </record>
+
+        <record id="cpo_product_template_Stencil" model="product.product">
+            <field name="name">Stencil</field>
+            <field name="categ_id" ref="product_category_Stencil"/>
+            <field name="type">product</field>
+            <field name="website_published" eval="True"/>
+        </record>
+
+        <!--
+    Resource: product.uom.categ
+    -->
+        <record id="product_category_pcb" model="product.category">
+            <field name="parent_id">1</field>
+            <field name="name">PCB</field>
+        </record>
+               
+    
+        <!--
+            Resource: product.uom
+        -->
+        
+        <record id="product_uom_pcs" model="product.uom">
+            <field name="category_id">1</field>
+            <field name="name">PCS</field>
+            <field name="factor" eval="1.0"/>
+            <field name="rounding" eval="1.0"/>
+        </record>
+
+        <record id="product_uom_set" model="product.uom">
+            <field name="category_id">1</field>
+            <field name="name">SET</field>
+            <field name="factor" eval="1.0"/>
+            <field name="rounding" eval="1.0"/>
+        </record>
+  
+  
+        <record forcecreate="True" id="layer_number_01" model="cam.layer.number">
+            <field name="name">One Layer PCB</field>
+            <field name="layer_number">1</field>            
+            <field name="aperture_ratio">1</field>
+            <field name="min_thickness">1</field>
+            <field name="max_thickness">1</field>
+            <field name="min_inner_copper">1</field>
+            <field name="max_inner_copper">1</field>
+            <field name="min_outer_copper">1</field>
+            <field name="max_outer_copper">1</field>                        
+        </record>        
+
+        <record forcecreate="True" id="layer_number_02" model="cam.layer.number">
+            <field name="name">Two Layers PCB</field>
+            <field name="layer_number">2</field>
+            <field name="aperture_ratio">1</field>
+            <field name="min_thickness">1</field>
+            <field name="max_thickness">1</field>
+            <field name="min_inner_copper">1</field>
+            <field name="max_inner_copper">1</field>
+            <field name="min_outer_copper">1</field>
+            <field name="max_outer_copper">1</field>                                    
+        </record>        
+
+        <record forcecreate="True" id="layer_number_04" model="cam.layer.number">
+            <field name="name">Four Layers PCB</field>
+            <field name="layer_number">4</field>
+            <field name="aperture_ratio">1</field>
+            <field name="min_thickness">1</field>
+            <field name="max_thickness">1</field>
+            <field name="min_inner_copper">1</field>
+            <field name="max_inner_copper">1</field>
+            <field name="min_outer_copper">1</field>
+            <field name="max_outer_copper">1</field>                        
+        </record>        
+
+        <record forcecreate="True" id="layer_number_06" model="cam.layer.number">
+            <field name="name">Six Layers PCB</field>
+            <field name="layer_number">6</field>
+            <field name="aperture_ratio">1</field>
+            <field name="min_thickness">1</field>
+            <field name="max_thickness">1</field>
+            <field name="min_inner_copper">1</field>
+            <field name="max_inner_copper">1</field>
+            <field name="min_outer_copper">1</field>
+            <field name="max_outer_copper">1</field>                                    
+        </record>        
+
+        <record forcecreate="True" id="layer_number_08" model="cam.layer.number">
+            <field name="name">Eight Layers PCB</field>
+            <field name="layer_number">8</field>
+            <field name="aperture_ratio">1</field>
+            <field name="min_thickness">1</field>
+            <field name="max_thickness">1</field>
+            <field name="min_inner_copper">1</field>
+            <field name="max_inner_copper">1</field>
+            <field name="min_outer_copper">1</field>
+            <field name="max_outer_copper">1</field>                        
+        </record>        
+
+        <record forcecreate="True" id="layer_number_10" model="cam.layer.number">
+            <field name="name">Ten Layers PCB</field>
+            <field name="layer_number">10</field>
+            <field name="aperture_ratio">1</field>
+            <field name="min_thickness">1</field>
+            <field name="max_thickness">1</field>
+            <field name="min_inner_copper">1</field>
+            <field name="max_inner_copper">1</field>
+            <field name="min_outer_copper">1</field>
+            <field name="max_outer_copper">1</field>                        
+        </record>        
+
+        <record forcecreate="True" id="layer_number_12" model="cam.layer.number">
+            <field name="name">Twelve Layers PCB</field>
+            <field name="layer_number">12</field>
+            <field name="aperture_ratio">1</field>
+            <field name="min_thickness">1</field>
+            <field name="max_thickness">1</field>
+            <field name="min_inner_copper">1</field>
+            <field name="max_inner_copper">1</field>
+            <field name="min_outer_copper">1</field>
+            <field name="max_outer_copper">1</field>                        
+        </record>  
+        
+        <record forcecreate="True" id="layer_number_14" model="cam.layer.number">
+            <field name="name">Fourteen Layers PCB</field>
+            <field name="layer_number">14</field>
+            <field name="aperture_ratio">1</field>
+            <field name="min_thickness">1</field>
+            <field name="max_thickness">1</field>
+            <field name="min_inner_copper">1</field>
+            <field name="max_inner_copper">1</field>
+            <field name="min_outer_copper">1</field>
+            <field name="max_outer_copper">1</field>                        
+        </record>        
+
+        <record forcecreate="True" id="layer_number_16" model="cam.layer.number">
+            <field name="name">Sixteen Layers PCB</field>
+            <field name="layer_number">16</field>
+            <field name="aperture_ratio">1</field>
+            <field name="min_thickness">1</field>
+            <field name="max_thickness">1</field>
+            <field name="min_inner_copper">1</field>
+            <field name="max_inner_copper">1</field>
+            <field name="min_outer_copper">1</field>
+            <field name="max_outer_copper">1</field>                        
+        </record>        
+
+        <record forcecreate="True" id="layer_number_18" model="cam.layer.number">
+            <field name="name">Eighteen Layers PCB</field>
+            <field name="layer_number">18</field>
+            <field name="aperture_ratio">1</field>
+            <field name="min_thickness">1</field>
+            <field name="max_thickness">1</field>
+            <field name="min_inner_copper">1</field>
+            <field name="max_inner_copper">1</field>
+            <field name="min_outer_copper">1</field>
+            <field name="max_outer_copper">1</field>                        
+        </record>        
+  
+        <record forcecreate="True" id="layer_number_20" model="cam.layer.number">
+            <field name="name">Twenty Layers PCB</field>
+            <field name="layer_number">20</field>
+            <field name="aperture_ratio">1</field>
+            <field name="min_thickness">1</field>
+            <field name="max_thickness">1</field>
+            <field name="min_inner_copper">1</field>
+            <field name="max_inner_copper">1</field>
+            <field name="min_outer_copper">1</field>
+            <field name="max_outer_copper">1</field>                        
+        </record>        
+    
+        <!--
+        Product
+        -->
+        
+        <record id="product_product_pcb_1" model="product.product">
+            <field name="list_price">480.0</field>
+            <field name="standard_price">450.0</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+            <field name="uos_id" ref="product_uom_pcs"/>
+            <field name="uos_coeff">1</field>
+            <field name="name">One Layer PCB</field>
+            <field name="categ_id" ref="product_category_pcb"/>
+            <field name="layer_number" ref="layer_number_01"/>
+            <field name="type">pcb</field>
+        </record>
+        
+        <record id="product_product_pcb_2" model="product.product">
+            <field name="list_price">480.0</field>
+            <field name="standard_price">450.0</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+            <field name="uos_id" ref="product_uom_pcs"/>
+            <field name="uos_coeff">1</field>            
+            <field name="name">Two Layers PCB</field>
+            <field name="categ_id" ref="product_category_pcb"/>
+            <field name="layer_number" ref="layer_number_02"/>
+            <field name="type">pcb</field>
+        </record>
+
+        <record id="product_product_pcb_4" model="product.product">
+            <field name="list_price">780.0</field>
+            <field name="standard_price">750.0</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+            <field name="uos_id" ref="product_uom_pcs"/>
+            <field name="uos_coeff">1</field>           
+            <field name="name">Four Layers PCB</field>
+            <field name="categ_id" ref="product_category_pcb"/>
+            <field name="layer_number" ref="layer_number_04"/>
+            <field name="type">pcb</field>
+        </record>
+
+        <record id="product_product_pcb_6" model="product.product">
+            <field name="list_price">1200.0</field>
+            <field name="standard_price">1150.0</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+            <field name="uos_id" ref="product_uom_pcs"/>
+            <field name="uos_coeff">1</field>            
+            <field name="name">Six Layers PCB</field>
+            <field name="categ_id" ref="product_category_pcb"/>
+            <field name="layer_number" ref="layer_number_06"/>
+            <field name="type">pcb</field>
+        </record>
+
+
+        <record id="product_product_pcb_8" model="product.product">
+            <field name="list_price">2100.0</field>
+            <field name="standard_price">2000.0</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+            <field name="uos_id" ref="product_uom_pcs"/>
+            <field name="uos_coeff">1</field>           
+            <field name="name">Eight Layers PCB</field>
+            <field name="categ_id" ref="product_category_pcb"/>
+            <field name="layer_number" ref="layer_number_08"/>
+            <field name="type">pcb</field>
+        </record>
+
+        <record id="product_product_pcb_10" model="product.product">
+            <field name="list_price">2800.0</field>
+            <field name="standard_price">2700.0</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+            <field name="uos_id" ref="product_uom_pcs"/>
+            <field name="uos_coeff">1</field>            
+            <field name="name">Ten Layers PCB</field>
+            <field name="categ_id" ref="product_category_pcb"/>
+            <field name="layer_number" ref="layer_number_10"/>
+            <field name="type">pcb</field>
+        </record>
+
+        <record id="product_product_pcb_12" model="product.product">
+            <field name="list_price">3500.0</field>
+            <field name="standard_price">3200.0</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+            <field name="uos_id" ref="product_uom_pcs"/>
+            <field name="uos_coeff">1</field>            
+            <field name="name">Twelve Layers PCB</field>
+            <field name="categ_id" ref="product_category_pcb"/>
+            <field name="layer_number" ref="layer_number_12"/>
+            <field name="type">pcb</field>
+        </record>
+
+        <record id="product_product_pcb_14" model="product.product">
+            <field name="list_price">4200.0</field>
+            <field name="standard_price">4000.0</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+            <field name="uos_id" ref="product_uom_pcs"/>
+            <field name="uos_coeff">1</field>            
+            <field name="name">Fourteen Layers PCB</field>
+            <field name="categ_id" ref="product_category_pcb"/>
+            <field name="layer_number" ref="layer_number_14"/>
+            <field name="type">pcb</field>
+        </record>
+
+        <record id="product_product_pcb_16" model="product.product">
+            <field name="list_price">4900.0</field>
+            <field name="standard_price">4800.0</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+            <field name="uos_id" ref="product_uom_pcs"/>
+            <field name="uos_coeff">1</field>            
+            <field name="name">Sixteen Layers PCB</field>
+            <field name="categ_id" ref="product_category_pcb"/>
+            <field name="layer_number" ref="layer_number_16"/>
+            <field name="type">pcb</field>
+        </record>
+
+        <record id="product_product_pcb_18" model="product.product">
+            <field name="list_price">5600.0</field>
+            <field name="standard_price">5500.0</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+            <field name="uos_id" ref="product_uom_pcs"/>
+            <field name="uos_coeff">1</field>            
+            <field name="name">Eighteen Layers PCB</field>
+            <field name="categ_id" ref="product_category_pcb"/>
+            <field name="layer_number" ref="layer_number_18"/>
+            <field name="type">pcb</field>
+        </record>
+
+
+        <record id="product_product_pcb_20" model="product.product">
+            <field name="list_price">6100.0</field>
+            <field name="standard_price">6000.0</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+            <field name="uos_id" ref="product_uom_pcs"/>
+            <field name="uos_coeff">1</field>            
+            <field name="name">Twenty Layers PCB</field>
+            <field name="categ_id" ref="product_category_pcb"/>
+            <field name="layer_number" ref="layer_number_20"/>
+            <field name="type">pcb</field>
+        </record>
+        
+        <record forcecreate="True" id="decimal_price" model="decimal.precision">
+            <field name="name">size</field>
+            <field name="digits">4</field>
+        </record>
+        
+    </data>
+</openerp>

@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="CPO Sale Shop">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/website_cpo_sale/static/src/css/cpo_sale.css" />
+            <link rel="stylesheet" href="/website_cpo_sale/static/src/css/cpo_index.css" />
+            <link rel="stylesheet" href="/website_cpo_sale/static/src/css/cpo_sale.css" />
+            <link rel="stylesheet" href="/website_cpo_sale/static/src/css/animate.css" />
+            <link rel="stylesheet" href="/website_cpo_sale/static/src/css/mobile_style.css" />
+            <link rel="stylesheet" href="/website_cpo_sale/static/src/css/im_chat_box.css"/>
+            <link rel="stylesheet" href="/website_cpo_sale/static/src/css/cpo_pcb_quotation.css"/>
+            <script type="text/javascript" src="/website_cpo_sale/static/src/js/im_livechat.js"></script>
+            <script type="text/javascript" src="/website_cpo_sale/static/src/js/website_cpo_sale_tour_test1.js"></script>
+        </xpath>
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/website_cpo_sale/static/src/js/wow.min.js"></script>
+            <script type="text/javascript" src="/website_cpo_sale/static/src/js/cpo_table.js"></script>
+            <script type="text/javascript" src="/website_cpo_sale/static/src/js/cpo_sale.js"></script>
+            <script type="text/javascript" src="/website_cpo_sale/static/src/js/cpo_sale_payment.js"></script>
+        </xpath>
+    </template>
+
+    <template id="web_layout" inherit_id="web.layout" name="Web layout">
+        <xpath expr="//link[@type='image/x-icon']" position="replace">
+            <link type="image/x-icon" rel="shortcut icon" t-att-href="x_icon or '/website_cpo_sale/static/src/images/favicon.png'"/>
+        </xpath>
+    </template>
+
+    <template id="404">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure oe_empty">
+                    <div class="container">
+                        <h1 class="mt32">PCB Product not found!</h1>
+                        <p>Sorry, this product is not available anymore.</p>
+                        <p>
+                            <a t-attf-href="/pcb">Return to the product list.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- /shop product listing -->
+    <template id="products" name="Products">
+        <t t-call="website.layout">
+        <t t-set="additional_title">PCB Shop</t>
+        <div class="jumbotron">
+            <div class="container">
+                <div class="col-md-8 mt64 mb64 bg-black-25">
+                    <h2 class="o_default_snippet_text">One-stop Service, Fast and Best</h2>
+                    <h4 class="o_default_snippet_text">Quality Assurance</h4>
+                </div>
+            </div>
+        </div>
+        <div id="wrap" class="js_sale">
+            <div class="oe_structure" />
+                <div class="container oe_website_sale">
+                    <div class="row">
+                        <t t-call="website_cpo_sale.temp_quote"/>
+                        <!--<div class="col-xs-12 col-md-12 col-lg-12">-->
+                            <!--<form method="POST"-->
+                                <!--action="/pcb"-->
+                                <!--enctype="multipart/form-data"-->
+                                <!--class="form-inline"-->
+                                <!--id="pcb_form_act">-->
+                                <!--[>target="fileframe"<]-->
+                                    <!--<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />-->
+                                    <!--<div class="form-group pull-left">-->
+                                        <!--<input type="file" name="upload" accept=".xlsx, .xls, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" multiple="multiple" style="position: absolute; opacity: 0; width: 100px; height: 100px;"/>-->
+                                        <!--<input type="hidden" name="disable_optimization" value=""/>-->
+                                        <!--<div class="btn-group">-->
+                                            <!--<button class="btn btn-primary filepicker" type="button">Upload an Excel File</button>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                            <!--</form>-->
+                            <!--<p style="height:28px"></p>-->
+                        <!--</div>-->
+                    <!--<t t-if="len(txt)" t-foreach="txt" t-as="row">-->
+                        <!--<a><t-esc="row"/></a>-->
+                    <!--</t>-->
+                        <!--<div class="col-xs-12 col-md-12 col-lg-12">-->
+                            <!--<table>-->
+                                <!--<t t-if="len(txt)" t-foreach="len(txt)" t-as="x">-->
+                                    <!--<tr>-->
+                                        <!--<t t-if="len(txt[x])" t-foreach="len(txt[x])" t-as="y">-->
+                                            <!--<td>-->
+                                            <!--<t t-esc="txt[x][y]"/>-->
+                                            <!--</td>-->
+                                        <!--</t>-->
+                                    <!--</tr>-->
+                                <!--</t>-->
+                            <!--</table>-->
+                        <!--</div>-->
+                        </div>
+
+                    <div>
+                </div>
+            </div>
+        </div>
+        </t>
+    </template>
+    
+    <template id="temp_quote">
+         <div class="row">
+                <div id="xiangdao">
+                    <t t-call="website_sale.wizard_checkout">
+                        <t t-set="step" t-value="60" />
+                    </t>
+                    <!--<t t-call="website_sale.wizard_checkout" />-->
+                </div>
+        </div>
+
+        <h3 class="panel-title o_default_snippet_text cpo_pcba_title_style">PCBA online quotation ! <div class="fa fa-question-circle-o" id="cpo_open_demo"></div></h3>
+         <div class="row" id="quotation_row_sty">
+            <div class="col-xs-5 col-md-5 col-lg-5" id="ele_table">
+                <table class="table table-bordered">
+                    <caption id="tab_title">Online offer <span>(According to your requirements ， fill in the relevant data as below ， match the relevant price.)</span></caption>
+                </table>
+                <form class="form-horizontal" role="form" 
+                                    method="POST"
+                                    action="/get_pcba_price"
+                                    enctype="multipart/form-data"
+                                    id="xiangqing">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="form-group">
+                    <!--<input type="text" name="abc"/>-->
+                        <label class="col-sm-5 control-label"><i>*</i>Production Quantity</label>
+                        <div class="col-sm-4 ele_enter">
+                            <input type="text" name="abc" class="form-control shuliang" id="inputPassword"
+                                    placeholder="" maxlength="9" onKeyUp="value=value.replace(/\D/g,'')" onchange="value=value.replace(/\D/g,'')"/>
+                            <span class="">PCS</span>
+                        </div>
+                        
+                    </div>
+                    
+                    <!--<div class="form-group">-->
+                        <!--<label for="inputPassword" class="col-sm-4 control-label"><i>*</i>BOM Type of material</label>-->
+                        <!--<div class="col-sm-3 ele_enter">-->
+                            <!--<input type="text" class="form-control bom_type" id="inputPassword" -->
+                                    <!--placeholder="" maxlength="9"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-5 control-label"><i>*</i>DIP through hole quantity</label>
+                        <div class="col-sm-3 ele_enter">
+                            <input type="text" class="form-control wel_com" id="inputPassword" 
+                                    placeholder="" maxlength="9" onKeyUp="value=value.replace(/\D/g,'')" onchange="value=value.replace(/\D/g,'')"/>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-5 control-label"><i>*</i>SMT parts quantity</label>
+                        <div class="col-sm-3 ele_enter">
+                            <input type="text" class="form-control smt_num" id="inputPassword" 
+                                    placeholder="" maxlength="9" onKeyUp="value=value.replace(/\D/g,'')" onchange="value=value.replace(/\D/g,'')"/>
+                        </div>
+                    </div>
+                    
+                    <!--<div class="form-group">-->
+                        <!--<label for="inputPassword" class="col-sm-4 control-label"><i>*</i>QFP BGA the number of IC above 16 feet</label>-->
+                        <!--<div class="col-sm-3 ele_enter">-->
+                            <!--<input type="text" class="form-control ic_num" id="inputPassword" -->
+                                    <!--placeholder="" maxlength="9"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <!--<div class="form-group">-->
+                        <!--<label for="inputPassword" class="col-sm-4 control-label"><i>*</i>DIP quantity</label>-->
+                        <!--<div class="col-sm-3 ele_enter">-->
+                            <!--<input type="text" class="form-control bw_num" id="inputPassword"-->
+                                    <!--placeholder="" maxlength="9"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-5 control-label"><i>*</i>Single side/double side SMT</label>
+                        <div class="col-sm-4 ele_enter">
+                            <select class="form-control mian_one">
+                                <option value="1">Single side</option>
+                                <option value="2">Double side</option>
+                                <!--<option>Four layers</option>-->
+                                <!--<option>Six layers</option>-->
+                                <!--<option>Eight layers</option>-->
+                            </select>
+                        </div>
+                    </div>
+                    <!--PCB thickness-->
+                    <div class="form-group">
+                        <label class="col-sm-5 control-label"><i>*</i>Thickness</label>
+                        <div class="col-sm-4 ele_enter">
+                            <input type="text" name="abc" class="form-control pcb_thickness re_change" id="inputPassword" value="1.6"
+                                    placeholder="" maxlength="9" onkeyup="value=value.replace(/\.{2,}/g,'.')" onchange="value=value.replace(/\.{2,}/g,'.')"/>
+                            <span class="">MM</span>
+                        </div>
+                    </div>
+                    <!--PCB Specifications-->
+                    <div class="form-group">
+                        <label class="col-sm-5 control-label"><i>*</i>PCB/PCB panel size</label>
+                        <div class="col-sm-7 ele_pcb_wh">
+                            <input type="text" name="abc" class="form-control pcb_length re_change" id="inputPassword" placeholder="" maxlength="7" />
+                            <i>×</i>
+                            <input type="text" name="abc" class="form-control pcb_breadth re_change" id="inputPassword" placeholder="" maxlength="7"/>
+                            <span class="">MM</span>
+                        </div><br/>
+                        <p id="hint_lenght" style="">
+                            If the length or width  less than 50MM, the cost of Jig  shall be added .
+                        </p>
+                        <p id="hint_lenght_max" style="">
+                            The Max soldering size is 1100 * 410 Unit(mm).
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-5 control-label"><i>*</i>Components supply:</label>
+                        <div class="col-sm-6 ele_enter">
+                            <select class="form-control pcb_sele_one">
+                                <option value="chinapcbone">ChinaPCBOne-supplied</option>
+                                <option value="customer">Customer-supplied</option>
+                                <option value="part-customer">Part from ChinaPCBOne ,part from Customer</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-5 control-label"><i>*</i>PCB manufacturing:</label>
+                        <div class="col-sm-6 ele_enter">
+                            <select class="form-control pcb_sele_two">
+                                <option value="chinapcbone">Made in ChinaPCBOne</option>
+                                <option value="customer">Customer-supplied</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-5 control-label"><i>*</i>Special request:</label>
+                        <div class="col-sm-6 ele_enter">
+                            <select class="form-control pcb_sele_special" id="tFrom">
+                                <option selected = "selected">No</option>
+                                <option >Programming</option>
+                                <option >Function test</option>
+                                <option id="cpo_select_other" >Please enter additional requirements</option>
+                            </select>
+                            <input type="text" id="cpo_select_value" maxlength="50" value="No"/>
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+         <!-- 按钮 -->
+            <div class="col-xs-2 col-md-2 col-lg-2" id="ele_table_middle">
+                <div class="ele_table_butto">
+                        <div class="col-sm-4 ele_btn_js" id="button_jisuan">
+                            <input type="button" class="btn btn-default" value="" id="jisuan_click"/>
+                        </div>
+                </div>
+            </div>
+          <!--右边布局-->
+            <div class="col-xs-5 col-md-5 col-lg-5" id="ele_table_right">
+                <table class="table table-bordered">
+                    <caption id="tab_title"><span></span>Detailed parameters</caption>
+                </table>
+                <form class="form-horizontal"
+                    t-attf-action="/shop/product/#{ slug(product_id) }"
+                    method="post"
+                    action="/get_pcba_detail"
+                    role="form" 
+                    id="jisuan_one">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td style="background-color: #F1F4F4;">Production Quantity</td>
+                                <td style="text-align: center">
+                                    <!--<span class="shuliang"></span>-->
+                                    <a/><input type="hidden" class="shuliang" name="shuliang" maxlength="9"/>
+                                </td>
+                                <td style="background-color: #F1F4F4;">DIP through hole quantity</td>
+                                <td style="text-align: center">
+                                    <a/><input type="hidden" class="wel_com" name="wel_com" maxlength="9"/>
+                                </td>
+                                <!--<td style="background-color: #F1F4F4;">BOM Type of material</td>-->
+                                <!--<td style="text-align: center">-->
+                                    <!--<a/><input type="hidden" class="bom_type" name="bom_type" maxlength="9"/>-->
+                                <!--</td>-->
+                            </tr>
+
+                            <tr>
+                                <!--After welding components-->
+                                <td style="background-color: #F1F4F4;">SMT Parts quantity</td>
+                                <td style="text-align: center">
+                                    <a/><input type="hidden" class="smt_num" name="smt_num" maxlength="9"/>
+                                </td>
+                                <td style="background-color: #F1F4F4;">PCB Thickness</td>
+                                <td style="text-align: center">
+                                    <a/><input type="hidden" class="pcb_thickness" name="pcb_thickness" /><span>MM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #F1F4F4;" colspan="2">Single side/double side SMT</td>
+                                <td style="text-align: center" colspan="2">
+                                    <a/><input type="hidden" class="mian_one" name="mian_one" maxlength="9"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #F1F4F4;" colspan="2">Special request</td>
+                                <td style="text-align: center" colspan="2">
+                                    <a/><input type="hidden" class="pcb_special" name="pcb_special" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <!--<td style="background-color: #F1F4F4;">IC quantity</td>-->
+                                <!--<td style="text-align: center">-->
+                                    <!--<a/><input type="hidden" class="ic_num" name="ic_num" maxlength="9"/>-->
+                                <!--</td>-->
+                                <!--<td style="background-color: #F1F4F4;">DIP quantity</td>-->
+                                <!--<td style="text-align: center">-->
+                                    <!--<a/><input type="hidden" class="bw_num" name="bw_num" maxlength="9"/>-->
+                                <!--</td>-->
+                                <td style="background-color: #F1F4F4;">PCB manufacturing</td>
+                                <td style="text-align: center">
+                                    <a/><input type="hidden" class="ms_supply" name="ms_supply" maxlength="9"/>
+                                </td>
+                                <td style="background-color: #F1F4F4;">Components supply</td>
+                                <td style="text-align: center" >
+                                    <a/><input type="hidden" class="pcb_pro" name="pcb_pro" maxlength="9"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #F1F4F4;">PCB length</td>
+                                <td style="text-align: center">
+                                    <a/><input type="hidden" class="pcb_len" name="pcb_length" /><span>MM</span>
+                                </td>
+                                <td style="background-color: #F1F4F4;">PCB width</td>
+                                <td style="text-align: center">
+                                    <a/><input type="hidden" class="pcb_bread" name="pcb_breadth" /><span>MM</span>
+                                    <input type='hidden' name="bom_id" class="hidden" t-att-value="bom_id"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                <table class="table table-bordered">
+                    <caption id="tab_title"><span></span>Evaluation</caption>
+                </table>
+                <table class="table table-bordered" id="ele_result">
+                    <tbody>
+                        <!--<tr>-->
+                            <!--<td style="background-color: #F1F4F4;">Production quantity</td>-->
+                            <!--<td style="text-align: center">-->
+                                <!--<a/><input type="hidden" class="result_pcs" name="quantity" maxlength="9"/>pcs-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td style="background-color: #F1F4F4;">Set up cost</td>-->
+                            <!--<td style="text-align: center">-->
+                                <!--<i>$</i><a>0.00</a><input type="hidden" class="price_one" name="price" maxlength="9"/>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <tr>
+                            <td style="background-color: #F1F4F4;">SMT assembly cost</td>
+                            <td style="text-align: center">
+                                <i>$</i><a>0.00</a><input type="hidden" class="result_1" name="rental" maxlength="9"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #F1F4F4;">Stencil cost</td>
+                            <td style="text-align: center">
+                                <i>$</i><a>0.00</a><input type="hidden" class="stencil_result" name="Stencil" maxlength="9"/>
+                            </td>
+                        </tr>
+                        <tr id="jig_fee_tatol" class="jig_fee_class">
+                            <td style="background-color: #F1F4F4;" >Jig cost</td>
+                            <td style="text-align: center;">
+                                <i>$</i><a>0.00</a><input type="hidden" class="jig_result" name="jig" maxlength="9"/>
+                            </td>
+                        </tr>
+                        <tr id="e_test_tatol" class="e_test_class">
+                            <td style="background-color: #F1F4F4;">Special cost</td>
+                            <td style="text-align: center">
+                                <i>$</i><a>0.00</a><input type="hidden" class="e_test_result" name="e_test" maxlength="9"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #F1F4F4;">Total</td>
+                            <td style="text-align: center">
+                                <i>$</i><a>0.00</a><input type="hidden" class="result_2" name="total" maxlength="9"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="form-group" style="text-align: center">
+                        <div class="cpo_submit" style="text-align: center">
+                            <button type="submit" class="btn btn-default submit btn-primary" id="click_details">Next step</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+         
+    </template>
+    
+    <!--inherit shop cat-->
+    <!--<template id="inhreit_product_add_cat" name="Add Cat Products Links" inherit_id="website_sale.product">-->
+        <!--<xpath expr="//div[@class='col-sm-7']" position="replace">-->
+            <!--<div class="col-sm-7">-->
+                <!--<t t-call="website_cpo_sale.add_product_cat" />-->
+            <!--</div>-->
+        <!--</xpath>-->
+    <!--</template>-->
+
+    <template id="inhreit_website_portal_details" name="Add tz to portal details" inherit_id="website_portal.details">
+        <!--<xpath expr='//div[@class="row"]' position="inside">-->
+            <!--<div class="col-sm-7">-->
+                <!--<label class="partner-tz-label" for="tz">Timezone</label>-->
+                <!--<select name="tz" class="form-control">-->
+                    <!--<option value="">select...</option>-->
+                    <!--<t t-foreach="timezones or []" t-as="tz">-->
+                        <!--<option t-att-value="tz[0]" t-att-selected="tz[0] == partner.tz">-->
+                            <!--<t t-esc="tz[1]" />-->
+                        <!--</option>-->
+                    <!--</t>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</xpath>-->
+    </template>
+
+    <!--<template id="inhreit_website_portal_layout" name="Add tz to portal layout" inherit_id="website_portal.portal_layout">-->
+        <!--<xpath expr='//div[@class="o_my_details"]' position="inside">-->
+            <!--<div>-->
+                <!--<p t-if="user.partner_id.tz">Timezone:<span t-field="user.partner_id.tz"/></p>-->
+                <!--<p t-if="not user.partner_id.tz">Timezone unset</p>-->
+            <!--</div>-->
+        <!--</xpath>-->
+    <!--</template>-->
+    <!---->
+    <!--inherit shop cat-->
+    <!--<template id="inhreit_product_shop" name="Shop Products Links" inherit_id="website_sale.cart">-->
+        <!--<xpath expr="//div[@class='row']" position="after">-->
+            <!--<xpath expr="//div[@class='row']" position="replace">-->
+                <!--<div class="col-sm-7">-->
+                    <!--<t t-call="website_cpo_sale.shoping_cat" />-->
+                <!--</div>-->
+            <!--</xpath>-->
+        <!--</xpath>-->
+    <!--</template>-->
+    
+    <!--update file-->
+    <template id="shoping_cat">
+        <!--<t t-esc="website_sale_order"/>   sale.order-->
+        <!--<t t-esc="website_sale_order.website_order_line"/> sale.order.line-->
+        <div t-if="website_sale_order and website_sale_order.website_order_line" id="cpo_ele_cart_att">
+            <!--上传文件-->
+            <a class="btn btn-primary oe_electron_js_upload upload_btn" title="Upload Presentation" t-attf-order_id="#{website_sale_order.id}" t-att-product_type="website_sale_order.product_type">
+                <!--<span class="fa fa-hand-o-down fa-lg"></span>-->
+                <i class="fa fa-cloud-upload"></i> Upload
+            </a>
+            <!--<form action="/pcb" class="cpo_sale_order_merger" id="cpo_sale_order_merger" method="POST">-->
+            <form action="/pcb" class="cpo_sale_order_merger" method="POST">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                <input type="hidden" name="cpo_order_id" class="cpo_order_id" t-att-value="website_sale_order.id" />
+                <input type="hidden" name="cpo_order_number" class="cpo_order_number" t-att-value="website_sale_order.name" />
+            </form>
+            <ul class="shopping_cart_file">
+                <li class="cart_file" style="border-bottom: 1px solid #4a96fd;">
+                    <div class="cart_file_line cart_file_title">Attachment Name</div>
+                    <div class="cart_file_line cart_file_descr">Description</div>
+                </li>
+                <t t-if="not website_sale_order.get_all_att_list()">
+                    <li class="cart_file" style="text-align: center;display: block;line-height: 30px;font-weight: 600;">
+                        Please upload the file first!
+                    </li>
+                </t>
+                <t t-foreach="website_sale_order.get_all_att_list()" t-as="row">
+                    <li class="cart_file">
+                        <div class="cart_file_line cart_file_name">
+                            <span class="cart_file_value">
+                                <t t-esc="row.name"/>
+                            </span>
+                        </div>
+                        <div class="cart_file_line cart_file_type">
+                            <span t-esc="row.description" t-att-data-orderid="row.res_id"/>
+                            <form method="POST"
+                                action="/pcba/ele/check_attach_file"
+                                enctype="multipart/form-data"
+                                class="form-inline pcb_form_act"
+                                >
+                                <!--id="pcb_form_act"-->
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                <input type="hidden" name="atta_id" t-att-value="row.id"/>
+                                <input type="hidden" name="return_url" value="/shop/cart"/>
+                                <button type="submit" class="btn btn-default submit btn-primary" t-if="row.description=='BOM File'" id="check_file_atta">Check</button>
+                            </form>
+                            <form method="POST"
+                                action="/down/file"
+                                enctype="multipart/form-data"
+                                class="form-inline down_file_form"
+                                >
+                                <!--id="down_file_form"-->
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                <input type="hidden" name="attachment_id" t-att-value="row.id"/>
+                                <a class="btn btn-default cpo_down_file" title="Down File"><i class="fa fa-download"></i></a>
+                            </form>
+                            <form method="POST"
+                                action="/pcba/ele/delete_attach_file"
+                                enctype="multipart/form-data"
+                                class="form-inline pcb_form_act" >
+                                <!-- id="pcb_form_act" -->
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                <input type="hidden" name="atta_id" t-att-value="row.id"/>
+                                <input type="hidden" name="return_url" value="/shop/cart"/>
+                                <!--<button type="submit" class="btn submit pull-right cpo_delete_file" id="delete_file_atta">-->
+                                <button type="submit" class="btn submit pull-right cpo_delete_file delete_file_atta">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </li>
+                </t>
+            </ul>
+            <!--<table  class="table table-bordered">-->
+                <!--<thead class="table_thead">-->
+                    <!--<tr class="generated_order_upload">-->
+                        <!--<p style="margin: 0;"></p>-->
+                        <!--<t t-if="website_sale_order.product_type == 'PCBA'">-->
+                            <!--<td colspan="2" class="cpo-border-right">-->
+                                <!--<a class="order_upload_btn" t-attf-order_id="#{website_sale_order.id}" >-->
+                                    <!--Add BOM file-->
+                                    <!--<input type="file" name="bom_file" class="order_upload_file" id="1"/>-->
+                                <!--</a>-->
+                            <!--</td>-->
+                            <!--<td colspan="2" class="cpo-border-left cpo-border-right">-->
+                                <!--<a class="order_upload_btn" t-attf-order_id="#{website_sale_order.id}">-->
+                                    <!--Add SMT file-->
+                                    <!--<input type="file" name="smt_file" class="order_upload_file" id="2"/>-->
+                                <!--</a>-->
+                            <!--</td>-->
+                            <!--<td colspan="2" class="cpo-border-left">-->
+                                <!--<a class="order_upload_btn" t-attf-order_id="#{website_sale_order.id}">-->
+                                    <!--Add Gerber file-->
+                                    <!--<input type="file" name="gerber_file" class="order_upload_file" id="3"/>-->
+                                <!--</a>-->
+                            <!--</td>-->
+                        <!--</t>-->
+                        <!--<t t-else="">-->
+                            <!--<td colspan="6" class="cpo-border-left">-->
+                                <!--<a class="order_upload_btn" t-attf-order_id="#{website_sale_order.id}">-->
+                                    <!--Add Gerber file-->
+                                    <!--<input type="file" name="gerber_file" class="order_upload_file" id="3"/>-->
+                                <!--</a>-->
+                            <!--</td>-->
+                        <!--</t>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<p style="margin: 0;"></p>-->
+                        <!--<th colspan="3">Attachment Name</th>-->
+                        <!--<th colspan="3">Description</th>-->
+                    <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                    <!--<t t-foreach="website_sale_order.get_all_att_list()" t-as="row">-->
+                        <!--<tr>-->
+                            <!--<td colspan="3" class="cpo_td_sp3">-->
+                                <!--<form method="POST"-->
+                                    <!--action="/pcba/ele/delete_attach_file"-->
+                                    <!--enctype="multipart/form-data"-->
+                                    <!--class="form-inline"-->
+                                    <!--id="pcb_form_act">-->
+                                    <!--<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />-->
+                                    <!--<input type="hidden" name="atta_id" t-att-value="row.id"/>-->
+                                    <!--<input type="hidden" name="return_url" value="/shop/cart"/>-->
+                                    <!--&lt;!&ndash;<span class="fa fa-hand-o-down fa-lg" ></span>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<button type="submit" class="btn btn-default submit btn-primary cpo_delete_file" id="delete_file_atta"><i class="fa fa-close"></i></button>&ndash;&gt;-->
+                                    <!--<button type="submit" class="btn submit pull-right cpo_delete_file" id="delete_file_atta">-->
+                                        <!--<i class="fa fa-trash-o"></i>-->
+                                    <!--</button>-->
+                                <!--</form>-->
+                                <!--<t t-esc="row.name"/>-->
+                            <!--</td>-->
+                            <!--<td colspan="3">-->
+                                <!--<span t-esc="row.description" t-att-data-orderid="row.res_id"/>-->
+                                <!--<form method="POST"-->
+                                    <!--action="/pcba/ele/check_attach_file"-->
+                                    <!--enctype="multipart/form-data"-->
+                                    <!--class="form-inline"-->
+                                    <!--id="pcb_form_act">-->
+                                    <!--<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />-->
+                                    <!--<input type="hidden" name="atta_id" t-att-value="row.id"/>-->
+                                    <!--<input type="hidden" name="return_url" value="/shop/cart"/>-->
+                                    <!--&lt;!&ndash;<span class="fa fa-hand-o-down fa-lg" ></span>&ndash;&gt;-->
+                                    <!--<button type="submit" class="btn btn-default submit btn-primary" t-if="row.description=='BOM File'" id="check_file_atta">Check</button>-->
+                                <!--</form>-->
+                                <!--&lt;!&ndash;<button type="submit" class="btn submit pull-right cpo_delete_file" id="delete_file_atta">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<i class="fa fa-trash-o"></i>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                                <!--<form method="POST"-->
+                                    <!--action="/down/file"-->
+                                    <!--enctype="multipart/form-data"-->
+                                    <!--class="form-inline"-->
+                                    <!--id="down_file_form">-->
+                                    <!--<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />-->
+                                    <!--<input type="hidden" name="attachment_id" t-att-value="row.id"/>-->
+                                    <!--<a class="btn btn-default cpo_down_file" title="Down File"><i class="fa fa-download"></i></a>-->
+                                <!--</form>-->
+                                <!--&lt;!&ndash;<a class="btn btn-default cpo_down_file" t-attf-href="/web/content/#{ row.id }?download=true">Down</a>&ndash;&gt;-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                    <!--</t>-->
+                    <!--<tr>-->
+                        <!--<td colspan="6" class="cpo_hint_file_upload"><i class="cpo_hint_i_upload">*</i>Please upload the documents required by-->
+                            <!--PCB<i style="color:#286090;">(Gerber File)</i> or PCBA<i style="color:#286090;">(BOM File,SMT File,Gerber File)</i>!</td>-->
+                    <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+        </div>
+    </template>
+
+    <template id="cpo_check_excel_file" name="Check Excel File">
+        <t t-call="website.layout">
+        <div id="wrap" class="js_sale">
+            <div class="oe_structure" />
+                <div class="containerxx oe_website_check_excel_file">
+                    <div id="cpo_title_top">
+                        <div class="page-header text-center" id="check_banner">
+                            <div id="cpo_confirm_back_bom">
+                                <div class="confirm_bom_supply">
+                                <a t-attf-href="#" t-att-data-return_url="return_url" t-att-data-atta-id="atta_id"  id="cpo_update_bom_supply">Confirm</a>
+
+                                </div>
+                                <div class="" id="express_btn_a">
+                                    <a t-att-href="return_url" id="cpo_back_bom_supply">Back</a>
+                                </div>
+                            </div>
+
+                            <h1>Bom Manage<small></small></h1>
+                        </div>
+                        <div class="row cpo_express_inf" >
+                            <!-- 在这个提供物料选择 -->
+                            <!--<div class="container">-->
+                                <!--<ul class="material_select">-->
+                                    <!--<t t-set="material_data" t-value="material_dt.get('value')"/>-->
+                                    <!--<t t-foreach="material_data" t-as="m_dt">-->
+                                        <!--<li>-->
+                                            <!--<input type="checkbox" name="checkbox" />-->
+                                            <!--<span class="cpo-mft-qty">(<t t-esc="m_dt.send"/>item)</span>-->
+                                            <!--<span class="cpo-mft-name"><t t-esc="m_dt.manufacturer"/></span>-->
+                                            <!--<span><t t-esc="m_dt.description"/></span>-->
+                                        <!--</li>-->
+                                    <!--</t>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                            <div class="container">
+                                <div class="cpo_select_font">
+                                    <div class="" id="express_pro">
+                                        <span id="cpo_express_provider">Express Provider:
+                                            <!--<input name="cpo_express_provider"/>-->
+                                            <select class="cpo_express_provider">
+                                                <option value="dhl">DHL</option>
+                                                <option value="ups">UPS</option>
+                                                <option value="fedex">FedEx</option>
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <div class="" id="express_num">
+                                        <p id="cpo_express_number">Express Number:<input name="cpo_express_number"/></p>
+                                        <span style="clear:both;"></span>
+                                    </div>
+                                    <!--<div class="" id="express_btn">-->
+                                        <!--<a t-attf-href="#" t-att-data-ret_id="return_url" t-att-data-atta-id="atta_id"  id="cpo_update_bom_supply"><button>Confirm back</button></a>-->
+                                    <!--</div>-->
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row" id="select_nav">
+                            <div class="select_cont">
+                                <!--<div class="col-md-1"></div>-->
+                                <div class="cpo_nav_content">
+                                    <div class="text-left cpo_check_excel_set select_item">
+                                    <p>Item:
+                                        <select class="form-control cpo_bom_fields_ref" data-field_id="cpo_item" id="cpo_bom_field_item">
+                                            <t t-foreach="sh_header" t-as="sh_row">
+                                                <option t-att-selected='sh_row == fields_ref.get("cpo_item")'><t t-esc="sh_row"/></option>
+                                            </t>
+                                        </select>
+                                    </p>
+                                    </div>
+                                    <div class="text-left cpo_check_excel_set select_item">
+                                        <p>Manufacturer:
+                                            <select class="form-control cpo_bom_fields_ref" data-field_id="cpo_mfr" id="cpo_bom_field_mfr">
+                                                <t t-foreach="sh_header" t-as="sh_row">
+                                                    <option t-att-selected='sh_row == fields_ref.get("cpo_mfr")'><t t-esc="sh_row"/></option>
+                                                </t>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div class="text-left cpo_check_excel_set select_item">
+                                        <p><i>*</i>Manufacturer P/N:
+                                            <select class="form-control cpo_bom_fields_ref cpo_bom_mfr_pn" data-field_id="cpo_mfr_p_n" id="cpo_bom_field_mfr_pn">
+                                                <t t-foreach="sh_header" t-as="sh_row">
+                                                    <option t-att-selected='sh_row == fields_ref.get("cpo_mfr_p_n")'><t t-esc="sh_row"/></option>
+                                                </t>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div class="text-left cpo_check_excel_set select_item">
+                                        <p>Description:
+                                            <select class="form-control cpo_bom_fields_ref cpo_bom_description" data-field_id="cpo_description" id="cpo_bom_description">
+                                                <t t-foreach="sh_header" t-as="sh_row">
+                                                    <option t-att-selected='sh_row == fields_ref.get("cpo_description")'><t t-esc="sh_row"/></option>
+                                                </t>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div class="text-left cpo_check_excel_set select_item">
+                                        <p><i>*</i>Quantity:
+                                            <select class="form-control cpo_bom_fields_ref" data-field_id="cpo_qty" id="cpo_bom_field_qty">
+                                                <t t-foreach="sh_header" t-as="sh_row">
+                                                    <option t-att-selected='sh_row == fields_ref.get("cpo_qty")'><t t-esc="sh_row"/></option>
+                                                </t>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div class="text-left cpo_check_excel_set select_item">
+                                        <p>Vendor P/N:
+                                            <select class="form-control cpo_bom_fields_ref" data-field_id="cpo_vendor_p_n" id="cpo_bom_field_vendor_pn">
+                                                <t t-foreach="sh_header" t-as="sh_row">
+                                                    <option t-att-selected='sh_row == fields_ref.get("cpo_vendor_p_n")'><t t-esc="sh_row"/></option>
+                                                </t>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div class="text-left cpo_check_excel_set select_item">
+                                        <p>remark:
+                                            <select class="form-control cpo_bom_fields_ref" data-field_id="cpo_remark" id="cpo_bom_field_cpo_remark">
+                                                <t t-foreach="sh_header" t-as="sh_row">
+                                                    <option t-att-selected='sh_row == fields_ref.get("cpo_remark")'><t t-esc="sh_row"/></option>
+                                                </t>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div style="clear:both;"></div>
+                                </div>
+                                <!--<div class="col-md-1"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                <div class="" id="content_table">
+                    <table id="cpo_ele_excel_table_content" class="table-bordered">
+                        <t t-set="num">0</t>
+                        <t t-if="not len(txt)">
+                            <h4 class="cpo_error_reminder">The currently uploaded file is incorrect. Please upload the correct BOM file.</h4>
+                        </t>
+                        <t t-if="len(txt)" t-foreach="len(txt)" t-as="x">
+                            <tr>
+                                <td>
+                                    <input class="pcb_sele_one cpo_pcba_ele_supply_select" t-if="num != '0' and cpo_mfr_p_n_index &gt;= 0" type="checkbox" name="select_all" value="chinapcbone" t-att-checked="txt[x][cpo_mfr_p_n_index] in supply_ref"/>
+                                    <input class="pcb_sele_one cpo_pcba_ele_supply_select" t-if="num != '0' and cpo_mfr_p_n_index &lt; 0" type="checkbox" name="select_all" value="chinapcbone"/>
+                                    <!--<a t-if='cpo_mfr_p_n_index &gt;= 0'>a1</a>-->
+                                    <!--<a t-if='cpo_mfr_p_n_index &lt; 0'>a2</a>-->
+                                    <span t-if="num == '0'">Customer-supplied</span>
+                                </td>
+                                <t t-if="len(txt[x])" t-foreach="len(txt[x])" t-as="y">
+                                    <td>
+                                    <t t-esc="txt[x][y]"/>
+                                    </td>
+                                </t>
+                                <!--<td>-->
+                                    <!--<select class="pcb_sele_one cpo_pcba_ele_supply_select" t-if="num != '0'">-->
+                                        <!--<option value="chinapcbone">ChinaPCBOne-supplied</option>-->
+                                        <!--<option value="customer">Customer-supplied</option>-->
+                                        <!--&lt;!&ndash;<option value="part-customer">Part from ChinaPCBOne ,part from Customer</option>&ndash;&gt;-->
+                                    <!--</select>-->
+                                    <!--<span t-if="num == '0'">Supply</span>-->
+                                <!--</td>-->
+                                <t t-set="num">1</t>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+        </div>
+        </div>
+        </t>
+    </template>
+
+    <!--<template id="cpo_nav_temp" inherit_id="website.layout" name="Main layout">-->
+        <!--<xpath expr="//div[@id='wrapwrap']//header" position="replace">-->
+            <!--<header>-->
+                <!--<div class="navbar navbar-default navbar-static-top">-->
+                    <!--<div class="container">-->
+                        <!--<div class="navbar-header">-->
+                            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-top-collapse">-->
+                                <!--<span class="sr-only">Toggle navigation</span>-->
+                                <!--<span class="icon-bar"></span>-->
+                                <!--<span class="icon-bar"></span>-->
+                                <!--<span class="icon-bar"></span>-->
+                            <!--</button>-->
+                            <!--<a class="navbar-brand" href="/" t-if="website" t-field="website.name">My Website</a>-->
+                        <!--</div>-->
+                        <!--<div class="collapse navbar-collapse navbar-top-collapse">-->
+                            <!--<ul class="nav navbar-nav navbar-right" id="top_menu">-->
+                                <!--<t t-foreach="website.menu_id.child_id" t-as="submenu">-->
+                                    <!--<t t-call="website.submenu"/>-->
+                                <!--</t>-->
+                                <!--<li class="divider" t-ignore="true" t-if="website.user_id != user_id"/>-->
+                                <!--<li class="dropdown" t-ignore="true" t-if="website.user_id != user_id">-->
+                                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+                                        <!--<b>-->
+                                            <!--<span t-esc="(len(user_id.name)&gt;25) and (user_id.name[:23]+'...') or user_id.name"/>-->
+                                            <!--<span class="caret"></span>-->
+                                        <!--</b>-->
+                                    <!--</a>-->
+                                    <!--<ul class="dropdown-menu js_usermenu" role="menu">-->
+                                        <!--<li id="o_logout"><a t-attf-href="/web/session/logout?redirect=/" role="menuitem">Logout</a></li>-->
+                                    <!--</ul>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</header>-->
+        <!--</xpath>-->
+    <!--</template>-->
+
+
+    <!-- 继承website_portal_sale更改支付 -->
+    <!---->
+    <!--<template id="cpo_portal_my_invoices" name="My Invoices and Payments1111">-->
+        <!--&lt;!&ndash;inherit_id="website_portal_sale.portal_my_invoices"&ndash;&gt;-->
+        <!--&lt;!&ndash;<xpath expr='//div[@class="table-responsive"]' position="replace">&ndash;&gt;-->
+            <!--<div id="my_invoices_account">-->
+                <!--<div class="cpo_invoice_load cpo-none">-->
+                    <!--<span class="invoice_load_gif"></span>-->
+                <!--</div>-->
+                <!--<form action="##" onsubmit="return false" id="cpo_get_invoice_ids" method="POST">-->
+                    <!--<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />-->
+                    <!--<table class="table table-hover o_my_status_table">-->
+                        <!--<thead>-->
+                             <!--<tr class="active">-->
+                                  <!--<th>Invoice #</th>-->
+                                  <!--<th>Invoice Date</th>-->
+                                  <!--<th class='hidden-xs'>Due Date</th>-->
+                                  <!--<th></th>-->
+                                  <!--<th></th>-->
+                                   <!--<th>Amount Due</th>-->
+                             <!--</tr>-->
+                        <!--</thead>-->
+                        <!--<t t-foreach="invoices" t-as="invoice">-->
+                            <!--<tr>-->
+                                <!--<td class="cell_overflow">-->
+                                    <!--<input type="checkbox" t-att-name="invoice.id" class="invoice_checkbox"/>-->
+                                    <!--<a t-att-href="'/my/invoices/pdf/'+str(invoice.id)" t-att-title="invoice.number"><t t-esc="invoice.number"/></a>-->
+                                <!--</td>-->
+                                <!--<td><span t-field="invoice.date_invoice"/></td>-->
+                                <!--<td class='hidden-xs'><span t-field="invoice.date_due"/></td>-->
+                                <!--<td>-->
+                                    <!--<t t-if="invoice.state == 'open'">-->
+                                        <!--<span class="label label-info"><i class="fa fa-fw fa-clock-o"></i><span class="hidden-xs"> Waiting for Payment</span></span>-->
+                                    <!--</t>-->
+                                    <!--<t t-if="invoice.state == 'paid'">-->
+                                        <!--<span class="label label-default"><i class="fa fa-fw fa-check"></i><span class="hidden-xs"> Paid</span></span>-->
+                                    <!--</t>-->
+                                    <!--<t t-if="invoice.state == 'cancel'">-->
+                                        <!--<span class="label label-default"><i class="fa fa-fw fa-remove"></i><span class="hidden-xs"> Cancelled</span></span>-->
+                                    <!--</t>-->
+                                <!--</td>-->
+                                <!--<td>-->
+                                  <!--<a t-if="invoice.state == 'open'" t-attf-href="/website_payment/pay?reference=#{invoice.number}&amp;amount=#{invoice.residual}&amp;currency_id=#{invoice.currency_id.id}&amp;country_id=#{invoice.partner_id.country_id.id}" alt="Pay Now" class="btn btn-xs btn-primary"><i class="fa fa-arrow-circle-right"/><span class='hidden-xs'> Pay Now</span></a>-->
+                                <!--</td>-->
+                                <!--<td><span t-field="invoice.residual" t-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/></td>-->
+                            <!--</tr>-->
+                        <!--</t>-->
+                    <!--</table>-->
+                <!--</form>-->
+                <!--<div class="col-md-12">-->
+                    <!--<div class="col-md-8">-->
+                        <!--<p class="cpo-p cpo-invoice-checkall">-->
+                            <!--<input type="checkbox" name="checkall_invoice" class="cpo-check-input" id="checkall_invoice"/>-->
+                            <!--<span class="cpo-span ">Check All</span>-->
+                        <!--</p>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                        <!--<div id="invoice_total">-->
+                            <!--<p class="cpo-p cpo-price">-->
+                                <!--<span class="cpo-span cpo-price-name">Total Amount</span>-->
+                                <!--<span class="cpo-span cpo-price-amount">-->
+                                    <!--<span class="cpo-span price-currency">$</span>-->
+                                    <!--<span class="cpo-span price-amount">12200</span>-->
+                                <!--</span>-->
+                            <!--</p>-->
+                            <!--<p>-->
+                                <!--<form action="/website_payment/pay" id="get_invoice_pay" method="POST">-->
+                                    <!--<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />-->
+                                    <!--<div class="invoices_name_ids">-->
+                                        <!--<input type="hidden" name="" value=""/>-->
+                                    <!--</div>-->
+                                    <!--<a class="btn btn-primary submit pull-right" id="cpo_invoice_pay">Pay Now</a>-->
+                                <!--</form>-->
+                            <!--</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--&lt;!&ndash;</xpath>&ndash;&gt;-->
+    <!--</template>-->
+
+    <template id="cpo_website_404">
+        <div class="website_404">
+            <h3 style="position: absolute;padding: 0 50px;">
+                <a href="/" style="background-color:#4a93fd;padding: 4px 10px;border-radius: 5px;color:#fff;text-decoration: none;">Home</a>
+            </h3>
+            <img src="/website_cpo_sale/static/src/images/tools_img/404.jpg" width="100%" height="100%" />
+        </div>
+    </template>
+
+</odoo>

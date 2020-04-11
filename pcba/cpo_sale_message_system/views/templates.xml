@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <!-- 问客侧边菜单 -->
+        <template id="cpo_add_message_menu" name="Add Message menu" inherit_id="website_cpo_sale.cpo_sidebar_navidation_menus">
+		    <xpath expr='//ul[@id="notice-ul"]' position="inside">
+                <li t-att-class="'active' if link_active == 'message' else ''">
+                    <a href="/message/center">
+                        <i class="fa fa-comments"></i>
+                        Message Center
+                        <span t-att-class="'mc-qty cpo-icon-bounce' if public_qty.get('mu_qty') &gt; 0 else 'mc-qty'">
+                            <t t-esc="public_qty.get('mu_qty')"/>
+                        </span>
+                    </a>
+                </li>
+            </xpath>
+        </template>
+    </data>
+</odoo>

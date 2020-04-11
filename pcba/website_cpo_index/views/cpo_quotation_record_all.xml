@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <!-- PCB 报价记录 Tree -->
+        <record model="ir.ui.view" id="cpo_pcb_record_all_pcb_tree">
+            <field name="name">PCB Quotation Tree</field>
+            <field name="model">cpo_pcb_record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <!--<field name="order_type"/>-->
+                    <field name="quantity"/>
+                    <field name="width"/>
+                    <field name="lenght"/>
+                    <field name="panel_size"/>
+                    <field name="material"/>
+                    <field name="inner_copper"/>
+                    <field name="outer_copper"/>
+                    <field name="layers"/>
+                    <field name="mask_color"/>
+                    <field name="silkscreen_color"/>
+                    <field name="surface"/>
+                    <field name="e_test"/>
+                    <field name="thickne"/>
+                    <field name="cpo_country"/>
+                    <!--<field name="cpo_city"/>-->
+                    <!--<field name="user_ip"/>-->
+                    <!--<field name="partner_info"/>-->
+                    <field name="total"/>
+                    <field name="cpo_time"/>
+                    <field name="cpo_code"/>
+                    <field name="user_info"/>
+                    <field name="cpo_intention"/>
+					<field name="user_name" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- PCBA 报价记录 Tree -->
+        <record model="ir.ui.view" id="cpo_pcb_record_all_pcba_tree">
+            <field name="name">PCBA Quotation Tree</field>
+            <field name="model">cpo_pcba_record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <!--<field name="order_type"/>-->
+                    <field name="quantity"/>
+                    <field name="width"/>
+                    <field name="lenght"/>
+                    <field name="thickne"/>
+                    <field name="cpo_country"/>
+                    <!--<field name="cpo_city"/>-->
+                    <!--<field name="user_ip"/>-->
+                    <!--<field name="partner_info"/>-->
+                    <field name="total"/>
+                    <field name="bom_type"/>
+                    <field name="smt_qty"/>
+                    <field name="dip_qty"/>
+                    <field name="smt_side"/>
+                    <field name="cpo_time"/>
+                    <field name="cpo_code"/>
+                    <field name="user_info"/>
+                    <field name="cpo_intention"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- all(PCBA and PCB) -->
+        <record model="ir.ui.view" id="cpo_pcb_and_pcba_record_tree">
+            <field name="name">PCB And PCBA Quotation Tree</field>
+            <field name="model">cpo_pcb_and_pcba_record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="order_type"/>
+                    <field name="quantity"/>
+                    <field name="width"/>
+                    <field name="lenght"/>
+                    <field name="panel_size"/>
+                    <field name="material"/>
+                    <field name="inner_copper"/>
+                    <field name="outer_copper"/>
+                    <field name="layers"/>
+                    <field name="mask_color"/>
+                    <field name="silkscreen_color"/>
+                    <field name="surface"/>
+                    <field name="e_test"/>
+                    <field name="thickne"/>
+                    <field name="bom_type"/>
+                    <field name="smt_qty"/>
+                    <field name="dip_qty"/>
+                    <field name="smt_side"/>
+                    <field name="cpo_country"/>
+                    <!--<field name="cpo_city"/>-->
+                    <!--<field name="user_ip"/>-->
+                    <!--<field name="partner_info"/>-->
+                    <field name="total"/>
+                    <field name="cpo_time"/>
+                    <field name="deal_with"/>
+                    <field name="cpo_code"/>
+                    <field name="user_info"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Service Protocol Tree -->
+        <record model="ir.ui.view" id="cpo_quotation_record_service_tree">
+            <field name="name">Service Protocol Tree</field>
+            <field name="model">cpo_service_record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="order_type"/>
+<!--                    <field name="user_id"/>-->
+                    <field name="user_name"/>
+                    <field name="cpo_country"/>
+                    <field name="cpo_city"/>
+                    <field name="user_ip"/>
+                    <field name="partner_info"/>
+                    <field name="cpo_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Session 关联 Tree -->
+        <record model="ir.ui.view" id="cpo_session_association_tree">
+            <field name="name">Session Association Tree</field>
+            <field name="model">cpo_session_association</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+<!--                    <field name="partner_name"/>-->
+                    <field name="user_name"/>
+                    <field name="user_id"/>
+                    <field name="session_id"/>
+                    <field name="cpo_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- PCB 报价记录 Form -->
+        <record model="ir.ui.view" id="cpo_pcb_record_all_pcb_form">
+            <field name="name">PCB Quotation Form</field>
+            <field name="model">cpo_pcb_record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <header>
+                             <button name="cpo_seaerch_pcba_intention" type="object" string="Search PCBA Intention" class="btn-primary"/>
+                        </header>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="user_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="user_info" />
+                            </group>
+                            <group colspan="2">
+                                <field name="order_type" />
+                            </group>
+                            <group colspan="2">
+                                <field name="partner_info" />
+                            </group>
+                            <group colspan="2">
+                                <field name="quantity" />
+                            </group>
+                            <group colspan="2">
+                                <field name="width" />
+                            </group>
+                            <group colspan="2">
+                                <field name="lenght" />
+                            </group>
+                            <group colspan="2">
+                                <field name="thickne" />
+                            </group>
+                            <group colspan="2">
+                                <field name="file_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_country" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_city" />
+                            </group>
+                            <group colspan="2">
+                                <field name="thickne" />
+                            </group>
+                                <group colspan="2">
+                                <field name="cpo_country" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_city" />
+                            </group>
+                            <group colspan="2">
+                                <field name="session_id" />
+                            </group>
+                            <group colspan="2">
+                                <field name="user_ip" />
+                            </group>
+                            <group colspan="2">
+                                <field name="total" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_time" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_code" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_intention" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="PCB Data">
+                                <group col="4">
+                                    <group colspan="2">
+                                        <field name="layers" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="material" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="item_qty" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="panel_size" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="inner_copper" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="outer_copper" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="mask_color" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="silkscreen_color" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="surface" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="golden_finger_thickness" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="e_test" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Flex-Rigid Data">
+                                <group col="4">
+                                    <group colspan="2">
+                                        <field name="flex_number" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Special data">
+                                <group col="4">
+                                    <group colspan="2">
+                                        <field name="Semi_hole" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Edge_plating" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Impedance" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Press_fit" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Peelable_mask" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Carbon_oil" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Min_line_width" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Min_line_space" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Min_aperture" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Total_holes" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Copper_weight_wall" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Number_core" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="PP_number" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Total_test_points" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Blind_and_buried_hole" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Blind_hole_structure" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Depth_control_routing" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Number_back_drilling" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Countersunk_deep_holes" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Laser_drilling" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="Inner_hole_line" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="The_space_for_drop_V_cut" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Files">
+                                <group col="4">
+                                    <group colspan="4">
+                                        <field name="file_ids" />
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- PCBA 报价记录 Form -->
+        <record model="ir.ui.view" id="cpo_pcb_record_all_pcba_form">
+            <field name="name">PCBA Quotation Form</field>
+            <field name="model">cpo_pcba_record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <header>
+                            <button name="cpo_seaerch_pcb_intention" type="object" string="Search PCB Intention" class="btn-primary"/>
+                        </header>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="user_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="order_type" />
+                            </group>
+                            <group colspan="2">
+                                <field name="partner_info" />
+                            </group>
+                            <group colspan="2">
+                                <field name="quantity" />
+                            </group>
+                            <group colspan="2">
+                                <field name="width" />
+                            </group>
+                            <group colspan="2">
+                                <field name="lenght" />
+                            </group>
+                            <group colspan="2">
+                                <field name="thickne" />
+                            </group>
+                            <group colspan="2">
+                                <field name="file_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_country" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_city" />
+                            </group>
+                            <group colspan="2">
+                                <field name="thickne" />
+                            </group>
+                                <group colspan="2">
+                                <field name="cpo_country" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_city" />
+                            </group>
+                            <group colspan="2">
+                                <field name="session_id" />
+                            </group>
+                            <group colspan="2">
+                                <field name="user_ip" />
+                            </group>
+                            <group colspan="2">
+                                <field name="total" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_time"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_code"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_intention"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="PCBA Data">
+                                <group col="4">
+                                    <group colspan="2">
+                                        <field name="bom_type" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="smt_qty" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="dip_qty" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="smt_side" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Files">
+                                <group col="4">
+                                    <group colspan="4">
+                                        <field name="file_ids" />
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- PCB And PCBA 报价记录 Form -->
+        <record model="ir.ui.view" id="cpo_pcb_and_pcba_record_form">
+            <field name="name">PCB And PCBA Quotation Form</field>
+            <field name="model">cpo_pcb_and_pcba_record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="user_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="order_type" />
+                            </group>
+                            <group colspan="2">
+                                <field name="partner_info" />
+                            </group>
+                            <group colspan="2">
+                                <field name="quantity" />
+                            </group>
+                            <group colspan="2">
+                                <field name="width" />
+                            </group>
+                            <group colspan="2">
+                                <field name="lenght" />
+                            </group>
+                            <group colspan="2">
+                                <field name="thickne" />
+                            </group>
+                            <group colspan="2">
+                                <field name="file_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_country" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_city" />
+                            </group>
+                            <group colspan="2">
+                                <field name="thickne" />
+                            </group>
+                                <group colspan="2">
+                                <field name="cpo_country" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_city" />
+                            </group>
+                            <group colspan="2">
+                                <field name="session_id" />
+                            </group>
+                            <group colspan="2">
+                                <field name="user_ip" />
+                            </group>
+                            <group colspan="2">
+                                <field name="total" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_time" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_code" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="PCB Data">
+                                <group col="4">
+                                    <group colspan="2">
+                                        <field name="layers" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="material" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="item_qty" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="panel_size" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="inner_copper" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="outer_copper" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="mask_color" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="silkscreen_color" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="surface" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="golden_finger_thickness" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="e_test" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="PCBA Data">
+                                <group col="4">
+                                    <group colspan="2">
+                                        <field name="bom_type" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="smt_qty" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="dip_qty" />
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="smt_side" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Flex-Rigid Data">
+                                <group col="4">
+                                    <group colspan="2">
+                                        <field name="flex_number" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Files">
+                                <group col="4">
+                                    <group colspan="4">
+                                        <field name="file_ids" />
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Service Protocol -->
+        <record model="ir.ui.view" id="cpo_pcb_record_all_service_form">
+            <field name="name">Service Protocol Form</field>
+            <field name="model">cpo_service_record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="user_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="order_type" />
+                            </group>
+                            <group colspan="2">
+                                <field name="partner_info" />
+                            </group>
+<!--                            <group colspan="2">-->
+<!--                                <field name="user_id" />-->
+<!--                            </group>-->
+                            <group colspan="2">
+                                <field name="cpo_country" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_city" />
+                            </group>
+                            <group colspan="2">
+                                <field name="user_ip" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_time"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="session_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--Session From-->
+        <record model="ir.ui.view" id="cpo_session_association_form">
+            <field name="name">Session Association Form</field>
+            <field name="model">cpo_session_association</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="customer_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="name" />
+                            </group>
+<!--                            <group colspan="2">-->
+<!--                                <field name="partner_name" />-->
+<!--                            </group>-->
+                            <group colspan="2">
+                                <field name="user_name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="user_id" />
+                            </group>
+                            <group colspan="2">
+                                <field name="session_id" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_time" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- PCB 报价记录 -->
+        <record model="ir.actions.act_window" id="cpo_pcb_record_all_pcb_actions">
+            <field name="name">PCB Quotation Actions</field>
+            <field name="res_model">cpo_pcb_record</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'tree','view_id':ref('cpo_pcb_record_all_pcb_tree')}),(0,0,{'view_mode':'form','view_id':ref('cpo_pcb_record_all_pcb_form')})]"/>
+            <field name="context">{'search_default_current':1, 'search_default_group_by_month': 1, 'search_default_group_by_cpo_time': 1, 'search_default_group_by_cpo_country': 1}</field>
+        </record>
+            <!--<field name="context">{'search_default_current':1, 'search_default_group_by_partner_info': 1}</field>-->
+
+        <!-- PCBA 报价记录 -->
+        <record model="ir.actions.act_window" id="cpo_pcb_record_all_pcba_actions">
+            <field name="name">PCBA Quotation Actions</field>
+            <field name="res_model">cpo_pcba_record</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'tree','view_id':ref('cpo_pcb_record_all_pcba_tree')}),(0,0,{'view_mode':'form','view_id':ref('cpo_pcb_record_all_pcba_form')})]"/>
+            <field name="context">{'search_default_current':1, 'search_default_group_by_month': 1, 'search_default_group_by_cpo_time': 1, 'search_default_group_by_cpo_country': 1}</field>
+        </record>
+
+        <!-- PCB and PCBA 报价记录 -->
+        <record model="ir.actions.act_window" id="cpo_pcb_and_pcba_record_actions">
+            <field name="name">PCB And PCBA Quotation Actions</field>
+            <field name="res_model">cpo_pcb_and_pcba_record</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'tree','view_id':ref('cpo_pcb_and_pcba_record_tree')}),(0,0,{'view_mode':'form','view_id':ref('cpo_pcb_and_pcba_record_form')})]"/>
+            <field name="context">{'search_default_current':1, 'search_default_group_by_month': 1, 'search_default_group_by_cpo_time': 1,'search_default_group_by_cpo_country': 1}</field>
+        </record>
+        <!--<field name="context">{'search_default_current':1, 'search_default_group_by_partner_info': 1}</field>-->
+
+        <!-- Service Protocol -->
+        <record model="ir.actions.act_window" id="cpo_pcb_record_all_service_actions">
+            <field name="name">Service Protocol Actions</field>
+            <field name="res_model">cpo_service_record</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'tree','view_id':ref('cpo_quotation_record_service_tree')}),(0,0,{'view_mode':'form','view_id':ref('cpo_pcb_record_all_service_form')})]"/>
+            <field name="context">{'search_default_current':1, 'search_default_group_by_cpo_country': 1}</field>
+        </record>
+
+        <!-- Session 关联 -->
+        <record model="ir.actions.act_window" id="cpo_session_association_actions">
+            <field name="name">Session Association Actions</field>
+            <field name="res_model">cpo_session_association</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'tree','view_id':ref('cpo_session_association_tree')}),(0,0,{'view_mode':'form','view_id':ref('cpo_session_association_form')})]"/>
+            <field name="context">{'search_default_current':1, 'search_default_group_by_user_name': 1}</field>
+        </record>
+
+         <!-- PCB 搜索视图-->
+        <record id="cpo_pcb_record_search" model="ir.ui.view">
+            <field name="name">PCB Search</field>
+            <field name="model">cpo_pcb_record</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="session_id"/>
+                    <group expand='0' string='Filters'>
+                        <filter string="To day" name="today"  domain="[('create_date','&gt;=', datetime.datetime(datetime.datetime.now().year, datetime.datetime.now().month, datetime.datetime.now().day-1, 16, 0, 0).strftime('%Y-%m-%d %H:%M:%S')),('create_date', '&lt;', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>
+                        <filter string="This week" name="this_week"  domain="[('create_date','&gt;', (context_today() - datetime.timedelta(days=7) - datetime.timedelta(hours=8)).strftime('%Y-%m-%d 00:00:00'))]"/>
+                        <filter string="Current month" name="current_month" domain="[('create_date','&gt;=', time.strftime('%Y-%m-01 00:00:00')),('create_date','&lt;',  (context_today() + relativedelta(months=1)).strftime('%Y-%m-01 00:00:00'))]"/>
+                        <filter string="Current year" name="current_year"  domain="[('create_date','&lt;=', time.strftime('%Y-12-31 23:59:59')),('create_date','&gt;=', time.strftime('%Y-01-01 00:00:00'))]"/>
+                        <filter name="partner_info" string="Intention" domain="[('partner_info','=', 'yes')]"/>
+                    </group>
+                    <group string="Group By" >
+                        <!--<separator orientation="horizontal" />-->
+                        <filter name="group_by_month" string="Create Time" context="{'group_by': 'cpo_time:month'}"/>
+                        <filter name="group_by_cpo_time" string="Create Time" context="{'group_by': 'cpo_time:day'}"/>
+                        <filter name="group_by_cpo_country" string="Country" context="{'group_by': 'cpo_country'}"/>
+                        <filter name="group_by_user_name" string="User Name" context="{'group_by': 'user_name'}"/>
+                        <filter name="group_by_partner_info" string="Session coding" context="{'group_by': 'partner_info'}"/>
+                        <filter name="group_by_order_type" string="Order type" context="{'group_by': 'order_type'}"/>
+                        <filter name="group_by_cpo_code" string="Status" context="{'group_by': 'cpo_code'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+         <!-- PCBA 索视图-->
+        <record id="cpo_pcba_record_search" model="ir.ui.view">
+            <field name="name">PCBA Search</field>
+            <field name="model">cpo_pcba_record</field>
+            <field name="arch" type="xml">
+                <search string="Search" >
+                    <field name="session_id"/>
+                    <group expand='0' string='Filters'>
+                        <filter string="To day" name="today"  domain="[('create_date','&gt;=', datetime.datetime(datetime.datetime.now().year, datetime.datetime.now().month, datetime.datetime.now().day-1, 16, 0, 0).strftime('%Y-%m-%d %H:%M:%S')),('create_date', '&lt;', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>
+                        <filter string="This week" name="this_week"  domain="[('create_date','&gt;', (context_today() - datetime.timedelta(days=7) - datetime.timedelta(hours=8)).strftime('%Y-%m-%d 00:00:00'))]"/>
+                        <filter string="Current month" name="current_month" domain="[('create_date','&gt;=', time.strftime('%Y-%m-01 00:00:00')),('create_date','&lt;',  (context_today() + relativedelta(months=1)).strftime('%Y-%m-01 00:00:00'))]"/>
+                        <filter string="Current year" name="current_year"  domain="[('create_date','&lt;=', time.strftime('%Y-12-31 23:59:59')),('create_date','&gt;=', time.strftime('%Y-01-01 00:00:00'))]"/>
+                        <filter name="partner_info" string="Intention" domain="[('partner_info','=', 'yes')]"/>
+                    </group>
+                    <group string="Group By">
+                        <filter name="group_by_month" string="Create Time" context="{'group_by': 'cpo_time:month'}"/>
+                        <filter name="group_by_cpo_time" string="Create Time" context="{'group_by': 'cpo_time:day'}"/>
+                        <filter name="group_by_cpo_country" string="Country" context="{'group_by': 'cpo_country'}"/>
+                        <filter name="group_by_partner_info" string="Session coding" context="{'group_by': 'partner_info'}"/>
+                        <filter name="group_by_cpo_code" string="Status" context="{'group_by': 'cpo_code'}"/>
+                        <filter name="group_by_user_name" string="User Name" context="{'group_by': 'user_name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!--PCB and PCBA 搜索视图-->
+        <record id="cpo_pcb_and_pcba_record_search" model="ir.ui.view">
+            <field name="name">PCB and PCBA Search</field>
+            <field name="model">cpo_pcb_and_pcba_record</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="session_id"/>
+                    <group expand='0' string='Filters'>
+                        <filter string="To day" name="today"  domain="[('create_date','&gt;=', datetime.datetime(datetime.datetime.now().year, datetime.datetime.now().month, datetime.datetime.now().day-1, 16, 0, 0).strftime('%Y-%m-%d %H:%M:%S')),('create_date', '&lt;', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>
+                        <filter string="This week" name="this_week"  domain="[('create_date','&gt;', (context_today() - datetime.timedelta(days=7) - datetime.timedelta(hours=8)).strftime('%Y-%m-%d 00:00:00'))]"/>
+                        <filter string="Current month" name="current_month" domain="[('create_date','&gt;=', time.strftime('%Y-%m-01 00:00:00')),('create_date','&lt;',  (context_today() + relativedelta(months=1)).strftime('%Y-%m-01 00:00:00'))]"/>
+                        <filter string="Current year" name="current_year"  domain="[('create_date','&lt;=', time.strftime('%Y-12-31 23:59:59')),('create_date','&gt;=', time.strftime('%Y-01-01 00:00:00'))]"/>
+                        <filter name="partner_info" string="Intention" domain="[('partner_info','=', 'yes')]"/>
+                    </group>
+                    <group string="Group By">
+                        <filter name="group_by_month" string="Create Time" context="{'group_by': 'cpo_time:month'}"/>
+                        <filter name="group_by_cpo_time" string="Create Time" context="{'group_by': 'cpo_time:day'}"/>
+                        <filter name="group_by_cpo_country" string="Country" context="{'group_by': 'cpo_country'}"/>
+                        <filter name="group_by_partner_info" string="Session coding" context="{'group_by': 'partner_info'}"/>
+                        <filter name="group_by_order_type" string="Order type" context="{'group_by': 'order_type'}"/>
+                        <filter name="group_by_cpo_code" string="Status" context="{'group_by': 'cpo_code'}"/>
+                        <filter name="group_by_user_name" string="User Name" context="{'group_by': 'user_name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!--用户点击同意协议记录 搜索视图-->
+        <record id="cpo_pcb_record_all_service_search" model="ir.ui.view">
+            <field name="name">Service Protocol Search</field>
+            <field name="model">cpo_service_record</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <group string="Group By">
+                        <filter name="group_by_partner_info" string="Session coding" context="{'group_by': 'partner_info'}"/>
+                        <filter name="group_by_cpo_code" string="Status" context="{'group_by': 'cpo_code'}"/>
+                        <filter name="group_by_cpo_country" string="Country" context="{'group_by': 'cpo_country'}"/>
+                        <filter name="group_by_cpo_time" string="Create Time" context="{'group_by': 'cpo_time'}"/>
+                        <filter name="group_by_user_name" string="User Name" context="{'group_by': 'user_name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!--用户session对象 搜索视图-->
+        <record id="cpo_session_association_search" model="ir.ui.view">
+            <field name="name">Session Association Search</field>
+            <field name="model">cpo_session_association</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <group expand='0' string='Filters'>
+                        <filter string="To day" name="today"  domain="[('create_date','&gt;=', datetime.datetime(datetime.datetime.now().year, datetime.datetime.now().month, datetime.datetime.now().day-1, 16, 0, 0).strftime('%Y-%m-%d %H:%M:%S')),('create_date', '&lt;', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>
+                        <filter string="This week" name="this_week"  domain="[('create_date','&gt;', (context_today() - datetime.timedelta(days=7) - datetime.timedelta(hours=8)).strftime('%Y-%m-%d 00:00:00'))]"/>
+                        <filter string="Current month" name="current_month" domain="[('create_date','&gt;=', time.strftime('%Y-%m-01 00:00:00')),('create_date','&lt;',  (context_today() + relativedelta(months=1)).strftime('%Y-%m-01 00:00:00'))]"/>
+                        <filter string="Current year" name="current_year"  domain="[('create_date','&lt;=', time.strftime('%Y-12-31 23:59:59')),('create_date','&gt;=', time.strftime('%Y-01-01 00:00:00'))]"/>
+                    </group>
+                    <group string="Group By">
+                        <filter name="group_by_user_name" string="User Name" context="{'group_by': 'user_name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+
+        <menuitem name="CPO Quotation Record" id="cpo_quotation_top_all_menu" parent="personal_center.personal_root" sequence="10"/>
+
+        <!-- PCB 报价记录 -->
+        <menuitem name="PCB Quotation Record" id="cpo_pcb_record_set_menu" parent="website_cpo_index.cpo_quotation_top_all_menu"
+                action="cpo_pcb_record_all_pcb_actions"/>
+        <!-- PCB 报价记录 -->
+        <menuitem name="PCBA Quotation Record" id="cpo_pcba_record_set_menu" parent="website_cpo_index.cpo_quotation_top_all_menu"
+                action="cpo_pcb_record_all_pcba_actions"/>
+        <!-- PCB And PCBA 报价记录 -->
+        <menuitem name="PCB And PCBA Quotation Record" id="cpo_pcb_and_pcba_record_menu" parent="website_cpo_index.cpo_quotation_top_all_menu"
+                action="cpo_pcb_and_pcba_record_actions"/>
+        <!-- PCB 报价记录 -->
+        <menuitem name="Service Protocol Record" id="cpo_quotation_record_service_menu" parent="website_cpo_index.cpo_quotation_top_all_menu"
+                action="cpo_pcb_record_all_service_actions"/>
+        <!-- Session 关联 -->
+        <menuitem name="Session Association" id="cpo_session_association_menu" parent="website_cpo_index.cpo_quotation_top_all_menu"
+                action="cpo_session_association_actions"/>
+
+
+        <!-- Session 关联 Tree -->
+        <record model="ir.ui.view" id="cpo_quotation_record_base_tree">
+            <field name="name">Quotation Record Tree</field>
+            <field name="model">cpo_pcb_and_pcba_record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="order_type"/>
+                    <field name="user_name"/>
+                    <field name="quantity"/>
+                    <field name="width"/>
+                    <field name="lenght"/>
+                    <field name="thickne"/>
+                    <field name="cpo_country"/>
+                    <field name="total"/>
+                    <field name="cpo_code"/>
+                    <field name="cpo_time"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <record model="ir.ui.view" id="cpo_pcb_and_pcba_record_tree">-->
+<!--            <field name="name">PCB And PCBA Quotation Tree</field>-->
+<!--            <field name="model">cpo_pcb_and_pcba_record</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree>-->
+<!--                    <field name="sequence" widget="handle"/>-->
+<!--                    <field name="order_type"/>-->
+<!--                    <field name="quantity"/>-->
+<!--                    <field name="width"/>-->
+<!--                    <field name="lenght"/>-->
+<!--                    <field name="panel_size"/>-->
+<!--                    <field name="material"/>-->
+<!--                    <field name="inner_copper"/>-->
+<!--                    <field name="outer_copper"/>-->
+<!--                    <field name="layers"/>-->
+<!--                    <field name="mask_color"/>-->
+<!--                    <field name="silkscreen_color"/>-->
+<!--                    <field name="surface"/>-->
+<!--                    <field name="e_test"/>-->
+<!--                    <field name="thickne"/>-->
+<!--                    <field name="bom_type"/>-->
+<!--                    <field name="smt_qty"/>-->
+<!--                    <field name="dip_qty"/>-->
+<!--                    <field name="smt_side"/>-->
+<!--                    <field name="cpo_country"/>-->
+<!--                    <field name="total"/>-->
+<!--                    <field name="cpo_time"/>-->
+<!--                    <field name="cpo_code"/>-->
+<!--                    <field name="user_info"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+    </data>
+</odoo>

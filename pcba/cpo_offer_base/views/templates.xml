@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_backend" name="barcodes assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/less" href="/cpo_offer_base/static/src/less/cpo_sale.less"/>
+        </xpath>
+    </template>
+
+</odoo>

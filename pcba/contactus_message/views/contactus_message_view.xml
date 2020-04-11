@@ -1,0 +1,74 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+	  <record model="ir.ui.view" id="contactus_message_list">
+		  <field name="name">contactus message list</field>
+		  <field name="model">contactus_message.contactus</field>
+		  <field name="arch" type="xml">
+			  <tree decoration-success="state=='read'">
+				  <field name="name"/>
+				  <field name="email"/>
+				  <field name="phone"/>
+				  <field name="company"/>
+				  <field name="date"/>
+				  <field name="state"/>
+				  <field name="read_time"/>
+			  </tree>
+		  </field>
+	  </record>
+
+	  <record model="ir.ui.view" id="contactus_message_form">
+		  <field name="name">contactus message form</field>
+		  <field name="model">contactus_message.contactus</field>
+		  <field name="arch" type="xml">
+			  <form>
+				  <sheet>
+					  <group col="4">
+						  <group colspan="2">
+							  <field name="name" readonly="1"/>
+						  </group>
+						  <group colspan="2">
+							  <field name="email" readonly="1"/>
+						  </group>
+						  <group colspan="2">
+							  <field name="phone" readonly="1"/>
+						  </group>
+						  <group colspan="2">
+							  <field name="support_type" readonly="1"/>
+						  </group>
+						  <group colspan="2">
+							  <field name="date" readonly="1"/>
+						  </group>
+						  <group colspan="2">
+							  <field name="read_time" readonly="1"/>
+						  </group>
+						  <group colspan="4">
+							  <field name="company" readonly="1"/>
+						  </group>
+						  <group colspan="4">
+							  <field name="content" readonly="1"/>
+						  </group>
+						  <field name="change" invisible="1"/>
+					  </group>
+				  </sheet>
+			  </form>
+		  </field>
+	  </record>
+    <!-- actions opening views on models -->
+
+	  <record model="ir.actions.act_window" id="contactus_message_action_window">
+		  <field name="name">contactus message window</field>
+		  <field name="res_model">contactus_message.contactus</field>
+		  <field name="view_mode">tree,form</field>
+	  </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="Contact us message" id="contactus_message_menu_1" parent="message_system.msg_menu_root"/>
+
+    <menuitem name="Contact us message list" id="contactus_message_menu_2" parent="contactus_message_menu_1"
+              action="contactus_message_action_window"/>
+
+  </data>
+</odoo>

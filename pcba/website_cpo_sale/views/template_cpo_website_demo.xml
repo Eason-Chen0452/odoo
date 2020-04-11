@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="cpo_demo" name="Cpo WebSite Demo">
+        <!--<div class="fa fa-question-circle-o hide">-->
+        <div class="hidden" id="cpo_content_prompt_big">
+            <div class="container" style="background-color:#ffffff;padding-top:40px;margin-bottom:40px;">
+                <div t-attf-class="content #{cpo_content_class}">
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

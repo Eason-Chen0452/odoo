@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="preferential" inherit_id="web.assets_backend" name="Preferential">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css" href="/cpo_preferential/static/src/css/coupon.css"/>
+            </xpath>
+        </template>
+        <!--活动计划tree-->
+        <record model="ir.ui.view" id="preferential_activity_plan_tree">
+            <field name="name">preferential_activity_plan_tree</field>
+            <field name="model">preferential.cpo_time_and_money</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Activity Plan" decoration-muted="state=='invalid_over'" decoration-bf="state=='draft'" decoration-info="state=='force_no_started'" decoration-danger="state=='started_and_started'">
+                    <field name="name_title"/>
+                    <field name="cpo_start_time"/>
+                    <field name="cpo_end_time"/>
+                    <field name="cpo_date_bool"/>
+                    <field name="cpo_amount_bool"/>
+                    <field name="new_user_bool"/>
+                    <field name="active" invisible="1"/>
+                    <field name="cpo_invalid_over_bool" invisible="1"/>
+                    <field name="cpo_check_time_bool" invisible="1"/>
+                    <field name="cpo_full" invisible="1" force_save="1"/>
+                    <field name="cpo_coupon_volume" invisible="1"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <!--活动计划form-->
+        <record model="ir.ui.view" id="preferential_activity_plan_form">
+            <field name="name">preferential_activity_plan_form</field>
+            <field name="model">preferential.cpo_time_and_money</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <form string="Offer settings">
+                    <header>
+                        <!--<button name="view_effects" string="View interface display effects" type="object"/>-->
+                        <button name="button_force" string="Activity takes effect" type="object" states="draft" class="oe_highlight" groups="cpo_preferential.group_preferential_administrator"/>
+                        <button name="button_reset" string="Activity expired" type="object" states="force_no_started" class="oe_highlight" groups="cpo_preferential.group_preferential_administrator"/>
+                        <button name="button_begins" string="Activation start" type="object" states="force_no_started" class="oe_highlight" groups="cpo_preferential.group_preferential_administrator"/>
+                        <button name="button_invalid" string="Activity over" type="object" states="started_and_started" class="oe_highlight" confirm="Please confirm whether to force the end or early termination of the offer" groups="cpo_preferential.group_preferential_administrator"/>
+                        <button name="button_cancel" string="Forced cancellation" type="object" states="force_no_started,started_and_started" confirm="Once canceled, the current offer is completely void, please consider clearly" groups="cpo_preferential.group_preferential_administrator"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,force_no_started,started_and_started"/>
+                    </header>
+                    <sheet>
+                        <field name="name" style="font-size:35px; font-weight:bold" attrs="{'invisible':[('name', '=', False)]}" force_save="1"/>
+                        <separator string="Event name"/>
+                        <h1>
+                            <field name="name_title" force_save="1" style="max-width:620px;" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                        </h1>
+                        <separator string="Active time"/>
+                        <group name="expiration_date" colspan='4' col='4'>
+                            <field name="cpo_start_time" attrs="{'readonly':[('state', '!=', 'draft')]}" force_save="1"/>
+                            <field name="cpo_end_time" attrs="{'readonly':[('state', '!=', 'draft')]}" force_save="1"/>
+                            <field name="new_user_bool"/>
+                            <field name="cpo_check_time_bool" invisible="1"/>
+                        </group>
+                        <group attrs="{'invisible':[('cpo_amount_bool', '=', False)]}" colspan='4' col='4' string="Coupon settings">
+                            <field name="cpo_voucher_number" attrs="{'readonly':[('state', '!=', 'draft')]}" force_save="1"/>
+                            <!--先隐藏-->
+                            <label for="cpo_physical_code_bool"/>
+                            <div>
+                                <field name="cpo_physical_code_bool" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <button name="inform_coupon_physics_code" type="object" class="oe_inline" icon="fa-question-circle-o" style="margin-left:10px; margin-top:0px;"/>
+                            </div>
+                            <field name="cpo_public_coupon_bool"/>
+                            <!--先隐藏-->
+                            <label for="cpo_allow_sharing_bool" invisible="1"/>
+                            <div invisible="1">
+                                <field name="cpo_allow_sharing_bool" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="cpo_limit_days" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}" style="max-width:20px;"/>
+                                <button name="inform_allow_sharing" type="object" class="oe_inline" icon="fa-question-circle-o" style="margin-left:10px; margin-top:0px;"/>
+                            </div>
+                        </group>
+                        <separator string="Time period discount or amount reduction"/>
+                        <group colspan='4' col='4' name="cpo_bool">
+                            <!--先隐藏-->
+                            <label for="cpo_date_bool" invisible="1"/>
+                            <div name="cpo_date_bool" invisible="1">
+                                <field name="cpo_date_bool" attrs="{'readonly':[('state', '!=', 'draft')]}" force_save="1"/>
+                                <button name="check_date" type="object" class="oe_highlight oe_inline" icon="fa-calendar" style="margin-left:10px; margin-top:0px;"/>
+                            </div>
+                            <label for="cpo_amount_bool"/>
+                            <div name="cpo_amount_bool">
+                                <field name="cpo_amount_bool" attrs="{'readonly':[('state', '!=', 'draft')]}" force_save="1"/>
+                                <button name="check_amount" type="object" class="oe_highlight oe_inline" icon="fa-calendar" style="margin-left:10px; margin-top:0px;"/>
+                            </div>
+                        </group>
+                        <group attrs="{'invisible':[('cpo_amount_bool', '=', False), ('cpo_date_bool', '=', False)]}">
+                            <label for="cpo_card_bool"/>
+                            <div>
+                                <field name="cpo_card_bool" attrs="{'readonly':[('state', '!=', 'draft')]}" force_save="1"/>
+                                <span attrs="{'invisible':[('cpo_card_bool','=',False)]}">
+                                    Full(excluding shipping)
+                                    <field name="cpo_card_term" force_save="1" style="max-width:65px;" attrs="{'readonly':[('state', '!=', 'draft')]}"/>Amount,
+                                    Discount or discount amount
+                                    <field name="cpo_card_money" force_save="1" style="max-width:60px;" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                    <field name="cpo_discount_type" force_save="1" class="oe_inline" style="max-width:70px;" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                </span>
+                            </div>
+                            <label for="cpo_no_card_bool"/>
+                            <div>
+                                <field name="cpo_no_card_bool" attrs="{'readonly':[('state', '!=', 'draft')]}" force_save="1"/>
+                                <span attrs="{'invisible':[('cpo_no_card_bool','=',False)]}">
+                                    Discount or discount amount
+                                    <field name="cpo_no_card_money" force_save="1" style="max-width:60px;" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                    <field name="cpo_discount_type" force_save="1" class="oe_inline" style="max-width:70px;" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                </span>
+                            </div>
+                        </group>
+                        <group attrs="{'invisible':[('cpo_amount_bool', '=', False), ('cpo_date_bool', '=', False)]}">
+                            <group string="Whether to share offers" colspan="4" col="4">
+                                <field name="cpo_shared_bool" attrs="{'readonly':[('state', '!=', 'draft')]}" force_save="1"/>
+                                <field name="cpo_no_shared_bool" attrs="{'readonly':[('state', '!=', 'draft')]}" force_save="1"/>
+                            </group>
+                            <group string="Promotion participation setting" colspan="4" col="4">
+                                <field name="cpo_offer_bool" attrs="{'readonly':[('state', '!=', 'draft')]}" force_save="1"/>
+                                <field name="cpo_all_offer_bool" attrs="{'readonly':[('state', '!=', 'draft')]}" force_save="1"/>
+                            </group>
+                            <group string="Product activity settings" colspan='4' col='4'>
+                                <field name="volume_level_ids" string="Volume level" widget="many2many_tags" options="{'no_open':True}" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="layer_number_ids" string="Layer number" widget="many2many_tags" options="{'no_open':True}" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="silkscreen_color_ids" string="Silkscreen color" widget="many2many_tags" options="{'no_open':True}" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="surface_process_ids" string="Surface process" widget="many2many_tags" options="{'no_open':True}" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="via_process_ids" string="Via process" widget="many2many_tags" options="{'no_open':True}" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="special_process_ids" string="Special process" widget="many2many_tags" options="{'no_open':True}" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="special_material_ids" string="Special material" widget="many2many_tags" options="{'no_open':True}" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="material_brand_ids" string="Material brand" widget="many2many_tags" options="{'no_open':True}" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="base_type_ids" string="Base type" widget="many2many_tags" options="{'no_open':True}" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="acceptance_criteria_ids" string="Acceptance criteria" widget="many2many_tags" options="{'no_open':True}" force_save="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                            </group>
+                        </group>
+                        <field name="cpo_remarks" widget='text' force_save="1" placeholder="What do you need to tell everyone?"/>
+                        <notebook>
+                            <page string="View interface display effects">
+                                <div class="cash-coupon-box">
+                                    <div class="cash-coupon-content">
+                                        <div class="cash-box cash-left">
+                                            <span class="cpo-cash-money" attrs="{'invisible':[('cpo_card_bool','=',False)]}">
+                                                <field name="cpo_card_money" readonly="1" force_save="1"/>
+                                                <i attrs="{'invisible':[('cpo_discount_type','!=','%')]}">%</i>
+                                                <i attrs="{'invisible':[('cpo_discount_type','!=','money')]}">$</i>
+                                            </span>
+                                            <span class="cpo-cash-money" attrs="{'invisible':[('cpo_card_bool','=',True)]}">
+                                                <field name="cpo_no_card_money" readonly="1" force_save="1"/>
+                                                <i attrs="{'invisible':[('cpo_discount_type','!=','%')]}">%</i>
+                                                <i attrs="{'invisible':[('cpo_discount_type','!=','money')]}">$</i>
+                                            </span>
+                                            <span class="cash-condition">Only PCB orders are available!</span>
+                                            <p class="cpo-cash-d">
+                                                <field name="name_title" readonly="1" force_save="1"/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--活动tree-->
+        <record model="ir.ui.view" id="preferential_activity_tree">
+            <field name="name">preferential_activity_tree</field>
+            <field name="model">preferential.cpo_time_and_money</field>
+            <field name="priority">3</field>
+            <field name="arch" type="xml">
+                <tree string="Activity" class="o_sale_order" decoration-danger="state=='started_and_started'" decoration-info="state=='force_no_started'" create="false">
+                    <field name="name"/>
+                    <field name="name_title"/>
+                    <field name="cpo_start_time"/>
+                    <field name="cpo_end_time"/>
+                    <field name="cpo_creation_time"/>
+                    <field name="new_user_bool"/>
+                    <field name="state"/>
+                    <field name="active" invisible="1"/>
+                    <field name="cpo_check_time_bool" invisible="1"/>
+                    <field name="cpo_invalid_over_bool" invisible="1"/>
+                    <field name="cpo_full" invisible="1" force_save="1"/>
+                    <field name="cpo_coupon_volume" invisible="1"/>
+                    <field name="cpo_display" invisible="1"/>
+                    <button string="Activity display page" type="object" name="display_or_withdraw" attrs="{'invisible': [('cpo_display', '=', True)]}" groups="cpo_preferential.group_preferential_administrator"/>
+                    <button string="Event withdrawal page" type="object" name="display_or_withdraw" attrs="{'invisible': [('cpo_display', '=', False)]}" groups="cpo_preferential.group_preferential_administrator"/>
+                </tree>
+            </field>
+        </record>
+        <!--活动form-->
+        <record model="ir.ui.view" id="preferential_activity_form">
+            <field name="name">preferential_activity_form</field>
+            <field name="model">preferential.cpo_time_and_money</field>
+            <field name="priority">3</field>
+            <field name="arch" type="xml">
+                <form string="Details of the event" class="o_opportunity_form">
+                    <header>
+                        <button name="button_begins" string="Activation start" type="object" states="force_no_started" class="oe_highlight" groups="cpo_preferential.group_preferential_administrator"/>
+                        <button name="button_invalid" string="Activity over" type="object" states="started_and_started" class="oe_highlight" confirm="Please confirm whether to force the end or early termination of the offer" groups="cpo_preferential.group_preferential_administrator"/>
+                        <button name="jump_another_model" string="Data analysis" type="object" states="force_no_started,started_and_started" groups="cpo_preferential.group_preferential_administrator"/>
+                        <button name="button_cancel" string="Forced cancellation" type="object" states="force_no_started,started_and_started" confirm="Once canceled, the current offer is completely void, please consider clearly" groups="cpo_preferential.group_preferential_administrator"/>
+                        <field name="state" widget="statusbar" statusbar_visible="force_no_started,started_and_started,invalid_over"/>
+                    </header>
+                    <sheet>
+                        <separator string="Activity time"/>
+                        <h1 class="oe_inline">
+                            <field name="cpo_start_time" attrs="{'readonly':[('state', '!=', 'draft')]}"/> -
+                            <field name="cpo_end_time" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                            <field name="cpo_check_time_bool" invisible="1"/>
+                        </h1>
+                        <separator string="Activity theme"/>
+                        <field name="name_title" style="font-size:35px; font-weight:bold" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                        <separator string="Activity strategy"/>
+                        <group>
+                            <label for="cpo_date_bool" attrs="{'invisible':[('cpo_date_bool','=',False)]}"/>
+                            <div attrs="{'invisible':[('cpo_date_bool','=',False)]}">
+                                <field name="cpo_date_bool" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                            </div>
+                            <label for="cpo_amount_bool" attrs="{'invisible':[('cpo_amount_bool','=',False)]}"/>
+                            <div attrs="{'invisible':[('cpo_amount_bool','=',False)]}">
+                                <field name="cpo_amount_bool" attrs="{'readonly':[('state', '!=', 'draft')]}"/> Number of coupons
+                                <field name="cpo_voucher_number" attrs="{'readonly':[('state', '!=', 'draft')]}" class="oe_inline"/>
+                            </div>
+                            <label for="cpo_card_bool" attrs="{'invisible':[('cpo_card_bool','=',False)]}"/>
+                            <div attrs="{'invisible':[('cpo_card_bool', '=', False)]}">
+                                <field name="cpo_card_bool" invisible="1"/>
+                                Full(excluding shipping)
+                                <field name="cpo_card_term" attrs="{'readonly':[('state', '!=', 'draft')]}"/>Amount,
+                                Discount or discount amount
+                                <field name="cpo_card_money" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="cpo_discount_type" class="oe_inline" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                            </div>
+                            <label for="cpo_no_card_bool" attrs="{'invisible':[('cpo_no_card_bool','=',False)]}"/>
+                            <div attrs="{'invisible':[('cpo_no_card_bool', '=', False)]}">
+                                <field name="cpo_no_card_bool" invisible="1"/>
+                                Discount or discount amount
+                                <field name="cpo_no_card_money" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="cpo_discount_type" class="oe_inline" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                            </div>
+                            <field name="cpo_shared_bool" attrs="{'readonly':[('state', '!=', 'draft')],'invisible':[('cpo_shared_bool','=',False)]}"/>
+                            <field name="cpo_no_shared_bool" attrs="{'readonly':[('state', '!=', 'draft')],'invisible':[('cpo_no_shared_bool','=',False)]}"/>
+                            <field name="cpo_physical_code_bool" attrs="{'readonly':[('state', '!=', 'draft')],'invisible':[('cpo_physical_code_bool','=',False)]}"/>
+                            <field name="cpo_allow_sharing_bool" attrs="{'readonly':[('state', '!=', 'draft')],'invisible':[('cpo_allow_sharing_bool','=',False)]}"/>
+                            <field name="cpo_public_coupon_bool" attrs="{'readonly':[('state', '!=', 'draft')],'invisible':[('cpo_public_coupon_bool','=',False)]}"/>
+                            <field name="cpo_remarks" widget='text' attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                        </group>
+                        <notebook>
+                            <page string="Participate in coupon customers" attrs="{'invisible':[('cpo_amount_bool','=',False)]}">
+                                <!--参与优惠券客户-->
+                                <field name="cpo_voucher_id" mode="tree, form">
+                                    <tree>
+                                        <field name="time_money_id" invisible="1" force_save="1"/>
+                                        <field name="cpo_numeric" force_save="1"/>
+                                        <field name="partner_id" force_save="1"/>
+                                        <field name="sale_order_id" force_save="1"/>
+                                        <field name="cpo_original_amount" force_save="1"/>
+                                        <field name="cpo_discounted_price" force_save="1"/>
+                                        <field name="cpo_actual_amount" force_save="1"/>
+                                        <field name="active" invisible="1"/>
+                                    </tree>
+                                    <form string="Coupon details" create="false" edit="false">
+                                        <sheet>
+                                            <group string="Coupon basic information" style="margin-top:-10px;">
+                                                <div name="time_money_id" style="font-size:20px; font-weight:bold;">
+                                                    <field name="cpo_numeric" style="margin-right:20px;"/>
+                                                    <field name="time_money_id" style="margin-right:20px;"/>
+                                                    <field name="cpo_con_start_time"/> -
+                                                    <field name="cpo_con_end_time"/>
+                                                    <field name="cpo_physical_code" style="margin-left:83px;"/>
+                                                </div>
+                                            </group>
+                                            <group colspan="4" col="4" string="Coupon situation" style="margin-top:-10px;">
+                                                <field name="cpo_coupon_time" force_save="1"/>
+                                                <field name="cpo_use_bool" force_save="1"/>
+                                                <field name="cpo_allow_sharing_bool"/>
+                                                <field name="cpo_physical_code_bool"/>
+                                                <field name="cpo_voucher_bool" force_save="1" invisible="1"/>
+                                                <field name="cpo_coupon_bool" force_save="1" invisible="1"/>
+                                            </group>
+                                            <group colspan="4" col="4" string="Coupon is open to the public" style="margin-top:-10px;" attrs="{'invisible':[('cpo_public_coupon_bool','=',False)]}">
+                                                <field name="cpo_public_coupon_bool"/>
+                                                <field name="cpo_public_code"/>
+                                                <field name="cpo_public_bool"/>
+                                                <field name="cpo_public_time"/>
+                                            </group>
+                                            <group string="Transfer tracking" colspan="4" col="4" style="margin-top:-10px;" attrs="{'invisible':[('cpo_allow_sharing_bool','=',False)]}">
+                                                <field name="cpo_transfer_bool" force_save="1"/>
+                                                <field name="transfer_partner_id" force_save="1"/>
+                                                <field name="cpo_transfer_start_time" force_save="1"/>
+                                                <field name="cpo_transfer_end_time" force_save="1"/>
+                                            </group>
+                                            <group colspan="4" col="4" style="margin-top:-10px;" string="Customers and orders">
+                                                <field name="partner_id" force_save="1"/>
+                                                <field name="sale_order_id" force_save="1"/>
+                                            </group>
+                                            <group string="Discount information" style="margin-top:-10px;">
+                                                <label for="cpo_no_card_bool" attrs="{'invisible':[('cpo_no_card_bool','=',False)]}"/>
+                                                <div attrs="{'invisible':[('cpo_no_card_bool','=',False)]}">
+                                                    <field name="cpo_no_card_bool" invisible="1"/>
+                                                    Discount or discount amount
+                                                    <field name="cpo_no_card_money" style="max-width:60px;"/>
+                                                    <field name="cpo_discount_type" class="oe_inline" style="max-width:70px;"/>
+                                                </div>
+                                                <label for="cpo_card_bool" attrs="{'invisible':[('cpo_card_bool','=',False)]}"/>
+                                                <div attrs="{'invisible':[('cpo_card_bool','=',False)]}">
+                                                    <field name="cpo_card_bool" invisible="1"/>
+                                                    Full(excluding shipping)
+                                                    <field name="cpo_card_term" style="max-width:65px;"/>Amount,
+                                                    Discount or discount amount
+                                                    <field name="cpo_card_money" style="max-width:60px;"/>
+                                                    <field name="cpo_discount_type" class="oe_inline" style="max-width:70px;"/>
+                                                </div>
+                                                <label for="cpo_shared_bool" attrs="{'invisible':[('cpo_shared_bool','=',False)]}"/>
+                                                <div attrs="{'invisible':[('cpo_shared_bool','=',False)]}">
+                                                    <field name="cpo_shared_bool"/>
+                                                </div>
+                                                <label for="cpo_no_shared_bool" attrs="{'invisible':[('cpo_no_shared_bool','=',False)]}"/>
+                                                <div attrs="{'invisible':[('cpo_no_shared_bool','=',False)]}">
+                                                    <field name="cpo_no_shared_bool"/>
+                                                </div>
+                                            </group>
+                                            <group colspan="6" col="6" string="Amount information" style="margin-top:-10px;">
+                                                <field name="cpo_original_amount" force_save="1"/>
+                                                <field name="cpo_discounted_price" force_save="1"/>
+                                                <field name="cpo_actual_amount" force_save="1"/>
+                                            </group>
+                                            <group colspan='4' col='4' string="Participating products" style="margin-top:-10px;">
+                                                <field name="volume_level_ids" string="Volume level" widget="many2many_tags"/>
+                                                <field name="layer_number_ids" string="Layer number" widget="many2many_tags"/>
+                                                <field name="silkscreen_color_ids" string="Silkscreen color" widget="many2many_tags"/>
+                                                <!--<field name="text_color_ids" string="Text color" widget="many2many_tags"/>-->
+                                                <field name="surface_process_ids" string="Surface process" widget="many2many_tags"/>
+                                                <field name="via_process_ids" string="Via process" widget="many2many_tags"/>
+                                                <field name="special_process_ids" string="Special process" widget="many2many_tags"/>
+                                                <field name="special_material_ids" string="Special material" widget="many2many_tags"/>
+                                                <field name="material_brand_ids" string="Material brand" widget="many2many_tags"/>
+                                                <field name="base_type_ids" string="Base type" widget="many2many_tags"/>
+                                                <field name="acceptance_criteria_ids" string="Acceptance criteria" widget="many2many_tags"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Participation time customers" attrs="{'invisible':[('cpo_date_bool','=',False)]}">
+                                <!--参与时间优惠客户-->
+                                <field name="cpo_time_id" mode="tree, form">
+                                    <tree>
+                                        <field name="time_money_id" invisible="1" force_save="1"/>
+                                        <field name="partner_id" force_save="1"/>
+                                        <field name="sale_order_id" force_save="1"/>
+                                        <field name="cpo_original_amount" force_save="1"/>
+                                        <field name="cpo_discounted_price" force_save="1"/>
+                                        <field name="cpo_actual_amount" force_save="1"/>
+                                        <field name="active" invisible="1"/>
+                                    </tree>
+                                    <form string="Time details" create="false" edit="false">
+                                        <sheet>
+                                            <group string="Time period basic information" style="margin-top:-10px;">
+                                                <div name="time_money_id" style="font-size:20px; font-weight:bold;">
+                                                    <field name="cpo_numeric" style="margin-right:20px;"/>
+                                                    <field name="time_money_id" style="margin-right:20px;"/>
+                                                    <field name="cpo_con_start_time"/> -
+                                                    <field name="cpo_con_end_time"/>
+                                                </div>
+                                            </group>
+                                            <group colspan="4" col="4" style="margin-top:-10px;" string="Customers and orders">
+                                                <field name="partner_id" force_save="1"/>
+                                                <field name="sale_order_id" force_save="1"/>
+                                            </group>
+                                            <group string="Discount information" style="margin-top:-10px;">
+                                                <label for="cpo_no_card_bool"/>
+                                                <div attrs="{'invisible':[('cpo_no_card_bool','=',False)]}">
+                                                    <field name="cpo_no_card_bool" invisible="1"/>
+                                                    Discount or discount amount
+                                                    <field name="cpo_no_card_money" style="max-width:60px;"/>
+                                                    <field name="cpo_discount_type" class="oe_inline" style="max-width:70px;"/>
+                                                </div>
+                                                <label for="cpo_card_bool"/>
+                                                <div attrs="{'invisible':[('cpo_card_bool','=',False)]}">
+                                                    <field name="cpo_card_bool" invisible="1"/>
+                                                    Full(excluding shipping)
+                                                    <field name="cpo_card_term" style="max-width:65px;"/>Amount,
+                                                    Discount or discount amount
+                                                    <field name="cpo_card_money" style="max-width:60px;"/>
+                                                    <field name="cpo_discount_type" class="oe_inline" style="max-width:70px;"/>
+                                                </div>
+                                                <label for="cpo_shared_bool" attrs="{'invisible':[('cpo_shared_bool','=',False)]}"/>
+                                                <div attrs="{'invisible':[('cpo_shared_bool','=',False)]}">
+                                                    <field name="cpo_shared_bool"/>
+                                                </div>
+                                                <label for="cpo_no_shared_bool" attrs="{'invisible':[('cpo_no_shared_bool','=',False)]}"/>
+                                                <div attrs="{'invisible':[('cpo_no_shared_bool','=',False)]}">
+                                                    <field name="cpo_no_shared_bool"/>
+                                                </div>
+                                            </group>
+                                            <group colspan="6" col="6" string="Amount information" style="margin-top:-10px;">
+                                                <field name="cpo_original_amount" force_save="1"/>
+                                                <field name="cpo_discounted_price" force_save="1"/>
+                                                <field name="cpo_actual_amount" force_save="1"/>
+                                            </group>
+                                            <group colspan='4' col='4' string="Participating products" style="margin-top:-10px;">
+                                                <field name="volume_level_ids" string="Volume level" widget="many2many_tags"/>
+                                                <field name="layer_number_ids" string="Layer number" widget="many2many_tags"/>
+                                                <field name="silkscreen_color_ids" string="Silkscreen color" widget="many2many_tags"/>
+                                                <!--<field name="text_color_ids" string="Text color" widget="many2many_tags"/>-->
+                                                <field name="surface_process_ids" string="Surface process" widget="many2many_tags"/>
+                                                <field name="via_process_ids" string="Via process" widget="many2many_tags"/>
+                                                <field name="special_process_ids" string="Special process" widget="many2many_tags"/>
+                                                <field name="special_material_ids" string="Special material" widget="many2many_tags"/>
+                                                <field name="material_brand_ids" string="Material brand" widget="many2many_tags"/>
+                                                <field name="base_type_ids" string="Base type" widget="many2many_tags"/>
+                                                <field name="acceptance_criteria_ids" string="Acceptance criteria" widget="many2many_tags"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Participating products">
+                                <group colspan='4' col='4'>
+                                    <field name="volume_level_ids" string="Volume level" widget="many2many_tags" options="{'no_open':True}" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                    <field name="layer_number_ids" string="Layer number" widget="many2many_tags" options="{'no_open':True}" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                    <field name="silkscreen_color_ids" string="Silkscreen color" widget="many2many_tags" options="{'no_open':True}" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                    <!--<field name="text_color_ids" string="Text color" widget="many2many_tags" options="{'no_open':True}" attrs="{'readonly':[('state', '!=', 'draft')]}"/>-->
+                                    <field name="surface_process_ids" string="Surface process" widget="many2many_tags" options="{'no_open':True}" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                    <field name="via_process_ids" string="Via process" widget="many2many_tags" options="{'no_open':True}" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                    <field name="special_process_ids" string="Special process" widget="many2many_tags" options="{'no_open':True}" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                    <field name="special_material_ids" string="Special material" widget="many2many_tags" options="{'no_open':True}" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                    <field name="material_brand_ids" string="Material brand" widget="many2many_tags" options="{'no_open':True}" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                    <field name="base_type_ids" string="Base type" widget="many2many_tags" options="{'no_open':True}" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                    <field name="acceptance_criteria_ids" string="Acceptance criteria" widget="many2many_tags" options="{'no_open':True}" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--活动计划 window-->
+        <record model="ir.actions.act_window" id="preferential_activity_plan_window">
+            <field name="name">Preferential Activity Plan</field>
+            <field name="res_model">preferential.cpo_time_and_money</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="2" name="sequence"/>
+            <field name="domain">[('state', 'not in', ('cancel', 'invalid_over'))]</field>
+            <field name="view_ids" eval="[(5,0,0),
+            (0,0,{'view_mode':'tree','view_id':ref('preferential_activity_plan_tree')}),
+            (0,0,{'view_mode':'form','view_id':ref('preferential_activity_plan_form')})]"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                   Click on the "Create" button on the left to create a special offer plan.
+                </p>
+            </field>
+        </record>
+        <!--活动 window-->
+        <record model="ir.actions.act_window" id="preferential_activity_window">
+            <field name="name">Preferential Activity</field>
+            <field name="res_model">preferential.cpo_time_and_money</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="3" name="sequence"/>
+            <field name="view_ids" eval="[(5,0,0),
+            (0,0,{'view_mode':'tree','view_id':ref('preferential_activity_tree')}),
+            (0,0,{'view_mode':'form','view_id':ref('preferential_activity_form')})]"/>
+            <field name="domain">[('state', 'not in', ('draft', 'cancel', 'invalid_over'))]</field>
+            <field name="help" type="html">
+                <h2>
+                    The 'Promotion Plan' has not been created yet, you can click on the left side offer plan to create
+                </h2>
+            </field>
+        </record>
+        <!--查看所有时间段tree-->
+        <record model="ir.ui.view" id="views_check_date_tree">
+            <field name="name">check_date_tree</field>
+            <field name="model">preferential.cpo_time_and_money</field>
+            <field name="priority">4</field>
+            <field name="arch" type="xml">
+                <tree string="Activity" class="o_sale_order" decoration-danger="state=='started_and_started'" decoration-info="state=='force_no_started'">
+                    <field name="name"/>
+                    <field name="cpo_start_time"/>
+                    <field name="cpo_end_time"/>
+                    <field name="name_title"/>
+                    <field name="state"/>
+                    <field name="active" invisible="1"/>
+                    <field name="cpo_invalid_over_bool" invisible="1"/>
+                    <field name="cpo_check_time_bool" invisible="1"/>
+                    <button name="check_view_form_date_amount" icon='fa-eye' type="object"/>
+                </tree>
+            </field>
+        </record>
+        <!--查看所有优惠券tree-->
+        <record model="ir.ui.view" id="views_check_amount_tree">
+            <field name="name">check_amount_tree</field>
+            <field name="model">preferential.cpo_time_and_money</field>
+            <field name="priority">5</field>
+            <field name="arch" type="xml">
+                <tree string="Activity" class="o_sale_order" decoration-danger="state=='started_and_started'" decoration-info="state=='force_no_started'">
+                    <field name="name"/>
+                    <field name="cpo_start_time"/>
+                    <field name="cpo_end_time"/>
+                    <field name="name_title"/>
+                    <field name="cpo_voucher_number"/>
+                    <field name="state"/>
+                    <field name="active" invisible="1"/>
+                    <field name="cpo_invalid_over_bool" invisible="1"/>
+                    <field name="cpo_check_time_bool" invisible="1"/>
+                    <button name="check_view_form_date_amount" icon='fa-eye' type="object"/>
+                </tree>
+            </field>
+        </record>
+        <!--优惠券 大局 kanban-->
+        <record model="ir.ui.view" id="coupon_kanban_views">
+            <field name="name">coupon_kanban_views</field>
+            <field name="model">preferential.cpo_time_and_money</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey o_kanban_dashboard o_hr_kanban o_kanban_small_column" create="false">
+                    <field name="name"/>
+                    <field name="color"/>
+                    <field name="name_title"/>
+                    <field name="cpo_trading_volume"/>
+                    <field name="cpo_coupon_volume"/>
+                    <field name="cpo_date_bool"/>
+                    <field name="cpo_amount_bool"/>
+                    <field name="cpo_start_time"/>
+                    <field name="cpo_end_time"/>
+                    <field name="cpo_state"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div style="max-width:265px;">
+                                <div t-attf-class="o_kanban_card_header #{kanban_color(record.color.raw_value)}">
+                                    <div class="o_kanban_card_header_title">
+                                        <div class="row">
+                                            <div class="o_primary pull-left" style="font-size:20px!important;margin:0px 0px 3px 16px!important;">
+                                                <field name="name"/>
+                                            </div>
+                                            <div class="pull-right" style="margin:5px 30px 0px 0px!important;">
+                                                <field name="cpo_state"/>
+                                            </div>
+                                        </div>
+                                        <div class="o_secondary" style="font-size:13px!important;">
+                                            <field name="cpo_start_time"/> -
+                                            <field name="cpo_end_time"/>
+                                            <p style="width:200px!important;">
+                                                <field name="name_title" style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"/>
+                                            </p>
+                                        </div>
+                                        <div class="pull-right" style="margin:0px 0px 2px 0px!important;">
+                                            Coupon usage:
+                                            <field name="cpo_coupon_volume" force_save="1"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='container o_kanban_card_content o_visible'>
+                                    <div class="row" style="padding-left: 15px!important;">
+                                        <div class='col-xs-6 o_kanban_primary_left'>
+                                            <button class="btn btn-primary" name="%(cpo_preferential.coupon_details_window_view)d" type="action">Detail details</button>
+                                        </div>
+                                        <!--先隐藏-->
+                                        <div class='col-xs-6 o_kanban_primary_right' invisible="1">
+                                            <button class="btn btn-primary" name="jump_another_model" type="object">Data analysis</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <!--时间段 大局 kanban-->
+        <record model="ir.ui.view" id="time_kanban_views">
+            <field name="name">time_kanban_views</field>
+            <field name="model">preferential.cpo_time_and_money</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey o_kanban_dashboard o_hr_kanban o_kanban_small_column" create="false">
+                    <field name="name"/>
+                    <field name="color"/>
+                    <field name="name_title"/>
+                    <field name="cpo_trading_volume"/>
+                    <field name="cpo_coupon_volume"/>
+                    <field name="cpo_date_bool"/>
+                    <field name="cpo_amount_bool"/>
+                    <field name="cpo_start_time"/>
+                    <field name="cpo_end_time"/>
+                    <field name="cpo_state"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div style="max-width:265px;">
+                                <div t-attf-class="o_kanban_card_header #{kanban_color(record.color.raw_value)}">
+                                    <div class="o_kanban_card_header_title">
+                                        <div class="row">
+                                            <div class="o_primary pull-left" style="font-size:20px!important;margin:0px 0px 3px 16px!important;">
+                                                <field name="name"/>
+                                            </div>
+                                            <div class="pull-right" style="margin:5px 30px 0px 0px!important;">
+                                                <field name="cpo_state"/>
+                                            </div>
+                                        </div>
+                                        <div class="o_secondary" style="font-size:13px!important;">
+                                            <field name="cpo_start_time"/> -
+                                            <field name="cpo_end_time"/>
+                                            <p style="width:200px!important;">
+                                                <field name="name_title" style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"/>
+                                            </p>
+                                        </div>
+                                        <div class="pull-right" style="margin:0px 0px 2px 0px!important;">
+                                            Order volume:
+                                            <field name="cpo_trading_volume" force_save="1"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='container o_kanban_card_content o_visible'>
+                                    <div class="row" style="padding-left:15px!important;">
+                                        <div class='col-xs-6 o_kanban_primary_left'>
+                                            <button class="btn btn-primary" name="%(cpo_preferential.time_details_window_view)d" type="action">Detail details</button>
+                                        </div>
+                                        <!--先隐藏-->
+                                        <div class='col-xs-6 o_kanban_primary_right' invisible="1">
+                                            <button class="btn btn-primary" name="jump_another_model" type="object">Data analysis</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <!--优惠券 时间段 大局 search-->
+        <record model="ir.ui.view" id="coupon_search_views">
+            <field name="name">coupon_search_views</field>
+            <field name="model">preferential.cpo_time_and_money</field>
+            <field name="arch" type="xml">
+                <search string="Search for offers">
+                    <field name="name" string="Activity number"/>
+                    <field name="state"/>
+                    <field name="cpo_start_time"/>
+                    <field name="cpo_end_time"/>
+                    <group string="Group By" expand="0">
+                        <filter name="group_by_state" string="Activity prioritization" context="{'group_by': 'state'}" domain="[]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <!--优惠券 大局 window-->
+        <record model="ir.actions.act_window" id="coupon_kanban_window">
+            <field name="name">Coupon</field>
+            <field name="res_model">preferential.cpo_time_and_money</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">kanban</field>
+            <field name="domain">[('state', 'not in', ('draft', 'cancel')),("cpo_amount_bool",'=',True),('name','!=',False)]</field>
+            <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'kanban','view_id':ref('cpo_preferential.coupon_kanban_views')})]"/>
+            <field name="context">{'search_default_current':1, 'search_default_group_by_state': 1}</field>
+            <field name="search_view_id" ref="coupon_search_views"/>
+            <field name="help" type="html">
+                <h2 style="margin-left: 35px!important;">
+                    If you have not created a coupon, you can create it by clicking on the “Promotion Plan” on the left side!
+                </h2>
+            </field>
+        </record>
+        <!--时间段 大局 window-->
+        <record model="ir.actions.act_window" id="time_kanban_window">
+            <field name="name">Time</field>
+            <field name="res_model">preferential.cpo_time_and_money</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">kanban</field>
+            <field name="domain">[('state', 'not in', ('draft', 'cancel')),("cpo_date_bool",'=',True),('name','!=',False)]</field>
+            <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'kanban','view_id':ref('cpo_preferential.time_kanban_views')})]"/>
+            <field name="search_view_id" ref="coupon_search_views"/>
+            <field name="context">{'search_default_current':1, 'search_default_group_by_state':1}</field>
+            <field name="help" type="html">
+                <h2 style="margin-left: 35px!important;">
+                    If you have not created a time period offer, you can create it by clicking on the "Promotion Plan" on the left side!
+                </h2>
+            </field>
+        </record>
+        <!--第一级-->
+        <menuitem name="Offer settings" id="offer_settings_menu_root"/>
+        <!--第二级-->
+        <menuitem name="Mass customer offer settings" id="mass_customer_offer_settings_menu_1" parent="offer_settings_menu_root"/>
+        <menuitem name="Public offer details" id="public_offer_details_menu_1"  parent="offer_settings_menu_root"/>
+        <!--第三级-->
+        <menuitem name="Preferential Activity Plan" id="time_amount_menu_1" parent="mass_customer_offer_settings_menu_1" action="preferential_activity_plan_window" sequence="2"/>
+        <menuitem name="Preferential Activity" id="activity_menu_1" parent="mass_customer_offer_settings_menu_1" action="preferential_activity_window" sequence="3"/>
+        <menuitem name="Coupon details" id="coupon_details_menu_1" parent="public_offer_details_menu_1" action="coupon_kanban_window"/>
+        <menuitem name="Time period discount details" id="time_details_menu_1" parent="public_offer_details_menu_1" action="time_kanban_window"/>
+    </data>
+</odoo>

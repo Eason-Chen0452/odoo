@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+
+         <!-- PBCA 报价菜单Data数据 -->
+        <record id="cpo_pcba_condition_001" model="cpo_pcba_condition">
+            <field name="condition_photo" type="base64" file="website_cpo_index/static/src/images/layerimg/stantard-pcba.png"/>
+            <field name="condition_type">standard</field>
+            <field name='condition_title'>Normal SMT Process</field>
+            <field name='condition_one'>All kinds of PCBA available</field>
+            <field name='condition_two'></field>
+            <field name='condition_three'></field>
+            <field name='state'>draft</field>
+            <field name='condition_now_time'></field>
+            <field name='condition_link'>/pcba?type=standard</field>
+        </record>
+        <record id="cpo_pcba_condition_002" model="cpo_pcba_condition">
+            <field name="condition_photo" type="base64" file="website_cpo_index/static/src/images/layerimg/material-pcba.png"/>
+            <field name="condition_type">yes</field>
+            <field name='condition_title'>Order SMT + Components, Get PCB Free</field>
+            <field name='condition_one'>Order Quantity ≤ 5 PCS</field>
+            <field name='condition_two'>Parts Types ≤ 50</field>
+            <field name='condition_three'>Parts Quantity ≤ 50</field>
+            <field name='state'>draft</field>
+            <field name='condition_now_time'></field>
+            <field name='condition_link'>/pcba?type=material</field>
+        </record>
+        <record id="cpo_pcba_condition_003" model="cpo_pcba_condition">
+            <field name="condition_photo" type="base64" file="website_cpo_index/static/src/images/layerimg/no-material-pcba.png"/>
+            <field name="condition_type">no</field>
+            <field name='condition_title'>Order SMT, Get PCB Free</field>
+            <field name='condition_one'>Components Provided by Customer</field>
+            <field name='condition_two'>Order Quantity ≤ 20 PCS</field>
+            <field name='condition_three'>Parts Quantity ≤ 50</field>
+            <field name='state'>draft</field>
+            <field name='condition_now_time'></field>
+            <field name='condition_link'>/pcba?type=nomaterial</field>
+        </record>
+
+        <!--<record id="cpo_pcba_package_link_001" model="cpo_package_price">-->
+            <!--<field name="cpo_layer_photo" type="base64" file="website_cpo_advertising/static/src/images/layerimg/layer_1_2.jpg"/>-->
+            <!--<field name="cpo_product_name">1 Layers</field>-->
+            <!--<field name='cpo_product_amount'>$ 250</field>-->
+            <!--<field name='cpo_product_layers'>1 Layers</field>-->
+            <!--<field name='cpo_turn_time'>As fast as 24 hours</field>-->
+            <!--<field name='cpo_qty_req'>100</field>-->
+            <!--<field name='cpo_product_materials'>Materials</field>-->
+            <!--<field name='cpo_finished_copper'>1-3 oz</field>-->
+            <!--<field name='cpo_trace_space'>4/4mil (0.1mm)</field>-->
+        <!--</record>-->
+
+
+
+        <!--<record id="cpo_online_product_release_2" model="cpo_product_release">-->
+            <!--<field name="cpo_layer_photo" type="base64" file="website_cpo_advertising/static/src/images/layerimg/layer_2.jpg"/>-->
+            <!--<field name="cpo_product_name">2 Layers</field>-->
+            <!--<field name='cpo_product_amount'>$ 320</field>-->
+            <!--<field name='cpo_product_layers'>2 Layers</field>-->
+            <!--<field name='cpo_turn_time'>As fast as 24 hours</field>-->
+            <!--<field name='cpo_qty_req'>100</field>-->
+            <!--<field name='cpo_product_materials'>Materials</field>-->
+            <!--<field name='cpo_finished_copper'>1-3 oz</field>-->
+            <!--<field name='cpo_trace_space'>4/4mil (0.1mm)</field>-->
+        <!--</record>-->
+        <!--<record id="cpo_online_product_release_3" model="cpo_product_release">-->
+            <!--<field name="cpo_layer_photo" type="base64" file="website_cpo_advertising/static/src/images/layerimg/layer_4.jpg"/>-->
+            <!--<field name="cpo_product_name">4 Layers</field>-->
+            <!--<field name='cpo_product_amount'>$ 410</field>-->
+            <!--<field name='cpo_product_layers'>4 Layers</field>-->
+            <!--<field name='cpo_turn_time'>As fast as 24 hours</field>-->
+            <!--<field name='cpo_qty_req'>100</field>-->
+            <!--<field name='cpo_product_materials'>Materials</field>-->
+            <!--<field name='cpo_finished_copper'>1-3 oz</field>-->
+            <!--<field name='cpo_trace_space'>4/4mil (0.1mm)</field>-->
+        <!--</record>-->
+        <!--<record id="cpo_online_product_release_4" model="cpo_product_release">-->
+            <!--<field name="cpo_layer_photo" type="base64" file="website_cpo_advertising/static/src/images/layerimg/layer_6.jpg"/>-->
+            <!--<field name="cpo_product_name">6 Layers</field>-->
+            <!--<field name='cpo_product_amount'>$ 500</field>-->
+            <!--<field name='cpo_product_layers'>6 Layers</field>-->
+            <!--<field name='cpo_turn_time'>As fast as 24 hours</field>-->
+            <!--<field name='cpo_qty_req'>100</field>-->
+            <!--<field name='cpo_product_materials'>Materials</field>-->
+            <!--<field name='cpo_finished_copper'>1-3 oz</field>-->
+            <!--<field name='cpo_trace_space'>4/4mil (0.1mm)</field>-->
+        <!--</record>-->
+
+
+    </data>
+</odoo>

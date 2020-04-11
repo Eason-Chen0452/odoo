@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+       <record id="view_create_layer_size_price" model="ir.ui.view">
+          <field name="name">create.layer.size.price.form</field>
+          <field name="model">create.layer.size.price</field>
+          <field name="arch" type="xml">
+            <form string="Create PCB Price of Size for Every Layer">
+                <sheet>
+                    <group col="1">
+                        <h1>
+                            <label string="Target PCB Layer Number:"/>
+                            <field name="layer_id" class="oe_inline" attrs="{'readonly':True}"/>
+                        </h1>            
+                    </group>
+                    <group col="4">
+                        <field name="source_layer_id" />
+                        <field name="auto_create_copper_base" />
+                    </group>
+
+                    <group col="4">
+                        <field name="min_delay_hours" />
+                        <label for="min_delay_change_hours"/>
+                        <div>
+                            
+                        </div>
+                    </group>
+
+                    <group col="4">
+                        <field name="max_delay_hours" />
+                        <label for="max_delay_change_hours"/>
+                        <div>
+                            <field name="max_delay_hours_compute" class="oe_inline"/>
+                            <field name="max_delay_change_hours" class="oe_inline"/>
+                            <field name="max_delay_change_class" class="oe_inline"/>
+                        </div>
+                    </group>
+
+                    <group col="4">
+                        <field name="quick_time" />
+                        <label for="quick_change_time"/>
+                        <div>
+                            <field name="quick_time_compute" class="oe_inline"/>
+                            <field name="quick_change_time" class="oe_inline"/>
+                            <field name="quick_time_change_class" class="oe_inline"/>
+                        </div>
+                    </group>
+    
+                    <group col="4">
+                        <field name="quick_fee" />
+                        <label for="quick_change_fee"/>
+                        <div>
+                            <field name="quick_fee_compute" class="oe_inline"/>
+                            <field name="quick_change_fee" class="oe_inline"/>
+                            <field name="quick_fee_change_class" class="oe_inline"/>
+                        </div>
+                    </group>
+                </sheet>
+                
+                <notebook>
+                    <page string="Material Fee Change Plan">                    
+                        <group col="4">
+                            <label for="material_min_fee"/>
+                            <div>
+                                <field name="material_min_fee" /> 
+                                <field name="material_min_fee_type" /> 
+                            </div>
+                            <label for="material_min_change_fee"/>
+                            <div>
+                                <field name="material_min_change_fee" class="oe_inline"/>
+                                <field name="material_min_fee_class" class="oe_inline"/>
+                            </div>
+                        </group>
+        
+                        <group >
+                            <field name="material_limit_size" />
+                        </group>
+        
+                        <group col="4">
+                            <label for="material_max_fee"/>
+                            <div>
+                                <field name="material_max_fee" /> 
+                                <field name="material_max_fee_type" /> 
+                            </div>
+                            <label for="material_max_change_fee"/>
+                            <div>
+                                <field name="material_max_change_fee" class="oe_inline"/>
+                                <field name="material_max_fee_class" class="oe_inline"/>
+                            </div>
+                        </group>
+                    </page>
+                    <page string="Engineering Fee Change Plan">
+                        <group col="4">
+                            <label for="engineering_min_fee"/>
+                            <div>
+                                <field name="engineering_min_fee" />
+                                <field name="engineering_min_fee_type" />
+                            </div>
+                            <label for="engineering_min_change_fee"/>
+                            <div>
+                                <field name="engineering_min_fee_compute" class="oe_inline"/>
+                                <field name="engineering_min_change_fee" class="oe_inline"/>
+                                <field name="engineering_min_fee_class" class="oe_inline"/>
+                            </div>
+                        </group>
+        
+                        <group >
+                            <field name="engineering_limit_size" />
+                        </group>
+        
+        
+                        <group col="4">
+                            <label for="engineering_max_fee"/>
+                            <div>
+                                <field name="engineering_max_fee" />
+                                <field name="engineering_max_fee_type" />
+                            </div>
+                            <label for="engineering_max_change_fee"/>
+                            <div>
+                            </div>
+                        </group>                    
+                    </page>
+                    <page string="Etest Fee Change Plan">
+                        <group col="4">
+                            <label for="etest_min_fee"/>
+                            <div>
+                                <field name="etest_min_fee" />
+                                <field name="etest_min_fee_type" />
+                            </div>
+                            <label for="etest_min_change_fee"/>
+                            <div>
+                                <field name="etest_min_fee_compute" class="oe_inline"/>
+                                <field name="etest_min_change_fee" class="oe_inline"/>
+                                <field name="etest_min_fee_class" class="oe_inline"/>
+                            </div>
+                        </group>
+        
+                        <group >
+                            <field name="etest_limit_size" />
+                        </group>
+        
+        
+                        <group col="4">
+                            <label for="etest_max_fee"/>
+                            <div>
+                                <field name="etest_max_fee" />
+                                <field name="etest_max_fee_type" />
+                            </div>
+                            <label for="etest_max_change_fee"/>
+                            <div>
+                                <field name="etest_max_fee_compute" class="oe_inline"/>
+                                <field name="etest_max_change_fee" class="oe_inline"/>
+                                <field name="etest_max_fee_class" class="oe_inline"/>
+                            </div>
+                        </group>
+                    </page>
+                    <page string="Film Fee Change Plan">
+                        <group col="4">
+                            <label for="film_min_fee"/>
+                            <div>
+                                <field name="film_min_fee" />
+                                <field name="film_min_fee_type" />
+                            </div>
+                            <label for="film_min_change_fee"/>
+                            <div>
+                                <field name="film_min_fee_compute" class="oe_inline"/>
+                                <field name="film_min_change_fee" class="oe_inline"/>
+                                <field name="film_min_fee_class" class="oe_inline"/>
+                            </div>
+                        </group>
+        
+                        <group >
+                            <field name="film_limit_size" />
+                        </group>
+        
+                        <group col="4">
+                            <label for="film_max_fee"/>
+                            <div>
+                                <field name="film_max_fee" />
+                                <field name="film_max_fee_type" />
+                            </div>
+                            <label for="film_max_change_fee"/>
+                            <div>
+                                <field name="film_max_fee_compute" class="oe_inline"/>
+                                <field name="film_max_change_fee" class="oe_inline"/>
+                            </div>
+                        </group>
+                    </page>
+                </notebook>
+                
+                <footer>
+                    <button name="create_layer_size" string="Create Layer Size" type="object" class="oe_highlight"/>
+                    <label string="or" />
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+          </field>
+       </record>
+              
+        <!--<act_window id="action_create_layer_size_price"-->
+            <!--multi="True"-->
+            <!--key2="client_action_multi" name="Create Layer Size By Other Layer Number"-->
+            <!--res_model="create.layer.size.price" src_model="cam.layer.number"-->
+            <!--view_mode="tree,form" target="new"-->
+            <!--context="{'mass_convert' : True}"-->
+            <!--view_id="view_create_layer_size_price"/>-->
+
+        <act_window
+            context="{'default_layer_id': active_id}"
+            id="act_create_layer_size_price"
+            name="Create Layer Size By Other Layer Number"
+            view_mode="form" target="new"
+            res_model="create.layer.size.price"
+            src_model="cam.layer.number" 
+            view_id="view_create_layer_size_price"/>
+
+
+</odoo>

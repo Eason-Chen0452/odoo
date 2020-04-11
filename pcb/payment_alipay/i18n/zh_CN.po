@@ -1,0 +1,128 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* payment_alipay
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-27 08:31+0000\n"
+"PO-Revision-Date: 2019-08-27 08:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: payment_alipay
+#: model:payment.acquirer,cancel_msg:payment_alipay.payment_acquirer_ali
+msgid "<span><i>Cancel,</i> Your payment has been cancelled.</span>"
+msgstr "<span><i>取消,</i> 你的付款已被取消.</span>"
+
+#. module: payment_alipay
+#: model:payment.acquirer,done_msg:payment_alipay.payment_acquirer_ali
+msgid "<span><i>Done,</i> Your online payment has been successfully processed. Thank you for your order.</span>"
+msgstr "<span><i>完成,</i> 你的在线支付已成功完成. 感谢你的订单.</span>"
+
+#. module: payment_alipay
+#: model:payment.acquirer,error_msg:payment_alipay.payment_acquirer_ali
+msgid "<span><i>Error,</i> Please be aware that an error occurred during the transaction. The order has been confirmed but will not be paid. Do not hesitate to contact us if you have any questions on the status of your order.</span>"
+msgstr "<span><i>Error,</i> 请注意，在交易过程中发生了错误。 订单已经确认，但不会支付。 如果您对订单状态有任何疑问，请随时与我们联系.</span>"
+
+#. module: payment_alipay
+#: model:payment.acquirer,pending_msg:payment_alipay.payment_acquirer_ali
+msgid "<span><i>Pending,</i> Your online payment has been successfully processed. But your order is not validated yet.</span>"
+msgstr "<span><i>待定,</i> 你的在线支付已完成. 但是你的订单还未确认.</span>"
+
+#. module: payment_alipay
+#: model:payment.acquirer,name:payment_alipay.payment_acquirer_ali
+msgid "AliPay"
+msgstr "支付宝"
+
+#. module: payment_alipay
+#: model:ir.model.fields,field_description:payment_alipay.field_payment_acquirer_alipay_partner
+msgid "Alipay Partner ID"
+msgstr "支付宝商户UID"
+
+#. module: payment_alipay
+#: model:ir.model.fields,field_description:payment_alipay.field_payment_acquirer_alipay_private_key
+msgid "Alipay Private KEY"
+msgstr "支付宝商户应用私钥"
+
+#. module: payment_alipay
+#: model:ir.model.fields,field_description:payment_alipay.field_payment_acquirer_alipay_public_key
+msgid "Alipay Public KEY"
+msgstr "支付宝公钥"
+
+#. module: payment_alipay
+#: model:ir.model.fields,field_description:payment_alipay.field_payment_acquirer_alipay_seller_id
+msgid "Alipay Seller ID"
+msgstr "支付宝APPID"
+
+#. module: payment_alipay
+#: model:ir.ui.view,arch_db:payment_alipay.transaction_form_alipay
+msgid "Alipay TX Details"
+msgstr "支付宝详情"
+
+#. module: payment_alipay
+#: model:ir.model.fields,field_description:payment_alipay.field_payment_acquirer_alipay_transport
+msgid "Alipay Transport"
+msgstr "Alipay Transport"
+
+#. module: payment_alipay
+#: code:addons/payment_alipay/models/payment.py:95
+#, python-format
+msgid "Alipay: received data with missing reference (%s) or txn_id (%s)"
+msgstr "支付宝: 收到缺少参考的数据 (%s) 或者交易ID号 (%s)"
+
+#. module: payment_alipay
+#: selection:payment.acquirer,alipay_transport:0
+msgid "HTTP"
+msgstr "HTTP"
+
+#. module: payment_alipay
+#: selection:payment.acquirer,alipay_transport:0
+msgid "HTTPS"
+msgstr "HTTPS"
+
+#. module: payment_alipay
+#: model:ir.ui.view,arch_db:payment_alipay.acquirer_form_alipay
+msgid "How to configure your alipay account?"
+msgstr "如何配置您的支付宝帐户?"
+
+#. module: payment_alipay
+#: model:ir.model,name:payment_alipay.model_payment_acquirer
+msgid "Payment Acquirer"
+msgstr "付款收单方"
+
+#. module: payment_alipay
+#: model:ir.model,name:payment_alipay.model_payment_transaction
+msgid "Payment Transaction"
+msgstr "付款交易"
+
+#. module: payment_alipay
+#: selection:payment.acquirer,alipay_sign_type:0
+msgid "RSA"
+msgstr "RSA"
+
+#. module: payment_alipay
+#: selection:payment.acquirer,alipay_sign_type:0
+msgid "RSA2"
+msgstr "RSA2"
+
+#. module: payment_alipay
+#: model:ir.model.fields,field_description:payment_alipay.field_payment_acquirer_alipay_sign_type
+msgid "Sign Type"
+msgstr "加密方式"
+
+#. module: payment_alipay
+#: model:ir.model.fields,field_description:payment_alipay.field_payment_transaction_alipay_txn_type
+msgid "Transaction type"
+msgstr "交易类型"
+
+#. module: payment_alipay
+#: model:payment.acquirer,pre_msg:payment_alipay.payment_acquirer_ali
+msgid "You will be redirected to the AliPay website after clicking on the payment button."
+msgstr "点击付款按钮后，您将被重定向到AliPay网站."
+

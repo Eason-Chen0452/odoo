@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_pcb_confirm_product_no" model="ir.ui.view">
+            <field name="name">pcb.confirm.product.no.form</field>
+            <field name="model">confirm.product.no</field>
+            <field name="arch" type="xml">
+                <form string="Create Order" version="7.0">
+                    <group col='4'>
+                        <field name="new_partner"/>
+                        <field name="pcb_partner_delivery_time" widget="float_time"/>
+                    </group>
+                    <field name="confirm_line">
+                        <tree string="PCB Quotation Line" editable="bottom" create="false" delete="false">
+                            <field name="customer_file_name" readonly='1'/>
+                            <field name="product_no"/>
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="confirm_product_no" string="Create Sale Order" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_pcb_confirm_product_no" model="ir.actions.act_window">
+            <field name="name">Verification Product NO</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">confirm.product.no</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_pcb_confirm_product_no"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

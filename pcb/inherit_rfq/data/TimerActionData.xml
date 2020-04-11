@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="SendQuotationInvoice" model="ir.cron" forcecreate="True">
+            <field name="name">Send Quotation Invoice</field>
+            <field name="model">automatically.send.order</field>
+            <field name="doall">False</field>
+            <field name="active">False</field>
+            <field name="interval_number">10</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_automatically_send_order"/>
+            <field name="state">code</field>
+            <field name="code">model.SendQuotationOrInvoice()</field>
+            <field name="priority">2</field>
+            <field name="website_published">False</field>
+        </record>
+
+        <record id="DeleteOutgoingMail" model="ir.cron" forcecreate="True">
+            <field name="name">Delete Outgoing Quotation Invoice Mail</field>
+            <field name="model">automatically.send.order</field>
+            <field name="doall">False</field>
+            <field name="active">False</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_automatically_send_order"/>
+            <field name="state">code</field>
+            <field name="code">model.DeleteOutgoingMail()</field>
+            <field name="priority">2</field>
+            <field name="website_published">False</field>
+        </record>
+    </data>
+</odoo>

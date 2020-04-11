@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--SMT Package Price-->
+        <record model="ir.ui.view" id="smt_package_price_tree">
+            <field name="name">SMT Package Price Tree</field>
+            <field name="model">smt.package.price</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="smt_type"/>
+                    <field name="smt_qty"/>
+                    <field name="smt_length"/>
+                    <field name="smt_width"/>
+                    <field name="smt_dip"/>
+                    <field name="dip_unit_fee"/>
+                    <field name="smt_number"/>
+                    <field name="smt_unit_fee"/>
+                    <field name="smt_price"/>
+                </tree>
+            </field>
+        </record>
+        <!--SMT Package Price Window-->
+        <record model="ir.actions.act_window" id="smt_package_price_window">
+            <field name="name">SMT Package Price</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">smt.package.price</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem name="SMT Package Price" id="package_menu_1_list" parent="cpo_offer_base.cpo_smt_price_list" action="smt_package_price_window" sequence="2"/>
+    </data>
+
+    <data noupdate="1">
+        <!--含物料-->
+        <record id="smt_package_material" model="smt.package.price">
+            <field name='smt_type'>Material</field>
+            <field name='smt_qty'>5</field>
+            <field name='smt_length'>100</field>
+            <field name="smt_width">100</field>
+            <field name='smt_dip'>50</field>
+            <field name="smt_number">50</field>
+            <field name="smt_price">350</field>
+        </record>
+        <!--不含物料-->
+        <record id="smt_package_no_material" model="smt.package.price">
+            <field name='smt_type'>No Material</field>
+            <field name='smt_qty'>20</field>
+            <field name='smt_length'>100</field>
+            <field name="smt_width">100</field>
+            <field name='smt_dip'>25</field>
+            <field name="smt_number">25</field>
+            <field name="smt_price">250</field>
+        </record>
+    </data>
+</odoo>

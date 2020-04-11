@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+	 	<record id="utm_source_form_inhert" model="ir.ui.view">
+            <field name="name">UTM Source</field>
+            <field name="model">utm.source</field>
+            <field name="inherit_id" ref="utm.utm_source_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group" position="after">
+					<group>
+                        <field name="type"/>
+                    </group>
+					<notebook>
+						<page string="Source Type">
+                    		<field name="partner_source_id" />
+						</page>
+					</notebook>
+                </xpath>
+			</field>
+		</record>
+
+	</data>
+</odoo>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<!-- 创建tree视图 -->
+        <record model="ir.ui.view" id="cpo_record_data_list">
+            <field name="name">Record data list</field>
+            <field name="model">website_cpo_data.record_data</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="user_name"/>
+                    <field name="order_type"/>
+                    <field name="quantity"/>
+                    <field name="width"/>
+                    <field name="lenght"/>
+                    <field name="thickne"/>
+                    <field name="cpo_country"/>
+                    <field name="user_ip"/>
+                    <field name="cpo_time"/>
+                    <field name="count_pcb"/>
+                    <field name="count_pcba"/>
+                    <field name="count_num"/>
+                    <button string="View all" type="object" name="cpo_usre_record"></button>
+                </tree>
+            </field>
+        </record>
+
+        <!-- 创建form视图 -->
+        <record model="ir.ui.view" id="cpo_record_data_form">
+             <field name="name">Record data form</field>
+             <field name="model">website_cpo_data.record_data</field>
+             <field name="arch" type="xml">
+                  <form >
+                      <header>
+                          <button string="User Record" type="object" name="cpo_usre_record"></button>
+                      </header>
+                      <sheet>
+                          <group col="4">
+                              <group colspan="2">
+                                  <field name="user_name"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="order_type"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="quantity"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="width"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="lenght"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="thickne"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="cpo_country"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="user_ip"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="cpo_time"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="count_pcb"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="count_pcba"/>
+                              </group>
+                              <group colspan="2">
+                                  <field name="count_num"/>
+                              </group>
+                          </group>
+                      </sheet>
+                  </form>
+             </field>
+        </record>
+
+        <!-- 搜索视图 -->
+        <record id="cpo_record_data_search" model="ir.ui.view">
+            <field name="name">Partner Source Search</field>
+            <field name="model">website_cpo_data.record_data</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <group string="Group By" >
+                        <filter name="group_by_cpo_country" string="Country" context="{'group_by': 'cpo_country'}"/>
+                        <filter name="group_by_user_name" string="User Name" context="{'group_by': 'user_name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- 设置action打开视图-->
+        <record model="ir.actions.act_window" id="cpo_record_data_action">
+            <field name="name">Record data window</field>
+            <field name="res_model">website_cpo_data.record_data</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_current':1, 'search_default_group_by_cpo_country': 1}</field>
+        </record>
+
+        <!--设置菜单-->
+        <!--<menuitem name="Test SQL Report" id="sql_data_menu_root"/>-->
+        <menuitem name="Statistical analysis of data" id="cpo_record_data_menu_one" parent="personal_center.personal_root" sequence="10"/>
+        <menuitem name="Quotation record statistics" id="cpo_record_data_menu_list" parent="cpo_record_data_menu_one"
+              action="cpo_record_data_action"/>
+
+	</data>
+</odoo>

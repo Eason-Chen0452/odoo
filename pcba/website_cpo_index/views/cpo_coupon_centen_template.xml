@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_frontend_temrs" inherit_id="website.assets_frontend" name="Temrs Conditions">
+            <xpath expr="." position="inside">
+                <!--<link rel="stylesheet" href="/website_cpo_sale/static/src/css/cpo_service.css"/>-->
+            </xpath>
+            <xpath expr="//script[last()]" position="after">
+                <!--<script type="text/javascript" src="/website_cpo_sale/static/src/js/cpo_service.js"></script>-->
+            </xpath>
+        </template>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--优惠数据分析 form-->
+        <record id="data_analysis_form" model="ir.ui.view">
+            <field name="name">data_analysis_form</field>
+            <field name="model">preferential.data_analysis</field>
+            <field name="arch" type="xml">
+                <form string="Preferential data analysis">
+                    <footer>
+                        <button string="Data analysis" name="data_analysis" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                    <sheet>
+                        <group col="6" colspan="6" string="Select the data you want to analyze">
+                            <field name="cpo_all_bool"/>
+                            <field name="cpo_time_bool"/>
+                            <field name="cpo_coupon_bool"/>
+                        </group>
+                        <separator string="Select filter criteria or time period" attrs="{'invisible':[('cpo_all_bool', '=', False), ('cpo_time_bool', '=', False), ('cpo_coupon_bool', '=', False)]}"/>
+                        <group attrs="{'invisible':[('cpo_all_bool', '=', False), ('cpo_time_bool', '=', False), ('cpo_coupon_bool', '=', False)]}">
+                            <group col="8" colspan="8">
+                                <field name="cpo_draft_bool"/>
+                                <field name="cpo_force_bool"/>
+                                <field name="cpo_started_bool"/>
+                                <field name="cpo_over_bool"/>
+                            </group>
+                            <group col="4" colspan="4">
+                                <field name="cpo_start"/>
+                                <field name="cpo_end"/>
+                            </group>
+                        </group>
+                        <field name="time_money_id" mode="tree, form" attrs="{'invisible':[('cpo_all_bool', '=', False), ('cpo_time_bool', '=', False), ('cpo_coupon_bool', '=', False)]}">
+                            <tree string="Activity" class="o_sale_order" decoration-danger="state=='started_and_started'" decoration-info="state=='force_no_started'" decoration-muted="state=='invalid_over'" decoration-bf="state=='draft'">
+                                <field name="name"/>
+                                <field name="name_title"/>
+                                <field name="cpo_start_time"/>
+                                <field name="cpo_end_time"/>
+                                <field name="cpo_creation_time"/>
+                                <field name="cpo_date_bool"/>
+                                <field name="cpo_amount_bool"/>
+                                <field name="state"/>
+                                <field name="active" invisible="1"/>
+                                <field name="cpo_check_time_bool" invisible="1"/>
+                                <field name="cpo_invalid_over_bool" invisible="1"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--优惠数据分析 window-->
+        <record id="data_analysis_window" model="ir.actions.act_window">
+            <field name="name">Preferential data analysis</field>
+            <field name="res_model">preferential.data_analysis</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="data_analysis_form"/>
+            <field name="target">new</field>
+        </record>
+        <menuitem name="Preferential data analysis" parent="offer_settings_menu_root" action="data_analysis_window" id="wizard_data_analysis_1"/>
+    </data>
+</odoo>

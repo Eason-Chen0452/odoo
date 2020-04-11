@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seller_sales_email" model="seller.email">
+            <field name="name">ChinaPCBOne</field>
+            <field name="email">sales@chinapcbone.com</field>
+        </record>
+        <record id="seller_marco_email" model="seller.email">
+            <field name="name">Marco</field>
+            <field name="email">marco.huang@chinapcbone.com</field>
+        </record>
+
+        <!--通知定时动作-->
+        <record id="executive_notice" model="ir.cron" forcecreate="True">
+            <field name="name">Executive Notice</field>
+            <field name="model">order.notice</field>
+            <field name="doall">False</field>
+            <field name="active">False</field>
+            <field name="interval_number">10</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_order_notice"/>
+            <field name="state">code</field>
+            <field name="code">model.ExecutiveNotice()</field>
+            <field name="priority">0</field>
+            <field name="website_published">False</field>
+        </record>
+
+        <!--删除定时动作-->
+        <record id="executive_delete" model="ir.cron" forcecreate="True">
+            <field name="name">Executive Delete</field>
+            <field name="model">order.notice</field>
+            <field name="doall">False</field>
+            <field name="active">False</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_order_notice"/>
+            <field name="state">code</field>
+            <field name="code">model.ExecutiveDelete()</field>
+            <field name="priority">0</field>
+            <field name="website_published">False</field>
+        </record>
+
+        <record id="notice_sales_template" model="mail.template">
+            <field name="name">ICloudFactory Client Order Notice</field>
+            <field name="model_id" ref="sale_pcb_rfq.model_order_notice"/>
+            <field name="email_from"><![CDATA["${object.write_uid.company_id.name|safe}" <${(object.write_uid.company_id.email)|safe}>]]></field>
+            <!--<field name="email_to"></field>-->
+            <field name="subject">ICloudFactory Client Order Notice</field>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[
+            <div style="padding:0px;width:600px;margin:auto;background: #ffffff repeat top /100%;color:#777777">
+                <table cellspacing="0" cellpadding="0" style="width:600px;border-collapse:collapse;background:inherit;color:inherit">
+                    <tbody>
+                        <tr><td valign="center" width="200" style="padding:10px 10px 10px 5px;font-size: 12px">
+                            <img src="/logo.png" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${object.write_uid.company_id.name}">
+                        </td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#040202">
+                <p><strong>${object.name}</strong> customer in ICloudFactory orders at UTC time <strong>${object.order_time}</strong>!</p>
+                <p>The order number is <strong>${object.order_number}</strong>!</p>
+                <p>Product is <strong>${object.product}</strong>!</p>
+                <div style="text-align: center; margin-top: 16px;">
+                    <a href="#" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#875A7B; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #62bce4; border: 1px solid #03A9F4; border-radius:3px">View Now</a>
+                </div>
+                <p>Please process the customer's order as soon as possible.</p>
+            </div>
+            ]]>
+            </field>
+            <!--<field name="user_signature" eval="False"/>-->
+        </record>
+    </data>
+</odoo>

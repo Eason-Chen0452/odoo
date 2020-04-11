@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--付款收单方 看见内容-->
+        <record id="payment_acquirer_ali" model="payment.acquirer">
+            <field name="name">AliPay</field>
+            <field name="provider">alipay</field>
+            <field name="image" type="base64" file="payment_alipay/static/src/img/alipay_logo.png"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="view_template_id" ref="alipay_acquirer_button"/>
+            <field name="environment">test</field>
+            <field name="pre_msg">
+                <![CDATA[<p>You will be redirected to the AliPay website after clicking on the payment button.</p>]]>
+            </field>
+            <field name="alipay_partner">dummy</field>
+            <field name="alipay_seller_id">dummy</field>
+            <field name="alipay_private_key">dummy</field>
+            <field name="alipay_public_key">dummy</field>
+            <field name="description" type="html">
+                <p>
+                    AliPay is the easiest way to accept payments via AliPay or credit cards.
+                </p>
+                <ul class="list-inline">
+                    <li><i class="fa fa-check"/>eCommerce</li>
+                </ul>
+            </field>
+        </record>
+    </data>
+</odoo>

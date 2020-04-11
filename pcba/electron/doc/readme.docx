@@ -1,0 +1,105 @@
+1、基本字段
+    model：electron.base
+    字段：
+        p_type                  #关联字段
+        name                    #PDF 说明书
+        pcb_number              #瑞邦信息 零件编号
+        dash_number             #制造商 零件编号
+        mini_quantity           #最低订购数量
+        QOH                     #现有数量（库存）
+        price                   #单价
+        description             #描述
+        series                  #系列
+        manufacture             #制造商
+        tolerance               #容差
+        size                    #大小/尺寸
+        encapsulation           #封装/外壳
+        inst_type               #安装类型
+        packaging               #包装
+        character               #特性
+        parts_state             #零件状态
+        
+2、电位计-可变电阻
+    model：electron.potentiometer
+    字段：
+        filters_type            #滤波器类型
+        number_lines            #线路数
+        impedance               #不同频率时的阻抗
+        rated_current           #额定电流（最大）
+        dc_resistance           #直流电阻（DCR）（最大）
+        rv_DC                   #额定电压(交流)
+        rv_AC                   #额定电压(直流)
+        temperature             #工作温度
+        grade                   #等级
+        authentication          #认可/认证（UR，VDE）
+        height                  #高度-安装（最大值）
+        
+3、电阻器
+    model：electron.resistance
+    字段：
+        resi_val                #电阻值
+        TCR                     #温度系数
+        temperature             #工作温度
+        power                   #功率
+        ingredient              #成分
+        coating                 #涂层，外壳类型
+        install_features        #安装特性
+        inst_type               #安装类型
+        height                  #高度-安装（最大值） 
+        lead_form               #引线形式
+        supplier_enca           #供应商器件封装
+        rated_current           #端子数
+        fault_rate              #故障率
+        ancillary_use           #配套使用产品/相关产品
+        
+4、电容器
+    model：electron.capacotor
+    字段：
+        capacitance             #电容
+        voltage_rating          #电压-额定
+        dielectrics             #介电材料
+        temperature             #工作温度
+        interval                #引线间距
+        termination             #端接/端子类型
+        height                  #高度-安装（最大值）
+
+5、电感器
+    model：electron.inductor
+    字段：
+        inductance              #电感
+        Q_value                 #不同频率时的 Q 值
+        voltage_rating          #电压-额定
+        dielectrics             #介电材料
+        temperature             #工作温度
+        interval                #引线间距
+        height                  #高度-安装（最大值）
+        
+6、电位计-可变电阻
+    model：electron.potentiometer
+    字段:
+        resi_val                #电阻值
+        shaft_size              #轴尺寸
+        TCR                     #温度系数
+        cycles                  #圈数
+        knob                    #调节类型
+        diameter                #直径
+        po_length               #长度
+        ingredient              #成分/电阻材料
+        rotation_angle          #旋转角度
+        termination             #端接/端子类型
+        
+7、滤波器
+    model：electron.filters
+    字段： 
+        filters_type            #滤波器类型
+        number_lines            #线路数
+        impedance               #不同频率时的阻抗
+        rated_current           #额定电流（最大）
+        dc_resistance           #直流电阻（DCR）（最大）
+        rv_DC                   #额定电压(交流)
+        rv_AC                   #额定电压(直流)
+        temperature             #工作温度
+        grade                   #等级
+        authentication          #认可/认证（UR，VDE）
+        height                  #高度-安装（最大值）
+    

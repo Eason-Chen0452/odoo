@@ -1,0 +1,126 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+  
+    <record model="ir.ui.view" id="electron_resistance_list">
+      <field name="name">Resistance list</field>
+      <field name="model">electron.content</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="p_type"/>
+            <field name="type_code"/>
+            <field name="pcb_number"/>
+            <field name="dash_number"/>
+            <field name="mini_quantity"/>
+            <field name="QOH"/>
+            <field name="price"/>
+            <field name="description"/>
+            <field name="series"/>
+            <field name="manufacture"/>
+            <field name="packaging"/>
+            <field name="resi_val"/>
+            <field name="tolerance"/>
+            <field name="TCR"/>
+            <field name="temperature"/>
+            <field name="power"/>
+        </tree>
+      </field>
+    </record>
+
+    
+     <record model="ir.ui.view" id="electron_resistance_form">
+      <field name="name">Resistance form</field>
+      <field name="model">electron.content</field>
+      <field name="arch" type="xml">
+        <form>
+            <header>
+                <button name="add_record" type="object" strint="TEST Type"/>
+            </header>
+            <sheet>
+                <group col="4">
+                    <group col="2" colspan="4">
+                        <field name="p_type"/>
+                        <field name="type_code"/>
+                        <field name="url_sources"/>
+                        <field name="cpo_image"/>
+                        <field name="name"/>
+                        <field name="pcb_number"/>
+                        <field name="dash_number"/>
+                        <field name="mini_quantity"/>
+                        <field name="QOH"/>
+                        <field name="price"/>
+                        <field name="description"/>
+                        <field name="series"/>
+                        <field name="manufacture"/>
+                        <field name="packaging"/>
+                        <field name="resi_val"/>
+                        <field name="tolerance"/>
+                        <field name="TCR"/>
+                        <field name="temperature"/>
+                        <field name="power"/>
+                        <field name="ingredient"/>
+                        <field name="character"/>
+                        <field name="coating"/>
+                        <field name="install_features"/>
+                        <field name="size"/>
+                        <field name="height"/>
+                        <field name="lead_form"/>
+                        <field name="encapsulation"/>
+                        <field name="supplier_enca"/>
+                        <field name="rated_current"/>
+                        <field name="fault_rate"/>
+                        <field name="ancillary_use"/>
+                        <field name="parts_state"/>
+                    </group>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+ 
+  
+  
+    <!-- actions opening views on models -->
+  
+    <record model="ir.actions.act_window" id="resistance_action_window">
+      <field name="name">Resistance Res window</field>
+      <field name="res_model">electron.content</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[('type_code', '=', 'res')]</field>
+    </record>
+    
+    <!-- Top menu item -->
+ 
+    <!--<menuitem name=" passive_element" id="passive_element_menu_root"/>-->
+
+    <!-- menu categories -->
+
+    <menuitem name="passive_element_Menu_1" id="passive_element_menu_1" parent="electronic_menu_root"/>
+ 
+
+    <menuitem name="resistance_List" id="passive_element_menu_1_list" parent="passive_element_menu_1"
+              action="resistance_action_window"/>
+
+   
+    <record model="ir.actions.act_window" id="resistance_capa_act_action_window">
+      <field name="name">Resistance Capa window</field>
+      <field name="res_model">electron.content</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[('type_code', '=', 'capa')]</field>
+    </record>
+
+    <menuitem name="resistance_capa_List" id="passive_element_capa_menu_1_list" parent="passive_element_menu_1"
+              action="resistance_capa_act_action_window"/>
+              
+    <record model="ir.actions.act_window" id="resistance_general_act_action_window">
+      <field name="name">Resistance general window</field>
+      <field name="res_model">electron.content</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[('type_code', '=', 'general')]</field>
+    </record>
+
+    <menuitem name="resistance_general_List" id="passive_element_general_menu_1_list" parent="passive_element_menu_1"
+              action="resistance_general_act_action_window"/>
+  </data>
+</odoo>
+

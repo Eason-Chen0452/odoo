@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="cpo_video_tree">
+            <field name="name">CPO Video Tree</field>
+            <field name="model">cpo_video</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="cpo_video_title"/>
+                    <field name="cpo_video_link"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_video_form">
+            <field name="name">CPO Video Form</field>
+            <field name="model">cpo_video</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group colspan="4">
+                            <group colspan="4">
+                                <group colspan="2">
+                                    <field name="cpo_video_title" />
+                                </group>
+                                <group colspan="2">
+                                    <div>If it is a homepage company introduction, the title is: company;If it is a process introduction, the title is: process.</div>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_video_link" />
+                                </group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_video_actions">
+            <field name="name">CPO Video Actions</field>
+            <field name="res_model">cpo_video</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="CPO Video List" id="cpo_videomenu" parent="website_cpo_index.cpo_product_release_all_menu"
+                action="cpo_video_actions"/>
+
+    </data>
+</odoo>

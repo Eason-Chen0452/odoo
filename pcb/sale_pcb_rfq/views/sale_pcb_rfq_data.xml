@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+            <!-- Set Price List -->
+    
+        <record id="sale_quotation_price_item_material_fee" model="sale.quotation.price.item">
+            <field name="name">material_fee</field>
+            <field name="description">Material Fee</field>
+            <field name="active">1</field>            
+        </record>
+    
+
+        <record id="sale_quotation_price_item_engine_fee" model="sale.quotation.price.item">
+            <field name="name">engine_fee</field>
+            <field name="description">Engine Fee</field>
+            <field name="active">1</field>            
+        </record>
+
+        <record id="sale_quotation_price_item_test_fee" model="sale.quotation.price.item">
+            <field name="name">test_fee</field>
+            <field name="description">Test Fee</field>
+            <field name="active">1</field>            
+        </record>
+
+        <record id="sale_quotation_price_item_film_fee" model="sale.quotation.price.item">
+            <field name="name">film_fee</field>
+            <field name="description">Film Fee</field>
+            <field name="active">1</field>            
+        </record>
+
+        <record id="sale_quotation_price_item_Process_fee" model="sale.quotation.price.item">
+            <field name="name">process_fee</field>
+            <field name="description">Process Fee</field>
+            <field name="active">1</field>            
+        </record>
+
+        <record id="sale_quotation_price_item_test_tooling_fee" model="sale.quotation.price.item">
+            <field name="name">test_tooling_fee</field>
+            <field name="description">Test Tooling Fee</field>
+            <field name="active">1</field>            
+        </record>
+
+        <record id="sale_quotation_price_item_drill_fee" model="sale.quotation.price.item">
+            <field name="name">drill_fee</field>
+            <field name="description">Drill Fee</field>
+            <field name="active">1</field>            
+        </record>
+    
+            <!-- Requests Links -->
+        <record id="req_link_sale_quotation" model="res.request.link">
+            <field name="name">Sale Quotation</field>
+            <field name="object">sale.quotation</field>
+        </record>
+        
+            <!-- Quotation-related subtypes for messaging / Chatter -->
+        <record id="mt_order_sent" model="mail.message.subtype">
+            <field name="name">Quotation sent</field>
+            <field name="res_model">sale.quotation</field>
+            <field name="default" eval="False"/>
+            <field name="description">Quotation sent</field>
+        </record>
+        <record id="mt_order_confirmed" model="mail.message.subtype">
+            <field name="name">Sales Order Confirmed</field>
+            <field name="res_model">sale.quotation</field>
+            <field name="default" eval="False"/>
+            <field name="description">Quotation confirmed</field>
+        </record>
+
+        <!-- Salesteam-related subtypes for messaging / Chatter -->
+        <record id="mt_salesteam_order_sent" model="mail.message.subtype">
+            <field name="name">Quotation Send</field>
+            <field name="res_model">crm.case.section</field>
+            <field name="parent_id" eval="ref('sale_pcb_rfq.mt_order_sent')"/>
+            <field name="relation_field">section_id</field>
+        </record>
+        <record id="mt_salesteam_order_confirmed" model="mail.message.subtype">
+            <field name="name">Sales Order Confirmed</field>
+            <field name="res_model">crm.case.section</field>
+            <field name="parent_id" eval="ref('sale_pcb_rfq.mt_order_confirmed')"/>
+            <field name="relation_field">section_id</field>
+        </record>
+
+        <record id="pcb_list0" model="product.pricelist">
+            <field name="name">USD Pricelist</field>
+            <field name="type">sale</field>
+            <field name="currency_id" ref='base.USD'/>
+        </record>
+        
+    </data>
+</openerp>

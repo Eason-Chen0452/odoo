@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_cpo_currency_rate_search" model="ir.ui.view">
+            <field name="name">res.currency.rate.search</field>
+            <field name="model">res.currency.rate</field>
+            <field name="arch" type="xml">
+                <search string="Currency Rates">
+                    <field name="name" string="Date"/>
+                    <filter name="filter_usd_currency" help="USD Currency"
+                           domain="[('currency_id.name','=','USD')]"/>
+                </search>
+            </field>
+        </record>
+
+        <!--<record id="view_cpo_currency_rate_form" model="ir.ui.view">-->
+            <!--<field name="name">res.currency.rate.form</field>-->
+            <!--<field name="model">res.currency.rate</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<form string="Currency Rates">-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="rate"/>-->
+                    <!--<field name="company_id" groups="base.group_multi_company"/>-->
+                <!--</form>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <record id="view_cpo_currency_rate_tree" model="ir.ui.view">
+            <field name="name">res.currency.rate.tree</field>
+            <field name="model">res.currency.rate</field>
+            <field name="arch" type="xml">
+                <tree string="Currency Rates" delete="false">
+                    <field name="name"/>
+                    <field name="rate"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_cpo_currency_rate_form" model="ir.ui.view">
+            <field name="name">res.currency.rate.form</field>
+            <field name="model">res.currency.rate</field>
+            <field name="arch" type="xml">
+                <form string="Currency Rate" delete="false">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="rate"/>
+                            </group>
+                            <group>
+                                <field name="currency_id"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+    <!-- actions res currency rate views on models -->
+    <record model="ir.actions.act_window" id="cpo_res_currency_action_window">
+      <field name="name">cpo res currency rate window</field>
+      <field name="res_model">res.currency.rate</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[('currency_id.name','=', 'USD')]</field>
+      <field name="context">{'search_default_filter_usd_currency': 1, 'cpo_only_usd_currency': 1}</field>
+      <field name="search_view_id" ref="view_cpo_currency_rate_search"/>
+    </record>
+
+    <record id="relate_cpo_res_currency_rate_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="0"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_cpo_currency_rate_tree"/>
+        <field name="act_window_id" ref="cpo_res_currency_action_window"/>
+    </record>
+
+    <record id="relate_cpo_res_currency_rate_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_cpo_currency_rate_form"/>
+        <field name="act_window_id" ref="cpo_res_currency_action_window"/>
+    </record>
+
+    <menuitem name="Exchange Rate" id="cpo_res_currency_rate_menu" parent="cpo_offer_base.cpo_smt_price_list"
+              action="cpo_res_currency_action_window" sequence="10" groups="cpo_offer_base.cpo_sale_order_rate_admin"/>
+    </data>
+</odoo>

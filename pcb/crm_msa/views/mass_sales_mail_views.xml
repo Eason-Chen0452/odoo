@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--营销邮件 tree-->
+        <record model="ir.ui.view" id="mass_sales_mail_tree">
+            <field name="name">Marketing Mail Tree</field>
+            <field name="model">mass_sales.mail</field>
+            <field name="arch" type="xml">
+                <tree limit="30" decoration-danger="state=='Has Been Sent'" decoration-info="state=='Sending'" decoration-bf="state=='Draft'">
+                    <field name="name"/>
+                    <field name="send_time"/>
+                    <field name="people_mail"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <!--营销邮件分析 tree-->
+        <record model="ir.ui.view" id="market_email_analysis_tree">
+            <field name="name">Marketing Email Analysis Tree</field>
+            <field name="model">mass_sales.mail</field>
+            <field name="arch" type="xml">
+                <tree limit="30" decoration-danger="state=='Has Been Sent'" decoration-info="state=='Sending'" decoration-bf="state=='Draft'" create="0" delete="0" edit="0">
+                    <field name="state"/>
+                    <field name="name"/>
+                    <field name="send_time"/>
+                    <field name="people_mail"/>
+                    <field name="receive_scale"/>
+                    <field name="open_scale"/>
+                </tree>
+            </field>
+        </record>
+        <!--营销邮件 form-->
+        <record model="ir.ui.view" id="mass_sales_mail_form">
+            <field name="name">Marketing Mail Form</field>
+            <field name="model">mass_sales.mail</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="mass_send_email" type="object" string="SendEmail" class="oe_highlight" states="Draft" attrs="{'invisible': ['|', ('test_email', '=', True)]}"/>
+                        <field name="state" widget="statusbar" statusbar_visible="Draft,Sending,Has Been Sent"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="name" placeholder="Email Subject" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                        </h1>
+                        <group colspan="4" col="4">
+                            <field name="select_template" options="{'no_open':True,'no_create_edit':True}" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                            <label for="test_email"/>
+                            <div>
+                                <field name="test_email" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                                <p attrs="{'invisible':[('test_email', '=', False)]}">Select The Channel To Send</p>
+                                <field name="channel_id" attrs="{'invisible':[('test_email', '=', False)], 'required': [('test_email', '=', True)]}"/>
+                                <br/>
+                                <button name="CheckEmailView" type="object" string="View Mail Performance" attrs="{'invisible': [('test_email', '=', False)]}"/>
+                            </div>
+                        </group>
+                        <group col="4" colspan="4">
+                            <field name="filter_bool" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                            <field name="select_all_bool" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                        </group>
+                        <group style="margin-top:0px;margin-bottom:0px;" string="Filter Whether Customers Who have Placed Orders"
+                               colspan="4" col="4" attrs="{'invisible': [('filter_bool', '=', False)]}">
+                            <field name="order_bool" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                            <field name="no_order_bool" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                        </group>
+                        <group style="margin-top:0px;margin-bottom:0px;" string="Filter Customers By Registering Time Period"
+                               colspan="4" col="4" attrs="{'invisible': [('filter_bool', '=', False)]}">
+                            <field name="login_start" string="Filter Start Time" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                            <field name="login_end" string="Filter End Time" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                        </group>
+                        <group style="margin-top:0px;margin-bottom:0px;" string="Filter Customers By Ordering Time Period"
+                               colspan="4" col="4" attrs="{'invisible': ['|', ('filter_bool', '=', False), ('order_bool', '=', False)]}">
+                            <field name="order_start" string="Filter Start Time" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                            <field name="order_end" string="Filter End Time" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                        </group>
+                        <group string="Country" style="margin-top:0px;margin-bottom:0px;" attrs="{'invisible': [('filter_bool', '=', False)]}">
+                            <field name="country_ids" nolabel="1" widget="many2many_tags" options="{'no_open':True,'no_create_edit':True}" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                        </group>
+                        <group string="Customer" style="margin-top:0px;margin-bottom:0px;">
+                            <field name="personal_ids" nolabel="1" widget="many2many_tags" options="{'no_open':True,'no_create_edit':True}"
+                                   attrs="{'readonly':[('state', '!=', 'Draft')], 'required': [('test_email', '=', False)]}"/>
+                        </group>
+                    </sheet>
+                    <field name="mail_content" attrs="{'readonly':[('state', '!=', 'Draft')]}"/>
+                </form>
+            </field>
+        </record>
+        <!--营销邮件分析 form-->
+        <record model="ir.ui.view" id="market_email_analysis_form">
+            <field name="name">Marketing Email Analysis Form</field>
+            <field name="model">mass_sales.mail</field>
+            <field name="arch" type="xml">
+                <form create="0" delete="0" edit="0">
+                    <notebook style="margin-top: 0px;">
+                        <page string="Basic Information" style="background-color:#85b5e455;">
+                            <sheet>
+                                <group colspan="4" col="4">
+                                    <field name="name" readonly="1"/>
+                                    <field name="send_time" readonly="1"/>
+                                    <field name="people_mail"/>
+                                    <field name="receive_mail"/>
+                                    <field name="open_mail"/>
+                                    <field name="receive_scale"/>
+                                    <field name="open_scale"/>
+                                </group>
+                                <notebook>
+                                    <page string="Feedback Information">
+                                        <field name="mail_line" mode="tree,form">
+                                            <tree limit="30" decoration-danger="state=='Sent'" decoration-info="state=='Exception'" decoration-bf="state=='Bounce'">
+                                                <field name="center_id"/>
+                                                <field name="country"/>
+                                                <field name="receive_bool"/>
+                                                <field name="read_bool"/>
+                                                <field name="state"/>
+                                            </tree>
+                                            <form>
+                                                <sheet>
+                                                    <group colspan="4" col="4" string="Basic Information">
+                                                        <field name="center_id"/>
+                                                        <field name="country"/>
+                                                        <field name="mail_id"/>
+                                                        <field name="send_time"/>
+                                                    </group>
+                                                    <group colspan="6" col="6" string="Mail Information">
+                                                        <field name="receive_bool"/>
+                                                        <field name="read_bool"/>
+                                                        <field name="state"/>
+                                                    </group>
+                                                    <notebook>
+                                                        <page string="Return Reason" attrs="{'invisible': [('reason', '=', False)]}">
+                                                            <field name="reason" widget="html"/>
+                                                        </page>
+                                                        <page string="Click Link" attrs="{'invisible': [('reason', '!=', False)]}">
+                                                            <field name="click_ids" mode="tree">
+                                                                <tree string="Mail Click Link">
+                                                                    <field name="click_name"/>
+                                                                    <field name="click_time"/>
+                                                                </tree>
+                                                            </field>
+                                                        </page>
+                                                    </notebook>
+                                                </sheet>
+                                            </form>
+                                        </field>
+                                    </page>
+                                </notebook>
+                            </sheet>
+                        </page>
+                        <page string="Content Of Email" style="background-color:#85b5e455;">
+                            <field name="mail_content" readonly="1"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--营销邮件 window-->
+        <record model="ir.actions.act_window" id="mass_sales_mail_window">
+            <field name="name">Marketing Mail</field>
+            <field name="res_model">mass_sales.mail</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5,0,0),
+            (0,0,{'view_mode':'tree','view_id':ref('mass_sales_mail_tree')}),
+            (0,0,{'view_mode':'form','view_id':ref('mass_sales_mail_form')})]"/>
+            <field name="domain">[('email_type', '=', 'Marketing')]</field>
+        </record>
+        <!--营销邮件分析 window-->
+        <record model="ir.actions.act_window" id="market_email_analysis_window">
+            <field name="name">Marketing Email Analysis</field>
+            <field name="res_model">mass_sales.mail</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5,0,0),
+            (0,0,{'view_mode':'tree','view_id':ref('market_email_analysis_tree')}),
+            (0,0,{'view_mode':'form','view_id':ref('market_email_analysis_form')})]"/>
+            <field name="domain">[('email_type', '=', 'Marketing')]</field>
+        </record>
+        <!--退回邮件处理 tree-->
+        <record model="ir.ui.view" id="mail_return_processing_tree">
+            <field name="name">Mail Return Processing Tree</field>
+            <field name="model">mail.return_processing</field>
+            <field name="arch" type="xml">
+                <tree limit="30" create="0" edit="0" delete="1">
+                    <field name="name"/>
+                    <field name="subject"/>
+                    <field name="email_from"/>
+                    <field name="email_to"/>
+                    <field name="date_time"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <!--退回邮件处理 window-->
+        <record model="ir.actions.act_window" id="mail_return_processing_window">
+            <field name="name">Mail Return Processing</field>
+            <field name="res_model">mail.return_processing</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+    </data>
+</odoo>

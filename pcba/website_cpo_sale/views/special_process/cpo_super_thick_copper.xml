@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="super_thick_copper" name="Super Thick Copper">
+        <!-- PCB 附加生产 -->
+        <form class="form-horizontal cpo_pcb_quotation">
+            <div class="cpo_pcb_online_all_need">
+                <div class="cpo_pcb_quo">
+                    <!--数量-->
+                    <div class="form-group">
+                        <div class="cpo_input_needpcb_group clearfix">
+                            <label class="pull-left control-label">Production Quantity</label>
+                            <div class="pull-left cpo_input_quantity">
+                                <input type="text" name="cpo_input_quantity" class="form-control pull-left"
+                                        placeholder="Quantity" maxlength="10" t-att-value="pcb_quantity" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                <span class="pull-left cpo_span_unit cpo_input_active">PCS</span>
+                                <span class="pull-left cpo_span_unit">Set</span>
+                            </div>
+                            <div class="panel_img_size">
+                                <img src="\website_cpo_sale\static\src\images\tools_img\size.png"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!--长宽-->
+                    <div class="form-group">
+                        <div class="cpo_input_needpcb_group clearfix">
+                            <label class="pull-left control-label">PCB/PCB panel size</label>
+                            <div class="pull-left cpo_input_size">
+                                <div class="cpo_length_width">
+                                    <input type="text" name="cpo_input_lenght" class="form-control pull-left"
+                                            placeholder="Length" maxlength="10" t-att-value="pcb_length"/>
+                                    <span class="pull-left">×</span>
+                                    <input type="text" name="cpo_input_width" class="form-control pull-left"
+                                            placeholder="Width" maxlength="10" t-att-value="pcb_width"/>
+                                    <span class="pull-left">MM</span>
+                                </div>
+                                <span class="set_contetn">
+                                    <input type="text" class="form-control pull-left set_pcs_qty" name="cpo_input_set_qty" placeholder="Set Qty"
+                                            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                    <input type="text" class="form-control pull-left set_pcs_qty" name="cpo_input_item_qty" placeholder="Item Qty"
+                                            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--层数-->
+                    <div class="form-group">
+                        <div class="cpo_input_needpcb_group clearfix">
+                            <label class="pull-left control-label">Layer Count</label>
+                            <div class="pull-left cpo_input_layers">
+                                <t t-if="pcb_layers">
+                                    <t t-call="website_cpo_sale.pcb_layer_select_template"/>
+                                </t>
+                                <t t-else="">
+                                    <select class="form-control cpo_select_layers">
+                                        <option value="1">1 Layer</option>
+                                        <option value="2">2 Layer</option>
+                                        <option value="4">4 Layer</option>
+                                        <option value="6">6 Layer</option>
+                                        <option value="8">8 Layer</option>
+                                        <option value="10">10 Layer</option>
+                                        <option value="12">12 Layer</option>
+                                    </select>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                    <!--材料-->
+                    <div class="form-group">
+                        <div class="cpo_input_needpcb_group clearfix">
+                            <label class="pull-left control-label">Raw Material</label>
+                            <div class="pull-left cpo_input_material cpo_raw_material">
+                                <a class="cpo_input_active">
+                                    <span>FR4-Tg135</span>
+                                </a>
+                                <a>
+                                    <span>FR4-Tg150</span>
+                                </a>
+                                <a>
+                                    <span>FR4-Tg170</span>
+                                </a>
+                                <a>
+                                    <span>Rogers 4003C</span>
+                                </a>
+                                <a>
+                                    <span>Rogers 4350B</span>
+                                </a>
+                                <a>
+                                    <span>Other</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--板厚-->
+                    <div class="form-group">
+                        <div class="cpo_input_needpcb_group clearfix">
+                            <label class="pull-left control-label">Board Thickness</label>
+                            <div class="pull-left cpo_input_board_thickness">
+                                <t t-if="pcb_thickness">
+                                    <input type="text" name="cpo_input_hickness" class="form-control pull-left"
+                                        placeholder="" maxlength="4"  t-att-value="pcb_thickness" />
+                                </t>
+                                <t t-else="">
+                                    <input type="text" name="cpo_input_hickness" class="form-control pull-left"
+                                        value="1.6" placeholder="" maxlength="10"/>
+                                </t>
+                                <span class="pull-left cpo_span_unit">MM</span>
+                                <span class="pull-left cpo_span_img">
+                                    <img src="\website_cpo_sale\static\src\images\tools_img\thickness.png"/>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--铜厚-->
+                    <div class="form-group">
+                        <div class="cpo_input_needpcb_group clearfix">
+                            <label class="pull-left control-label">Copper Weight</label>
+                            <div class="pull-left cpo_inner_copper_weight">
+                                <a class="outer_copper_weight cpo_input_active">
+                                    <span class="pull-left cpo_span_name">Outer Copper</span>
+                                    <span class="pull-left cpo_span_copper_input">
+                                        <input type="text" name="cpo_outer_copper" class="pull-left cpo_copper_input"
+                                            placeholder="" value="1" maxlength="10"/>
+                                        <ul class="cpo_copper_ul cpo_outer_ul">
+                                            <li>1</li>
+                                            <li>2</li>
+                                            <li>3</li>
+                                            <li>4</li>
+                                            <li>5</li>
+                                            <li>6</li>
+                                            <li>7</li>
+                                            <li>8</li>
+                                            <li>9</li>
+                                            <li>10</li>
+                                            <li>11</li>
+                                            <li>12</li>
+                                            <li>13</li>
+                                            <li>14</li>
+                                            <li>15</li>
+                                            <li>16</li>
+                                            <li>17</li>
+                                            <li>18</li>
+                                            <li>19</li>
+                                            <li>20</li>
+                                        </ul>
+                                    </span>
+                                    <span class="pull-left cpo_span_unit">Oz</span>
+                                </a>
+                                <span class="cpo_span_img">
+                                    <img src="\website_cpo_sale\static\src\images\tools_img\copper.png"/>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--颜色-->
+                    <div class="form-group">
+                        <div class="cpo_input_needpcb_group clearfix">
+                            <label class="pull-left control-label">Solder Mask Color</label>
+                            <div class="pull-left cpo_input_mask_color">
+                                <a class="cpo_input_active">
+                                    <span>Green</span>
+                                    <i class="cpo_green_i"></i>
+                                </a>
+                                <a>
+                                    <span>Yellow</span>
+                                    <i class="cpo_yellow_i"></i>
+                                </a>
+                                <a>
+                                    <span>Red</span>
+                                    <i class="cpo_red_i"></i>
+                                </a>
+                                <a>
+                                    <span>Blue</span>
+                                    <i class="cpo_blue_i"></i>
+                                </a>
+                                <a>
+                                    <span>White</span>
+                                    <i class="cpo_white_i"></i>
+                                </a>
+                                <a>
+                                    <span>Black</span>
+                                    <i class="cpo_black_i"></i>
+                                </a>
+                                <a>
+                                    <span>Purple</span>
+                                    <i class="cpo_purple_i"></i>
+                                </a>
+                                <a>
+                                    <span>Matt Blue</span>
+                                    <i class="cpo_matteblue_i"></i>
+                                </a>
+                                <a>
+                                    <span>Matt green</span>
+                                    <i class="cpo_mattegreen_i"></i>
+                                </a>
+                                <a>
+                                    <span>Matt black</span>
+                                    <i class="cpo_matteblack_i"></i>
+                                </a>
+                                <a>
+                                    <span>Transparent</span>
+                                    <i class="cpo_transparent_i"></i>
+                                </a>
+                                <a>
+                                    <span>No</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--材料-->
+                <div class="form-group">
+                    <div class="cpo_input_needpcb_group clearfix">
+                        <label class="pull-left control-label">Silkscreen Color</label>
+                        <div class="pull-left cpo_input_material cpo_input_silkscreen_color">
+                            <a class="cpo_input_active">
+                                <span>White</span>
+                                <i class="cpo_white_i"></i>
+                            </a>
+                            <a>
+                                <span>Black</span>
+                                <i class="cpo_black_i"></i>
+                            </a>
+                            <a>
+                                <span>Red</span>
+                                <i class="cpo_red_i"></i>
+                            </a>
+                            <a>
+                                <span>Blue</span>
+                                <i class="cpo_blue_i"></i>
+                            </a>
+                            <a>
+                                <span>Yellow</span>
+                                <i class="cpo_yellow_i"></i>
+                            </a>
+                            <a>
+                                <span>No</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--表面处理-->
+                <div class="form-group">
+                    <div class="cpo_input_needpcb_group clearfix">
+                        <label class="pull-left control-label">Surface Treatment</label>
+                        <div class="pull-left cpo_input_material cpo_surface_treatment">
+                            <div class="cpo_input_surface_danxuan">
+                                <a class="cpo_input_active">
+                                    <span>Lead Free HASL</span>
+                                </a>
+                                <a class="cpo_immersion_gold">
+                                    <span>Immersion gold</span>
+                                    <select class="pcb_immersion_gold">
+                                        <option value="1 u″">1 u″</option>
+                                        <option value="2 u″">2 u″</option>
+                                        <option value="3 u″">3 u″</option>
+                                    </select>
+                                </a>
+                                <a>
+                                    <span>Immersion Tin</span>
+                                </a>
+                                <a>
+                                    <span>Immersion Silver</span>
+                                </a>
+                                <a>
+                                    <span>Nickel palladium gold</span>
+                                </a>
+                            </div>
+                            <div class="cpo_input_surface_duoxuan">
+                                <a class="cpo_back_color">
+                                    <span class="cpo_back_color">OSP</span>
+                                </a>
+                                <a>
+                                    <span>Gold finger</span>
+                                </a>
+                                <a class="cpo_back_color">
+                                    <span class="cpo_back_color">Complete gold plating</span>
+                                </a>
+                                <a class="cpo_back_color">
+                                    <span class="cpo_back_color">Gold plating</span>
+                                </a>
+                            </div>
+                            <div class="cpo_input_surface_no">
+                                <a>
+                                    <span>No</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!--金手指数据-->
+                        <div class="cpo_gold_finger_request">
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="col-md-8 pcb_col_md8">
+                                <p class="cpo_tishi">
+                                    Due to the technical problems of gold finger, the current price is for reference only,
+                                    manual quotation is needed!
+                                </p>
+                                <div class="gold_finger_line">
+                                    <label>Gold Finger gold thickness</label>
+                                    <input type="text" name="gold_finger_thickness" class="gold_finger_thickness"/>
+                                    <span>Unit(μ")</span>
+                                </div>
+                                <div class="gold_finger_line">
+                                    <label>Gold finger size</label>
+                                    <input type="text" name="gold_finger_length" class="gold_finger_length" placeholder="Length" />
+                                    <span>×</span>
+                                    <input type="text" name="gold_finger_width" class="gold_finger_width" placeholder="Width" />
+                                    <span>Unit(μ")</span>
+                                </div>
+                                <div class="gold_finger_line">
+                                    <label>Qty of Gold finger/pcs</label>
+                                    <input type="text" name="gold_finger_qty" class="gold_finger_qty"/>
+                                    <!--<span>Unit(μ")</span>-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--沉金数据-->
+                        <div class="cpo_immersion_gold_request">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-8 pcb_col_md8">
+                                <p class="cpo_tishi">
+                                    Immersion gold area is smaller than 30%,and nickel thickness is 120u'',if over this value ,pls offer detail。
+                                </p>
+                                <div class="gold_finger_line">
+                                    <label>Nickel thickness</label>
+                                    <select class="pcb_nickel_thickness">
+                                        <option value="120">120</option>
+                                        <option value="150">150</option>
+                                        <option value="200">200</option>
+                                        <option value="250">250</option>
+                                        <option value="300">300</option>
+                                        <option value="350">350</option>
+                                        <option value="400">400</option>
+                                    </select>
+                                </div>
+                                <div class="gold_finger_line">
+                                    <label>Coated area</label>
+                                    <input type="text" name="coated_area" class="coated_area" value="30"/>
+                                    <span>%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--材料-->
+                <div class="form-group">
+                    <div class="cpo_input_needpcb_group clearfix">
+                        <label class="pull-left control-label">Vias</label>
+                        <div class="pull-left cpo_input_material cpo_input_vias">
+                            <a class="cpo_input_active">
+                                <span>Opening</span>
+                            </a>
+                            <a>
+                                <span>Cover</span>
+                            </a>
+                            <a>
+                                <span>Filled by SM</span>
+                            </a>
+                            <a>
+                                <span>Filled by Resin</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--钢网-->
+                <div class="form-group cpo_nedd_stencil">
+                    <div class="cpo_input_needpcb_group clearfix">
+                        <label class="pull-left control-label">Stencil</label>
+                        <div class="pull-left cpo_input_material cpo_input_stencil">
+                            <a class="cpo_input_active">
+                                <span>With Frame</span>
+                            </a>
+                            <a>
+                                <span>Without Frame</span>
+                            </a>
+                            <a>
+                                <span>No</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--测试-->
+                <div class="form-group">
+                    <div class="cpo_input_needpcb_group clearfix">
+                        <label class="pull-left control-label">E-TEST</label>
+                        <div class="pull-left cpo_input_material cpo_input_e_test">
+                            <a class="cpo_input_active">
+                                <span>Free Flying Probe</span>
+                            </a>
+                            <a>
+                                <span>E-test fixture</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="special-group">
+                    <p class="btn btn-primary" id="pcb_need">
+                        <i class="pcb_need_btn_plus"></i>
+                        <span>Special needs</span>
+                    </p>
+                </div>
+            </div>
+        </form>
+        <div class="row cpo_pcb_special">
+            <form action="" class="form-horizontal special_form">
+                <div class="col-md-1"></div>
+                <t t-call="website_cpo_sale.cpo_pcb_special_needs"/>
+                <div class="col-md-1"></div>
+            </form>
+        </div>
+
+    </template>
+
+
+
+    <template id="pcb_calcula_result_temp">
+        <div class="calculation_content cpo-none">
+            <div class="cpo_cost_fee">
+                <form class="form-horizontal" role="form" method="POST"
+                    t-attf-action="/shop/product/#{ slug(product_id) }"
+                    t-att-data-attribute_value_ids="attribute_value_ids"
+                    enctype="multipart/form-data"
+                    id="cpo_pcb_result_form">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="cpo_assembly_cost">
+                        <span class="cpo_cost_span">Production Quantity</span>
+                        <span class="cpo_cost_fee cpo-pdl-0">
+                            <input type="text" class="cpo_pcb_quantity" name="cpo_pcb_quantity" value="0"  readonly="readonly"/>
+                        </span>
+                    </div>
+                    <div class="cpo_assembly_cost">
+                        <span class="cpo_cost_span">PCB area</span>
+                        <span class="cpo_cost_fee cpo-pdl-0">
+                            <input type="text" class="cpo_flat_area" name="cpo_flat_area" value="0.00"  readonly="readonly"/>
+                        </span>
+                    </div>
+                     <div class="cpo_assembly_cost">
+                        <span class="cpo_cost_span">Delivery period</span>
+                        <span class="cpo_cost_fee cpo-pdl-0">
+                            <input type="text" class="cpo_delivery" name="cpo_delivery" value="0.00"  readonly="readonly"/>
+                        </span>
+                    </div>
+                    <div class="cpo_assembly_cost board_price">
+                        <span class="cpo_cost_span">Board price<i class="fa fa-question-circle-o cpo-i-right"></i></span>
+                        <span class="cpo_cost_fee">
+                            <i>$</i>
+                            <input type="text" class="part_fee" name="part_fee" value="0.00"  readonly="readonly"/>
+                        </span>
+                        <div class="cpo_pcb_all_fee">
+                            <ul class="pcb_fee_ul">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cpo_assembly_cost">
+                        <span class="cpo_cost_span">Freigth cost</span>
+                        <span class="cpo_cost_fee cpo_freifth_box">
+                            <i>$</i>
+                            <input type="text" class="cpo_freight" name="cpo_freight" value="0.00"  readonly="readonly"/>
+                        </span>
+                    </div>
+                    <div class="cpo_assembly_cost pcb_e_test_cost cpo-none">
+                        <span class="cpo_cost_span">E-test Fixture Cost</span>
+                        <span class="cpo_cost_fee">
+                            <i>$</i>
+                            <input type="text" class="e_test_cost" name="E-test Fixture Cost" value="0"  readonly="readonly"/>
+                        </span>
+                    </div>
+                    <div class="cpo_assembly_cost pcb_stencil_cost cpo-none">
+                        <span class="cpo_cost_span">Stencil Cost</span>
+                        <span class="cpo_cost_fee">
+                            <i>$</i>
+                            <input type="text" class="stencil_cost" name="Stencil Cost" value="0"  readonly="readonly"/>
+                        </span>
+                    </div>
+                    <div class="cpo_assembly_cost pcb_film_cost cpo-none">
+                        <span class="cpo_cost_span">Film Cost</span>
+                        <span class="cpo_cost_fee">
+                            <i>$</i>
+                            <input type="text" class="film_cost" name="Film Cost" value="0"  readonly="readonly"/>
+                        </span>
+                    </div>
+                    <div class="cpo_assembly_cost pcb_process_cost cpo-none">
+                        <span class="cpo_cost_span">Process Cost</span>
+                        <span class="cpo_cost_fee">
+                            <i>$</i>
+                            <input type="text" class="process_cost" name="process_cost" value="0"  readonly="readonly"/>
+                        </span>
+                    </div>
+                    <div class="cpo_assembly_cost">
+                        <span class="cpo_cost_span">Set up cost</span>
+                        <span class="cpo_cost_fee">
+                            <i>$</i>
+                            <input type="text" class="cpo_engineering_fee" name="cpo_engineering_fee" value="0"  readonly="readonly"/>
+                        </span>
+                    </div>
+                    <div class="cpo_assembly_cost">
+                        <span class="cpo_cost_span">Total</span>
+                        <span class="cpo_cost_fee">
+                            <i>$</i>
+                            <input type="text" class="all_fee" name="all_fee" value="0.00"  readonly="readonly"/>
+                        </span>
+                    </div>
+                    <!--返回阶梯价和加急-->
+                    <t t-call="website_cpo_sale.cpo_stair_price_and_expedited"/>
+                    <div class="cpo_step_next">
+                        <button class="btn btn-primary" id="step_next">Next step</button>
+                    </div>
+                    <div id="cpo_pcb_result">
+                        <div class="pcb_fixed_data">
+                            <input type="hidden" class="expedited_days" name="expedited_days" value=""  readonly="readonly"/>
+                        </div>
+                        <div class="file_ids cpo-none">
+                            <div class="file_ids cpo-none">
+                                <div class="gerber_box">
+                                    <input name="gerber_file_id" value="" class="gerber_file_id"/>
+                                    <input name="gerber_atta_id" value="" class="gerber_atta_id"/>
+                                    <input name="gerber_file_name" value="" class="gerber_file_name"/>
+                                </div>
+                                <div class="bom_box">
+                                    <input name="bom_file_id" value="" class="bom_file_id"/>
+                                    <input name="bom_atta_id" value="" class="bom_atta_id"/>
+                                    <input name="bom_file_name" value="" class="bom_file_name"/>
+                                </div>
+                                <div class="smt_box">
+                                    <input name="smt_file_id" value="" class="smt_file_id"/>
+                                    <input name="smt_atta_id" value="" class="smt_atta_id"/>
+                                    <input name="smt_file_name" value="" class="smt_file_name"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pcb_result"></div>
+                        <div class="pcb_special_requirements"></div>
+                        <div class="pcb_surface"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </template>
+
+</odoo>

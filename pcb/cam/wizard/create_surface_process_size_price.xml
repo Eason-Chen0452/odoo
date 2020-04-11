@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+       <record id="view_create_surface_process_size_price" model="ir.ui.view">
+          <field name="name">create.surface.process.size.price.form</field>
+          <field name="model">create.surface.process.size.price</field>
+          <field name="arch" type="xml">
+            <form string="Create Size Fee of Surface Process"  version="7.0">
+                <h1>
+                    <label string="Target Surface Process:"/>
+                    <field name="surface_process_id" class="oe_inline" attrs="{'readonly':True}"/>
+                </h1>            
+
+                <group>
+                    <field name="source_surface_process_id" />
+                </group>
+                
+
+                <group col="4">
+                    <label for="min_fee"/>
+                    <div>
+                        <field name="min_fee" /> 
+                        <field name="min_fee_type" /> 
+                    </div>
+                    <label for="min_change_fee"/>
+                    <div>
+                        <field name="min_fee_compute" class="oe_inline"/>
+                        <field name="min_change_fee" class="oe_inline"/>
+                        <field name="min_fee_class" class="oe_inline"/>
+                    </div>
+                </group>
+
+                <group >
+                    <field name="limit_size" />
+                </group>
+
+                <group col="4">
+                    <label for="max_fee"/>
+                    <div>
+                        <field name="max_fee" /> 
+                        <field name="max_fee_type" /> 
+                    </div>
+                    <label for="max_change_fee"/>
+                    <div>
+                        <field name="max_fee_compute" class="oe_inline"/>
+                        <field name="max_change_fee" class="oe_inline"/>
+                        <field name="max_fee_class" class="oe_inline"/>
+                    </div>
+                </group>
+                
+                <footer>
+                    <button name="create_surface_process_size" string="Create Surface Process Size" type="object" class="oe_highlight"/>
+                    <label string="or" />
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+          </field>
+       </record>
+              
+
+        <act_window
+            context="{'default_surface_process_id': active_id}"
+            id="act_create_surface_process_size_price"
+            name="Create Size Fee of Surface Process"
+            view_mode="form" target="new"
+            res_model="create.surface.process.size.price"
+            src_model="cam.surface.process" 
+            view_id="view_create_surface_process_size_price"/>
+
+
+</odoo>

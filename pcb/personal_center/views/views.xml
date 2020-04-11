@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--order_tree国家显示-->
+        <record id="inherit_order_tree" model="ir.ui.view">
+            <field name="name">inherit_order_tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='partner_id']" position="before">
+                    <field name="country"/>
+                    <field name="client_id" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+        <!--quotation_tree国家显示-->
+        <record id="inherit_quotation_tree" model="ir.ui.view">
+            <field name="name">inherit_order_tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='partner_id']" position="before">
+                    <field name="country"/>
+                    <field name="client_id" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+        <!--销售订单动作-->
+        <record model="ir.actions.act_window" id="act_order">
+            <field name="name">Customer Personal Center</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <!--客户已付款动作-->
+        <record model="ir.actions.act_window" id="act_paid">
+            <field name="name">Customer Personal Center</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <!--个人中心 kanban-->
+        <record model="ir.ui.view" id="personal_center_kanban">
+            <field name="name">Customer Personal Center KanBan</field>
+            <field name="model">personal.center</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban" create="0" edit="0" delete="0" limit="30">
+                    <field name="id"/>
+                    <field name="color"/>
+                    <field name="display_name"/>
+                    <field name="title"/>
+                    <field name="email"/>
+                    <field name="partner_id"/>
+                    <field name="is_company"/>
+                    <field name="function"/>
+                    <field name="phone"/>
+                    <field name="street"/>
+                    <field name="street2"/>
+                    <field name="zip"/>
+                    <field name="city"/>
+                    <field name="country_id"/>
+                    <field name="mobile"/>
+                    <field name="state_id"/>
+                    <field name="category_id"/>
+                    <field name="image_small"/>
+                    <field name="type"/>
+                    <field name="pcb_order"/>
+                    <field name="pcba_order"/>
+                    <field name="stencil_order"/>
+                    <field name="paid"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click o_res_partner_kanban  #{kanban_color(record.color.raw_value)}">
+                                <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                <div class="o_kanban_image">
+                                    <t t-if="record.image_small.raw_value">
+                                        <img t-att-src="kanban_image('res.partner', 'image_small', record.id.raw_value)"/>
+                                    </t>
+                                    <t t-if="!record.image_small.raw_value">
+                                        <t t-if="record.type.raw_value === 'delivery'">
+                                            <img t-att-src='_s + "/base/static/src/img/truck.png"' class="o_kanban_image oe_kanban_avatar_smallbox"/>
+                                        </t>
+                                        <t t-if="record.type.raw_value === 'invoice'">
+                                            <img t-att-src='_s + "/base/static/src/img/money.png"' class="o_kanban_image oe_kanban_avatar_smallbox"/>
+                                         </t>
+                                        <t t-if="record.type.raw_value != 'invoice' &amp;&amp; record.type.raw_value != 'delivery'">
+                                            <t t-if="record.is_company.raw_value === true">
+                                                <img t-att-src='_s + "/base/static/src/img/company_image.png"'/>
+                                            </t>
+                                            <t t-if="record.is_company.raw_value === false">
+                                                <img t-att-src='_s + "/base/static/src/img/avatar.png"'/>
+                                            </t>
+                                        </t>
+                                    </t>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong class="oe_partner_heading"><field name="display_name"/></strong>
+                                    <ul>
+                                        <!--<li t-if="record.partner_id.raw_value and !record.function.raw_value"><field name="partner_id"/></li>-->
+                                        <li>Account Balance <field name="balance"/></li>
+                                        <li t-if="!record.partner_id.raw_value and record.function.raw_value"><field name="function"/></li>
+                                        <li t-if="record.partner_id.raw_value and record.function.raw_value"><field name="function"/> at <field name="partner_id"/></li>
+                                        <li t-if="record.city.raw_value and !record.country_id.raw_value"><field name="city"/></li>
+                                        <li t-if="!record.city.raw_value and record.country_id.raw_value"><field name="country_id"/></li>
+                                        <li t-if="record.city.raw_value and record.country_id.raw_value"><field name="city"/>, <field name="country_id"/></li>
+                                        <li t-if="record.email.raw_value" class="o_text_overflow"><field name="email"/></li>
+                                    </ul>
+                                    <div class="oe_kanban_partner_links">
+                                        <span t-if="record.pcb_order.value > 0" class="badge">
+                                            pcb
+                                            <t t-esc="record.pcb_order.value"/>
+                                        </span>
+                                        <span t-if="record.pcba_order.value > 0" class="badge">
+                                            pcba
+                                            <t t-esc="record.pcba_order.value"/>
+                                        </span>
+                                        <span t-if="record.stencil_order.value > 0" class="badge">
+                                            stencil
+                                            <t t-esc="record.stencil_order.value"/>
+                                        </span>
+                                        <span t-if="record.paid.value > 0.0" class="badge">
+                                            <i class="fa fa-fw fa-usd"/>
+                                            <t t-esc="record.paid.value"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <!--个人中心 tree-->
+        <record model="ir.ui.view" id="personal_center_tree">
+            <field name="name">Customer Personal Center Tree</field>
+            <field name="model">personal.center</field>
+            <field name="arch" type="xml">
+                <tree create="0" edit="0" delete="1">
+                    <field name="user_id" invisible="1"/>
+                    <field name="name"/>
+                    <field name="client_id_code"/>
+                    <field name="balance"/>
+                    <field name="country"/>
+                    <!--<field name="country_id"/>-->
+                    <field name="phone"/>
+                    <field name="create_date" string="Registration Time"/>
+                    <field name="email"/>
+                    <field name="discount_amount"/>
+                    <field name="activation_type"/>
+                    <field name="sale_client_code"/>
+                </tree>
+            </field>
+        </record>
+        <!--个人中心 form-->
+        <record model="ir.ui.view" id="personal_center_form">
+            <field name="name">Customer Personal Center Form</field>
+            <field name="model">personal.center</field>
+            <field name="arch" type="xml">
+                <form create="0" edit="1">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" type="object" name="get_correspond_views" context="{'value': 'pcb'}" icon="fa-circle-o">
+                                <field string="PCB Order" name="pcb_order" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" type="object" name="get_correspond_views" context="{'value': 'pcba'}" icon="fa-circle">
+                                <field string="PCBA Order" name="pcba_order" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" type="object" name="get_correspond_views" context="{'value': 'stencil'}" icon="fa-dot-circle-o">
+                                <field string="Stencil Order" name="stencil_order" widget="statinfo"/>
+                            </button>
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive" groups="personal_center.center_manager_group">
+                                <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                            </button>
+                            <button class="oe_stat_button" type="object" name="get_correspond_views" context="{'value': 'paid'}" icon="fa-credit-card-alt">
+                                <field string="Paid" name="paid" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <field name="user_id" invisible="1"/>
+                        <field name="partner_id" invisible="1"/>
+                        <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium", "size": [90, 90]}'/>
+                        <div class="oe_title">
+                            <field name="is_company" invisible="1"/>
+                            <field name="commercial_partner_id" invisible="1"/>
+                            <field name="company_type" widget="radio" class="oe_edit_only" options="{'horizontal': true}"/>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Name"/>
+                            </h1>
+                            <div class="o_row">
+                                <label for="balance"/>
+                                <div>
+                                    <field name="balance"/>
+                                </div>
+                            </div>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="type" attrs="{'invisible': [('partner_id','=', False)]}" groups="base.group_no_one" invisible="1"/>
+                                <label for="street" string="Address"/>
+                                <div class="o_address_format">
+                                    <div class="oe_edit_only">
+                                        <button name="open_partner" type="object" string="(edit)" class="oe_link" attrs="{'invisible': ['|', ('partner_id', '=', False), ('type', '!=', 'contact')]}"/>
+                                    </div>
+                                    <field name="street" placeholder="Street..." class="o_address_street" attrs="{'readonly': [('type', '=', 'contact'),('partner_id', '!=', False)]}"/>
+                                    <field name="street2" placeholder="Street 2..." class="o_address_street" attrs="{'readonly': [('type', '=', 'contact'),('partner_id', '!=', False)]}"/>
+                                    <field name="city" placeholder="City" class="o_address_city" attrs="{'readonly': [('type', '=', 'contact'),('partner_id', '!=', False)]}"/>
+                                    <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}' attrs="{'readonly': [('type', '=', 'contact'),('partner_id', '!=', False)]}" context="{'country_id': country_id, 'zip': zip}"/>
+                                    <field name="zip" placeholder="ZIP" class="o_address_zip" attrs="{'readonly': [('type', '=', 'contact'),('partner_id', '!=', False)]}"/>
+                                    <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}' attrs="{'readonly': [('type', '=', 'contact'),('partner_id', '!=', False)]}"/>
+                                </div>
+                                <field name="vat" placeholder="e.g. BE0477472701"/>
+                                <field name="website" widget="url" placeholder="e.g. www.odoo.com"/>
+                                <field name="category_id" widget="many2many_tags" placeholder="Tags..."/>
+                                <field name="discount_amount"/>
+                                <field name="client_id_code"/>
+                            </group>
+                            <group>
+                                <field name="function" placeholder="e.g. Sales Director" attrs="{'invisible': [('company_type','!=', 'person')]}"/>
+                                <field name="phone" widget="phone"/>
+                                <field name="mobile" widget="phone"/>
+                                <field name="fax"/>
+                                <field name="email" widget="email" required="1"/>
+                                <field name="title" options='{"no_open": True}' attrs="{'invisible': [('company_type','!=', 'person')]}"/>
+                                <field name="lang"/>
+                                <field name="sale_client_code" groups="sales_team.group_sale_salesman"/>
+                            </group>
+                        </group>
+                        <!--<group>-->
+                            <!--<field name="material_buy_ids" widget="many2many_tags" string="Gifted Material"/>-->
+                            <!--<field name="material_gift_ids" widget="many2many_tags" string="Purchased Material"/>-->
+                            <!--<field name="coupon_ids" widget="many2many_tags" string="Coupon"/>-->
+                        <!--</group>-->
+                        <notebook>
+                            <page string="Contacts &amp; Addresses" autofocus="autofocus">
+                                <field name="child_ids" mode="kanban" context="{'default_parent_id': active_id, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_supplier': supplier, 'default_customer': customer, 'default_lang': lang,}">
+                                    <kanban>
+                                        <field name="color"/>
+                                        <field name="name"/>
+                                        <field name="title"/>
+                                        <field name="type"/>
+                                        <field name="email"/>
+                                        <!--<field name="partner_id"/>-->
+                                        <field name="is_company"/>
+                                        <field name="function"/>
+                                        <field name="phone"/>
+                                        <field name="street"/>
+                                        <field name="street2"/>
+                                        <field name="zip"/>
+                                        <field name="city"/>
+                                        <field name="country_id"/>
+                                        <field name="mobile"/>
+                                        <field name="fax"/>
+                                        <field name="state_id"/>
+                                        <field name="image_small"/>
+                                        <field name="lang"/>
+                                        <!-- fields in form x2many view to diminish requests -->
+                                        <field name="comment"/>
+                                        <field name="customer"/>
+                                        <field name="display_name"/>
+                                        <field name="supplier"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+                                                <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
+                                                    <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"/>
+                                                    <div class="o_kanban_image">
+                                                        <img t-if="record.image_small.raw_value" t-att-src="'data:image/png;base64,'+record.image_small.raw_value"/>
+                                                        <t t-if="!record.image_small.raw_value">
+                                                            <img t-if="record.type.raw_value === 'delivery'" t-att-src='_s + "/base/static/src/img/truck.png"'/>
+                                                            <img t-if="record.type.raw_value === 'invoice'" t-att-src='_s + "/base/static/src/img/money.png"'/>
+                                                            <t t-if="record.type.raw_value !== 'invoice' &amp;&amp; record.type.raw_value !== 'delivery'">
+                                                                <img t-if="record.is_company.raw_value === true" t-att-src='_s + "/base/static/src/img/company_image.png"'/>
+                                                                <img t-if="record.is_company.raw_value === false" t-att-src='_s + "/base/static/src/img/avatar.png"'/>
+                                                            </t>
+                                                        </t>
+                                                    </div>
+                                                    <div class="oe_kanban_details">
+                                                        <field name="name"/>
+                                                        <div t-if="record.function.raw_value"><field name="function"/></div>
+                                                        <div t-if="record.email.raw_value"><field name="email"/></div>
+                                                        <div t-if="record.type.raw_value != 'contact'">
+                                                            <div>
+                                                                <field name="zip"/>
+                                                                <field name="city"/>
+                                                            </div>
+                                                            <field t-if="record.state_id.raw_value" name="state_id"/>
+                                                            <field name="country_id"/>
+                                                        </div>
+                                                        <div t-if="record.phone.raw_value">Phone: <field name="phone"/></div>
+                                                        <div t-if="record.mobile.raw_value">Mobile: <field name="mobile"/></div>
+                                                        <div t-if="record.fax.raw_value">Fax: <field name="fax"/></div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                    <form string="Contact / Address">
+                                        <sheet>
+                                            <field name="type" required="1" widget="radio" options="{'horizontal': true}"/>
+                                            <!--<field name="partner_id" invisible="1"/>-->
+                                            <hr/>
+                                            <group>
+                                                <group attrs="{'invisible': [('type','=', 'contact')]}">
+                                                    <label for="street" string="Address"/>
+                                                    <div>
+                                                        <div class="o_address_format" name="div_address">
+                                                            <field name="street" placeholder="Street..." class="o_address_street"/>
+                                                            <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                                            <field name="city" placeholder="City" class="o_address_city"/>
+                                                            <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}' context="{'country_id': country_id, 'zip': zip}"/>
+                                                            <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                                            <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
+                                                        </div>
+                                                    </div>
+                                                </group>
+                                                <group>
+                                                    <field name="name" string="Contact Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
+                                                    <field name="title" placeholder="e.g. Mr." attrs="{'invisible': [('type','!=', 'contact')]}"/>
+                                                    <field name="function" placeholder="e.g. Sales Director" attrs="{'invisible': [('type','!=', 'contact')]}"/>
+                                                    <field name="email"/>
+                                                    <field name="phone" widget="phone"/>
+                                                    <field name="mobile" widget="phone"/>
+                                                    <field name="comment" placeholder="internal note..."/>
+                                                </group>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page name='sales_purchases' string="Sales &amp; Purchases">
+                                <group name="container_row_2">
+                                    <group string="Sale" name="sale">
+                                        <field name="customer"/>
+                                        <field name="user_id"/>
+                                    </group>
+                                    <group string="Purchase" name="purchase">
+                                        <field name="supplier"/>
+                                    </group>
+                                    <group string="Misc">
+                                        <field name="ref"/>
+                                        <field name="company_id" options="{'no_create': True}"/>
+                                        <field name="industry_id" attrs="{'invisible': [('company_type','=', 'person')]}" options="{'no_create': True}"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--个人中心 搜索-->
+        <record model="ir.ui.view" id="personal_center_search">
+            <field name="name">Customer Personal Center Search</field>
+            <field name="model">personal.center</field>
+            <field name="arch" type="xml">
+                <search string="Filter">
+                    <field name="activation_type"/>
+                    <filter string="Activation" domain="[('activation_type','=','Activation')]" name="filter_activation_type"/>
+                </search>
+            </field>
+        </record>
+        <!--个人中心 window-->
+        <record model="ir.actions.act_window" id="personal_center_window">
+            <field name="name">Customer Personal Center</field>
+            <field name="res_model">personal.center</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{"search_default_filter_activation_type": 1}</field>
+        </record>
+        <!--第一级-->
+        <menuitem name="Marketing Analysis Strategy" id="personal_center.personal_root"/>
+        <menuitem name="Customer Personal Center" id="personal_center_1" parent="personal_center.personal_root" action="personal_center.personal_center_window" sequence="2"/>
+        <!--销售第二级-->
+        <menuitem name="Customer Personal Center" id="sales_team.menu_partner_form" parent="sales_team.menu_base_partner" action="personal_center.personal_center_window"/>
+  </data>
+</odoo>

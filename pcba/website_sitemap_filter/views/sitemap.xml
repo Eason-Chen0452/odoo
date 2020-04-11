@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="view_cpo_sitemap_url_tree" model="ir.ui.view">
+            <field name="name">cpo.sitemap.url.tree</field>
+            <field name="model">cpo.sitemap.url</field>
+            <field name="arch" type="xml">
+                <tree string="Site Map Url" create="false" edit='false' delete='false'>
+                    <field name="name"/> 
+                    <field name="url"/> 
+                    <field name="title"/> 
+                    <field name="keywords"/>
+                    <field name="description"/>
+                    <field name="robots_disable"/>
+                    <field name="priority"/>
+                    <field name="changefreq"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_cpo_sitemap_url_form" model="ir.ui.view">
+            <field name="name">cpo.sitemap.url.form</field>
+            <field name="model">cpo.sitemap.url</field>
+            <field name="arch" type="xml">
+                <form string="Site Map Url" create="false" edit='false' delete='false'>
+                    <group>
+                        <field name="active"/>
+                        <field name="name"/> 
+                        <field name="url"/> 
+                        <field name="title"/> 
+                        <field name="keywords"/>
+                        <field name="description"/>
+                        <field name="robots_disable"/>
+                        <field name="priority"/>
+                        <field name="changefreq"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_cpo_sitemap_url" model="ir.actions.act_window">
+            <field name="name">SiteMap Url Data</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cpo.sitemap.url</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_cpo_sitemap_url_tree"/>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="search_view_id" ref="sale_order_view_search_inherit_quotation"/>-->
+            <!--<field name="context">{'hide_sale': True}</field>-->
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Create a new record.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_cpo_sitemap" name="SiteMap"
+            parent="website.menu_website_configuration" sequence="79" groups="website_sitemap_filter.cpo_sitemap_filter"/>
+
+        <menuitem id="menu_cpo_sitemap_url"
+            action="action_cpo_sitemap_url" parent="menu_cpo_sitemap"
+            sequence="31"/>
+
+        <record id="view_cpo_sitemap_set_form" model="ir.ui.view">
+            <field name="name">cpo.sitemap.set.form</field>
+            <field name="model">cpo.sitemap.set.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Site Map Set" create="false">
+                    <header>
+                        <button name="act_confirm" string="Confirm" type="object" class="btn-primary" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="update_sitemap" invisible="1"/> 
+                            <field name="url_id" string="Name"/> 
+                            <field name="url" readonly="1"/> 
+                            <field name="title"/> 
+                            <field name="keywords"/>
+                            <field name="description"/>
+                            <field name="robots_disable"/>
+                            <field name="priority"/>
+                            <field name="changefreq"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_cpo_sitemap_set" model="ir.actions.act_window">
+            <field name="name">SiteMap Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cpo.sitemap.set.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_cpo_sitemap_set_form"/>
+            <field name="view_mode">form</field>
+            <!--<field name="search_view_id" ref="sale_order_view_search_inherit_quotation"/>-->
+            <!--<field name="context">{'hide_sale': True}</field>-->
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Create a new record.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_cpo_sitemap_set_wizard"
+            action="action_cpo_sitemap_set" parent="menu_cpo_sitemap"
+            sequence="21"/>
+
+
+        <template id="robots">
+User-agent: *
+Sitemap: <t t-esc="url_root"/>sitemap.xml<t t-foreach="dis_list" t-as="dis">
+Disallow: <t t-esc="dis"/></t></template>
+    </data>
+</odoo>

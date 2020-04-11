@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="cpo_pages_assets_frontend" inherit_id="website.assets_frontend" name="Website Pages">
+        <xpath expr="." position="inside">
+            <!--<link rel="stylesheet" href="/website_cpo_pages/static/src/css/cpo_web_pages.css"/>-->
+        </xpath>
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/website_cpo_sale/static/src/js/pcb_package_price/cpo_pcb_package_price.js"></script>
+        </xpath>
+    </template>
+
+    <template id="website_pcb_package_price" name="PCB Package Price">
+         <t t-call="website.layout">
+             <t t-set="additional_title">Package Price</t>
+             <!-- 登录页面 -->
+             <t t-call="website_cpo_sale.cpo_pcb_login_signup"/>
+             <div class="row" id="xiangdao">
+                 <div class="col-md-1"></div>
+                 <div class="col-md-10">
+                     <t t-call="website_sale.wizard_checkout">
+                         <t t-set="step" t-value="5"/>
+                     </t>
+                 </div>
+                 <div class="col-md-1"></div>
+             </div>
+             <div class="container">
+                 <!-- 未注册/登录先让用户注册/登录 -->
+                 <t t-if="cpo_login">
+                     <t t-call="website_cpo_sale.cpo_register_new_user"/>
+                 </t>
+                 <div class="row">
+                     <div class="order-nav-list">
+                         <ul class="order-nav-ul">
+                             <li class="order-nav-li">
+                                 <a href="/pcb?type=standard">2 - 20 Layers</a>
+                             </li>
+                             <li class="order-nav-li">
+                                 <a href="/pcb?type=hdi">HDI PCB</a>
+                             </li>
+                             <li class="order-nav-li">
+                                 <a href="/pcb?type=rigid-flex">Flex-Rigid PCB</a>
+                             </li>
+                             <li class="order-nav-li order-nav-active">
+                                 <a href="/pcb/package-price">Package Price PCB</a>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
+                 <div class="row cpo_content_row">
+                     <div class="row">
+                         <table class="table table-bordered">
+                              <caption id="tab_title">Online offer <span>(According to your requirements ， fill in the relevant data as below ， match the relevant price.)</span></caption>
+                         </table>
+                     </div>
+                     <!--错误提示框-->
+                     <div class="cpo-warning"></div>
+                     <ul class="quo-content-ul">
+                         <li class="clearfix quo-li quo-active">
+                             <div class="col-md-8 cpo_col_pcba_md8">
+                                 <!--<table class="table table-bordered">-->
+                                      <!--<caption id="tab_title">Online offer <span>(According to your requirements ， fill in the relevant data as below ， match the relevant price.)</span></caption>-->
+                                 <!--</table>-->
+                                 <div id="cpo_pcb_package_pirce">
+                                     <t t-if="edit or login">
+                                         <t t-call="website_cpo_sale.pcb_package_price_edit_template"/>
+                                     </t>
+                                     <t t-if="not edit and not login">
+                                         <t t-call="website_cpo_sale.pcb_package_price_template"/>
+                                     </t>
+                                 </div>
+                             </div>
+                             <div class="col-md-4 p-0">
+                                 <div id="cpo_calcula_title">
+                                     <!--<table class="table table-bordered">-->
+                                         <!--<caption id="tab_title">Calculation results</caption>-->
+                                     <!--</table>-->
+                                     <t t-call="website_cpo_sale.cpo_pcb_upload_file"/>
+                                     <t t-call="website_cpo_sale.cpo_pcbpackage_price_calculation_results"/>
+                                 </div>
+                            </div>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </t>
+    </template>
+
+    <!-- 打包价页面 -->
+    <template id="pcb_package_price_template">
+        <form class="form-horizontal cpo_pcbpackage_quotation">
+            <div class="cpo_pcb_online_all_need">
+                <div class="cpo_pcb_quo">
+                    <!--test-->
+                    <!-- 验收标准 -->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">Quality Standard</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select quality_standard">
+                                        <option value="2">IPC Class Ⅱ</option>
+                                        <!--<option value="3">IPC Class Ⅲ</option>-->
+                                    </select>
+                                    <!--<span class="cpo-box-unit">Layer</span>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cpo_input_needpcb_group col-md-6 col-sm-6">
+                            <div class="panel_img_size">
+                                <img src="\website_cpo_sale\static\src\images\tools_img\size.png"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!--拼板 层数-->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box cpo_meterial_layer">
+                                <div class="cpo-box-title">Technology</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select cpo_layers">
+                                        <!--<option value="1">1 Layer</option>-->
+                                        <option value="2">2 Layer</option>
+                                        <option value="4">4 Layer</option>
+                                        <option value="6">6 Layer</option>
+                                        <option value="8">8 Layer</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">PCB/PCB panel size</div>
+                                <div class="cpo-box-content">
+                                    <input type="text" class="cpo-box-input cpo-box-length" name="pcb_length" placeholder="Length"
+                                        data-toggle="tooltip" data-placement="top" title="Length &lt;= 100 MM" />
+                                    <span class="cpo-box-unit">×</span>
+                                    <input type="text" class="cpo-box-input cpo-box-width" name="pcb_breadth" placeholder="Width"
+                                        data-toggle="tooltip" data-placement="top" title="Width &lt;= 100 MM" />
+                                    <span class="cpo-box-unit">MM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--数量-->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">Production Quantity</div>
+                                <div class="cpo-box-content">
+                                    <input type="text" class="cpo-box-input" name="pcb_quantity" placeholder="Quantity"
+                                        data-toggle="tooltip" data-placement="top" title="The total area cannot exceed 1㎡" />
+                                    <span class="cpo-box-unit">PCS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--材料-->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">Raw Material</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select cpo_raw_material">
+                                        <option value="FR4-Tg135">FR4-Tg135</option>
+                                        <option value="FR4-Tg150">FR4-Tg150</option>
+                                        <option value="FR4-Tg170">FR4-Tg170</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--板厚 Vias-->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">Board Thickness</div>
+                                <div class="cpo-box-content">
+                                    <input type="text" class="cpo-box-input" name="cpo_thickness" value="1.6" placeholder="Enter thickness"/>
+                                    <span class="cpo-box-unit"> MM (±10%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">Surface Treatment</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select surface_value">
+                                        <option value="Lead Free HASL">Lead Free HASL</option>
+                                        <!--<option value="Immersion gold (1 u″)">Immersion gold (1 u″)</option>-->
+                                        <option value="Immersion gold (2 u″)">Immersion gold (2 u″)</option>
+                                        <!--<option value="Immersion gold (3 u″)">Immersion gold (3 u″)</option>-->
+                                        <option value="OSP">OSP</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--提示-->
+                        <div class="col-md-12 col-sm-12 cpo-tips-content cpo-none">
+                            <p class="cpo-box-tips">
+                                Immersion gold area is smaller than 30%,and nickel thickness is 120u'',if over this value ,pls offer detail。
+                            </p>
+                        </div>
+                    </div>
+                    <!--铜厚（内外）-->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">Outer Finished Copper</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select outer_copper">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <!--<option value="3">3</option>-->
+                                        <!--<option value="4">4</option>-->
+                                        <!--<option value="5">5</option>-->
+                                    </select>
+                                    <span class="cpo-box-unit"> OZ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box layer_inner_copper">
+                                <div class="cpo-box-title">Inner Finished Copper</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select inner_copper">
+                                        <option value="0">0</option>
+                                        <option value="0.5">0.5</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <!--<option value="3">3</option>-->
+                                        <!--<option value="4">4</option>-->
+                                        <!--<option value="5">5</option>-->
+                                    </select>
+                                    <span class="cpo-box-unit"> OZ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--颜色（文字颜色，阻焊颜色）-->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box cpo-sm-sc cpo-color-sl">
+                                <div class="cpo-box-title">Solder Mask Color</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select cpo_mask_color">
+                                        <option value="Green">Green</option>
+                                        <option value="White">White</option>
+                                        <option value="Black">Black</option>
+                                        <option value="Yellow">Yellow</option>
+                                        <option value="Red">Red</option>
+                                        <option value="Blue">Blue</option>
+                                    </select>
+                                    <span class="cpo-box-color sm-default"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box cpo-sm-sc cpo-color-sl">
+                                <div class="cpo-box-title">Silkscreen Color</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select cpo_silkscreen_color">
+                                        <option value="White">White</option>
+                                        <option value="Black">Black</option>
+                                        <option value="Red">Red</option>
+                                        <option value="Blue">Blue</option>
+                                        <option value="Yellow">Yellow</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <span class="cpo-box-color sk-default"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--表面处理， Vias-->
+                    <div class="form-group">
+
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">E-TEST</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select cpo_e_test">
+                                        <option value="Free Flying Probe">Free Flying Probe</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--特殊数据按钮-->
+                    <div class="special-group cpo-none">
+                        <p class="btn btn-primary" id="pcb_need">
+                            <i class="pcb_need_btn_plus"></i>
+                            <span>Special needs</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="row cpo_pcb_special">
+            <form action="" class="form-horizontal special_form">
+                <!--<div class="col-md-1"></div>-->
+                    <t t-call="website_cpo_sale.cpo_pcbpackage_special"/>
+                <!--<div class="col-md-1"></div>-->
+            </form>
+        </div>
+    </template>
+
+    <!-- PCB Package Price 右边布局 -->
+    <template id="cpo_pcbpackage_price_calculation_results">
+        <div class="pcbpackage_calculation_results">
+            <div class="cpo_smt_assembly_cost">
+                <button class="btn btn-primary cpo_calculation"><i class="fa fa-calculator fa-lg"></i>Calculation</button>
+            </div>
+            <p class="cpo_price_reminder">Click the button to quote !</p>
+            <!--国家选择-->
+            <!--<div class="cpo_country">-->
+                <!--<div class="pull-left cpo_country_list">-->
+                    <!--&lt;!&ndash;动态获取后台国家数据&ndash;&gt;-->
+                    <!--<select class="country_select">-->
+
+                    <!--</select>-->
+                <!--</div>-->
+                <!--<div class="pull-left cpo_order_express_message">-->
+                    <!--<select>-->
+                        <!--<option value="dhl">DHL</option>-->
+                        <!--<option value="ups">UPS</option>-->
+                        <!--<option value="fedex">FedEx</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="calculation_content cpo-none">
+                <form class="form-horizontal" role="form" method="POST"
+                        t-attf-action="/shop/product/#{ slug(product_id) }"
+                        t-att-data-attribute_value_ids="attribute_value_ids"
+                        enctype="multipart/form-data"
+                        id="pcb_package_price_return">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <div class="cpo_assembly_cost">
+                            <span class="cpo_cost_span">Production Quantity</span>
+                            <span class="cpo_cost_fee cpo-pdl-0">
+                                <input type="text" class="cpo_pcb_quantity" name="cpo_pcb_quantity" value="0"  readonly="readonly"/>
+                            </span>
+                        </div>
+                        <div class="cpo_assembly_cost">
+                            <span class="cpo_cost_span">PCB area</span>
+                            <span class="cpo_cost_fee cpo-pdl-0">
+                                <input type="text" class="cpo_flat_area" name="cpo_flat_area" value="0.00"  readonly="readonly"/>
+                            </span>
+                        </div>
+                         <div class="cpo_assembly_cost">
+                            <span class="cpo_cost_span">Delivery period</span>
+                            <span class="cpo_cost_fee cpo-pdl-0">
+                                <input type="text" class="cpo_delivery" name="cpo_delivery" value="0.00"  readonly="readonly"/>
+                            </span>
+                        </div>
+                        <div class="cpo_assembly_cost cpo-none">
+                            <span class="cpo_cost_span">Freigth cost</span>
+                            <span class="cpo_cost_fee cpo_freifth_box">
+                                <i>$</i>
+                                <input type="text" class="cpo_freight" name="cpo_freight" value="0.00"  readonly="readonly"/>
+                            </span>
+                        </div>
+                        <div class="cpo_assembly_cost">
+                            <span class="cpo_cost_span">Package Cost</span>
+                            <span class="cpo_cost_fee cpo_freifth_box">
+                                <i>$</i>
+                                <input type="text" class="cpo_package_cost" name="cpo_package_cost" value="0.00"  readonly="readonly"/>
+                            </span>
+                        </div>
+                        <div class="cpo_assembly_cost">
+                            <span class="cpo_cost_span">Total</span>
+                            <span class="cpo_cost_fee">
+                                <i>$</i>
+                                <input type="text" class="all_fee" name="all_fee" value="0.00"  readonly="readonly"/>
+                            </span>
+                        </div>
+                        <div class="cpo_step_next">
+                            <button class="btn btn-primary" id="step_next">Next step</button>
+                        </div>
+                        <div id="cpo_pcb_result cpo-none">
+                            <div class="pcb_fixed_data">
+                                <input type="hidden" class="cpo_pcb_package" name="cpo_pcb_package" value=""  readonly="readonly"/>
+                                <input type="hidden" class="expedited_days" name="expedited_days" value=""  readonly="readonly"/>
+                            </div>
+                            <div class="file_ids cpo-none">
+                                <div class="cpo_file_ids"></div>
+                                <div class="file_ids cpo-none">
+                                    <div class="gerber_box">
+                                        <input name="gerber_file_id" value="" class="gerber_file_id"/>
+                                        <input name="gerber_atta_id" value="" class="gerber_atta_id"/>
+                                        <input name="gerber_file_name" value="" class="gerber_file_name"/>
+                                    </div>
+                                    <div class="bom_box">
+                                        <input name="bom_file_id" value="" class="bom_file_id"/>
+                                        <input name="bom_atta_id" value="" class="bom_atta_id"/>
+                                        <input name="bom_file_name" value="" class="bom_file_name"/>
+                                    </div>
+                                    <div class="smt_box">
+                                        <input name="smt_file_id" value="" class="smt_file_id"/>
+                                        <input name="smt_atta_id" value="" class="smt_atta_id"/>
+                                        <input name="smt_file_name" value="" class="smt_file_name"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pcb_result"></div>
+                            <div class="pcb_special_requirements"></div>
+                            <div class="pcb_surface"></div>
+                            <div class="pcb_edit">
+                                <t t-if="edit">
+                                    <input type="hidden" name="edit_id" t-att-value="edit_values.get('edit_id')"/>
+                                </t>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+            <div class="order_page_ad">
+                <div class="page-close-btn"><i class="fa fa-times-circle fa-2x"></i></div>
+                <a class="order-page-content">
+
+                </a>
+            </div>
+        </div>
+    </template>
+    <!-- 打包价页面修改（0.5）时间：2019年12月5日19:37:57 开始 -->
+    <template id="pcb_package_price_edit_template">
+        <form class="form-horizontal cpo_pcbpackage_quotation">
+            <div class="cpo_pcb_online_all_need">
+                <div class="cpo_pcb_quo">
+                    <!--test-->
+                    <!-- 验收标准 -->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">Quality Standard</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select quality_standard">
+                                        <option value="2">IPC Class Ⅱ</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cpo_input_needpcb_group col-md-6 col-sm-6">
+                            <div class="panel_img_size">
+                                <img src="\website_cpo_sale\static\src\images\tools_img\size.png"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!--拼板 层数-->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box cpo_meterial_layer">
+                                <div class="cpo-box-title">Technology</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select cpo_layers">
+                                        <t t-if="edit_values.get('layer_number')">
+                                            <t t-set="l_n" t-value="edit_values.get('layer_number')"/>
+                                            <option value="2" t-att="['selected' if l_n == 2 else 'data-cpo', '']">2 Layer</option>
+                                            <option value="4" t-att="['selected' if l_n == 4 else 'data-cpo', '']">4 Layer</option>
+                                            <option value="6" t-att="['selected' if l_n == 6 else 'data-cpo', '']">6 Layer</option>
+                                            <option value="8" t-att="['selected' if l_n == 8 else 'data-cpo', '']">8 Layer</option>
+                                            <!--<option value="2" t-att-selected="'selected' if edit_values.get('layer_number') == 2 else ''">2 Layer</option>-->
+                                            <!--<option value="4" t-att-selected="'selected' if edit_values.get('layer_number') == 4 else ''">4 Layer</option>-->
+                                            <!--<option value="6" t-att-selected="'selected' if edit_values.get('layer_number') == 6 else ''">6 Layer</option>-->
+                                            <!--<option value="8" t-att-selected="'selected' if edit_values.get('layer_number') == 8 else ''">8 Layer</option>-->
+                                        </t>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">PCB/PCB panel size</div>
+                                <div class="cpo-box-content">
+                                    <input type="text" class="cpo-box-input cpo-box-length" name="pcb_length" placeholder="Length"
+                                        data-toggle="tooltip" data-placement="top" title="Length &lt;= 100 MM" t-att-value="edit_values.get('cpo_length')" />
+                                    <span class="cpo-box-unit">×</span>
+                                    <input type="text" class="cpo-box-input cpo-box-width" name="pcb_breadth" placeholder="Width"
+                                        data-toggle="tooltip" data-placement="top" title="Width &lt;= 100 MM" t-att-value="edit_values.get('cpo_width')" />
+                                    <span class="cpo-box-unit">MM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--数量-->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">Production Quantity</div>
+                                <div class="cpo-box-content">
+                                    <input type="text" class="cpo-box-input" name="pcb_quantity" placeholder="Quantity"
+                                        data-toggle="tooltip" data-placement="top" title="The total area cannot exceed 1㎡" t-att-value="int(edit_values.get('pcb_qty'))"/>
+                                    <span class="cpo-box-unit">PCS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--材料-->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">Raw Material</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select cpo_raw_material">
+                                        <t t-set="ft" t-value="edit_values.get('base_type')"/>
+                                        <option value="FR4-Tg135" t-att="['selected' if ft == 'FR4-Tg135' else 'data-cpo', '']">FR4-Tg135</option>
+                                        <option value="FR4-Tg150" t-att="['selected' if ft == 'FR4-Tg150' else 'data-cpo', '']">FR4-Tg150</option>
+                                        <option value="FR4-Tg170" t-att="['selected' if ft == 'FR4-Tg170' else 'data-cpo', '']">FR4-Tg170</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--板厚 Vias-->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">Board Thickness</div>
+                                <div class="cpo-box-content">
+                                    <input type="text" class="cpo-box-input" name="cpo_thickness" t-att-value="edit_values.get('thickness')" placeholder="Enter thickness"/>
+                                    <span class="cpo-box-unit"> MM (±10%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">Surface Treatment</div>
+                                <div class="cpo-box-content">
+                                    <t t-set="surface" t-value="edit_values.get('surface')"/>
+                                    <select class="cpo-box-select surface_value">
+                                        <option value="Lead Free HASL" t-att="['selected' if surface == 'Lead Free HASL' else 'data-cpo', '']">Lead Free HASL</option>
+                                        <option value="Immersion gold (2 u″)" t-att="['selected' if 'Immersion gold' in surface else 'data-cpo', '']">Immersion gold (2 u″)</option>
+                                        <option value="OSP" t-att="['selected' if surface == 'OSP' else 'data-cpo', '']">OSP</option>
+                                        <option value="No" t-att="['selected' if surface == 'No' else 'data-cpo', '']">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--提示-->
+                        <div class="col-md-12 col-sm-12 cpo-tips-content cpo-none">
+                            <p class="cpo-box-tips">
+                                Immersion gold area is smaller than 30%,and nickel thickness is 120u'',if over this value ,pls offer detail。
+                            </p>
+                        </div>
+                    </div>
+                    <!--铜厚（内外）-->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">Outer Finished Copper</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select outer_copper">
+                                        <t t-set="oc" t-value="edit_values.get('outer_copper')"/>
+                                        <option value="1" t-att="['selected' if oc == 1 else 'data-cpo', '']">1</option>
+                                        <option value="2" t-att="['selected' if oc == 2 else 'data-cpo', '']">2</option>
+                                    </select>
+                                    <span class="cpo-box-unit"> OZ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box layer_inner_copper">
+                                <div class="cpo-box-title">Inner Finished Copper</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select inner_copper">
+                                        <t t-set="ic" t-value="edit_values.get('inner_copper')"/>
+                                        <option value="0" t-att="['selected' if ic == 0 else 'data-cpo', '']">0</option>
+                                        <option value="0.5" t-att="['selected' if ic == 0.5 else 'data-cpo', '']">0.5</option>
+                                        <option value="1" t-att="['selected' if ic == 1 else 'data-cpo', '']">1</option>
+                                        <option value="2" t-att="['selected' if ic == 2 else 'data-cpo', '']">2</option>
+                                    </select>
+                                    <span class="cpo-box-unit"> OZ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--颜色（文字颜色，阻焊颜色）-->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box cpo-sm-sc cpo-color-sl">
+                                <div class="cpo-box-title">Solder Mask Color</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select cpo_mask_color">
+                                        <t t-set="text_color" t-value="edit_values.get('silkscreen_color')"/>
+                                        <option value="Green" t-att="['selected' if text_color == 'Green' else 'data-cpo', '']">Green</option>
+                                        <option value="White" t-att="['selected' if text_color == 'White' else 'data-cpo', '']">White</option>
+                                        <option value="Black" t-att="['selected' if text_color == 'Black' else 'data-cpo', '']">Black</option>
+                                        <option value="Yellow" t-att="['selected' if text_color == 'Yellow' else 'data-cpo', '']">Yellow</option>
+                                        <option value="Red" t-att="['selected' if text_color == 'Red' else 'data-cpo', '']">Red</option>
+                                        <option value="Blue" t-att="['selected' if text_color == 'Blue' else 'data-cpo', '']">Blue</option>
+                                    </select>
+                                    <span class="cpo-box-color sm-default" t-att-style="'background-color: %s;' % text_color"></span>
+                                    <!--<span class="cpo-box-color sm-default"></span>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box cpo-sm-sc cpo-color-sl">
+                                <div class="cpo-box-title">Silkscreen Color</div>
+                                <div class="cpo-box-content">
+                                    <t t-set="silkscreen_color" t-value="edit_values.get('text_color')"/>
+                                    <select class="cpo-box-select cpo_silkscreen_color">
+                                        <option value="White" t-att="['selected' if silkscreen_color == 'White' else 'data-cpo', '']">White</option>
+                                        <option value="Black" t-att="['selected' if silkscreen_color == 'Black' else 'data-cpo', '']">Black</option>
+                                        <option value="Red" t-att="['selected' if silkscreen_color == 'Red' else 'data-cpo', '']">Red</option>
+                                        <option value="Blue" t-att="['selected' if silkscreen_color == 'Blue' else 'data-cpo', '']">Blue</option>
+                                        <option value="Yellow" t-att="['selected' if silkscreen_color == 'Yellow' else 'data-cpo', '']">Yellow</option>
+                                        <option value="No" t-att="['selected' if silkscreen_color == 'No' else 'data-cpo', '']">No</option>
+                                    </select>
+                                    <span class="cpo-box-color sk-default" t-att-style="'background-color: %s;' % silkscreen_color"></span>
+                                    <!--<span class="cpo-box-color sk-default"></span>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--表面处理， Vias-->
+                    <div class="form-group">
+
+                        <div class="col-md-6 col-sm-6">
+                            <div class="cpo-box">
+                                <div class="cpo-box-title">E-TEST</div>
+                                <div class="cpo-box-content">
+                                    <select class="cpo-box-select cpo_e_test">
+                                        <option value="Free Flying Probe">Free Flying Probe</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--特殊数据按钮-->
+                    <div class="special-group cpo-none">
+                        <p class="btn btn-primary" id="pcb_need">
+                            <i class="pcb_need_btn_plus"></i>
+                            <span>Special needs</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="row cpo_pcb_special">
+            <form action="" class="form-horizontal special_form">
+                    <t t-call="website_cpo_sale.cpo_pcbpackage_special"/>
+            </form>
+        </div>
+    </template>
+    <!-- 打包价页面修改（0.5）时间：2019年12月5日19:37:57 结束 -->
+    <!-- PCB 特殊需求 -->
+    <template id="cpo_pcbpackage_special_needs">
+        <div class="col-md-10">
+                <!--半孔-->
+                <div class="special_line">
+                    <label>Semi-hole</label>
+                    <select class="form-control special_semi_hole" disabled="disabled">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <!--板边电镀-->
+                <div class="special_line">
+                    <label>Edge plating</label>
+                    <select class="form-control special_edge_plating" disabled="disabled">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <!--阻抗-->
+                <div class="special_line">
+                    <label>Impedance</label>
+                    <select class="form-control special_impedance" disabled="disabled">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <!--压接孔-->
+                <div class="special_line">
+                    <label>Press-fit</label>
+                    <select class="form-control special_press_fit" disabled="disabled">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <!--蓝胶-->
+                <div class="special_line">
+                    <label>Peelable mask</label>
+                    <select class="form-control special_peelable_mask" disabled="disabled">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <!--碳油-->
+                <div class="special_line">
+                    <label>Carbon ink</label>
+                    <select class="form-control pcb_carbon_ink" disabled="disabled">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <p class="special_title">Relevant parameter information</p>
+                <!--最小线宽-->
+                <div class="special_line">
+                    <label>Minimum line width</label>
+                    <input type="text" value="0" class="form-control special_minimum_line" name="special_minimum_line" disabled="disabled"/>
+                    <span>mil</span>
+                </div>
+                <!--最小线距-->
+                <div class="special_line">
+                    <label>Minimum line space</label>
+                    <input type="text" value="0" class="form-control special_line_space" name="special_line_space" disabled="disabled"/>
+                    <span>mil</span>
+                </div>
+                <!--最小孔径-->
+                <div class="special_line">
+                    <label>Minimum aperture</label>
+                    <input type="text" value="0" class="form-control special_minimum_aperture" name="special_minimum_aperture" disabled="disabled"/>
+                    <span>mil</span>
+                </div>
+
+                <!--总孔数-->
+                <div class="special_line">
+                    <label>Total number of holes</label>
+                    <input type="text" value="0" class="form-control special_total_number" name="special_total_number" disabled="disabled"
+                            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </div>
+                <!--孔铜厚度-->
+                <div class="special_length_line">
+                    <label>Copper weight in hall wall</label>
+                    <input type="text" value="0" class="form-control special_copper_hall" name="special_copper_hall" disabled="disabled"
+                            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </div>
+                <!--芯板张数-->
+                <div class="special_line">
+                    <label>Number of core</label>
+                    <input type="text" value="0" class="form-control special_number_core" name="special_number_core" disabled="disabled"
+                            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </div>
+
+
+                <!--PP张数-->
+                <div class="special_line">
+                    <label>PP number</label>
+                    <input type="text" value="0" class="form-control special_pp_number" name="special_pp_number" disabled="disabled"
+                            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </div>
+                <!--验收标准-->
+                <!--<div class="special_line">-->
+                    <!--<label>Quality Standard</label>-->
+                    <!--<select class="form-control special_acceptable" disabled="disabled">-->
+                        <!--<option value="2">IPC Class Ⅱ</option>-->
+                        <!--<option value="3">IPC Class Ⅲ</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+                <!--总测试点数-->
+                <div class="special_line">
+                    <label>Total test points</label>
+                    <input type="text" value="0" class="form-control special_total_test" name="special_total_test" disabled="disabled"
+                            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </div>
+                <!--不支持报价的数据-->
+                <p class="special_title">The following data does not currently support automatic quotes !</p>
+                <!--埋盲孔钻带数-->
+                <div class="special_line">
+                    <label>Blind&amp;Buired via</label>
+                    <input type="text" value="0" class="form-control special_blind_hole" name="special_blind_hole" disabled="disabled"/>
+                </div>
+                <!--埋盲孔结构-->
+                <div class="special_line">
+                    <label>Blind hole structure</label>
+                    <input type="text" value="0" class="form-control special_blind_struture" name="special_blind_struture" disabled="disabled"/>
+                </div>
+                <!--控深锣-->
+                <div class="special_line">
+                    <label>Depth control routing</label>
+                    <select class="form-control special_depth_control" disabled="disabled">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <!--背钻孔数-->
+                <div class="special_length_line">
+                    <label>Number of back drilling</label>
+                    <select class="form-control special_back_drilling" disabled="disabled">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <!--沉头/控深孔数-->
+                <div class="special_length_line">
+                    <label>Number of countersunk/deep holes</label>
+                    <input type="text" value="0" class="form-control special_countersunk" name="special_countersunk" disabled="disabled"/>
+                </div>
+                <!--激光钻孔-->
+                <div class="special_line">
+                    <label>Laser drilling</label>
+                    <select class="form-control special_laser_drilling" disabled="disabled">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <!--跳刀数-->
+                <div class="special_line">
+                    <label>Jump V-cut</label>
+                    <select class="form-control special_v_cut_space" disabled="disabled">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <!--内层孔到线-->
+                <div class="special_line">
+                    <label>Inner hole to line</label>
+                    <input type="text" value="0" class="form-control special_inner_hole_line" name="special_inner_hole_line" disabled="disabled"/>
+                    <span>mil</span>
+                </div>
+            <!--</form>-->
+        </div>
+    </template>
+
+    <!--特殊数据-->
+    <template id="cpo_pcbpackage_special">
+        <div class="col-md-12">
+            <div class="form-group">
+                <!--半孔-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Semi-hole</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select special_semi_hole" disabled="disabled">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--板边电镀-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Edge plating</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select special_edge_plating" disabled="disabled">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--阻抗-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Impedance</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select special_impedance" disabled="disabled">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <!--压接孔-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Press-fit</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select special_press_fit" disabled="disabled">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--蓝胶-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Peelable mask</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select special_peelable_mask" disabled="disabled">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--碳油-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Carbon ink</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select pcb_carbon_ink" disabled="disabled">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="special_title">Relevant parameter information</p>
+            <div class="form-group">
+                <!--最小线宽-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Minimum line width</div>
+                        <div class="cpo-box-content">
+                            <input type="text" value="0" class="cpo-box-input min_line_width" name="min_line_width" disabled="disabled"/>
+                            <span class="cpo-box-unit">mil</span>
+                        </div>
+                    </div>
+                </div>
+                <!--最小线距-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Minimum line space</div>
+                        <div class="cpo-box-content">
+                            <input type="text" value="0" class="cpo-box-input special_line_space" name="special_line_space" disabled="disabled"/>
+                            <span class="cpo-box-unit">mil</span>
+                        </div>
+                    </div>
+                </div>
+                <!--最小孔径-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Minimum aperture</div>
+                        <div class="cpo-box-content">
+                            <input type="text" value="0" class="cpo-box-input special_minimum_aperture" name="special_minimum_aperture" disabled="disabled"/>
+                            <span class="cpo-box-unit">mil</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <!--总孔数-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Total number of holes</div>
+                        <div class="cpo-box-content">
+                            <input type="text" value="0" class="cpo-box-input special_total_number" name="special_total_number" disabled="disabled"
+                            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                        </div>
+                    </div>
+                </div>
+                <!--孔铜厚度-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Copper weight in hall wall</div>
+                        <div class="cpo-box-content">
+                            <input type="text" value="0" class="cpo-box-input special_copper_hall" name="special_copper_hall" disabled="disabled"
+                            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                        </div>
+                    </div>
+                </div>
+                <!--芯板张数-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Number of core</div>
+                        <div class="cpo-box-content">
+                            <input type="text" value="0" class="cpo-box-input special_number_core" name="special_number_core" disabled="disabled"
+                            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <!--PP张数-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">PP number</div>
+                        <div class="cpo-box-content">
+                            <input type="text" value="0" class="cpo-box-input special_pp_number" name="special_pp_number" disabled="disabled"
+                            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                        </div>
+                    </div>
+                </div>
+                <!--总测试点数-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Total test points</div>
+                        <div class="cpo-box-content">
+                            <input type="text" value="0" class="cpo-box-input special_total_test" name="special_total_test" disabled="disabled"
+                            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--不支持报价的数据-->
+            <p class="special_title">The following data does not currently support automatic quotes !</p>
+            <div class="form-group">
+                <!--埋盲孔钻带数-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Blind&amp;Buired via</div>
+                        <div class="cpo-box-content">
+                            <input type="text" value="0" class="cpo-box-input blind_and_buried_hole" name="blind_and_buried_hole" disabled="disabled"/>
+                        </div>
+                    </div>
+                </div>
+                <!--埋盲孔结构-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Blind hole structure</div>
+                        <div class="cpo-box-content">
+                            <input type="text" value="0" class="cpo-box-input blind_hole_structure" name="blind_hole_structure" disabled="disabled"/>
+                        </div>
+                    </div>
+                </div>
+                <!--控深锣-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Depth control routing</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select special_depth_control" disabled="disabled">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <!--背钻孔数-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Number of back drilling</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select special_back_drilling" disabled="disabled">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--沉头/控深孔数-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Number of countersunk/deep holes</div>
+                        <div class="cpo-box-content">
+                            <input type="text" value="0" class="cpo-box-input countersunk_deep_holes" name="countersunk_deep_holes" disabled="disabled"/>
+                        </div>
+                    </div>
+                </div>
+                <!--激光钻孔-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Laser drilling</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select special_laser_drilling" disabled="disabled">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <!--跳刀数-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Jump V-cut</div>
+                        <div class="cpo-box-content">
+                            <select class="cpo-box-select special_v_cut_space" disabled="disabled">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--内层孔到线-->
+                <div class="col-md-4 col-sm-4">
+                    <div class="cpo-box">
+                        <div class="cpo-box-title">Inner hole to line</div>
+                        <div class="cpo-box-content">
+                            <input type="text" value="0" class="cpo-box-input special_inner_hole_line" name="special_inner_hole_line" disabled="disabled"/>
+                            <span class="cpo-box-unit">mil</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+</odoo>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+       <record id="view_create_ink_size_price" model="ir.ui.view">
+          <field name="name">create.ink.size.price.form</field>
+          <field name="model">create.ink.size.price</field>
+          <field name="arch" type="xml">
+            <form string="Create Size Fee of Ink Color"  version="7.0">
+                <h1>
+                    <label string="Target Ink Color:"/>
+                    <field name="ink_color_id" class="oe_inline" attrs="{'readonly':True}"/>
+                </h1>            
+
+                <group>
+                    <field name="source_ink_color_id" />
+                </group>
+                
+
+                <group col="4">
+                    <label for="text_min_fee"/>
+                    <div>
+                        <field name="text_min_fee" /> 
+                        <field name="text_min_fee_type" /> 
+                    </div>
+                    <label for="text_min_change_fee"/>
+                    <div>
+                        <field name="text_min_fee_compute" class="oe_inline"/>
+                        <field name="text_min_change_fee" class="oe_inline"/>
+                        <field name="text_min_fee_class" class="oe_inline"/>
+                    </div>
+                </group>
+
+                <group >
+                    <field name="text_limit_size" />
+                </group>
+
+                <group col="4">
+                    <label for="text_max_fee"/>
+                    <div>
+                        <field name="text_max_fee" /> 
+                        <field name="text_max_fee_type" /> 
+                    </div>
+                    <label for="text_max_change_fee"/>
+                    <div>
+                        <field name="text_max_fee_compute" class="oe_inline"/>
+                        <field name="text_max_change_fee" class="oe_inline"/>
+                        <field name="text_max_fee_class" class="oe_inline"/>
+                    </div>
+                </group>
+                
+
+                <group col="4">
+                    <label for="silk_screen_min_fee"/>
+                    <div>
+                        <field name="silk_screen_min_fee" />
+                        <field name="silk_screen_min_fee_type" />
+                    </div>
+                    <label for="silk_screen_min_change_fee"/>
+                    <div>
+                        <field name="silk_screen_min_fee_compute" class="oe_inline"/>
+                        <field name="silk_screen_min_change_fee" class="oe_inline"/>
+                        <field name="silk_screen_min_fee_class" class="oe_inline"/>
+                    </div>
+                </group>
+
+                <group >
+                    <field name="silk_screen_limit_size" />
+                </group>
+
+
+                <group col="4">
+                    <label for="silk_screen_max_fee"/>
+                    <div>
+                        <field name="silk_screen_max_fee" />
+                        <field name="silk_screen_max_fee_type" />
+                    </div>
+                    <label for="silk_screen_max_change_fee"/>
+                    <div>
+                        <field name="silk_screen_max_fee_compute" class="oe_inline"/>
+                        <field name="silk_screen_max_change_fee" class="oe_inline"/>
+                        <field name="silk_screen_max_fee_class" class="oe_inline"/>
+                    </div>
+                </group>                    
+                
+                
+                <footer>
+                    <button name="create_ink_color_size" string="Create Ink Color Size" type="object" class="oe_highlight"/>
+                    <label string="or" />
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+          </field>
+       </record>
+              
+
+        <act_window
+            context="{'default_ink_color_id': active_id}"
+            id="act_create_ink_size_price"
+            name="Create Size Fee of Ink Color"
+            view_mode="form" target="new"
+            res_model="create.ink.size.price"
+            src_model="cam.ink.color" 
+            view_id="view_create_ink_size_price"/>
+
+
+</odoo>

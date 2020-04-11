@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- 创建tree视图 -->
+        <record model="ir.ui.view" id="cpo_big_category_list">
+            <field name="name">Category List</field>
+            <field name="model">cpo_big_category</field>
+            <field name="arch" type="xml">
+                <tree>
+                  <field name="name"/>
+                  <field name="category_type_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- 创建form视图 -->
+        <record model="ir.ui.view" id="cpo_big_category_form">
+             <field name="name">Category Form</field>
+             <field name="model">cpo_big_category</field>
+             <field name="arch" type="xml">
+                  <form >
+                      <sheet>
+                          <group col="4">
+                              <group colspan="2">
+                                  <field name="name"/>
+                              </group>
+                              <group colspan="4">
+                                  <field name="category_type_ids"/>
+                              </group>
+                          </group>
+                      </sheet>
+                  </form>
+             </field>
+        </record>
+
+        <!-- 设置action打开视图-->
+        <record model="ir.actions.act_window" id="cpo_big_category_action">
+            <field name="name">Select Category Action</field>
+            <field name="res_model">cpo_big_category</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--设置菜单-->
+        <menuitem name="PClick to select" id="cpo_click_select_category_menu" parent="website_cpo_index.cpo_web_root_menu" />
+
+        <menuitem sequence="1" name="Select Big Category" id="cpo_big_category_menu_list" parent="website_cpo_index.cpo_click_select_category_menu"
+              action="cpo_big_category_action"/>
+
+    </data>
+</odoo>

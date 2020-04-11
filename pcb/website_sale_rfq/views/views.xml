@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Sale Order 中增加一个退款按钮-->
+        <record id="refund_order_form_view" model="ir.ui.view">
+            <field name="name">Refund Order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='Check_PCB_views']" position="after">
+                    <button name="GetProcessRefund" type="object" string="Processing Refund" states="request_refund" class="btn-primary" groups="sales_team.group_sale_salesman"/>
+                    <button name="GetInitiateRefund" type="object" string="Initiate Refund" states="wait_make" class="btn-primary" groups="sales_team.group_sale_manager"/>
+                    <button name="GetInitiateAskGuest" type="object" string="Initiate Ask Guest" states="manufacturing" class="btn-primary" groups="sales_team.group_sale_salesman"/>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[7]" position="after">
+                    <page string="Ask Guest">
+                        <field name="ask_ids"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <!--Sale Order 中退款的栏目-->
+        <record id="RefundOrder" model="ir.actions.act_window">
+            <field name="name">Refund Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="sale.view_quotation_tree"/>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+            <field name="domain">[('state', 'in', ('refunded', 'request_refund'))]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                All Refund Orders
+              </p>
+            </field>
+        </record>
+        <!--Customer Requests Refund Tree-->
+        <record model="ir.ui.view" id="client_refund_tree">
+            <field name="name">Customer Requests Refund Tree</field>
+            <field name="model">sales.refund</field>
+            <field name="arch" type="xml">
+                <tree decoration-danger="state=='s_process'" decoration-info="state=='c_apply'" create="false" delete="1">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="order_id"/>
+                    <field name="order_amount"/>
+                    <field name="order_state"/>
+                    <field name="seller_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <!--Customer Requests Refund Form-->
+        <record model="ir.ui.view" id="client_refund_form">
+            <field name="name">Customer Requests Refund Form</field>
+            <field name="model">sales.refund</field>
+            <field name="arch" type="xml">
+                <form create="false" delete="1">
+                    <header>
+                        <button name="GetProcessRefundView" type="object" string="Processing Refund" states="c_apply" class="oe_highlight"/>
+                        <button name="AgreeRefund" type="object" string="Agree Refund" states="s_process" confirm="If you 'agree to a refund', please attach a brief description and return the amount as soon as possible to avoid customer complaints"/>
+                        <button name="DisagreeRefund" type="object" string="Disagree Refund" states="s_process" confirm="If 'disagree with refund', please attach detailed instructions for customers to understand why"/>
+                        <field name="state" widget="statusbar" statusbar_visible="c_apply,s_process"/>
+                    </header>
+                    <sheet>
+                        <h1 style="margin-top:0px; margin-bottom:5px;">
+                            <field name="name" attrs="{'invisible': [('name', '=', False)]}" force_save="1"/>
+                        </h1>
+                        <group col="4" colspan="4" string="Customer Information" style="margin-top:-10px;">
+                            <field name="partner_id"/>
+                            <field name="country_id"/>
+                            <field name="phone"/>
+                            <field name="city"/>
+                            <field name="email"/>
+                        </group>
+                        <!--&amp; Invoice -->
+                        <group col="4" colspan="4" string="Order Information" style="margin-top:-10px;">
+                            <field name="order_id" readonly="1"/>
+                            <field name="order_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="order_state"/>
+                            <field name="confirmation_date" string="Order Confirmation Date"/>
+                            <field name="product_name"/>
+                            <field name="serial_number" attrs="{'invisible': [('serial_number', '=', False)]}"/>
+                        </group>
+                        <group string="Client Reason For Requesting Refund" style="margin-top:-10px;" attrs="{'invisible': [('client_refund', '=', False)]}">
+                            <field name="client_refund" nolabel="1" readonly="1"/>
+                        </group>
+                        <group string="Refund Instructions For Salesperson" style="margin-top:-10px;" attrs="{'invisible': [('seller_id', '=', False)]}">
+                            <field name="sale_refund" nolabel="1" attrs="{'readonly': [('state', '!=', 's_process')]}"/>
+                        </group>
+                        <group col="4" colspan="4" string="Processing Refund Information" style="margin-top:-10px;">
+                            <field name="refund_amount" widget="monetary" readonly="0" options="{'currency_field': 'currency_id'}" attrs="{'readonly': [('state', '!=', 's_process')]}"/>
+                            <field name="create_date" string="Customer Request Refund Time" readonly="1"/>
+                            <field name="seller_id" domain="[('share', '=', False)]" attrs="{'readonly': [('state', '!=', 's_process')]}"/>
+                            <field name="write_date" string="Sales Processing Refund Time" readonly="1" attrs="{'invisible': [('seller_id', '=', False)]}"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--Customer Requests Refund Windows-->
+        <record model="ir.actions.act_window" id="client_refund_window">
+            <field name="name">Customer Requests Refund</field>
+            <field name="res_model">sales.refund</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', 'in', ('c_apply', 's_process', 'c_fail', 'c_success'))]</field>
+            <field name="view_ids" eval="[(5,0,0),
+            (0,0,{'view_mode':'tree','view_id':ref('client_refund_tree')}),
+            (0,0,{'view_mode':'form','view_id':ref('client_refund_form')})]"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                   No customers currently request a refund.
+                </p>
+            </field>
+        </record>
+        <!--Sale Initiate Refund Tree-->
+        <record model="ir.ui.view" id="sale_refund_tree">
+            <field name="name">Sale Initiate Refund Tree</field>
+            <field name="model">sales.refund</field>
+            <field name="arch" type="xml">
+                <tree decoration-danger="state=='s_process'" decoration-info="state=='c_apply'">
+                    <field name="seller_id"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="order_id"/>
+                    <field name="order_amount"/>
+                    <field name="order_state"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <!--Sale Initiate Refund Form-->
+        <record model="ir.ui.view" id="sale_refund_form">
+            <field name="name">Sale Initiate Refund Form</field>
+            <field name="model">sales.refund</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="DirectRefund" type="object" string="Direct Refund" states="draft" confirm="Are you sure of a direct refund?"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,s_refund"/>
+                    </header>
+                    <sheet>
+                        <h1 style="margin-top:0px; margin-bottom:5px;">
+                            <field name="name" attrs="{'invisible': [('name', '=', False)]}" force_save="1"/>
+                        </h1>
+                        <group col="4" colspan="4" string="Order Information" style="margin-top:-10px;">
+                            <field name="order_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="order_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="order_state"/>
+                            <field name="confirmation_date" string="Order Confirmation Date"/>
+                            <field name="product_name"/>
+                            <field name="serial_number" attrs="{'invisible': [('serial_number', '=', False)]}"/>
+                        </group>
+                        <group col="4" colspan="4" string="Customer Information" style="margin-top:-10px;">
+                            <field name="partner_id"/>
+                            <field name="country_id"/>
+                            <field name="phone"/>
+                            <field name="city"/>
+                            <field name="email"/>
+                        </group>
+                        <group string="Refund Instructions For Salesperson" style="margin-top:-10px;">
+                            <field name="sale_refund" nolabel="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                        <group col="4" colspan="4" string="Processing Refund Information" style="margin-top:-10px;">
+                            <field name="refund_amount" widget="monetary" readonly="0" options="{'currency_field': 'currency_id'}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="seller_id" domain="[('share', '=', False)]" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="create_date" string="Initiate Refund" readonly="1" attrs="{'invisible': [('create_date', '=',False)]}"/>
+                            <field name="write_date" string="Determine Refund" readonly="1" attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--Sale Initiate Refund Windows-->
+        <record model="ir.actions.act_window" id="sale_refund_window">
+            <field name="name">Sale Initiate Refund</field>
+            <field name="res_model">sales.refund</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', 'in', ('draft', 's_refund'))]</field>
+            <field name="view_ids" eval="[(5,0,0),
+            (0,0,{'view_mode':'tree','view_id':ref('sale_refund_tree')}),
+            (0,0,{'view_mode':'form','view_id':ref('sale_refund_form')})]"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                   No direct initiated refund.
+                </p>
+            </field>
+        </record>
+        <!--Ask Guest Tree-->
+        <record model="ir.ui.view" id="ask_guest_tree">
+            <field name="name">Ask Guest Tree</field>
+            <field name="model">ask.guest</field>
+            <field name="arch" type="xml">
+                <tree decoration-bf="state=='draft'"
+                      decoration-success="state=='replied'"
+                      decoration-warning="state=='read'"
+                      decoration-info="state=='wait_reply'">
+                    <field name="name"/>
+                    <field name="seller_id"/>
+                    <field name="order_id"/>
+                    <field name="partner_id"/>
+                    <field name="order_state"/>
+                    <field name="product_name"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <!--Ask Guest Form-->
+        <record model="ir.ui.view" id="ask_guest_form">
+            <field name="name">Ask Guest Form</field>
+            <field name="model">ask.guest</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="ProposeSuggest" type="object" string="Propose Suggest" states="draft" class='btn-primary'/>
+                        <button name="QuestioningReply" type="object" string="Questioning/Reply" states="wait_reply,replied,read,complete" class='btn-primary'/>
+                        <button name="AskGuestComplete" type="object" string="Complete" states="wait_reply,replied,read"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,wait_reply,replied"/>
+                    </header>
+                    <sheet>
+                        <h1 style="margin-top:0px; margin-bottom:5px;">
+                            <field name="name" attrs="{'invisible': [('name', '=', False)]}" force_save="1"/>
+                        </h1>
+                        <h2 style="margin-top:0px; margin-bottom:5px">
+                            <field name="name_title" placeholder="Please describe the feedback in short language!" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </h2>
+                        <group colspan="4" col="4" string="Customer Information" style="margin-top:-10px;">
+                            <field name="partner_id"/>
+                            <field name="country_id"/>
+                            <field name="phone"/>
+                            <field name="city"/>
+                            <field name="email"/>
+                        </group>
+                        <group colspan="4" col="4" string="Order Information" style="margin-top:-10px;">
+                            <field name="order_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="order_state"/>
+                            <field name="confirmation_date" string="Order Confirmation Date"/>
+                            <field name="product_name"/>
+                        </group>
+                        <div class="ask-msg" attrs="{'invisible': [('state', '=', 'draft')]}">
+                            <field name="ask_message" readonly="1"/>
+                        </div>
+                        <group string="Suggestions" style="margin-top:-10px;" attrs="{'invisible': [('state', '!=', 'draft')]}">
+                            <field name="ask_reason" nolabel="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--Ask Guest Windows-->
+        <record model="ir.actions.act_window" id="ask_guest_window">
+            <field name="name">Ask Guest</field>
+            <field name="res_model">ask.guest</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5,0,0),
+            (0,0,{'view_mode':'tree','view_id':ref('ask_guest_tree')}),
+            (0,0,{'view_mode':'form','view_id':ref('ask_guest_form')})]"/>
+        </record>
+        <!--Ask 追问 Windows-->
+        <record model="ir.ui.view" id="ask_guest_form_append">
+            <field name="name">Ask Guest Form</field>
+            <field name="model">ask.guest</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="state" invisible="1"/>
+                        <h1 style="margin-top:0px; margin-bottom:5px;">
+                            <field name="name" attrs="{'invisible': [('name', '=', False)]}" force_save="1"/>
+                        </h1>
+                        <h2 style="margin-top:0px; margin-bottom:5px">
+                            <field name="name_title" placeholder="Please describe the feedback in short language!" readonly="1"/>
+                        </h2>
+                        <group colspan="4" col="4" string="Customer Information" style="margin-top:-10px;">
+                            <field name="partner_id"/>
+                            <field name="country_id"/>
+                            <field name="phone"/>
+                            <field name="city"/>
+                            <field name="email"/>
+                        </group>
+                        <group colspan="4" col="4" string="Order Information" style="margin-top:-10px;">
+                            <field name="order_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="order_state"/>
+                            <field name="confirmation_date" string="Order Confirmation Date"/>
+                            <field name="product_name"/>
+                        </group>
+                        <div class="ask-msg" attrs="{'invisible': [('state', '=', 'draft')]}">
+                            <field name="ask_message" readonly="1"/>
+                        </div>
+                        <group string="Suggestions" style="margin-top:0px;">
+                            <field name="ask_reason" nolabel="1"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name='DetermineSend' string='Questioning/Reply' type='object' class='btn-primary'/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <menuitem name="Sales Order Refund" id="menu_sales_refund" parent="sales_team.menu_sales" sequence="99"/>
+        <menuitem name="Refund Order" id="menu_list_1" parent="menu_sales_refund" action="RefundOrder"/>
+        <menuitem name="Customer Requests Refund" id="menu_list_2" parent="menu_sales_refund" action="client_refund_window"/>
+        <menuitem name="Sale Initiate Refund" id="menu_list_3" parent="menu_sales_refund" action="sale_refund_window"/>
+        <menuitem name="Ask Guest" id="menu_ask_guest" parent="sales_team.menu_sales" sequence="100" action="ask_guest_window"/>
+    </data>
+</odoo>

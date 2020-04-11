@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="link_rule_tree">
+            <field name="name">Link rule Tree</field>
+            <field name="model">routing_parameter.link_rule</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="url"/>
+                    <field name="cpo_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="link_rule_form">
+            <field name="name">Link rule Form</field>
+            <field name="model">routing_parameter.link_rule</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="name" />
+                            </group>
+                            <group colspan="2">
+                                <field name="type" />
+                            </group>
+                            <group colspan="2">
+                                <field name="url" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_time" />
+                            </group>
+                        </group>
+                    </sheet>
+					<notebook>
+						<page string="Associated source"></page>
+					</notebook>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="ir_cron_link_rule_action" model="ir.cron">
+            <field name="name">Associated Source</field>
+            <field name="model_id" ref="model_routing_parameter_link_rule"/>
+            <field name="state">code</field>
+            <field name="code">model.cpoAssociatedSource()</field>
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(minutes=5)).strftime('%Y-%m-%d %H:%M:%S')" />
+            <field eval="False" name="doall" />
+            <field name="priority">5</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="link_rule_actions">
+            <field name="name">Link rule Actions</field>
+            <field name="res_model">routing_parameter.link_rule</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Link rule" id="cpo_link_rule_menu" parent="routing_parameter.cpo_promotion_keywords_menu"
+                action="link_rule_actions"/>
+
+    </data>
+</odoo>

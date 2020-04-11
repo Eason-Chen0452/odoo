@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_website_cpo_data_redocd_data,website_cpo_data.record_data,model_website_cpo_data_record_data,sales_team.group_sale_manager,1,1,1,1

@@ -1,0 +1,69 @@
+.cash-coupon-box{
+    background-image: url("/cpo_preferential/static/src/images/cpo-coupon.png");
+    background-repeat: no-repeat;
+    background-size: 360px 110px;
+    width: 360px;
+    height: 110px;
+    display: inline-block;
+}
+#cpo_receive_coupon .cash-coupon-box{
+    margin: 5px 35px;
+}
+.cash-condition{
+    display: inline-block;
+    vertical-align: top;
+    width: 42%;
+    margin: 15px 0 0 10px;
+}
+.cash-coupon-content{
+    position: relative;overflow: hidden;
+}
+
+.cpo_index_title{
+    padding: 78px 20px!important;
+}
+
+.cash-box{
+    display: inline-block;float: left;width: 50%;color: #ffffff;
+}
+.cash-left{
+    color: #510000;width: 79%;padding-left: 15px;
+}
+.cash-right{
+    width: 21%;
+}
+.cpo-cash-d{
+    font-size: 14px;margin: 0 0 0 10px;max-height: 40px;overflow: hidden;
+}
+.cash-left .cpo-cash-money{
+    display: inline-block;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 9px;
+}
+.cash-left .cpo-cash-money i{
+    font-style: normal;
+    font-size: 25px;
+    display: inline-block;
+    vertical-align: top;
+}
+.cpo-cash-btn{
+    margin: 15px 0;color: #f2d025;display: inline-block;border-radius: 10px;
+    padding: 2px 10px;background-color: #8a7c7c;font-size: 18px;
+    cursor: pointer;width: 82%;height: 86px;opacity: 0;
+}
+.cpo-cash-receive{
+    position: absolute;width: 100%;height: 110px;line-height: 110px;
+    z-index: 99;left: 0;top: 0;text-align: center;
+    background-color: rgba(0,0,0,0.6);
+    font-size: 36px;font-weight: 700;border-radius: 10px;
+}
+a.cpo-cash-receive{
+    position: absolute;width: 100%;height: 110px;line-height: 110px;
+    z-index: 99;left: 0;top: 0;text-align: center;
+    background-color: rgba(0,0,0,0.6);color: #ffffff;
+    font-size: 30px;font-weight: 700;border-radius: 10px;
+}
+a.cpo-cash-receive:hover{
+    color: #afbeff;
+}

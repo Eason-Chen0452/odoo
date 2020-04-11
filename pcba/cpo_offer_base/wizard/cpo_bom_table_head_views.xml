@@ -1,0 +1,35 @@
+<odoo>
+  <data>
+    
+    <!--tree视图-->
+    <record model="ir.ui.view" id="cpo_bom_table_head_tree">
+      <field name="name">cpo_bom_table_head data</field>
+      <field name="model">cpo_bom_table_head.head</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <!--<field name="original_col" />-->
+          <!--<field name="new_table_head" widget="workbook_content" />-->
+          <field name="src_title"/>
+          <field name="cpo_title"/>
+         </tree>
+      </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+    <record id="cpo_bom_table_head_action" model="ir.actions.act_window">
+        <field name="name">cpo_bom_table_head head</field>
+        <field name="res_model">cpo_bom_table_head.head</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="cpo_bom_table_head_tree"/>
+        <field name="target">new</field>
+    </record>
+
+    <!-- actions -->
+    
+    <!--<menuitem name="basedata_wizard data" id="cpo_basedata_wizard_menu" parent="cpo_offer_base.cpo_offer_base_menu_1"-->
+              <!--action="cpo_basedata_wizard_action" />-->
+              
+  </data>
+</odoo>

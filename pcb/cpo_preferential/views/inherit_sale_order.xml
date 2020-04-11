@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--继承sale order-->
+        <record model="ir.ui.view" id="preferential_inherit_view_order_form">
+            <field name="name">preferential_inherit_view_order_form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group/group/field[@name='partner_shipping_id']" position="after">
+                    <field name="cpo_coupon_text"/>
+                    <field name="customer_id" invisible="1" widget="many2many_tags"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

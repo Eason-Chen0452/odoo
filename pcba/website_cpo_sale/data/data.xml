@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="menu_shop" model="website.menu">
+            <field name="name">PCBA</field>
+            <field name="url">/pcba</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">13</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+
+        <record id="menu_pcb_quotaion" model="website.menu">
+            <field name="name">PCB</field>
+            <field name="url">/pcb</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">12</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+
+          <!--钢网-->
+        <record id="menu_stencil_quotaion" model="website.menu">
+            <field name="name">STENCIL</field>
+            <field name="url">/stencil</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">14</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+
+        <!--<record id="menu_about" model="website.menu">-->
+            <!--<field name="name">Assembly Service</field>-->
+            <!--<field name="url">/page/aboutus</field>-->
+            <!--<field name="parent_id" ref="website.main_menu"/>-->
+            <!--<field name="sequence" type="int">20</field>-->
+        <!--</record>-->
+
+        <record id="cpo_product_template_pcba_electron" model="product.product">
+            <field name="name">PCBA</field>
+            <field name="categ_id" ref="electron.product_category_pcba"/>
+            <field name="type">product</field>
+            <field name="website_published" eval="True"/>
+        </record>
+
+        <record id="cpo_product_template_pcb_electron" model="product.product">
+            <field name="name">PCB</field>
+            <field name="categ_id" ref="electron.product_category_pcb"/>
+            <field name="type">product</field>
+            <field name="website_published" eval="True"/>
+        </record>
+
+        <function model="ir.config_parameter" name="set_param" eval="('auth_signup.allow_uninvited', True)"/>
+        <function model="ir.config_parameter" name="set_param" eval="('auth_signup.reset_password', True)"/>
+        <function model="sale.order" name="set_update_seq_prefix" eval="{}"/>
+    </data>
+</odoo>

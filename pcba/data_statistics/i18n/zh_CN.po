@@ -1,0 +1,403 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* data_statistics
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-07 08:31+0000\n"
+"PO-Revision-Date: 2019-11-07 08:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.data_statistics_wizard_form
+msgid "<span style=\"display: inline-block;width: 16%;height: 30px;border-right: 1px solid #ccc;line-height: 30px;font-size: 14px;font-weight: 600;vertical-align: middle;\">\n"
+"									Quick query :\n"
+"								</span>"
+msgstr "<span style=\"display: inline-block;width: 16%;height: 30px;border-right: 1px solid #ccc;line-height: 30px;font-size: 14px;font-weight: 600;vertical-align: middle;\">\n"
+"									快捷查询 :\n"
+"								</span>"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_data_statistics_access_data
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_simple_version_access_data
+msgid "Access to records"
+msgstr "访问记录分析"
+
+#. module: data_statistics
+#: model:ir.actions.report.xml,name:data_statistics.account_data_statistics_report
+msgid "Advanced version"
+msgstr "高级版"
+
+#. module: data_statistics
+#: model:ir.ui.menu,name:data_statistics.data_statistics_act_menu
+msgid "Advanced version data statistics"
+msgstr "高级版数据统计"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "All count"
+msgstr "总次数"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Calculation count"
+msgstr "试价"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.data_statistics_wizard_form
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_wizard_form
+msgid "Cancel"
+msgstr "取消"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Cart count"
+msgstr "加入购物车"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Comfirm count"
+msgstr "确认数据"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.data_statistics_wizard_form
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_wizard_form
+msgid "Confirm"
+msgstr "确认"
+
+#. module: data_statistics
+#: model:ir.actions.report.xml,name:data_statistics.simple_version_data_statistics_report
+msgid "Convenient version"
+msgstr "简洁版"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Country"
+msgstr "国家"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_data_statistics_create_uid
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_simple_version_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_data_statistics_create_date
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_simple_version_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Customer source"
+msgstr "客户来源"
+
+#. module: data_statistics
+#: model:ir.actions.act_window,name:data_statistics.data_statistics_actions
+msgid "Data statistics"
+msgstr "数据分析"
+
+#. module: data_statistics
+#: model:ir.ui.menu,name:data_statistics.data_statistics_menu
+msgid "Data statistics menu"
+msgstr "数据分析菜单"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_data_statistics_display_name
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_simple_version_display_name
+#: model:ir.model.fields,field_description:data_statistics.field_report_data_statistics_get_data_statistics_qweb_report_display_name
+#: model:ir.model.fields,field_description:data_statistics.field_report_data_statistics_simple_version_qweb_report_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_data_statistics_end_date
+msgid "End Time"
+msgstr "结束时间"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_data_statistics_id
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_simple_version_id
+#: model:ir.model.fields,field_description:data_statistics.field_report_data_statistics_get_data_statistics_qweb_report_id
+#: model:ir.model.fields,field_description:data_statistics.field_report_data_statistics_simple_version_qweb_report_id
+msgid "ID"
+msgstr "ID"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "IP"
+msgstr "IP"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_data_statistics___last_update
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_simple_version___last_update
+#: model:ir.model.fields,field_description:data_statistics.field_report_data_statistics_get_data_statistics_qweb_report___last_update
+#: model:ir.model.fields,field_description:data_statistics.field_report_data_statistics_simple_version_qweb_report___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_data_statistics_write_uid
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_simple_version_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_data_statistics_write_date
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_simple_version_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.data_statistics_wizard_form
+msgid "Month"
+msgstr "月"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_data_statistics_quote_record
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_simple_version_quote_data
+msgid "PCB and PCBA quotation record"
+msgstr "PCB & PCBA报价记录"
+
+#. module: data_statistics
+#: code:addons/data_statistics/report/data_statistics_report.py:17
+#, python-format
+msgid "PCB and PCBA quote data statistics"
+msgstr "PCB和PCBA报价数据统计"
+
+#. module: data_statistics
+#: code:addons/data_statistics/report/simple_version_report.py:141
+#, python-format
+msgid "PCB and PCBA quote data statistics (Month)"
+msgstr "PCB和PCBA报价数据统计 (本月)"
+
+#. module: data_statistics
+#: code:addons/data_statistics/report/simple_version_report.py:137
+#, python-format
+msgid "PCB and PCBA quote data statistics (Today)"
+msgstr "PCB和PCBA报价数据统计 (今天)"
+
+#. module: data_statistics
+#: code:addons/data_statistics/report/simple_version_report.py:139
+#, python-format
+msgid "PCB and PCBA quote data statistics (Week)"
+msgstr "PCB和PCBA报价数据统计 (本周)"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "PCB and PCBA quote data statistics detailed  <i class=\"fa fa-angle-double-down\"/>"
+msgstr "PCB and PCBA quote data statistics detailed  <i class=\"fa fa-angle-double-down\"/>"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "PCB count"
+msgstr "PCB次数"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_simple_version_pcb_quote
+msgid "PCB quotation record"
+msgstr "PCB报价记录"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "PCBA count"
+msgstr "PCBA次数"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_simple_version_pcba_quote
+msgid "PCBA quotation record"
+msgstr "PCBA报价记录"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Pending count"
+msgstr "待审核"
+
+#. module: data_statistics
+#: code:addons/data_statistics/report/data_statistics_report.py:19
+#, python-format
+msgid "Promotion channels data statistics"
+msgstr "推广渠道数据统计"
+
+#. module: data_statistics
+#: code:addons/data_statistics/report/simple_version_report.py:196
+#, python-format
+msgid "Promotion channels data statistics (本月)"
+msgstr "推广渠道数据统计 (Month)"
+
+#. module: data_statistics
+#: code:addons/data_statistics/report/simple_version_report.py:192
+#, python-format
+msgid "Promotion channels data statistics (Today)"
+msgstr "推广渠道数据统计 (今天)"
+
+#. module: data_statistics
+#: code:addons/data_statistics/report/simple_version_report.py:194
+#, python-format
+msgid "Promotion channels data statistics (Week)"
+msgstr "推广渠道数据统计 (本周)"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Promotion channels detailed  <i class=\"fa fa-angle-double-down\"/>"
+msgstr "Promotion channels detailed  <i class=\"fa fa-angle-double-down\"/>"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_data_statistics_source_data
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_simple_version_source_data
+msgid "Promotion statistics"
+msgstr "推广统计"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Proportion"
+msgstr "推广"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Public user"
+msgstr "Public user"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Selected count"
+msgstr "选择收货地址"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Session count"
+msgstr "会话次数"
+
+#. module: data_statistics
+#: model:ir.actions.act_window,name:data_statistics.simple_version_actions
+msgid "Simple version"
+msgstr "简单版"
+
+#. module: data_statistics
+#: model:ir.ui.menu,name:data_statistics.simple_version_act_menu
+msgid "Simple version data statistics"
+msgstr "简单版数据统计"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Site name"
+msgstr "网站名称"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Source count"
+msgstr "推广来源次数"
+
+#. module: data_statistics
+#: model:ir.model.fields,field_description:data_statistics.field_data_statistics_data_statistics_start_date
+msgid "Start Time"
+msgstr "开始时间"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.data_statistics_wizard_form
+msgid "Today"
+msgstr "今日"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "User Name"
+msgstr "用户名"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Visits count"
+msgstr "浏览次数"
+
+#. module: data_statistics
+#: code:addons/data_statistics/report/data_statistics_report.py:18
+#, python-format
+msgid "Website visits data statistics"
+msgstr "网站访问数据统计"
+
+#. module: data_statistics
+#: code:addons/data_statistics/report/simple_version_report.py:169
+#, python-format
+msgid "Website visits data statistics (Month)"
+msgstr "网站访问数据统计 (Month)"
+
+#. module: data_statistics
+#: code:addons/data_statistics/report/simple_version_report.py:165
+#, python-format
+msgid "Website visits data statistics (Today)"
+msgstr "网站访问数据统计 (Today)"
+
+#. module: data_statistics
+#: code:addons/data_statistics/report/simple_version_report.py:167
+#, python-format
+msgid "Website visits data statistics (Week)"
+msgstr "网站访问数据统计 (Week)"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.get_data_statistics_qweb_report
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_qweb_report
+msgid "Website visits data statistics detailed  <i class=\"fa fa-angle-double-down\"/>"
+msgstr "Website visits data statistics detailed  <i class=\"fa fa-angle-double-down\"/>"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.data_statistics_wizard_form
+msgid "Week"
+msgstr "周"
+
+#. module: data_statistics
+#: model:ir.model,name:data_statistics.model_data_statistics_data_statistics
+msgid "data_statistics.data_statistics"
+msgstr "数据统计"
+
+#. module: data_statistics
+#: model:ir.model,name:data_statistics.model_data_statistics_simple_version
+msgid "data_statistics.simple_version"
+msgstr "数据统计简单版"
+
+#. module: data_statistics
+#: model:ir.ui.view,arch_db:data_statistics.data_statistics_wizard_form
+#: model:ir.ui.view,arch_db:data_statistics.simple_version_wizard_form
+msgid "form视图显示名"
+msgstr "form视图显示名"
+
+#. module: data_statistics
+#: model:ir.model,name:data_statistics.model_report_data_statistics_get_data_statistics_qweb_report
+msgid "report.data_statistics.get_data_statistics_qweb_report"
+msgstr "report.data_statistics.get_data_statistics_qweb_report"
+
+#. module: data_statistics
+#: model:ir.model,name:data_statistics.model_report_data_statistics_simple_version_qweb_report
+msgid "report.data_statistics.simple_version_qweb_report"
+msgstr "report.data_statistics.simple_version_qweb_report"
+
+#. module: data_statistics
+#: model:ir.model,name:data_statistics.model_report_data_statistics_report
+msgid "report.data_statistics_report"
+msgstr "report.data_statistics_report"
+

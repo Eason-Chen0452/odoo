@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="group_sale_salesman" model="res.groups">
+            <field name="name">PCB Quotation Pricelist</field>
+        </record>
+
+        <record id="ordinary_user_read_only" model="res.groups">
+            <field name="name">PCB Quotation Pricelist Ordinary user read only</field>
+        </record>
+
+
+    </data>
+</odoo>

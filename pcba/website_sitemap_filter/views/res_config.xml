@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<record id="view_website_config_settings_inhert_website_sitemap" model="ir.ui.view">
+    <field name="name">Website settings inhert website sitemap</field>
+    <field name="model">website.config.settings</field>
+    <field name="inherit_id" ref="website.website_config_settings_view_form"/>
+    <field name="arch" type="xml">
+       	<xpath expr="//div[@id='features_settings']" position="after">
+            <!--<div id="features_settings" position="after">-->
+            <group string="Sitemap">
+                <label for="exclude_from_sitemap"/>
+                <div class="col-md-12">
+                    <div class="oe_inline">
+                        <field name="exclude_from_sitemap"/>
+                    </div>
+                </div>
+            </group>
+        </xpath>
+    </field>
+</record>
+
+    </data>
+</openerp>

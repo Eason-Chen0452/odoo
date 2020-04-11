@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="cpo_product_release_tree">
+            <field name="name">Product Release Tree</field>
+            <field name="model">cpo_product_release</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="cpo_product_name"/>
+                    <field name="cpo_product_amount"/>
+                    <field name="cpo_product_layers"/>
+                    <field name="cpo_turn_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cpo_product_release_form">
+            <field name="name">Product Release Form</field>
+            <field name="model">cpo_product_release</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div style="width:49%;display:inline-block;margin-right:10px;border-right:1px solid #ddd;">
+                        <group colspan="4">
+                            <group colspan="4">
+                                <group colspan="2">
+                                    <field name="cpo_layer_photo" widget="image" />
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_product_name"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_product_amount" placeholder="$ XXX" />
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_product_layers"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_turn_time"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_qty_req"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_product_materials"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_finished_copper"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="cpo_trace_space"/>
+                                </group>
+                            </group>
+                        </group>
+                    </div>
+                    <div style="width: 50%;display: inline-block;vertical-align: top;" class="cpo_content_view_right">
+                        <div class="row" style="margin: 0;">
+                            <notebook>
+                                <page string="Preview 1">
+                                    <div style="margin: 20px;width: 282.14px;border: 1px solid #ddd;">
+                                        <div style="width:99%;overflow:hidden;padding:25px 12px 5px;">
+                                            <div>
+                                                <div class="layer_img_photo" style="width: 48%;display: inline-block;">
+                                                    <field name="cpo_layer_photo" widget="image"></field>
+                                                    <!--<img t-att-src="'data:image/png;base64,%s' %  cpo_layer_photo"/>-->
+                                                </div>
+                                                <div class="layer_img_layernum" style="width: 48%;display: inline-block;vertical-align: top;padding-left: 20px;">
+                                                    <h3 class="layer_num_qty" style="margin: 10px auto;width: 100%;font-size:18px;color: #2e8bc3;">
+                                                        <field name="cpo_product_name"></field>
+                                                    </h3>
+                                                    <span class="layer_money_total" style="font-weight:600;font-size:16px;color:#FF0000;">
+                                                        <field name="cpo_product_amount"></field>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <ul style="margin:0;padding:0;">
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:49%;display:inline-block;text-align:left;font-weight:600;">Layer count</span>
+                                                    <span style="width:49%;display:inline-block;text-align:right;">
+                                                        <field name="cpo_product_layers"></field>
+                                                    </span>
+                                                </li>
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:49%;display:inline-block;text-align:left;font-weight:600;">Turn time</span>
+                                                    <span style="width:49%;display:inline-block;text-align:right;">
+                                                        <field name="cpo_turn_time"></field>
+                                                    </span>
+                                                </li>
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:49%;display:inline-block;text-align:left;font-weight:600;">Qty req.</span>
+                                                    <span style="width:49%;display:inline-block;text-align:right;">
+                                                        <field name="cpo_qty_req"></field>
+                                                    </span>
+                                                </li>
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:49%;display:inline-block;text-align:left;font-weight:600;">Materials</span>
+                                                    <span style="width:49%;display:inline-block;text-align:right;">
+                                                        <field name="cpo_product_materials"></field>
+                                                    </span>
+                                                </li>
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:49%;display:inline-block;text-align:left;font-weight:600;">Finished copper</span>
+                                                    <span style="width:49%;display:inline-block;text-align:right;">
+                                                        <field name="cpo_finished_copper"></field>
+                                                    </span>
+                                                </li>
+                                                <li style="list-style:none;line-height:25px;">
+                                                    <span style="width:49%;display:inline-block;text-align:left;font-weight:600;">Trace / space</span>
+                                                    <span style="width:49%;display:inline-block;text-align:right;">
+                                                        <field name="cpo_trace_space"></field>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <a class="btn" style="width: 35%;background-color: #2e8bc3;margin: 14px auto 0;color: #FFFFFF;display: block;">
+                                                Buy Now
+                                            </a>
+                                        </div>
+                                    </div>
+                                </page>
+                                <page string="Preview 2">
+                                    <h3>Strive to improve...</h3>
+                                </page>
+                            </notebook>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Kanban View  -->
+        <record model="ir.ui.view" id="cpo_product_release_kanban">
+            <field name="name">Product Release Kanban</field>
+            <field name="model">cpo_product_release</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile o_kanban_small_column">
+                    <field name="cpo_layer_photo" widget="image" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="row">
+                                    <div class="col-xs-6" groups="base.group_user">
+                                        <field name="cpo_layer_photo" widget="image" />
+                                    </div>
+                                    <div class="col-xs-6 pull-right">
+                                        <div class="layer_img_layernum" style="display: inline-block;vertical-align: top;padding-left: 20px;">
+                                            <h3 class="layer_num_qty" style="margin: 10px auto;width: 100%;font-size:18px;color: #2e8bc3;">
+                                                <field name="cpo_product_name"></field>
+                                            </h3>
+                                            <span class="layer_money_total" style="font-weight:600;font-size:16px;color:#FF0000;">
+                                                <field name="cpo_product_amount"></field>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!--搜索视图-->
+        <record id="cpo_product_release_search" model="ir.ui.view">
+            <field name="name">Product Release Search</field>
+            <field name="model">cpo_product_release</field>
+            <field name="arch" type="xml">
+                <search string="Ideas">
+                    <field name="cpo_product_name"/>
+                    <field name="cpo_product_amount"/>
+                    <field name="cpo_product_layers"/>
+                    <field name="cpo_turn_time"/>
+                    <group string="Group By">
+                        <filter name="group_by_cpo_product_name" string="Product Name" context="{'group_by': 'cpo_product_name'}"/>
+                        <!--<filter name="group_by_manufacturer_id" string="制造商编号" context="{'group_by': 'manufacturer_id'}"/>-->
+                        <!--<filter name="group_by_confirm_time" string="确认时间" context="{'group_by': 'confirm_time'}"/>-->
+                    </group>
+                </search>
+              </field>
+        </record>
+        <!--  -->
+        <record model="ir.ui.view" id="cpo_product_release_graph">
+            <field name="name">Product Release Graph</field>
+            <field name="model">cpo_product_release</field>
+            <field name="arch" type="xml">
+                <graph string="Sales Orders">
+                    <field name="cpo_product_name"/>
+                    <field name="cpo_turn_time"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cpo_product_release_action_window">
+            <field name="name">Product Release Action</field>
+            <field name="res_model">cpo_product_release</field>
+            <field name="view_mode">kanban,tree,form,graph</field>
+        </record>
+
+        <!-- actions -->
+        <menuitem name="Product Release all" id="cpo_product_release_all_menu" parent="sales_team.menu_sales" />
+
+        <menuitem name="Product Release" id="cpo_product_release_menu" parent="website_cpo_index.cpo_product_release_all_menu"
+              action="cpo_product_release_action_window" />
+
+    </data>
+</odoo>

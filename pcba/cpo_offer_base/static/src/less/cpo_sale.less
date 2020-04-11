@@ -1,0 +1,28 @@
+@sheet-cpo-max-width: 100%;
+
+.cpo_max_width_full {
+    .o_form_sheet_bg {
+        position: relative;
+        padding: @sheet-padding 0;
+        border-bottom: 1px solid #ddd;
+        background: url(/web/static/src/img/form_sheetbg.png);
+
+        .o_form_sheet {
+            min-width: @sheet-min-width;
+            max-width: @sheet-cpo-max-width;
+            min-height: 330px;
+            margin: 0 auto;
+            padding: 16px;
+            border: 1px solid #c8c8d3;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            background: white;
+
+            .ui-tabs {
+                margin: 0 -16px;
+            }
+            .oe_notebook_page {
+                padding: 0 16px;
+            }
+        }
+    }
+}

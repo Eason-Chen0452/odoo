@@ -1,0 +1,2008 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_cpo_index
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-22 07:26+0000\n"
+"PO-Revision-Date: 2019-12-22 07:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_form
+msgid "<i class=\"fa fa-angle-double-right\"/> READ MORE"
+msgstr "<i class=\"fa fa-angle-double-right\"/> READ MORE"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_coupon_center
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_index_coupon03
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_index_coupon1111
+msgid "<span class=\"cash-condition\">Only PCB orders are available!</span>"
+msgstr "<span class=\"cash-condition\">Only PCB orders are available!</span>"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_coupon_list
+msgid "<span class=\"txt-span\">Get it right now</span>"
+msgstr "<span class=\"txt-span\">Get it right now</span>"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_setting_form
+msgid "<span style=\"margin-left: 10px;\">Days</span>"
+msgstr "<span style=\"margin-left: 10px;\">天</span>"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_get_material_temp
+msgid "<span>: Present material for the current time period</span>"
+msgstr "<span>: Present material for the current time period</span>"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_index_coupon
+msgid "<sub class=\"cpo-coupon\">Coupon</sub>"
+msgstr "<sub class=\"cpo-coupon\">Coupon</sub>"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_access_path
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "Access Path"
+msgstr "访问路径"
+
+#. module: website_cpo_index
+#: selection:cpo_website_source_setting,state:0
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_setting_form
+msgid "Activating"
+msgstr "激活"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_advertage_products_menu
+msgid "Advertage Products"
+msgstr "工艺介绍"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_advertage_products_action_window
+msgid "Advertage Products Action"
+msgstr "Advertage Products Action"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_all_material_show
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_all_material_show_404
+msgid "All Material"
+msgstr "All Material"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_cpo_product_amount
+msgid "Amount"
+msgstr "总额"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register_cpo_type
+msgid "App types"
+msgstr "应用类型"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_cookie_duration_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_login_and_register_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "Are you sure to choose to change?"
+msgstr "确定要选择更新维护吗？"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_setting_form
+msgid "Are you sure to choose to logout ?"
+msgstr "Are you sure to choose to logout ?"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_cpo_product_area
+msgid "Area"
+msgstr "面积"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_user_id
+msgid "Associated User"
+msgstr "关联用户"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_board_description_content
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_new_list_content
+msgid "Back"
+msgstr "返回"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_banner_image_action
+msgid "Banner Image Action"
+msgstr "Banner Image Action"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_record_pcb_pcba_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_record_pcb_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_record_pcba_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_record_service_id
+msgid "Base record"
+msgstr "Base record"
+
+#. module: website_cpo_index
+#: selection:cpo_cookie_duration,state:0
+#: selection:cpo_login_and_register,state:0
+#: selection:cpo_package_price,state:0
+#: selection:cpo_pcba_condition,state:0
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_cookie_duration_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_login_and_register_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "Become invalid"
+msgstr "作废失效"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_thickne
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_thickne
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_thickne
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_thickne
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_thickne
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_thickne
+msgid "Board thickness"
+msgstr "板厚"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_bom_type
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_bom_type
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_bom_type
+msgid "Bom Type"
+msgstr "BOM 种类"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_product_description_cpo_btn_name
+msgid "Button Name"
+msgstr "按钮名称"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_annex_actions
+msgid "CPO Annex Actions"
+msgstr "CPO Annex Actions"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_annex_menu
+msgid "CPO Annex Menu"
+msgstr "客户上传附件"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_banner_image_menu
+msgid "CPO Banner Image"
+msgstr "导航栏图片"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_new_list_menu
+msgid "CPO New List"
+msgstr "添加新闻"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_new_list_actions
+msgid "CPO New List Actions"
+msgstr "CPO New List Actions"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_product_description_actions
+msgid "CPO Product Description Actions"
+msgstr "CPO Product Description Actions"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_product_description_menu
+msgid "CPO Product Description List"
+msgstr "产品描述"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_quotation_actions
+msgid "CPO Quotation Actions"
+msgstr "CPO Quotation Actions"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_quotation_top_all_menu
+#: model:ir.ui.menu,name:website_cpo_index.cpo_quotation_top_menu
+msgid "CPO Quotation Record"
+msgstr "网页报价记录"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_video_actions
+msgid "CPO Video Actions"
+msgstr "CPO Video Actions"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_videomenu
+msgid "CPO Video List"
+msgstr "首页添加视频"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.show_all_material
+msgid "Can receive materials !"
+msgstr "Can receive materials !"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_big_category_category_type_ids
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_category_cpo_category_type
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_click_select_category_search
+msgid "Category Type"
+msgstr "类别类型"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_cpo_city
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_cpo_city
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_cpo_city
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_cpo_city
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_cpo_city
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_cpo_city
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_cpo_city
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_cpo_city
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "City"
+msgstr "城市"
+
+#. module: website_cpo_index
+#: selection:cpo_quotation_record_base,cpo_code:0
+msgid "Comfirm"
+msgstr "确认数据"
+
+#. module: website_cpo_index
+#: selection:cpo_video,cpo_video_title:0
+msgid "Company Profile Video"
+msgstr "公司介绍视频"
+
+#. module: website_cpo_index
+#: selection:cpo_cookie_duration,state:0
+#: selection:cpo_login_and_register,state:0
+#: selection:cpo_package_price,state:0
+#: selection:cpo_pcba_condition,state:0
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_cookie_duration_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_login_and_register_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "Complete maintenance update"
+msgstr "完成更新维护"
+
+#. module: website_cpo_index
+#: selection:cpo_pcba_condition,condition_type:0
+msgid "Components Free"
+msgstr "Components Free"
+
+#. module: website_cpo_index
+#: selection:cpo_pcba_condition,condition_type:0
+msgid "Components Provided by Customer"
+msgstr "Components Provided by Customer"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_condition_one
+msgid "Condition One"
+msgstr "条件 1 "
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_condition_three
+msgid "Condition Three"
+msgstr "条件 3"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_condition_title
+msgid "Condition Title"
+msgstr "条件标题"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_condition_two
+msgid "Condition Two"
+msgstr "条件 2"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_condition_type
+msgid "Condition Type"
+msgstr "条件类型"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_cookie_duration_cookie_time
+msgid "Cookie Duration"
+msgstr "时间周期"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_cpo_country
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_cpo_country
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_cpo_country
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_cpo_country
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_cpo_country
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_cpo_country
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_cpo_country
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_cpo_country
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_all_service_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "Country"
+msgstr "国家"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_coupon_center
+msgid "Coupon Center"
+msgstr "Coupon Center"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_product_description_Cover_img
+msgid "Cover Image"
+msgstr "封面"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_upload_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_cookie_duration_cpo_time
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_all_service_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "Create Time"
+msgstr "创建时间"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,help:website_cpo_index.cpo_advertage_products_action_window
+msgid "Create a new record."
+msgstr "Create a new record."
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_advertage_products_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_big_category_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_category_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_detailed_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_cookie_duration_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_news_list_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_product_description_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_video_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_all_partner_source_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_create_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_website_tag_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_advertage_products_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_big_category_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_category_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_detailed_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_cookie_duration_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_news_list_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_product_description_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_video_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_all_partner_source_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_create_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_website_tag_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_partner_source_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_session_association_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "Current month"
+msgstr "本月"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_partner_source_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_session_association_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "Current year"
+msgstr "本年"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_personal_center
+msgid "Customer Personal Center"
+msgstr "客户个人中心"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_customer_source
+msgid "Customer Source"
+msgstr "Customer Source"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_personal_center_website_source
+msgid "Customer source"
+msgstr "客户来源"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_dip_qty
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_dip_qty
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_dip_qty
+msgid "DIP quantity"
+msgstr "DIP 数量"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_datas
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_datas
+msgid "Datas"
+msgstr "Datas"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_cpo_banner_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register_cpo_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_news_list_cpo_new_date
+msgid "Date"
+msgstr "日期"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_deal_with
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_deal_with
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_deal_with
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_deal_with
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_deal_with
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_deal_with
+msgid "Deal with"
+msgstr "Deal with"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_cpo_banner_description
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register_cpo_description
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_cpo_description
+msgid "Description"
+msgstr "说明"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_advertage_products_cpo_product_desc
+msgid "Desctiption"
+msgstr "描述"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_category_cpo_detailed_type
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_detailed_cpo_detailed_type
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_click_select_detailed_search
+msgid "Detailed Type"
+msgstr "Detailed Type"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_advertage_products_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_big_category_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_category_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_detailed_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_cookie_duration_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_news_list_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_product_description_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_video_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_all_partner_source_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_display_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_website_tag_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: website_cpo_index
+#: selection:cpo_cookie_duration,state:0
+#: selection:cpo_login_and_register,state:0
+#: selection:cpo_package_price,state:0
+#: selection:cpo_pcba_condition,state:0
+#: selection:cpo_website_source_setting,state:0
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_cookie_duration_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_login_and_register_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "Draft"
+msgstr "草稿"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_e_test
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_e_test
+msgid "E-Test"
+msgstr "测试"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+msgid "E.g PCB Package Price: /pcb/package-price"
+msgstr "E.g PCB Package Price: /pcb/package-price"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+msgid "E.g: $ xxx +"
+msgstr "E.g: $ xxx +"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "E.g: /pcba?type=nomaterial"
+msgstr "E.g: /pcba?type=nomaterial"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+msgid "E.g: 2 Layers"
+msgstr "E.g: 2 Layers"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+msgid "E.g: Area &lt;= 0.2"
+msgstr "E.g: Area &lt;= 0.2"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_form
+msgid "E.g: Multilayer PCB"
+msgstr "E.g: Multilayer PCB"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_form
+msgid "E.g: Not only double side PCB ..."
+msgstr "E.g: Not only double side PCB ..."
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "E.g: Order Quantity ≤ 5 PCS;"
+msgstr "E.g: Order Quantity ≤ 5 PCS;"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "E.g: Parts Quantity ≤ 50"
+msgstr "E.g: Parts Quantity ≤ 50"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "E.g: Parts Types ≤ 50"
+msgstr "E.g: Parts Types ≤ 50"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+msgid "E.g: width &lt;=350px, height &lt;= 250px;"
+msgstr "E.g: 宽 &lt;=350px, 高 &lt;= 250px;"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_form
+msgid "E.g: width &lt;=540px, height &lt;= 252px;"
+msgstr "E.g: width &lt;=540px, height &lt;= 252px;"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_form
+msgid "E.g: www.chinapcbone.com"
+msgstr "E.g: www.chinapcbone.com"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_news_list_cpo_new_editor
+msgid "Editor"
+msgstr "编辑"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_coupon_center
+msgid "Enjoy the quality service of ChinaPCBOne !"
+msgstr "Enjoy the quality service of ChinaPCBOne !"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_file_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_file_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_file_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_file_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_file_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_file_name
+msgid "File Name"
+msgstr "文件名称"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_file_type
+msgid "File type"
+msgstr "文件类型"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_partner_source_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_session_association_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "Filters"
+msgstr "筛选"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_flex_number
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_flex_number
+msgid "Flex Number"
+msgstr "软板数量"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_all_pcb_form
+msgid "Flex-Rigid Data"
+msgstr "Flex-Rigid Data"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.fron_page_cycle_setting_menu
+msgid "Front page cycle setting"
+msgstr "前端页面时间设置"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_product_release_all_menu
+msgid "Front page page function settings"
+msgstr "网页页面设置"
+
+#. module: website_cpo_index
+#: model:res.groups,name:website_cpo_index.cpo_website_aperation_authority
+msgid "Front-end function settings"
+msgstr "网站功能设置权限"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_web_root_menu
+msgid "Front-end website settings"
+msgstr "前端功能设置"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_coupon_list
+msgid "Full"
+msgstr "Full"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_cpo_code
+msgid "Genre"
+msgstr "类型"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_temp
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_template
+msgid "Get Quote Now"
+msgstr "Get Quote Now"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_golden_finger_thickness
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_golden_finger_thickness
+msgid "Golden finger golden thickness"
+msgstr "金手指金厚"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_click_select_category_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_click_select_detailed_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_partner_source_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_all_service_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_session_association_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "Group By"
+msgstr "分组"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_ir_http
+msgid "HTTP routing"
+msgstr "HTTP 路由"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_advertage_products_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_big_category_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_category_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_detailed_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_cookie_duration_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_news_list_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_product_description_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_video_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_all_partner_source_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_website_tag_id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_calendar
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_calendar_view
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_view
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_session_association_calendar
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_calendar
+msgid "Ideas"
+msgstr "Ideas"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_video_form
+msgid "If it is a homepage company introduction, the title is: company;If it is a process introduction, the title is: process."
+msgstr "If it is a homepage company introduction, the title is: company;If it is a process introduction, the title is: process."
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_cpo_banner_img
+msgid "Image"
+msgstr "图像"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_cpo_image_type
+msgid "Image Type"
+msgstr "图片类型"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_inner_copper
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_inner_copper
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_inner_copper
+msgid "Inner Copper"
+msgstr "内铜"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+msgid "Intention"
+msgstr "意向"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_item_qty
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_item_qty
+msgid "Item Quantity"
+msgstr "款数"
+
+#. module: website_cpo_index
+#: selection:cpo_banner_image,cpo_image_type:0
+msgid "JPG"
+msgstr "JPG"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_advertage_products___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_big_category___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_category___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_detailed___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_cookie_duration___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_news_list___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_product_description___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_video___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_all_partner_source___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source___last_update
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_website_tag___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_advertage_products_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_big_category_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_category_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_detailed_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_cookie_duration_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_news_list_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_product_description_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_video_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_all_partner_source_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_write_uid
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_website_tag_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_advertage_products_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_big_category_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_category_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_detailed_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_cookie_duration_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_news_list_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_product_description_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_video_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_all_partner_source_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_write_date
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_website_tag_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_cpo_time
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_cpo_time
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_cpo_time
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_cpo_time
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_cpo_time
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_cpo_time
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_cpo_time
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_cpo_time
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_all_partner_source_cpo_time
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_cpo_time
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_cpo_time
+msgid "Last update time"
+msgstr "最后更新时间"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_layers
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_layers
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_layers
+msgid "Layers"
+msgstr "层数"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_cpo_layer_photo
+msgid "Layers Picture"
+msgstr "Layers Picture"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_lenght
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_lenght
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_lenght
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_lenght
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_lenght
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_lenght
+msgid "Length"
+msgstr "长度"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_advertage_products_cpo_link
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_video_cpo_video_link
+msgid "Link"
+msgstr "链接"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register_cpo_boolean
+msgid "Log in / Register"
+msgstr "注册 / 登录"
+
+#. module: website_cpo_index
+#: selection:cpo_login_and_register,cpo_type:0
+msgid "Login and Register"
+msgstr "注册和登录"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_login_and_register_actions
+msgid "Login and Register Actions"
+msgstr "Login and Register Actions"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_login_and_register_menu
+msgid "Login and Register Menu"
+msgstr "设置是否让用户登录使用报价"
+
+#. module: website_cpo_index
+#: selection:cpo_website_source_setting,state:0
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_setting_form
+msgid "Logout"
+msgstr "注销"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_cpo_main_color
+msgid "Main color tone"
+msgstr "主色调"
+
+#. module: website_cpo_index
+#: selection:cpo_cookie_duration,state:0
+#: selection:cpo_login_and_register,state:0
+#: selection:cpo_package_price,state:0
+#: selection:cpo_pcba_condition,state:0
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_cookie_duration_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_login_and_register_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "Maintenance update"
+msgstr "更新维护"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_material
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_material
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_material
+msgid "Material"
+msgstr "材料"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_partner_source_search
+msgid "Monthly visit source"
+msgstr "每月访问来源"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_category_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_detailed_name
+msgid "Name"
+msgstr "名称"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_news_list_cpo_new_content
+msgid "New Content"
+msgstr "新闻内容"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_new_list_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_product_description_form
+msgid "News Record"
+msgstr "预览"
+
+#. module: website_cpo_index
+#: selection:cpo_pcb_record,cpo_intention:0
+#: selection:cpo_pcba_record,cpo_intention:0
+msgid "No"
+msgstr "No"
+
+#. module: website_cpo_index
+#: selection:cpo_pcba_condition,condition_type:0
+msgid "Normal SMT Process"
+msgstr "Normal SMT Process"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_condition_now_time
+msgid "Notification Create Time"
+msgstr "通知创建时间"
+
+#. module: website_cpo_index
+#: code:addons/website_cpo_index/models/cpo_website_source_model.py:76
+#, python-format
+msgid "Number of people"
+msgstr "人数"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_personal_center_quote_record
+msgid "Number of quotation "
+msgstr "报价数量"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_personal_center_source_number
+msgid "Number of source"
+msgstr "来源数量"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_quotation_menu
+msgid "Old PCB Quotation Record"
+msgstr "Old PCB Quotation Record"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_pcba_quotation_menu
+msgid "Old PCBA Quotation Record"
+msgstr "旧PCBA报价记录"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_service_protocol_set_menu
+msgid "Old Service Protocol Record"
+msgstr "旧协议记录"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_coupon_list
+msgid "Only the first order for PCB and PCBA is available!"
+msgstr "Only the first order for PCB and PCBA is available!"
+
+#. module: website_cpo_index
+#: selection:cpo_video,cpo_video_title:0
+msgid "Operation Introduction Video"
+msgstr "操作流程介绍视频"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_cpo_operator
+msgid "Operator"
+msgstr "运算符"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_order_type
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_order_type
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_order_type
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_order_type
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_order_type
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_order_type
+msgid "Order Type"
+msgstr "报价类型"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_order_type
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+msgid "Order type"
+msgstr "Order type"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_outer_copper
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_outer_copper
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_outer_copper
+msgid "Outer Copper"
+msgstr "外铜"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_graph
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_graph
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_graph
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_session_association_graph
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_graph
+msgid "PCB"
+msgstr "PCB"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_pcb_and_pcba_record_actions
+msgid "PCB And PCBA Quotation Actions"
+msgstr "PCB和PCBA报价"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_pcb_and_pcba_record_menu
+msgid "PCB And PCBA Quotation Record"
+msgstr "PCB和PCBA所有报价记录"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_all_pcb_form
+msgid "PCB Data"
+msgstr "PCB 数据"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_cpo_intention
+msgid "PCB Intention"
+msgstr "PCB意向"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_pcb_record_all_pcb_actions
+msgid "PCB Quotation Actions"
+msgstr "PCB报价记录"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_pcb_record_set_menu
+msgid "PCB Quotation Record"
+msgstr "PCB报价记录"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_all_pcba_form
+msgid "PCBA Data"
+msgstr "PCBA 数据"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_cpo_intention
+msgid "PCBA Intention"
+msgstr "PCBA意向"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_pcba_condition_menu
+msgid "PCBA Package Price Condition"
+msgstr "PCBA下单页面条件设置"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_pcb_record_all_pcba_actions
+msgid "PCBA Quotation Actions"
+msgstr "PCBA报价"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_pcba_record_set_menu
+msgid "PCBA Quotation Record"
+msgstr "PCBA报价记录"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_pcba_quotation_actions
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_service_protocol_set_actions
+msgid "PCBA Quotation Record Actions"
+msgstr "PCBA报价记录"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_click_select_category_menu
+msgid "PClick to select"
+msgstr "前端页面功能选择"
+
+#. module: website_cpo_index
+#: selection:cpo_banner_image,cpo_image_type:0
+msgid "PNG"
+msgstr "PNG"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_package_price_menu
+msgid "Package Price"
+msgstr "打包价设置"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_package_price_action_window
+msgid "Package Price Action"
+msgstr "Package Price Action"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_link
+msgid "Package Price Link"
+msgstr "报价路径（链接）"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_pages_condition_setting_menu
+msgid "Pages Condition Setting"
+msgstr "页面条件设置"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_pcba_condition_action_window
+msgid "Pages Condition Setting Action"
+msgstr "Pages Condition Setting Action"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_panel_size
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_panel_size
+msgid "Panel size"
+msgstr "Panel/pcs"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_user_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_user_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_user_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_user_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_user_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_customer_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_partner_name
+msgid "Panter Name"
+msgstr "关联用户"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_partner_source_actions
+msgid "Partner Source Actions"
+msgstr "客户来源"
+
+#. module: website_cpo_index
+#: selection:cpo_quotation_record_base,cpo_code:0
+msgid "Pending review"
+msgstr "待审核"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_condition_photo
+msgid "Picture"
+msgstr "图片"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_country_list_temp
+msgid "Please select a region or country !"
+msgstr "Please select a region or country !"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "Preview 1"
+msgstr "Preview 1"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "Preview 2"
+msgstr "Preview 2"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_cpo_process
+msgid "Process"
+msgstr "Process"
+
+#. module: website_cpo_index
+#: selection:cpo_quotation_record_base,deal_with:0
+#: selection:website_cpo_index.cpo_website_source,deal_with:0
+msgid "Processed"
+msgstr "Processed"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_product_description_description
+msgid "Product Description"
+msgstr "Product Description"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_advertage_products_cpo_product_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_cpo_product_name
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_search
+msgid "Product Name"
+msgstr "产品名称"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_advertage_products_cpo_ad_poto
+msgid "Product Picture"
+msgstr "图片"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_product_description_title
+msgid "Product Title"
+msgstr "Product Title"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_partner_source_menu
+msgid "Promotion channels"
+msgstr "推广渠道"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_customer_related
+msgid "Promotion source"
+msgstr "推广来源"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.website_tag_menu_list
+msgid "Promotion website tag"
+msgstr "推广网站标签"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_quantity
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_quantity
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_quantity
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_quantity
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_quantity
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_quantity
+msgid "Quantity"
+msgstr "数量"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_personal_center_quote_related
+msgid "Quotation Association"
+msgstr "报价关联"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_condition_link
+msgid "Quotation Link"
+msgstr "报价链接"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_get_package_price_list
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+msgid "Quotation Now"
+msgstr "Quotation Now"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.personal_center_form_inhert
+msgid "Quotation Number"
+msgstr "报价单号码"
+
+#. module: website_cpo_index
+#: code:addons/website_cpo_index/models/cpo_website_source_model.py:419
+#, python-format
+msgid "Quotation number"
+msgstr "报价数量"
+
+#. module: website_cpo_index
+#: model:res.groups,name:website_cpo_index.cpo_quotation_record_super_aperation_authority
+msgid "Quotation record super permission"
+msgstr "报价记录超级权限"
+
+#. module: website_cpo_index
+#: model:res.groups,name:website_cpo_index.cpo_quotation_record_aperation_authority
+msgid "Quotation record viewing permission"
+msgstr "报价记录查看权限"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_temp
+msgid "Read more"
+msgstr "Read more"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_coupon_center
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_index_coupon
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_index_coupon03
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_index_coupon1111
+msgid "Receive"
+msgstr "Receive"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_coupon_list
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_index_coupon
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_index_coupon1111
+msgid "Received"
+msgstr "Received"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_set_time
+msgid "Record cycle setting"
+msgstr "记录保留周期"
+
+#. module: website_cpo_index
+#: model:ir.actions.server,name:website_cpo_index.ir_cron_cpo_annex_file_action_ir_actions_server
+#: model:ir.cron,cron_name:website_cpo_index.ir_cron_cpo_annex_file_action
+#: model:ir.cron,name:website_cpo_index.ir_cron_cpo_annex_file_action
+msgid "Regularly Clean Attachments"
+msgstr "定时清除附件"
+
+#. module: website_cpo_index
+#: model:ir.actions.server,name:website_cpo_index.cpo_website_source_setting_action_ir_actions_server
+#: model:ir.cron,cron_name:website_cpo_index.cpo_website_source_setting_action
+#: model:ir.cron,name:website_cpo_index.cpo_website_source_setting_action
+msgid "Regularly Clean Record"
+msgstr "网站访问记录清除周期"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_detailed_cpo_detailed_rel
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_detailed_cpo_detailed_rel_many
+msgid "Rel"
+msgstr "Rel"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_click_select_category_cpo_relationship
+msgid "Relationship"
+msgstr "Relationship"
+
+#. module: website_cpo_index
+#: selection:cpo_cookie_duration,state:0
+#: selection:cpo_login_and_register,state:0
+#: selection:cpo_package_price,state:0
+#: selection:cpo_pcba_condition,state:0
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_cookie_duration_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_login_and_register_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "Release"
+msgstr "发布"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_smt_side
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_smt_side
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_smt_side
+msgid "SMT Side"
+msgstr "SMT单双面"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_smt_qty
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_smt_qty
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_smt_qty
+msgid "SMT parts quantity"
+msgstr "SMT数量"
+
+#. module: website_cpo_index
+#: selection:cpo_banner_image,cpo_image_type:0
+msgid "SVG"
+msgstr "SVG"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_graph
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_graph
+msgid "Sales Orders"
+msgstr "销售订单"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_click_select_category_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_click_select_detailed_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_partner_source_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_all_service_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_session_association_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "Search"
+msgstr "搜索"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_all_pcba_form
+msgid "Search PCB Intention"
+msgstr "查找PCB意向订单"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_all_pcb_form
+msgid "Search PCBA Intention"
+msgstr "查找PCBA意向订单"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_big_category_menu_list
+msgid "Select Big Category"
+msgstr "选择大类"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_click_select_category_menu_list
+msgid "Select Category"
+msgstr "选择分类"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_big_category_action
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_click_select_category_action
+msgid "Select Category Action"
+msgstr "Select Category Action"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_click_select_detailed_action
+msgid "Select Detailed Action"
+msgstr "Select Detailed Action"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_click_select_detailed_menu_list
+msgid "Select Detailed Date"
+msgstr "详细分类"
+
+#. module: website_cpo_index
+#: selection:cpo_quotation_record_base,cpo_code:0
+msgid "Select address"
+msgstr "选择收货地址"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_news_list_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_product_description_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_video_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_all_partner_source_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_sequence
+msgid "Sequence"
+msgstr "序号"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_pcb_record_all_service_actions
+msgid "Service Protocol Actions"
+msgstr "用户点击同意协议"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_quotation_record_service_menu
+msgid "Service Protocol Record"
+msgstr "用户点击同意协议记录"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_user_info
+msgid "Session"
+msgstr "会话"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_session_association_menu
+msgid "Session Association"
+msgstr "Session关联用户"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_session_association_actions
+msgid "Session Association Actions"
+msgstr "Session关联用户"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_session_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_session_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_session_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_session_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_session_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_session_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_session_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_session_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_all_partner_source_session_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_session_id
+msgid "Session ID"
+msgstr "会话ID"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_session_src
+msgid "Session Src"
+msgstr "Session Src"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_partner_info
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_partner_info
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_partner_info
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_partner_info
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_partner_info
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_all_service_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+msgid "Session coding"
+msgstr "Session编码"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_setting_form
+msgid "Set time"
+msgstr "设置时间"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_cookie_duration_actions
+msgid "Setting Cookie Actions"
+msgstr "设置Cookie"
+
+#. module: website_cpo_index
+#: selection:cpo_quotation_record_base,cpo_code:0
+msgid "Shop Cart"
+msgstr "加入购物车"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_silkscreen_color
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_silkscreen_color
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_silkscreen_color
+msgid "Silkscreen Color"
+msgstr "文字颜色"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_all_partner_source_site_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_cpo_name
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_partner_source_search
+msgid "Site Name"
+msgstr "网站名称"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_website_tag_site_address
+msgid "Site address"
+msgstr "网站地址"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_product_description_form
+msgid "Size: Width &lt;= 742px;Heihht &lt;= 344px;"
+msgstr "Size: Width &lt;= 742px;Heihht &lt;= 344px;"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_mask_color
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_mask_color
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_mask_color
+msgid "Solder Mask Color"
+msgstr "阻焊颜色"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_coupon_center
+msgid "Sorry, no coupons are available!"
+msgstr "Sorry, no coupons are available!"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_personal_center_source_related
+msgid "Source Association"
+msgstr "来源关联"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_source_id
+msgid "Source ID"
+msgstr "Source ID"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_partner_source_form
+msgid "Source all"
+msgstr "全部来源"
+
+#. module: website_cpo_index
+#: code:addons/website_cpo_index/models/cpo_website_source_model.py:450
+#, python-format
+msgid "Source number"
+msgstr "来源数量"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_advertage_products_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_sequence
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_sequence
+msgid "Squence"
+msgstr "Squence"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_cookie_duration_state
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_login_and_register_state
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_package_price_state
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_cpo_code
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_cpo_code
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_condition_state
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_cpo_code
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_cpo_code
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_cpo_code
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_website_source_setting_state
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_all_service_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+msgid "Status"
+msgstr "状态"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_material_error
+msgid "Stay tuned !"
+msgstr "Stay tuned !"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_advertage_products_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_package_price_form
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_condition_form
+msgid "Strive to improve..."
+msgstr "Strive to improve..."
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_surface
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_surface
+msgid "Surface Treatment"
+msgstr "表面处理"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_website_tag_tag_ids
+msgid "Tag"
+msgstr "Tag"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_website_tag_name
+msgid "Tag name"
+msgstr "标签名"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_partner_ids
+msgid "Tags"
+msgstr "标签"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_partner_source_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_session_association_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "This week"
+msgstr "本周"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_banner_image_cpo_banner_title
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_news_list_cpo_new_title
+msgid "Title"
+msgstr "称谓"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_partner_source_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_session_association_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "To day"
+msgstr "今天"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_total
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_total
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_total
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_total
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_total
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_total
+msgid "Total"
+msgstr "总计"
+
+#. module: website_cpo_index
+#: selection:cpo_quotation_record_base,cpo_code:0
+msgid "Trial calculation"
+msgstr "试算"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_big_category_name
+msgid "Type"
+msgstr "类型"
+
+#. module: website_cpo_index
+#: selection:cpo_quotation_record_base,deal_with:0
+#: selection:website_cpo_index.cpo_website_source,deal_with:0
+msgid "Unprocessed"
+msgstr "Unprocessed"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_cookie_duration_user_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_user_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_user_id
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_user_id
+msgid "User ID"
+msgstr "用户ID"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_user_ip
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_user_ip
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_user_ip
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_user_ip
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_user_ip
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_user_ip
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_user_ip
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_cpo_ip
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "User IP"
+msgstr "用户IP地址"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_annex_file_user_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_cookie_duration_user_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_user_info
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_user_info
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_user_info
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_user_info
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_user_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_user_info
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_session_association_user_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_user_name
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_and_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_all_service_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcb_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_pcba_record_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_session_association_search
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "User Name"
+msgstr "用户名"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_user_number
+msgid "User Number"
+msgstr "用户数量"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_partner_source_form
+msgid "Users"
+msgstr "用户"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_video_cpo_video_title
+msgid "Video Type"
+msgstr "视频类型"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_get_material_temp
+msgid "View More"
+msgstr "View More"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_partner_source_tree
+msgid "View user"
+msgstr "查看用户"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.personal_center_form_inhert
+msgid "Visits"
+msgstr "访问"
+
+#. module: website_cpo_index
+#: model:res.groups,name:website_cpo_index.cpo_operation_authority
+msgid "Web Page Operation authority"
+msgstr "Web Page Operation authority"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_all_partner_source_cpo_name
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_name
+msgid "Website Address"
+msgstr "网站地址"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_cookie_duration_menu
+msgid "Website Service Protocol Setting"
+msgstr "网站协议设置"
+
+#. module: website_cpo_index
+#: selection:cpo_website_source_setting,cpo_code:0
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_website_source_cpo_source
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_website_source_search
+msgid "Website Source"
+msgstr "网站来源"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_website_source_actions
+msgid "Website Source Actions"
+msgstr "网站来源记录"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_website_source_menu
+msgid "Website Source Record"
+msgstr "网站访问来源记录"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_website_source_setting_actions
+msgid "Website Source Setting Actions"
+msgstr "网站访问来源设置"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_website_cpo_index_cpo_partner_source_cpo_type
+msgid "Website Type"
+msgstr "网站类型"
+
+#. module: website_cpo_index
+#: model:ir.ui.menu,name:website_cpo_index.cpo_website_source_setting_menu
+msgid "Website access source settings"
+msgstr "网站访问来源设置"
+
+#. module: website_cpo_index
+#: model:ir.actions.act_window,name:website_cpo_index.cpo_website_tag_action
+msgid "Website tag action"
+msgstr "Website tag action"
+
+#. module: website_cpo_index
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_and_pcba_record_width
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcb_record_width
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_pcba_record_width
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_base_width
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_quotation_record_width
+#: model:ir.model.fields,field_description:website_cpo_index.field_cpo_service_record_width
+msgid "Width"
+msgstr "宽度"
+
+#. module: website_cpo_index
+#: selection:cpo_pcb_record,cpo_intention:0
+#: selection:cpo_pcba_record,cpo_intention:0
+msgid "Yes"
+msgstr "Yes"
+
+#. module: website_cpo_index
+#: model:ir.ui.view,arch_db:website_cpo_index.cpo_coupon_list
+msgid "available"
+msgstr "available"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_advertage_products
+msgid "cpo_advertage_products"
+msgstr "cpo_advertage_products"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_annex_file
+msgid "cpo_annex_file"
+msgstr "cpo_annex_file"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_banner_image
+msgid "cpo_banner_image"
+msgstr "cpo_banner_image"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_big_category
+msgid "cpo_big_category"
+msgstr "cpo_big_category"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_click_select_category
+msgid "cpo_click_select_category"
+msgstr "cpo_click_select_category"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_click_select_detailed
+msgid "cpo_click_select_detailed"
+msgstr "cpo_click_select_detailed"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_cookie_duration
+msgid "cpo_cookie_duration"
+msgstr "cpo_cookie_duration"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_login_and_register
+msgid "cpo_login_and_register"
+msgstr "cpo_login_and_register"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_news_list
+msgid "cpo_news_list"
+msgstr "cpo_news_list"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_package_price
+msgid "cpo_package_price"
+msgstr "cpo_package_price"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_pcb_and_pcba_record
+msgid "cpo_pcb_and_pcba_record"
+msgstr "cpo_pcb_and_pcba_record"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_pcb_record
+msgid "cpo_pcb_record"
+msgstr "PCB报价记录"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_pcba_condition
+msgid "cpo_pcba_condition"
+msgstr "cpo_pcba_condition"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_pcba_record
+msgid "cpo_pcba_record"
+msgstr "PCBA报价记录"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_product_description
+msgid "cpo_product_description"
+msgstr "cpo_product_description"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_quotation_record
+msgid "cpo_quotation_record"
+msgstr "报价记录"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_quotation_record_base
+msgid "cpo_quotation_record_base"
+msgstr "cpo_quotation_record_base"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_service_record
+msgid "cpo_service_record"
+msgstr "网站服务协议记录"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_session_association
+msgid "cpo_session_association"
+msgstr "Session关联"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_video
+msgid "cpo_video"
+msgstr "cpo_video"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_cpo_website_source_setting
+msgid "cpo_website_source_setting"
+msgstr "客户来源设置"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_website_cpo_index_all_partner_source
+msgid "website_cpo_index.all_partner_source"
+msgstr "website_cpo_index.all_partner_source"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_website_cpo_index_cpo_partner_source
+msgid "website_cpo_index.cpo_partner_source"
+msgstr "客户来源"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_website_cpo_index_cpo_website_source
+msgid "website_cpo_index.cpo_website_source"
+msgstr "网站来源"
+
+#. module: website_cpo_index
+#: model:ir.model,name:website_cpo_index.model_website_cpo_index_website_tag
+msgid "website_cpo_index.website_tag"
+msgstr "website_cpo_index.website_tag"
+

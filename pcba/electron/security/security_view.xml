@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record model="res.groups" id="crawler_operator">
+            <field name="name" >Crawler Operator</field>
+        </record>
+
+        <record model="res.groups" id="update_product_level_price">
+            <field name="name" >Update Product Level Price</field>
+        </record>
+    </data>
+</odoo>

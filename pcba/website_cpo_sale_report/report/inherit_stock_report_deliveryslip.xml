@@ -1,0 +1,40 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<odoo>-->
+    <!--<data>-->
+        <!--<template id="cpo_inherit_report_deliveryslip" inherit_id="stock.report_delivery_document"> -->
+            <!--<xpath expr="//table[@t-if='o.pack_operation_ids']" position="after">-->
+                <!--<h2>Detailed Price List </h2>-->
+                <!--<table class="table table-condensed">-->
+                    <!--<thead>-->
+                        <!--<tr>-->
+                            <!--<th><strong>Bare board($)</strong></th>-->
+                            <!--<th><strong>Components</strong></th>-->
+                            <!--<th><strong>Assembly</strong></th>-->
+                            <!--<th><strong>Stencil</strong></th>-->
+                            <!--<th><strong>Management</strong></th>-->
+                            <!--<th><strong>Shipping</strong></th>-->
+                            <!--<th><strong>Total Amount</strong></th>-->
+                            <!--<th><strong>Lead Time(days)</strong></th>-->
+                        <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                        <!--<tr>-->
+                            <!--<td>200</td>-->
+                            <!--<td>60</td>-->
+                            <!--<td>50</td>-->
+                            <!--<td>500</td>-->
+                            <!--<td>******</td>-->
+                            <!--<td>DHL</td>-->
+                            <!--<td>14000</td>-->
+                            <!--<td>30</td>-->
+                        <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>   -->
+            <!--</xpath> -->
+        <!--</template>-->
+    <!--</data>-->
+<!--</odoo>        -->
+              
+            
+  
+

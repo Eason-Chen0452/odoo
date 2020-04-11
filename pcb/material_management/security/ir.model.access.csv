@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_material_management_manager,material.management.manager,model_material_management,management_manager_group,1,1,1,1
+access_material_management_user,material.management.user,model_material_management,management_user_group,1,0,0,0
+
+access_material_gift_manager,material.gift.manager,model_material_gift,gift_manager_group,1,1,1,1
+access_material_gift_user,material.gift.user,model_material_gift,gift_user_group,1,0,0,0
+
+access_material_gift_line_manager,material.gift.line.manager,model_material_gift_line,gift_manager_group,1,1,1,1
+access_material_gift_line_user,material.gift.line.user,model_material_gift_line,gift_user_group,1,0,0,0

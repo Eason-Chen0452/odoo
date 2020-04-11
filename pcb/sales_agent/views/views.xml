@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--国外代理tree-->
+        <record model="ir.ui.view" id="sales_agent_tree">
+            <field name="name">Sales Agent Tree</field>
+            <field name="model">sales.agent</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="user_id" invisible="0"/>
+                    <field name="company_id"/>
+                    <field name="login" string="Login Account"/>
+                    <field name="name" string="User Name"/>
+                </tree>
+            </field>
+        </record>
+        <!--国外代理form-->
+        <record model="ir.ui.view" id="sales_agent_form">
+            <field name="name">Sales Agent Form</field>
+            <field name="model">sales.agent</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="user_id" required="0" invisible="1"/>
+                        <field name="company_id" invisible="1"/>
+                        <group col="4" colspan="4">
+                            <field name="login" string="Login Account"/>
+                            <field name="name" string="User Name"/>
+                        </group>
+                        <group>
+                            <field name="client_ids" widget="many2many_tags" options="{'no_open':True, 'no_create_edit':True}" force_save="1"/>
+                            <field name="country_ids" widget="many2many_tags" options="{'no_open':True, 'no_create_edit':True}" force_save="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--国外代理Windows-->
+        <record model="ir.actions.act_window" id="sales_agent_window">
+            <field name="name">Regional Sales Agent</field>
+            <field name="res_model">sales.agent</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--销售一级栏 - 代理可看 销售栏-->
+        <menuitem name="Sales" id="sales_team.menu_base_partner" groups="sales_agent.group_sales_agent" sequence="6"/>
+        <!--代理 营销战略分析-->
+        <menuitem name="Marketing Analysis Strategy" id="personal_center.personal_root" groups="personal_center.center_manager_group,sales_team.group_sale_salesman" sequence="7"/>
+        <!--隐藏电子元器件库-->
+        <menuitem name="Electronic" id="electron.electronic_menu_root" groups="electron.crawler_operator,electron.update_product_level_price" sequence="8"/>
+        <!--隐藏前端功能设置-->
+        <menuitem name="Front-end website settings" id="website_cpo_index.cpo_web_root_menu" groups="website_cpo_index.cpo_operation_authority" sequence="9"/>
+        <!--一级栏 产品资料设置-->
+        <menuitem name="Product Data Setting" id="cam.menu_cam_root" groups="cam.group_cam_engineer,cam.group_cam_assistant,cam.group_cam_manager,cam.group_cam_admin" sequence="10"/>
+
+        <!--销售二级栏 - 代理可看 客户-->
+        <menuitem name="Customer Personal Center" id="sales_team.menu_partner_form" parent="sales_team.menu_base_partner"
+                  action="personal_center.personal_center_window" sequence="2" groups="sales_agent.group_sales_agent"/>
+        <!--销售二级栏 - 代理可看-->
+        <menuitem name="Sales" id="sales_team.menu_sales" parent="sales_team.menu_base_partner" sequence="3"/>
+        <!--<menuitem name="Customers" id="sales_team.menu_partner_form" parent="sales_team.menu_sales" action="base.action_partner_form"-->
+                  <!--sequence="3" groups="sales_agent.group_super_administrator"/>-->
+        <!--销售三级栏 中的RFQ准客户栏 超级管理员可以看见 其他的全部不可见 - 代理不可看-->
+        <menuitem name="Sale Quotation Lead" id="sale_pcb_rfq.menu_sale_quotations_lead" action="sale_pcb_rfq.action_quotations_pcb_lead"
+                  parent="sales_team.menu_sales" sequence="3" groups="sales_agent.group_super_administrator"/>
+        <!--销售三级栏 中的RFQ PCB栏 超级管理员可以看见 其他的全部不可见 - 代理不可看-->
+        <menuitem name="PCB Quotation" id="sale_pcb_rfq.menu_cpo_it_sale_quotations_pcb" action="sale_pcb_rfq.action_quotations_pcb_cpo"
+                  parent="sales_team.menu_sales" sequence="7" groups="sales_agent.group_super_administrator"/>
+
+        <!--销售三级栏 - 代理 订单处理 -->
+        <menuitem name="Quotations" id="sale.menu_sale_quotations" action="sale_pcb_rfq.action_quotations" parent="sales_team.menu_sales"
+                  sequence="11" groups="sales_agent.group_sales_agent"/>
+        <!--销售三级栏 - 代理 订单完成-->
+        <menuitem name="Completed Order" id="sale.menu_sale_order" action="sale_pcb_rfq.action_orders" parent="sales_team.menu_sales"
+                  sequence="12" groups="sales_agent.group_sales_agent"/>
+        <!--销售三级栏 - PCBA客供物料快递信息-->
+        <menuitem name="PCBA order customer supply information" id="website_cpo_sale.sale_order_express_waybill" parent="sales_team.menu_sales"
+                  action="website_cpo_sale.sale_order_express_waybill_action_window" sequence="20" groups="sales_team.group_sale_salesman"/>
+
+        <!--销售二级栏 - 区域管理的 - 代理不可见-->
+        <menuitem name="Salesperson jurisdiction" id="cpo_sale_allocations.cpo_sale_allocations_menu_1" parent="sales_team.menu_base_partner" sequence="4"/>
+        <!--销售二级栏 - 价格表查看及设置-->
+        <menuitem name="Price List View And Settings" id="cpo_offer_base.cpo_smt_price_list" parent="sales_team.menu_base_partner"
+                  groups="sales_team.group_sale_salesman" sequence="5"/>
+        <menuitem name="SMT Regular Processing Quotes" id="cpo_offer_base.cpo_smt_price_menu_1_list" parent="cpo_offer_base.cpo_smt_price_list"
+                  action="cpo_offer_base.cpo_smt_price_action_window" sequence="1"/>
+        <menuitem name="SMT Package Price" id="cpo_offer_base.package_menu_1_list" parent="cpo_offer_base.cpo_smt_price_list"
+                  action="cpo_offer_base.smt_package_price_window" sequence="2"/>
+        <menuitem name="PCB Routine Price List" id="cpo_it_pcb.menu_pcb_quotation_pricelist_action" parent="cpo_offer_base.cpo_smt_price_list"
+                  action="cpo_it_pcb.pcb_quotation_pricelist_action" sequence="3"/>
+        <menuitem name="PCB Package Price List" id="cpo_it_pcb.package_list_1" parent="cpo_offer_base.cpo_smt_price_list"
+                  action="cpo_it_pcb.PPM_window" sequence="4"/>
+        <menuitem name="Freight Price List" id="sale_pcb_rfq.freight_price_list" parent="cpo_offer_base.cpo_smt_price_list"
+                  action="sale_pcb_rfq.cpo_pcb_freight_action_window" sequence="5"/>
+        <menuitem name="Laser Steel Mesh Price" id="cpo_it_pcb.menu_laser_price" parent="cpo_offer_base.cpo_smt_price_list"
+                  action="cpo_it_pcb.laser_steel_mesh_price_window" sequence="6"/>
+        <menuitem name="Exchange Rate" id="cpo_offer_base.cpo_res_currency_rate_menu" parent="cpo_offer_base.cpo_smt_price_list"
+                  action="cpo_offer_base.cpo_res_currency_action_window" sequence="7" groups="cpo_offer_base.cpo_sale_order_rate_admin"/>
+
+        <!--&lt;!&ndash;销售二级栏 - 网页报价记录 - 超级管理员可见&ndash;&gt;-->
+        <!--<menuitem name="Quotation Record" id="website_cpo_index.cpo_quotation_top_all_menu" parent="sales_team.menu_base_partner" sequence="11"/>-->
+        <!--销售二级栏 - 开票栏 - 代理不可见-->
+        <menuitem name="Invoicing" id="sale.menu_sale_invoicing" parent="sales_team.menu_base_partner" sequence="12" groups="sales_team.group_sale_salesman"/>
+        <!--销售二级栏 - 产品栏 - 代理不可见-->
+        <menuitem name="Catalog" id="sale.product_menu_catalog" parent="sales_team.menu_base_partner" sequence="13" groups="sales_team.group_sale_salesman"/>
+
+        <menuitem name="Regional Sales Agent Management" id="sales_agent_menu_root"/>
+        <menuitem name="Regional Sales Agent" id="sales_agent_menu_1" parent="sales_agent_menu_root" action="sales_agent_window"/>
+
+    </data>
+</odoo>

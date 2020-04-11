@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="inherit_rfq.website_payment_pay" name="Offer Information" inherit_id="website_payment.pay">
+        <xpath expr="//div[@class='col-sm-9 col-sm-offset-3 text-muted mt16']" position="after">
+            <b class="col-sm-9 col-sm-offset-3 text-muted mt16" t-if="discount">
+                This order is discounted
+                <span class="red" t-esc="discount" t-options="{'widget': 'monetary', 'display_currency': currency}"/> !!
+            </b>
+        </xpath>
+    </template>
+</odoo>

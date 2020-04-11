@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--物料管理 Tree-->
+        <record id="material_management_tree" model="ir.ui.view">
+            <field name="name">Material Management Setting Tree</field>
+            <field name="model">material.management</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="gift_bool"/>
+                    <field name="sale_bool"/>
+                    <field name="cycle" force_save="1"/>
+                    <field name="price"/>
+                    <field name="unit"/>
+                    <field name="quantity"/>
+                </tree>
+            </field>
+        </record>
+        <!--物料管理 Form-->
+        <record id="material_management_form" model="ir.ui.view">
+            <field name="name">Material Management Setting Form</field>
+            <field name="model">material.management</field>
+            <field name="arch" type="xml">
+                <form string="Material Management Setting">
+                    <sheet>
+                        <group string="Material Name">
+                            <field name="name" nolabel="1" style="font-size:30px; font-weight:bold;"/>
+                        </group>
+                        <!--暂时隐藏-->
+                        <group string="Which Material Is In Stock" invisible="1">
+                            <field name="product_id"/>
+                        </group>
+                        <group colspan='4' col='4' string="Set A Gift Or A Single Sale">
+                            <field name="gift_bool"/>
+                            <label for="sale_bool"/>
+                            <div>
+                                <field name="sale_bool"/>
+                                <span attrs="{'invisible':[('sale_bool', '=', False)]}">
+                                    Price
+                                    <field name="price" attrs="{'required':[('sale_bool', '=', True)]}" class="oe_inline"/>
+                                </span>
+                            </div>
+                            <field name="unit"/>
+                            <field name="quantity"/>
+                        </group>
+                        <group colspan="4" col="4" string="Material Life Cycle">
+                            <label for="start" string="Start Time"/>
+                            <div>
+                                <field name="start"/>
+                            </div>
+                            <label for="end" string="End Time"/>
+                            <div>
+                                <field name="end"/>
+                            </div>
+                            <field name="cycle" invisible="1"/>
+                        </group>
+                        <group colspan="4" col="4" string="Material Description And Other Statement">
+                            <field name="package"/>
+                            <field name="manufacturer"/>
+                        </group>
+                        <field name="description" widget='text' force_save="1" placeholder="Please describe the material in detail!"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--物料管理 Windows-->
+        <record id="material_management_window" model="ir.actions.act_window">
+            <field name="name">Material Management Setting</field>
+            <field name="res_model">material.management</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                   There is currently no material, click Create to add a material...
+                </p>
+            </field>
+        </record>
+        <!--物料赠送 Tree-->
+        <record id="material_gift_tree" model="ir.ui.view">
+            <field name="name">Material Gift Tree</field>
+            <field name="model">material.gift</field>
+            <field name="arch" type="xml">
+                <tree decoration-muted="state=='Gift Invalid'" decoration-bf="state=='Draft'" decoration-danger="state=='Gift Effective'">
+                    <field name="sequence" widget="handle"/>
+                    <field name="material_id"/>
+                    <field name="name" force_save="1"/>
+                    <field name="gift_cycle" force_save="1"/>
+                    <field name="use_cycle" force_save="1"/>
+                    <field name="show_bool"/>
+                    <field name="send"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <!--物料赠送 Form-->
+        <record id="material_gift_form" model="ir.ui.view">
+            <field name="name">Material Gift Form</field>
+            <field name="model">material.gift</field>
+            <field name="arch" type="xml">
+                <form string="Material Gift">
+                    <header>
+                        <button name="button_effective" string="Gift Effective" type="object" states="Draft" class="oe_highlight"/>
+                        <button name="button_create" string="Create Again" type="object" states="Gift Effective,Gift Invalid" class="oe_highlight" confirm="Will create the current record again"/>
+                        <field name="state" widget="statusbar" statusbar_visible="Draft,Gift Effective,Gift Invalid"/>
+                    </header>
+                    <sheet>
+                        <field name="name" nolabel="1" style="font-size:25px; font-weight:bold;" force_save="1"/>
+                        <group colspan="4" col="4" string="Material Gift Setting">
+                            <field name="material_id"/>
+                            <field name="send"/>
+                            <field name="show_bool"/>
+                            <field name="number"/>
+                        </group>
+                        <group col="4" colspan="4" string="Material Gift Time Period">
+                            <label for="gift_start" string="Start Time"/>
+                            <div>
+                                <field name="gift_start"/>
+                            </div>
+                            <label for="gift_end" string="End Time"/>
+                            <div>
+                                <field name="gift_end"/>
+                            </div>
+                            <field name="gift_cycle" invisible="1"/>
+                        </group>
+                        <group col="4" colspan="4" string="Material Use Time Period">
+                            <label for="use_start" string="Start Time"/>
+                            <div>
+                                <field name="use_start"/>
+                            </div>
+                            <label for="use_end" string="End Time"/>
+                            <div>
+                                <field name="use_end"/>
+                            </div>
+                            <field name="use_cycle" invisible="1"/>
+                        </group>
+                        <group col="4" colspan="4" string="Material Description And Other Statement">
+                            <field name="package"/>
+                            <field name="manufacturer"/>
+                        </group>
+                        <field name="description"/>
+                        <notebook>
+                            <page string="Material Gift Detail">
+                                <field name="gift_line_ids" mode="tree, form">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="center_id"/>
+                                        <field name="send"/>
+                                        <field name="gift_cycle"/>
+                                        <field name="use_cycle"/>
+                                    </tree>
+                                    <form string="Material Gift Detail">
+                                        <group colspan="4" col="4" string="General Information">
+                                            <field name="name"/>
+                                            <field name="gift_id"/>
+                                            <field name="center_id"/>
+                                            <field name="send"/>
+                                        </group>
+                                        <group colspan="4" col="4" string="Gift Effective Time">
+                                            <field name="gift_cycle"/>
+                                            <field name="state"/>
+                                        </group>
+                                        <group colspan="4" col="4" string="Use Effective Time">
+                                            <field name="use_cycle"/>
+                                        </group>
+                                        <group colspan="4" col="4" string="Material Description And Other Statement">
+                                            <field name="package"/>
+                                            <field name="manufacturer"/>
+                                        </group>
+                                        <field name="description"/>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--物料赠送 Windows-->
+        <record id="material_gift_window" model="ir.actions.act_window">
+            <field name="name">Material Gift</field>
+            <field name="res_model">material.gift</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                   There are currently no materials available, click Create to add a gift material...
+                </p>
+            </field>
+        </record>
+        <!--第一级-->
+        <menuitem name="Present Customer Materials" id="material_menu_root"/>
+        <!--第二级-->
+        <menuitem name="Material Management Setting" id="material_menu_1" parent="material_menu_root" action="material_management_window" sequence="1"/>
+        <menuitem name="Material Gift" id="material_menu_2" parent="material_menu_root"/>
+        <!--第三级-->
+        <menuitem name="Material Gift" id="material_1_list" parent="material_menu_2" action="material_gift_window" sequence="2"/>
+    </data>
+</odoo>

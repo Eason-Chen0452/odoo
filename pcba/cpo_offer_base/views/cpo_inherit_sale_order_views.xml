@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--<record id="cpo_sale_order_tree_inhert" model="ir.ui.view">-->
+            <!--<field name="name">cpo_sale_order</field>-->
+            <!--<field name="model">sale.order</field>-->
+            <!--<field name="inherit_id" ref="sale.view_order_tree"/>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<xpath expr="//field[@name='amount_total']" position="after">-->
+                    <!--<field name="bom_state" invisible="0"/>-->
+                <!--</xpath>-->
+                <!--<xpath expr="//tree" position="attributes">-->
+                    <!--<attribute name="decoration-info">bom_state=='complete'</attribute>-->
+                <!--</xpath>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <record id="cpo_sale_quotation_tree_inhert" model="ir.ui.view">
+            <field name="name">cpo_sale_order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_total']" position="after">
+                    <field name="bom_state" invisible="0"/>
+                </xpath>
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="decoration-info">bom_state=='check'</attribute>
+                    <attribute name="decoration-success">bom_state=='complete'</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="cpo_sale_order_form_inhert" model="ir.ui.view"> 
+            <field name="name">cpo_sale_order</field> 
+            <field name="model">sale.order</field> 
+            <field name="inherit_id" ref="sale.view_order_form"/> 
+            <field name="arch" type="xml"> 
+                <xpath expr="//field[@name='state']" position="attributes"> 
+                    <attribute name="statusbar_visible">draft,wait_confirm,sent,sale</attribute>
+                </xpath> 
+                <xpath expr="//field[@name='order_line']" position="attributes"> 
+                    <attribute name="attrs">{'readonly':[('state', 'not in', ('draft', 'wait_confirm'))]}</attribute>
+                </xpath> 
+                <xpath expr="//field[@name='partner_id']" position="attributes"> 
+                    <attribute name="attrs">{'readonly':[('state', 'not in', ('draft', 'wait_confirm'))]}</attribute>
+                </xpath> 
+                <xpath expr="//field[@name='partner_invoice_id']" position="attributes"> 
+                    <attribute name="attrs">{'readonly':[('state', 'not in', ('draft', 'wait_confirm'))]}</attribute>
+                </xpath> 
+                <xpath expr="//field[@name='partner_shipping_id']" position="attributes"> 
+                    <attribute name="attrs">{'readonly':[('state', 'not in', ('draft', 'wait_confirm'))]}</attribute>
+                </xpath> 
+                <xpath expr="//field[@name='validity_date']" position="attributes"> 
+                    <attribute name="attrs">{'readonly':[('state', 'not in', ('draft', 'wait_confirm'))]}</attribute>
+                </xpath> 
+                
+                <!--order line-->
+                <xpath expr="//field[@name='order_line']/form/group/group/field[@name='product_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <!--<group>-->
+                        <!--<field name="product_id"-->
+                            <!--context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"-->
+                            <!--attrs="{'readonly': ['|', ('qty_invoiced', '&gt;', 0), ('procurement_ids', '!=', [])]}"-->
+                            <!--force_save="1"-->
+                            <!--/>-->
+                    <!--</group>-->
+                </xpath>
+
+                <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='confirmation_date']" position="after">
+                    <field name="bom_state" readonly="1"/>
+                    <field name="pcb_spec" invisible="1"/>
+                    <field name="pcb_cost" invisible="1"/>
+                    <field name="first_order_partner" attrs="{'readonly':[('state', 'not in', ('draft', 'wait_confirm', 'sent'))]}"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/group/group/label[@for='product_uom_qty']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <!--<label for="product_uom_qty" string="Ordered Quantity"/>-->
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/group/group/div[1]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <!--<group>-->
+                        <!--<field-->
+                            <!--context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'uom_qty_change':True, 'company_id': parent.company_id}"-->
+                            <!--name="product_uom_qty" class="oe_inline"/>-->
+                        <!--<field name="product_uom" groups="product.group_uom" class="oe_inline oe_no_button"-->
+                            <!--attrs="{'readonly': [('state', 'in', ('sale','done', 'cancel'))]}"/>-->
+                    <!--</group>-->
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/group/group/div[@name='discount']" position="after">
+                    <group colspan="2" col="2">
+                        <field name="product_id"
+                            context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"
+                            attrs="{'readonly': ['|', ('qty_invoiced', '&gt;', 0), ('procurement_ids', '!=', [])]}" force_save="1"/>
+
+                        <field
+                            context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'uom_qty_change':True, 'company_id': parent.company_id}"
+                            name="product_uom_qty" class="oe_inline"/>
+                        <field name="product_uom" groups="product.group_uom" class="oe_inline oe_no_button"
+                            attrs="{'readonly': [('state', 'in', ('sale','done', 'cancel'))]}"/>
+
+                        <field name="bom_rootfile" readonly="1"/>
+                        <field name="customer_file_name" readonly="1"/>
+                        <!--<field name="bom_file_name" readonly="1"/>-->
+                        <field name="bom_material_type"  readonly="1"/>
+                        <field name="smt_component_qty"  readonly="1"/>
+                        <field name="smt_plug_qty"  readonly="1"/>
+                        <!--<field name="process_price"  readonly="1"/>-->
+                        <field name="pcb_plate_fee"/>
+                        <!--<field name="smt_make_fee" readonly="1"/>-->
+
+                        <field name="bom_material_price" readonly="1"/>
+                        <field name="bom_material_fee"  readonly="1"/>
+                        <field name="bom_material_manage_fee" readonly="1"/>
+
+                        <field name="smt_assembly_fee" readonly="1"/>
+                        <field name="test_tool_fee" readonly="1"/>
+                        <field name="jig_tool_fee" readonly="1"/>
+                        <field name="stencil_fee" readonly="1"/>
+                        <field name="special_fee"/>
+
+                        <!--打包价在sale.order.line中增加的字段-->
+                        <field name="surface_id" attrs="{'invisible':[('surface_id', '=', False)]}"/>
+                        <field name="package_type" attrs="{'invisible':[('package_type', '=', False)]}"/>
+                    </group>
+                </xpath> 
+                
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="before"> 
+                    <!--<field name="process_price" invisible="1"/>-->
+                    <field name="customer_file_name" readonly="1"/>
+                    <field name="save_rate" />
+                    <field name="pcb_plate_fee" />
+                    <field name="bom_material_price" invisible="1"/>
+                    <field name="bom_material_fee" />
+                    <field name="bom_material_manage_fee" readonly="1"/>
+                    <!--<field name="smt_make_fee"/>-->
+
+                    <field name="smt_component_qty" invisible="1"/>
+                    <field name="smt_ic_qty" invisible="1"/>
+                    <field name="layer_pcb" invisible="1"/>
+                    <field name="smt_plug_qty" invisible="1"/>
+                    <field name="pcb_length" invisible="1"/>
+                    <field name="pcb_width" invisible="1"/>
+                    <field name="single_pcb_weight" invisible="1"/>
+                    <field name="pcb_total_weight" invisible="1"/>
+                    <field name="bom_sigle_weight" invisible="1"/>
+                    <field name="bom_total_weight" invisible="1"/>
+                    <field name="pcba_single_weight" invisible="1"/>
+                    <field name="pcba_total_weight" invisible="1"/>
+
+                    <field name="smt_assembly_fee"/>
+                    <!--<field name="test_tool_fee"/>-->
+                    <field name="jig_tool_fee"/>
+                    <field name="stencil_fee" readonly="1"/>
+                    <field name="special_fee"/>
+                </xpath> 
+                
+                <!--<xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="before"> -->
+                    <!--<field name="bom_file_name"/>-->
+                <!--</xpath> -->
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="attributes"> 
+                    <attribute name="invisible">1</attribute>
+                </xpath> 
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='tax_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='amount_tax']" position="after">
+                    <field name="discount_total" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                </xpath>
+
+                <!--<xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="attributes"> -->
+                    <!--<attribute name="invisible">1</attribute>-->
+                <!--</xpath> -->
+
+                <xpath expr="//field[@name='order_line']/form/group/group/field[@name='tax_id']" position="after"> 
+                    <field name="save_rate" readonly="1"/>
+                    <!--<field name="backhand_welding_qty" />-->
+                    <!--<field name="smt_ic_qty" />-->
+                    <field name="layer_pcb"  readonly="1"/>
+                    <field name="pcb_length"  readonly="1"/>
+                    <field name="pcb_width"  readonly="1"/>
+                    <field name="price_subtotal" readonly="1"/>
+                    <field name="price_total" readonly="1"/>
+                    <label for="etdel"  readonly="1"/>
+                    <div>
+                        <field name="etdel" class="oe_inline" /> days
+                    </div>
+                    <field name="cpo_smt_assembly_fee" readonly="1"/>
+                    <field name="cpo_test_tool_fee" readonly="1"/>
+                    <field name="cpo_jig_tool_fee" readonly="1"/>
+                    <field name="cpo_stencil_fee" readonly="1"/>
+                </xpath> 
+                
+                <!--<xpath expr="//field[@name='order_line']/form/group" position="before">-->
+                    <!--<header>-->
+                        <!--<button name="smt_price" string="Calculate Price" type="object" />-->
+                    <!--</header>-->
+                <!--</xpath>-->
+                
+                <xpath expr="//field[@name='order_line']/form/group/group[2]/field[@name='tax_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/form/label[@for='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/form/field[@name='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/form/div" position="after">
+                    <notebook>
+                        <page string="Invoice lines" groups="base.group_no_one">
+                            <field name="invoice_lines"/>
+                        </page>
+                        <page string="Weight line">
+                            <group col="4">
+                                <group colspan="2" col="2">
+                                    <field name="single_pcb_weight"  readonly="1"/>
+                                    <field name="pcb_total_weight"  readonly="1"/>
+                                </group>
+                                <group colspan="2" col="2">
+                                    <field name="bom_sigle_weight"  readonly="1"/>
+                                    <field name="bom_total_weight"  readonly="1"/>
+                                </group>
+                                <group colspan="2" col="2">
+                                    <field name="pcba_single_weight"  readonly="1"/>
+                                    <field name="pcba_total_weight"  readonly="1"/>
+                                </group>
+                                <group colspan="2" col="2">
+                                    <label for="pcb_thickness"  readonly="1"/>
+                                    <div>
+                                        <field name="pcb_thickness" class="oe_inline" readonly="1"/> mm
+                                    </div>
+                                    <label for="copper_foil" />
+                                    <div>
+                                        <field name="copper_foil" class="oe_inline" readonly="1"/> oz
+                                    </div>
+                                </group>
+                                <group colspan="4">
+                                    <field name="pcb_special"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Note">
+                            <group>
+                                <field name="cpo_note"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+                
+                <!--order line add attribute-->
+                <xpath expr="//field[@name='order_line']/form/group/group/field[@name='price_unit']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='order_line']/tree" position="attributes"> 
+                    <attribute name="editable"/>
+                </xpath> 
+                
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='order_line']/form/div" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                
+                
+                <!--order-->
+                <xpath expr="//button[@name='action_quotation_send']" position="after" >
+                    <button name="act_wait_confirm" states="draft" string="Wait Confirm" groups="base.user_root" class="btn-primary" type="object" />
+                    <!--<button name="do_await" states="draft,sent" string="Await Sale" class="btn-primary" type="object" />-->
+                </xpath>
+
+                <xpath expr="//button[@name='action_confirm']" position="replace" >
+                    <button name="action_confirm" states="sent,wait_confirm" string="Confirm Sale" class="btn-primary" type="object" />
+                </xpath>
+
+                <xpath expr="//button[@name='action_cancel']" position="replace">
+                    <button name="action_cancel" states="draft,sent,sale,wait_confirm" type="object" string="Cancel" groups="sales_team.group_sale_salesman_all_leads" confirm="Are you sure?"/>
+                </xpath>
+
+                <xpath expr="//button[@name='action_quotation_send']" position="replace" >
+                    <button name="action_quotation_send" string="Send by Email" type="object" states="wait_confirm"/>
+                </xpath>
+
+                <xpath expr="//button[@name='action_quotation_send']" position="before" >
+                    <button name="analyze_bom" type="object" string="analyze bom" class="btn-primary" attrs="{'invisible':[('bom_state', '!=','draft')]}"/>
+                    <button name="calculate_price" type="object" string="Calculate Quotation" class="btn-primary" states="wait_confirm"/>
+                </xpath>
+                <!--<xpath expr="//button[@name='action_done']" position="after">-->
+                    <!--<button name="action_cancel" type="object" confirm="Are you sure?" string="Root Cancel" groups="base.user_root"/>-->
+                    <!--<button name="analyze_bom" type="object" string="ROOT analyze bom" confirm="Are you sure?" states="wait_confirm"/>-->
+                <!--</xpath>-->
+
+
+                <!--<xpath expr="//form/header/button[7]" position="after" >-->
+                    <!--<button name="do_await" states="sent" string="Await Sale" class="btn-primary" type="object" />-->
+                    <!--<button name="do_await" states="draft" string="Await Sale" type="object" />-->
+                    <!--<button name="action_confirm" states="await" string="Confirm Sale" type="object" />-->
+                    <!--<button name="action_cancel" states="await" type="object" string="Cancel"/>-->
+                <!--</xpath>-->
+                <!--<xpath expr="//button[@name='analyze_bom']" position="before" >-->
+                    <!--<button name="action_cancel" states="await" type="object" string="Cancel"/>-->
+                <!--</xpath>-->
+                
+                <xpath expr="//sheet/group/group/field[@name='partner_shipping_id']" position="after">
+                    <label for="shipping_fee"/>
+                    <div>
+                        <field name="shipping_fee" class="oe_inline" attrs="{'readonly':[('state', 'not in', ('draft', 'wait_confirm'))]}" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                    </div>
+                </xpath>
+                
+                <xpath expr="/form/sheet/notebook/page[1]" position="after"> 
+                    <page string="PCBA Information" attrs="{'invisible': ['&amp;', ('bom_supply', '=', False), ('pcb_supply', '=', False)]}">
+                        <group>
+                            <field name="bom_supply" readonly="1"/>
+                            <field name="pcb_supply" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="express_provider" attrs="{'readonly':[('state', 'not in', ('draft', 'wait_confirm'))]}"/>
+                            <!--<field name="express_number"/>-->
+                        </group>
+                        <group>
+                            <field name="check_state" readonly="1"/>
+                        </group>
+                    </page>
+                    <page string="Bom Supply Line" attrs="{'invisible': [('supply_bool', '=', False)]}">
+                        <field name="supply_bool" invisible="1"/>
+                        <field name="bom_supply_line" attrs="{'readonly':[('state', 'not in', ('draft', 'wait_confirm'))]}">
+                            <tree editable="bottom">
+                                <field name="mfr" readonly="1"/>
+                                <field name="supply" readonly="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Bom Fields Line" attrs="{'invisible': [('fields_bool', '=', False)]}">
+                        <field name="fields_bool" invisible="1"/>
+                        <field name="bom_fields_line" attrs="{'readonly':[('state', 'not in', ('draft', 'wait_confirm'))]}">
+                            <tree editable="bottom">
+                                <field name="src_title" readonly="1"/>
+                                <field name="cpo_title" readonly="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Client Data Abnormal" attrs="{'invisible': [('data_bool', '=', False)]}">
+                        <field name="data_bool" invisible="1"/>
+                        <field name="bom_data_line" attrs="{'readonly':[('state', 'not in', ('draft', 'wait_confirm'))]}">
+                            <tree editable="bottom">
+                                <field name="p_type" readonly="1"/>
+                                <field name="client_input_qty" readonly="1"/>
+                                <field name="original_bom_qty" readonly="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath> 
+                
+                <!--order add or alter attributes-->
+                <xpath expr="//form/header/button[10]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//form/header/button[7]" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </xpath>
+                <xpath expr="//form/header/button[12]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//form/header/button[11]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                
+                <xpath expr="//form/header/button[6]" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </xpath>
+
+                <xpath expr="//form[@class='o_sale_order']" position="attributes">
+                    <attribute name="class">cpo_max_width_full</attribute>
+                </xpath>
+                
+                <!--<xpath expr="//form/header/field[@name='state']" position="attributes">-->
+                    <!--<attribute name="statusbar_visible">draft,sent,await,sale</attribute>-->
+                <!--</xpath>-->
+                
+            </field> 
+        </record>
+        
+    </data>
+</odoo>        
+              
+            
+  

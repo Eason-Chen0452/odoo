@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_personal_center,personal.center,model_personal_center,base.group_user,1,0,0,0
+access_personal_center_sale,personal.center.sale,model_personal_center,sales_team.group_sale_salesman,1,0,0,0
+access_personal_center_manager,personal.center.manager,model_personal_center,center_manager_group,1,1,1,1
+
+
+
+

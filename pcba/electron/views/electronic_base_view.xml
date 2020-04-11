@@ -1,0 +1,83 @@
+
+<odoo>
+    <data>
+
+    <!-- explicit list view definition -->
+  
+    <record model="ir.ui.view" id="electron_base_list">
+      <field name="name">base list</field>
+      <field name="model">electron.base</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="p_type"/>
+          <field name="name"/>
+          <field name="pcb_number"/>
+          <field name="dash_number"/>
+          <field name="digi_number"/>
+          <field name="mini_quantity"/>
+          <field name="QOH"/>
+          <field name="price"/>
+          <field name="description"/>
+          <field name="series"/>
+          <field name="manufacture"/>
+        </tree>
+      </field>
+    </record>
+    
+     <record model="ir.ui.view" id="electron_base_form">
+      <field name="name">base form</field>
+      <field name="model">electron.base</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+              <group col="4">
+                 <group col="2" colspan="4">
+                    <field name="p_type"/>
+                    <field name="name"/>
+                    <field name="pcb_number"/>
+                    <field name="dash_number"/>
+                    <field name="digi_number"/>
+                    <field name="mini_quantity"/>
+                    <field name="QOH"/>
+                    <field name="price"/>
+                    <field name="description"/>
+                    <field name="series"/>
+                    <field name="manufacture"/>
+                    <field name="tolerance"/>
+                    <field name="size"/>
+                    <field name="encapsulation"/>
+                    <field name="inst_type"/>
+                    <field name="packaging"/>
+                    <field name="character"/>
+                    <field name="parts_state"/>
+                 </group>
+              </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+  
+    <!-- actions opening views on models -->
+  
+    <record model="ir.actions.act_window" id="base_action_window">
+      <field name="name">base window</field>
+      <field name="res_model">electron.base</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- actions -->
+
+    <menuitem name="base_menu_List" id="base_menu_1_list" parent="electron.electronic_menu_1"
+              action="base_action_window"/>
+ 
+    <record model="ir.actions.act_url" id="electron.action_url">
+      <field name="name">cpo Electron Website url</field>
+      <field name="type">ir.actions.act_url</field>
+      <field name="url">/electron/electronic/category/</field>
+      <field name="target">new</field>
+    </record>
+          
+    <menuitem name="Open electron WebSite" id="cpo_it_electron_website_url" parent="electron.electronic_menu_1"
+              action="electron.action_url"/>
+  </data>
+</odoo>

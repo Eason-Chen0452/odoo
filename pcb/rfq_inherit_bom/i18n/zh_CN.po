@@ -1,0 +1,1591 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* rfq_inherit_bom
+#	* cpo_offer_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.saas~16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-27 08:02+0000\n"
+"PO-Revision-Date: 2019-09-27 08:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "Add Smt Make"
+msgstr "加收SMT制作费"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "Are you sure?"
+msgstr "Are you sure?"
+
+#. module: cpo_offer_base
+#: model:ir.ui.menu,name:cpo_offer_base.sales_agent_bom_list
+#: model:product.product,name:cpo_offer_base.cpo_product_bom
+#: model:product.template,name:cpo_offer_base.cpo_product_bom_product_template
+#: model:res.groups,name:cpo_offer_base.cpo_bom_admin
+msgid "BOM"
+msgstr "BOM"
+
+#. module: cpo_offer_base
+#: model:ir.ui.menu,name:cpo_offer_base.cpo_offer_bom_menu_1_list
+msgid "BOM Analysis"
+msgstr "BOM分析"
+
+#. module: cpo_offer_base
+#: model:res.groups,name:cpo_offer_base.cpo_bom_button
+msgid "BOM Button"
+msgstr "BOM匹配按钮"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_bom_fields_line
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_bom_fields_line
+msgid "BOM Fields Ref"
+msgstr "BOM 表头关系"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_data_line_original_bom_qty
+msgid "BOM Original File Quantity"
+msgstr "BOM原始文件数量"
+
+#. module: cpo_offer_base
+#: code:addons/cpo_offer_base/models/cpo_inherit_sale_order.py:181
+#, python-format
+msgid "BOM State checking,Please Waite,state is {state}."
+msgstr "BOM正在报价，请耐心等待，当前状态为: {state}."
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_bom_supply_line
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_bom_supply_line
+msgid "BOM Supply"
+msgstr "BOM 物料提供方式"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_bom_total_weight
+msgid "BOM Total Weight"
+msgstr "BOM物料总重量"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_bom_material_manage_fee
+msgid "BOM material Manage fee"
+msgstr "物料管理费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_bom_material_price
+msgid "BOM material Price"
+msgstr "BOM物料单价"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_bom_material_fee
+msgid "BOM material fee"
+msgstr "BOM 物料费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_bom_material_type
+msgid "BOM material type"
+msgstr "BOM 物料种类"
+
+#. module: cpo_offer_base
+#: code:addons/cpo_offer_base/models/cpo_inherit_sale_order.py:210
+#, python-format
+msgid "BOM not is done,please Click analyze bom button! state is : "
+msgstr "Bom状态没有完成，请先点击分析Bom按钮分析BOM！BOM当前状态为:"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_bom_rootfile
+msgid "BOM source"
+msgstr "BOM 源文件"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "Backhand Welding"
+msgstr "后焊"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_table_head_head_basedata_id
+msgid "Base data"
+msgstr "Base data"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "Binder plate tool"
+msgstr "压板治具"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form_readonly
+msgid "Blue indicates the manufacturer number is empty"
+msgstr "蓝色字体表示制造商产品编号为空"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_wizard_wizard_cpo_bom
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_base_table_bom
+#: model:ir.ui.menu,name:cpo_offer_base.cpo_bom_root_menu
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form_readonly
+msgid "Bom"
+msgstr "BOM"
+
+#. module: cpo_offer_base
+#: model:ir.actions.act_window,name:cpo_offer_base.bom_readonly_for_sale_action_window
+msgid "Bom Data"
+msgstr "Bom Data"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line,cpo_title:0
+msgid "Bom Description"
+msgstr "描述"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line_for_bom,cpo_title:0
+#: selection:cpo_bom_table_head.head,cpo_title:0
+msgid "Bom Description - Description"
+msgstr "Bom Description - Description"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+msgid "Bom Express Line"
+msgstr "Bom Express Line"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "Bom Fields Line"
+msgstr "BOM 表头关系清单"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_bom_file
+msgid "Bom File"
+msgstr "Bom 文件"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_bom_file_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_bom_file_name
+msgid "Bom File Name"
+msgstr "Bom文件名"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_for_bom_bom_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_for_bom_bom_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_express_waybill_line_for_bom_bom_id
+msgid "Bom ID"
+msgstr "Bom ID"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_cpo_bom_line_id
+msgid "Bom Line ID"
+msgstr "Bom Line ID"
+
+#. module: cpo_offer_base
+#: model:ir.ui.menu,name:cpo_offer_base.cpo_offer_bom_manage_menu
+msgid "Bom Manage"
+msgstr "Bom管理"
+
+#. module: cpo_offer_base
+#: model:ir.module.category,name:cpo_offer_base.module_category_bom_admin
+msgid "Bom Management"
+msgstr "Bom Management"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "Bom Service"
+msgstr "Bom管理费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_bom_state
+msgid "Bom State"
+msgstr "Bom状态"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_bom_supply
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_bom_supply
+msgid "Bom Supply"
+msgstr "BOM 物料提供方式"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "Bom Supply Line"
+msgstr "BOM 物料提供清单"
+
+#. module: rfq_inherit_bom
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_bom_situation_state
+msgid "Bom Type"
+msgstr "BOM 种类"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_name
+msgid "Bom number"
+msgstr "Bom 编号"
+
+#. module: rfq_inherit_bom
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_cpo_offer_bom_bom_line_cny_price
+msgid "CNY Price"
+msgstr "人名币单价"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_cpo_jig_tool_fee
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_cpo_jig_tool_fee
+msgid "CPO Jig Tool fee"
+msgstr "CPO夹具费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_cpo_smt_assembly_fee
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_cpo_smt_assembly_fee
+msgid "CPO SMT Assembly fee"
+msgstr "CPO SMT组装费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_cpo_stencil_fee
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_cpo_stencil_fee
+msgid "CPO Stencil fee"
+msgstr "CPO钢网费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_cpo_test_tool_fee
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_cpo_test_tool_fee
+msgid "CPO Test Tool fee"
+msgstr "CPO测试夹具费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_cpo_title
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_for_bom_cpo_title
+msgid "CPO Title"
+msgstr "CPO 表头"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_name
+msgid "CPO number"
+msgstr "CPO 编号"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+msgid "Calc Total"
+msgstr "计算总价"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "Calculate Quotation"
+msgstr "计算报价"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_bom_wizard_form
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "Cancel"
+msgstr "取消"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_bom_wizard_form
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_line_tree
+msgid "Check"
+msgstr "检查"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_check_state
+msgid "Check BOM"
+msgstr "检查 BOM"
+
+#. module: cpo_offer_base
+#: selection:sale.order.line,cpo_checked:0
+msgid "Check False"
+msgstr "未检查"
+
+#. module: cpo_offer_base
+#: selection:sale.order.line,cpo_checked:0
+msgid "Check True"
+msgstr "已检查"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: selection:sale.order,check_state:0
+#: selection:cpo_offer_bom.bom,cpo_check_bom:0
+msgid "Checked"
+msgstr "检查"
+
+#. module: cpo_offer_base
+#: selection:cpo_offer_bom.bom,state:0
+#: selection:sale.order,bom_state:0
+msgid "Checking"
+msgstr "检查中"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_supply.list,supply:0
+#: selection:cpo_bom_supply.list_for_bom,supply:0
+#: selection:cpo_offer_bom.bom_line,bom_supply:0
+#: selection:sale.order,bom_supply:0
+#: selection:sale.order,pcb_supply:0
+msgid "ChinaPCBOne"
+msgstr "ChinaPCBOne"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_cpo_confirm
+msgid "Choice Electron"
+msgstr "Choice Electron"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_bom_data_line
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "Client Data Abnormal"
+msgstr "客户数据异常"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_data_line_client_input_qty
+msgid "Client Input Quantity"
+msgstr "客户输入数量"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_table_head_head_src_title
+msgid "Col content"
+msgstr "上传文件表头"
+
+#. module: rfq_inherit_bom
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_bom_situation_color
+msgid "Color"
+msgstr "颜色"
+
+#. module: cpo_offer_base
+#: selection:cpo_offer_bom.bom,state:0
+#: selection:sale.order,bom_state:0
+msgid "Complete"
+msgstr "检查完成"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+msgid "Complete check"
+msgstr "完成检查"
+
+#. module: rfq_inherit_bom
+#: code:addons/rfq_inherit_bom/models/models.py:180
+#: model:ir.actions.act_window,name:rfq_inherit_bom.offer_bom_checked_action_window
+#: model:ir.ui.menu,name:rfq_inherit_bom.cpo_offer_bom_checked
+#, python-format
+msgid "Complete inspection"
+msgstr "完成检查"
+
+#. module: rfq_inherit_bom
+#: model:bom.situation,name:rfq_inherit_bom.bom_dashboard_data_3
+msgid "Complete inspection Bom"
+msgstr "完成检查的Bom"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "Confirm Sale"
+msgstr "确认销售"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_copper_foil
+msgid "Copper Foil"
+msgstr "铜箔"
+
+#. module: rfq_inherit_bom
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_cpo_offer_bom_bom_cpo_check_bom
+msgid "Cpo Check Bom"
+msgstr "检查BOM"
+
+#. module: rfq_inherit_bom
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_cpo_offer_bom_bom_cpo_table_bom
+msgid "Cpo Table Bom"
+msgstr "BOM表头"
+
+#. module: cpo_offer_base
+#: code:addons/cpo_offer_base/models/cpo_inherit_sale_order.py:404
+#, python-format
+msgid "Create Order Line Length Error, Order Line Length must is one!"
+msgstr "Create Order Line Length Error, Order Line Length must is one!"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_data_line_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_for_bom_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_for_bom_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_table_head_head_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_wizard_wizard_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_express_waybill_line_for_bom_create_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_create_uid
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_bom_situation_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_data_line_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_for_bom_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_for_bom_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_table_head_head_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_wizard_wizard_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_express_waybill_line_for_bom_create_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_create_date
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_bom_situation_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_res_currency_rate
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_save_rate
+#: model:ir.ui.view,arch_db:cpo_offer_base.view_cpo_currency_rate_form
+msgid "Currency Rate"
+msgstr "汇率"
+
+#. module: cpo_offer_base
+#: code:addons/cpo_offer_base/models/res_currency_rate.py:20
+#, python-format
+msgid "Currency Rate From {src} change to {des},time:{time}"
+msgstr "Currency Rate From {src} change to {des},time:{time}"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.view_cpo_currency_rate_search
+#: model:ir.ui.view,arch_db:cpo_offer_base.view_cpo_currency_rate_tree
+msgid "Currency Rates"
+msgstr "汇率"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_supply.list,supply:0
+#: selection:cpo_bom_supply.list_for_bom,supply:0
+#: selection:cpo_offer_bom.bom_line,bom_supply:0
+#: selection:sale.order,bom_supply:0
+#: selection:sale.order,pcb_supply:0
+msgid "Customer"
+msgstr "Customers' own provision"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_customer_file_name
+msgid "Customer File Name"
+msgstr "客户文件名"
+
+#. module: rfq_inherit_bom
+#: model:ir.actions.act_window,name:rfq_inherit_bom.bom_dashboard_window
+#: model:ir.model,name:rfq_inherit_bom.model_bom_situation
+#: model:ir.ui.menu,name:rfq_inherit_bom.bom_dashboard_menu
+msgid "Dashboard"
+msgstr "仪表板"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.view_cpo_currency_rate_search
+msgid "Date"
+msgstr "日期"
+
+#. module: cpo_offer_base
+#: code:addons/cpo_offer_base/models/cpo_offer_bom.py:93
+#, python-format
+msgid "Default"
+msgstr "默认"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_cpo_description
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_cpo_bom_descriprion
+msgid "Description"
+msgstr "说明"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "Discount"
+msgstr "折扣"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_discount_total
+msgid "Discount Total"
+msgstr "折扣金额"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_data_line_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_for_bom_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_for_bom_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_table_head_head_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_wizard_wizard_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_express_waybill_line_for_bom_display_name
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_display_name
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_bom_situation_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: cpo_offer_base
+#: selection:cpo_offer_bom.bom,state:0
+#: selection:sale.order,bom_state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_wizard_form
+msgid "Electron Line"
+msgstr "匹配明细"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Email撰写向导"
+
+#. module: cpo_offer_base
+#: code:addons/cpo_offer_base/models/ir_mail_server.py:89
+#, python-format
+msgid "Error without exception. Probably due do sending an email without computed recipients."
+msgstr "Error without exception. Probably due do sending an email without computed recipients."
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_etdel
+msgid "Estimated time of delivery"
+msgstr "预计交货时间"
+
+#. module: cpo_offer_base
+#: model:ir.ui.menu,name:cpo_offer_base.cpo_res_currency_rate_menu
+msgid "Exchange Rate"
+msgstr "汇率"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_bom_express_line
+msgid "Express Line"
+msgstr "Express Line"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_express_waybill_line_for_bom_express_number
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_express_number
+msgid "Express Number"
+msgstr "快递运单号"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_express_waybill_line_for_bom_express_provider
+msgid "Express Provider"
+msgstr "快递商"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_express_provider
+msgid "Express Service Provider"
+msgstr "快递服务商"
+
+#. module: cpo_offer_base
+#: selection:cpo_offer_bom.bom_line,check_state:0
+msgid "FLASE"
+msgstr "FLASE"
+
+#. module: cpo_offer_base
+#: selection:sale.order,judge_state:0
+msgid "False"
+msgstr "False"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_first_order_partner
+msgid "First Order Partner"
+msgstr "首单折扣"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_wizard_wizard_force_import
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_force_import
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+msgid "Force Import"
+msgstr "强制导入"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_pcb_file
+msgid "Gerber File"
+msgstr "Gerber 文件"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_table_head_head_cpo_title
+msgid "Headline"
+msgstr "选择对应关系表头"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_smt_ic_qty
+msgid "IC Quantity"
+msgstr "IC 个数"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_data_line_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_for_bom_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_for_bom_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_table_head_head_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_wizard_wizard_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_express_waybill_line_for_bom_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_id
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_bom_situation_id
+msgid "ID"
+msgstr "ID"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "发票行"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "Invoice lines"
+msgstr "发票清单"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line,cpo_title:0
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_cpo_item
+msgid "Item"
+msgstr "序列号"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line_for_bom,cpo_title:0
+#: selection:cpo_bom_table_head.head,cpo_title:0
+msgid "Item - item"
+msgstr "Item - item"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_jig_tool_fee
+msgid "Jig Tool fee"
+msgstr "夹具费"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "Jig tool"
+msgstr "夹板治具"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "Jointed board tool"
+msgstr "拼板治具"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_judge_state
+msgid "Judge State"
+msgstr "Judge State"
+
+#. module: cpo_offer_base
+#: selection:cpo_offer_bom.bom_line,check_state:0
+msgid "Lack"
+msgstr "Lack"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_data_line___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_for_bom___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_for_bom___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_table_head_head___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_wizard_wizard___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_express_waybill_line_for_bom___last_update
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price___last_update
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_bom_situation___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_data_line_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_for_bom_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_for_bom_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_table_head_head_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_wizard_wizard_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_express_waybill_line_for_bom_write_uid
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_write_uid
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_bom_situation_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_data_line_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_for_bom_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_for_bom_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_table_head_head_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_wizard_wizard_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_express_waybill_line_for_bom_write_date
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_write_date
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_bom_situation_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_layer_pcb
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_layer_pcb
+msgid "Layer"
+msgstr "层数"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_smt_dip
+msgid "Limit Material Type"
+msgstr "限制种类数量"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_smt_qty
+msgid "Limit PCS Number"
+msgstr "限制PCS数"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_smt_number
+msgid "Limit SMT Parts Quantity"
+msgstr "限制SMT数量"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_smt_length
+msgid "Limit Size Length/mm"
+msgstr "限制尺寸长度/mm"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_smt_width
+msgid "Limit Size Width/mm"
+msgstr "限制尺寸宽度/mm"
+
+#. module: cpo_offer_base
+#: code:addons/cpo_offer_base/models/ir_mail_server.py:179
+#, python-format
+msgid "Mail Delivery Failed"
+msgstr "邮件发送失败"
+
+#. module: cpo_offer_base
+#: model:res.groups,name:cpo_offer_base.group_bom_bomadmin_all
+msgid "Manager"
+msgstr "管理员"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line,cpo_title:0
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_cpo_mfr
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_cpo_manuf
+msgid "Manufacturer"
+msgstr "制造商"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line_for_bom,cpo_title:0
+#: selection:cpo_bom_table_head.head,cpo_title:0
+msgid "Manufacturer - Mfr"
+msgstr "Manufacturer - Mfr"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line,cpo_title:0
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_for_bom_mfr
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_mfr
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_cpo_mfr_p_n
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_cpo_manuf_pn
+msgid "Manufacturer P/N"
+msgstr "制造商零件编号"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line_for_bom,cpo_title:0
+#: selection:cpo_bom_table_head.head,cpo_title:0
+msgid "Manufacturer P/N - Mfr p/n"
+msgstr "Manufacturer P/N - Mfr p/n"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+msgid "Matched Data"
+msgstr "匹配数据"
+
+#. module: cpo_offer_base
+#: selection:sale.order.line,package_type:0
+#: selection:smt.package.price,smt_type:0
+msgid "Material"
+msgstr "含物料"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_mail_message
+msgid "Message"
+msgstr "消息"
+
+#. module: rfq_inherit_bom
+#: selection:bom.situation,state:0
+#: selection:cpo_offer_bom.bom,cpo_colour:0
+msgid "NO"
+msgstr "订单未提交 - 不用检查"
+
+#. module: rfq_inherit_bom
+#: selection:cpo_offer_bom.bom,cpo_check_bom:0
+msgid "NO Check"
+msgstr "不用检查"
+
+#. module: rfq_inherit_bom
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_bom_situation_button_name
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_bom_situation_name
+msgid "Name"
+msgstr "名称"
+
+#. module: cpo_offer_base
+#: selection:sale.order,check_state:0
+msgid "No Checked"
+msgstr "No Checked"
+
+#. module: cpo_offer_base
+#: selection:sale.order.line,package_type:0
+#: selection:smt.package.price,smt_type:0
+msgid "No Material"
+msgstr "不含物料"
+
+#. module: rfq_inherit_bom
+#: model:ir.actions.act_window,help:rfq_inherit_bom.offer_bom_checked_action_window
+msgid "No inspections have been completed yet <i> BOM files</i>."
+msgstr "目前没有完成检查 <i> BOM文件</i>."
+
+#. module: rfq_inherit_bom
+#: code:addons/rfq_inherit_bom/models/models.py:174
+#: model:ir.actions.act_window,name:rfq_inherit_bom.offer_bom_no_check_action_window
+#: model:ir.ui.menu,name:rfq_inherit_bom.cpo_offer_bom_no_check
+#, python-format
+msgid "No need to check"
+msgstr "不用检查"
+
+#. module: rfq_inherit_bom
+#: model:bom.situation,name:rfq_inherit_bom.bom_dashboard_data_1
+msgid "No need to check Bom"
+msgstr "不需要检查的Bom"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_cpo_note
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "Note"
+msgstr "备注"
+
+#. module: rfq_inherit_bom
+#: selection:cpo_offer_bom.bom,cpo_colour:0
+msgid "OK"
+msgstr "订单已提交 - 可以检查"
+
+#. module: rfq_inherit_bom
+#: selection:cpo_offer_bom.bom,cpo_check_bom:0
+msgid "OK Check"
+msgstr "可以检查"
+
+#. module: cpo_offer_base
+#: code:addons/cpo_offer_base/models/cpo_offer_bom.py:103
+#, python-format
+msgid "One Bom relate to One Order, but find many bom to order"
+msgstr "One Bom relate to One Order, but find many bom to order"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_data_line_order_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_order_id
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_order_id
+msgid "Order ID"
+msgstr "订单号"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_order_ids
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form_readonly
+msgid "Order IDS"
+msgstr "关联的订单"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_cpo_checked
+msgid "Order selection"
+msgstr "Order selection"
+
+#. module: rfq_inherit_bom
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_cpo_offer_bom_bom_cpo_colour
+#: model:ir.model.fields,field_description:rfq_inherit_bom.field_cpo_offer_bom_bom_line_cpo_colour
+msgid "Order submission"
+msgstr "订单提交情况"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form_readonly
+msgid "Order_ids"
+msgstr "订单"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_mail_mail
+msgid "Outgoing Mails"
+msgstr "出去的邮件"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line,cpo_title:0
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_cpo_p_n
+msgid "P/N"
+msgstr "产品编号"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line_for_bom,cpo_title:0
+#: selection:cpo_bom_table_head.head,cpo_title:0
+msgid "P/N - p/n"
+msgstr "P/N - p/n"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "PCB"
+msgstr "PCB"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_pcb_cost
+msgid "PCB Cost"
+msgstr "PCB成本"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_pcb_length
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_pcb_length
+msgid "PCB Length"
+msgstr "PCB 长度"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_pcb_spec
+msgid "PCB Spec"
+msgstr "PCB工艺"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_pcb_supply
+msgid "PCB Supply"
+msgstr "PCB 板提供方式"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_pcb_thickness
+msgid "PCB Thickness"
+msgstr "PCB厚度"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_pcb_total_weight
+msgid "PCB Total Weight"
+msgstr "PCB总重量"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_pcb_width
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_pcb_width
+msgid "PCB Width"
+msgstr "PCB 宽度"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_pcb_plate_fee
+msgid "PCB plate fee"
+msgstr "PCB 板材费"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "PCBA Information"
+msgstr "PCBA 信息"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_pcba_single_weight
+msgid "PCBA Single Weight"
+msgstr "单个PCBA重量"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_pcba_total_weight
+msgid "PCBA Total Weight"
+msgstr "PCBA总重量"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_pcs_number
+msgid "PCS Number"
+msgstr "PCS数量"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_cpo_package
+msgid "Package"
+msgstr "包裹"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_package_type
+msgid "Package Type"
+msgstr "打包价类型"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line,cpo_title:0
+#: selection:cpo_bom_fields.line_for_bom,cpo_title:0
+#: selection:cpo_bom_table_head.head,cpo_title:0
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_cpo_package
+msgid "Packaging"
+msgstr "封装"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "Packge"
+msgstr "封装"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_supply.list,supply:0
+#: selection:cpo_bom_supply.list_for_bom,supply:0
+#: selection:cpo_offer_bom.bom_line,bom_supply:0
+#: selection:sale.order,bom_supply:0
+msgid "Part-Customer"
+msgstr "Part-Customer"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_partner_id
+msgid "Partner"
+msgstr "业务伙伴"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "Pass stove tool"
+msgstr "过炉治具"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_data.line,p_type:0
+msgid "Pin Hole QTY"
+msgstr "Pin Hole QTY"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_pin_qty
+msgid "Pin Quantity"
+msgstr "脚数"
+
+#. module: cpo_offer_base
+#: code:addons/cpo_offer_base/wizard/cpo_search_data.py:66
+#, python-format
+msgid "Please Choice record more then zero!"
+msgstr "Please Choice record more then zero!"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "Plug-in"
+msgstr "插件"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_smt_plug_qty
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_smt_plug_qty
+msgid "Plug-in Pin quantity"
+msgstr "插件引脚数量"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_cpo_price
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_price
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_smt_price
+msgid "Price"
+msgstr "价格"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_smt_type
+msgid "Price Type"
+msgstr "价格类型"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_product_pro
+msgid "Product"
+msgstr "产品"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_cpo_qty
+msgid "QTY/PCS"
+msgstr "单PCS数量"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line,cpo_title:0
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_qty
+msgid "Quantity"
+msgstr "数量"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line_for_bom,cpo_title:0
+#: selection:cpo_bom_table_head.head,cpo_title:0
+msgid "Quantity - qty"
+msgstr "Quantity - qty"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form_readonly
+msgid "Red indicates that the data is not matched"
+msgstr "红色字体表示数据未匹配到"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_wizard_wizard_refresh_bom
+msgid "Refresh Bom"
+msgstr "更新 BOM"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line,cpo_title:0
+#: selection:cpo_bom_fields.line_for_bom,cpo_title:0
+#: selection:cpo_bom_table_head.head,cpo_title:0
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_cpo_remark
+msgid "Remark"
+msgstr "备注"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_cpo_replace_p_n
+msgid "Replace P/N"
+msgstr "替换料号"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_require_qty
+msgid "Require Quantity"
+msgstr "需求数量"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_reset_price_total
+msgid "Reset Price Total"
+msgstr "重置总价"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_smt_assembly_fee
+msgid "SMT Assembly fee"
+msgstr "SMT组装费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_smt_component_qty
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_smt_component_qty
+msgid "SMT Component Quantity"
+msgstr "SMT 贴片元件个数"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_smt_file
+msgid "SMT File"
+msgstr "SMT 文件"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "SMT Make"
+msgstr "SMT Make"
+
+#. module: cpo_offer_base
+#: model:ir.actions.act_window,name:cpo_offer_base.smt_package_price_window
+#: model:ir.model,name:cpo_offer_base.model_smt_package_price
+#: model:ir.ui.menu,name:cpo_offer_base.package_menu_1_list
+msgid "SMT Package Price"
+msgstr "SMT打包价价格表"
+
+#. module: cpo_offer_base
+#: model:ir.ui.menu,name:cpo_offer_base.cpo_smt_price_list
+msgid "SMT Price List"
+msgstr "SMT价格表"
+
+#. module: cpo_offer_base
+#: model:ir.ui.menu,name:cpo_offer_base.cpo_smt_price_menu_1_list
+msgid "SMT Regular Processing Quotes"
+msgstr "SMT常规加工基准报价表"
+
+#. module: cpo_offer_base
+#: model:res.groups,name:cpo_offer_base.cpo_offer_sale_operator
+msgid "Sale Operator"
+msgstr "销售运营商"
+
+#. module: cpo_offer_base
+#: model:res.groups,name:cpo_offer_base.cpo_sale_order_rate_admin
+msgid "Sale Order Rate"
+msgstr "销售订单率"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_sale_order
+#: model:ir.model,name:rfq_inherit_bom.model_sale_order
+msgid "Sales Order"
+msgstr "销售订单"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "销售订单行"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_cpo_ele_wizard_line
+msgid "Search Reasult"
+msgstr "Search Reasult"
+
+#. module: cpo_offer_base
+#: model:ir.actions.act_window,name:cpo_offer_base.action_cpo_offer_bom_wizard
+msgid "Search Results"
+msgstr "Search Results"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "Send by Email"
+msgstr "以邮件发送"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_shipping_fee
+msgid "Shipping fee"
+msgstr "运费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_bom_sigle_weight
+msgid "Single Board Material Weight"
+msgstr "单个板物料重量"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_dip_unit_fee
+msgid "Single General Class Charge"
+msgstr "单个种类收费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_single_pcb_weight
+msgid "Single PCB Weight"
+msgstr "单个PCB重量"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_data.line,p_type:0
+msgid "Smt Component QTY"
+msgstr "SMT元件数量"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_smt_package_price_smt_unit_fee
+msgid "Smt Single Material Charge"
+msgstr "SMT单颗物料收费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_special_fee
+msgid "Special Cost"
+msgstr "特殊要求成本"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_pcb_special
+msgid "Special request"
+msgstr "Special request"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_for_bom_src_title
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_fields_line_src_title
+msgid "Src Title"
+msgstr "源BOM文件表头"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_check_state
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_state
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_state
+msgid "Status"
+msgstr "状态"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "Stencil"
+msgstr "钢网"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_stencil_fee
+msgid "Stencil fee"
+msgstr "钢网费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_for_bom_supply
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_supply_list_supply
+msgid "Supply Style"
+msgstr "提供方式"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_surface_id
+msgid "Surface Treatment"
+msgstr "表面处理"
+
+#. module: cpo_offer_base
+#: selection:cpo_offer_bom.bom_line,check_state:0
+msgid "TRUE"
+msgstr "TRUE"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_wizard_wizard_cpo_title
+msgid "Table title"
+msgstr "表头"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_test_tool_fee
+msgid "Test Tool fee"
+msgstr "测试费"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,help:cpo_offer_base.field_sale_order_line_pcb_special
+msgid "Test fee is zero when Special request is No!"
+msgstr "Test fee is zero when Special request is No!"
+
+#. module: cpo_offer_base
+#: selection:cpo_smt_price.smt,type_selection:0
+msgid "Test tool"
+msgstr "测试治具"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form_readonly
+msgid "The black font indicates that the data has been matched"
+msgstr "黑色字体表示数据已匹配"
+
+#. module: cpo_offer_base
+#: sql_constraint:express_waybill.line_for_bom:0
+msgid "The express number must be unique"
+msgstr "The express number must be unique"
+
+#. module: rfq_inherit_bom
+#: model:ir.actions.act_window,help:rfq_inherit_bom.offer_bom_no_check_action_window
+msgid "There are currently no <i> BOM files</i>."
+msgstr "目前没有 <i> BOM 文件</i>."
+
+#. module: rfq_inherit_bom
+#: model:ir.actions.act_window,help:rfq_inherit_bom.offer_bom_check_action_window
+msgid "There is currently no check for <i> BOM files</i>."
+msgstr "目前没有可检查 <i> BOM 文件</i>."
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_wizard_form
+msgid "To Update"
+msgstr "更新数据"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_total
+msgid "Total"
+msgstr "总计"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_bom_prices
+msgid "Total Price"
+msgstr "总价"
+
+#. module: cpo_offer_base
+#: selection:sale.order,judge_state:0
+msgid "True"
+msgstr "True"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_bom_data_line_p_type
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_smt_price_smt_type_selection
+msgid "Type"
+msgstr "类型"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.view_cpo_currency_rate_search
+msgid "USD Currency"
+msgstr "USD Currency"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_price
+msgid "Unit Price"
+msgstr "美金单价"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_sale_order_line_update_bom_manage_fee
+msgid "Update Bom Manage Fee"
+msgstr "更新Bom管理费"
+
+#. module: cpo_offer_base
+#: model:res.groups,name:cpo_offer_base.group_bom_bomadmin
+msgid "User: Own Bom Only"
+msgstr "User: Own Bom Only"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line,cpo_title:0
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_cpo_vendor_p_n
+msgid "Vendor P/N"
+msgstr "供应商产品编号"
+
+#. module: cpo_offer_base
+#: selection:cpo_bom_fields.line_for_bom,cpo_title:0
+#: selection:cpo_bom_table_head.head,cpo_title:0
+msgid "Vendor P/N - Vendor"
+msgstr "Vendor P/N - Vendor"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "Wait Confirm"
+msgstr "待确认"
+
+#. module: rfq_inherit_bom
+#: code:addons/rfq_inherit_bom/models/models.py:177
+#: model:ir.actions.act_window,name:rfq_inherit_bom.offer_bom_check_action_window
+#: model:ir.ui.menu,name:rfq_inherit_bom.cpo_offer_bom_ok_check
+#, python-format
+msgid "Waiting for inspection"
+msgstr "等待检查"
+
+#. module: rfq_inherit_bom
+#: model:bom.situation,name:rfq_inherit_bom.bom_dashboard_data_2
+msgid "Waiting for inspection Bom"
+msgstr "等待检查的Bom"
+
+#. module: cpo_offer_base
+#: model:res.groups,name:cpo_offer_base.cpo_offer_website_operator
+msgid "Website Operator"
+msgstr "网站运营商"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "Weight line"
+msgstr "重量清单"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_wizard_ele_line_form
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_wizard_form
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_wizard_tree
+msgid "Wizard"
+msgstr "Wizard"
+
+#. module: rfq_inherit_bom
+#: selection:cpo_offer_bom.bom,cpo_colour:0
+msgid "YES"
+msgstr "非订单可以直接检查"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "analyze bom"
+msgstr "分析 bom"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_offer_bom_form
+msgid "bom wizard"
+msgstr "选择表头关系"
+
+#. module: rfq_inherit_bom
+#: selection:bom.situation,state:0
+msgid "check"
+msgstr "检查"
+
+#. module: rfq_inherit_bom
+#: selection:bom.situation,state:0
+msgid "complete"
+msgstr "完成"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_cpo_multi_ele_wizard_line_cpo_ele_wizard
+msgid "cpo multi ele"
+msgstr "cpo multi ele"
+
+#. module: cpo_offer_base
+#: model:ir.actions.act_window,name:cpo_offer_base.cpo_res_currency_action_window
+msgid "cpo res currency rate window"
+msgstr "汇率"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_cpo_bom_data_line
+msgid "cpo_bom_data.line"
+msgstr "cpo_bom_data.line"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_cpo_bom_fields_line
+msgid "cpo_bom_fields.line"
+msgstr "cpo_bom_fields.line"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_cpo_bom_fields_line_for_bom
+#: model:ir.model,name:rfq_inherit_bom.model_cpo_bom_fields_line_for_bom
+msgid "cpo_bom_fields.line_for_bom"
+msgstr "cpo_bom_fields.line_for_bom"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_cpo_bom_supply_list
+msgid "cpo_bom_supply.list"
+msgstr "cpo_bom_supply.list"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_cpo_bom_supply_list_for_bom
+msgid "cpo_bom_supply.list_for_bom"
+msgstr "cpo_bom_supply.list_for_bom"
+
+#. module: cpo_offer_base
+#: model:ir.actions.act_window,name:cpo_offer_base.cpo_bom_table_head_action
+msgid "cpo_bom_table_head head"
+msgstr "cpo_bom_table_head head"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_cpo_bom_table_head_head
+#: model:ir.model,name:rfq_inherit_bom.model_cpo_bom_table_head_head
+msgid "cpo_bom_table_head.head"
+msgstr "cpo_bom_table_head.head"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_cpo_bom_wizard_wizard
+#: model:ir.model,name:rfq_inherit_bom.model_cpo_bom_wizard_wizard
+msgid "cpo_bom_wizard.wizard"
+msgstr "cpo_bom_wizard.wizard"
+
+#. module: cpo_offer_base
+#: model:ir.actions.act_window,name:cpo_offer_base.cpo_bom_wizard_action
+msgid "cpo_bom_wizard_data"
+msgstr "选择表头关系"
+
+#. module: cpo_offer_base
+#: model:ir.actions.act_window,name:cpo_offer_base.cpo_offer_bom_action_window
+msgid "cpo_offer_bom window"
+msgstr "BOM 分析"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_cpo_offer_bom_bom
+#: model:ir.model,name:rfq_inherit_bom.model_cpo_offer_bom_bom
+msgid "cpo_offer_bom.bom"
+msgstr "cpo_offer_bom.bom"
+
+#. modules: rfq_inherit_bom, cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_cpo_offer_bom_bom_line
+#: model:ir.model,name:rfq_inherit_bom.model_cpo_offer_bom_bom_line
+msgid "cpo_offer_bom.bom_line"
+msgstr "cpo_offer_bom.bom_line"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_cpo_offer_bom_cpo_multi_ele_wizard
+msgid "cpo_offer_bom.cpo_multi_ele_wizard"
+msgstr "cpo_offer_bom.cpo_multi_ele_wizard"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_cpo_offer_bom_cpo_multi_ele_wizard_line
+msgid "cpo_offer_bom.cpo_multi_ele_wizard_line"
+msgstr "cpo_offer_bom.cpo_multi_ele_wizard_line"
+
+#. module: cpo_offer_base
+#: model:ir.actions.act_window,name:cpo_offer_base.cpo_offer_bom_line_action_window
+msgid "cpo_offer_bom_line window"
+msgstr "BOM 明细"
+
+#. module: cpo_offer_base
+#: model:ir.actions.act_window,name:cpo_offer_base.cpo_smt_price_action_window
+msgid "cpo_smt_price window"
+msgstr "加工报价基准"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_cpo_smt_price_smt
+msgid "cpo_smt_price.smt"
+msgstr "cpo_smt_price.smt"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "days"
+msgstr "天"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_express_waybill_line_for_bom
+msgid "express_waybill.line_for_bom"
+msgstr "express_waybill.line_for_bom"
+
+#. module: cpo_offer_base
+#: model:ir.model,name:cpo_offer_base.model_ir_attachment
+msgid "ir.attachment"
+msgstr "ir.attachment"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "mm"
+msgstr "mm"
+
+#. module: cpo_offer_base
+#: model:ir.ui.view,arch_db:cpo_offer_base.cpo_sale_order_form_inhert
+msgid "oz"
+msgstr "oz"
+
+#. module: cpo_offer_base
+#: model:ir.model.fields,field_description:cpo_offer_base.field_cpo_offer_bom_bom_line_base_table_bom_id
+msgid "table bom"
+msgstr "table bom"
+
+#. module: cpo_offer_base
+#: model:res.groups,comment:cpo_offer_base.group_bom_bomadmin
+#: model:res.groups,comment:cpo_offer_base.group_bom_bomadmin_all
+msgid "the user will have access to his own data in the bom application."
+msgstr "the user will have access to his own data in the bom application."
+

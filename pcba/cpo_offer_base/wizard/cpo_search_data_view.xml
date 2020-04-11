@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="cpo_offer_bom_wizard_tree" model="ir.ui.view">
+	<field name="name">cpo_offer_bom cpo_multi_ele_wizard tree</field>
+	<field name="model">cpo_offer_bom.cpo_multi_ele_wizard</field>
+	<field name="arch" type="xml">
+		<tree string="Wizard" create="false">
+			<!--<field name="cpo_search_bom_result"/>-->
+			<field name="cpo_ele_wizard_line"/>
+			<!--<field name="cpo_manuf"/>-->
+			<!--<field name="cpo_manuf_pn"/>-->
+			<!--<field name="cpo_price"/>-->
+			<!--<field name="cpo_bom_descriprion"/>-->
+			<!--<button name="cpo_select_bom" string="Select" type="object"></button>-->
+		</tree>
+	</field>
+	</record>
+
+	<record id="cpo_offer_bom_wizard_form" model="ir.ui.view">
+	<field name="name">cpo_offer_bom cpo_multi_ele_wizard form</field>
+	<field name="model">cpo_offer_bom.cpo_multi_ele_wizard</field>
+	<field name="arch" type="xml">
+		<form string="Wizard" create="false">
+			<!--<field name="cpo_search_bom_result"/>-->
+            <header>
+                <button name="confirm_electron_p_n" string="To Update" type="object" class="pull-right"/>
+            </header>
+            <group>
+            <notebook>
+                <page string="Electron Line">
+                    <field name="cpo_ele_wizard_line">
+                        <tree editable="bottom">
+                            <field name="cpo_confirm"/>
+                            <field name="cpo_manuf_pn"/>
+                            <field name="cpo_package"/>
+                            <field name="cpo_price"/>
+                            <!--<button name="confirm_electron_p_n" string="Confirm" type="object"/>-->
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+            </group>
+			<!--<field name="cpo_manuf"/>-->
+			<!--<field name="cpo_manuf_pn"/>-->
+			<!--<field name="cpo_price"/>-->
+			<!--<field name="cpo_bom_descriprion"/>-->
+			<!--<button name="cpo_select_bom" string="Select" type="object"></button>-->
+		</form>
+	</field>
+	</record>
+
+	<record id="action_cpo_offer_bom_wizard" model="ir.actions.act_window">
+		<field name="name">Search Results</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">cpo_offer_bom.cpo_multi_ele_wizard</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+	</record>
+
+	<template id="cpo_bom_wizard">
+		<h2>123123132</h2>
+	</template>
+
+	<!--<menuitem-->
+	<!--id="menu_cpo_offer_bom_wizard"-->
+	<!--name="Bom_wizard"-->
+	<!--action="action_cpo_offer_bom_wizard"/>-->
+	<record id="cpo_offer_bom_wizard_ele_line_form" model="ir.ui.view">
+	<field name="name">cpo_offer_bom cpo_multi_ele_wizard_line form</field>
+	<field name="model">cpo_offer_bom.cpo_multi_ele_wizard_line</field>
+	<field name="arch" type="xml">
+		<tree string="Wizard">
+			<field name="cpo_manuf_pn"/>
+			<field name="cpo_price"/>
+		</tree>
+	</field>
+	</record>
+</odoo>

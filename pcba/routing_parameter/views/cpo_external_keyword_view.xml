@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="external_keyword_tree">
+            <field name="name">External keyword Tree</field>
+            <field name="model">routing_parameter.external_keyword</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="key"/>
+                    <field name="value"/>
+                    <field name="domain_name"/>
+                    <!--<field name="site_name"/>-->
+                    <field name="cpo_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="external_keyword_form">
+            <field name="name">External keyword Form</field>
+            <field name="model">routing_parameter.external_keyword</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="key" />
+                            </group>
+                            <group colspan="2">
+                                <field name="value" />
+                            </group>
+                            <group colspan="2">
+                                <field name="domain_name" />
+                            </group>
+                            <group colspan="2">
+                                <!--<field name="site_name" />-->
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_time" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="external_keyword_actions">
+            <field name="name">External keyword Actions</field>
+            <field name="res_model">routing_parameter.external_keyword</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="External keywords" id="cpo_external_keyword_menu" parent="routing_parameter.cpo_promotion_keywords_menu"
+                action="external_keyword_actions"/>
+
+    </data>
+</odoo>

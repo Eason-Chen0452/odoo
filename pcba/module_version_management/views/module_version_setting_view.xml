@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- 创建tree视图 -->
+        <record model="ir.ui.view" id="module_version_setting_tree">
+            <field name="name">Version Setting List</field>
+            <field name="model">module_version_management.module_version_setting</field>
+            <field name="arch" type="xml">
+                <tree>
+                  <field name="cpo_description"/>
+                  <field name="cpo_type"/>
+                  <field name="cpo_version"/>
+                  <field name="cpo_active"/>
+                  <field name="cpo_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- 创建form视图 -->
+        <record model="ir.ui.view" id="module_version_setting_form">
+            <field name="name">Version Setting Form</field>
+            <field name="model">module_version_management.module_version_setting</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="4">
+                                <field name="cpo_description"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_type"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_version"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_active" />
+                            </group>
+                            <group colspan="2">
+                                <field name="cpo_time"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+		<!-- 设置action打开视图-->
+        <record model="ir.actions.act_window" id="module_version_setting_actions">
+            <field name="name">Version Setting Action</field>
+            <field name="res_model">module_version_management.module_version_setting</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Module Version Setting" id="module_version_menu_list" parent="website_cpo_index.cpo_web_root_menu"/>
+        <menuitem name="Module Version List" id="module_version_menu" parent="module_version_management.module_version_menu_list"
+                  action="module_version_setting_actions"/>
+
+
+<!--        <record model="ir.ui.view" id="study_work_kanban" >-->
+<!--            <field name="name"> Color Kanban</field>-->
+<!--            <field name="model">study_model.study_workflow</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <kanban class="o_kanban_small_column">-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="color"/>-->
+<!--                    <templates>-->
+<!--                        <t t-name="kanban-box">-->
+<!--                            <span>123</span>-->
+<!--                            <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">-->
+<!--                                <div class="o_kanban_manage_button_section">-->
+<!--                                    <a class="o_kanban_manage_toggle_button" href=" "><span class="fa fa-bars fa-lg"/></a>-->
+<!--                                </div>-->
+<!--                                <div class="o_kanban_card_header_title">-->
+<!--                                    <div class="o_primary text-center">-->
+<!--                                        <span>222222</span>-->
+<!--                                        <field name="name"/>-->
+<!--                                    </div>-->
+<!--                                    <div class="container o_kanban_card_manage_pane o_invisible">-->
+<!--                                        <div t-if="widget.editable" class="o_kanban_card_manage_settings row">-->
+<!--                                            <div class="col-xs-8">-->
+<!--                                                <ul class="oe_kanban_colorpicker" data-field="color"/>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </t>-->
+<!--                    </templates>-->
+<!--                </kanban>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+
+    </data>
+</odoo>

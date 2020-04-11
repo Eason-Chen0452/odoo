@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--销售员邮箱tree-->
+        <record id="seller_email_tree" model="ir.ui.view">
+            <field name="name">Seller Email</field>
+            <field name="model">seller.email</field>
+            <field name="arch" type="xml">
+                <tree string="Seller Email" editable="bottom">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="user_id"/>
+                    <field name="commonly_used"/>
+                </tree>
+            </field>
+        </record>
+        <!--销售员邮箱actions-->
+        <record id='seller_actions' model='ir.actions.act_window'>
+            <field name="name">Seller Email</field>
+            <field name="res_model">seller.email</field>
+            <!--<field name="view_type">form</field>-->
+            <field name="view_mode">tree</field>
+        </record>
+        <!--销售员邮箱配置-->
+        <menuitem id="seller_menu_1" action="seller_actions" parent="sale.menu_sales_config" sequence="3" name="Seller Email" groups="sale.group_sale_layout"/>
+        <!--邮件通知销售员-->
+        <record id="order_notice_tree" model="ir.ui.view">
+            <field name="name">Order Notice</field>
+            <field name="model">order.notice</field>
+            <field name="arch" type="xml">
+                <tree string="Order Notice" editable="bottom" create="0" edit="1" delete="0">
+                    <field name="name"/>
+                    <field name="product"/>
+                    <field name="order_number"/>
+                    <field name="order_time"/>
+                    <field name="seller_ids" widget="many2many_tags"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id='order_notice_actions' model='ir.actions.act_window'>
+            <field name="name">Order Notice</field>
+            <field name="res_model">order.notice</field>
+            <!--<field name="view_type">form</field>-->
+            <field name="view_mode">tree</field>
+        </record>
+        <menuitem id="notice_menu_1" action="order_notice_actions" parent="sale.menu_sales_config" sequence="4" name="Order Notice" groups="sale.group_sale_layout"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="cpo_smt_price_tree">
+      <field name="name">cpo_smt_pricelist</field>
+      <field name="model">cpo_smt_price.smt</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="type_selection"/>
+          <field name="layer_pcb"/>
+          <field name="qty"/>
+          <field name="pin_qty"/>
+          <field name="pcb_length"/>
+          <field name="pcb_width"/>
+          <field name="price" />
+        </tree>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="cpo_smt_price_form">
+      <field name="name">cpo_smt_pricelist</field>
+      <field name="model">cpo_smt_price.smt</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group col="4">
+              <group colspan="2" col="2">
+                <field name="type_selection"/>
+                <field name="layer_pcb"/>
+                <field name="price" />
+              </group>
+              <group colspan="2" col="2">
+                <field name="qty"/>
+                <field name="pin_qty"/>
+              </group>
+              <group colspan="2" col="2">
+                <field name="pcb_length"/>
+                <field name="pcb_width"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="cpo_smt_price_action_window">
+      <field name="name">cpo_smt_price window</field>
+      <field name="res_model">cpo_smt_price.smt</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- actions -->
+    <menuitem name="Price List View And Settings" id="cpo_smt_price_list" parent="sales_team.menu_base_partner" sequence="4"/>
+    <menuitem name="SMT Regular Processing Quotes" id="cpo_smt_price_menu_1_list" parent="cpo_smt_price_list" action="cpo_smt_price_action_window" sequence="1"/>
+              
+  </data>
+</odoo>

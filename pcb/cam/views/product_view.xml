@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<odoo>
+	     <!--<record model="ir.ui.view" id="sale_pcb_product_form_view">-->
+                 <!--<field name="name">sale.pcb.product.form</field>-->
+                 <!--<field name="model">product.product</field>-->
+                 <!--<field name="inherit_id" ref="product.product_normal_form_view"/>-->
+                 <!--<field name="arch" type="xml">-->
+		     <!--<field name="list_price" position="before">-->
+		         <!--<field name="layer_number" attrs="{'invisible':[('type','!=','pcb')]}"/>-->
+		     <!--</field>-->
+		 <!--</field>-->
+	     <!--</record>-->
+</odoo>

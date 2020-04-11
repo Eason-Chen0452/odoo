@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_cpo_sale_continent,cpo_sale_continent.continent.admin,model_cpo_sale_continent_continent,sales_team.group_sale_manager,1,1,1,1
+access_cpo_sale_allocations,cpo_sale_allocations.allocations.admin,model_cpo_sale_allocations_allocations,sales_team.group_sale_manager,1,1,1,1
+
+access_res_users,res.users,model_res_users,sales_team.group_sale_manager,1,1,0,0
+
+access_all_user_cpo_sale_continent,cpo_sale_continent.continent.user,model_cpo_sale_continent_continent,sales_team.group_sale_salesman,1,0,0,0
+access_all_user_cpo_sale_allocations,cpo_sale_allocations.allocations.user,model_cpo_sale_allocations_allocations,sales_team.group_sale_salesman,1,0,0,0
